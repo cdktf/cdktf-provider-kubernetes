@@ -1,4 +1,4 @@
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/namespace_v1
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/data-sources/namespace_v1
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -8,7 +8,7 @@ import * as cdktf from 'cdktf';
 
 export interface DataKubernetesNamespaceV1Config extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/namespace_v1#id DataKubernetesNamespaceV1#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/data-sources/namespace_v1#id DataKubernetesNamespaceV1#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -17,7 +17,7 @@ export interface DataKubernetesNamespaceV1Config extends cdktf.TerraformMetaArgu
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/namespace_v1#metadata DataKubernetesNamespaceV1#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/data-sources/namespace_v1#metadata DataKubernetesNamespaceV1#metadata}
   */
   readonly metadata: DataKubernetesNamespaceV1Metadata;
 }
@@ -89,19 +89,19 @@ export interface DataKubernetesNamespaceV1Metadata {
   /**
   * An unstructured key value map stored with the namespace that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/namespace_v1#annotations DataKubernetesNamespaceV1#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/data-sources/namespace_v1#annotations DataKubernetesNamespaceV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the namespace. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/namespace_v1#labels DataKubernetesNamespaceV1#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/data-sources/namespace_v1#labels DataKubernetesNamespaceV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the namespace, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/namespace_v1#name DataKubernetesNamespaceV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/data-sources/namespace_v1#name DataKubernetesNamespaceV1#name}
   */
   readonly name?: string;
 }
@@ -227,7 +227,7 @@ export class DataKubernetesNamespaceV1MetadataOutputReference extends cdktf.Comp
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/namespace_v1 kubernetes_namespace_v1}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/data-sources/namespace_v1 kubernetes_namespace_v1}
 */
 export class DataKubernetesNamespaceV1 extends cdktf.TerraformDataSource {
 
@@ -241,7 +241,7 @@ export class DataKubernetesNamespaceV1 extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/data-sources/namespace_v1 kubernetes_namespace_v1} Data Source
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/data-sources/namespace_v1 kubernetes_namespace_v1} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -252,7 +252,7 @@ export class DataKubernetesNamespaceV1 extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_namespace_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.19.0',
+        providerVersion: '2.20.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

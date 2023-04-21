@@ -1,6 +1,6 @@
 # `kubernetes_node_taint`
 
-Refer to the Terraform Registory for docs: [`kubernetes_node_taint`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint).
+Refer to the Terraform Registory for docs: [`kubernetes_node_taint`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint).
 
 # `nodeTaint` Submodule <a name="`nodeTaint` Submodule" id="@cdktf/provider-kubernetes.nodeTaint"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`kubernetes_node_taint`](https://reg
 
 ### NodeTaint <a name="NodeTaint" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaint"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint kubernetes_node_taint}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint kubernetes_node_taint}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaint.Initializer"></a>
 
@@ -277,12 +277,12 @@ public putMetadata(value: NodeTaintMetadata): void
 ##### `putTaint` <a name="putTaint" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaint.putTaint"></a>
 
 ```typescript
-public putTaint(value: NodeTaintTaint): void
+public putTaint(value: IResolvable | NodeTaintTaint[]): void
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaint.putTaint.parameter.value"></a>
 
-- *Type:* <a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaint">NodeTaintTaint</a>
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaint">NodeTaintTaint</a>[]
 
 ---
 
@@ -393,12 +393,12 @@ nodeTaint.NodeTaint.isTerraformResource(x: any)
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaint.property.provider">provider</a></code> | <code>cdktf.TerraformProvider</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaint.property.provisioners">provisioners</a></code> | <code>cdktf.FileProvisioner \| cdktf.LocalExecProvisioner \| cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaint.property.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintMetadataOutputReference">NodeTaintMetadataOutputReference</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaint.property.taint">taint</a></code> | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintOutputReference">NodeTaintTaintOutputReference</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaint.property.taint">taint</a></code> | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList">NodeTaintTaintList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaint.property.fieldManagerInput">fieldManagerInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaint.property.forceInput">forceInput</a></code> | <code>boolean \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaint.property.idInput">idInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaint.property.metadataInput">metadataInput</a></code> | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintMetadata">NodeTaintMetadata</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaint.property.taintInput">taintInput</a></code> | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaint">NodeTaintTaint</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaint.property.taintInput">taintInput</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaint">NodeTaintTaint</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaint.property.fieldManager">fieldManager</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaint.property.force">force</a></code> | <code>boolean \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaint.property.id">id</a></code> | <code>string</code> | *No description.* |
@@ -560,10 +560,10 @@ public readonly metadata: NodeTaintMetadataOutputReference;
 ##### `taint`<sup>Required</sup> <a name="taint" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaint.property.taint"></a>
 
 ```typescript
-public readonly taint: NodeTaintTaintOutputReference;
+public readonly taint: NodeTaintTaintList;
 ```
 
-- *Type:* <a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintOutputReference">NodeTaintTaintOutputReference</a>
+- *Type:* <a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList">NodeTaintTaintList</a>
 
 ---
 
@@ -610,10 +610,10 @@ public readonly metadataInput: NodeTaintMetadata;
 ##### `taintInput`<sup>Optional</sup> <a name="taintInput" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaint.property.taintInput"></a>
 
 ```typescript
-public readonly taintInput: NodeTaintTaint;
+public readonly taintInput: IResolvable | NodeTaintTaint[];
 ```
 
-- *Type:* <a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaint">NodeTaintTaint</a>
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaint">NodeTaintTaint</a>[]
 
 ---
 
@@ -689,10 +689,10 @@ const nodeTaintConfig: nodeTaint.NodeTaintConfig = { ... }
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintConfig.property.provider">provider</a></code> | <code>cdktf.TerraformProvider</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintConfig.property.provisioners">provisioners</a></code> | <code>cdktf.FileProvisioner \| cdktf.LocalExecProvisioner \| cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintConfig.property.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintMetadata">NodeTaintMetadata</a></code> | metadata block. |
-| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintConfig.property.taint">taint</a></code> | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaint">NodeTaintTaint</a></code> | taint block. |
+| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintConfig.property.taint">taint</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaint">NodeTaintTaint</a>[]</code> | taint block. |
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintConfig.property.fieldManager">fieldManager</a></code> | <code>string</code> | Set the name of the field manager for the node taint. |
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintConfig.property.force">force</a></code> | <code>boolean \| cdktf.IResolvable</code> | Force overwriting annotations that were created or edited outside of Terraform. |
-| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintConfig.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#id NodeTaint#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintConfig.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#id NodeTaint#id}. |
 
 ---
 
@@ -776,21 +776,21 @@ public readonly metadata: NodeTaintMetadata;
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#metadata NodeTaint#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#metadata NodeTaint#metadata}
 
 ---
 
 ##### `taint`<sup>Required</sup> <a name="taint" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintConfig.property.taint"></a>
 
 ```typescript
-public readonly taint: NodeTaintTaint;
+public readonly taint: IResolvable | NodeTaintTaint[];
 ```
 
-- *Type:* <a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaint">NodeTaintTaint</a>
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaint">NodeTaintTaint</a>[]
 
 taint block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#taint NodeTaint#taint}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#taint NodeTaint#taint}
 
 ---
 
@@ -804,7 +804,7 @@ public readonly fieldManager: string;
 
 Set the name of the field manager for the node taint.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#field_manager NodeTaint#field_manager}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#field_manager NodeTaint#field_manager}
 
 ---
 
@@ -818,7 +818,7 @@ public readonly force: boolean | IResolvable;
 
 Force overwriting annotations that were created or edited outside of Terraform.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#force NodeTaint#force}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#force NodeTaint#force}
 
 ---
 
@@ -830,7 +830,7 @@ public readonly id: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#id NodeTaint#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#id NodeTaint#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -865,7 +865,7 @@ public readonly name: string;
 
 The name of the node.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#name NodeTaint#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#name NodeTaint#name}
 
 ---
 
@@ -899,7 +899,7 @@ public readonly effect: string;
 
 The taint effect.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#effect NodeTaint#effect}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#effect NodeTaint#effect}
 
 ---
 
@@ -913,7 +913,7 @@ public readonly key: string;
 
 The taint key.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#key NodeTaint#key}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#key NodeTaint#key}
 
 ---
 
@@ -927,7 +927,7 @@ public readonly value: string;
 
 The taint value.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/node_taint#value NodeTaint#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#value NodeTaint#value}
 
 ---
 
@@ -1204,6 +1204,149 @@ public readonly internalValue: NodeTaintMetadata;
 ---
 
 
+### NodeTaintTaintList <a name="NodeTaintTaintList" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList"></a>
+
+#### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.Initializer"></a>
+
+```typescript
+import { nodeTaint } from '@cdktf/provider-kubernetes'
+
+new nodeTaint.NodeTaintTaintList(terraformResource: IInterpolatingParent, terraformAttribute: string, wrapsSet: boolean)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.Initializer.parameter.terraformResource">terraformResource</a></code> | <code>cdktf.IInterpolatingParent</code> | The parent resource. |
+| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.Initializer.parameter.terraformAttribute">terraformAttribute</a></code> | <code>string</code> | The attribute on the parent resource this class is referencing. |
+| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.Initializer.parameter.wrapsSet">wrapsSet</a></code> | <code>boolean</code> | whether the list is wrapping a set (will add tolist() to be able to access an item via an index). |
+
+---
+
+##### `terraformResource`<sup>Required</sup> <a name="terraformResource" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.Initializer.parameter.terraformResource"></a>
+
+- *Type:* cdktf.IInterpolatingParent
+
+The parent resource.
+
+---
+
+##### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.Initializer.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+The attribute on the parent resource this class is referencing.
+
+---
+
+##### `wrapsSet`<sup>Required</sup> <a name="wrapsSet" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.Initializer.parameter.wrapsSet"></a>
+
+- *Type:* boolean
+
+whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.computeFqn">computeFqn</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.resolve">resolve</a></code> | Produce the Token's value at resolution time. |
+| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.toString">toString</a></code> | Return a string representation of this resolvable object. |
+| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.get">get</a></code> | *No description.* |
+
+---
+
+##### `computeFqn` <a name="computeFqn" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.computeFqn"></a>
+
+```typescript
+public computeFqn(): string
+```
+
+##### `resolve` <a name="resolve" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.resolve"></a>
+
+```typescript
+public resolve(_context: IResolveContext): any
+```
+
+Produce the Token's value at resolution time.
+
+###### `_context`<sup>Required</sup> <a name="_context" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.resolve.parameter._context"></a>
+
+- *Type:* cdktf.IResolveContext
+
+---
+
+##### `toString` <a name="toString" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Return a string representation of this resolvable object.
+
+Returns a reversible string representation.
+
+##### `get` <a name="get" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.get"></a>
+
+```typescript
+public get(index: number): NodeTaintTaintOutputReference
+```
+
+###### `index`<sup>Required</sup> <a name="index" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.get.parameter.index"></a>
+
+- *Type:* number
+
+the index of the item to return.
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.property.creationStack">creationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
+| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.property.fqn">fqn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.property.internalValue">internalValue</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaint">NodeTaintTaint</a>[]</code> | *No description.* |
+
+---
+
+##### `creationStack`<sup>Required</sup> <a name="creationStack" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.property.creationStack"></a>
+
+```typescript
+public readonly creationStack: string[];
+```
+
+- *Type:* string[]
+
+The creation stack of this resolvable which will be appended to errors thrown during resolution.
+
+If this returns an empty array the stack will not be attached.
+
+---
+
+##### `fqn`<sup>Required</sup> <a name="fqn" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.property.fqn"></a>
+
+```typescript
+public readonly fqn: string;
+```
+
+- *Type:* string
+
+---
+
+##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.property.internalValue"></a>
+
+```typescript
+public readonly internalValue: IResolvable | NodeTaintTaint[];
+```
+
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaint">NodeTaintTaint</a>[]
+
+---
+
+
 ### NodeTaintTaintOutputReference <a name="NodeTaintTaintOutputReference" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintOutputReference"></a>
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintOutputReference.Initializer"></a>
@@ -1211,13 +1354,15 @@ public readonly internalValue: NodeTaintMetadata;
 ```typescript
 import { nodeTaint } from '@cdktf/provider-kubernetes'
 
-new nodeTaint.NodeTaintTaintOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
+new nodeTaint.NodeTaintTaintOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintOutputReference.Initializer.parameter.terraformResource">terraformResource</a></code> | <code>cdktf.IInterpolatingParent</code> | The parent resource. |
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintOutputReference.Initializer.parameter.terraformAttribute">terraformAttribute</a></code> | <code>string</code> | The attribute on the parent resource this class is referencing. |
+| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintOutputReference.Initializer.parameter.complexObjectIndex">complexObjectIndex</a></code> | <code>number</code> | the index of this item in the list. |
+| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintOutputReference.Initializer.parameter.complexObjectIsFromSet">complexObjectIsFromSet</a></code> | <code>boolean</code> | whether the list is wrapping a set (will add tolist() to be able to access an item via an index). |
 
 ---
 
@@ -1234,6 +1379,22 @@ The parent resource.
 - *Type:* string
 
 The attribute on the parent resource this class is referencing.
+
+---
+
+##### `complexObjectIndex`<sup>Required</sup> <a name="complexObjectIndex" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintOutputReference.Initializer.parameter.complexObjectIndex"></a>
+
+- *Type:* number
+
+the index of this item in the list.
+
+---
+
+##### `complexObjectIsFromSet`<sup>Required</sup> <a name="complexObjectIsFromSet" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintOutputReference.Initializer.parameter.complexObjectIsFromSet"></a>
+
+- *Type:* boolean
+
+whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
 
 ---
 
@@ -1420,7 +1581,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintOutputReference.property.effect">effect</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintOutputReference.property.key">key</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintOutputReference.property.value">value</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaint">NodeTaintTaint</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaint">NodeTaintTaint</a> \| cdktf.IResolvable</code> | *No description.* |
 
 ---
 
@@ -1511,10 +1672,10 @@ public readonly value: string;
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintOutputReference.property.internalValue"></a>
 
 ```typescript
-public readonly internalValue: NodeTaintTaint;
+public readonly internalValue: NodeTaintTaint | IResolvable;
 ```
 
-- *Type:* <a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaint">NodeTaintTaint</a>
+- *Type:* <a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaint">NodeTaintTaint</a> | cdktf.IResolvable
 
 ---
 

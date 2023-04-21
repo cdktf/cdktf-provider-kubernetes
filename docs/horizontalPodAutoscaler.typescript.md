@@ -1,6 +1,6 @@
 # `kubernetes_horizontal_pod_autoscaler`
 
-Refer to the Terraform Registory for docs: [`kubernetes_horizontal_pod_autoscaler`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler).
+Refer to the Terraform Registory for docs: [`kubernetes_horizontal_pod_autoscaler`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler).
 
 # `horizontalPodAutoscaler` Submodule <a name="`horizontalPodAutoscaler` Submodule" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`kubernetes_horizontal_pod_autoscale
 
 ### HorizontalPodAutoscaler <a name="HorizontalPodAutoscaler" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscaler"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler kubernetes_horizontal_pod_autoscaler}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler kubernetes_horizontal_pod_autoscaler}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscaler.Initializer"></a>
 
@@ -632,7 +632,7 @@ const horizontalPodAutoscalerConfig: horizontalPodAutoscaler.HorizontalPodAutosc
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerConfig.property.provisioners">provisioners</a></code> | <code>cdktf.FileProvisioner \| cdktf.LocalExecProvisioner \| cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerConfig.property.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerMetadata">HorizontalPodAutoscalerMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerConfig.property.spec">spec</a></code> | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpec">HorizontalPodAutoscalerSpec</a></code> | spec block. |
-| <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerConfig.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#id HorizontalPodAutoscaler#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerConfig.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#id HorizontalPodAutoscaler#id}. |
 
 ---
 
@@ -716,7 +716,7 @@ public readonly metadata: HorizontalPodAutoscalerMetadata;
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#metadata HorizontalPodAutoscaler#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#metadata HorizontalPodAutoscaler#metadata}
 
 ---
 
@@ -730,7 +730,7 @@ public readonly spec: HorizontalPodAutoscalerSpec;
 
 spec block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#spec HorizontalPodAutoscaler#spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#spec HorizontalPodAutoscaler#spec}
 
 ---
 
@@ -742,7 +742,7 @@ public readonly id: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#id HorizontalPodAutoscaler#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#id HorizontalPodAutoscaler#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -783,7 +783,7 @@ An unstructured key value map stored with the horizontal pod autoscaler that may
 
 More info: http://kubernetes.io/docs/user-guide/annotations
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#annotations HorizontalPodAutoscaler#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#annotations HorizontalPodAutoscaler#annotations}
 
 ---
 
@@ -799,7 +799,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#generate_name HorizontalPodAutoscaler#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#generate_name HorizontalPodAutoscaler#generate_name}
 
 ---
 
@@ -815,7 +815,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#labels HorizontalPodAutoscaler#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#labels HorizontalPodAutoscaler#labels}
 
 ---
 
@@ -829,7 +829,7 @@ public readonly name: string;
 
 Name of the horizontal pod autoscaler, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
 
 ---
 
@@ -843,7 +843,7 @@ public readonly namespace: string;
 
 Namespace defines the space within which name of the horizontal pod autoscaler must be unique.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#namespace HorizontalPodAutoscaler#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#namespace HorizontalPodAutoscaler#namespace}
 
 ---
 
@@ -880,7 +880,7 @@ public readonly maxReplicas: number;
 
 Upper limit for the number of pods that can be set by the autoscaler.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#max_replicas HorizontalPodAutoscaler#max_replicas}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#max_replicas HorizontalPodAutoscaler#max_replicas}
 
 ---
 
@@ -894,7 +894,7 @@ public readonly scaleTargetRef: HorizontalPodAutoscalerSpecScaleTargetRef;
 
 scale_target_ref block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#scale_target_ref HorizontalPodAutoscaler#scale_target_ref}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#scale_target_ref HorizontalPodAutoscaler#scale_target_ref}
 
 ---
 
@@ -908,7 +908,7 @@ public readonly behavior: HorizontalPodAutoscalerSpecBehavior;
 
 behavior block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#behavior HorizontalPodAutoscaler#behavior}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#behavior HorizontalPodAutoscaler#behavior}
 
 ---
 
@@ -922,7 +922,7 @@ public readonly metric: IResolvable | HorizontalPodAutoscalerSpecMetric[];
 
 metric block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#metric HorizontalPodAutoscaler#metric}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#metric HorizontalPodAutoscaler#metric}
 
 ---
 
@@ -936,7 +936,7 @@ public readonly minReplicas: number;
 
 Lower limit for the number of pods that can be set by the autoscaler, defaults to `1`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#min_replicas HorizontalPodAutoscaler#min_replicas}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#min_replicas HorizontalPodAutoscaler#min_replicas}
 
 ---
 
@@ -952,7 +952,7 @@ Target average CPU utilization (represented as a percentage of requested CPU) ov
 
 If not specified the default autoscaling policy will be used.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#target_cpu_utilization_percentage HorizontalPodAutoscaler#target_cpu_utilization_percentage}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#target_cpu_utilization_percentage HorizontalPodAutoscaler#target_cpu_utilization_percentage}
 
 ---
 
@@ -985,7 +985,7 @@ public readonly scaleDown: IResolvable | HorizontalPodAutoscalerSpecBehaviorScal
 
 scale_down block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#scale_down HorizontalPodAutoscaler#scale_down}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#scale_down HorizontalPodAutoscaler#scale_down}
 
 ---
 
@@ -999,7 +999,7 @@ public readonly scaleUp: IResolvable | HorizontalPodAutoscalerSpecBehaviorScaleU
 
 scale_up block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#scale_up HorizontalPodAutoscaler#scale_up}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#scale_up HorizontalPodAutoscaler#scale_up}
 
 ---
 
@@ -1033,7 +1033,7 @@ public readonly policy: IResolvable | HorizontalPodAutoscalerSpecBehaviorScaleDo
 
 policy block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#policy HorizontalPodAutoscaler#policy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#policy HorizontalPodAutoscaler#policy}
 
 ---
 
@@ -1047,7 +1047,7 @@ public readonly selectPolicy: string;
 
 Used to specify which policy should be used. If not set, the default value Max is used.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#select_policy HorizontalPodAutoscaler#select_policy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#select_policy HorizontalPodAutoscaler#select_policy}
 
 ---
 
@@ -1063,7 +1063,7 @@ Number of seconds for which past recommendations should be considered while scal
 
 This value must be greater than or equal to zero and less than or equal to 3600 (one hour). If not set, use the default values: - For scale up: 0 (i.e. no stabilization is done). - For scale down: 300 (i.e. the stabilization window is 300 seconds long).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#stabilization_window_seconds HorizontalPodAutoscaler#stabilization_window_seconds}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#stabilization_window_seconds HorizontalPodAutoscaler#stabilization_window_seconds}
 
 ---
 
@@ -1099,7 +1099,7 @@ Period specifies the window of time for which the policy should hold true.
 
 PeriodSeconds must be greater than zero and less than or equal to 1800 (30 min).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#period_seconds HorizontalPodAutoscaler#period_seconds}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#period_seconds HorizontalPodAutoscaler#period_seconds}
 
 ---
 
@@ -1113,7 +1113,7 @@ public readonly type: string;
 
 Type is used to specify the scaling policy: Percent or Pods.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
 
 ---
 
@@ -1127,7 +1127,7 @@ public readonly value: number;
 
 Value contains the amount of change which is permitted by the policy. It must be greater than zero.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
 
 ---
 
@@ -1161,7 +1161,7 @@ public readonly policy: IResolvable | HorizontalPodAutoscalerSpecBehaviorScaleUp
 
 policy block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#policy HorizontalPodAutoscaler#policy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#policy HorizontalPodAutoscaler#policy}
 
 ---
 
@@ -1175,7 +1175,7 @@ public readonly selectPolicy: string;
 
 Used to specify which policy should be used. If not set, the default value Max is used.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#select_policy HorizontalPodAutoscaler#select_policy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#select_policy HorizontalPodAutoscaler#select_policy}
 
 ---
 
@@ -1191,7 +1191,7 @@ Number of seconds for which past recommendations should be considered while scal
 
 This value must be greater than or equal to zero and less than or equal to 3600 (one hour). If not set, use the default values: - For scale up: 0 (i.e. no stabilization is done). - For scale down: 300 (i.e. the stabilization window is 300 seconds long).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#stabilization_window_seconds HorizontalPodAutoscaler#stabilization_window_seconds}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#stabilization_window_seconds HorizontalPodAutoscaler#stabilization_window_seconds}
 
 ---
 
@@ -1227,7 +1227,7 @@ Period specifies the window of time for which the policy should hold true.
 
 PeriodSeconds must be greater than zero and less than or equal to 1800 (30 min).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#period_seconds HorizontalPodAutoscaler#period_seconds}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#period_seconds HorizontalPodAutoscaler#period_seconds}
 
 ---
 
@@ -1241,7 +1241,7 @@ public readonly type: string;
 
 Type is used to specify the scaling policy: Percent or Pods.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
 
 ---
 
@@ -1255,7 +1255,7 @@ public readonly value: number;
 
 Value contains the amount of change which is permitted by the policy. It must be greater than zero.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
 
 ---
 
@@ -1294,7 +1294,7 @@ type is the type of metric source.
 
 It should be one of "ContainerResource", "External", "Object", "Pods" or "Resource", each mapping to a matching field in the object. Note: "ContainerResource" type is available on when the feature-gate HPAContainerMetrics is enabled
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
 
 ---
 
@@ -1308,7 +1308,7 @@ public readonly containerResource: HorizontalPodAutoscalerSpecMetricContainerRes
 
 container_resource block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#container_resource HorizontalPodAutoscaler#container_resource}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#container_resource HorizontalPodAutoscaler#container_resource}
 
 ---
 
@@ -1322,7 +1322,7 @@ public readonly external: HorizontalPodAutoscalerSpecMetricExternal;
 
 external block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#external HorizontalPodAutoscaler#external}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#external HorizontalPodAutoscaler#external}
 
 ---
 
@@ -1336,7 +1336,7 @@ public readonly object: HorizontalPodAutoscalerSpecMetricObject;
 
 object block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#object HorizontalPodAutoscaler#object}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#object HorizontalPodAutoscaler#object}
 
 ---
 
@@ -1350,7 +1350,7 @@ public readonly pods: HorizontalPodAutoscalerSpecMetricPods;
 
 pods block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#pods HorizontalPodAutoscaler#pods}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#pods HorizontalPodAutoscaler#pods}
 
 ---
 
@@ -1364,7 +1364,7 @@ public readonly resource: HorizontalPodAutoscalerSpecMetricResource;
 
 resource block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#resource HorizontalPodAutoscaler#resource}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#resource HorizontalPodAutoscaler#resource}
 
 ---
 
@@ -1398,7 +1398,7 @@ public readonly container: string;
 
 name of the container in the pods of the scaling target.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#container HorizontalPodAutoscaler#container}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#container HorizontalPodAutoscaler#container}
 
 ---
 
@@ -1412,7 +1412,7 @@ public readonly name: string;
 
 name of the resource in question.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
 
 ---
 
@@ -1426,7 +1426,7 @@ public readonly target: HorizontalPodAutoscalerSpecMetricContainerResourceTarget
 
 target block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#target HorizontalPodAutoscaler#target}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#target HorizontalPodAutoscaler#target}
 
 ---
 
@@ -1461,7 +1461,7 @@ public readonly type: string;
 
 type represents whether the metric type is Utilization, Value, or AverageValue.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
 
 ---
 
@@ -1477,7 +1477,7 @@ averageUtilization is the target value of the average of the resource metric acr
 
 Currently only valid for Resource metric source type
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#average_utilization HorizontalPodAutoscaler#average_utilization}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#average_utilization HorizontalPodAutoscaler#average_utilization}
 
 ---
 
@@ -1491,7 +1491,7 @@ public readonly averageValue: string;
 
 averageValue is the target value of the average of the metric across all relevant pods (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#average_value HorizontalPodAutoscaler#average_value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#average_value HorizontalPodAutoscaler#average_value}
 
 ---
 
@@ -1505,7 +1505,7 @@ public readonly value: string;
 
 value is the target value of the metric (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
 
 ---
 
@@ -1538,7 +1538,7 @@ public readonly metric: HorizontalPodAutoscalerSpecMetricExternalMetric;
 
 metric block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#metric HorizontalPodAutoscaler#metric}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#metric HorizontalPodAutoscaler#metric}
 
 ---
 
@@ -1552,7 +1552,7 @@ public readonly target: HorizontalPodAutoscalerSpecMetricExternalTarget;
 
 target block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#target HorizontalPodAutoscaler#target}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#target HorizontalPodAutoscaler#target}
 
 ---
 
@@ -1585,7 +1585,7 @@ public readonly name: string;
 
 name is the name of the given metric.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
 
 ---
 
@@ -1599,7 +1599,7 @@ public readonly selector: IResolvable | HorizontalPodAutoscalerSpecMetricExterna
 
 selector block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#selector HorizontalPodAutoscaler#selector}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#selector HorizontalPodAutoscaler#selector}
 
 ---
 
@@ -1632,7 +1632,7 @@ public readonly matchExpressions: IResolvable | HorizontalPodAutoscalerSpecMetri
 
 match_expressions block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#match_expressions HorizontalPodAutoscaler#match_expressions}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#match_expressions HorizontalPodAutoscaler#match_expressions}
 
 ---
 
@@ -1648,7 +1648,7 @@ A map of {key,value} pairs.
 
 A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#match_labels HorizontalPodAutoscaler#match_labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#match_labels HorizontalPodAutoscaler#match_labels}
 
 ---
 
@@ -1682,7 +1682,7 @@ public readonly key: string;
 
 The label key that the selector applies to.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#key HorizontalPodAutoscaler#key}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#key HorizontalPodAutoscaler#key}
 
 ---
 
@@ -1696,7 +1696,7 @@ public readonly operator: string;
 
 A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#operator HorizontalPodAutoscaler#operator}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#operator HorizontalPodAutoscaler#operator}
 
 ---
 
@@ -1712,7 +1712,7 @@ An array of string values.
 
 If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#values HorizontalPodAutoscaler#values}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#values HorizontalPodAutoscaler#values}
 
 ---
 
@@ -1747,7 +1747,7 @@ public readonly type: string;
 
 type represents whether the metric type is Utilization, Value, or AverageValue.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
 
 ---
 
@@ -1763,7 +1763,7 @@ averageUtilization is the target value of the average of the resource metric acr
 
 Currently only valid for Resource metric source type
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#average_utilization HorizontalPodAutoscaler#average_utilization}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#average_utilization HorizontalPodAutoscaler#average_utilization}
 
 ---
 
@@ -1777,7 +1777,7 @@ public readonly averageValue: string;
 
 averageValue is the target value of the average of the metric across all relevant pods (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#average_value HorizontalPodAutoscaler#average_value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#average_value HorizontalPodAutoscaler#average_value}
 
 ---
 
@@ -1791,7 +1791,7 @@ public readonly value: string;
 
 value is the target value of the metric (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
 
 ---
 
@@ -1825,7 +1825,7 @@ public readonly describedObject: HorizontalPodAutoscalerSpecMetricObjectDescribe
 
 described_object block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#described_object HorizontalPodAutoscaler#described_object}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#described_object HorizontalPodAutoscaler#described_object}
 
 ---
 
@@ -1839,7 +1839,7 @@ public readonly metric: HorizontalPodAutoscalerSpecMetricObjectMetric;
 
 metric block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#metric HorizontalPodAutoscaler#metric}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#metric HorizontalPodAutoscaler#metric}
 
 ---
 
@@ -1853,7 +1853,7 @@ public readonly target: HorizontalPodAutoscalerSpecMetricObjectTarget;
 
 target block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#target HorizontalPodAutoscaler#target}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#target HorizontalPodAutoscaler#target}
 
 ---
 
@@ -1887,7 +1887,7 @@ public readonly apiVersion: string;
 
 API version of the referent.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#api_version HorizontalPodAutoscaler#api_version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#api_version HorizontalPodAutoscaler#api_version}
 
 ---
 
@@ -1901,7 +1901,7 @@ public readonly kind: string;
 
 Kind of the referent; More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#kind HorizontalPodAutoscaler#kind}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#kind HorizontalPodAutoscaler#kind}
 
 ---
 
@@ -1915,7 +1915,7 @@ public readonly name: string;
 
 Name of the referent; More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
 
 ---
 
@@ -1948,7 +1948,7 @@ public readonly name: string;
 
 name is the name of the given metric.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
 
 ---
 
@@ -1962,7 +1962,7 @@ public readonly selector: IResolvable | HorizontalPodAutoscalerSpecMetricObjectM
 
 selector block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#selector HorizontalPodAutoscaler#selector}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#selector HorizontalPodAutoscaler#selector}
 
 ---
 
@@ -1995,7 +1995,7 @@ public readonly matchExpressions: IResolvable | HorizontalPodAutoscalerSpecMetri
 
 match_expressions block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#match_expressions HorizontalPodAutoscaler#match_expressions}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#match_expressions HorizontalPodAutoscaler#match_expressions}
 
 ---
 
@@ -2011,7 +2011,7 @@ A map of {key,value} pairs.
 
 A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#match_labels HorizontalPodAutoscaler#match_labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#match_labels HorizontalPodAutoscaler#match_labels}
 
 ---
 
@@ -2045,7 +2045,7 @@ public readonly key: string;
 
 The label key that the selector applies to.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#key HorizontalPodAutoscaler#key}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#key HorizontalPodAutoscaler#key}
 
 ---
 
@@ -2059,7 +2059,7 @@ public readonly operator: string;
 
 A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#operator HorizontalPodAutoscaler#operator}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#operator HorizontalPodAutoscaler#operator}
 
 ---
 
@@ -2075,7 +2075,7 @@ An array of string values.
 
 If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#values HorizontalPodAutoscaler#values}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#values HorizontalPodAutoscaler#values}
 
 ---
 
@@ -2110,7 +2110,7 @@ public readonly type: string;
 
 type represents whether the metric type is Utilization, Value, or AverageValue.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
 
 ---
 
@@ -2126,7 +2126,7 @@ averageUtilization is the target value of the average of the resource metric acr
 
 Currently only valid for Resource metric source type
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#average_utilization HorizontalPodAutoscaler#average_utilization}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#average_utilization HorizontalPodAutoscaler#average_utilization}
 
 ---
 
@@ -2140,7 +2140,7 @@ public readonly averageValue: string;
 
 averageValue is the target value of the average of the metric across all relevant pods (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#average_value HorizontalPodAutoscaler#average_value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#average_value HorizontalPodAutoscaler#average_value}
 
 ---
 
@@ -2154,7 +2154,7 @@ public readonly value: string;
 
 value is the target value of the metric (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
 
 ---
 
@@ -2187,7 +2187,7 @@ public readonly metric: HorizontalPodAutoscalerSpecMetricPodsMetric;
 
 metric block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#metric HorizontalPodAutoscaler#metric}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#metric HorizontalPodAutoscaler#metric}
 
 ---
 
@@ -2201,7 +2201,7 @@ public readonly target: HorizontalPodAutoscalerSpecMetricPodsTarget;
 
 target block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#target HorizontalPodAutoscaler#target}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#target HorizontalPodAutoscaler#target}
 
 ---
 
@@ -2234,7 +2234,7 @@ public readonly name: string;
 
 name is the name of the given metric.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
 
 ---
 
@@ -2248,7 +2248,7 @@ public readonly selector: IResolvable | HorizontalPodAutoscalerSpecMetricPodsMet
 
 selector block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#selector HorizontalPodAutoscaler#selector}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#selector HorizontalPodAutoscaler#selector}
 
 ---
 
@@ -2281,7 +2281,7 @@ public readonly matchExpressions: IResolvable | HorizontalPodAutoscalerSpecMetri
 
 match_expressions block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#match_expressions HorizontalPodAutoscaler#match_expressions}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#match_expressions HorizontalPodAutoscaler#match_expressions}
 
 ---
 
@@ -2297,7 +2297,7 @@ A map of {key,value} pairs.
 
 A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#match_labels HorizontalPodAutoscaler#match_labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#match_labels HorizontalPodAutoscaler#match_labels}
 
 ---
 
@@ -2331,7 +2331,7 @@ public readonly key: string;
 
 The label key that the selector applies to.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#key HorizontalPodAutoscaler#key}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#key HorizontalPodAutoscaler#key}
 
 ---
 
@@ -2345,7 +2345,7 @@ public readonly operator: string;
 
 A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#operator HorizontalPodAutoscaler#operator}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#operator HorizontalPodAutoscaler#operator}
 
 ---
 
@@ -2361,7 +2361,7 @@ An array of string values.
 
 If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#values HorizontalPodAutoscaler#values}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#values HorizontalPodAutoscaler#values}
 
 ---
 
@@ -2396,7 +2396,7 @@ public readonly type: string;
 
 type represents whether the metric type is Utilization, Value, or AverageValue.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
 
 ---
 
@@ -2412,7 +2412,7 @@ averageUtilization is the target value of the average of the resource metric acr
 
 Currently only valid for Resource metric source type
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#average_utilization HorizontalPodAutoscaler#average_utilization}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#average_utilization HorizontalPodAutoscaler#average_utilization}
 
 ---
 
@@ -2426,7 +2426,7 @@ public readonly averageValue: string;
 
 averageValue is the target value of the average of the metric across all relevant pods (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#average_value HorizontalPodAutoscaler#average_value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#average_value HorizontalPodAutoscaler#average_value}
 
 ---
 
@@ -2440,7 +2440,7 @@ public readonly value: string;
 
 value is the target value of the metric (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
 
 ---
 
@@ -2473,7 +2473,7 @@ public readonly name: string;
 
 name is the name of the resource in question.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
 
 ---
 
@@ -2487,7 +2487,7 @@ public readonly target: HorizontalPodAutoscalerSpecMetricResourceTarget;
 
 target block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#target HorizontalPodAutoscaler#target}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#target HorizontalPodAutoscaler#target}
 
 ---
 
@@ -2522,7 +2522,7 @@ public readonly type: string;
 
 type represents whether the metric type is Utilization, Value, or AverageValue.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#type HorizontalPodAutoscaler#type}
 
 ---
 
@@ -2538,7 +2538,7 @@ averageUtilization is the target value of the average of the resource metric acr
 
 Currently only valid for Resource metric source type
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#average_utilization HorizontalPodAutoscaler#average_utilization}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#average_utilization HorizontalPodAutoscaler#average_utilization}
 
 ---
 
@@ -2552,7 +2552,7 @@ public readonly averageValue: string;
 
 averageValue is the target value of the average of the metric across all relevant pods (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#average_value HorizontalPodAutoscaler#average_value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#average_value HorizontalPodAutoscaler#average_value}
 
 ---
 
@@ -2566,7 +2566,7 @@ public readonly value: string;
 
 value is the target value of the metric (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#value HorizontalPodAutoscaler#value}
 
 ---
 
@@ -2600,7 +2600,7 @@ public readonly kind: string;
 
 Kind of the referent. e.g. `ReplicationController`. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#kind HorizontalPodAutoscaler#kind}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#kind HorizontalPodAutoscaler#kind}
 
 ---
 
@@ -2614,7 +2614,7 @@ public readonly name: string;
 
 Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#name HorizontalPodAutoscaler#name}
 
 ---
 
@@ -2628,7 +2628,7 @@ public readonly apiVersion: string;
 
 API version of the referent.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/horizontal_pod_autoscaler#api_version HorizontalPodAutoscaler#api_version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/horizontal_pod_autoscaler#api_version HorizontalPodAutoscaler#api_version}
 
 ---
 
