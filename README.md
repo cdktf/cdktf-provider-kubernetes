@@ -61,7 +61,8 @@ This project is explicitly not tracking the Terraform kubernetes Provider versio
 These are the upstream dependencies:
 
 - [Terraform CDK](https://cdk.tf)
-- [Terraform kubernetes Provider](https://github.com/terraform-providers/terraform-provider-kubernetes)
+- [Terraform kubernetes Provider](https://registry.terraform.io/providers/hashicorp/kubernetes/2.0.0)
+    - This links to the minimum version being tracked, you can find the latest released version [in our releases](https://github.com/cdktf/cdktf-provider-kubernetes/releases)
 - [Terraform Engine](https://terraform.io)
 
 If there are breaking changes (backward incompatible) in any of the above, the major version of this project will be bumped.
