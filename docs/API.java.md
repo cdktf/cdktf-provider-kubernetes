@@ -92,6 +92,7 @@ The following submodules are available:
 - [roleBinding](./roleBinding.java.md)
 - [roleBindingV1](./roleBindingV1.java.md)
 - [roleV1](./roleV1.java.md)
+- [runtimeClassV1](./runtimeClassV1.java.md)
 - [secret](./secret.java.md)
 - [secretV1](./secretV1.java.md)
 - [service](./service.java.md)

@@ -92,6 +92,7 @@ The following submodules are available:
 - [roleBinding](./roleBinding.typescript.md)
 - [roleBindingV1](./roleBindingV1.typescript.md)
 - [roleV1](./roleV1.typescript.md)
+- [runtimeClassV1](./runtimeClassV1.typescript.md)
 - [secret](./secret.typescript.md)
 - [secretV1](./secretV1.typescript.md)
 - [service](./service.typescript.md)

@@ -92,6 +92,7 @@ The following submodules are available:
 - [roleBinding](./roleBinding.csharp.md)
 - [roleBindingV1](./roleBindingV1.csharp.md)
 - [roleV1](./roleV1.csharp.md)
+- [runtimeClassV1](./runtimeClassV1.csharp.md)
 - [secret](./secret.csharp.md)
 - [secretV1](./secretV1.csharp.md)
 - [service](./service.csharp.md)

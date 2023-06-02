@@ -92,6 +92,7 @@ The following submodules are available:
 - [roleBinding](./roleBinding.python.md)
 - [roleBindingV1](./roleBindingV1.python.md)
 - [roleV1](./roleV1.python.md)
+- [runtimeClassV1](./runtimeClassV1.python.md)
 - [secret](./secret.python.md)
 - [secretV1](./secretV1.python.md)
 - [service](./service.python.md)

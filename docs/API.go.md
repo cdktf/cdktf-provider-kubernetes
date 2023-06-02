@@ -92,6 +92,7 @@ The following submodules are available:
 - [roleBinding](./roleBinding.go.md)
 - [roleBindingV1](./roleBindingV1.go.md)
 - [roleV1](./roleV1.go.md)
+- [runtimeClassV1](./runtimeClassV1.go.md)
 - [secret](./secret.go.md)
 - [secretV1](./secretV1.go.md)
 - [service](./service.go.md)
