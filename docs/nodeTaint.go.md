@@ -1,6 +1,6 @@
 # `kubernetes_node_taint`
 
-Refer to the Terraform Registory for docs: [`kubernetes_node_taint`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint).
+Refer to the Terraform Registory for docs: [`kubernetes_node_taint`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/node_taint).
 
 # `nodeTaint` Submodule <a name="`nodeTaint` Submodule" id="@cdktf/provider-kubernetes.nodeTaint"></a>
 
@@ -8,12 +8,12 @@ Refer to the Terraform Registory for docs: [`kubernetes_node_taint`](https://reg
 
 ### NodeTaint <a name="NodeTaint" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaint"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint kubernetes_node_taint}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/node_taint kubernetes_node_taint}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaint.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
 
 nodetaint.NewNodeTaint(scope Construct, id *string, config NodeTaintConfig) NodeTaint
 ```
@@ -317,7 +317,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaint.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
 
 nodetaint.NodeTaint_IsConstruct(x interface{}) *bool
 ```
@@ -349,7 +349,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaint.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
 
 nodetaint.NodeTaint_IsTerraformElement(x interface{}) *bool
 ```
@@ -363,7 +363,7 @@ nodetaint.NodeTaint_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaint.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
 
 nodetaint.NodeTaint_IsTerraformResource(x interface{}) *bool
 ```
@@ -672,7 +672,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
 
 &nodetaint.NodeTaintConfig {
 	Connection: interface{},
@@ -682,7 +682,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.nodeTaint.NodeTaintMetadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.nodeTaint.NodeTaintMetadata,
 	Taint: interface{},
 	FieldManager: *string,
 	Force: interface{},
@@ -705,7 +705,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintConfig.property.taint">Taint</a></code> | <code>interface{}</code> | taint block. |
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintConfig.property.fieldManager">FieldManager</a></code> | <code>*string</code> | Set the name of the field manager for the node taint. |
 | <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintConfig.property.force">Force</a></code> | <code>interface{}</code> | Force overwriting annotations that were created or edited outside of Terraform. |
-| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#id NodeTaint#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.nodeTaint.NodeTaintConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/node_taint#id NodeTaint#id}. |
 
 ---
 
@@ -789,7 +789,7 @@ Metadata NodeTaintMetadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#metadata NodeTaint#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/node_taint#metadata NodeTaint#metadata}
 
 ---
 
@@ -803,7 +803,7 @@ Taint interface{}
 
 taint block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#taint NodeTaint#taint}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/node_taint#taint NodeTaint#taint}
 
 ---
 
@@ -817,7 +817,7 @@ FieldManager *string
 
 Set the name of the field manager for the node taint.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#field_manager NodeTaint#field_manager}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/node_taint#field_manager NodeTaint#field_manager}
 
 ---
 
@@ -831,7 +831,7 @@ Force interface{}
 
 Force overwriting annotations that were created or edited outside of Terraform.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#force NodeTaint#force}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/node_taint#force NodeTaint#force}
 
 ---
 
@@ -843,7 +843,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#id NodeTaint#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/node_taint#id NodeTaint#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -855,7 +855,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
 
 &nodetaint.NodeTaintMetadata {
 	Name: *string,
@@ -880,7 +880,7 @@ Name *string
 
 The name of the node.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#name NodeTaint#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/node_taint#name NodeTaint#name}
 
 ---
 
@@ -889,7 +889,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaint.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
 
 &nodetaint.NodeTaintTaint {
 	Effect: *string,
@@ -918,7 +918,7 @@ Effect *string
 
 The taint effect.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#effect NodeTaint#effect}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/node_taint#effect NodeTaint#effect}
 
 ---
 
@@ -932,7 +932,7 @@ Key *string
 
 The taint key.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#key NodeTaint#key}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/node_taint#key NodeTaint#key}
 
 ---
 
@@ -946,7 +946,7 @@ Value *string
 
 The taint value.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/node_taint#value NodeTaint#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/node_taint#value NodeTaint#value}
 
 ---
 
@@ -957,7 +957,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
 
 nodetaint.NewNodeTaintMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) NodeTaintMetadataOutputReference
 ```
@@ -1228,7 +1228,7 @@ func InternalValue() NodeTaintMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
 
 nodetaint.NewNodeTaintTaintList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) NodeTaintTaintList
 ```
@@ -1371,7 +1371,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.nodeTaint.NodeTaintTaintOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/nodetaint"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/nodetaint"
 
 nodetaint.NewNodeTaintTaintOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) NodeTaintTaintOutputReference
 ```

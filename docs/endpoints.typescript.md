@@ -1,6 +1,6 @@
 # `kubernetes_endpoints`
 
-Refer to the Terraform Registory for docs: [`kubernetes_endpoints`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints).
+Refer to the Terraform Registory for docs: [`kubernetes_endpoints`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints).
 
 # `endpoints` Submodule <a name="`endpoints` Submodule" id="@cdktf/provider-kubernetes.endpoints"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`kubernetes_endpoints`](https://regi
 
 ### Endpoints <a name="Endpoints" id="@cdktf/provider-kubernetes.endpoints.Endpoints"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints kubernetes_endpoints}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints kubernetes_endpoints}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpoints.Endpoints.Initializer"></a>
 
@@ -638,7 +638,7 @@ const endpointsConfig: endpoints.EndpointsConfig = { ... }
 | <code><a href="#@cdktf/provider-kubernetes.endpoints.EndpointsConfig.property.provider">provider</a></code> | <code>cdktf.TerraformProvider</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpoints.EndpointsConfig.property.provisioners">provisioners</a></code> | <code>cdktf.FileProvisioner \| cdktf.LocalExecProvisioner \| cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpoints.EndpointsConfig.property.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.endpoints.EndpointsMetadata">EndpointsMetadata</a></code> | metadata block. |
-| <code><a href="#@cdktf/provider-kubernetes.endpoints.EndpointsConfig.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#id Endpoints#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.endpoints.EndpointsConfig.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#id Endpoints#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.endpoints.EndpointsConfig.property.subset">subset</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-kubernetes.endpoints.EndpointsSubset">EndpointsSubset</a>[]</code> | subset block. |
 
 ---
@@ -723,7 +723,7 @@ public readonly metadata: EndpointsMetadata;
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#metadata Endpoints#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#metadata Endpoints#metadata}
 
 ---
 
@@ -735,7 +735,7 @@ public readonly id: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#id Endpoints#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#id Endpoints#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -752,7 +752,7 @@ public readonly subset: IResolvable | EndpointsSubset[];
 
 subset block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#subset Endpoints#subset}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#subset Endpoints#subset}
 
 ---
 
@@ -790,7 +790,7 @@ An unstructured key value map stored with the endpoints that may be used to stor
 
 More info: http://kubernetes.io/docs/user-guide/annotations
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#annotations Endpoints#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#annotations Endpoints#annotations}
 
 ---
 
@@ -806,7 +806,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#generate_name Endpoints#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#generate_name Endpoints#generate_name}
 
 ---
 
@@ -822,7 +822,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#labels Endpoints#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#labels Endpoints#labels}
 
 ---
 
@@ -836,7 +836,7 @@ public readonly name: string;
 
 Name of the endpoints, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#name Endpoints#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#name Endpoints#name}
 
 ---
 
@@ -850,7 +850,7 @@ public readonly namespace: string;
 
 Namespace defines the space within which name of the endpoints must be unique.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#namespace Endpoints#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#namespace Endpoints#namespace}
 
 ---
 
@@ -884,7 +884,7 @@ public readonly address: IResolvable | EndpointsSubsetAddress[];
 
 address block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#address Endpoints#address}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#address Endpoints#address}
 
 ---
 
@@ -898,7 +898,7 @@ public readonly notReadyAddress: IResolvable | EndpointsSubsetNotReadyAddress[];
 
 not_ready_address block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#not_ready_address Endpoints#not_ready_address}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#not_ready_address Endpoints#not_ready_address}
 
 ---
 
@@ -912,7 +912,7 @@ public readonly port: IResolvable | EndpointsSubsetPort[];
 
 port block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#port Endpoints#port}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#port Endpoints#port}
 
 ---
 
@@ -946,7 +946,7 @@ public readonly ip: string;
 
 The IP of this endpoint. May not be loopback (127.0.0.0/8), link-local (169.254.0.0/16), or link-local multicast ((224.0.0.0/24).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#ip Endpoints#ip}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#ip Endpoints#ip}
 
 ---
 
@@ -960,7 +960,7 @@ public readonly hostname: string;
 
 The Hostname of this endpoint.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#hostname Endpoints#hostname}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#hostname Endpoints#hostname}
 
 ---
 
@@ -974,7 +974,7 @@ public readonly nodeName: string;
 
 Node hosting this endpoint. This can be used to determine endpoints local to a node.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#node_name Endpoints#node_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#node_name Endpoints#node_name}
 
 ---
 
@@ -1008,7 +1008,7 @@ public readonly ip: string;
 
 The IP of this endpoint. May not be loopback (127.0.0.0/8), link-local (169.254.0.0/16), or link-local multicast ((224.0.0.0/24).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#ip Endpoints#ip}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#ip Endpoints#ip}
 
 ---
 
@@ -1022,7 +1022,7 @@ public readonly hostname: string;
 
 The Hostname of this endpoint.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#hostname Endpoints#hostname}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#hostname Endpoints#hostname}
 
 ---
 
@@ -1036,7 +1036,7 @@ public readonly nodeName: string;
 
 Node hosting this endpoint. This can be used to determine endpoints local to a node.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#node_name Endpoints#node_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#node_name Endpoints#node_name}
 
 ---
 
@@ -1070,7 +1070,7 @@ public readonly port: number;
 
 The port that will be exposed by this endpoint.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#port Endpoints#port}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#port Endpoints#port}
 
 ---
 
@@ -1086,7 +1086,7 @@ The name of this port within the endpoint.
 
 Must be a DNS_LABEL. Optional if only one Port is defined on this endpoint.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#name Endpoints#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#name Endpoints#name}
 
 ---
 
@@ -1100,7 +1100,7 @@ public readonly protocol: string;
 
 The IP protocol for this port. Supports `TCP` and `UDP`. Default is `TCP`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.20.0/docs/resources/endpoints#protocol Endpoints#protocol}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/endpoints#protocol Endpoints#protocol}
 
 ---
 
