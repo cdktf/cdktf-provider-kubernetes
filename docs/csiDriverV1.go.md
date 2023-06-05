@@ -1,6 +1,6 @@
 # `kubernetes_csi_driver_v1`
 
-Refer to the Terraform Registory for docs: [`kubernetes_csi_driver_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/csi_driver_v1).
+Refer to the Terraform Registory for docs: [`kubernetes_csi_driver_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/csi_driver_v1).
 
 # `csiDriverV1` Submodule <a name="`csiDriverV1` Submodule" id="@cdktf/provider-kubernetes.csiDriverV1"></a>
 
@@ -8,12 +8,12 @@ Refer to the Terraform Registory for docs: [`kubernetes_csi_driver_v1`](https://
 
 ### CsiDriverV1 <a name="CsiDriverV1" id="@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/csi_driver_v1 kubernetes_csi_driver_v1}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/csi_driver_v1 kubernetes_csi_driver_v1}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/csidriverv1"
 
 csidriverv1.NewCsiDriverV1(scope Construct, id *string, config CsiDriverV1Config) CsiDriverV1
 ```
@@ -310,7 +310,7 @@ func ResetSpec()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/csidriverv1"
 
 csidriverv1.CsiDriverV1_IsConstruct(x interface{}) *bool
 ```
@@ -342,7 +342,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/csidriverv1"
 
 csidriverv1.CsiDriverV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -356,7 +356,7 @@ csidriverv1.CsiDriverV1_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/csidriverv1"
 
 csidriverv1.CsiDriverV1_IsTerraformResource(x interface{}) *bool
 ```
@@ -621,7 +621,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/csidriverv1"
 
 &csidriverv1.CsiDriverV1Config {
 	Connection: interface{},
@@ -631,9 +631,9 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.csiDriverV1.CsiDriverV1Metadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.csiDriverV1.CsiDriverV1Metadata,
 	Id: *string,
-	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.csiDriverV1.CsiDriverV1Spec,
+	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.csiDriverV1.CsiDriverV1Spec,
 }
 ```
 
@@ -649,7 +649,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
 | <code><a href="#@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1Config.property.provider">Provider</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1Config.property.provisioners">Provisioners</a></code> | <code>*[]interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1Config.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1Metadata">CsiDriverV1Metadata</a></code> | metadata block. |
-| <code><a href="#@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1Config.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/csi_driver_v1#id CsiDriverV1#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1Config.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/csi_driver_v1#id CsiDriverV1#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1Config.property.spec">Spec</a></code> | <code><a href="#@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1Spec">CsiDriverV1Spec</a></code> | spec block. |
 
 ---
@@ -734,7 +734,7 @@ Metadata CsiDriverV1Metadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/csi_driver_v1#metadata CsiDriverV1#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/csi_driver_v1#metadata CsiDriverV1#metadata}
 
 ---
 
@@ -746,7 +746,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/csi_driver_v1#id CsiDriverV1#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/csi_driver_v1#id CsiDriverV1#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -763,7 +763,7 @@ Spec CsiDriverV1Spec
 
 spec block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/csi_driver_v1#spec CsiDriverV1#spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/csi_driver_v1#spec CsiDriverV1#spec}
 
 ---
 
@@ -772,7 +772,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/csidriverv1"
 
 &csidriverv1.CsiDriverV1Metadata {
 	Annotations: *map[string]*string,
@@ -805,7 +805,7 @@ An unstructured key value map stored with the csi driver that may be used to sto
 
 More info: http://kubernetes.io/docs/user-guide/annotations
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/csi_driver_v1#annotations CsiDriverV1#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/csi_driver_v1#annotations CsiDriverV1#annotations}
 
 ---
 
@@ -821,7 +821,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/csi_driver_v1#generate_name CsiDriverV1#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/csi_driver_v1#generate_name CsiDriverV1#generate_name}
 
 ---
 
@@ -837,7 +837,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/csi_driver_v1#labels CsiDriverV1#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/csi_driver_v1#labels CsiDriverV1#labels}
 
 ---
 
@@ -851,7 +851,7 @@ Name *string
 
 Name of the csi driver, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/csi_driver_v1#name CsiDriverV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/csi_driver_v1#name CsiDriverV1#name}
 
 ---
 
@@ -860,7 +860,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1Spec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/csidriverv1"
 
 &csidriverv1.CsiDriverV1Spec {
 	AttachRequired: interface{},
@@ -889,7 +889,7 @@ AttachRequired interface{}
 
 Indicates if the CSI volume driver requires an attach operation.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/csi_driver_v1#attach_required CsiDriverV1#attach_required}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/csi_driver_v1#attach_required CsiDriverV1#attach_required}
 
 ---
 
@@ -903,7 +903,7 @@ PodInfoOnMount interface{}
 
 Indicates that the CSI volume driver requires additional pod information (like podName, podUID, etc.) during mount operations.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/csi_driver_v1#pod_info_on_mount CsiDriverV1#pod_info_on_mount}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/csi_driver_v1#pod_info_on_mount CsiDriverV1#pod_info_on_mount}
 
 ---
 
@@ -917,7 +917,7 @@ VolumeLifecycleModes *[]*string
 
 Defines what kind of volumes this CSI volume driver supports.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/csi_driver_v1#volume_lifecycle_modes CsiDriverV1#volume_lifecycle_modes}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/csi_driver_v1#volume_lifecycle_modes CsiDriverV1#volume_lifecycle_modes}
 
 ---
 
@@ -928,7 +928,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/csidriverv1"
 
 csidriverv1.NewCsiDriverV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) CsiDriverV1MetadataOutputReference
 ```
@@ -1326,7 +1326,7 @@ func InternalValue() CsiDriverV1Metadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.csiDriverV1.CsiDriverV1SpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/csidriverv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/csidriverv1"
 
 csidriverv1.NewCsiDriverV1SpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) CsiDriverV1SpecOutputReference
 ```

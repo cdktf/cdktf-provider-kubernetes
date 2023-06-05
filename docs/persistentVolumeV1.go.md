@@ -1,6 +1,6 @@
 # `kubernetes_persistent_volume_v1`
 
-Refer to the Terraform Registory for docs: [`kubernetes_persistent_volume_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1).
+Refer to the Terraform Registory for docs: [`kubernetes_persistent_volume_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1).
 
 # `persistentVolumeV1` Submodule <a name="`persistentVolumeV1` Submodule" id="@cdktf/provider-kubernetes.persistentVolumeV1"></a>
 
@@ -8,12 +8,12 @@ Refer to the Terraform Registory for docs: [`kubernetes_persistent_volume_v1`](h
 
 ### PersistentVolumeV1 <a name="PersistentVolumeV1" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1 kubernetes_persistent_volume_v1}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1 kubernetes_persistent_volume_v1}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1(scope Construct, id *string, config PersistentVolumeV1Config) PersistentVolumeV1
 ```
@@ -323,7 +323,7 @@ func ResetTimeouts()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.PersistentVolumeV1_IsConstruct(x interface{}) *bool
 ```
@@ -355,7 +355,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.PersistentVolumeV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -369,7 +369,7 @@ persistentvolumev1.PersistentVolumeV1_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.PersistentVolumeV1_IsTerraformResource(x interface{}) *bool
 ```
@@ -656,7 +656,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1Config {
 	Connection: interface{},
@@ -666,10 +666,10 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvo
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1Metadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1Metadata,
 	Spec: interface{},
 	Id: *string,
-	Timeouts: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1Timeouts,
+	Timeouts: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1Timeouts,
 }
 ```
 
@@ -686,7 +686,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvo
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1Config.property.provisioners">Provisioners</a></code> | <code>*[]interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1Config.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1Metadata">PersistentVolumeV1Metadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1Config.property.spec">Spec</a></code> | <code>interface{}</code> | spec block. |
-| <code><a href="#@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1Config.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#id PersistentVolumeV1#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1Config.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#id PersistentVolumeV1#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1Config.property.timeouts">Timeouts</a></code> | <code><a href="#@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1Timeouts">PersistentVolumeV1Timeouts</a></code> | timeouts block. |
 
 ---
@@ -771,7 +771,7 @@ Metadata PersistentVolumeV1Metadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#metadata PersistentVolumeV1#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#metadata PersistentVolumeV1#metadata}
 
 ---
 
@@ -785,7 +785,7 @@ Spec interface{}
 
 spec block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#spec PersistentVolumeV1#spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#spec PersistentVolumeV1#spec}
 
 ---
 
@@ -797,7 +797,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#id PersistentVolumeV1#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#id PersistentVolumeV1#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -814,7 +814,7 @@ Timeouts PersistentVolumeV1Timeouts
 
 timeouts block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#timeouts PersistentVolumeV1#timeouts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#timeouts PersistentVolumeV1#timeouts}
 
 ---
 
@@ -823,7 +823,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1Metadata {
 	Annotations: *map[string]*string,
@@ -854,7 +854,7 @@ An unstructured key value map stored with the persistent volume that may be used
 
 More info: http://kubernetes.io/docs/user-guide/annotations
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#annotations PersistentVolumeV1#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#annotations PersistentVolumeV1#annotations}
 
 ---
 
@@ -870,7 +870,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#labels PersistentVolumeV1#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#labels PersistentVolumeV1#labels}
 
 ---
 
@@ -884,7 +884,7 @@ Name *string
 
 Name of the persistent volume, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#name PersistentVolumeV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#name PersistentVolumeV1#name}
 
 ---
 
@@ -893,15 +893,15 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1Spec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1Spec {
 	AccessModes: *[]*string,
 	Capacity: *map[string]*string,
-	PersistentVolumeSource: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSource,
-	ClaimRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecClaimRef,
+	PersistentVolumeSource: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSource,
+	ClaimRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecClaimRef,
 	MountOptions: *[]*string,
-	NodeAffinity: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecNodeAffinity,
+	NodeAffinity: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecNodeAffinity,
 	PersistentVolumeReclaimPolicy: *string,
 	StorageClassName: *string,
 	VolumeMode: *string,
@@ -934,7 +934,7 @@ AccessModes *[]*string
 
 Contains all ways the volume can be mounted. More info: http://kubernetes.io/docs/user-guide/persistent-volumes#access-modes.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#access_modes PersistentVolumeV1#access_modes}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#access_modes PersistentVolumeV1#access_modes}
 
 ---
 
@@ -948,7 +948,7 @@ Capacity *map[string]*string
 
 A description of the persistent volume's resources and capacity. More info: http://kubernetes.io/docs/user-guide/persistent-volumes#capacity.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#capacity PersistentVolumeV1#capacity}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#capacity PersistentVolumeV1#capacity}
 
 ---
 
@@ -962,7 +962,7 @@ PersistentVolumeSource PersistentVolumeV1SpecPersistentVolumeSource
 
 persistent_volume_source block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#persistent_volume_source PersistentVolumeV1#persistent_volume_source}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#persistent_volume_source PersistentVolumeV1#persistent_volume_source}
 
 ---
 
@@ -976,7 +976,7 @@ ClaimRef PersistentVolumeV1SpecClaimRef
 
 claim_ref block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#claim_ref PersistentVolumeV1#claim_ref}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#claim_ref PersistentVolumeV1#claim_ref}
 
 ---
 
@@ -990,7 +990,7 @@ MountOptions *[]*string
 
 A list of mount options, e.g. ["ro", "soft"]. Not validated - mount will simply fail if one is invalid.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#mount_options PersistentVolumeV1#mount_options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#mount_options PersistentVolumeV1#mount_options}
 
 ---
 
@@ -1004,7 +1004,7 @@ NodeAffinity PersistentVolumeV1SpecNodeAffinity
 
 node_affinity block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#node_affinity PersistentVolumeV1#node_affinity}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#node_affinity PersistentVolumeV1#node_affinity}
 
 ---
 
@@ -1020,7 +1020,7 @@ What happens to a persistent volume when released from its claim.
 
 Valid options are Retain (default) and Recycle. Recycling must be supported by the volume plugin underlying this persistent volume. More info: http://kubernetes.io/docs/user-guide/persistent-volumes#recycling-policy
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#persistent_volume_reclaim_policy PersistentVolumeV1#persistent_volume_reclaim_policy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#persistent_volume_reclaim_policy PersistentVolumeV1#persistent_volume_reclaim_policy}
 
 ---
 
@@ -1034,7 +1034,7 @@ StorageClassName *string
 
 A description of the persistent volume's class. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#storage_class_name PersistentVolumeV1#storage_class_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#storage_class_name PersistentVolumeV1#storage_class_name}
 
 ---
 
@@ -1050,7 +1050,7 @@ Defines if a volume is intended to be used with a formatted filesystem.
 
 or to remain in raw block state.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#volume_mode PersistentVolumeV1#volume_mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#volume_mode PersistentVolumeV1#volume_mode}
 
 ---
 
@@ -1059,7 +1059,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecClaimRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecClaimRef {
 	Name: *string,
@@ -1086,7 +1086,7 @@ Name *string
 
 The name of the PersistentVolumeClaim.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#name PersistentVolumeV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#name PersistentVolumeV1#name}
 
 ---
 
@@ -1100,7 +1100,7 @@ Namespace *string
 
 The namespace of the PersistentVolumeClaim. Uses 'default' namespace if none is specified.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#namespace PersistentVolumeV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#namespace PersistentVolumeV1#namespace}
 
 ---
 
@@ -1109,10 +1109,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecNodeAffinity.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecNodeAffinity {
-	Required: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecNodeAffinityRequired,
+	Required: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecNodeAffinityRequired,
 }
 ```
 
@@ -1134,7 +1134,7 @@ Required PersistentVolumeV1SpecNodeAffinityRequired
 
 required block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#required PersistentVolumeV1#required}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#required PersistentVolumeV1#required}
 
 ---
 
@@ -1143,7 +1143,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecNodeAffinityRequired.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecNodeAffinityRequired {
 	NodeSelectorTerm: interface{},
@@ -1168,7 +1168,7 @@ NodeSelectorTerm interface{}
 
 node_selector_term block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#node_selector_term PersistentVolumeV1#node_selector_term}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#node_selector_term PersistentVolumeV1#node_selector_term}
 
 ---
 
@@ -1177,7 +1177,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTerm.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTerm {
 	MatchExpressions: interface{},
@@ -1204,7 +1204,7 @@ MatchExpressions interface{}
 
 match_expressions block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#match_expressions PersistentVolumeV1#match_expressions}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#match_expressions PersistentVolumeV1#match_expressions}
 
 ---
 
@@ -1218,7 +1218,7 @@ MatchFields interface{}
 
 match_fields block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#match_fields PersistentVolumeV1#match_fields}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#match_fields PersistentVolumeV1#match_fields}
 
 ---
 
@@ -1227,7 +1227,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressions {
 	Key: *string,
@@ -1256,7 +1256,7 @@ Key *string
 
 The label key that the selector applies to.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#key PersistentVolumeV1#key}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#key PersistentVolumeV1#key}
 
 ---
 
@@ -1270,7 +1270,7 @@ Operator *string
 
 A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists`, `DoesNotExist`, `Gt`, and `Lt`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#operator PersistentVolumeV1#operator}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#operator PersistentVolumeV1#operator}
 
 ---
 
@@ -1286,7 +1286,7 @@ An array of string values.
 
 If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#values PersistentVolumeV1#values}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#values PersistentVolumeV1#values}
 
 ---
 
@@ -1295,7 +1295,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFields.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFields {
 	Key: *string,
@@ -1324,7 +1324,7 @@ Key *string
 
 The label key that the selector applies to.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#key PersistentVolumeV1#key}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#key PersistentVolumeV1#key}
 
 ---
 
@@ -1338,7 +1338,7 @@ Operator *string
 
 A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists`, `DoesNotExist`, `Gt`, and `Lt`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#operator PersistentVolumeV1#operator}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#operator PersistentVolumeV1#operator}
 
 ---
 
@@ -1354,7 +1354,7 @@ An array of string values.
 
 If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#values PersistentVolumeV1#values}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#values PersistentVolumeV1#values}
 
 ---
 
@@ -1363,28 +1363,28 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSource.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSource {
-	AwsElasticBlockStore: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStore,
-	AzureDisk: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceAzureDisk,
-	AzureFile: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceAzureFile,
-	CephFs: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCephFs,
-	Cinder: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCinder,
-	Csi: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsi,
-	Fc: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceFc,
-	FlexVolume: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceFlexVolume,
-	Flocker: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceFlocker,
-	GcePersistentDisk: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDisk,
-	Glusterfs: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceGlusterfs,
-	HostPath: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceHostPath,
-	Iscsi: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceIscsi,
-	Local: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceLocal,
-	Nfs: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceNfs,
-	PhotonPersistentDisk: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDisk,
-	Quobyte: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceQuobyte,
-	Rbd: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceRbd,
-	VsphereVolume: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceVsphereVolume,
+	AwsElasticBlockStore: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStore,
+	AzureDisk: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceAzureDisk,
+	AzureFile: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceAzureFile,
+	CephFs: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCephFs,
+	Cinder: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCinder,
+	Csi: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsi,
+	Fc: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceFc,
+	FlexVolume: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceFlexVolume,
+	Flocker: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceFlocker,
+	GcePersistentDisk: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDisk,
+	Glusterfs: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceGlusterfs,
+	HostPath: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceHostPath,
+	Iscsi: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceIscsi,
+	Local: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceLocal,
+	Nfs: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceNfs,
+	PhotonPersistentDisk: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDisk,
+	Quobyte: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceQuobyte,
+	Rbd: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceRbd,
+	VsphereVolume: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceVsphereVolume,
 }
 ```
 
@@ -1424,7 +1424,7 @@ AwsElasticBlockStore PersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlock
 
 aws_elastic_block_store block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#aws_elastic_block_store PersistentVolumeV1#aws_elastic_block_store}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#aws_elastic_block_store PersistentVolumeV1#aws_elastic_block_store}
 
 ---
 
@@ -1438,7 +1438,7 @@ AzureDisk PersistentVolumeV1SpecPersistentVolumeSourceAzureDisk
 
 azure_disk block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#azure_disk PersistentVolumeV1#azure_disk}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#azure_disk PersistentVolumeV1#azure_disk}
 
 ---
 
@@ -1452,7 +1452,7 @@ AzureFile PersistentVolumeV1SpecPersistentVolumeSourceAzureFile
 
 azure_file block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#azure_file PersistentVolumeV1#azure_file}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#azure_file PersistentVolumeV1#azure_file}
 
 ---
 
@@ -1466,7 +1466,7 @@ CephFs PersistentVolumeV1SpecPersistentVolumeSourceCephFs
 
 ceph_fs block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#ceph_fs PersistentVolumeV1#ceph_fs}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#ceph_fs PersistentVolumeV1#ceph_fs}
 
 ---
 
@@ -1480,7 +1480,7 @@ Cinder PersistentVolumeV1SpecPersistentVolumeSourceCinder
 
 cinder block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#cinder PersistentVolumeV1#cinder}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#cinder PersistentVolumeV1#cinder}
 
 ---
 
@@ -1494,7 +1494,7 @@ Csi PersistentVolumeV1SpecPersistentVolumeSourceCsi
 
 csi block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#csi PersistentVolumeV1#csi}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#csi PersistentVolumeV1#csi}
 
 ---
 
@@ -1508,7 +1508,7 @@ Fc PersistentVolumeV1SpecPersistentVolumeSourceFc
 
 fc block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#fc PersistentVolumeV1#fc}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#fc PersistentVolumeV1#fc}
 
 ---
 
@@ -1522,7 +1522,7 @@ FlexVolume PersistentVolumeV1SpecPersistentVolumeSourceFlexVolume
 
 flex_volume block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#flex_volume PersistentVolumeV1#flex_volume}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#flex_volume PersistentVolumeV1#flex_volume}
 
 ---
 
@@ -1536,7 +1536,7 @@ Flocker PersistentVolumeV1SpecPersistentVolumeSourceFlocker
 
 flocker block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#flocker PersistentVolumeV1#flocker}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#flocker PersistentVolumeV1#flocker}
 
 ---
 
@@ -1550,7 +1550,7 @@ GcePersistentDisk PersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDisk
 
 gce_persistent_disk block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#gce_persistent_disk PersistentVolumeV1#gce_persistent_disk}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#gce_persistent_disk PersistentVolumeV1#gce_persistent_disk}
 
 ---
 
@@ -1564,7 +1564,7 @@ Glusterfs PersistentVolumeV1SpecPersistentVolumeSourceGlusterfs
 
 glusterfs block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#glusterfs PersistentVolumeV1#glusterfs}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#glusterfs PersistentVolumeV1#glusterfs}
 
 ---
 
@@ -1578,7 +1578,7 @@ HostPath PersistentVolumeV1SpecPersistentVolumeSourceHostPath
 
 host_path block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#host_path PersistentVolumeV1#host_path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#host_path PersistentVolumeV1#host_path}
 
 ---
 
@@ -1592,7 +1592,7 @@ Iscsi PersistentVolumeV1SpecPersistentVolumeSourceIscsi
 
 iscsi block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#iscsi PersistentVolumeV1#iscsi}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#iscsi PersistentVolumeV1#iscsi}
 
 ---
 
@@ -1606,7 +1606,7 @@ Local PersistentVolumeV1SpecPersistentVolumeSourceLocal
 
 local block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#local PersistentVolumeV1#local}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#local PersistentVolumeV1#local}
 
 ---
 
@@ -1620,7 +1620,7 @@ Nfs PersistentVolumeV1SpecPersistentVolumeSourceNfs
 
 nfs block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#nfs PersistentVolumeV1#nfs}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#nfs PersistentVolumeV1#nfs}
 
 ---
 
@@ -1634,7 +1634,7 @@ PhotonPersistentDisk PersistentVolumeV1SpecPersistentVolumeSourcePhotonPersisten
 
 photon_persistent_disk block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#photon_persistent_disk PersistentVolumeV1#photon_persistent_disk}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#photon_persistent_disk PersistentVolumeV1#photon_persistent_disk}
 
 ---
 
@@ -1648,7 +1648,7 @@ Quobyte PersistentVolumeV1SpecPersistentVolumeSourceQuobyte
 
 quobyte block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#quobyte PersistentVolumeV1#quobyte}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#quobyte PersistentVolumeV1#quobyte}
 
 ---
 
@@ -1662,7 +1662,7 @@ Rbd PersistentVolumeV1SpecPersistentVolumeSourceRbd
 
 rbd block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#rbd PersistentVolumeV1#rbd}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#rbd PersistentVolumeV1#rbd}
 
 ---
 
@@ -1676,7 +1676,7 @@ VsphereVolume PersistentVolumeV1SpecPersistentVolumeSourceVsphereVolume
 
 vsphere_volume block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#vsphere_volume PersistentVolumeV1#vsphere_volume}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#vsphere_volume PersistentVolumeV1#vsphere_volume}
 
 ---
 
@@ -1685,7 +1685,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStore.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStore {
 	VolumeId: *string,
@@ -1716,7 +1716,7 @@ VolumeId *string
 
 Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#volume_id PersistentVolumeV1#volume_id}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#volume_id PersistentVolumeV1#volume_id}
 
 ---
 
@@ -1732,7 +1732,7 @@ Filesystem type of the volume that you want to mount.
 
 Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
 
 ---
 
@@ -1748,7 +1748,7 @@ The partition in the volume that you want to mount.
 
 If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#partition PersistentVolumeV1#partition}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#partition PersistentVolumeV1#partition}
 
 ---
 
@@ -1762,7 +1762,7 @@ ReadOnly interface{}
 
 Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
 
 ---
 
@@ -1771,7 +1771,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceAzureDisk.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceAzureDisk {
 	CachingMode: *string,
@@ -1806,7 +1806,7 @@ CachingMode *string
 
 Host Caching mode: None, Read Only, Read Write.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#caching_mode PersistentVolumeV1#caching_mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#caching_mode PersistentVolumeV1#caching_mode}
 
 ---
 
@@ -1820,7 +1820,7 @@ DataDiskUri *string
 
 The URI the data disk in the blob storage.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#data_disk_uri PersistentVolumeV1#data_disk_uri}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#data_disk_uri PersistentVolumeV1#data_disk_uri}
 
 ---
 
@@ -1834,7 +1834,7 @@ DiskName *string
 
 The Name of the data disk in the blob storage.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#disk_name PersistentVolumeV1#disk_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#disk_name PersistentVolumeV1#disk_name}
 
 ---
 
@@ -1850,7 +1850,7 @@ Filesystem type to mount.
 
 Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
 
 ---
 
@@ -1864,7 +1864,7 @@ Kind *string
 
 The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#kind PersistentVolumeV1#kind}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#kind PersistentVolumeV1#kind}
 
 ---
 
@@ -1878,7 +1878,7 @@ ReadOnly interface{}
 
 Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
 
 ---
 
@@ -1887,7 +1887,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceAzureFile.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceAzureFile {
 	SecretName: *string,
@@ -1918,7 +1918,7 @@ SecretName *string
 
 The name of secret that contains Azure Storage Account Name and Key.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#secret_name PersistentVolumeV1#secret_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#secret_name PersistentVolumeV1#secret_name}
 
 ---
 
@@ -1932,7 +1932,7 @@ ShareName *string
 
 Share Name.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#share_name PersistentVolumeV1#share_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#share_name PersistentVolumeV1#share_name}
 
 ---
 
@@ -1946,7 +1946,7 @@ ReadOnly interface{}
 
 Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
 
 ---
 
@@ -1962,7 +1962,7 @@ The namespace of the secret that contains Azure Storage Account Name and Key.
 
 For Kubernetes up to 1.18.x the default is the same as the Pod. For Kubernetes 1.19.x and later the default is "default" namespace.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#secret_namespace PersistentVolumeV1#secret_namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#secret_namespace PersistentVolumeV1#secret_namespace}
 
 ---
 
@@ -1971,14 +1971,14 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCephFs.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceCephFs {
 	Monitors: *[]*string,
 	Path: *string,
 	ReadOnly: interface{},
 	SecretFile: *string,
-	SecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRef,
+	SecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRef,
 	User: *string,
 }
 ```
@@ -2006,7 +2006,7 @@ Monitors *[]*string
 
 Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#monitors PersistentVolumeV1#monitors}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#monitors PersistentVolumeV1#monitors}
 
 ---
 
@@ -2020,7 +2020,7 @@ Path *string
 
 Used as the mounted root, rather than the full Ceph tree, default is /.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#path PersistentVolumeV1#path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#path PersistentVolumeV1#path}
 
 ---
 
@@ -2034,7 +2034,7 @@ ReadOnly interface{}
 
 Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
 
 ---
 
@@ -2048,7 +2048,7 @@ SecretFile *string
 
 The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#secret_file PersistentVolumeV1#secret_file}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#secret_file PersistentVolumeV1#secret_file}
 
 ---
 
@@ -2062,7 +2062,7 @@ SecretRef PersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRef
 
 secret_ref block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#secret_ref PersistentVolumeV1#secret_ref}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#secret_ref PersistentVolumeV1#secret_ref}
 
 ---
 
@@ -2076,7 +2076,7 @@ User *string
 
 User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#user PersistentVolumeV1#user}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#user PersistentVolumeV1#user}
 
 ---
 
@@ -2085,7 +2085,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRef {
 	Name: *string,
@@ -2112,7 +2112,7 @@ Name *string
 
 Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#name PersistentVolumeV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#name PersistentVolumeV1#name}
 
 ---
 
@@ -2126,7 +2126,7 @@ Namespace *string
 
 Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#namespace PersistentVolumeV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#namespace PersistentVolumeV1#namespace}
 
 ---
 
@@ -2135,7 +2135,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCinder.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceCinder {
 	VolumeId: *string,
@@ -2164,7 +2164,7 @@ VolumeId *string
 
 Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#volume_id PersistentVolumeV1#volume_id}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#volume_id PersistentVolumeV1#volume_id}
 
 ---
 
@@ -2180,7 +2180,7 @@ Filesystem type to mount.
 
 Must be a filesystem type supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
 
 ---
 
@@ -2194,7 +2194,7 @@ ReadOnly interface{}
 
 Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
 
 ---
 
@@ -2203,16 +2203,16 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsi.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceCsi {
 	Driver: *string,
 	VolumeHandle: *string,
-	ControllerExpandSecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecretRef,
-	ControllerPublishSecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSecretRef,
+	ControllerExpandSecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecretRef,
+	ControllerPublishSecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSecretRef,
 	FsType: *string,
-	NodePublishSecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRef,
-	NodeStageSecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRef,
+	NodePublishSecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRef,
+	NodeStageSecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRef,
 	ReadOnly: interface{},
 	VolumeAttributes: *map[string]*string,
 }
@@ -2244,7 +2244,7 @@ Driver *string
 
 the name of the volume driver to use. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#driver PersistentVolumeV1#driver}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#driver PersistentVolumeV1#driver}
 
 ---
 
@@ -2258,7 +2258,7 @@ VolumeHandle *string
 
 A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#volume_handle PersistentVolumeV1#volume_handle}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#volume_handle PersistentVolumeV1#volume_handle}
 
 ---
 
@@ -2272,7 +2272,7 @@ ControllerExpandSecretRef PersistentVolumeV1SpecPersistentVolumeSourceCsiControl
 
 controller_expand_secret_ref block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#controller_expand_secret_ref PersistentVolumeV1#controller_expand_secret_ref}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#controller_expand_secret_ref PersistentVolumeV1#controller_expand_secret_ref}
 
 ---
 
@@ -2286,7 +2286,7 @@ ControllerPublishSecretRef PersistentVolumeV1SpecPersistentVolumeSourceCsiContro
 
 controller_publish_secret_ref block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#controller_publish_secret_ref PersistentVolumeV1#controller_publish_secret_ref}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#controller_publish_secret_ref PersistentVolumeV1#controller_publish_secret_ref}
 
 ---
 
@@ -2302,7 +2302,7 @@ Filesystem type to mount.
 
 Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
 
 ---
 
@@ -2316,7 +2316,7 @@ NodePublishSecretRef PersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishS
 
 node_publish_secret_ref block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#node_publish_secret_ref PersistentVolumeV1#node_publish_secret_ref}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#node_publish_secret_ref PersistentVolumeV1#node_publish_secret_ref}
 
 ---
 
@@ -2330,7 +2330,7 @@ NodeStageSecretRef PersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecre
 
 node_stage_secret_ref block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#node_stage_secret_ref PersistentVolumeV1#node_stage_secret_ref}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#node_stage_secret_ref PersistentVolumeV1#node_stage_secret_ref}
 
 ---
 
@@ -2344,7 +2344,7 @@ ReadOnly interface{}
 
 Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
 
 ---
 
@@ -2358,7 +2358,7 @@ VolumeAttributes *map[string]*string
 
 Attributes of the volume to publish.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#volume_attributes PersistentVolumeV1#volume_attributes}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#volume_attributes PersistentVolumeV1#volume_attributes}
 
 ---
 
@@ -2367,7 +2367,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecretRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecretRef {
 	Name: *string,
@@ -2394,7 +2394,7 @@ Name *string
 
 Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#name PersistentVolumeV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#name PersistentVolumeV1#name}
 
 ---
 
@@ -2408,7 +2408,7 @@ Namespace *string
 
 Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#namespace PersistentVolumeV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#namespace PersistentVolumeV1#namespace}
 
 ---
 
@@ -2417,7 +2417,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSecretRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSecretRef {
 	Name: *string,
@@ -2444,7 +2444,7 @@ Name *string
 
 Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#name PersistentVolumeV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#name PersistentVolumeV1#name}
 
 ---
 
@@ -2458,7 +2458,7 @@ Namespace *string
 
 Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#namespace PersistentVolumeV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#namespace PersistentVolumeV1#namespace}
 
 ---
 
@@ -2467,7 +2467,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRef {
 	Name: *string,
@@ -2494,7 +2494,7 @@ Name *string
 
 Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#name PersistentVolumeV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#name PersistentVolumeV1#name}
 
 ---
 
@@ -2508,7 +2508,7 @@ Namespace *string
 
 Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#namespace PersistentVolumeV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#namespace PersistentVolumeV1#namespace}
 
 ---
 
@@ -2517,7 +2517,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRef {
 	Name: *string,
@@ -2544,7 +2544,7 @@ Name *string
 
 Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#name PersistentVolumeV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#name PersistentVolumeV1#name}
 
 ---
 
@@ -2558,7 +2558,7 @@ Namespace *string
 
 Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#namespace PersistentVolumeV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#namespace PersistentVolumeV1#namespace}
 
 ---
 
@@ -2567,7 +2567,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceFc.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceFc {
 	Lun: *f64,
@@ -2598,7 +2598,7 @@ Lun *f64
 
 FC target lun number.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#lun PersistentVolumeV1#lun}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#lun PersistentVolumeV1#lun}
 
 ---
 
@@ -2612,7 +2612,7 @@ TargetWwNs *[]*string
 
 FC target worldwide names (WWNs).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#target_ww_ns PersistentVolumeV1#target_ww_ns}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#target_ww_ns PersistentVolumeV1#target_ww_ns}
 
 ---
 
@@ -2628,7 +2628,7 @@ Filesystem type to mount.
 
 Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
 
 ---
 
@@ -2642,7 +2642,7 @@ ReadOnly interface{}
 
 Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
 
 ---
 
@@ -2651,14 +2651,14 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceFlexVolume.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceFlexVolume {
 	Driver: *string,
 	FsType: *string,
 	Options: *map[string]*string,
 	ReadOnly: interface{},
-	SecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRef,
+	SecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRef,
 }
 ```
 
@@ -2684,7 +2684,7 @@ Driver *string
 
 Driver is the name of the driver to use for this volume.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#driver PersistentVolumeV1#driver}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#driver PersistentVolumeV1#driver}
 
 ---
 
@@ -2700,7 +2700,7 @@ Filesystem type to mount.
 
 Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". The default filesystem depends on FlexVolume script.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
 
 ---
 
@@ -2714,7 +2714,7 @@ Options *map[string]*string
 
 Extra command options if any.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#options PersistentVolumeV1#options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#options PersistentVolumeV1#options}
 
 ---
 
@@ -2728,7 +2728,7 @@ ReadOnly interface{}
 
 Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
 
 ---
 
@@ -2742,7 +2742,7 @@ SecretRef PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRef
 
 secret_ref block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#secret_ref PersistentVolumeV1#secret_ref}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#secret_ref PersistentVolumeV1#secret_ref}
 
 ---
 
@@ -2751,7 +2751,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRef {
 	Name: *string,
@@ -2778,7 +2778,7 @@ Name *string
 
 Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#name PersistentVolumeV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#name PersistentVolumeV1#name}
 
 ---
 
@@ -2792,7 +2792,7 @@ Namespace *string
 
 Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#namespace PersistentVolumeV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#namespace PersistentVolumeV1#namespace}
 
 ---
 
@@ -2801,7 +2801,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceFlocker.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceFlocker {
 	DatasetName: *string,
@@ -2828,7 +2828,7 @@ DatasetName *string
 
 Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#dataset_name PersistentVolumeV1#dataset_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#dataset_name PersistentVolumeV1#dataset_name}
 
 ---
 
@@ -2842,7 +2842,7 @@ DatasetUuid *string
 
 UUID of the dataset. This is unique identifier of a Flocker dataset.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#dataset_uuid PersistentVolumeV1#dataset_uuid}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#dataset_uuid PersistentVolumeV1#dataset_uuid}
 
 ---
 
@@ -2851,7 +2851,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDisk.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDisk {
 	PdName: *string,
@@ -2882,7 +2882,7 @@ PdName *string
 
 Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#pd_name PersistentVolumeV1#pd_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#pd_name PersistentVolumeV1#pd_name}
 
 ---
 
@@ -2898,7 +2898,7 @@ Filesystem type of the volume that you want to mount.
 
 Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
 
 ---
 
@@ -2914,7 +2914,7 @@ The partition in the volume that you want to mount.
 
 If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty). More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#partition PersistentVolumeV1#partition}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#partition PersistentVolumeV1#partition}
 
 ---
 
@@ -2928,7 +2928,7 @@ ReadOnly interface{}
 
 Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
 
 ---
 
@@ -2937,7 +2937,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceGlusterfs.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceGlusterfs {
 	EndpointsName: *string,
@@ -2966,7 +2966,7 @@ EndpointsName *string
 
 The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#endpoints_name PersistentVolumeV1#endpoints_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#endpoints_name PersistentVolumeV1#endpoints_name}
 
 ---
 
@@ -2980,7 +2980,7 @@ Path *string
 
 The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#path PersistentVolumeV1#path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#path PersistentVolumeV1#path}
 
 ---
 
@@ -2994,7 +2994,7 @@ ReadOnly interface{}
 
 Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
 
 ---
 
@@ -3003,7 +3003,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceHostPath.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceHostPath {
 	Path: *string,
@@ -3030,7 +3030,7 @@ Path *string
 
 Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#hostpath.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#path PersistentVolumeV1#path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#path PersistentVolumeV1#path}
 
 ---
 
@@ -3044,7 +3044,7 @@ Type *string
 
 Type for HostPath volume. Allowed values are "" (default), DirectoryOrCreate, Directory, FileOrCreate, File, Socket, CharDevice and BlockDevice.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#type PersistentVolumeV1#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#type PersistentVolumeV1#type}
 
 ---
 
@@ -3053,7 +3053,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceIscsi.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceIscsi {
 	Iqn: *string,
@@ -3088,7 +3088,7 @@ Iqn *string
 
 Target iSCSI Qualified Name.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#iqn PersistentVolumeV1#iqn}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#iqn PersistentVolumeV1#iqn}
 
 ---
 
@@ -3104,7 +3104,7 @@ iSCSI target portal.
 
 The portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#target_portal PersistentVolumeV1#target_portal}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#target_portal PersistentVolumeV1#target_portal}
 
 ---
 
@@ -3120,7 +3120,7 @@ Filesystem type of the volume that you want to mount.
 
 Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#iscsi
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
 
 ---
 
@@ -3134,7 +3134,7 @@ IscsiInterface *string
 
 iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#iscsi_interface PersistentVolumeV1#iscsi_interface}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#iscsi_interface PersistentVolumeV1#iscsi_interface}
 
 ---
 
@@ -3148,7 +3148,7 @@ Lun *f64
 
 iSCSI target lun number.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#lun PersistentVolumeV1#lun}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#lun PersistentVolumeV1#lun}
 
 ---
 
@@ -3162,7 +3162,7 @@ ReadOnly interface{}
 
 Whether to force the read-only setting in VolumeMounts. Defaults to false.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
 
 ---
 
@@ -3171,7 +3171,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceLocal.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceLocal {
 	Path: *string,
@@ -3196,7 +3196,7 @@ Path *string
 
 Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#local.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#path PersistentVolumeV1#path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#path PersistentVolumeV1#path}
 
 ---
 
@@ -3205,7 +3205,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceNfs.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceNfs {
 	Path: *string,
@@ -3234,7 +3234,7 @@ Path *string
 
 Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#path PersistentVolumeV1#path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#path PersistentVolumeV1#path}
 
 ---
 
@@ -3248,7 +3248,7 @@ Server *string
 
 Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#server PersistentVolumeV1#server}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#server PersistentVolumeV1#server}
 
 ---
 
@@ -3262,7 +3262,7 @@ ReadOnly interface{}
 
 Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
 
 ---
 
@@ -3271,7 +3271,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDisk.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDisk {
 	PdId: *string,
@@ -3298,7 +3298,7 @@ PdId *string
 
 ID that identifies Photon Controller persistent disk.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#pd_id PersistentVolumeV1#pd_id}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#pd_id PersistentVolumeV1#pd_id}
 
 ---
 
@@ -3314,7 +3314,7 @@ Filesystem type to mount.
 
 Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
 
 ---
 
@@ -3323,7 +3323,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceQuobyte.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceQuobyte {
 	Registry: *string,
@@ -3356,7 +3356,7 @@ Registry *string
 
 Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#registry PersistentVolumeV1#registry}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#registry PersistentVolumeV1#registry}
 
 ---
 
@@ -3370,7 +3370,7 @@ Volume *string
 
 Volume is a string that references an already created Quobyte volume by name.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#volume PersistentVolumeV1#volume}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#volume PersistentVolumeV1#volume}
 
 ---
 
@@ -3384,7 +3384,7 @@ Group *string
 
 Group to map volume access to Default is no group.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#group PersistentVolumeV1#group}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#group PersistentVolumeV1#group}
 
 ---
 
@@ -3398,7 +3398,7 @@ ReadOnly interface{}
 
 Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
 
 ---
 
@@ -3412,7 +3412,7 @@ User *string
 
 User to map volume access to Defaults to serivceaccount user.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#user PersistentVolumeV1#user}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#user PersistentVolumeV1#user}
 
 ---
 
@@ -3421,7 +3421,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceRbd.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceRbd {
 	CephMonitors: *[]*string,
@@ -3431,7 +3431,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvo
 	RadosUser: *string,
 	RbdPool: *string,
 	ReadOnly: interface{},
-	SecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRef,
+	SecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRef,
 }
 ```
 
@@ -3460,7 +3460,7 @@ CephMonitors *[]*string
 
 A collection of Ceph monitors. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#ceph_monitors PersistentVolumeV1#ceph_monitors}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#ceph_monitors PersistentVolumeV1#ceph_monitors}
 
 ---
 
@@ -3474,7 +3474,7 @@ RbdImage *string
 
 The rados image name. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#rbd_image PersistentVolumeV1#rbd_image}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#rbd_image PersistentVolumeV1#rbd_image}
 
 ---
 
@@ -3490,7 +3490,7 @@ Filesystem type of the volume that you want to mount.
 
 Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#rbd
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
 
 ---
 
@@ -3504,7 +3504,7 @@ Keyring *string
 
 Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#keyring PersistentVolumeV1#keyring}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#keyring PersistentVolumeV1#keyring}
 
 ---
 
@@ -3518,7 +3518,7 @@ RadosUser *string
 
 The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#rados_user PersistentVolumeV1#rados_user}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#rados_user PersistentVolumeV1#rados_user}
 
 ---
 
@@ -3532,7 +3532,7 @@ RbdPool *string
 
 The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#rbd_pool PersistentVolumeV1#rbd_pool}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#rbd_pool PersistentVolumeV1#rbd_pool}
 
 ---
 
@@ -3546,7 +3546,7 @@ ReadOnly interface{}
 
 Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#read_only PersistentVolumeV1#read_only}
 
 ---
 
@@ -3560,7 +3560,7 @@ SecretRef PersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRef
 
 secret_ref block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#secret_ref PersistentVolumeV1#secret_ref}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#secret_ref PersistentVolumeV1#secret_ref}
 
 ---
 
@@ -3569,7 +3569,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRef {
 	Name: *string,
@@ -3596,7 +3596,7 @@ Name *string
 
 Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#name PersistentVolumeV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#name PersistentVolumeV1#name}
 
 ---
 
@@ -3610,7 +3610,7 @@ Namespace *string
 
 Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#namespace PersistentVolumeV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#namespace PersistentVolumeV1#namespace}
 
 ---
 
@@ -3619,7 +3619,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceVsphereVolume.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1SpecPersistentVolumeSourceVsphereVolume {
 	VolumePath: *string,
@@ -3646,7 +3646,7 @@ VolumePath *string
 
 Path that identifies vSphere volume vmdk.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#volume_path PersistentVolumeV1#volume_path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#volume_path PersistentVolumeV1#volume_path}
 
 ---
 
@@ -3662,7 +3662,7 @@ Filesystem type to mount.
 
 Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#fs_type PersistentVolumeV1#fs_type}
 
 ---
 
@@ -3671,7 +3671,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1Timeouts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 &persistentvolumev1.PersistentVolumeV1Timeouts {
 	Create: *string,
@@ -3682,7 +3682,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvo
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1Timeouts.property.create">Create</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#create PersistentVolumeV1#create}. |
+| <code><a href="#@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1Timeouts.property.create">Create</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#create PersistentVolumeV1#create}. |
 
 ---
 
@@ -3694,7 +3694,7 @@ Create *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/persistent_volume_v1#create PersistentVolumeV1#create}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/persistent_volume_v1#create PersistentVolumeV1#create}.
 
 ---
 
@@ -3705,7 +3705,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1MetadataOutputReference
 ```
@@ -4074,7 +4074,7 @@ func InternalValue() PersistentVolumeV1Metadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecClaimRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecClaimRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecClaimRefOutputReference
 ```
@@ -4374,7 +4374,7 @@ func InternalValue() PersistentVolumeV1SpecClaimRef
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PersistentVolumeV1SpecList
 ```
@@ -4517,7 +4517,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecNodeAffinityOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecNodeAffinityOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecNodeAffinityOutputReference
 ```
@@ -4808,7 +4808,7 @@ func InternalValue() PersistentVolumeV1SpecNodeAffinity
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermList
 ```
@@ -4951,7 +4951,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsList
 ```
@@ -5094,7 +5094,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsOutputReference
 ```
@@ -5434,7 +5434,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFieldsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFieldsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFieldsList
 ```
@@ -5577,7 +5577,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFieldsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFieldsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFieldsOutputReference
 ```
@@ -5917,7 +5917,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermOutputReference
 ```
@@ -6268,7 +6268,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecNodeAffinityRequiredOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecNodeAffinityRequiredOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecNodeAffinityRequiredOutputReference
 ```
@@ -6552,7 +6552,7 @@ func InternalValue() PersistentVolumeV1SpecNodeAffinityRequired
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PersistentVolumeV1SpecOutputReference
 ```
@@ -7098,7 +7098,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStoreOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStoreOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStoreOutputReference
 ```
@@ -7456,7 +7456,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlock
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceAzureDiskOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceAzureDiskOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceAzureDiskOutputReference
 ```
@@ -7858,7 +7858,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceAzureDisk
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceAzureFileOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceAzureFileOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceAzureFileOutputReference
 ```
@@ -8209,7 +8209,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceAzureFile
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCephFsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceCephFsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceCephFsOutputReference
 ```
@@ -8638,7 +8638,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceCephFs
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRefOutputReference
 ```
@@ -8945,7 +8945,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRef
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCinderOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceCinderOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceCinderOutputReference
 ```
@@ -9274,7 +9274,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceCinder
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecretRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecretRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecretRefOutputReference
 ```
@@ -9581,7 +9581,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerEx
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSecretRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSecretRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSecretRefOutputReference
 ```
@@ -9888,7 +9888,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPu
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRefOutputReference
 ```
@@ -10195,7 +10195,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishS
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRefOutputReference
 ```
@@ -10502,7 +10502,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSec
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceCsiOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceCsiOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceCsiOutputReference
 ```
@@ -11050,7 +11050,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceCsi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceFcOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceFcOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceFcOutputReference
 ```
@@ -11401,7 +11401,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceFc
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeOutputReference
 ```
@@ -11801,7 +11801,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceFlexVolume
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRefOutputReference
 ```
@@ -12108,7 +12108,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecre
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceFlockerOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceFlockerOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceFlockerOutputReference
 ```
@@ -12415,7 +12415,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceFlocker
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDiskOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDiskOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDiskOutputReference
 ```
@@ -12773,7 +12773,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceGlusterfsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceGlusterfsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceGlusterfsOutputReference
 ```
@@ -13095,7 +13095,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceGlusterfs
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceHostPathOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceHostPathOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceHostPathOutputReference
 ```
@@ -13402,7 +13402,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceHostPath
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceIscsiOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceIscsiOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceIscsiOutputReference
 ```
@@ -13811,7 +13811,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceIscsi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceLocalOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceLocalOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceLocalOutputReference
 ```
@@ -14089,7 +14089,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceLocal
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceNfsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceNfsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceNfsOutputReference
 ```
@@ -14411,7 +14411,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceNfs
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceOutputReference
 ```
@@ -15458,7 +15458,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSource
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDiskOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDiskOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDiskOutputReference
 ```
@@ -15758,7 +15758,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourcePhotonPersisten
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceQuobyteOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceQuobyteOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceQuobyteOutputReference
 ```
@@ -16138,7 +16138,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceQuobyte
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceRbdOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceRbdOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceRbdOutputReference
 ```
@@ -16618,7 +16618,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceRbd
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRefOutputReference
 ```
@@ -16925,7 +16925,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRef
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1SpecPersistentVolumeSourceVsphereVolumeOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1SpecPersistentVolumeSourceVsphereVolumeOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1SpecPersistentVolumeSourceVsphereVolumeOutputReference
 ```
@@ -17225,7 +17225,7 @@ func InternalValue() PersistentVolumeV1SpecPersistentVolumeSourceVsphereVolume
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolumeV1.PersistentVolumeV1TimeoutsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/persistentvolumev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolumev1"
 
 persistentvolumev1.NewPersistentVolumeV1TimeoutsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeV1TimeoutsOutputReference
 ```

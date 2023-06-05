@@ -1,6 +1,6 @@
 # `kubernetes_config_map_v1`
 
-Refer to the Terraform Registory for docs: [`kubernetes_config_map_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/config_map_v1).
+Refer to the Terraform Registory for docs: [`kubernetes_config_map_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1).
 
 # `configMapV1` Submodule <a name="`configMapV1` Submodule" id="@cdktf/provider-kubernetes.configMapV1"></a>
 
@@ -8,12 +8,12 @@ Refer to the Terraform Registory for docs: [`kubernetes_config_map_v1`](https://
 
 ### ConfigMapV1 <a name="ConfigMapV1" id="@cdktf/provider-kubernetes.configMapV1.ConfigMapV1"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/config_map_v1 kubernetes_config_map_v1}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1 kubernetes_config_map_v1}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.configMapV1.ConfigMapV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/configmapv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/configmapv1"
 
 configmapv1.NewConfigMapV1(scope Construct, id *string, config ConfigMapV1Config) ConfigMapV1
 ```
@@ -311,7 +311,7 @@ func ResetImmutable()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.configMapV1.ConfigMapV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/configmapv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/configmapv1"
 
 configmapv1.ConfigMapV1_IsConstruct(x interface{}) *bool
 ```
@@ -343,7 +343,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.configMapV1.ConfigMapV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/configmapv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/configmapv1"
 
 configmapv1.ConfigMapV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -357,7 +357,7 @@ configmapv1.ConfigMapV1_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.configMapV1.ConfigMapV1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/configmapv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/configmapv1"
 
 configmapv1.ConfigMapV1_IsTerraformResource(x interface{}) *bool
 ```
@@ -666,7 +666,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.configMapV1.ConfigMapV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/configmapv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/configmapv1"
 
 &configmapv1.ConfigMapV1Config {
 	Connection: interface{},
@@ -676,7 +676,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/configmapv1"
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.configMapV1.ConfigMapV1Metadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.configMapV1.ConfigMapV1Metadata,
 	BinaryData: *map[string]*string,
 	Data: *map[string]*string,
 	Id: *string,
@@ -698,7 +698,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/configmapv1"
 | <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1Config.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1Metadata">ConfigMapV1Metadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1Config.property.binaryData">BinaryData</a></code> | <code>*map[string]*string</code> | BinaryData contains the binary data. |
 | <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1Config.property.data">Data</a></code> | <code>*map[string]*string</code> | Data contains the configuration data. |
-| <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1Config.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/config_map_v1#id ConfigMapV1#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1Config.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1#id ConfigMapV1#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1Config.property.immutable">Immutable</a></code> | <code>interface{}</code> | Immutable, if set to true, ensures that data stored in the ConfigMap cannot be updated (only object metadata can be modified). |
 
 ---
@@ -783,7 +783,7 @@ Metadata ConfigMapV1Metadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/config_map_v1#metadata ConfigMapV1#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1#metadata ConfigMapV1#metadata}
 
 ---
 
@@ -799,7 +799,7 @@ BinaryData contains the binary data.
 
 Each key must consist of alphanumeric characters, '-', '_' or '.'. BinaryData can contain byte sequences that are not in the UTF-8 range. The keys stored in BinaryData must not overlap with the ones in the Data field, this is enforced during validation process. Using this field will require 1.10+ apiserver and kubelet. This field only accepts base64-encoded payloads that will be decoded/encoded before being sent/received to/from the apiserver.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/config_map_v1#binary_data ConfigMapV1#binary_data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1#binary_data ConfigMapV1#binary_data}
 
 ---
 
@@ -815,7 +815,7 @@ Data contains the configuration data.
 
 Each key must consist of alphanumeric characters, '-', '_' or '.'. Values with non-UTF-8 byte sequences must use the BinaryData field. The keys stored in Data must not overlap with the keys in the BinaryData field, this is enforced during validation process.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/config_map_v1#data ConfigMapV1#data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1#data ConfigMapV1#data}
 
 ---
 
@@ -827,7 +827,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/config_map_v1#id ConfigMapV1#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1#id ConfigMapV1#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -846,7 +846,7 @@ Immutable, if set to true, ensures that data stored in the ConfigMap cannot be u
 
 If not set to true, the field can be modified at any time. Defaulted to nil.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/config_map_v1#immutable ConfigMapV1#immutable}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1#immutable ConfigMapV1#immutable}
 
 ---
 
@@ -855,7 +855,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.configMapV1.ConfigMapV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/configmapv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/configmapv1"
 
 &configmapv1.ConfigMapV1Metadata {
 	Annotations: *map[string]*string,
@@ -890,7 +890,7 @@ An unstructured key value map stored with the config map that may be used to sto
 
 More info: http://kubernetes.io/docs/user-guide/annotations
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/config_map_v1#annotations ConfigMapV1#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1#annotations ConfigMapV1#annotations}
 
 ---
 
@@ -906,7 +906,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/config_map_v1#generate_name ConfigMapV1#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1#generate_name ConfigMapV1#generate_name}
 
 ---
 
@@ -922,7 +922,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/config_map_v1#labels ConfigMapV1#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1#labels ConfigMapV1#labels}
 
 ---
 
@@ -936,7 +936,7 @@ Name *string
 
 Name of the config map, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/config_map_v1#name ConfigMapV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1#name ConfigMapV1#name}
 
 ---
 
@@ -950,7 +950,7 @@ Namespace *string
 
 Namespace defines the space within which name of the config map must be unique.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/config_map_v1#namespace ConfigMapV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1#namespace ConfigMapV1#namespace}
 
 ---
 
@@ -961,7 +961,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.configMapV1.ConfigMapV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/configmapv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/configmapv1"
 
 configmapv1.NewConfigMapV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ConfigMapV1MetadataOutputReference
 ```
