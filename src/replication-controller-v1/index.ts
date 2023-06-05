@@ -19,7 +19,7 @@ import { Construct } from 'constructs';
 import * as cdktf from 'cdktf';
 export interface ReplicationControllerV1Config extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/replication_controller_v1#id ReplicationControllerV1#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/replication_controller_v1#id ReplicationControllerV1#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -28,25 +28,25 @@ export interface ReplicationControllerV1Config extends cdktf.TerraformMetaArgume
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/replication_controller_v1#metadata ReplicationControllerV1#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/replication_controller_v1#metadata ReplicationControllerV1#metadata}
   */
   readonly metadata: ReplicationControllerV1Metadata;
   /**
   * spec block
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/replication_controller_v1#spec ReplicationControllerV1#spec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/replication_controller_v1#spec ReplicationControllerV1#spec}
   */
   readonly spec: ReplicationControllerV1Spec;
   /**
   * timeouts block
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/replication_controller_v1#timeouts ReplicationControllerV1#timeouts}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/replication_controller_v1#timeouts ReplicationControllerV1#timeouts}
   */
   readonly timeouts?: ReplicationControllerV1Timeouts;
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/replication_controller_v1 kubernetes_replication_controller_v1}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/replication_controller_v1 kubernetes_replication_controller_v1}
 */
 export class ReplicationControllerV1 extends cdktf.TerraformResource {
 
@@ -60,7 +60,7 @@ export class ReplicationControllerV1 extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.0/docs/resources/replication_controller_v1 kubernetes_replication_controller_v1} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/replication_controller_v1 kubernetes_replication_controller_v1} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -71,7 +71,7 @@ export class ReplicationControllerV1 extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_replication_controller_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.21.0',
+        providerVersion: '2.21.1',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
