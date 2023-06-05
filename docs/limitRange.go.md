@@ -13,7 +13,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.limitRange.LimitRange.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/limitrange"
 
 limitrange.NewLimitRange(scope Construct, id *string, config LimitRangeConfig) LimitRange
 ```
@@ -310,7 +310,7 @@ func ResetSpec()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.limitRange.LimitRange.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/limitrange"
 
 limitrange.LimitRange_IsConstruct(x interface{}) *bool
 ```
@@ -342,7 +342,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.limitRange.LimitRange.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/limitrange"
 
 limitrange.LimitRange_IsTerraformElement(x interface{}) *bool
 ```
@@ -356,7 +356,7 @@ limitrange.LimitRange_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.limitRange.LimitRange.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/limitrange"
 
 limitrange.LimitRange_IsTerraformResource(x interface{}) *bool
 ```
@@ -621,7 +621,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.limitRange.LimitRangeConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/limitrange"
 
 &limitrange.LimitRangeConfig {
 	Connection: interface{},
@@ -631,9 +631,9 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.limitRange.LimitRangeMetadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.limitRange.LimitRangeMetadata,
 	Id: *string,
-	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.limitRange.LimitRangeSpec,
+	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6.limitRange.LimitRangeSpec,
 }
 ```
 
@@ -772,7 +772,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.limitRange.LimitRangeMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/limitrange"
 
 &limitrange.LimitRangeMetadata {
 	Annotations: *map[string]*string,
@@ -876,7 +876,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.limitRange.LimitRangeSpec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/limitrange"
 
 &limitrange.LimitRangeSpec {
 	Limit: interface{},
@@ -910,7 +910,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.limitRange.LimitRangeSpecLimit.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/limitrange"
 
 &limitrange.LimitRangeSpecLimit {
 	Default: *map[string]*string,
@@ -1028,7 +1028,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.limitRange.LimitRangeMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/limitrange"
 
 limitrange.NewLimitRangeMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) LimitRangeMetadataOutputReference
 ```
@@ -1455,7 +1455,7 @@ func InternalValue() LimitRangeMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.limitRange.LimitRangeSpecLimitList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/limitrange"
 
 limitrange.NewLimitRangeSpecLimitList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) LimitRangeSpecLimitList
 ```
@@ -1598,7 +1598,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.limitRange.LimitRangeSpecLimitOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/limitrange"
 
 limitrange.NewLimitRangeSpecLimitOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) LimitRangeSpecLimitOutputReference
 ```
@@ -2039,7 +2039,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.limitRange.LimitRangeSpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v6/limitrange"
 
 limitrange.NewLimitRangeSpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) LimitRangeSpecOutputReference
 ```
