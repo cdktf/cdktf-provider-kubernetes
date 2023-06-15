@@ -667,7 +667,7 @@ secret.Secret.is_terraform_resource(
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.idInput">id_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.immutableInput">immutable_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.metadataInput">metadata_input</a></code> | <code><a href="#@cdktf/provider-kubernetes.secret.SecretMetadata">SecretMetadata</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.timeoutsInput">timeouts_input</a></code> | <code>typing.Union[<a href="#@cdktf/provider-kubernetes.secret.SecretTimeouts">SecretTimeouts</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.timeoutsInput">timeouts_input</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-kubernetes.secret.SecretTimeouts">SecretTimeouts</a>]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.typeInput">type_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.waitForServiceAccountTokenInput">wait_for_service_account_token_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.binaryData">binary_data</a></code> | <code>typing.Mapping[str]</code> | *No description.* |
@@ -894,10 +894,10 @@ metadata_input: SecretMetadata
 ##### `timeouts_input`<sup>Optional</sup> <a name="timeouts_input" id="@cdktf/provider-kubernetes.secret.Secret.property.timeoutsInput"></a>
 
 ```python
-timeouts_input: typing.Union[SecretTimeouts, IResolvable]
+timeouts_input: typing.Union[IResolvable, SecretTimeouts]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-kubernetes.secret.SecretTimeouts">SecretTimeouts</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-kubernetes.secret.SecretTimeouts">SecretTimeouts</a>]
 
 ---
 
@@ -2066,7 +2066,7 @@ def reset_create() -> None
 | <code><a href="#@cdktf/provider-kubernetes.secret.SecretTimeoutsOutputReference.property.fqn">fqn</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.SecretTimeoutsOutputReference.property.createInput">create_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.SecretTimeoutsOutputReference.property.create">create</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.secret.SecretTimeoutsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[<a href="#@cdktf/provider-kubernetes.secret.SecretTimeouts">SecretTimeouts</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secret.SecretTimeoutsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-kubernetes.secret.SecretTimeouts">SecretTimeouts</a>]</code> | *No description.* |
 
 ---
 
@@ -2117,10 +2117,10 @@ create: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-kubernetes.secret.SecretTimeoutsOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[SecretTimeouts, IResolvable]
+internal_value: typing.Union[IResolvable, SecretTimeouts]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-kubernetes.secret.SecretTimeouts">SecretTimeouts</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-kubernetes.secret.SecretTimeouts">SecretTimeouts</a>]
 
 ---
 

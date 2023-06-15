@@ -1999,7 +1999,7 @@ def reset_resource_names() -> None
 | <code><a href="#@cdktf/provider-kubernetes.role.RoleRuleOutputReference.property.resourceNames">resource_names</a></code> | <code>typing.List[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.role.RoleRuleOutputReference.property.resources">resources</a></code> | <code>typing.List[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.role.RoleRuleOutputReference.property.verbs">verbs</a></code> | <code>typing.List[str]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.role.RoleRuleOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[<a href="#@cdktf/provider-kubernetes.role.RoleRule">RoleRule</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.role.RoleRuleOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-kubernetes.role.RoleRule">RoleRule</a>]</code> | *No description.* |
 
 ---
 
@@ -2110,10 +2110,10 @@ verbs: typing.List[str]
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-kubernetes.role.RoleRuleOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[RoleRule, IResolvable]
+internal_value: typing.Union[IResolvable, RoleRule]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-kubernetes.role.RoleRule">RoleRule</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-kubernetes.role.RoleRule">RoleRule</a>]
 
 ---
 

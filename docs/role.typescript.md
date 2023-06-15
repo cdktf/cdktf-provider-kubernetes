@@ -1739,7 +1739,7 @@ public resetResourceNames(): void
 | <code><a href="#@cdktf/provider-kubernetes.role.RoleRuleOutputReference.property.resourceNames">resourceNames</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.role.RoleRuleOutputReference.property.resources">resources</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.role.RoleRuleOutputReference.property.verbs">verbs</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.role.RoleRuleOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-kubernetes.role.RoleRule">RoleRule</a> \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.role.RoleRuleOutputReference.property.internalValue">internalValue</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-kubernetes.role.RoleRule">RoleRule</a></code> | *No description.* |
 
 ---
 
@@ -1850,10 +1850,10 @@ public readonly verbs: string[];
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-kubernetes.role.RoleRuleOutputReference.property.internalValue"></a>
 
 ```typescript
-public readonly internalValue: RoleRule | IResolvable;
+public readonly internalValue: IResolvable | RoleRule;
 ```
 
-- *Type:* <a href="#@cdktf/provider-kubernetes.role.RoleRule">RoleRule</a> | cdktf.IResolvable
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-kubernetes.role.RoleRule">RoleRule</a>
 
 ---
 
