@@ -2173,7 +2173,7 @@ public resetNamespace(): void
 | <code><a href="#@cdktf/provider-kubernetes.roleBindingV1.RoleBindingV1SubjectOutputReference.property.kind">kind</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.roleBindingV1.RoleBindingV1SubjectOutputReference.property.name">name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.roleBindingV1.RoleBindingV1SubjectOutputReference.property.namespace">namespace</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.roleBindingV1.RoleBindingV1SubjectOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-kubernetes.roleBindingV1.RoleBindingV1Subject">RoleBindingV1Subject</a> \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.roleBindingV1.RoleBindingV1SubjectOutputReference.property.internalValue">internalValue</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-kubernetes.roleBindingV1.RoleBindingV1Subject">RoleBindingV1Subject</a></code> | *No description.* |
 
 ---
 
@@ -2284,10 +2284,10 @@ public readonly namespace: string;
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-kubernetes.roleBindingV1.RoleBindingV1SubjectOutputReference.property.internalValue"></a>
 
 ```typescript
-public readonly internalValue: RoleBindingV1Subject | IResolvable;
+public readonly internalValue: IResolvable | RoleBindingV1Subject;
 ```
 
-- *Type:* <a href="#@cdktf/provider-kubernetes.roleBindingV1.RoleBindingV1Subject">RoleBindingV1Subject</a> | cdktf.IResolvable
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-kubernetes.roleBindingV1.RoleBindingV1Subject">RoleBindingV1Subject</a>
 
 ---
 

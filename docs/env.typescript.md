@@ -1822,7 +1822,7 @@ public resetValueFrom(): void
 | <code><a href="#@cdktf/provider-kubernetes.env.EnvEnvOutputReference.property.valueInput">valueInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.env.EnvEnvOutputReference.property.name">name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.env.EnvEnvOutputReference.property.value">value</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.env.EnvEnvOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-kubernetes.env.EnvEnv">EnvEnv</a> \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.env.EnvEnvOutputReference.property.internalValue">internalValue</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-kubernetes.env.EnvEnv">EnvEnv</a></code> | *No description.* |
 
 ---
 
@@ -1913,10 +1913,10 @@ public readonly value: string;
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-kubernetes.env.EnvEnvOutputReference.property.internalValue"></a>
 
 ```typescript
-public readonly internalValue: EnvEnv | IResolvable;
+public readonly internalValue: IResolvable | EnvEnv;
 ```
 
-- *Type:* <a href="#@cdktf/provider-kubernetes.env.EnvEnv">EnvEnv</a> | cdktf.IResolvable
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-kubernetes.env.EnvEnv">EnvEnv</a>
 
 ---
 

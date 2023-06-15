@@ -2151,7 +2151,7 @@ def reset_value_from() -> None
 | <code><a href="#@cdktf/provider-kubernetes.env.EnvEnvOutputReference.property.valueInput">value_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.env.EnvEnvOutputReference.property.name">name</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.env.EnvEnvOutputReference.property.value">value</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.env.EnvEnvOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[<a href="#@cdktf/provider-kubernetes.env.EnvEnv">EnvEnv</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.env.EnvEnvOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-kubernetes.env.EnvEnv">EnvEnv</a>]</code> | *No description.* |
 
 ---
 
@@ -2242,10 +2242,10 @@ value: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-kubernetes.env.EnvEnvOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[EnvEnv, IResolvable]
+internal_value: typing.Union[IResolvable, EnvEnv]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-kubernetes.env.EnvEnv">EnvEnv</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-kubernetes.env.EnvEnv">EnvEnv</a>]
 
 ---
 

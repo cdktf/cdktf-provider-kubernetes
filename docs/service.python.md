@@ -850,7 +850,7 @@ service.Service.is_terraform_resource(
 | <code><a href="#@cdktf/provider-kubernetes.service.Service.property.idInput">id_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.service.Service.property.metadataInput">metadata_input</a></code> | <code><a href="#@cdktf/provider-kubernetes.service.ServiceMetadata">ServiceMetadata</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.service.Service.property.specInput">spec_input</a></code> | <code><a href="#@cdktf/provider-kubernetes.service.ServiceSpec">ServiceSpec</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.service.Service.property.timeoutsInput">timeouts_input</a></code> | <code>typing.Union[<a href="#@cdktf/provider-kubernetes.service.ServiceTimeouts">ServiceTimeouts</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.service.Service.property.timeoutsInput">timeouts_input</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-kubernetes.service.ServiceTimeouts">ServiceTimeouts</a>]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.service.Service.property.waitForLoadBalancerInput">wait_for_load_balancer_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.service.Service.property.id">id</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.service.Service.property.waitForLoadBalancer">wait_for_load_balancer</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
@@ -1072,10 +1072,10 @@ spec_input: ServiceSpec
 ##### `timeouts_input`<sup>Optional</sup> <a name="timeouts_input" id="@cdktf/provider-kubernetes.service.Service.property.timeoutsInput"></a>
 
 ```python
-timeouts_input: typing.Union[ServiceTimeouts, IResolvable]
+timeouts_input: typing.Union[IResolvable, ServiceTimeouts]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-kubernetes.service.ServiceTimeouts">ServiceTimeouts</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-kubernetes.service.ServiceTimeouts">ServiceTimeouts</a>]
 
 ---
 
@@ -3791,7 +3791,7 @@ def reset_target_port() -> None
 | <code><a href="#@cdktf/provider-kubernetes.service.ServiceSpecPortOutputReference.property.port">port</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.service.ServiceSpecPortOutputReference.property.protocol">protocol</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.service.ServiceSpecPortOutputReference.property.targetPort">target_port</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.service.ServiceSpecPortOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[<a href="#@cdktf/provider-kubernetes.service.ServiceSpecPort">ServiceSpecPort</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.service.ServiceSpecPortOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-kubernetes.service.ServiceSpecPort">ServiceSpecPort</a>]</code> | *No description.* |
 
 ---
 
@@ -3942,10 +3942,10 @@ target_port: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-kubernetes.service.ServiceSpecPortOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[ServiceSpecPort, IResolvable]
+internal_value: typing.Union[IResolvable, ServiceSpecPort]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-kubernetes.service.ServiceSpecPort">ServiceSpecPort</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-kubernetes.service.ServiceSpecPort">ServiceSpecPort</a>]
 
 ---
 
@@ -6167,7 +6167,7 @@ def reset_create() -> None
 | <code><a href="#@cdktf/provider-kubernetes.service.ServiceTimeoutsOutputReference.property.fqn">fqn</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.service.ServiceTimeoutsOutputReference.property.createInput">create_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.service.ServiceTimeoutsOutputReference.property.create">create</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.service.ServiceTimeoutsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[<a href="#@cdktf/provider-kubernetes.service.ServiceTimeouts">ServiceTimeouts</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.service.ServiceTimeoutsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-kubernetes.service.ServiceTimeouts">ServiceTimeouts</a>]</code> | *No description.* |
 
 ---
 
@@ -6218,10 +6218,10 @@ create: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-kubernetes.service.ServiceTimeoutsOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[ServiceTimeouts, IResolvable]
+internal_value: typing.Union[IResolvable, ServiceTimeouts]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-kubernetes.service.ServiceTimeouts">ServiceTimeouts</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-kubernetes.service.ServiceTimeouts">ServiceTimeouts</a>]
 
 ---
 

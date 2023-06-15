@@ -2117,7 +2117,7 @@ def reset_type() -> None
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimitOutputReference.property.maxLimitRequestRatio">max_limit_request_ratio</a></code> | <code>typing.Mapping[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimitOutputReference.property.min">min</a></code> | <code>typing.Mapping[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimitOutputReference.property.type">type</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimitOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[<a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimit">LimitRangeV1SpecLimit</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimitOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimit">LimitRangeV1SpecLimit</a>]</code> | *No description.* |
 
 ---
 
@@ -2268,10 +2268,10 @@ type: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimitOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[LimitRangeV1SpecLimit, IResolvable]
+internal_value: typing.Union[IResolvable, LimitRangeV1SpecLimit]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimit">LimitRangeV1SpecLimit</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimit">LimitRangeV1SpecLimit</a>]
 
 ---
 

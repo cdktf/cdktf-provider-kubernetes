@@ -1849,7 +1849,7 @@ public resetType(): void
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimitOutputReference.property.maxLimitRequestRatio">maxLimitRequestRatio</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimitOutputReference.property.min">min</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimitOutputReference.property.type">type</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimitOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimit">LimitRangeV1SpecLimit</a> \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimitOutputReference.property.internalValue">internalValue</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimit">LimitRangeV1SpecLimit</a></code> | *No description.* |
 
 ---
 
@@ -2000,10 +2000,10 @@ public readonly type: string;
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimitOutputReference.property.internalValue"></a>
 
 ```typescript
-public readonly internalValue: LimitRangeV1SpecLimit | IResolvable;
+public readonly internalValue: IResolvable | LimitRangeV1SpecLimit;
 ```
 
-- *Type:* <a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimit">LimitRangeV1SpecLimit</a> | cdktf.IResolvable
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-kubernetes.limitRangeV1.LimitRangeV1SpecLimit">LimitRangeV1SpecLimit</a>
 
 ---
 
