@@ -1,6 +1,6 @@
 # `data_kubernetes_config_map`
 
-Refer to the Terraform Registory for docs: [`data_kubernetes_config_map`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/config_map).
+Refer to the Terraform Registory for docs: [`data_kubernetes_config_map`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/config_map).
 
 # `dataKubernetesConfigMap` Submodule <a name="`dataKubernetesConfigMap` Submodule" id="@cdktf/provider-kubernetes.dataKubernetesConfigMap"></a>
 
@@ -8,12 +8,12 @@ Refer to the Terraform Registory for docs: [`data_kubernetes_config_map`](https:
 
 ### DataKubernetesConfigMap <a name="DataKubernetesConfigMap" id="@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMap"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/config_map kubernetes_config_map}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/config_map kubernetes_config_map}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMap.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/datakubernetesconfigmap"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmap"
 
 datakubernetesconfigmap.NewDataKubernetesConfigMap(scope Construct, id *string, config DataKubernetesConfigMapConfig) DataKubernetesConfigMap
 ```
@@ -297,7 +297,7 @@ func ResetImmutable()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMap.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/datakubernetesconfigmap"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmap"
 
 datakubernetesconfigmap.DataKubernetesConfigMap_IsConstruct(x interface{}) *bool
 ```
@@ -329,7 +329,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMap.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/datakubernetesconfigmap"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmap"
 
 datakubernetesconfigmap.DataKubernetesConfigMap_IsTerraformElement(x interface{}) *bool
 ```
@@ -343,7 +343,7 @@ datakubernetesconfigmap.DataKubernetesConfigMap_IsTerraformElement(x interface{}
 ##### `IsTerraformDataSource` <a name="IsTerraformDataSource" id="@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMap.isTerraformDataSource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/datakubernetesconfigmap"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmap"
 
 datakubernetesconfigmap.DataKubernetesConfigMap_IsTerraformDataSource(x interface{}) *bool
 ```
@@ -608,7 +608,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMapConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/datakubernetesconfigmap"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmap"
 
 &datakubernetesconfigmap.DataKubernetesConfigMapConfig {
 	Connection: interface{},
@@ -618,7 +618,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/datakubernet
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8.dataKubernetesConfigMap.DataKubernetesConfigMapMetadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMapMetadata,
 	Id: *string,
 	Immutable: interface{},
 }
@@ -636,7 +636,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/datakubernet
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMapConfig.property.provider">Provider</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMapConfig.property.provisioners">Provisioners</a></code> | <code>*[]interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMapConfig.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMapMetadata">DataKubernetesConfigMapMetadata</a></code> | metadata block. |
-| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMapConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/config_map#id DataKubernetesConfigMap#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMapConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/config_map#id DataKubernetesConfigMap#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMapConfig.property.immutable">Immutable</a></code> | <code>interface{}</code> | Immutable, if set to true, ensures that data stored in the ConfigMap cannot be updated (only object metadata can be modified). |
 
 ---
@@ -721,7 +721,7 @@ Metadata DataKubernetesConfigMapMetadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/config_map#metadata DataKubernetesConfigMap#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/config_map#metadata DataKubernetesConfigMap#metadata}
 
 ---
 
@@ -733,7 +733,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/config_map#id DataKubernetesConfigMap#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/config_map#id DataKubernetesConfigMap#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -752,7 +752,7 @@ Immutable, if set to true, ensures that data stored in the ConfigMap cannot be u
 
 If not set to true, the field can be modified at any time. Defaulted to nil.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/config_map#immutable DataKubernetesConfigMap#immutable}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/config_map#immutable DataKubernetesConfigMap#immutable}
 
 ---
 
@@ -761,7 +761,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMapMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/datakubernetesconfigmap"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmap"
 
 &datakubernetesconfigmap.DataKubernetesConfigMapMetadata {
 	Annotations: *map[string]*string,
@@ -794,7 +794,7 @@ An unstructured key value map stored with the config_map that may be used to sto
 
 More info: http://kubernetes.io/docs/user-guide/annotations
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/config_map#annotations DataKubernetesConfigMap#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/config_map#annotations DataKubernetesConfigMap#annotations}
 
 ---
 
@@ -810,7 +810,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/config_map#labels DataKubernetesConfigMap#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/config_map#labels DataKubernetesConfigMap#labels}
 
 ---
 
@@ -824,7 +824,7 @@ Name *string
 
 Name of the config_map, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/config_map#name DataKubernetesConfigMap#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/config_map#name DataKubernetesConfigMap#name}
 
 ---
 
@@ -838,7 +838,7 @@ Namespace *string
 
 Namespace defines the space within which name of the config_map must be unique.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/config_map#namespace DataKubernetesConfigMap#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/config_map#namespace DataKubernetesConfigMap#namespace}
 
 ---
 
@@ -849,7 +849,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesConfigMap.DataKubernetesConfigMapMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/datakubernetesconfigmap"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmap"
 
 datakubernetesconfigmap.NewDataKubernetesConfigMapMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) DataKubernetesConfigMapMetadataOutputReference
 ```
