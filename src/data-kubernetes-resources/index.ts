@@ -1,9 +1,4 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/resources
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resources
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -15,49 +10,49 @@ export interface DataKubernetesResourcesConfig extends cdktf.TerraformMetaArgume
   /**
   * The resource apiVersion.
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/resources#api_version DataKubernetesResources#api_version}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resources#api_version DataKubernetesResources#api_version}
   */
   readonly apiVersion: string;
   /**
   * A selector to restrict the list of returned objects by their fields.
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/resources#field_selector DataKubernetesResources#field_selector}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resources#field_selector DataKubernetesResources#field_selector}
   */
   readonly fieldSelector?: string;
   /**
   * The resource kind.
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/resources#kind DataKubernetesResources#kind}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resources#kind DataKubernetesResources#kind}
   */
   readonly kind: string;
   /**
   * A selector to restrict the list of returned objects by their labels.
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/resources#label_selector DataKubernetesResources#label_selector}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resources#label_selector DataKubernetesResources#label_selector}
   */
   readonly labelSelector?: string;
   /**
   * Limit is a maximum number of responses to return for a list call.
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/resources#limit DataKubernetesResources#limit}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resources#limit DataKubernetesResources#limit}
   */
   readonly limit?: number;
   /**
   * The resource namespace.
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/resources#namespace DataKubernetesResources#namespace}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resources#namespace DataKubernetesResources#namespace}
   */
   readonly namespace?: string;
   /**
   * The response from the API server.
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/resources#objects DataKubernetesResources#objects}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resources#objects DataKubernetesResources#objects}
   */
   readonly objects?: { [key: string]: any };
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/resources kubernetes_resources}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resources kubernetes_resources}
 */
 export class DataKubernetesResources extends cdktf.TerraformDataSource {
 
@@ -71,7 +66,7 @@ export class DataKubernetesResources extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/resources kubernetes_resources} Data Source
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resources kubernetes_resources} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -82,7 +77,7 @@ export class DataKubernetesResources extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_resources',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.21.1',
+        providerVersion: '2.22.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
