@@ -1,6 +1,6 @@
 # `kubernetes_limit_range`
 
-Refer to the Terraform Registory for docs: [`kubernetes_limit_range`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/limit_range).
+Refer to the Terraform Registory for docs: [`kubernetes_limit_range`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/limit_range).
 
 # `limitRange` Submodule <a name="`limitRange` Submodule" id="@cdktf/provider-kubernetes.limitRange"></a>
 
@@ -8,12 +8,12 @@ Refer to the Terraform Registory for docs: [`kubernetes_limit_range`](https://re
 
 ### LimitRange <a name="LimitRange" id="@cdktf/provider-kubernetes.limitRange.LimitRange"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/limit_range kubernetes_limit_range}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/limit_range kubernetes_limit_range}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.limitRange.LimitRange.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
 
 limitrange.NewLimitRange(scope Construct, id *string, config LimitRangeConfig) LimitRange
 ```
@@ -310,7 +310,7 @@ func ResetSpec()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.limitRange.LimitRange.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
 
 limitrange.LimitRange_IsConstruct(x interface{}) *bool
 ```
@@ -342,7 +342,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.limitRange.LimitRange.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
 
 limitrange.LimitRange_IsTerraformElement(x interface{}) *bool
 ```
@@ -356,7 +356,7 @@ limitrange.LimitRange_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.limitRange.LimitRange.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
 
 limitrange.LimitRange_IsTerraformResource(x interface{}) *bool
 ```
@@ -621,7 +621,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.limitRange.LimitRangeConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
 
 &limitrange.LimitRangeConfig {
 	Connection: interface{},
@@ -631,9 +631,9 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/limitrange"
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8.limitRange.LimitRangeMetadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.limitRange.LimitRangeMetadata,
 	Id: *string,
-	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8.limitRange.LimitRangeSpec,
+	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.limitRange.LimitRangeSpec,
 }
 ```
 
@@ -649,7 +649,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/limitrange"
 | <code><a href="#@cdktf/provider-kubernetes.limitRange.LimitRangeConfig.property.provider">Provider</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRange.LimitRangeConfig.property.provisioners">Provisioners</a></code> | <code>*[]interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRange.LimitRangeConfig.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.limitRange.LimitRangeMetadata">LimitRangeMetadata</a></code> | metadata block. |
-| <code><a href="#@cdktf/provider-kubernetes.limitRange.LimitRangeConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/limit_range#id LimitRange#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.limitRange.LimitRangeConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/limit_range#id LimitRange#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.limitRange.LimitRangeConfig.property.spec">Spec</a></code> | <code><a href="#@cdktf/provider-kubernetes.limitRange.LimitRangeSpec">LimitRangeSpec</a></code> | spec block. |
 
 ---
@@ -734,7 +734,7 @@ Metadata LimitRangeMetadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/limit_range#metadata LimitRange#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/limit_range#metadata LimitRange#metadata}
 
 ---
 
@@ -746,7 +746,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/limit_range#id LimitRange#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/limit_range#id LimitRange#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -763,7 +763,7 @@ Spec LimitRangeSpec
 
 spec block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/limit_range#spec LimitRange#spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/limit_range#spec LimitRange#spec}
 
 ---
 
@@ -772,7 +772,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.limitRange.LimitRangeMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
 
 &limitrange.LimitRangeMetadata {
 	Annotations: *map[string]*string,
@@ -807,7 +807,7 @@ An unstructured key value map stored with the limit range that may be used to st
 
 More info: http://kubernetes.io/docs/user-guide/annotations
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/limit_range#annotations LimitRange#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/limit_range#annotations LimitRange#annotations}
 
 ---
 
@@ -823,7 +823,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/limit_range#generate_name LimitRange#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/limit_range#generate_name LimitRange#generate_name}
 
 ---
 
@@ -839,7 +839,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/limit_range#labels LimitRange#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/limit_range#labels LimitRange#labels}
 
 ---
 
@@ -853,7 +853,7 @@ Name *string
 
 Name of the limit range, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/limit_range#name LimitRange#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/limit_range#name LimitRange#name}
 
 ---
 
@@ -867,7 +867,7 @@ Namespace *string
 
 Namespace defines the space within which name of the limit range must be unique.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/limit_range#namespace LimitRange#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/limit_range#namespace LimitRange#namespace}
 
 ---
 
@@ -876,7 +876,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.limitRange.LimitRangeSpec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
 
 &limitrange.LimitRangeSpec {
 	Limit: interface{},
@@ -901,7 +901,7 @@ Limit interface{}
 
 limit block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/limit_range#limit LimitRange#limit}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/limit_range#limit LimitRange#limit}
 
 ---
 
@@ -910,7 +910,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.limitRange.LimitRangeSpecLimit.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
 
 &limitrange.LimitRangeSpecLimit {
 	Default: *map[string]*string,
@@ -945,7 +945,7 @@ Default *map[string]*string
 
 Default resource requirement limit value by resource name if resource limit is omitted.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/limit_range#default LimitRange#default}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/limit_range#default LimitRange#default}
 
 ---
 
@@ -959,7 +959,7 @@ DefaultRequest *map[string]*string
 
 The default resource requirement request value by resource name if resource request is omitted.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/limit_range#default_request LimitRange#default_request}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/limit_range#default_request LimitRange#default_request}
 
 ---
 
@@ -973,7 +973,7 @@ Max *map[string]*string
 
 Max usage constraints on this kind by resource name.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/limit_range#max LimitRange#max}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/limit_range#max LimitRange#max}
 
 ---
 
@@ -989,7 +989,7 @@ The named resource must have a request and limit that are both non-zero where li
 
 this represents the max burst for the named resource.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/limit_range#max_limit_request_ratio LimitRange#max_limit_request_ratio}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/limit_range#max_limit_request_ratio LimitRange#max_limit_request_ratio}
 
 ---
 
@@ -1003,7 +1003,7 @@ Min *map[string]*string
 
 Min usage constraints on this kind by resource name.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/limit_range#min LimitRange#min}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/limit_range#min LimitRange#min}
 
 ---
 
@@ -1017,7 +1017,7 @@ Type *string
 
 Type of resource that this limit applies to.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/limit_range#type LimitRange#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/limit_range#type LimitRange#type}
 
 ---
 
@@ -1028,7 +1028,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.limitRange.LimitRangeMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
 
 limitrange.NewLimitRangeMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) LimitRangeMetadataOutputReference
 ```
@@ -1455,7 +1455,7 @@ func InternalValue() LimitRangeMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.limitRange.LimitRangeSpecLimitList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
 
 limitrange.NewLimitRangeSpecLimitList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) LimitRangeSpecLimitList
 ```
@@ -1598,7 +1598,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.limitRange.LimitRangeSpecLimitOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
 
 limitrange.NewLimitRangeSpecLimitOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) LimitRangeSpecLimitOutputReference
 ```
@@ -2039,7 +2039,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.limitRange.LimitRangeSpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/limitrange"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/limitrange"
 
 limitrange.NewLimitRangeSpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) LimitRangeSpecOutputReference
 ```

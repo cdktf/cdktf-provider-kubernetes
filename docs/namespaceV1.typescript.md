@@ -1,6 +1,6 @@
 # `kubernetes_namespace_v1`
 
-Refer to the Terraform Registory for docs: [`kubernetes_namespace_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace_v1).
+Refer to the Terraform Registory for docs: [`kubernetes_namespace_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace_v1).
 
 # `namespaceV1` Submodule <a name="`namespaceV1` Submodule" id="@cdktf/provider-kubernetes.namespaceV1"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`kubernetes_namespace_v1`](https://r
 
 ### NamespaceV1 <a name="NamespaceV1" id="@cdktf/provider-kubernetes.namespaceV1.NamespaceV1"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace_v1 kubernetes_namespace_v1}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace_v1 kubernetes_namespace_v1}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.namespaceV1.NamespaceV1.Initializer"></a>
 
@@ -74,6 +74,7 @@ Must be unique amongst siblings in the same scope
 | <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1.putTimeouts">putTimeouts</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1.resetId">resetId</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1.resetTimeouts">resetTimeouts</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1.resetWaitForDefaultServiceAccount">resetWaitForDefaultServiceAccount</a></code> | *No description.* |
 
 ---
 
@@ -297,6 +298,12 @@ public resetId(): void
 public resetTimeouts(): void
 ```
 
+##### `resetWaitForDefaultServiceAccount` <a name="resetWaitForDefaultServiceAccount" id="@cdktf/provider-kubernetes.namespaceV1.NamespaceV1.resetWaitForDefaultServiceAccount"></a>
+
+```typescript
+public resetWaitForDefaultServiceAccount(): void
+```
+
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
 | **Name** | **Description** |
@@ -390,7 +397,9 @@ namespaceV1.NamespaceV1.isTerraformResource(x: any)
 | <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1.property.idInput">idInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1.property.metadataInput">metadataInput</a></code> | <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1Metadata">NamespaceV1Metadata</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1.property.timeoutsInput">timeoutsInput</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1Timeouts">NamespaceV1Timeouts</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1.property.waitForDefaultServiceAccountInput">waitForDefaultServiceAccountInput</a></code> | <code>boolean \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1.property.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1.property.waitForDefaultServiceAccount">waitForDefaultServiceAccount</a></code> | <code>boolean \| cdktf.IResolvable</code> | *No description.* |
 
 ---
 
@@ -586,6 +595,16 @@ public readonly timeoutsInput: IResolvable | NamespaceV1Timeouts;
 
 ---
 
+##### `waitForDefaultServiceAccountInput`<sup>Optional</sup> <a name="waitForDefaultServiceAccountInput" id="@cdktf/provider-kubernetes.namespaceV1.NamespaceV1.property.waitForDefaultServiceAccountInput"></a>
+
+```typescript
+public readonly waitForDefaultServiceAccountInput: boolean | IResolvable;
+```
+
+- *Type:* boolean | cdktf.IResolvable
+
+---
+
 ##### `id`<sup>Required</sup> <a name="id" id="@cdktf/provider-kubernetes.namespaceV1.NamespaceV1.property.id"></a>
 
 ```typescript
@@ -593,6 +612,16 @@ public readonly id: string;
 ```
 
 - *Type:* string
+
+---
+
+##### `waitForDefaultServiceAccount`<sup>Required</sup> <a name="waitForDefaultServiceAccount" id="@cdktf/provider-kubernetes.namespaceV1.NamespaceV1.property.waitForDefaultServiceAccount"></a>
+
+```typescript
+public readonly waitForDefaultServiceAccount: boolean | IResolvable;
+```
+
+- *Type:* boolean | cdktf.IResolvable
 
 ---
 
@@ -638,8 +667,9 @@ const namespaceV1Config: namespaceV1.NamespaceV1Config = { ... }
 | <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1Config.property.provider">provider</a></code> | <code>cdktf.TerraformProvider</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1Config.property.provisioners">provisioners</a></code> | <code>cdktf.FileProvisioner \| cdktf.LocalExecProvisioner \| cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1Config.property.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1Metadata">NamespaceV1Metadata</a></code> | metadata block. |
-| <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1Config.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace_v1#id NamespaceV1#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1Config.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace_v1#id NamespaceV1#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1Config.property.timeouts">timeouts</a></code> | <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1Timeouts">NamespaceV1Timeouts</a></code> | timeouts block. |
+| <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1Config.property.waitForDefaultServiceAccount">waitForDefaultServiceAccount</a></code> | <code>boolean \| cdktf.IResolvable</code> | Terraform will wait for the default service account to be created. |
 
 ---
 
@@ -723,7 +753,7 @@ public readonly metadata: NamespaceV1Metadata;
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace_v1#metadata NamespaceV1#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace_v1#metadata NamespaceV1#metadata}
 
 ---
 
@@ -735,7 +765,7 @@ public readonly id: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace_v1#id NamespaceV1#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace_v1#id NamespaceV1#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -752,7 +782,21 @@ public readonly timeouts: NamespaceV1Timeouts;
 
 timeouts block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace_v1#timeouts NamespaceV1#timeouts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace_v1#timeouts NamespaceV1#timeouts}
+
+---
+
+##### `waitForDefaultServiceAccount`<sup>Optional</sup> <a name="waitForDefaultServiceAccount" id="@cdktf/provider-kubernetes.namespaceV1.NamespaceV1Config.property.waitForDefaultServiceAccount"></a>
+
+```typescript
+public readonly waitForDefaultServiceAccount: boolean | IResolvable;
+```
+
+- *Type:* boolean | cdktf.IResolvable
+
+Terraform will wait for the default service account to be created.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace_v1#wait_for_default_service_account NamespaceV1#wait_for_default_service_account}
 
 ---
 
@@ -789,7 +833,7 @@ An unstructured key value map stored with the namespace that may be used to stor
 
 More info: http://kubernetes.io/docs/user-guide/annotations
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace_v1#annotations NamespaceV1#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace_v1#annotations NamespaceV1#annotations}
 
 ---
 
@@ -805,7 +849,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace_v1#generate_name NamespaceV1#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace_v1#generate_name NamespaceV1#generate_name}
 
 ---
 
@@ -821,7 +865,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace_v1#labels NamespaceV1#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace_v1#labels NamespaceV1#labels}
 
 ---
 
@@ -835,7 +879,7 @@ public readonly name: string;
 
 Name of the namespace, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace_v1#name NamespaceV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace_v1#name NamespaceV1#name}
 
 ---
 
@@ -853,7 +897,7 @@ const namespaceV1Timeouts: namespaceV1.NamespaceV1Timeouts = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1Timeouts.property.delete">delete</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace_v1#delete NamespaceV1#delete}. |
+| <code><a href="#@cdktf/provider-kubernetes.namespaceV1.NamespaceV1Timeouts.property.delete">delete</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace_v1#delete NamespaceV1#delete}. |
 
 ---
 
@@ -865,7 +909,7 @@ public readonly delete: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace_v1#delete NamespaceV1#delete}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace_v1#delete NamespaceV1#delete}.
 
 ---
 
