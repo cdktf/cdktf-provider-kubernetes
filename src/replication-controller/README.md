@@ -1,3 +1,3 @@
 # `kubernetes_replication_controller`
 
-Refer to the Terraform Registory for docs: [`kubernetes_replication_controller`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/replication_controller).
+Refer to the Terraform Registory for docs: [`kubernetes_replication_controller`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller).
