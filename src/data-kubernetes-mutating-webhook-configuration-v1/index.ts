@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/mutating_webhook_configuration_v1
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/mutating_webhook_configuration_v1
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -13,7 +13,7 @@ import * as cdktf from 'cdktf';
 
 export interface DataKubernetesMutatingWebhookConfigurationV1Config extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/mutating_webhook_configuration_v1#id DataKubernetesMutatingWebhookConfigurationV1#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/mutating_webhook_configuration_v1#id DataKubernetesMutatingWebhookConfigurationV1#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -22,7 +22,7 @@ export interface DataKubernetesMutatingWebhookConfigurationV1Config extends cdkt
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/mutating_webhook_configuration_v1#metadata DataKubernetesMutatingWebhookConfigurationV1#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/mutating_webhook_configuration_v1#metadata DataKubernetesMutatingWebhookConfigurationV1#metadata}
   */
   readonly metadata: DataKubernetesMutatingWebhookConfigurationV1Metadata;
 }
@@ -676,19 +676,19 @@ export interface DataKubernetesMutatingWebhookConfigurationV1Metadata {
   /**
   * An unstructured key value map stored with the mutating webhook configuration that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/mutating_webhook_configuration_v1#annotations DataKubernetesMutatingWebhookConfigurationV1#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/mutating_webhook_configuration_v1#annotations DataKubernetesMutatingWebhookConfigurationV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the mutating webhook configuration. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/mutating_webhook_configuration_v1#labels DataKubernetesMutatingWebhookConfigurationV1#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/mutating_webhook_configuration_v1#labels DataKubernetesMutatingWebhookConfigurationV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the mutating webhook configuration, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/mutating_webhook_configuration_v1#name DataKubernetesMutatingWebhookConfigurationV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/mutating_webhook_configuration_v1#name DataKubernetesMutatingWebhookConfigurationV1#name}
   */
   readonly name?: string;
 }
@@ -814,7 +814,7 @@ export class DataKubernetesMutatingWebhookConfigurationV1MetadataOutputReference
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/mutating_webhook_configuration_v1 kubernetes_mutating_webhook_configuration_v1}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/mutating_webhook_configuration_v1 kubernetes_mutating_webhook_configuration_v1}
 */
 export class DataKubernetesMutatingWebhookConfigurationV1 extends cdktf.TerraformDataSource {
 
@@ -828,7 +828,7 @@ export class DataKubernetesMutatingWebhookConfigurationV1 extends cdktf.Terrafor
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/mutating_webhook_configuration_v1 kubernetes_mutating_webhook_configuration_v1} Data Source
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/mutating_webhook_configuration_v1 kubernetes_mutating_webhook_configuration_v1} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -839,7 +839,7 @@ export class DataKubernetesMutatingWebhookConfigurationV1 extends cdktf.Terrafor
       terraformResourceType: 'kubernetes_mutating_webhook_configuration_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.21.1',
+        providerVersion: '2.22.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

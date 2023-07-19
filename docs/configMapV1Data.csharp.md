@@ -1,6 +1,6 @@
 # `kubernetes_config_map_v1_data`
 
-Refer to the Terraform Registory for docs: [`kubernetes_config_map_v1_data`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1_data).
+Refer to the Terraform Registory for docs: [`kubernetes_config_map_v1_data`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/config_map_v1_data).
 
 # `configMapV1Data` Submodule <a name="`configMapV1Data` Submodule" id="@cdktf/provider-kubernetes.configMapV1Data"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`kubernetes_config_map_v1_data`](htt
 
 ### ConfigMapV1Data <a name="ConfigMapV1Data" id="@cdktf/provider-kubernetes.configMapV1Data.ConfigMapV1Data"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1_data kubernetes_config_map_v1_data}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/config_map_v1_data kubernetes_config_map_v1_data}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.configMapV1Data.ConfigMapV1Data.Initializer"></a>
 
@@ -692,7 +692,7 @@ new ConfigMapV1DataConfig {
 | <code><a href="#@cdktf/provider-kubernetes.configMapV1Data.ConfigMapV1DataConfig.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.configMapV1Data.ConfigMapV1DataMetadata">ConfigMapV1DataMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.configMapV1Data.ConfigMapV1DataConfig.property.fieldManager">FieldManager</a></code> | <code>string</code> | Set the name of the field manager for the specified labels. |
 | <code><a href="#@cdktf/provider-kubernetes.configMapV1Data.ConfigMapV1DataConfig.property.force">Force</a></code> | <code>object</code> | Force overwriting data that is managed outside of Terraform. |
-| <code><a href="#@cdktf/provider-kubernetes.configMapV1Data.ConfigMapV1DataConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1_data#id ConfigMapV1Data#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.configMapV1Data.ConfigMapV1DataConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/config_map_v1_data#id ConfigMapV1Data#id}. |
 
 ---
 
@@ -776,7 +776,7 @@ public System.Collections.Generic.IDictionary<string, string> Data { get; set; }
 
 The data we want to add to the ConfigMap.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1_data#data ConfigMapV1Data#data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/config_map_v1_data#data ConfigMapV1Data#data}
 
 ---
 
@@ -790,7 +790,7 @@ public ConfigMapV1DataMetadata Metadata { get; set; }
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1_data#metadata ConfigMapV1Data#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/config_map_v1_data#metadata ConfigMapV1Data#metadata}
 
 ---
 
@@ -804,7 +804,7 @@ public string FieldManager { get; set; }
 
 Set the name of the field manager for the specified labels.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1_data#field_manager ConfigMapV1Data#field_manager}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/config_map_v1_data#field_manager ConfigMapV1Data#field_manager}
 
 ---
 
@@ -818,7 +818,7 @@ public object Force { get; set; }
 
 Force overwriting data that is managed outside of Terraform.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1_data#force ConfigMapV1Data#force}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/config_map_v1_data#force ConfigMapV1Data#force}
 
 ---
 
@@ -830,7 +830,7 @@ public string Id { get; set; }
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1_data#id ConfigMapV1Data#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/config_map_v1_data#id ConfigMapV1Data#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -869,7 +869,7 @@ public string Name { get; set; }
 
 The name of the ConfigMap.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1_data#name ConfigMapV1Data#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/config_map_v1_data#name ConfigMapV1Data#name}
 
 ---
 
@@ -883,7 +883,7 @@ public string Namespace { get; set; }
 
 The namespace of the ConfigMap.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/config_map_v1_data#namespace ConfigMapV1Data#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/config_map_v1_data#namespace ConfigMapV1Data#namespace}
 
 ---
 

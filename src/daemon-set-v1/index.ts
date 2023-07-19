@@ -19,7 +19,7 @@ import { Construct } from 'constructs';
 import * as cdktf from 'cdktf';
 export interface DaemonSetV1Config extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/daemon_set_v1#id DaemonSetV1#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/daemon_set_v1#id DaemonSetV1#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -28,31 +28,31 @@ export interface DaemonSetV1Config extends cdktf.TerraformMetaArguments {
   /**
   * Wait for the rollout of the deployment to complete. Defaults to true.
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/daemon_set_v1#wait_for_rollout DaemonSetV1#wait_for_rollout}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/daemon_set_v1#wait_for_rollout DaemonSetV1#wait_for_rollout}
   */
   readonly waitForRollout?: boolean | cdktf.IResolvable;
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/daemon_set_v1#metadata DaemonSetV1#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/daemon_set_v1#metadata DaemonSetV1#metadata}
   */
   readonly metadata: DaemonSetV1Metadata;
   /**
   * spec block
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/daemon_set_v1#spec DaemonSetV1#spec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/daemon_set_v1#spec DaemonSetV1#spec}
   */
   readonly spec: DaemonSetV1Spec;
   /**
   * timeouts block
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/daemon_set_v1#timeouts DaemonSetV1#timeouts}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/daemon_set_v1#timeouts DaemonSetV1#timeouts}
   */
   readonly timeouts?: DaemonSetV1Timeouts;
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/daemon_set_v1 kubernetes_daemon_set_v1}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/daemon_set_v1 kubernetes_daemon_set_v1}
 */
 export class DaemonSetV1 extends cdktf.TerraformResource {
 
@@ -66,7 +66,7 @@ export class DaemonSetV1 extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/daemon_set_v1 kubernetes_daemon_set_v1} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/daemon_set_v1 kubernetes_daemon_set_v1} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -77,7 +77,7 @@ export class DaemonSetV1 extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_daemon_set_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.21.1',
+        providerVersion: '2.22.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/nodes
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/nodes
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -13,7 +13,7 @@ import * as cdktf from 'cdktf';
 
 export interface DataKubernetesNodesConfig extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/nodes#id DataKubernetesNodes#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/nodes#id DataKubernetesNodes#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -22,7 +22,7 @@ export interface DataKubernetesNodesConfig extends cdktf.TerraformMetaArguments 
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/nodes#metadata DataKubernetesNodes#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/nodes#metadata DataKubernetesNodes#metadata}
   */
   readonly metadata?: DataKubernetesNodesMetadata;
 }
@@ -276,6 +276,75 @@ export class DataKubernetesNodesNodesSpecList extends cdktf.ComplexList {
     return new DataKubernetesNodesNodesSpecOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
+export interface DataKubernetesNodesNodesStatusAddresses {
+}
+
+export function dataKubernetesNodesNodesStatusAddressesToTerraform(struct?: DataKubernetesNodesNodesStatusAddresses): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesNodesNodesStatusAddressesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesNodesNodesStatusAddresses | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesNodesNodesStatusAddresses | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
+
+  // address - computed: true, optional: false, required: false
+  public get address() {
+    return this.getStringAttribute('address');
+  }
+
+  // type - computed: true, optional: false, required: false
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+}
+
+export class DataKubernetesNodesNodesStatusAddressesList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesNodesNodesStatusAddressesOutputReference {
+    return new DataKubernetesNodesNodesStatusAddressesOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface DataKubernetesNodesNodesStatusNodeInfo {
 }
 
@@ -425,6 +494,12 @@ export class DataKubernetesNodesNodesStatusOutputReference extends cdktf.Complex
     }
   }
 
+  // addresses - computed: true, optional: false, required: false
+  private _addresses = new DataKubernetesNodesNodesStatusAddressesList(this, "addresses", false);
+  public get addresses() {
+    return this._addresses;
+  }
+
   // allocatable - computed: true, optional: false, required: false
   private _allocatable = new cdktf.StringMap(this, "allocatable");
   public get allocatable() {
@@ -543,7 +618,7 @@ export interface DataKubernetesNodesMetadata {
   /**
   * Select nodes with these labels. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/nodes#labels DataKubernetesNodes#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/nodes#labels DataKubernetesNodes#labels}
   */
   readonly labels: { [key: string]: string };
 }
@@ -605,7 +680,7 @@ export class DataKubernetesNodesMetadataOutputReference extends cdktf.ComplexObj
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/nodes kubernetes_nodes}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/nodes kubernetes_nodes}
 */
 export class DataKubernetesNodes extends cdktf.TerraformDataSource {
 
@@ -619,7 +694,7 @@ export class DataKubernetesNodes extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/data-sources/nodes kubernetes_nodes} Data Source
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/nodes kubernetes_nodes} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -630,7 +705,7 @@ export class DataKubernetesNodes extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_nodes',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.21.1',
+        providerVersion: '2.22.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

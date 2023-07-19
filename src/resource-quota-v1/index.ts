@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -13,7 +13,7 @@ import * as cdktf from 'cdktf';
 
 export interface ResourceQuotaV1Config extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1#id ResourceQuotaV1#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1#id ResourceQuotaV1#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -22,19 +22,19 @@ export interface ResourceQuotaV1Config extends cdktf.TerraformMetaArguments {
   /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1#metadata ResourceQuotaV1#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1#metadata ResourceQuotaV1#metadata}
   */
   readonly metadata: ResourceQuotaV1Metadata;
   /**
   * spec block
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1#spec ResourceQuotaV1#spec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1#spec ResourceQuotaV1#spec}
   */
   readonly spec?: ResourceQuotaV1Spec;
   /**
   * timeouts block
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1#timeouts ResourceQuotaV1#timeouts}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1#timeouts ResourceQuotaV1#timeouts}
   */
   readonly timeouts?: ResourceQuotaV1Timeouts;
 }
@@ -42,31 +42,31 @@ export interface ResourceQuotaV1Metadata {
   /**
   * An unstructured key value map stored with the resource quota that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1#annotations ResourceQuotaV1#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1#annotations ResourceQuotaV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1#generate_name ResourceQuotaV1#generate_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1#generate_name ResourceQuotaV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the resource quota. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1#labels ResourceQuotaV1#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1#labels ResourceQuotaV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the resource quota, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1#name ResourceQuotaV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1#name ResourceQuotaV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the resource quota must be unique.
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1#namespace ResourceQuotaV1#namespace}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1#namespace ResourceQuotaV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -240,19 +240,19 @@ export interface ResourceQuotaV1SpecScopeSelectorMatchExpression {
   /**
   * Represents a scope's relationship to a set of values.
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1#operator ResourceQuotaV1#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1#operator ResourceQuotaV1#operator}
   */
   readonly operator: string;
   /**
   * The name of the scope that the selector applies to.
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1#scope_name ResourceQuotaV1#scope_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1#scope_name ResourceQuotaV1#scope_name}
   */
   readonly scopeName: string;
   /**
   * A list of scope selector requirements by scope of the resources.
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1#values ResourceQuotaV1#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1#values ResourceQuotaV1#values}
   */
   readonly values?: string[];
 }
@@ -391,7 +391,7 @@ export interface ResourceQuotaV1SpecScopeSelector {
   /**
   * match_expression block
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1#match_expression ResourceQuotaV1#match_expression}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1#match_expression ResourceQuotaV1#match_expression}
   */
   readonly matchExpression?: ResourceQuotaV1SpecScopeSelectorMatchExpression[] | cdktf.IResolvable;
 }
@@ -458,19 +458,19 @@ export interface ResourceQuotaV1Spec {
   /**
   * The set of desired hard limits for each named resource. More info: http://releases.k8s.io/HEAD/docs/design/admission_control_resource_quota.md#admissioncontrol-plugin-resourcequota
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1#hard ResourceQuotaV1#hard}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1#hard ResourceQuotaV1#hard}
   */
   readonly hard?: { [key: string]: string };
   /**
   * A collection of filters that must match each object tracked by a quota. If not specified, the quota matches all objects.
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1#scopes ResourceQuotaV1#scopes}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1#scopes ResourceQuotaV1#scopes}
   */
   readonly scopes?: string[];
   /**
   * scope_selector block
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1#scope_selector ResourceQuotaV1#scope_selector}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1#scope_selector ResourceQuotaV1#scope_selector}
   */
   readonly scopeSelector?: ResourceQuotaV1SpecScopeSelector;
 }
@@ -581,11 +581,11 @@ export class ResourceQuotaV1SpecOutputReference extends cdktf.ComplexObject {
 }
 export interface ResourceQuotaV1Timeouts {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1#create ResourceQuotaV1#create}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1#create ResourceQuotaV1#create}
   */
   readonly create?: string;
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1#update ResourceQuotaV1#update}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1#update ResourceQuotaV1#update}
   */
   readonly update?: string;
 }
@@ -683,7 +683,7 @@ export class ResourceQuotaV1TimeoutsOutputReference extends cdktf.ComplexObject 
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1 kubernetes_resource_quota_v1}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1 kubernetes_resource_quota_v1}
 */
 export class ResourceQuotaV1 extends cdktf.TerraformResource {
 
@@ -697,7 +697,7 @@ export class ResourceQuotaV1 extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/resource_quota_v1 kubernetes_resource_quota_v1} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/resource_quota_v1 kubernetes_resource_quota_v1} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -708,7 +708,7 @@ export class ResourceQuotaV1 extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_resource_quota_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.21.1',
+        providerVersion: '2.22.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

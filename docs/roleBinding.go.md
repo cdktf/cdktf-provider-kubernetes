@@ -1,6 +1,6 @@
 # `kubernetes_role_binding`
 
-Refer to the Terraform Registory for docs: [`kubernetes_role_binding`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/role_binding).
+Refer to the Terraform Registory for docs: [`kubernetes_role_binding`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role_binding).
 
 # `roleBinding` Submodule <a name="`roleBinding` Submodule" id="@cdktf/provider-kubernetes.roleBinding"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`kubernetes_role_binding`](https://r
 
 ### RoleBinding <a name="RoleBinding" id="@cdktf/provider-kubernetes.roleBinding.RoleBinding"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/role_binding kubernetes_role_binding}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role_binding kubernetes_role_binding}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.roleBinding.RoleBinding.Initializer"></a>
 
@@ -680,7 +680,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/rolebinding"
 | <code><a href="#@cdktf/provider-kubernetes.roleBinding.RoleBindingConfig.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.roleBinding.RoleBindingMetadata">RoleBindingMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.roleBinding.RoleBindingConfig.property.roleRef">RoleRef</a></code> | <code><a href="#@cdktf/provider-kubernetes.roleBinding.RoleBindingRoleRef">RoleBindingRoleRef</a></code> | role_ref block. |
 | <code><a href="#@cdktf/provider-kubernetes.roleBinding.RoleBindingConfig.property.subject">Subject</a></code> | <code>interface{}</code> | subject block. |
-| <code><a href="#@cdktf/provider-kubernetes.roleBinding.RoleBindingConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/role_binding#id RoleBinding#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.roleBinding.RoleBindingConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role_binding#id RoleBinding#id}. |
 
 ---
 
@@ -764,7 +764,7 @@ Metadata RoleBindingMetadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/role_binding#metadata RoleBinding#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role_binding#metadata RoleBinding#metadata}
 
 ---
 
@@ -778,7 +778,7 @@ RoleRef RoleBindingRoleRef
 
 role_ref block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/role_binding#role_ref RoleBinding#role_ref}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role_binding#role_ref RoleBinding#role_ref}
 
 ---
 
@@ -792,7 +792,7 @@ Subject interface{}
 
 subject block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/role_binding#subject RoleBinding#subject}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role_binding#subject RoleBinding#subject}
 
 ---
 
@@ -804,7 +804,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/role_binding#id RoleBinding#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role_binding#id RoleBinding#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -851,7 +851,7 @@ An unstructured key value map stored with the roleBinding that may be used to st
 
 More info: http://kubernetes.io/docs/user-guide/annotations
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/role_binding#annotations RoleBinding#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role_binding#annotations RoleBinding#annotations}
 
 ---
 
@@ -867,7 +867,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/role_binding#generate_name RoleBinding#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role_binding#generate_name RoleBinding#generate_name}
 
 ---
 
@@ -883,7 +883,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/role_binding#labels RoleBinding#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role_binding#labels RoleBinding#labels}
 
 ---
 
@@ -897,7 +897,7 @@ Name *string
 
 Name of the roleBinding, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/role_binding#name RoleBinding#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role_binding#name RoleBinding#name}
 
 ---
 
@@ -911,7 +911,7 @@ Namespace *string
 
 Namespace defines the space within which name of the roleBinding must be unique.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/role_binding#namespace RoleBinding#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role_binding#namespace RoleBinding#namespace}
 
 ---
 
@@ -949,7 +949,7 @@ ApiGroup *string
 
 The API group of the user. The only value possible at the moment is `rbac.authorization.k8s.io`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/role_binding#api_group RoleBinding#api_group}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role_binding#api_group RoleBinding#api_group}
 
 ---
 
@@ -963,7 +963,7 @@ Kind *string
 
 The kind of resource.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/role_binding#kind RoleBinding#kind}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role_binding#kind RoleBinding#kind}
 
 ---
 
@@ -977,7 +977,7 @@ Name *string
 
 The name of the User to bind to.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/role_binding#name RoleBinding#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role_binding#name RoleBinding#name}
 
 ---
 
@@ -1017,7 +1017,7 @@ Kind *string
 
 The kind of resource.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/role_binding#kind RoleBinding#kind}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role_binding#kind RoleBinding#kind}
 
 ---
 
@@ -1031,7 +1031,7 @@ Name *string
 
 The name of the resource to bind to.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/role_binding#name RoleBinding#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role_binding#name RoleBinding#name}
 
 ---
 
@@ -1045,7 +1045,7 @@ ApiGroup *string
 
 The API group of the subject resource.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/role_binding#api_group RoleBinding#api_group}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role_binding#api_group RoleBinding#api_group}
 
 ---
 
@@ -1059,7 +1059,7 @@ Namespace *string
 
 The Namespace of the subject resource.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/role_binding#namespace RoleBinding#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role_binding#namespace RoleBinding#namespace}
 
 ---
 

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -13,22 +13,28 @@ import * as cdktf from 'cdktf';
 
 export interface NamespaceConfig extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace#id Namespace#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace#id Namespace#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
   */
   readonly id?: string;
   /**
+  * Terraform will wait for the default service account to be created.
+  * 
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace#wait_for_default_service_account Namespace#wait_for_default_service_account}
+  */
+  readonly waitForDefaultServiceAccount?: boolean | cdktf.IResolvable;
+  /**
   * metadata block
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace#metadata Namespace#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace#metadata Namespace#metadata}
   */
   readonly metadata: NamespaceMetadata;
   /**
   * timeouts block
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace#timeouts Namespace#timeouts}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace#timeouts Namespace#timeouts}
   */
   readonly timeouts?: NamespaceTimeouts;
 }
@@ -36,25 +42,25 @@ export interface NamespaceMetadata {
   /**
   * An unstructured key value map stored with the namespace that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace#annotations Namespace#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace#annotations Namespace#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace#generate_name Namespace#generate_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace#generate_name Namespace#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the namespace. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace#labels Namespace#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace#labels Namespace#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the namespace, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
   * 
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace#name Namespace#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace#name Namespace#name}
   */
   readonly name?: string;
 }
@@ -203,7 +209,7 @@ export class NamespaceMetadataOutputReference extends cdktf.ComplexObject {
 }
 export interface NamespaceTimeouts {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace#delete Namespace#delete}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace#delete Namespace#delete}
   */
   readonly delete?: string;
 }
@@ -278,7 +284,7 @@ export class NamespaceTimeoutsOutputReference extends cdktf.ComplexObject {
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace kubernetes_namespace}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace kubernetes_namespace}
 */
 export class Namespace extends cdktf.TerraformResource {
 
@@ -292,7 +298,7 @@ export class Namespace extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/namespace kubernetes_namespace} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace kubernetes_namespace} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -303,7 +309,7 @@ export class Namespace extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_namespace',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.21.1',
+        providerVersion: '2.22.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
@@ -315,6 +321,7 @@ export class Namespace extends cdktf.TerraformResource {
       forEach: config.forEach
     });
     this._id = config.id;
+    this._waitForDefaultServiceAccount = config.waitForDefaultServiceAccount;
     this._metadata.internalValue = config.metadata;
     this._timeouts.internalValue = config.timeouts;
   }
@@ -337,6 +344,22 @@ export class Namespace extends cdktf.TerraformResource {
   // Temporarily expose input value. Use with caution.
   public get idInput() {
     return this._id;
+  }
+
+  // wait_for_default_service_account - computed: false, optional: true, required: false
+  private _waitForDefaultServiceAccount?: boolean | cdktf.IResolvable; 
+  public get waitForDefaultServiceAccount() {
+    return this.getBooleanAttribute('wait_for_default_service_account');
+  }
+  public set waitForDefaultServiceAccount(value: boolean | cdktf.IResolvable) {
+    this._waitForDefaultServiceAccount = value;
+  }
+  public resetWaitForDefaultServiceAccount() {
+    this._waitForDefaultServiceAccount = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get waitForDefaultServiceAccountInput() {
+    return this._waitForDefaultServiceAccount;
   }
 
   // metadata - computed: false, optional: false, required: true
@@ -375,6 +398,7 @@ export class Namespace extends cdktf.TerraformResource {
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
       id: cdktf.stringToTerraform(this._id),
+      wait_for_default_service_account: cdktf.booleanToTerraform(this._waitForDefaultServiceAccount),
       metadata: namespaceMetadataToTerraform(this._metadata.internalValue),
       timeouts: namespaceTimeoutsToTerraform(this._timeouts.internalValue),
     };
