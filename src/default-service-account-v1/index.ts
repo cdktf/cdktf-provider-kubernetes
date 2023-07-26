@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account_v1
 // generated from terraform resource schema
 
@@ -14,7 +9,7 @@ import * as cdktf from 'cdktf';
 export interface DefaultServiceAccountV1Config extends cdktf.TerraformMetaArguments {
   /**
   * Enable automatic mounting of the service account token
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account_v1#automount_service_account_token DefaultServiceAccountV1#automount_service_account_token}
   */
   readonly automountServiceAccountToken?: boolean | cdktf.IResolvable;
@@ -27,25 +22,25 @@ export interface DefaultServiceAccountV1Config extends cdktf.TerraformMetaArgume
   readonly id?: string;
   /**
   * image_pull_secret block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account_v1#image_pull_secret DefaultServiceAccountV1#image_pull_secret}
   */
   readonly imagePullSecret?: DefaultServiceAccountV1ImagePullSecret[] | cdktf.IResolvable;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account_v1#metadata DefaultServiceAccountV1#metadata}
   */
   readonly metadata: DefaultServiceAccountV1Metadata;
   /**
   * secret block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account_v1#secret DefaultServiceAccountV1#secret}
   */
   readonly secret?: DefaultServiceAccountV1Secret[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account_v1#timeouts DefaultServiceAccountV1#timeouts}
   */
   readonly timeouts?: DefaultServiceAccountV1Timeouts;
@@ -53,7 +48,7 @@ export interface DefaultServiceAccountV1Config extends cdktf.TerraformMetaArgume
 export interface DefaultServiceAccountV1ImagePullSecret {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account_v1#name DefaultServiceAccountV1#name}
   */
   readonly name?: string;
@@ -152,25 +147,25 @@ export class DefaultServiceAccountV1ImagePullSecretList extends cdktf.ComplexLis
 export interface DefaultServiceAccountV1Metadata {
   /**
   * An unstructured key value map stored with the service account that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account_v1#annotations DefaultServiceAccountV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the service account. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account_v1#labels DefaultServiceAccountV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the service account, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account_v1#name DefaultServiceAccountV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the service account must be unique.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account_v1#namespace DefaultServiceAccountV1#namespace}
   */
   readonly namespace?: string;
@@ -321,7 +316,7 @@ export class DefaultServiceAccountV1MetadataOutputReference extends cdktf.Comple
 export interface DefaultServiceAccountV1Secret {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account_v1#name DefaultServiceAccountV1#name}
   */
   readonly name?: string;

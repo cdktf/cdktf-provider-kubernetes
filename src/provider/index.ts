@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs
 // generated from terraform resource schema
 
@@ -14,19 +9,19 @@ import * as cdktf from 'cdktf';
 export interface KubernetesProviderConfig {
   /**
   * PEM-encoded client certificate for TLS authentication.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs#client_certificate KubernetesProvider#client_certificate}
   */
   readonly clientCertificate?: string;
   /**
   * PEM-encoded client certificate key for TLS authentication.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs#client_key KubernetesProvider#client_key}
   */
   readonly clientKey?: string;
   /**
   * PEM-encoded root certificates bundle for TLS authentication.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs#cluster_ca_certificate KubernetesProvider#cluster_ca_certificate}
   */
   readonly clusterCaCertificate?: string;
@@ -44,85 +39,85 @@ export interface KubernetesProviderConfig {
   readonly configContextCluster?: string;
   /**
   * Path to the kube config file. Can be set with KUBE_CONFIG_PATH.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs#config_path KubernetesProvider#config_path}
   */
   readonly configPath?: string;
   /**
   * A list of paths to kube config files. Can be set with KUBE_CONFIG_PATHS environment variable.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs#config_paths KubernetesProvider#config_paths}
   */
   readonly configPaths?: string[];
   /**
   * The hostname (in form of URI) of Kubernetes master.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs#host KubernetesProvider#host}
   */
   readonly host?: string;
   /**
   * List of Kubernetes metadata annotations to ignore across all resources handled by this provider for situations where external systems are managing certain resource annotations. Each item is a regular expression.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs#ignore_annotations KubernetesProvider#ignore_annotations}
   */
   readonly ignoreAnnotations?: string[];
   /**
   * List of Kubernetes metadata labels to ignore across all resources handled by this provider for situations where external systems are managing certain resource labels. Each item is a regular expression.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs#ignore_labels KubernetesProvider#ignore_labels}
   */
   readonly ignoreLabels?: string[];
   /**
   * Whether server should be accessed without verifying the TLS certificate.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs#insecure KubernetesProvider#insecure}
   */
   readonly insecure?: boolean | cdktf.IResolvable;
   /**
   * The password to use for HTTP basic authentication when accessing the Kubernetes master endpoint.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs#password KubernetesProvider#password}
   */
   readonly password?: string;
   /**
   * URL to the proxy to be used for all API requests
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs#proxy_url KubernetesProvider#proxy_url}
   */
   readonly proxyUrl?: string;
   /**
   * Server name passed to the server for SNI and is used in the client to check server certificates against.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs#tls_server_name KubernetesProvider#tls_server_name}
   */
   readonly tlsServerName?: string;
   /**
   * Token to authenticate an service account
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs#token KubernetesProvider#token}
   */
   readonly token?: string;
   /**
   * The username to use for HTTP basic authentication when accessing the Kubernetes master endpoint.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs#username KubernetesProvider#username}
   */
   readonly username?: string;
   /**
   * Alias name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs#alias KubernetesProvider#alias}
   */
   readonly alias?: string;
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs#exec KubernetesProvider#exec}
   */
   readonly exec?: KubernetesProviderExec;
   /**
   * experiments block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs#experiments KubernetesProvider#experiments}
   */
   readonly experiments?: KubernetesProviderExperiments;
@@ -162,7 +157,7 @@ export function kubernetesProviderExecToTerraform(struct?: KubernetesProviderExe
 export interface KubernetesProviderExperiments {
   /**
   * Enable the `kubernetes_manifest` resource.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs#manifest_resource KubernetesProvider#manifest_resource}
   */
   readonly manifestResource?: boolean | cdktf.IResolvable;

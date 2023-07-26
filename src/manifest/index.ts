@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/manifest
 // generated from terraform resource schema
 
@@ -14,43 +9,43 @@ import * as cdktf from 'cdktf';
 export interface ManifestConfig extends cdktf.TerraformMetaArguments {
   /**
   * List of manifest fields whose values can be altered by the API server during 'apply'. Defaults to: ["metadata.annotations", "metadata.labels"]
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/manifest#computed_fields Manifest#computed_fields}
   */
   readonly computedFields?: string[];
   /**
   * A Kubernetes manifest describing the desired state of the resource in HCL format.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/manifest#manifest Manifest#manifest}
   */
   readonly manifest: { [key: string]: any };
   /**
   * The resulting resource state, as returned by the API server after applying the desired state from `manifest`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/manifest#object Manifest#object}
   */
   readonly object?: { [key: string]: any };
   /**
   * A map of attribute paths and desired patterns to be matched. After each apply the provider will wait for all attributes listed here to reach a value that matches the desired pattern.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/manifest#wait_for Manifest#wait_for}
   */
   readonly waitFor?: ManifestWaitFor;
   /**
   * field_manager block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/manifest#field_manager Manifest#field_manager}
   */
   readonly fieldManager?: ManifestFieldManager;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/manifest#timeouts Manifest#timeouts}
   */
   readonly timeouts?: ManifestTimeouts;
   /**
   * wait block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/manifest#wait Manifest#wait}
   */
   readonly wait?: ManifestWait;
@@ -133,13 +128,13 @@ export class ManifestWaitForOutputReference extends cdktf.ComplexObject {
 export interface ManifestFieldManager {
   /**
   * Force changes against conflicts.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/manifest#force_conflicts Manifest#force_conflicts}
   */
   readonly forceConflicts?: boolean | cdktf.IResolvable;
   /**
   * The name to use for the field manager when creating and updating the resource.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/manifest#name Manifest#name}
   */
   readonly name?: string;
@@ -229,19 +224,19 @@ export class ManifestFieldManagerOutputReference extends cdktf.ComplexObject {
 export interface ManifestTimeouts {
   /**
   * Timeout for the create operation.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/manifest#create Manifest#create}
   */
   readonly create?: string;
   /**
   * Timeout for the delete operation.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/manifest#delete Manifest#delete}
   */
   readonly delete?: string;
   /**
   * Timeout for the update operation.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/manifest#update Manifest#update}
   */
   readonly update?: string;
@@ -354,13 +349,13 @@ export class ManifestTimeoutsOutputReference extends cdktf.ComplexObject {
 export interface ManifestWaitCondition {
   /**
   * The condition status.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/manifest#status Manifest#status}
   */
   readonly status?: string;
   /**
   * The type of condition.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/manifest#type Manifest#type}
   */
   readonly type?: string;
@@ -482,19 +477,19 @@ export class ManifestWaitConditionList extends cdktf.ComplexList {
 export interface ManifestWait {
   /**
   * A map of paths to fields to wait for a specific field value.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/manifest#fields Manifest#fields}
   */
   readonly fields?: { [key: string]: string };
   /**
   * Wait for rollout to complete on resources that support `kubectl rollout status`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/manifest#rollout Manifest#rollout}
   */
   readonly rollout?: boolean | cdktf.IResolvable;
   /**
   * condition block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/manifest#condition Manifest#condition}
   */
   readonly condition?: ManifestWaitCondition[] | cdktf.IResolvable;

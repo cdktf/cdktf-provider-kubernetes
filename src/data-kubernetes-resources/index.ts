@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resources
 // generated from terraform resource schema
 
@@ -14,43 +9,43 @@ import * as cdktf from 'cdktf';
 export interface DataKubernetesResourcesConfig extends cdktf.TerraformMetaArguments {
   /**
   * The resource apiVersion.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resources#api_version DataKubernetesResources#api_version}
   */
   readonly apiVersion: string;
   /**
   * A selector to restrict the list of returned objects by their fields.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resources#field_selector DataKubernetesResources#field_selector}
   */
   readonly fieldSelector?: string;
   /**
   * The resource kind.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resources#kind DataKubernetesResources#kind}
   */
   readonly kind: string;
   /**
   * A selector to restrict the list of returned objects by their labels.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resources#label_selector DataKubernetesResources#label_selector}
   */
   readonly labelSelector?: string;
   /**
   * Limit is a maximum number of responses to return for a list call.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resources#limit DataKubernetesResources#limit}
   */
   readonly limit?: number;
   /**
   * The resource namespace.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resources#namespace DataKubernetesResources#namespace}
   */
   readonly namespace?: string;
   /**
   * The response from the API server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resources#objects DataKubernetesResources#objects}
   */
   readonly objects?: { [key: string]: any };

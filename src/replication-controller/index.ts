@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // generated from terraform resource schema
 
 import { ReplicationControllerMetadata, 
@@ -27,19 +22,19 @@ export interface ReplicationControllerConfig extends cdktf.TerraformMetaArgument
   readonly id?: string;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#metadata ReplicationController#metadata}
   */
   readonly metadata: ReplicationControllerMetadata;
   /**
   * spec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#spec ReplicationController#spec}
   */
   readonly spec: ReplicationControllerSpec;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#timeouts ReplicationController#timeouts}
   */
   readonly timeouts?: ReplicationControllerTimeouts;

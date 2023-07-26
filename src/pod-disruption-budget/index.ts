@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_disruption_budget
 // generated from terraform resource schema
 
@@ -21,13 +16,13 @@ export interface PodDisruptionBudgetConfig extends cdktf.TerraformMetaArguments 
   readonly id?: string;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_disruption_budget#metadata PodDisruptionBudget#metadata}
   */
   readonly metadata: PodDisruptionBudgetMetadata;
   /**
   * spec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_disruption_budget#spec PodDisruptionBudget#spec}
   */
   readonly spec: PodDisruptionBudgetSpec;
@@ -35,31 +30,31 @@ export interface PodDisruptionBudgetConfig extends cdktf.TerraformMetaArguments 
 export interface PodDisruptionBudgetMetadata {
   /**
   * An unstructured key value map stored with the pod disruption budget that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_disruption_budget#annotations PodDisruptionBudget#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_disruption_budget#generate_name PodDisruptionBudget#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the pod disruption budget. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_disruption_budget#labels PodDisruptionBudget#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the pod disruption budget, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_disruption_budget#name PodDisruptionBudget#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the pod disruption budget must be unique.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_disruption_budget#namespace PodDisruptionBudget#namespace}
   */
   readonly namespace?: string;
@@ -233,19 +228,19 @@ export class PodDisruptionBudgetMetadataOutputReference extends cdktf.ComplexObj
 export interface PodDisruptionBudgetSpecSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_disruption_budget#key PodDisruptionBudget#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_disruption_budget#operator PodDisruptionBudget#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_disruption_budget#values PodDisruptionBudget#values}
   */
   readonly values?: string[];
@@ -390,13 +385,13 @@ export class PodDisruptionBudgetSpecSelectorMatchExpressionsList extends cdktf.C
 export interface PodDisruptionBudgetSpecSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_disruption_budget#match_labels PodDisruptionBudget#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_disruption_budget#match_expressions PodDisruptionBudget#match_expressions}
   */
   readonly matchExpressions?: PodDisruptionBudgetSpecSelectorMatchExpressions[] | cdktf.IResolvable;
@@ -494,7 +489,7 @@ export interface PodDisruptionBudgetSpec {
   readonly minAvailable?: string;
   /**
   * selector block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_disruption_budget#selector PodDisruptionBudget#selector}
   */
   readonly selector: PodDisruptionBudgetSpecSelector;

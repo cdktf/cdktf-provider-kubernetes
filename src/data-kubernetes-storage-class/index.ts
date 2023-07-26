@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/storage_class
 // generated from terraform resource schema
 
@@ -14,7 +9,7 @@ import * as cdktf from 'cdktf';
 export interface DataKubernetesStorageClassConfig extends cdktf.TerraformMetaArguments {
   /**
   * Indicates whether the storage class allow volume expand
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/storage_class#allow_volume_expansion DataKubernetesStorageClass#allow_volume_expansion}
   */
   readonly allowVolumeExpansion?: boolean | cdktf.IResolvable;
@@ -27,37 +22,37 @@ export interface DataKubernetesStorageClassConfig extends cdktf.TerraformMetaArg
   readonly id?: string;
   /**
   * Persistent Volumes that are dynamically created by a storage class will have the mount options specified
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/storage_class#mount_options DataKubernetesStorageClass#mount_options}
   */
   readonly mountOptions?: string[];
   /**
   * The parameters for the provisioner that should create volumes of this storage class
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/storage_class#parameters DataKubernetesStorageClass#parameters}
   */
   readonly parameters?: { [key: string]: string };
   /**
   * Indicates the type of the reclaim policy
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/storage_class#reclaim_policy DataKubernetesStorageClass#reclaim_policy}
   */
   readonly reclaimPolicy?: string;
   /**
   * Indicates when volume binding and dynamic provisioning should occur
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/storage_class#volume_binding_mode DataKubernetesStorageClass#volume_binding_mode}
   */
   readonly volumeBindingMode?: string;
   /**
   * allowed_topologies block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/storage_class#allowed_topologies DataKubernetesStorageClass#allowed_topologies}
   */
   readonly allowedTopologies?: DataKubernetesStorageClassAllowedTopologies;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/storage_class#metadata DataKubernetesStorageClass#metadata}
   */
   readonly metadata: DataKubernetesStorageClassMetadata;
@@ -65,13 +60,13 @@ export interface DataKubernetesStorageClassConfig extends cdktf.TerraformMetaArg
 export interface DataKubernetesStorageClassAllowedTopologiesMatchLabelExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/storage_class#key DataKubernetesStorageClass#key}
   */
   readonly key?: string;
   /**
   * An array of string values. One value must match the label to be selected.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/storage_class#values DataKubernetesStorageClass#values}
   */
   readonly values?: string[];
@@ -193,7 +188,7 @@ export class DataKubernetesStorageClassAllowedTopologiesMatchLabelExpressionsLis
 export interface DataKubernetesStorageClassAllowedTopologies {
   /**
   * match_label_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/storage_class#match_label_expressions DataKubernetesStorageClass#match_label_expressions}
   */
   readonly matchLabelExpressions?: DataKubernetesStorageClassAllowedTopologiesMatchLabelExpressions[] | cdktf.IResolvable;
@@ -260,19 +255,19 @@ export class DataKubernetesStorageClassAllowedTopologiesOutputReference extends 
 export interface DataKubernetesStorageClassMetadata {
   /**
   * An unstructured key value map stored with the storage class that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/storage_class#annotations DataKubernetesStorageClass#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the storage class. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/storage_class#labels DataKubernetesStorageClass#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the storage class, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/storage_class#name DataKubernetesStorageClass#name}
   */
   readonly name?: string;

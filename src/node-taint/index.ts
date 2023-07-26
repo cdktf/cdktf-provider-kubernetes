@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/node_taint
 // generated from terraform resource schema
 
@@ -14,13 +9,13 @@ import * as cdktf from 'cdktf';
 export interface NodeTaintConfig extends cdktf.TerraformMetaArguments {
   /**
   * Set the name of the field manager for the node taint
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/node_taint#field_manager NodeTaint#field_manager}
   */
   readonly fieldManager?: string;
   /**
   * Force overwriting annotations that were created or edited outside of Terraform.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/node_taint#force NodeTaint#force}
   */
   readonly force?: boolean | cdktf.IResolvable;
@@ -33,13 +28,13 @@ export interface NodeTaintConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/node_taint#metadata NodeTaint#metadata}
   */
   readonly metadata: NodeTaintMetadata;
   /**
   * taint block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/node_taint#taint NodeTaint#taint}
   */
   readonly taint: NodeTaintTaint[] | cdktf.IResolvable;
@@ -47,7 +42,7 @@ export interface NodeTaintConfig extends cdktf.TerraformMetaArguments {
 export interface NodeTaintMetadata {
   /**
   * The name of the node
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/node_taint#name NodeTaint#name}
   */
   readonly name: string;
@@ -111,19 +106,19 @@ export class NodeTaintMetadataOutputReference extends cdktf.ComplexObject {
 export interface NodeTaintTaint {
   /**
   * The taint effect
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/node_taint#effect NodeTaint#effect}
   */
   readonly effect: string;
   /**
   * The taint key
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/node_taint#key NodeTaint#key}
   */
   readonly key: string;
   /**
   * The taint value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/node_taint#value NodeTaint#value}
   */
   readonly value: string;

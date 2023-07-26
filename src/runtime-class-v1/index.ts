@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/runtime_class_v1
 // generated from terraform resource schema
 
@@ -14,7 +9,7 @@ import * as cdktf from 'cdktf';
 export interface RuntimeClassV1Config extends cdktf.TerraformMetaArguments {
   /**
   * Specifies the underlying runtime and configuration that the CRI implementation will use to handle pods of this class
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/runtime_class_v1#handler RuntimeClassV1#handler}
   */
   readonly handler: string;
@@ -27,7 +22,7 @@ export interface RuntimeClassV1Config extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/runtime_class_v1#metadata RuntimeClassV1#metadata}
   */
   readonly metadata: RuntimeClassV1Metadata;
@@ -35,25 +30,25 @@ export interface RuntimeClassV1Config extends cdktf.TerraformMetaArguments {
 export interface RuntimeClassV1Metadata {
   /**
   * An unstructured key value map stored with the runtimeclass that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/runtime_class_v1#annotations RuntimeClassV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/runtime_class_v1#generate_name RuntimeClassV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the runtimeclass. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/runtime_class_v1#labels RuntimeClassV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the runtimeclass, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/runtime_class_v1#name RuntimeClassV1#name}
   */
   readonly name?: string;

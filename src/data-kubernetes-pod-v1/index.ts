@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // generated from terraform resource schema
 
 import { DataKubernetesPodV1SpecList, 
@@ -22,7 +17,7 @@ export interface DataKubernetesPodV1Config extends cdktf.TerraformMetaArguments 
   readonly id?: string;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/pod_v1#metadata DataKubernetesPodV1#metadata}
   */
   readonly metadata: DataKubernetesPodV1Metadata;

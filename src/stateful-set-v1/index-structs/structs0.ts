@@ -1,37 +1,32 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 import * as cdktf from 'cdktf';
 export interface StatefulSetV1Metadata {
   /**
   * An unstructured key value map stored with the stateful set that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#annotations StatefulSetV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#generate_name StatefulSetV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the stateful set. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#labels StatefulSetV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the stateful set, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the stateful set must be unique.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#namespace StatefulSetV1#namespace}
   */
   readonly namespace?: string;
@@ -205,19 +200,19 @@ export class StatefulSetV1MetadataOutputReference extends cdktf.ComplexObject {
 export interface StatefulSetV1SpecSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#key StatefulSetV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#operator StatefulSetV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#values StatefulSetV1#values}
   */
   readonly values?: string[];
@@ -362,13 +357,13 @@ export class StatefulSetV1SpecSelectorMatchExpressionsList extends cdktf.Complex
 export interface StatefulSetV1SpecSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#match_labels StatefulSetV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#match_expressions StatefulSetV1#match_expressions}
   */
   readonly matchExpressions?: StatefulSetV1SpecSelectorMatchExpressions[] | cdktf.IResolvable;
@@ -458,25 +453,25 @@ export class StatefulSetV1SpecSelectorOutputReference extends cdktf.ComplexObjec
 export interface StatefulSetV1SpecTemplateMetadata {
   /**
   * An unstructured key value map stored with the stateful set that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#annotations StatefulSetV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#generate_name StatefulSetV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the stateful set. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#labels StatefulSetV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the stateful set, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name?: string;
@@ -627,19 +622,19 @@ export class StatefulSetV1SpecTemplateMetadataOutputReference extends cdktf.Comp
 export interface StatefulSetV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#key StatefulSetV1#key}
   */
   readonly key?: string;
   /**
   * Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#operator StatefulSetV1#operator}
   */
   readonly operator?: string;
   /**
   * Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#values StatefulSetV1#values}
   */
   readonly values?: string[];
@@ -784,7 +779,7 @@ export class StatefulSetV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSch
 export interface StatefulSetV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference {
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#match_expressions StatefulSetV1#match_expressions}
   */
   readonly matchExpressions?: StatefulSetV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[] | cdktf.IResolvable;
@@ -851,13 +846,13 @@ export class StatefulSetV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSch
 export interface StatefulSetV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution {
   /**
   * weight is in the range 1-100
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#weight StatefulSetV1#weight}
   */
   readonly weight: number;
   /**
   * preference block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#preference StatefulSetV1#preference}
   */
   readonly preference: StatefulSetV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference;
@@ -973,19 +968,19 @@ export class StatefulSetV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSch
 export interface StatefulSetV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#key StatefulSetV1#key}
   */
   readonly key?: string;
   /**
   * Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#operator StatefulSetV1#operator}
   */
   readonly operator?: string;
   /**
   * Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#values StatefulSetV1#values}
   */
   readonly values?: string[];
@@ -1130,7 +1125,7 @@ export class StatefulSetV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSche
 export interface StatefulSetV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm {
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#match_expressions StatefulSetV1#match_expressions}
   */
   readonly matchExpressions?: StatefulSetV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions[] | cdktf.IResolvable;
@@ -1229,7 +1224,7 @@ export class StatefulSetV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSche
 export interface StatefulSetV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution {
   /**
   * node_selector_term block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#node_selector_term StatefulSetV1#node_selector_term}
   */
   readonly nodeSelectorTerm?: StatefulSetV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[] | cdktf.IResolvable;
@@ -1296,13 +1291,13 @@ export class StatefulSetV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSche
 export interface StatefulSetV1SpecTemplateSpecAffinityNodeAffinity {
   /**
   * preferred_during_scheduling_ignored_during_execution block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#preferred_during_scheduling_ignored_during_execution StatefulSetV1#preferred_during_scheduling_ignored_during_execution}
   */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: StatefulSetV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
   /**
   * required_during_scheduling_ignored_during_execution block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#required_during_scheduling_ignored_during_execution StatefulSetV1#required_during_scheduling_ignored_during_execution}
   */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: StatefulSetV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution;
@@ -1392,19 +1387,19 @@ export class StatefulSetV1SpecTemplateSpecAffinityNodeAffinityOutputReference ex
 export interface StatefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#key StatefulSetV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#operator StatefulSetV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#values StatefulSetV1#values}
   */
   readonly values?: string[];
@@ -1549,13 +1544,13 @@ export class StatefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSche
 export interface StatefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#match_labels StatefulSetV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#match_expressions StatefulSetV1#match_expressions}
   */
   readonly matchExpressions?: StatefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[] | cdktf.IResolvable;
@@ -1677,19 +1672,19 @@ export class StatefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSche
 export interface StatefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm {
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#namespaces StatefulSetV1#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#topology_key StatefulSetV1#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#label_selector StatefulSetV1#label_selector}
   */
   readonly labelSelector?: StatefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | cdktf.IResolvable;
@@ -1799,13 +1794,13 @@ export class StatefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSche
 export interface StatefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution {
   /**
   * weight associated with matching the corresponding podAffinityTerm, in the range 1-100
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#weight StatefulSetV1#weight}
   */
   readonly weight: number;
   /**
   * pod_affinity_term block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#pod_affinity_term StatefulSetV1#pod_affinity_term}
   */
   readonly podAffinityTerm: StatefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
@@ -1921,19 +1916,19 @@ export class StatefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSche
 export interface StatefulSetV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#key StatefulSetV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#operator StatefulSetV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#values StatefulSetV1#values}
   */
   readonly values?: string[];
@@ -2078,13 +2073,13 @@ export class StatefulSetV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSched
 export interface StatefulSetV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#match_labels StatefulSetV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#match_expressions StatefulSetV1#match_expressions}
   */
   readonly matchExpressions?: StatefulSetV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[] | cdktf.IResolvable;
@@ -2206,19 +2201,19 @@ export class StatefulSetV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSched
 export interface StatefulSetV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution {
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#namespaces StatefulSetV1#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#topology_key StatefulSetV1#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#label_selector StatefulSetV1#label_selector}
   */
   readonly labelSelector?: StatefulSetV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[] | cdktf.IResolvable;
@@ -2360,13 +2355,13 @@ export class StatefulSetV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSched
 export interface StatefulSetV1SpecTemplateSpecAffinityPodAffinity {
   /**
   * preferred_during_scheduling_ignored_during_execution block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#preferred_during_scheduling_ignored_during_execution StatefulSetV1#preferred_during_scheduling_ignored_during_execution}
   */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: StatefulSetV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
   /**
   * required_during_scheduling_ignored_during_execution block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#required_during_scheduling_ignored_during_execution StatefulSetV1#required_during_scheduling_ignored_during_execution}
   */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: StatefulSetV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
@@ -2456,19 +2451,19 @@ export class StatefulSetV1SpecTemplateSpecAffinityPodAffinityOutputReference ext
 export interface StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#key StatefulSetV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#operator StatefulSetV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#values StatefulSetV1#values}
   */
   readonly values?: string[];
@@ -2613,13 +2608,13 @@ export class StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuring
 export interface StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#match_labels StatefulSetV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#match_expressions StatefulSetV1#match_expressions}
   */
   readonly matchExpressions?: StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[] | cdktf.IResolvable;
@@ -2741,19 +2736,19 @@ export class StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuring
 export interface StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm {
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#namespaces StatefulSetV1#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#topology_key StatefulSetV1#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#label_selector StatefulSetV1#label_selector}
   */
   readonly labelSelector?: StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | cdktf.IResolvable;
@@ -2863,13 +2858,13 @@ export class StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuring
 export interface StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution {
   /**
   * weight associated with matching the corresponding podAffinityTerm, in the range 1-100
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#weight StatefulSetV1#weight}
   */
   readonly weight: number;
   /**
   * pod_affinity_term block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#pod_affinity_term StatefulSetV1#pod_affinity_term}
   */
   readonly podAffinityTerm: StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
@@ -2985,19 +2980,19 @@ export class StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuring
 export interface StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#key StatefulSetV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#operator StatefulSetV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#values StatefulSetV1#values}
   */
   readonly values?: string[];
@@ -3142,13 +3137,13 @@ export class StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringS
 export interface StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#match_labels StatefulSetV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#match_expressions StatefulSetV1#match_expressions}
   */
   readonly matchExpressions?: StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[] | cdktf.IResolvable;
@@ -3270,19 +3265,19 @@ export class StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringS
 export interface StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution {
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#namespaces StatefulSetV1#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#topology_key StatefulSetV1#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#label_selector StatefulSetV1#label_selector}
   */
   readonly labelSelector?: StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[] | cdktf.IResolvable;
@@ -3424,13 +3419,13 @@ export class StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringS
 export interface StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinity {
   /**
   * preferred_during_scheduling_ignored_during_execution block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#preferred_during_scheduling_ignored_during_execution StatefulSetV1#preferred_during_scheduling_ignored_during_execution}
   */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
   /**
   * required_during_scheduling_ignored_during_execution block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#required_during_scheduling_ignored_during_execution StatefulSetV1#required_during_scheduling_ignored_during_execution}
   */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
@@ -3520,19 +3515,19 @@ export class StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinityOutputReference
 export interface StatefulSetV1SpecTemplateSpecAffinity {
   /**
   * node_affinity block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#node_affinity StatefulSetV1#node_affinity}
   */
   readonly nodeAffinity?: StatefulSetV1SpecTemplateSpecAffinityNodeAffinity;
   /**
   * pod_affinity block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#pod_affinity StatefulSetV1#pod_affinity}
   */
   readonly podAffinity?: StatefulSetV1SpecTemplateSpecAffinityPodAffinity;
   /**
   * pod_anti_affinity block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#pod_anti_affinity StatefulSetV1#pod_anti_affinity}
   */
   readonly podAntiAffinity?: StatefulSetV1SpecTemplateSpecAffinityPodAntiAffinity;
@@ -3645,19 +3640,19 @@ export class StatefulSetV1SpecTemplateSpecAffinityOutputReference extends cdktf.
 export interface StatefulSetV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRef {
   /**
   * The key to select.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#key StatefulSetV1#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name?: string;
   /**
   * Specify whether the ConfigMap or its key must be defined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#optional StatefulSetV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -3770,13 +3765,13 @@ export class StatefulSetV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOu
 export interface StatefulSetV1SpecTemplateSpecContainerEnvValueFromFieldRef {
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to "v1".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#api_version StatefulSetV1#api_version}
   */
   readonly apiVersion?: string;
   /**
   * Path of the field to select in the specified API version
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#field_path StatefulSetV1#field_path}
   */
   readonly fieldPath?: string;
@@ -3874,7 +3869,7 @@ export interface StatefulSetV1SpecTemplateSpecContainerEnvValueFromResourceField
   readonly divisor?: string;
   /**
   * Resource to select
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#resource StatefulSetV1#resource}
   */
   readonly resource: string;
@@ -3984,19 +3979,19 @@ export class StatefulSetV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefO
 export interface StatefulSetV1SpecTemplateSpecContainerEnvValueFromSecretKeyRef {
   /**
   * The key of the secret to select from. Must be a valid secret key.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#key StatefulSetV1#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name?: string;
   /**
   * Specify whether the Secret or its key must be defined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#optional StatefulSetV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -4109,25 +4104,25 @@ export class StatefulSetV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefOutpu
 export interface StatefulSetV1SpecTemplateSpecContainerEnvValueFrom {
   /**
   * config_map_key_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#config_map_key_ref StatefulSetV1#config_map_key_ref}
   */
   readonly configMapKeyRef?: StatefulSetV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRef;
   /**
   * field_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#field_ref StatefulSetV1#field_ref}
   */
   readonly fieldRef?: StatefulSetV1SpecTemplateSpecContainerEnvValueFromFieldRef;
   /**
   * resource_field_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#resource_field_ref StatefulSetV1#resource_field_ref}
   */
   readonly resourceFieldRef?: StatefulSetV1SpecTemplateSpecContainerEnvValueFromResourceFieldRef;
   /**
   * secret_key_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#secret_key_ref StatefulSetV1#secret_key_ref}
   */
   readonly secretKeyRef?: StatefulSetV1SpecTemplateSpecContainerEnvValueFromSecretKeyRef;
@@ -4263,19 +4258,19 @@ export class StatefulSetV1SpecTemplateSpecContainerEnvValueFromOutputReference e
 export interface StatefulSetV1SpecTemplateSpecContainerEnv {
   /**
   * Name of the environment variable. Must be a C_IDENTIFIER
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name: string;
   /**
   * Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#value StatefulSetV1#value}
   */
   readonly value?: string;
   /**
   * value_from block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#value_from StatefulSetV1#value_from}
   */
   readonly valueFrom?: StatefulSetV1SpecTemplateSpecContainerEnvValueFrom;
@@ -4417,13 +4412,13 @@ export class StatefulSetV1SpecTemplateSpecContainerEnvList extends cdktf.Complex
 export interface StatefulSetV1SpecTemplateSpecContainerEnvFromConfigMapRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name: string;
   /**
   * Specify whether the ConfigMap must be defined
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#optional StatefulSetV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -4510,13 +4505,13 @@ export class StatefulSetV1SpecTemplateSpecContainerEnvFromConfigMapRefOutputRefe
 export interface StatefulSetV1SpecTemplateSpecContainerEnvFromSecretRef {
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name: string;
   /**
   * Specify whether the Secret must be defined
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#optional StatefulSetV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -4603,19 +4598,19 @@ export class StatefulSetV1SpecTemplateSpecContainerEnvFromSecretRefOutputReferen
 export interface StatefulSetV1SpecTemplateSpecContainerEnvFrom {
   /**
   * An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#prefix StatefulSetV1#prefix}
   */
   readonly prefix?: string;
   /**
   * config_map_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#config_map_ref StatefulSetV1#config_map_ref}
   */
   readonly configMapRef?: StatefulSetV1SpecTemplateSpecContainerEnvFromConfigMapRef;
   /**
   * secret_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#secret_ref StatefulSetV1#secret_ref}
   */
   readonly secretRef?: StatefulSetV1SpecTemplateSpecContainerEnvFromSecretRef;
@@ -4760,7 +4755,7 @@ export class StatefulSetV1SpecTemplateSpecContainerEnvFromList extends cdktf.Com
 export interface StatefulSetV1SpecTemplateSpecContainerLifecyclePostStartExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#command StatefulSetV1#command}
   */
   readonly command?: string[];
@@ -4827,13 +4822,13 @@ export class StatefulSetV1SpecTemplateSpecContainerLifecyclePostStartExecOutputR
 export interface StatefulSetV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#value StatefulSetV1#value}
   */
   readonly value?: string;
@@ -4955,31 +4950,31 @@ export class StatefulSetV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttp
 export interface StatefulSetV1SpecTemplateSpecContainerLifecyclePostStartHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#host StatefulSetV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#path StatefulSetV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#scheme StatefulSetV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#http_header StatefulSetV1#http_header}
   */
   readonly httpHeader?: StatefulSetV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -5138,7 +5133,7 @@ export class StatefulSetV1SpecTemplateSpecContainerLifecyclePostStartHttpGetOutp
 export interface StatefulSetV1SpecTemplateSpecContainerLifecyclePostStartTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port: string;
@@ -5234,19 +5229,19 @@ export class StatefulSetV1SpecTemplateSpecContainerLifecyclePostStartTcpSocketLi
 export interface StatefulSetV1SpecTemplateSpecContainerLifecyclePostStart {
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#exec StatefulSetV1#exec}
   */
   readonly exec?: StatefulSetV1SpecTemplateSpecContainerLifecyclePostStartExec;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#http_get StatefulSetV1#http_get}
   */
   readonly httpGet?: StatefulSetV1SpecTemplateSpecContainerLifecyclePostStartHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#tcp_socket StatefulSetV1#tcp_socket}
   */
   readonly tcpSocket?: StatefulSetV1SpecTemplateSpecContainerLifecyclePostStartTcpSocket[] | cdktf.IResolvable;
@@ -5391,7 +5386,7 @@ export class StatefulSetV1SpecTemplateSpecContainerLifecyclePostStartList extend
 export interface StatefulSetV1SpecTemplateSpecContainerLifecyclePreStopExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#command StatefulSetV1#command}
   */
   readonly command?: string[];
@@ -5458,13 +5453,13 @@ export class StatefulSetV1SpecTemplateSpecContainerLifecyclePreStopExecOutputRef
 export interface StatefulSetV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#value StatefulSetV1#value}
   */
   readonly value?: string;
@@ -5586,31 +5581,31 @@ export class StatefulSetV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHe
 export interface StatefulSetV1SpecTemplateSpecContainerLifecyclePreStopHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#host StatefulSetV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#path StatefulSetV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#scheme StatefulSetV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#http_header StatefulSetV1#http_header}
   */
   readonly httpHeader?: StatefulSetV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -5769,7 +5764,7 @@ export class StatefulSetV1SpecTemplateSpecContainerLifecyclePreStopHttpGetOutput
 export interface StatefulSetV1SpecTemplateSpecContainerLifecyclePreStopTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port: string;
@@ -5865,19 +5860,19 @@ export class StatefulSetV1SpecTemplateSpecContainerLifecyclePreStopTcpSocketList
 export interface StatefulSetV1SpecTemplateSpecContainerLifecyclePreStop {
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#exec StatefulSetV1#exec}
   */
   readonly exec?: StatefulSetV1SpecTemplateSpecContainerLifecyclePreStopExec;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#http_get StatefulSetV1#http_get}
   */
   readonly httpGet?: StatefulSetV1SpecTemplateSpecContainerLifecyclePreStopHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#tcp_socket StatefulSetV1#tcp_socket}
   */
   readonly tcpSocket?: StatefulSetV1SpecTemplateSpecContainerLifecyclePreStopTcpSocket[] | cdktf.IResolvable;
@@ -6022,13 +6017,13 @@ export class StatefulSetV1SpecTemplateSpecContainerLifecyclePreStopList extends 
 export interface StatefulSetV1SpecTemplateSpecContainerLifecycle {
   /**
   * post_start block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#post_start StatefulSetV1#post_start}
   */
   readonly postStart?: StatefulSetV1SpecTemplateSpecContainerLifecyclePostStart[] | cdktf.IResolvable;
   /**
   * pre_stop block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#pre_stop StatefulSetV1#pre_stop}
   */
   readonly preStop?: StatefulSetV1SpecTemplateSpecContainerLifecyclePreStop[] | cdktf.IResolvable;
@@ -6118,7 +6113,7 @@ export class StatefulSetV1SpecTemplateSpecContainerLifecycleOutputReference exte
 export interface StatefulSetV1SpecTemplateSpecContainerLivenessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#command StatefulSetV1#command}
   */
   readonly command?: string[];
@@ -6185,13 +6180,13 @@ export class StatefulSetV1SpecTemplateSpecContainerLivenessProbeExecOutputRefere
 export interface StatefulSetV1SpecTemplateSpecContainerLivenessProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#service StatefulSetV1#service}
   */
   readonly service?: string;
@@ -6310,13 +6305,13 @@ export class StatefulSetV1SpecTemplateSpecContainerLivenessProbeGrpcList extends
 export interface StatefulSetV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#value StatefulSetV1#value}
   */
   readonly value?: string;
@@ -6438,31 +6433,31 @@ export class StatefulSetV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeade
 export interface StatefulSetV1SpecTemplateSpecContainerLivenessProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#host StatefulSetV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#path StatefulSetV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#scheme StatefulSetV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#http_header StatefulSetV1#http_header}
   */
   readonly httpHeader?: StatefulSetV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -6621,7 +6616,7 @@ export class StatefulSetV1SpecTemplateSpecContainerLivenessProbeHttpGetOutputRef
 export interface StatefulSetV1SpecTemplateSpecContainerLivenessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port: string;
@@ -6717,55 +6712,55 @@ export class StatefulSetV1SpecTemplateSpecContainerLivenessProbeTcpSocketList ex
 export interface StatefulSetV1SpecTemplateSpecContainerLivenessProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#failure_threshold StatefulSetV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#initial_delay_seconds StatefulSetV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#period_seconds StatefulSetV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#success_threshold StatefulSetV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#timeout_seconds StatefulSetV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#exec StatefulSetV1#exec}
   */
   readonly exec?: StatefulSetV1SpecTemplateSpecContainerLivenessProbeExec;
   /**
   * grpc block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#grpc StatefulSetV1#grpc}
   */
   readonly grpc?: StatefulSetV1SpecTemplateSpecContainerLivenessProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#http_get StatefulSetV1#http_get}
   */
   readonly httpGet?: StatefulSetV1SpecTemplateSpecContainerLivenessProbeHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#tcp_socket StatefulSetV1#tcp_socket}
   */
   readonly tcpSocket?: StatefulSetV1SpecTemplateSpecContainerLivenessProbeTcpSocket[] | cdktf.IResolvable;
@@ -7016,31 +7011,31 @@ export class StatefulSetV1SpecTemplateSpecContainerLivenessProbeOutputReference 
 export interface StatefulSetV1SpecTemplateSpecContainerPort {
   /**
   * Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#container_port StatefulSetV1#container_port}
   */
   readonly containerPort: number;
   /**
   * What host IP to bind the external port to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#host_ip StatefulSetV1#host_ip}
   */
   readonly hostIp?: string;
   /**
   * Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#host_port StatefulSetV1#host_port}
   */
   readonly hostPort?: number;
   /**
   * If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name?: string;
   /**
   * Protocol for port. Must be UDP or TCP. Defaults to "TCP".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#protocol StatefulSetV1#protocol}
   */
   readonly protocol?: string;
@@ -7228,7 +7223,7 @@ export class StatefulSetV1SpecTemplateSpecContainerPortList extends cdktf.Comple
 export interface StatefulSetV1SpecTemplateSpecContainerReadinessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#command StatefulSetV1#command}
   */
   readonly command?: string[];
@@ -7295,13 +7290,13 @@ export class StatefulSetV1SpecTemplateSpecContainerReadinessProbeExecOutputRefer
 export interface StatefulSetV1SpecTemplateSpecContainerReadinessProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#service StatefulSetV1#service}
   */
   readonly service?: string;
@@ -7420,13 +7415,13 @@ export class StatefulSetV1SpecTemplateSpecContainerReadinessProbeGrpcList extend
 export interface StatefulSetV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#value StatefulSetV1#value}
   */
   readonly value?: string;
@@ -7548,31 +7543,31 @@ export class StatefulSetV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHead
 export interface StatefulSetV1SpecTemplateSpecContainerReadinessProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#host StatefulSetV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#path StatefulSetV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#scheme StatefulSetV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#http_header StatefulSetV1#http_header}
   */
   readonly httpHeader?: StatefulSetV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -7731,7 +7726,7 @@ export class StatefulSetV1SpecTemplateSpecContainerReadinessProbeHttpGetOutputRe
 export interface StatefulSetV1SpecTemplateSpecContainerReadinessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port: string;
@@ -7827,55 +7822,55 @@ export class StatefulSetV1SpecTemplateSpecContainerReadinessProbeTcpSocketList e
 export interface StatefulSetV1SpecTemplateSpecContainerReadinessProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#failure_threshold StatefulSetV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#initial_delay_seconds StatefulSetV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#period_seconds StatefulSetV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#success_threshold StatefulSetV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#timeout_seconds StatefulSetV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#exec StatefulSetV1#exec}
   */
   readonly exec?: StatefulSetV1SpecTemplateSpecContainerReadinessProbeExec;
   /**
   * grpc block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#grpc StatefulSetV1#grpc}
   */
   readonly grpc?: StatefulSetV1SpecTemplateSpecContainerReadinessProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#http_get StatefulSetV1#http_get}
   */
   readonly httpGet?: StatefulSetV1SpecTemplateSpecContainerReadinessProbeHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#tcp_socket StatefulSetV1#tcp_socket}
   */
   readonly tcpSocket?: StatefulSetV1SpecTemplateSpecContainerReadinessProbeTcpSocket[] | cdktf.IResolvable;
@@ -8126,13 +8121,13 @@ export class StatefulSetV1SpecTemplateSpecContainerReadinessProbeOutputReference
 export interface StatefulSetV1SpecTemplateSpecContainerResources {
   /**
   * Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#limits StatefulSetV1#limits}
   */
   readonly limits?: { [key: string]: string };
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#requests StatefulSetV1#requests}
   */
   readonly requests?: { [key: string]: string };
@@ -8222,13 +8217,13 @@ export class StatefulSetV1SpecTemplateSpecContainerResourcesOutputReference exte
 export interface StatefulSetV1SpecTemplateSpecContainerSecurityContextCapabilities {
   /**
   * Added capabilities
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#add StatefulSetV1#add}
   */
   readonly add?: string[];
   /**
   * Removed capabilities
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#drop StatefulSetV1#drop}
   */
   readonly drop?: string[];
@@ -8318,25 +8313,25 @@ export class StatefulSetV1SpecTemplateSpecContainerSecurityContextCapabilitiesOu
 export interface StatefulSetV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions {
   /**
   * Level is SELinux level label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#level StatefulSetV1#level}
   */
   readonly level?: string;
   /**
   * Role is a SELinux role label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#role StatefulSetV1#role}
   */
   readonly role?: string;
   /**
   * Type is a SELinux type label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#type StatefulSetV1#type}
   */
   readonly type?: string;
   /**
   * User is a SELinux user label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#user StatefulSetV1#user}
   */
   readonly user?: string;
@@ -8472,13 +8467,13 @@ export class StatefulSetV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions
 export interface StatefulSetV1SpecTemplateSpecContainerSecurityContextSeccompProfile {
   /**
   * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#localhost_profile StatefulSetV1#localhost_profile}
   */
   readonly localhostProfile?: string;
   /**
   * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#type StatefulSetV1#type}
   */
   readonly type?: string;
@@ -8568,55 +8563,55 @@ export class StatefulSetV1SpecTemplateSpecContainerSecurityContextSeccompProfile
 export interface StatefulSetV1SpecTemplateSpecContainerSecurityContext {
   /**
   * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#allow_privilege_escalation StatefulSetV1#allow_privilege_escalation}
   */
   readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#privileged StatefulSetV1#privileged}
   */
   readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * Whether this container has a read-only root filesystem. Default is false.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#read_only_root_filesystem StatefulSetV1#read_only_root_filesystem}
   */
   readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
   /**
   * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#run_as_group StatefulSetV1#run_as_group}
   */
   readonly runAsGroup?: string;
   /**
   * Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#run_as_non_root StatefulSetV1#run_as_non_root}
   */
   readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#run_as_user StatefulSetV1#run_as_user}
   */
   readonly runAsUser?: string;
   /**
   * capabilities block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#capabilities StatefulSetV1#capabilities}
   */
   readonly capabilities?: StatefulSetV1SpecTemplateSpecContainerSecurityContextCapabilities;
   /**
   * se_linux_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#se_linux_options StatefulSetV1#se_linux_options}
   */
   readonly seLinuxOptions?: StatefulSetV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions;
   /**
   * seccomp_profile block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#seccomp_profile StatefulSetV1#seccomp_profile}
   */
   readonly seccompProfile?: StatefulSetV1SpecTemplateSpecContainerSecurityContextSeccompProfile;
@@ -8867,7 +8862,7 @@ export class StatefulSetV1SpecTemplateSpecContainerSecurityContextOutputReferenc
 export interface StatefulSetV1SpecTemplateSpecContainerStartupProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#command StatefulSetV1#command}
   */
   readonly command?: string[];
@@ -8934,13 +8929,13 @@ export class StatefulSetV1SpecTemplateSpecContainerStartupProbeExecOutputReferen
 export interface StatefulSetV1SpecTemplateSpecContainerStartupProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#service StatefulSetV1#service}
   */
   readonly service?: string;
@@ -9059,13 +9054,13 @@ export class StatefulSetV1SpecTemplateSpecContainerStartupProbeGrpcList extends 
 export interface StatefulSetV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#value StatefulSetV1#value}
   */
   readonly value?: string;
@@ -9187,31 +9182,31 @@ export class StatefulSetV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeader
 export interface StatefulSetV1SpecTemplateSpecContainerStartupProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#host StatefulSetV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#path StatefulSetV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#scheme StatefulSetV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#http_header StatefulSetV1#http_header}
   */
   readonly httpHeader?: StatefulSetV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -9370,7 +9365,7 @@ export class StatefulSetV1SpecTemplateSpecContainerStartupProbeHttpGetOutputRefe
 export interface StatefulSetV1SpecTemplateSpecContainerStartupProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port: string;
@@ -9466,55 +9461,55 @@ export class StatefulSetV1SpecTemplateSpecContainerStartupProbeTcpSocketList ext
 export interface StatefulSetV1SpecTemplateSpecContainerStartupProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#failure_threshold StatefulSetV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#initial_delay_seconds StatefulSetV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#period_seconds StatefulSetV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#success_threshold StatefulSetV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#timeout_seconds StatefulSetV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#exec StatefulSetV1#exec}
   */
   readonly exec?: StatefulSetV1SpecTemplateSpecContainerStartupProbeExec;
   /**
   * grpc block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#grpc StatefulSetV1#grpc}
   */
   readonly grpc?: StatefulSetV1SpecTemplateSpecContainerStartupProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#http_get StatefulSetV1#http_get}
   */
   readonly httpGet?: StatefulSetV1SpecTemplateSpecContainerStartupProbeHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#tcp_socket StatefulSetV1#tcp_socket}
   */
   readonly tcpSocket?: StatefulSetV1SpecTemplateSpecContainerStartupProbeTcpSocket[] | cdktf.IResolvable;
@@ -9765,31 +9760,31 @@ export class StatefulSetV1SpecTemplateSpecContainerStartupProbeOutputReference e
 export interface StatefulSetV1SpecTemplateSpecContainerVolumeMount {
   /**
   * Path within the container at which the volume should be mounted. Must not contain ':'.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#mount_path StatefulSetV1#mount_path}
   */
   readonly mountPath: string;
   /**
   * Mount propagation mode. mount_propagation determines how mounts are propagated from the host to container and the other way around. Valid values are None (default), HostToContainer and Bidirectional.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#mount_propagation StatefulSetV1#mount_propagation}
   */
   readonly mountPropagation?: string;
   /**
   * This must match the Name of a Volume.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name: string;
   /**
   * Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#read_only StatefulSetV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#sub_path StatefulSetV1#sub_path}
   */
   readonly subPath?: string;
@@ -9974,127 +9969,127 @@ export class StatefulSetV1SpecTemplateSpecContainerVolumeMountList extends cdktf
 export interface StatefulSetV1SpecTemplateSpecContainer {
   /**
   * Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#args StatefulSetV1#args}
   */
   readonly args?: string[];
   /**
   * Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#command StatefulSetV1#command}
   */
   readonly command?: string[];
   /**
   * Docker image name. More info: http://kubernetes.io/docs/user-guide/images
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#image StatefulSetV1#image}
   */
   readonly image?: string;
   /**
   * Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/images#updating-images
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#image_pull_policy StatefulSetV1#image_pull_policy}
   */
   readonly imagePullPolicy?: string;
   /**
   * Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name: string;
   /**
   * Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF. 
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#stdin StatefulSetV1#stdin}
   */
   readonly stdin?: boolean | cdktf.IResolvable;
   /**
   * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#stdin_once StatefulSetV1#stdin_once}
   */
   readonly stdinOnce?: boolean | cdktf.IResolvable;
   /**
   * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#termination_message_path StatefulSetV1#termination_message_path}
   */
   readonly terminationMessagePath?: string;
   /**
   * Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#termination_message_policy StatefulSetV1#termination_message_policy}
   */
   readonly terminationMessagePolicy?: string;
   /**
   * Whether this container should allocate a TTY for itself
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#tty StatefulSetV1#tty}
   */
   readonly tty?: boolean | cdktf.IResolvable;
   /**
   * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#working_dir StatefulSetV1#working_dir}
   */
   readonly workingDir?: string;
   /**
   * env block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#env StatefulSetV1#env}
   */
   readonly env?: StatefulSetV1SpecTemplateSpecContainerEnv[] | cdktf.IResolvable;
   /**
   * env_from block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#env_from StatefulSetV1#env_from}
   */
   readonly envFrom?: StatefulSetV1SpecTemplateSpecContainerEnvFrom[] | cdktf.IResolvable;
   /**
   * lifecycle block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#lifecycle StatefulSetV1#lifecycle}
   */
   readonly lifecycle?: StatefulSetV1SpecTemplateSpecContainerLifecycle;
   /**
   * liveness_probe block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#liveness_probe StatefulSetV1#liveness_probe}
   */
   readonly livenessProbe?: StatefulSetV1SpecTemplateSpecContainerLivenessProbe;
   /**
   * port block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port?: StatefulSetV1SpecTemplateSpecContainerPort[] | cdktf.IResolvable;
   /**
   * readiness_probe block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#readiness_probe StatefulSetV1#readiness_probe}
   */
   readonly readinessProbe?: StatefulSetV1SpecTemplateSpecContainerReadinessProbe;
   /**
   * resources block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#resources StatefulSetV1#resources}
   */
   readonly resources?: StatefulSetV1SpecTemplateSpecContainerResources;
   /**
   * security_context block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#security_context StatefulSetV1#security_context}
   */
   readonly securityContext?: StatefulSetV1SpecTemplateSpecContainerSecurityContext;
   /**
   * startup_probe block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#startup_probe StatefulSetV1#startup_probe}
   */
   readonly startupProbe?: StatefulSetV1SpecTemplateSpecContainerStartupProbe;
   /**
   * volume_mount block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#volume_mount StatefulSetV1#volume_mount}
   */
   readonly volumeMount?: StatefulSetV1SpecTemplateSpecContainerVolumeMount[] | cdktf.IResolvable;
@@ -10650,13 +10645,13 @@ export class StatefulSetV1SpecTemplateSpecContainerList extends cdktf.ComplexLis
 export interface StatefulSetV1SpecTemplateSpecDnsConfigOption {
   /**
   * Name of the option.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name: string;
   /**
   * Value of the option. Optional: Defaults to empty.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#value StatefulSetV1#value}
   */
   readonly value?: string;
@@ -10775,19 +10770,19 @@ export class StatefulSetV1SpecTemplateSpecDnsConfigOptionList extends cdktf.Comp
 export interface StatefulSetV1SpecTemplateSpecDnsConfig {
   /**
   * A list of DNS name server IP addresses. This will be appended to the base nameservers generated from DNSPolicy. Duplicated nameservers will be removed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#nameservers StatefulSetV1#nameservers}
   */
   readonly nameservers?: string[];
   /**
   * A list of DNS search domains for host-name lookup. This will be appended to the base search paths generated from DNSPolicy. Duplicated search paths will be removed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#searches StatefulSetV1#searches}
   */
   readonly searches?: string[];
   /**
   * option block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#option StatefulSetV1#option}
   */
   readonly option?: StatefulSetV1SpecTemplateSpecDnsConfigOption[] | cdktf.IResolvable;
@@ -10900,13 +10895,13 @@ export class StatefulSetV1SpecTemplateSpecDnsConfigOutputReference extends cdktf
 export interface StatefulSetV1SpecTemplateSpecHostAliases {
   /**
   * Hostnames for the IP address.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#hostnames StatefulSetV1#hostnames}
   */
   readonly hostnames: string[];
   /**
   * IP address of the host file entry.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#ip StatefulSetV1#ip}
   */
   readonly ip: string;
@@ -11022,7 +11017,7 @@ export class StatefulSetV1SpecTemplateSpecHostAliasesList extends cdktf.ComplexL
 export interface StatefulSetV1SpecTemplateSpecImagePullSecrets {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name: string;
@@ -11118,19 +11113,19 @@ export class StatefulSetV1SpecTemplateSpecImagePullSecretsList extends cdktf.Com
 export interface StatefulSetV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef {
   /**
   * The key to select.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#key StatefulSetV1#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name?: string;
   /**
   * Specify whether the ConfigMap or its key must be defined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#optional StatefulSetV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -11243,13 +11238,13 @@ export class StatefulSetV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyR
 export interface StatefulSetV1SpecTemplateSpecInitContainerEnvValueFromFieldRef {
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to "v1".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#api_version StatefulSetV1#api_version}
   */
   readonly apiVersion?: string;
   /**
   * Path of the field to select in the specified API version
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#field_path StatefulSetV1#field_path}
   */
   readonly fieldPath?: string;
@@ -11347,7 +11342,7 @@ export interface StatefulSetV1SpecTemplateSpecInitContainerEnvValueFromResourceF
   readonly divisor?: string;
   /**
   * Resource to select
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#resource StatefulSetV1#resource}
   */
   readonly resource: string;
@@ -11457,19 +11452,19 @@ export class StatefulSetV1SpecTemplateSpecInitContainerEnvValueFromResourceField
 export interface StatefulSetV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRef {
   /**
   * The key of the secret to select from. Must be a valid secret key.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#key StatefulSetV1#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name?: string;
   /**
   * Specify whether the Secret or its key must be defined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#optional StatefulSetV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -11582,25 +11577,25 @@ export class StatefulSetV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefO
 export interface StatefulSetV1SpecTemplateSpecInitContainerEnvValueFrom {
   /**
   * config_map_key_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#config_map_key_ref StatefulSetV1#config_map_key_ref}
   */
   readonly configMapKeyRef?: StatefulSetV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef;
   /**
   * field_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#field_ref StatefulSetV1#field_ref}
   */
   readonly fieldRef?: StatefulSetV1SpecTemplateSpecInitContainerEnvValueFromFieldRef;
   /**
   * resource_field_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#resource_field_ref StatefulSetV1#resource_field_ref}
   */
   readonly resourceFieldRef?: StatefulSetV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRef;
   /**
   * secret_key_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#secret_key_ref StatefulSetV1#secret_key_ref}
   */
   readonly secretKeyRef?: StatefulSetV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRef;
@@ -11736,19 +11731,19 @@ export class StatefulSetV1SpecTemplateSpecInitContainerEnvValueFromOutputReferen
 export interface StatefulSetV1SpecTemplateSpecInitContainerEnv {
   /**
   * Name of the environment variable. Must be a C_IDENTIFIER
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name: string;
   /**
   * Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#value StatefulSetV1#value}
   */
   readonly value?: string;
   /**
   * value_from block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#value_from StatefulSetV1#value_from}
   */
   readonly valueFrom?: StatefulSetV1SpecTemplateSpecInitContainerEnvValueFrom;
@@ -11890,13 +11885,13 @@ export class StatefulSetV1SpecTemplateSpecInitContainerEnvList extends cdktf.Com
 export interface StatefulSetV1SpecTemplateSpecInitContainerEnvFromConfigMapRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name: string;
   /**
   * Specify whether the ConfigMap must be defined
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#optional StatefulSetV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -11983,13 +11978,13 @@ export class StatefulSetV1SpecTemplateSpecInitContainerEnvFromConfigMapRefOutput
 export interface StatefulSetV1SpecTemplateSpecInitContainerEnvFromSecretRef {
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name: string;
   /**
   * Specify whether the Secret must be defined
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#optional StatefulSetV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -12076,19 +12071,19 @@ export class StatefulSetV1SpecTemplateSpecInitContainerEnvFromSecretRefOutputRef
 export interface StatefulSetV1SpecTemplateSpecInitContainerEnvFrom {
   /**
   * An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#prefix StatefulSetV1#prefix}
   */
   readonly prefix?: string;
   /**
   * config_map_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#config_map_ref StatefulSetV1#config_map_ref}
   */
   readonly configMapRef?: StatefulSetV1SpecTemplateSpecInitContainerEnvFromConfigMapRef;
   /**
   * secret_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#secret_ref StatefulSetV1#secret_ref}
   */
   readonly secretRef?: StatefulSetV1SpecTemplateSpecInitContainerEnvFromSecretRef;
@@ -12233,7 +12228,7 @@ export class StatefulSetV1SpecTemplateSpecInitContainerEnvFromList extends cdktf
 export interface StatefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#command StatefulSetV1#command}
   */
   readonly command?: string[];
@@ -12300,13 +12295,13 @@ export class StatefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartExecOut
 export interface StatefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#value StatefulSetV1#value}
   */
   readonly value?: string;
@@ -12428,31 +12423,31 @@ export class StatefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGet
 export interface StatefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#host StatefulSetV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#path StatefulSetV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#scheme StatefulSetV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#http_header StatefulSetV1#http_header}
   */
   readonly httpHeader?: StatefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -12611,7 +12606,7 @@ export class StatefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGet
 export interface StatefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port: string;
@@ -12707,19 +12702,19 @@ export class StatefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSock
 export interface StatefulSetV1SpecTemplateSpecInitContainerLifecyclePostStart {
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#exec StatefulSetV1#exec}
   */
   readonly exec?: StatefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartExec;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#http_get StatefulSetV1#http_get}
   */
   readonly httpGet?: StatefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#tcp_socket StatefulSetV1#tcp_socket}
   */
   readonly tcpSocket?: StatefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocket[] | cdktf.IResolvable;
@@ -12864,7 +12859,7 @@ export class StatefulSetV1SpecTemplateSpecInitContainerLifecyclePostStartList ex
 export interface StatefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#command StatefulSetV1#command}
   */
   readonly command?: string[];
@@ -12931,13 +12926,13 @@ export class StatefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopExecOutpu
 export interface StatefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#value StatefulSetV1#value}
   */
   readonly value?: string;
@@ -13059,31 +13054,31 @@ export class StatefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHt
 export interface StatefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#host StatefulSetV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#path StatefulSetV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#scheme StatefulSetV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#http_header StatefulSetV1#http_header}
   */
   readonly httpHeader?: StatefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -13242,7 +13237,7 @@ export class StatefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetOu
 export interface StatefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port: string;
@@ -13338,19 +13333,19 @@ export class StatefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocket
 export interface StatefulSetV1SpecTemplateSpecInitContainerLifecyclePreStop {
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#exec StatefulSetV1#exec}
   */
   readonly exec?: StatefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopExec;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#http_get StatefulSetV1#http_get}
   */
   readonly httpGet?: StatefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#tcp_socket StatefulSetV1#tcp_socket}
   */
   readonly tcpSocket?: StatefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocket[] | cdktf.IResolvable;
@@ -13495,13 +13490,13 @@ export class StatefulSetV1SpecTemplateSpecInitContainerLifecyclePreStopList exte
 export interface StatefulSetV1SpecTemplateSpecInitContainerLifecycle {
   /**
   * post_start block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#post_start StatefulSetV1#post_start}
   */
   readonly postStart?: StatefulSetV1SpecTemplateSpecInitContainerLifecyclePostStart[] | cdktf.IResolvable;
   /**
   * pre_stop block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#pre_stop StatefulSetV1#pre_stop}
   */
   readonly preStop?: StatefulSetV1SpecTemplateSpecInitContainerLifecyclePreStop[] | cdktf.IResolvable;
@@ -13591,7 +13586,7 @@ export class StatefulSetV1SpecTemplateSpecInitContainerLifecycleOutputReference 
 export interface StatefulSetV1SpecTemplateSpecInitContainerLivenessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#command StatefulSetV1#command}
   */
   readonly command?: string[];
@@ -13658,13 +13653,13 @@ export class StatefulSetV1SpecTemplateSpecInitContainerLivenessProbeExecOutputRe
 export interface StatefulSetV1SpecTemplateSpecInitContainerLivenessProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#service StatefulSetV1#service}
   */
   readonly service?: string;
@@ -13783,13 +13778,13 @@ export class StatefulSetV1SpecTemplateSpecInitContainerLivenessProbeGrpcList ext
 export interface StatefulSetV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#value StatefulSetV1#value}
   */
   readonly value?: string;
@@ -13911,31 +13906,31 @@ export class StatefulSetV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpH
 export interface StatefulSetV1SpecTemplateSpecInitContainerLivenessProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#host StatefulSetV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#path StatefulSetV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#scheme StatefulSetV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#http_header StatefulSetV1#http_header}
   */
   readonly httpHeader?: StatefulSetV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -14094,7 +14089,7 @@ export class StatefulSetV1SpecTemplateSpecInitContainerLivenessProbeHttpGetOutpu
 export interface StatefulSetV1SpecTemplateSpecInitContainerLivenessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port: string;
@@ -14190,55 +14185,55 @@ export class StatefulSetV1SpecTemplateSpecInitContainerLivenessProbeTcpSocketLis
 export interface StatefulSetV1SpecTemplateSpecInitContainerLivenessProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#failure_threshold StatefulSetV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#initial_delay_seconds StatefulSetV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#period_seconds StatefulSetV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#success_threshold StatefulSetV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#timeout_seconds StatefulSetV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#exec StatefulSetV1#exec}
   */
   readonly exec?: StatefulSetV1SpecTemplateSpecInitContainerLivenessProbeExec;
   /**
   * grpc block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#grpc StatefulSetV1#grpc}
   */
   readonly grpc?: StatefulSetV1SpecTemplateSpecInitContainerLivenessProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#http_get StatefulSetV1#http_get}
   */
   readonly httpGet?: StatefulSetV1SpecTemplateSpecInitContainerLivenessProbeHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#tcp_socket StatefulSetV1#tcp_socket}
   */
   readonly tcpSocket?: StatefulSetV1SpecTemplateSpecInitContainerLivenessProbeTcpSocket[] | cdktf.IResolvable;
@@ -14489,31 +14484,31 @@ export class StatefulSetV1SpecTemplateSpecInitContainerLivenessProbeOutputRefere
 export interface StatefulSetV1SpecTemplateSpecInitContainerPort {
   /**
   * Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#container_port StatefulSetV1#container_port}
   */
   readonly containerPort: number;
   /**
   * What host IP to bind the external port to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#host_ip StatefulSetV1#host_ip}
   */
   readonly hostIp?: string;
   /**
   * Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#host_port StatefulSetV1#host_port}
   */
   readonly hostPort?: number;
   /**
   * If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name?: string;
   /**
   * Protocol for port. Must be UDP or TCP. Defaults to "TCP".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#protocol StatefulSetV1#protocol}
   */
   readonly protocol?: string;
@@ -14701,7 +14696,7 @@ export class StatefulSetV1SpecTemplateSpecInitContainerPortList extends cdktf.Co
 export interface StatefulSetV1SpecTemplateSpecInitContainerReadinessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#command StatefulSetV1#command}
   */
   readonly command?: string[];
@@ -14768,13 +14763,13 @@ export class StatefulSetV1SpecTemplateSpecInitContainerReadinessProbeExecOutputR
 export interface StatefulSetV1SpecTemplateSpecInitContainerReadinessProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#service StatefulSetV1#service}
   */
   readonly service?: string;
@@ -14893,13 +14888,13 @@ export class StatefulSetV1SpecTemplateSpecInitContainerReadinessProbeGrpcList ex
 export interface StatefulSetV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#name StatefulSetV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#value StatefulSetV1#value}
   */
   readonly value?: string;
@@ -15021,31 +15016,31 @@ export class StatefulSetV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttp
 export interface StatefulSetV1SpecTemplateSpecInitContainerReadinessProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#host StatefulSetV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#path StatefulSetV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#scheme StatefulSetV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#http_header StatefulSetV1#http_header}
   */
   readonly httpHeader?: StatefulSetV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -15204,7 +15199,7 @@ export class StatefulSetV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutp
 export interface StatefulSetV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#port StatefulSetV1#port}
   */
   readonly port: string;
@@ -15300,55 +15295,55 @@ export class StatefulSetV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketLi
 export interface StatefulSetV1SpecTemplateSpecInitContainerReadinessProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#failure_threshold StatefulSetV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#initial_delay_seconds StatefulSetV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#period_seconds StatefulSetV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#success_threshold StatefulSetV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#timeout_seconds StatefulSetV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#exec StatefulSetV1#exec}
   */
   readonly exec?: StatefulSetV1SpecTemplateSpecInitContainerReadinessProbeExec;
   /**
   * grpc block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#grpc StatefulSetV1#grpc}
   */
   readonly grpc?: StatefulSetV1SpecTemplateSpecInitContainerReadinessProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#http_get StatefulSetV1#http_get}
   */
   readonly httpGet?: StatefulSetV1SpecTemplateSpecInitContainerReadinessProbeHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#tcp_socket StatefulSetV1#tcp_socket}
   */
   readonly tcpSocket?: StatefulSetV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket[] | cdktf.IResolvable;
@@ -15599,13 +15594,13 @@ export class StatefulSetV1SpecTemplateSpecInitContainerReadinessProbeOutputRefer
 export interface StatefulSetV1SpecTemplateSpecInitContainerResources {
   /**
   * Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#limits StatefulSetV1#limits}
   */
   readonly limits?: { [key: string]: string };
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#requests StatefulSetV1#requests}
   */
   readonly requests?: { [key: string]: string };
@@ -15695,13 +15690,13 @@ export class StatefulSetV1SpecTemplateSpecInitContainerResourcesOutputReference 
 export interface StatefulSetV1SpecTemplateSpecInitContainerSecurityContextCapabilities {
   /**
   * Added capabilities
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#add StatefulSetV1#add}
   */
   readonly add?: string[];
   /**
   * Removed capabilities
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#drop StatefulSetV1#drop}
   */
   readonly drop?: string[];
@@ -15791,25 +15786,25 @@ export class StatefulSetV1SpecTemplateSpecInitContainerSecurityContextCapabiliti
 export interface StatefulSetV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptions {
   /**
   * Level is SELinux level label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#level StatefulSetV1#level}
   */
   readonly level?: string;
   /**
   * Role is a SELinux role label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#role StatefulSetV1#role}
   */
   readonly role?: string;
   /**
   * Type is a SELinux type label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#type StatefulSetV1#type}
   */
   readonly type?: string;
   /**
   * User is a SELinux user label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#user StatefulSetV1#user}
   */
   readonly user?: string;
@@ -15945,13 +15940,13 @@ export class StatefulSetV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOpt
 export interface StatefulSetV1SpecTemplateSpecInitContainerSecurityContextSeccompProfile {
   /**
   * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#localhost_profile StatefulSetV1#localhost_profile}
   */
   readonly localhostProfile?: string;
   /**
   * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#type StatefulSetV1#type}
   */
   readonly type?: string;

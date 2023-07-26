@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/service
 // generated from terraform resource schema
 
@@ -21,7 +16,7 @@ export interface DataKubernetesServiceConfig extends cdktf.TerraformMetaArgument
   readonly id?: string;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/service#metadata DataKubernetesService#metadata}
   */
   readonly metadata: DataKubernetesServiceMetadata;
@@ -603,25 +598,25 @@ export class DataKubernetesServiceStatusList extends cdktf.ComplexList {
 export interface DataKubernetesServiceMetadata {
   /**
   * An unstructured key value map stored with the service that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/service#annotations DataKubernetesService#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the service. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/service#labels DataKubernetesService#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the service, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/service#name DataKubernetesService#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the service must be unique.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/service#namespace DataKubernetesService#namespace}
   */
   readonly namespace?: string;

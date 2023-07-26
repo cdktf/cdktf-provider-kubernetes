@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 import * as cdktf from 'cdktf';
 import { ReplicationControllerSpecTemplateSpecInitContainerStartupProbeExec,
 replicationControllerSpecTemplateSpecInitContainerStartupProbeExecToTerraform,
@@ -52,13 +47,13 @@ ReplicationControllerSpecTemplateMetadataOutputReference } from './structs0'
 export interface ReplicationControllerSpecTemplateSpecInitContainerStartupProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#port ReplicationController#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#service ReplicationController#service}
   */
   readonly service?: string;
@@ -177,13 +172,13 @@ export class ReplicationControllerSpecTemplateSpecInitContainerStartupProbeGrpcL
 export interface ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#name ReplicationController#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#value ReplicationController#value}
   */
   readonly value?: string;
@@ -305,31 +300,31 @@ export class ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpG
 export interface ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#host ReplicationController#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#path ReplicationController#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#port ReplicationController#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#scheme ReplicationController#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#http_header ReplicationController#http_header}
   */
   readonly httpHeader?: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -488,7 +483,7 @@ export class ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpG
 export interface ReplicationControllerSpecTemplateSpecInitContainerStartupProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#port ReplicationController#port}
   */
   readonly port: string;
@@ -584,55 +579,55 @@ export class ReplicationControllerSpecTemplateSpecInitContainerStartupProbeTcpSo
 export interface ReplicationControllerSpecTemplateSpecInitContainerStartupProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#failure_threshold ReplicationController#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#initial_delay_seconds ReplicationController#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#period_seconds ReplicationController#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#success_threshold ReplicationController#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#timeout_seconds ReplicationController#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#exec ReplicationController#exec}
   */
   readonly exec?: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeExec;
   /**
   * grpc block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#grpc ReplicationController#grpc}
   */
   readonly grpc?: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#http_get ReplicationController#http_get}
   */
   readonly httpGet?: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#tcp_socket ReplicationController#tcp_socket}
   */
   readonly tcpSocket?: ReplicationControllerSpecTemplateSpecInitContainerStartupProbeTcpSocket[] | cdktf.IResolvable;
@@ -883,31 +878,31 @@ export class ReplicationControllerSpecTemplateSpecInitContainerStartupProbeOutpu
 export interface ReplicationControllerSpecTemplateSpecInitContainerVolumeMount {
   /**
   * Path within the container at which the volume should be mounted. Must not contain ':'.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#mount_path ReplicationController#mount_path}
   */
   readonly mountPath: string;
   /**
   * Mount propagation mode. mount_propagation determines how mounts are propagated from the host to container and the other way around. Valid values are None (default), HostToContainer and Bidirectional.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#mount_propagation ReplicationController#mount_propagation}
   */
   readonly mountPropagation?: string;
   /**
   * This must match the Name of a Volume.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#name ReplicationController#name}
   */
   readonly name: string;
   /**
   * Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#read_only ReplicationController#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#sub_path ReplicationController#sub_path}
   */
   readonly subPath?: string;
@@ -1092,127 +1087,127 @@ export class ReplicationControllerSpecTemplateSpecInitContainerVolumeMountList e
 export interface ReplicationControllerSpecTemplateSpecInitContainer {
   /**
   * Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#args ReplicationController#args}
   */
   readonly args?: string[];
   /**
   * Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#command ReplicationController#command}
   */
   readonly command?: string[];
   /**
   * Docker image name. More info: http://kubernetes.io/docs/user-guide/images
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#image ReplicationController#image}
   */
   readonly image?: string;
   /**
   * Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/images#updating-images
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#image_pull_policy ReplicationController#image_pull_policy}
   */
   readonly imagePullPolicy?: string;
   /**
   * Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#name ReplicationController#name}
   */
   readonly name: string;
   /**
   * Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF. 
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#stdin ReplicationController#stdin}
   */
   readonly stdin?: boolean | cdktf.IResolvable;
   /**
   * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#stdin_once ReplicationController#stdin_once}
   */
   readonly stdinOnce?: boolean | cdktf.IResolvable;
   /**
   * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#termination_message_path ReplicationController#termination_message_path}
   */
   readonly terminationMessagePath?: string;
   /**
   * Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#termination_message_policy ReplicationController#termination_message_policy}
   */
   readonly terminationMessagePolicy?: string;
   /**
   * Whether this container should allocate a TTY for itself
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#tty ReplicationController#tty}
   */
   readonly tty?: boolean | cdktf.IResolvable;
   /**
   * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#working_dir ReplicationController#working_dir}
   */
   readonly workingDir?: string;
   /**
   * env block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#env ReplicationController#env}
   */
   readonly env?: ReplicationControllerSpecTemplateSpecInitContainerEnv[] | cdktf.IResolvable;
   /**
   * env_from block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#env_from ReplicationController#env_from}
   */
   readonly envFrom?: ReplicationControllerSpecTemplateSpecInitContainerEnvFrom[] | cdktf.IResolvable;
   /**
   * lifecycle block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#lifecycle ReplicationController#lifecycle}
   */
   readonly lifecycle?: ReplicationControllerSpecTemplateSpecInitContainerLifecycle;
   /**
   * liveness_probe block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#liveness_probe ReplicationController#liveness_probe}
   */
   readonly livenessProbe?: ReplicationControllerSpecTemplateSpecInitContainerLivenessProbe;
   /**
   * port block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#port ReplicationController#port}
   */
   readonly port?: ReplicationControllerSpecTemplateSpecInitContainerPort[] | cdktf.IResolvable;
   /**
   * readiness_probe block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#readiness_probe ReplicationController#readiness_probe}
   */
   readonly readinessProbe?: ReplicationControllerSpecTemplateSpecInitContainerReadinessProbe;
   /**
   * resources block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#resources ReplicationController#resources}
   */
   readonly resources?: ReplicationControllerSpecTemplateSpecInitContainerResources;
   /**
   * security_context block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#security_context ReplicationController#security_context}
   */
   readonly securityContext?: ReplicationControllerSpecTemplateSpecInitContainerSecurityContext;
   /**
   * startup_probe block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#startup_probe ReplicationController#startup_probe}
   */
   readonly startupProbe?: ReplicationControllerSpecTemplateSpecInitContainerStartupProbe;
   /**
   * volume_mount block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#volume_mount ReplicationController#volume_mount}
   */
   readonly volumeMount?: ReplicationControllerSpecTemplateSpecInitContainerVolumeMount[] | cdktf.IResolvable;
@@ -1768,7 +1763,7 @@ export class ReplicationControllerSpecTemplateSpecInitContainerList extends cdkt
 export interface ReplicationControllerSpecTemplateSpecReadinessGate {
   /**
   * refers to a condition in the pod's condition list with matching type.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#condition_type ReplicationController#condition_type}
   */
   readonly conditionType: string;
@@ -1864,25 +1859,25 @@ export class ReplicationControllerSpecTemplateSpecReadinessGateList extends cdkt
 export interface ReplicationControllerSpecTemplateSpecSecurityContextSeLinuxOptions {
   /**
   * Level is SELinux level label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#level ReplicationController#level}
   */
   readonly level?: string;
   /**
   * Role is a SELinux role label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#role ReplicationController#role}
   */
   readonly role?: string;
   /**
   * Type is a SELinux type label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#type ReplicationController#type}
   */
   readonly type?: string;
   /**
   * User is a SELinux user label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#user ReplicationController#user}
   */
   readonly user?: string;
@@ -2018,13 +2013,13 @@ export class ReplicationControllerSpecTemplateSpecSecurityContextSeLinuxOptionsO
 export interface ReplicationControllerSpecTemplateSpecSecurityContextSeccompProfile {
   /**
   * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#localhost_profile ReplicationController#localhost_profile}
   */
   readonly localhostProfile?: string;
   /**
   * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#type ReplicationController#type}
   */
   readonly type?: string;
@@ -2114,13 +2109,13 @@ export class ReplicationControllerSpecTemplateSpecSecurityContextSeccompProfileO
 export interface ReplicationControllerSpecTemplateSpecSecurityContextSysctl {
   /**
   * Name of a property to set.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#name ReplicationController#name}
   */
   readonly name: string;
   /**
   * Value of a property to set.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#value ReplicationController#value}
   */
   readonly value: string;
@@ -2236,55 +2231,55 @@ export class ReplicationControllerSpecTemplateSpecSecurityContextSysctlList exte
 export interface ReplicationControllerSpecTemplateSpecSecurityContext {
   /**
   * A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod: 1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw---- If unset, the Kubelet will not modify the ownership and permissions of any volume.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#fs_group ReplicationController#fs_group}
   */
   readonly fsGroup?: string;
   /**
   * fsGroupChangePolicy defines behavior of changing ownership and permission of the volume before being exposed inside Pod. This field will only apply to volume types which support fsGroup based ownership(and permissions). It will have no effect on ephemeral volume types such as: secret, configmaps and emptydir.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#fs_group_change_policy ReplicationController#fs_group_change_policy}
   */
   readonly fsGroupChangePolicy?: string;
   /**
   * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#run_as_group ReplicationController#run_as_group}
   */
   readonly runAsGroup?: string;
   /**
   * Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#run_as_non_root ReplicationController#run_as_non_root}
   */
   readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#run_as_user ReplicationController#run_as_user}
   */
   readonly runAsUser?: string;
   /**
   * A list of groups applied to the first process run in each container, in addition to the container's primary GID. If unspecified, no groups will be added to any container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#supplemental_groups ReplicationController#supplemental_groups}
   */
   readonly supplementalGroups?: number[];
   /**
   * se_linux_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#se_linux_options ReplicationController#se_linux_options}
   */
   readonly seLinuxOptions?: ReplicationControllerSpecTemplateSpecSecurityContextSeLinuxOptions;
   /**
   * seccomp_profile block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#seccomp_profile ReplicationController#seccomp_profile}
   */
   readonly seccompProfile?: ReplicationControllerSpecTemplateSpecSecurityContextSeccompProfile;
   /**
   * sysctl block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#sysctl ReplicationController#sysctl}
   */
   readonly sysctl?: ReplicationControllerSpecTemplateSpecSecurityContextSysctl[] | cdktf.IResolvable;
@@ -2535,31 +2530,31 @@ export class ReplicationControllerSpecTemplateSpecSecurityContextOutputReference
 export interface ReplicationControllerSpecTemplateSpecToleration {
   /**
   * Effect indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#effect ReplicationController#effect}
   */
   readonly effect?: string;
   /**
   * Key is the taint key that the toleration applies to. Empty means match all taint keys. If the key is empty, operator must be Exists; this combination means to match all values and all keys.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#key ReplicationController#key}
   */
   readonly key?: string;
   /**
   * Operator represents a key's relationship to the value. Valid operators are Exists and Equal. Defaults to Equal. Exists is equivalent to wildcard for value, so that a pod can tolerate all taints of a particular category.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#operator ReplicationController#operator}
   */
   readonly operator?: string;
   /**
   * TolerationSeconds represents the period of time the toleration (which must be of effect NoExecute, otherwise this field is ignored) tolerates the taint. By default, it is not set, which means tolerate the taint forever (do not evict). Zero and negative values will be treated as 0 (evict immediately) by the system.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#toleration_seconds ReplicationController#toleration_seconds}
   */
   readonly tolerationSeconds?: string;
   /**
   * Value is the taint value the toleration matches to. If the operator is Exists, the value should be empty, otherwise just a regular string.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#value ReplicationController#value}
   */
   readonly value?: string;
@@ -2750,19 +2745,19 @@ export class ReplicationControllerSpecTemplateSpecTolerationList extends cdktf.C
 export interface ReplicationControllerSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#key ReplicationController#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#operator ReplicationController#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#values ReplicationController#values}
   */
   readonly values?: string[];
@@ -2907,13 +2902,13 @@ export class ReplicationControllerSpecTemplateSpecTopologySpreadConstraintLabelS
 export interface ReplicationControllerSpecTemplateSpecTopologySpreadConstraintLabelSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#match_labels ReplicationController#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#match_expressions ReplicationController#match_expressions}
   */
   readonly matchExpressions?: ReplicationControllerSpecTemplateSpecTopologySpreadConstraintLabelSelectorMatchExpressions[] | cdktf.IResolvable;
@@ -3035,25 +3030,25 @@ export class ReplicationControllerSpecTemplateSpecTopologySpreadConstraintLabelS
 export interface ReplicationControllerSpecTemplateSpecTopologySpreadConstraint {
   /**
   * describes the degree to which pods may be unevenly distributed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#max_skew ReplicationController#max_skew}
   */
   readonly maxSkew?: number;
   /**
   * the key of node labels. Nodes that have a label with this key and identical values are considered to be in the same topology.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#topology_key ReplicationController#topology_key}
   */
   readonly topologyKey?: string;
   /**
   * indicates how to deal with a pod if it doesn't satisfy the spread constraint.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#when_unsatisfiable ReplicationController#when_unsatisfiable}
   */
   readonly whenUnsatisfiable?: string;
   /**
   * label_selector block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#label_selector ReplicationController#label_selector}
   */
   readonly labelSelector?: ReplicationControllerSpecTemplateSpecTopologySpreadConstraintLabelSelector[] | cdktf.IResolvable;
@@ -3221,25 +3216,25 @@ export class ReplicationControllerSpecTemplateSpecTopologySpreadConstraintList e
 export interface ReplicationControllerSpecTemplateSpecVolumeAwsElasticBlockStore {
   /**
   * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#fs_type ReplicationController#fs_type}
   */
   readonly fsType?: string;
   /**
   * The partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#partition ReplicationController#partition}
   */
   readonly partition?: number;
   /**
   * Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#read_only ReplicationController#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#volume_id ReplicationController#volume_id}
   */
   readonly volumeId: string;
@@ -3372,37 +3367,37 @@ export class ReplicationControllerSpecTemplateSpecVolumeAwsElasticBlockStoreOutp
 export interface ReplicationControllerSpecTemplateSpecVolumeAzureDisk {
   /**
   * Host Caching mode: None, Read Only, Read Write.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#caching_mode ReplicationController#caching_mode}
   */
   readonly cachingMode: string;
   /**
   * The URI the data disk in the blob storage
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#data_disk_uri ReplicationController#data_disk_uri}
   */
   readonly dataDiskUri: string;
   /**
   * The Name of the data disk in the blob storage
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#disk_name ReplicationController#disk_name}
   */
   readonly diskName: string;
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#fs_type ReplicationController#fs_type}
   */
   readonly fsType?: string;
   /**
   * The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#kind ReplicationController#kind}
   */
   readonly kind?: string;
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#read_only ReplicationController#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
@@ -3575,25 +3570,25 @@ export class ReplicationControllerSpecTemplateSpecVolumeAzureDiskOutputReference
 export interface ReplicationControllerSpecTemplateSpecVolumeAzureFile {
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#read_only ReplicationController#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * The name of secret that contains Azure Storage Account Name and Key
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#secret_name ReplicationController#secret_name}
   */
   readonly secretName: string;
   /**
   * The namespace of the secret that contains Azure Storage Account Name and Key. For Kubernetes up to 1.18.x the default is the same as the Pod. For Kubernetes 1.19.x and later the default is "default" namespace.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#secret_namespace ReplicationController#secret_namespace}
   */
   readonly secretNamespace?: string;
   /**
   * Share Name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#share_name ReplicationController#share_name}
   */
   readonly shareName: string;
@@ -3723,13 +3718,13 @@ export class ReplicationControllerSpecTemplateSpecVolumeAzureFileOutputReference
 export interface ReplicationControllerSpecTemplateSpecVolumeCephFsSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#name ReplicationController#name}
   */
   readonly name?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#namespace ReplicationController#namespace}
   */
   readonly namespace?: string;
@@ -3819,37 +3814,37 @@ export class ReplicationControllerSpecTemplateSpecVolumeCephFsSecretRefOutputRef
 export interface ReplicationControllerSpecTemplateSpecVolumeCephFs {
   /**
   * Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#monitors ReplicationController#monitors}
   */
   readonly monitors: string[];
   /**
   * Used as the mounted root, rather than the full Ceph tree, default is /
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#path ReplicationController#path}
   */
   readonly path?: string;
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#read_only ReplicationController#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#secret_file ReplicationController#secret_file}
   */
   readonly secretFile?: string;
   /**
   * User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#user ReplicationController#user}
   */
   readonly user?: string;
   /**
   * secret_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#secret_ref ReplicationController#secret_ref}
   */
   readonly secretRef?: ReplicationControllerSpecTemplateSpecVolumeCephFsSecretRef;
@@ -4028,19 +4023,19 @@ export class ReplicationControllerSpecTemplateSpecVolumeCephFsOutputReference ex
 export interface ReplicationControllerSpecTemplateSpecVolumeCinder {
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#fs_type ReplicationController#fs_type}
   */
   readonly fsType?: string;
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#read_only ReplicationController#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#volume_id ReplicationController#volume_id}
   */
   readonly volumeId: string;
@@ -4150,19 +4145,19 @@ export class ReplicationControllerSpecTemplateSpecVolumeCinderOutputReference ex
 export interface ReplicationControllerSpecTemplateSpecVolumeConfigMapItems {
   /**
   * The key to project.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#key ReplicationController#key}
   */
   readonly key?: string;
   /**
   * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#mode ReplicationController#mode}
   */
   readonly mode?: string;
   /**
   * The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#path ReplicationController#path}
   */
   readonly path?: string;
@@ -4307,25 +4302,25 @@ export class ReplicationControllerSpecTemplateSpecVolumeConfigMapItemsList exten
 export interface ReplicationControllerSpecTemplateSpecVolumeConfigMap {
   /**
   * Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#default_mode ReplicationController#default_mode}
   */
   readonly defaultMode?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#name ReplicationController#name}
   */
   readonly name?: string;
   /**
   * Optional: Specify whether the ConfigMap or its keys must be defined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#optional ReplicationController#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#items ReplicationController#items}
   */
   readonly items?: ReplicationControllerSpecTemplateSpecVolumeConfigMapItems[] | cdktf.IResolvable;
@@ -4461,7 +4456,7 @@ export class ReplicationControllerSpecTemplateSpecVolumeConfigMapOutputReference
 export interface ReplicationControllerSpecTemplateSpecVolumeCsiNodePublishSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#name ReplicationController#name}
   */
   readonly name?: string;
@@ -4528,31 +4523,31 @@ export class ReplicationControllerSpecTemplateSpecVolumeCsiNodePublishSecretRefO
 export interface ReplicationControllerSpecTemplateSpecVolumeCsi {
   /**
   * the name of the volume driver to use. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#driver ReplicationController#driver}
   */
   readonly driver: string;
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#fs_type ReplicationController#fs_type}
   */
   readonly fsType?: string;
   /**
   * Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#read_only ReplicationController#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Attributes of the volume to publish.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#volume_attributes ReplicationController#volume_attributes}
   */
   readonly volumeAttributes?: { [key: string]: string };
   /**
   * node_publish_secret_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#node_publish_secret_ref ReplicationController#node_publish_secret_ref}
   */
   readonly nodePublishSecretRef?: ReplicationControllerSpecTemplateSpecVolumeCsiNodePublishSecretRef;
@@ -4708,13 +4703,13 @@ export class ReplicationControllerSpecTemplateSpecVolumeCsiOutputReference exten
 export interface ReplicationControllerSpecTemplateSpecVolumeDownwardApiItemsFieldRef {
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to "v1".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#api_version ReplicationController#api_version}
   */
   readonly apiVersion?: string;
   /**
   * Path of the field to select in the specified API version
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#field_path ReplicationController#field_path}
   */
   readonly fieldPath?: string;
@@ -4812,7 +4807,7 @@ export interface ReplicationControllerSpecTemplateSpecVolumeDownwardApiItemsReso
   readonly divisor?: string;
   /**
   * Resource to select
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#resource ReplicationController#resource}
   */
   readonly resource: string;
@@ -4919,25 +4914,25 @@ export class ReplicationControllerSpecTemplateSpecVolumeDownwardApiItemsResource
 export interface ReplicationControllerSpecTemplateSpecVolumeDownwardApiItems {
   /**
   * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#mode ReplicationController#mode}
   */
   readonly mode?: string;
   /**
   * Path is the relative path name of the file to be created. Must not be absolute or contain the '..' path. Must be utf-8 encoded. The first item of the relative path must not start with '..'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#path ReplicationController#path}
   */
   readonly path: string;
   /**
   * field_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#field_ref ReplicationController#field_ref}
   */
   readonly fieldRef: ReplicationControllerSpecTemplateSpecVolumeDownwardApiItemsFieldRef;
   /**
   * resource_field_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#resource_field_ref ReplicationController#resource_field_ref}
   */
   readonly resourceFieldRef?: ReplicationControllerSpecTemplateSpecVolumeDownwardApiItemsResourceFieldRef;
@@ -5099,13 +5094,13 @@ export class ReplicationControllerSpecTemplateSpecVolumeDownwardApiItemsList ext
 export interface ReplicationControllerSpecTemplateSpecVolumeDownwardApi {
   /**
   * Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#default_mode ReplicationController#default_mode}
   */
   readonly defaultMode?: string;
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#items ReplicationController#items}
   */
   readonly items?: ReplicationControllerSpecTemplateSpecVolumeDownwardApiItems[] | cdktf.IResolvable;
@@ -5195,13 +5190,13 @@ export class ReplicationControllerSpecTemplateSpecVolumeDownwardApiOutputReferen
 export interface ReplicationControllerSpecTemplateSpecVolumeEmptyDir {
   /**
   * What type of storage medium should back this directory. The default is "" which means to use the node's default medium. Must be an empty string (default) or Memory. More info: http://kubernetes.io/docs/user-guide/volumes#emptydir
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#medium ReplicationController#medium}
   */
   readonly medium?: string;
   /**
   * Total amount of local storage required for this EmptyDir volume.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#size_limit ReplicationController#size_limit}
   */
   readonly sizeLimit?: string;
@@ -5291,25 +5286,25 @@ export class ReplicationControllerSpecTemplateSpecVolumeEmptyDirOutputReference 
 export interface ReplicationControllerSpecTemplateSpecVolumeFc {
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#fs_type ReplicationController#fs_type}
   */
   readonly fsType?: string;
   /**
   * FC target lun number
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#lun ReplicationController#lun}
   */
   readonly lun: number;
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#read_only ReplicationController#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * FC target worldwide names (WWNs)
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#target_ww_ns ReplicationController#target_ww_ns}
   */
   readonly targetWwNs: string[];
@@ -5439,13 +5434,13 @@ export class ReplicationControllerSpecTemplateSpecVolumeFcOutputReference extend
 export interface ReplicationControllerSpecTemplateSpecVolumeFlexVolumeSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#name ReplicationController#name}
   */
   readonly name?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#namespace ReplicationController#namespace}
   */
   readonly namespace?: string;
@@ -5535,31 +5530,31 @@ export class ReplicationControllerSpecTemplateSpecVolumeFlexVolumeSecretRefOutpu
 export interface ReplicationControllerSpecTemplateSpecVolumeFlexVolume {
   /**
   * Driver is the name of the driver to use for this volume.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#driver ReplicationController#driver}
   */
   readonly driver: string;
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". The default filesystem depends on FlexVolume script.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#fs_type ReplicationController#fs_type}
   */
   readonly fsType?: string;
   /**
   * Extra command options if any.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#options ReplicationController#options}
   */
   readonly options?: { [key: string]: string };
   /**
   * Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#read_only ReplicationController#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * secret_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#secret_ref ReplicationController#secret_ref}
   */
   readonly secretRef?: ReplicationControllerSpecTemplateSpecVolumeFlexVolumeSecretRef;
@@ -5715,13 +5710,13 @@ export class ReplicationControllerSpecTemplateSpecVolumeFlexVolumeOutputReferenc
 export interface ReplicationControllerSpecTemplateSpecVolumeFlocker {
   /**
   * Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#dataset_name ReplicationController#dataset_name}
   */
   readonly datasetName?: string;
   /**
   * UUID of the dataset. This is unique identifier of a Flocker dataset
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#dataset_uuid ReplicationController#dataset_uuid}
   */
   readonly datasetUuid?: string;
@@ -5811,25 +5806,25 @@ export class ReplicationControllerSpecTemplateSpecVolumeFlockerOutputReference e
 export interface ReplicationControllerSpecTemplateSpecVolumeGcePersistentDisk {
   /**
   * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#fs_type ReplicationController#fs_type}
   */
   readonly fsType?: string;
   /**
   * The partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty). More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#partition ReplicationController#partition}
   */
   readonly partition?: number;
   /**
   * Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#pd_name ReplicationController#pd_name}
   */
   readonly pdName: string;
   /**
   * Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#read_only ReplicationController#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
@@ -5962,19 +5957,19 @@ export class ReplicationControllerSpecTemplateSpecVolumeGcePersistentDiskOutputR
 export interface ReplicationControllerSpecTemplateSpecVolumeGitRepo {
   /**
   * Target directory name. Must not contain or start with '..'. If '.' is supplied, the volume directory will be the git repository. Otherwise, if specified, the volume will contain the git repository in the subdirectory with the given name.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#directory ReplicationController#directory}
   */
   readonly directory?: string;
   /**
   * Repository URL
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#repository ReplicationController#repository}
   */
   readonly repository?: string;
   /**
   * Commit hash for the specified revision.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#revision ReplicationController#revision}
   */
   readonly revision?: string;
@@ -6087,19 +6082,19 @@ export class ReplicationControllerSpecTemplateSpecVolumeGitRepoOutputReference e
 export interface ReplicationControllerSpecTemplateSpecVolumeGlusterfs {
   /**
   * The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#endpoints_name ReplicationController#endpoints_name}
   */
   readonly endpointsName: string;
   /**
   * The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#path ReplicationController#path}
   */
   readonly path: string;
   /**
   * Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#read_only ReplicationController#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
@@ -6206,13 +6201,13 @@ export class ReplicationControllerSpecTemplateSpecVolumeGlusterfsOutputReference
 export interface ReplicationControllerSpecTemplateSpecVolumeHostPath {
   /**
   * Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#hostpath
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#path ReplicationController#path}
   */
   readonly path?: string;
   /**
   * Type for HostPath volume. Allowed values are "" (default), DirectoryOrCreate, Directory, FileOrCreate, File, Socket, CharDevice and BlockDevice
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#type ReplicationController#type}
   */
   readonly type?: string;
@@ -6302,37 +6297,37 @@ export class ReplicationControllerSpecTemplateSpecVolumeHostPathOutputReference 
 export interface ReplicationControllerSpecTemplateSpecVolumeIscsi {
   /**
   * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#iscsi
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#fs_type ReplicationController#fs_type}
   */
   readonly fsType?: string;
   /**
   * Target iSCSI Qualified Name.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#iqn ReplicationController#iqn}
   */
   readonly iqn: string;
   /**
   * iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#iscsi_interface ReplicationController#iscsi_interface}
   */
   readonly iscsiInterface?: string;
   /**
   * iSCSI target lun number.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#lun ReplicationController#lun}
   */
   readonly lun?: number;
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to false.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#read_only ReplicationController#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * iSCSI target portal. The portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#target_portal ReplicationController#target_portal}
   */
   readonly targetPortal: string;
@@ -6508,7 +6503,7 @@ export class ReplicationControllerSpecTemplateSpecVolumeIscsiOutputReference ext
 export interface ReplicationControllerSpecTemplateSpecVolumeLocal {
   /**
   * Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#local
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#path ReplicationController#path}
   */
   readonly path?: string;
@@ -6575,19 +6570,19 @@ export class ReplicationControllerSpecTemplateSpecVolumeLocalOutputReference ext
 export interface ReplicationControllerSpecTemplateSpecVolumeNfs {
   /**
   * Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#path ReplicationController#path}
   */
   readonly path: string;
   /**
   * Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#read_only ReplicationController#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#server ReplicationController#server}
   */
   readonly server: string;
@@ -6694,13 +6689,13 @@ export class ReplicationControllerSpecTemplateSpecVolumeNfsOutputReference exten
 export interface ReplicationControllerSpecTemplateSpecVolumePersistentVolumeClaim {
   /**
   * ClaimName is the name of a PersistentVolumeClaim in the same 
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#claim_name ReplicationController#claim_name}
   */
   readonly claimName?: string;
   /**
   * Will force the ReadOnly setting in VolumeMounts.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#read_only ReplicationController#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
@@ -6790,13 +6785,13 @@ export class ReplicationControllerSpecTemplateSpecVolumePersistentVolumeClaimOut
 export interface ReplicationControllerSpecTemplateSpecVolumePhotonPersistentDisk {
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#fs_type ReplicationController#fs_type}
   */
   readonly fsType?: string;
   /**
   * ID that identifies Photon Controller persistent disk
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#pd_id ReplicationController#pd_id}
   */
   readonly pdId: string;
@@ -6883,19 +6878,19 @@ export class ReplicationControllerSpecTemplateSpecVolumePhotonPersistentDiskOutp
 export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesConfigMapItems {
   /**
   * The key to project.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#key ReplicationController#key}
   */
   readonly key?: string;
   /**
   * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#mode ReplicationController#mode}
   */
   readonly mode?: string;
   /**
   * The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#path ReplicationController#path}
   */
   readonly path?: string;
@@ -7040,19 +7035,19 @@ export class ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesConfigMa
 export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesConfigMap {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#name ReplicationController#name}
   */
   readonly name?: string;
   /**
   * Optional: Specify whether the ConfigMap or it's keys must be defined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#optional ReplicationController#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#items ReplicationController#items}
   */
   readonly items?: ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesConfigMapItems[] | cdktf.IResolvable;
@@ -7197,13 +7192,13 @@ export class ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesConfigMa
 export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef {
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to 'v1'.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#api_version ReplicationController#api_version}
   */
   readonly apiVersion?: string;
   /**
   * Path of the field to select in the specified API version
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#field_path ReplicationController#field_path}
   */
   readonly fieldPath?: string;
@@ -7301,7 +7296,7 @@ export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesDown
   readonly divisor?: string;
   /**
   * Resource to select
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#resource ReplicationController#resource}
   */
   readonly resource: string;
@@ -7408,25 +7403,25 @@ export class ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesDownward
 export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems {
   /**
   * Mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#mode ReplicationController#mode}
   */
   readonly mode?: string;
   /**
   * Path is the relative path name of the file to be created. Must not be absolute or contain the '..' path. Must be utf-8 encoded. The first item of the relative path must not start with '..'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#path ReplicationController#path}
   */
   readonly path: string;
   /**
   * field_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#field_ref ReplicationController#field_ref}
   */
   readonly fieldRef?: ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsFieldRef;
   /**
   * resource_field_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#resource_field_ref ReplicationController#resource_field_ref}
   */
   readonly resourceFieldRef?: ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef;
@@ -7591,7 +7586,7 @@ export class ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesDownward
 export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesDownwardApi {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#items ReplicationController#items}
   */
   readonly items?: ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesDownwardApiItems[] | cdktf.IResolvable;
@@ -7658,19 +7653,19 @@ export class ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesDownward
 export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesSecretItems {
   /**
   * The key to project.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#key ReplicationController#key}
   */
   readonly key?: string;
   /**
   * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#mode ReplicationController#mode}
   */
   readonly mode?: string;
   /**
   * The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#path ReplicationController#path}
   */
   readonly path?: string;
@@ -7815,19 +7810,19 @@ export class ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesSecretIt
 export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesSecret {
   /**
   * Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#name ReplicationController#name}
   */
   readonly name?: string;
   /**
   * Optional: Specify whether the Secret or it's keys must be defined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#optional ReplicationController#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#items ReplicationController#items}
   */
   readonly items?: ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesSecretItems[] | cdktf.IResolvable;
@@ -7972,19 +7967,19 @@ export class ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesSecretLi
 export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken {
   /**
   * Audience is the intended audience of the token
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#audience ReplicationController#audience}
   */
   readonly audience?: string;
   /**
   * ExpirationSeconds is the expected duration of validity of the service account token. It defaults to 1 hour and must be at least 10 minutes (600 seconds).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#expiration_seconds ReplicationController#expiration_seconds}
   */
   readonly expirationSeconds?: number;
   /**
   * Path specifies a relative path to the mount point of the projected volume.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#path ReplicationController#path}
   */
   readonly path: string;
@@ -8094,25 +8089,25 @@ export class ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesServiceA
 export interface ReplicationControllerSpecTemplateSpecVolumeProjectedSources {
   /**
   * config_map block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#config_map ReplicationController#config_map}
   */
   readonly configMap?: ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesConfigMap[] | cdktf.IResolvable;
   /**
   * downward_api block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#downward_api ReplicationController#downward_api}
   */
   readonly downwardApi?: ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesDownwardApi;
   /**
   * secret block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#secret ReplicationController#secret}
   */
   readonly secret?: ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesSecret[] | cdktf.IResolvable;
   /**
   * service_account_token block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#service_account_token ReplicationController#service_account_token}
   */
   readonly serviceAccountToken?: ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesServiceAccountToken;
@@ -8280,13 +8275,13 @@ export class ReplicationControllerSpecTemplateSpecVolumeProjectedSourcesList ext
 export interface ReplicationControllerSpecTemplateSpecVolumeProjected {
   /**
   * Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#default_mode ReplicationController#default_mode}
   */
   readonly defaultMode?: string;
   /**
   * sources block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#sources ReplicationController#sources}
   */
   readonly sources: ReplicationControllerSpecTemplateSpecVolumeProjectedSources[] | cdktf.IResolvable;
@@ -8405,31 +8400,31 @@ export class ReplicationControllerSpecTemplateSpecVolumeProjectedList extends cd
 export interface ReplicationControllerSpecTemplateSpecVolumeQuobyte {
   /**
   * Group to map volume access to Default is no group
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#group ReplicationController#group}
   */
   readonly group?: string;
   /**
   * Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#read_only ReplicationController#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#registry ReplicationController#registry}
   */
   readonly registry: string;
   /**
   * User to map volume access to Defaults to serivceaccount user
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#user ReplicationController#user}
   */
   readonly user?: string;
   /**
   * Volume is a string that references an already created Quobyte volume by name.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#volume ReplicationController#volume}
   */
   readonly volume: string;
@@ -8582,13 +8577,13 @@ export class ReplicationControllerSpecTemplateSpecVolumeQuobyteOutputReference e
 export interface ReplicationControllerSpecTemplateSpecVolumeRbdSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#name ReplicationController#name}
   */
   readonly name?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#namespace ReplicationController#namespace}
   */
   readonly namespace?: string;
@@ -8678,49 +8673,49 @@ export class ReplicationControllerSpecTemplateSpecVolumeRbdSecretRefOutputRefere
 export interface ReplicationControllerSpecTemplateSpecVolumeRbd {
   /**
   * A collection of Ceph monitors. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#ceph_monitors ReplicationController#ceph_monitors}
   */
   readonly cephMonitors: string[];
   /**
   * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#rbd
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#fs_type ReplicationController#fs_type}
   */
   readonly fsType?: string;
   /**
   * Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#keyring ReplicationController#keyring}
   */
   readonly keyring?: string;
   /**
   * The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#rados_user ReplicationController#rados_user}
   */
   readonly radosUser?: string;
   /**
   * The rados image name. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#rbd_image ReplicationController#rbd_image}
   */
   readonly rbdImage: string;
   /**
   * The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#rbd_pool ReplicationController#rbd_pool}
   */
   readonly rbdPool?: string;
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#read_only ReplicationController#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * secret_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#secret_ref ReplicationController#secret_ref}
   */
   readonly secretRef?: ReplicationControllerSpecTemplateSpecVolumeRbdSecretRef;
@@ -8942,19 +8937,19 @@ export class ReplicationControllerSpecTemplateSpecVolumeRbdOutputReference exten
 export interface ReplicationControllerSpecTemplateSpecVolumeSecretItems {
   /**
   * The key to project.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#key ReplicationController#key}
   */
   readonly key?: string;
   /**
   * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#mode ReplicationController#mode}
   */
   readonly mode?: string;
   /**
   * The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#path ReplicationController#path}
   */
   readonly path?: string;
@@ -9099,25 +9094,25 @@ export class ReplicationControllerSpecTemplateSpecVolumeSecretItemsList extends 
 export interface ReplicationControllerSpecTemplateSpecVolumeSecret {
   /**
   * Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#default_mode ReplicationController#default_mode}
   */
   readonly defaultMode?: string;
   /**
   * Optional: Specify whether the Secret or its keys must be defined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#optional ReplicationController#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
   /**
   * Name of the secret in the pod's namespace to use. More info: http://kubernetes.io/docs/user-guide/volumes#secrets
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#secret_name ReplicationController#secret_name}
   */
   readonly secretName?: string;
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#items ReplicationController#items}
   */
   readonly items?: ReplicationControllerSpecTemplateSpecVolumeSecretItems[] | cdktf.IResolvable;
@@ -9253,13 +9248,13 @@ export class ReplicationControllerSpecTemplateSpecVolumeSecretOutputReference ex
 export interface ReplicationControllerSpecTemplateSpecVolumeVsphereVolume {
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#fs_type ReplicationController#fs_type}
   */
   readonly fsType?: string;
   /**
   * Path that identifies vSphere volume vmdk
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#volume_path ReplicationController#volume_path}
   */
   readonly volumePath: string;
@@ -9346,163 +9341,163 @@ export class ReplicationControllerSpecTemplateSpecVolumeVsphereVolumeOutputRefer
 export interface ReplicationControllerSpecTemplateSpecVolume {
   /**
   * Volume's name. Must be a DNS_LABEL and unique within the pod. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#name ReplicationController#name}
   */
   readonly name?: string;
   /**
   * aws_elastic_block_store block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#aws_elastic_block_store ReplicationController#aws_elastic_block_store}
   */
   readonly awsElasticBlockStore?: ReplicationControllerSpecTemplateSpecVolumeAwsElasticBlockStore;
   /**
   * azure_disk block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#azure_disk ReplicationController#azure_disk}
   */
   readonly azureDisk?: ReplicationControllerSpecTemplateSpecVolumeAzureDisk;
   /**
   * azure_file block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#azure_file ReplicationController#azure_file}
   */
   readonly azureFile?: ReplicationControllerSpecTemplateSpecVolumeAzureFile;
   /**
   * ceph_fs block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#ceph_fs ReplicationController#ceph_fs}
   */
   readonly cephFs?: ReplicationControllerSpecTemplateSpecVolumeCephFs;
   /**
   * cinder block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#cinder ReplicationController#cinder}
   */
   readonly cinder?: ReplicationControllerSpecTemplateSpecVolumeCinder;
   /**
   * config_map block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#config_map ReplicationController#config_map}
   */
   readonly configMap?: ReplicationControllerSpecTemplateSpecVolumeConfigMap;
   /**
   * csi block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#csi ReplicationController#csi}
   */
   readonly csi?: ReplicationControllerSpecTemplateSpecVolumeCsi;
   /**
   * downward_api block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#downward_api ReplicationController#downward_api}
   */
   readonly downwardApi?: ReplicationControllerSpecTemplateSpecVolumeDownwardApi;
   /**
   * empty_dir block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#empty_dir ReplicationController#empty_dir}
   */
   readonly emptyDir?: ReplicationControllerSpecTemplateSpecVolumeEmptyDir;
   /**
   * fc block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#fc ReplicationController#fc}
   */
   readonly fc?: ReplicationControllerSpecTemplateSpecVolumeFc;
   /**
   * flex_volume block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#flex_volume ReplicationController#flex_volume}
   */
   readonly flexVolume?: ReplicationControllerSpecTemplateSpecVolumeFlexVolume;
   /**
   * flocker block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#flocker ReplicationController#flocker}
   */
   readonly flocker?: ReplicationControllerSpecTemplateSpecVolumeFlocker;
   /**
   * gce_persistent_disk block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#gce_persistent_disk ReplicationController#gce_persistent_disk}
   */
   readonly gcePersistentDisk?: ReplicationControllerSpecTemplateSpecVolumeGcePersistentDisk;
   /**
   * git_repo block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#git_repo ReplicationController#git_repo}
   */
   readonly gitRepo?: ReplicationControllerSpecTemplateSpecVolumeGitRepo;
   /**
   * glusterfs block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#glusterfs ReplicationController#glusterfs}
   */
   readonly glusterfs?: ReplicationControllerSpecTemplateSpecVolumeGlusterfs;
   /**
   * host_path block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#host_path ReplicationController#host_path}
   */
   readonly hostPath?: ReplicationControllerSpecTemplateSpecVolumeHostPath;
   /**
   * iscsi block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#iscsi ReplicationController#iscsi}
   */
   readonly iscsi?: ReplicationControllerSpecTemplateSpecVolumeIscsi;
   /**
   * local block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#local ReplicationController#local}
   */
   readonly local?: ReplicationControllerSpecTemplateSpecVolumeLocal;
   /**
   * nfs block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#nfs ReplicationController#nfs}
   */
   readonly nfs?: ReplicationControllerSpecTemplateSpecVolumeNfs;
   /**
   * persistent_volume_claim block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#persistent_volume_claim ReplicationController#persistent_volume_claim}
   */
   readonly persistentVolumeClaim?: ReplicationControllerSpecTemplateSpecVolumePersistentVolumeClaim;
   /**
   * photon_persistent_disk block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#photon_persistent_disk ReplicationController#photon_persistent_disk}
   */
   readonly photonPersistentDisk?: ReplicationControllerSpecTemplateSpecVolumePhotonPersistentDisk;
   /**
   * projected block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#projected ReplicationController#projected}
   */
   readonly projected?: ReplicationControllerSpecTemplateSpecVolumeProjected[] | cdktf.IResolvable;
   /**
   * quobyte block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#quobyte ReplicationController#quobyte}
   */
   readonly quobyte?: ReplicationControllerSpecTemplateSpecVolumeQuobyte;
   /**
   * rbd block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#rbd ReplicationController#rbd}
   */
   readonly rbd?: ReplicationControllerSpecTemplateSpecVolumeRbd;
   /**
   * secret block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#secret ReplicationController#secret}
   */
   readonly secret?: ReplicationControllerSpecTemplateSpecVolumeSecret;
   /**
   * vsphere_volume block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#vsphere_volume ReplicationController#vsphere_volume}
   */
   readonly vsphereVolume?: ReplicationControllerSpecTemplateSpecVolumeVsphereVolume;
@@ -10199,175 +10194,175 @@ export class ReplicationControllerSpecTemplateSpecVolumeList extends cdktf.Compl
 export interface ReplicationControllerSpecTemplateSpec {
   /**
   * Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#active_deadline_seconds ReplicationController#active_deadline_seconds}
   */
   readonly activeDeadlineSeconds?: number;
   /**
   * AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#automount_service_account_token ReplicationController#automount_service_account_token}
   */
   readonly automountServiceAccountToken?: boolean | cdktf.IResolvable;
   /**
   * Set DNS policy for containers within the pod. Valid values are 'ClusterFirstWithHostNet', 'ClusterFirst', 'Default' or 'None'. DNS parameters given in DNSConfig will be merged with the policy selected with DNSPolicy. To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to 'ClusterFirstWithHostNet'. Optional: Defaults to 'ClusterFirst', see [Kubernetes reference](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#dns_policy ReplicationController#dns_policy}
   */
   readonly dnsPolicy?: string;
   /**
   * Enables generating environment variables for service discovery. Defaults to true.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#enable_service_links ReplicationController#enable_service_links}
   */
   readonly enableServiceLinks?: boolean | cdktf.IResolvable;
   /**
   * Use the host's ipc namespace. Optional: Defaults to false.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#host_ipc ReplicationController#host_ipc}
   */
   readonly hostIpc?: boolean | cdktf.IResolvable;
   /**
   * Host networking requested for this pod. Use the host's network namespace. If this option is set, the ports that will be used must be specified.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#host_network ReplicationController#host_network}
   */
   readonly hostNetwork?: boolean | cdktf.IResolvable;
   /**
   * Use the host's pid namespace.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#host_pid ReplicationController#host_pid}
   */
   readonly hostPid?: boolean | cdktf.IResolvable;
   /**
   * Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#hostname ReplicationController#hostname}
   */
   readonly hostname?: string;
   /**
   * NodeName is a request to schedule this pod onto a specific node. If it is non-empty, the scheduler simply schedules this pod onto that node, assuming that it fits resource requirements.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#node_name ReplicationController#node_name}
   */
   readonly nodeName?: string;
   /**
   * NodeSelector is a selector which must be true for the pod to fit on a node. Selector which must match a node's labels for the pod to be scheduled on that node. More info: http://kubernetes.io/docs/user-guide/node-selection.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#node_selector ReplicationController#node_selector}
   */
   readonly nodeSelector?: { [key: string]: string };
   /**
   * If specified, indicates the pod's priority. "system-node-critical" and "system-cluster-critical" are two special keywords which indicate the highest priorities with the former being the highest priority. Any other name must be defined by creating a PriorityClass object with that name. If not specified, the pod priority will be default or zero if there is no default.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#priority_class_name ReplicationController#priority_class_name}
   */
   readonly priorityClassName?: string;
   /**
   * Restart policy for all containers within the pod. One of Always, OnFailure, Never. More info: http://kubernetes.io/docs/user-guide/pod-states#restartpolicy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#restart_policy ReplicationController#restart_policy}
   */
   readonly restartPolicy?: string;
   /**
   * RuntimeClassName is a feature for selecting the container runtime configuration. The container runtime configuration is used to run a Pod's containers. More info: https://kubernetes.io/docs/concepts/containers/runtime-class
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#runtime_class_name ReplicationController#runtime_class_name}
   */
   readonly runtimeClassName?: string;
   /**
   * If specified, the pod will be dispatched by specified scheduler. If not specified, the pod will be dispatched by default scheduler.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#scheduler_name ReplicationController#scheduler_name}
   */
   readonly schedulerName?: string;
   /**
   * ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#service_account_name ReplicationController#service_account_name}
   */
   readonly serviceAccountName?: string;
   /**
   * Share a single process namespace between all of the containers in a pod. When this is set containers will be able to view and signal processes from other containers in the same pod, and the first process in each container will not be assigned PID 1. HostPID and ShareProcessNamespace cannot both be set. Optional: Defaults to false.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#share_process_namespace ReplicationController#share_process_namespace}
   */
   readonly shareProcessNamespace?: boolean | cdktf.IResolvable;
   /**
   * If specified, the fully qualified Pod hostname will be "...svc.". If not specified, the pod will not have a domainname at all..
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#subdomain ReplicationController#subdomain}
   */
   readonly subdomain?: string;
   /**
   * Optional duration in seconds the pod needs to terminate gracefully. May be decreased in delete request. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period will be used instead. The grace period is the duration in seconds after the processes running in the pod are sent a termination signal and the time when the processes are forcibly halted with a kill signal. Set this value longer than the expected cleanup time for your process.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#termination_grace_period_seconds ReplicationController#termination_grace_period_seconds}
   */
   readonly terminationGracePeriodSeconds?: number;
   /**
   * affinity block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#affinity ReplicationController#affinity}
   */
   readonly affinity?: ReplicationControllerSpecTemplateSpecAffinity;
   /**
   * container block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#container ReplicationController#container}
   */
   readonly container?: ReplicationControllerSpecTemplateSpecContainer[] | cdktf.IResolvable;
   /**
   * dns_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#dns_config ReplicationController#dns_config}
   */
   readonly dnsConfig?: ReplicationControllerSpecTemplateSpecDnsConfig;
   /**
   * host_aliases block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#host_aliases ReplicationController#host_aliases}
   */
   readonly hostAliases?: ReplicationControllerSpecTemplateSpecHostAliases[] | cdktf.IResolvable;
   /**
   * image_pull_secrets block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#image_pull_secrets ReplicationController#image_pull_secrets}
   */
   readonly imagePullSecrets?: ReplicationControllerSpecTemplateSpecImagePullSecrets[] | cdktf.IResolvable;
   /**
   * init_container block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#init_container ReplicationController#init_container}
   */
   readonly initContainer?: ReplicationControllerSpecTemplateSpecInitContainer[] | cdktf.IResolvable;
   /**
   * readiness_gate block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#readiness_gate ReplicationController#readiness_gate}
   */
   readonly readinessGate?: ReplicationControllerSpecTemplateSpecReadinessGate[] | cdktf.IResolvable;
   /**
   * security_context block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#security_context ReplicationController#security_context}
   */
   readonly securityContext?: ReplicationControllerSpecTemplateSpecSecurityContext;
   /**
   * toleration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#toleration ReplicationController#toleration}
   */
   readonly toleration?: ReplicationControllerSpecTemplateSpecToleration[] | cdktf.IResolvable;
   /**
   * topology_spread_constraint block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#topology_spread_constraint ReplicationController#topology_spread_constraint}
   */
   readonly topologySpreadConstraint?: ReplicationControllerSpecTemplateSpecTopologySpreadConstraint[] | cdktf.IResolvable;
   /**
   * volume block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#volume ReplicationController#volume}
   */
   readonly volume?: ReplicationControllerSpecTemplateSpecVolume[] | cdktf.IResolvable;
@@ -11078,13 +11073,13 @@ export class ReplicationControllerSpecTemplateSpecOutputReference extends cdktf.
 export interface ReplicationControllerSpecTemplate {
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#metadata ReplicationController#metadata}
   */
   readonly metadata: ReplicationControllerSpecTemplateMetadata;
   /**
   * spec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#spec ReplicationController#spec}
   */
   readonly spec: ReplicationControllerSpecTemplateSpec;
@@ -11168,25 +11163,25 @@ export class ReplicationControllerSpecTemplateOutputReference extends cdktf.Comp
 export interface ReplicationControllerSpec {
   /**
   * Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Defaults to 0 (pod will be considered available as soon as it is ready)
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#min_ready_seconds ReplicationController#min_ready_seconds}
   */
   readonly minReadySeconds?: number;
   /**
   * The number of desired replicas. Defaults to 1. More info: http://kubernetes.io/docs/user-guide/replication-controller#what-is-a-replication-controller
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#replicas ReplicationController#replicas}
   */
   readonly replicas?: number;
   /**
   * A label query over pods that should match the Replicas count. If Selector is empty, it is defaulted to the labels present on the Pod template. Label keys and values that must match in order to be controlled by this replication controller, if empty defaulted to labels on Pod template. More info: http://kubernetes.io/docs/user-guide/labels#label-selectors
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#selector ReplicationController#selector}
   */
   readonly selector: { [key: string]: string };
   /**
   * template block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller#template ReplicationController#template}
   */
   readonly template: ReplicationControllerSpecTemplate;

@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/cluster_role_binding
 // generated from terraform resource schema
 
@@ -21,19 +16,19 @@ export interface ClusterRoleBindingConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/cluster_role_binding#metadata ClusterRoleBinding#metadata}
   */
   readonly metadata: ClusterRoleBindingMetadata;
   /**
   * role_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/cluster_role_binding#role_ref ClusterRoleBinding#role_ref}
   */
   readonly roleRef: ClusterRoleBindingRoleRef;
   /**
   * subject block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/cluster_role_binding#subject ClusterRoleBinding#subject}
   */
   readonly subject: ClusterRoleBindingSubject[] | cdktf.IResolvable;
@@ -41,25 +36,25 @@ export interface ClusterRoleBindingConfig extends cdktf.TerraformMetaArguments {
 export interface ClusterRoleBindingMetadata {
   /**
   * An unstructured key value map stored with the clusterRoleBinding that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/cluster_role_binding#annotations ClusterRoleBinding#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/cluster_role_binding#generate_name ClusterRoleBinding#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the clusterRoleBinding. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/cluster_role_binding#labels ClusterRoleBinding#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the clusterRoleBinding, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/cluster_role_binding#name ClusterRoleBinding#name}
   */
   readonly name?: string;
@@ -210,19 +205,19 @@ export class ClusterRoleBindingMetadataOutputReference extends cdktf.ComplexObje
 export interface ClusterRoleBindingRoleRef {
   /**
   * The API group of the user. The only value possible at the moment is `rbac.authorization.k8s.io`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/cluster_role_binding#api_group ClusterRoleBinding#api_group}
   */
   readonly apiGroup: string;
   /**
   * The kind of resource.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/cluster_role_binding#kind ClusterRoleBinding#kind}
   */
   readonly kind: string;
   /**
   * The name of the User to bind to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/cluster_role_binding#name ClusterRoleBinding#name}
   */
   readonly name: string;
@@ -326,25 +321,25 @@ export class ClusterRoleBindingRoleRefOutputReference extends cdktf.ComplexObjec
 export interface ClusterRoleBindingSubject {
   /**
   * The API group of the subject resource.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/cluster_role_binding#api_group ClusterRoleBinding#api_group}
   */
   readonly apiGroup?: string;
   /**
   * The kind of resource.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/cluster_role_binding#kind ClusterRoleBinding#kind}
   */
   readonly kind: string;
   /**
   * The name of the resource to bind to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/cluster_role_binding#name ClusterRoleBinding#name}
   */
   readonly name: string;
   /**
   * The Namespace of the subject resource.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/cluster_role_binding#namespace ClusterRoleBinding#namespace}
   */
   readonly namespace?: string;

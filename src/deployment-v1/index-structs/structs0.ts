@@ -1,37 +1,32 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 import * as cdktf from 'cdktf';
 export interface DeploymentV1Metadata {
   /**
   * An unstructured key value map stored with the deployment that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#annotations DeploymentV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#generate_name DeploymentV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the deployment. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#labels DeploymentV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the deployment, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the deployment must be unique.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#namespace DeploymentV1#namespace}
   */
   readonly namespace?: string;
@@ -205,19 +200,19 @@ export class DeploymentV1MetadataOutputReference extends cdktf.ComplexObject {
 export interface DeploymentV1SpecSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#key DeploymentV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#operator DeploymentV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#values DeploymentV1#values}
   */
   readonly values?: string[];
@@ -362,13 +357,13 @@ export class DeploymentV1SpecSelectorMatchExpressionsList extends cdktf.ComplexL
 export interface DeploymentV1SpecSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#match_labels DeploymentV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#match_expressions DeploymentV1#match_expressions}
   */
   readonly matchExpressions?: DeploymentV1SpecSelectorMatchExpressions[] | cdktf.IResolvable;
@@ -458,13 +453,13 @@ export class DeploymentV1SpecSelectorOutputReference extends cdktf.ComplexObject
 export interface DeploymentV1SpecStrategyRollingUpdate {
   /**
   * The maximum number of pods that can be scheduled above the desired number of pods. Value can be an absolute number (ex: 5) or a percentage of desired pods (ex: 10%). This can not be 0 if MaxUnavailable is 0. Absolute number is calculated from percentage by rounding up. Defaults to 25%. Example: when this is set to 30%, the new RC can be scaled up immediately when the rolling update starts, such that the total number of old and new pods do not exceed 130% of desired pods. Once old pods have been killed, new RC can be scaled up further, ensuring that total number of pods running at any time during the update is atmost 130% of desired pods.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#max_surge DeploymentV1#max_surge}
   */
   readonly maxSurge?: string;
   /**
   * The maximum number of pods that can be unavailable during the update. Value can be an absolute number (ex: 5) or a percentage of desired pods (ex: 10%). Absolute number is calculated from percentage by rounding down. This can not be 0 if MaxSurge is 0. Defaults to 25%. Example: when this is set to 30%, the old RC can be scaled down to 70% of desired pods immediately when the rolling update starts. Once new pods are ready, old RC can be scaled down further, followed by scaling up the new RC, ensuring that the total number of pods available at all times during the update is at least 70% of desired pods.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#max_unavailable DeploymentV1#max_unavailable}
   */
   readonly maxUnavailable?: string;
@@ -554,13 +549,13 @@ export class DeploymentV1SpecStrategyRollingUpdateOutputReference extends cdktf.
 export interface DeploymentV1SpecStrategy {
   /**
   * Type of deployment. Can be 'Recreate' or 'RollingUpdate'. Default is RollingUpdate.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#type DeploymentV1#type}
   */
   readonly type?: string;
   /**
   * rolling_update block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#rolling_update DeploymentV1#rolling_update}
   */
   readonly rollingUpdate?: DeploymentV1SpecStrategyRollingUpdate;
@@ -650,31 +645,31 @@ export class DeploymentV1SpecStrategyOutputReference extends cdktf.ComplexObject
 export interface DeploymentV1SpecTemplateMetadata {
   /**
   * An unstructured key value map stored with the pod that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#annotations DeploymentV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#generate_name DeploymentV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the pod. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#labels DeploymentV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the pod, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the pod must be unique.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#namespace DeploymentV1#namespace}
   */
   readonly namespace?: string;
@@ -848,19 +843,19 @@ export class DeploymentV1SpecTemplateMetadataOutputReference extends cdktf.Compl
 export interface DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#key DeploymentV1#key}
   */
   readonly key?: string;
   /**
   * Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#operator DeploymentV1#operator}
   */
   readonly operator?: string;
   /**
   * Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#values DeploymentV1#values}
   */
   readonly values?: string[];
@@ -1005,7 +1000,7 @@ export class DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSche
 export interface DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference {
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#match_expressions DeploymentV1#match_expressions}
   */
   readonly matchExpressions?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[] | cdktf.IResolvable;
@@ -1072,13 +1067,13 @@ export class DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSche
 export interface DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution {
   /**
   * weight is in the range 1-100
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#weight DeploymentV1#weight}
   */
   readonly weight: number;
   /**
   * preference block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#preference DeploymentV1#preference}
   */
   readonly preference: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference;
@@ -1194,19 +1189,19 @@ export class DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSche
 export interface DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#key DeploymentV1#key}
   */
   readonly key?: string;
   /**
   * Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#operator DeploymentV1#operator}
   */
   readonly operator?: string;
   /**
   * Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#values DeploymentV1#values}
   */
   readonly values?: string[];
@@ -1351,7 +1346,7 @@ export class DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSched
 export interface DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm {
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#match_expressions DeploymentV1#match_expressions}
   */
   readonly matchExpressions?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions[] | cdktf.IResolvable;
@@ -1450,7 +1445,7 @@ export class DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSched
 export interface DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution {
   /**
   * node_selector_term block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#node_selector_term DeploymentV1#node_selector_term}
   */
   readonly nodeSelectorTerm?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[] | cdktf.IResolvable;
@@ -1517,13 +1512,13 @@ export class DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSched
 export interface DeploymentV1SpecTemplateSpecAffinityNodeAffinity {
   /**
   * preferred_during_scheduling_ignored_during_execution block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#preferred_during_scheduling_ignored_during_execution DeploymentV1#preferred_during_scheduling_ignored_during_execution}
   */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
   /**
   * required_during_scheduling_ignored_during_execution block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#required_during_scheduling_ignored_during_execution DeploymentV1#required_during_scheduling_ignored_during_execution}
   */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution;
@@ -1613,19 +1608,19 @@ export class DeploymentV1SpecTemplateSpecAffinityNodeAffinityOutputReference ext
 export interface DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#key DeploymentV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#operator DeploymentV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#values DeploymentV1#values}
   */
   readonly values?: string[];
@@ -1770,13 +1765,13 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSched
 export interface DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#match_labels DeploymentV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#match_expressions DeploymentV1#match_expressions}
   */
   readonly matchExpressions?: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[] | cdktf.IResolvable;
@@ -1898,19 +1893,19 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSched
 export interface DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm {
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#namespaces DeploymentV1#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#topology_key DeploymentV1#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#label_selector DeploymentV1#label_selector}
   */
   readonly labelSelector?: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | cdktf.IResolvable;
@@ -2020,13 +2015,13 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSched
 export interface DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution {
   /**
   * weight associated with matching the corresponding podAffinityTerm, in the range 1-100
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#weight DeploymentV1#weight}
   */
   readonly weight: number;
   /**
   * pod_affinity_term block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#pod_affinity_term DeploymentV1#pod_affinity_term}
   */
   readonly podAffinityTerm: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
@@ -2142,19 +2137,19 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSched
 export interface DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#key DeploymentV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#operator DeploymentV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#values DeploymentV1#values}
   */
   readonly values?: string[];
@@ -2299,13 +2294,13 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedu
 export interface DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#match_labels DeploymentV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#match_expressions DeploymentV1#match_expressions}
   */
   readonly matchExpressions?: DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[] | cdktf.IResolvable;
@@ -2427,19 +2422,19 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedu
 export interface DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution {
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#namespaces DeploymentV1#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#topology_key DeploymentV1#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#label_selector DeploymentV1#label_selector}
   */
   readonly labelSelector?: DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[] | cdktf.IResolvable;
@@ -2581,13 +2576,13 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedu
 export interface DeploymentV1SpecTemplateSpecAffinityPodAffinity {
   /**
   * preferred_during_scheduling_ignored_during_execution block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#preferred_during_scheduling_ignored_during_execution DeploymentV1#preferred_during_scheduling_ignored_during_execution}
   */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
   /**
   * required_during_scheduling_ignored_during_execution block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#required_during_scheduling_ignored_during_execution DeploymentV1#required_during_scheduling_ignored_during_execution}
   */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
@@ -2677,19 +2672,19 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAffinityOutputReference exte
 export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#key DeploymentV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#operator DeploymentV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#values DeploymentV1#values}
   */
   readonly values?: string[];
@@ -2834,13 +2829,13 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringS
 export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#match_labels DeploymentV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#match_expressions DeploymentV1#match_expressions}
   */
   readonly matchExpressions?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[] | cdktf.IResolvable;
@@ -2962,19 +2957,19 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringS
 export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm {
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#namespaces DeploymentV1#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#topology_key DeploymentV1#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#label_selector DeploymentV1#label_selector}
   */
   readonly labelSelector?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | cdktf.IResolvable;
@@ -3084,13 +3079,13 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringS
 export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution {
   /**
   * weight associated with matching the corresponding podAffinityTerm, in the range 1-100
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#weight DeploymentV1#weight}
   */
   readonly weight: number;
   /**
   * pod_affinity_term block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#pod_affinity_term DeploymentV1#pod_affinity_term}
   */
   readonly podAffinityTerm: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
@@ -3206,19 +3201,19 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringS
 export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#key DeploymentV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#operator DeploymentV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#values DeploymentV1#values}
   */
   readonly values?: string[];
@@ -3363,13 +3358,13 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSc
 export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#match_labels DeploymentV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#match_expressions DeploymentV1#match_expressions}
   */
   readonly matchExpressions?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[] | cdktf.IResolvable;
@@ -3491,19 +3486,19 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSc
 export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution {
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#namespaces DeploymentV1#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#topology_key DeploymentV1#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#label_selector DeploymentV1#label_selector}
   */
   readonly labelSelector?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[] | cdktf.IResolvable;
@@ -3645,13 +3640,13 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSc
 export interface DeploymentV1SpecTemplateSpecAffinityPodAntiAffinity {
   /**
   * preferred_during_scheduling_ignored_during_execution block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#preferred_during_scheduling_ignored_during_execution DeploymentV1#preferred_during_scheduling_ignored_during_execution}
   */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
   /**
   * required_during_scheduling_ignored_during_execution block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#required_during_scheduling_ignored_during_execution DeploymentV1#required_during_scheduling_ignored_during_execution}
   */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
@@ -3741,19 +3736,19 @@ export class DeploymentV1SpecTemplateSpecAffinityPodAntiAffinityOutputReference 
 export interface DeploymentV1SpecTemplateSpecAffinity {
   /**
   * node_affinity block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#node_affinity DeploymentV1#node_affinity}
   */
   readonly nodeAffinity?: DeploymentV1SpecTemplateSpecAffinityNodeAffinity;
   /**
   * pod_affinity block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#pod_affinity DeploymentV1#pod_affinity}
   */
   readonly podAffinity?: DeploymentV1SpecTemplateSpecAffinityPodAffinity;
   /**
   * pod_anti_affinity block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#pod_anti_affinity DeploymentV1#pod_anti_affinity}
   */
   readonly podAntiAffinity?: DeploymentV1SpecTemplateSpecAffinityPodAntiAffinity;
@@ -3866,19 +3861,19 @@ export class DeploymentV1SpecTemplateSpecAffinityOutputReference extends cdktf.C
 export interface DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRef {
   /**
   * The key to select.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#key DeploymentV1#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name?: string;
   /**
   * Specify whether the ConfigMap or its key must be defined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#optional DeploymentV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -3991,13 +3986,13 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOut
 export interface DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRef {
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to "v1".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#api_version DeploymentV1#api_version}
   */
   readonly apiVersion?: string;
   /**
   * Path of the field to select in the specified API version
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#field_path DeploymentV1#field_path}
   */
   readonly fieldPath?: string;
@@ -4095,7 +4090,7 @@ export interface DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldR
   readonly divisor?: string;
   /**
   * Resource to select
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#resource DeploymentV1#resource}
   */
   readonly resource: string;
@@ -4205,19 +4200,19 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefOu
 export interface DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRef {
   /**
   * The key of the secret to select from. Must be a valid secret key.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#key DeploymentV1#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name?: string;
   /**
   * Specify whether the Secret or its key must be defined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#optional DeploymentV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -4330,25 +4325,25 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefOutput
 export interface DeploymentV1SpecTemplateSpecContainerEnvValueFrom {
   /**
   * config_map_key_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#config_map_key_ref DeploymentV1#config_map_key_ref}
   */
   readonly configMapKeyRef?: DeploymentV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRef;
   /**
   * field_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#field_ref DeploymentV1#field_ref}
   */
   readonly fieldRef?: DeploymentV1SpecTemplateSpecContainerEnvValueFromFieldRef;
   /**
   * resource_field_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#resource_field_ref DeploymentV1#resource_field_ref}
   */
   readonly resourceFieldRef?: DeploymentV1SpecTemplateSpecContainerEnvValueFromResourceFieldRef;
   /**
   * secret_key_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#secret_key_ref DeploymentV1#secret_key_ref}
   */
   readonly secretKeyRef?: DeploymentV1SpecTemplateSpecContainerEnvValueFromSecretKeyRef;
@@ -4484,19 +4479,19 @@ export class DeploymentV1SpecTemplateSpecContainerEnvValueFromOutputReference ex
 export interface DeploymentV1SpecTemplateSpecContainerEnv {
   /**
   * Name of the environment variable. Must be a C_IDENTIFIER
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name: string;
   /**
   * Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#value DeploymentV1#value}
   */
   readonly value?: string;
   /**
   * value_from block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#value_from DeploymentV1#value_from}
   */
   readonly valueFrom?: DeploymentV1SpecTemplateSpecContainerEnvValueFrom;
@@ -4638,13 +4633,13 @@ export class DeploymentV1SpecTemplateSpecContainerEnvList extends cdktf.ComplexL
 export interface DeploymentV1SpecTemplateSpecContainerEnvFromConfigMapRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name: string;
   /**
   * Specify whether the ConfigMap must be defined
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#optional DeploymentV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -4731,13 +4726,13 @@ export class DeploymentV1SpecTemplateSpecContainerEnvFromConfigMapRefOutputRefer
 export interface DeploymentV1SpecTemplateSpecContainerEnvFromSecretRef {
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name: string;
   /**
   * Specify whether the Secret must be defined
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#optional DeploymentV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -4824,19 +4819,19 @@ export class DeploymentV1SpecTemplateSpecContainerEnvFromSecretRefOutputReferenc
 export interface DeploymentV1SpecTemplateSpecContainerEnvFrom {
   /**
   * An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#prefix DeploymentV1#prefix}
   */
   readonly prefix?: string;
   /**
   * config_map_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#config_map_ref DeploymentV1#config_map_ref}
   */
   readonly configMapRef?: DeploymentV1SpecTemplateSpecContainerEnvFromConfigMapRef;
   /**
   * secret_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#secret_ref DeploymentV1#secret_ref}
   */
   readonly secretRef?: DeploymentV1SpecTemplateSpecContainerEnvFromSecretRef;
@@ -4981,7 +4976,7 @@ export class DeploymentV1SpecTemplateSpecContainerEnvFromList extends cdktf.Comp
 export interface DeploymentV1SpecTemplateSpecContainerLifecyclePostStartExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#command DeploymentV1#command}
   */
   readonly command?: string[];
@@ -5048,13 +5043,13 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePostStartExecOutputRe
 export interface DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#value DeploymentV1#value}
   */
   readonly value?: string;
@@ -5176,31 +5171,31 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpH
 export interface DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#host DeploymentV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#path DeploymentV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#scheme DeploymentV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#http_header DeploymentV1#http_header}
   */
   readonly httpHeader?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -5359,7 +5354,7 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGetOutpu
 export interface DeploymentV1SpecTemplateSpecContainerLifecyclePostStartTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port: string;
@@ -5455,19 +5450,19 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePostStartTcpSocketLis
 export interface DeploymentV1SpecTemplateSpecContainerLifecyclePostStart {
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#exec DeploymentV1#exec}
   */
   readonly exec?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartExec;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#http_get DeploymentV1#http_get}
   */
   readonly httpGet?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#tcp_socket DeploymentV1#tcp_socket}
   */
   readonly tcpSocket?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStartTcpSocket[] | cdktf.IResolvable;
@@ -5612,7 +5607,7 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePostStartList extends
 export interface DeploymentV1SpecTemplateSpecContainerLifecyclePreStopExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#command DeploymentV1#command}
   */
   readonly command?: string[];
@@ -5679,13 +5674,13 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePreStopExecOutputRefe
 export interface DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#value DeploymentV1#value}
   */
   readonly value?: string;
@@ -5807,31 +5802,31 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHea
 export interface DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#host DeploymentV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#path DeploymentV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#scheme DeploymentV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#http_header DeploymentV1#http_header}
   */
   readonly httpHeader?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -5990,7 +5985,7 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGetOutputR
 export interface DeploymentV1SpecTemplateSpecContainerLifecyclePreStopTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port: string;
@@ -6086,19 +6081,19 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePreStopTcpSocketList 
 export interface DeploymentV1SpecTemplateSpecContainerLifecyclePreStop {
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#exec DeploymentV1#exec}
   */
   readonly exec?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopExec;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#http_get DeploymentV1#http_get}
   */
   readonly httpGet?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#tcp_socket DeploymentV1#tcp_socket}
   */
   readonly tcpSocket?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStopTcpSocket[] | cdktf.IResolvable;
@@ -6243,13 +6238,13 @@ export class DeploymentV1SpecTemplateSpecContainerLifecyclePreStopList extends c
 export interface DeploymentV1SpecTemplateSpecContainerLifecycle {
   /**
   * post_start block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#post_start DeploymentV1#post_start}
   */
   readonly postStart?: DeploymentV1SpecTemplateSpecContainerLifecyclePostStart[] | cdktf.IResolvable;
   /**
   * pre_stop block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#pre_stop DeploymentV1#pre_stop}
   */
   readonly preStop?: DeploymentV1SpecTemplateSpecContainerLifecyclePreStop[] | cdktf.IResolvable;
@@ -6339,7 +6334,7 @@ export class DeploymentV1SpecTemplateSpecContainerLifecycleOutputReference exten
 export interface DeploymentV1SpecTemplateSpecContainerLivenessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#command DeploymentV1#command}
   */
   readonly command?: string[];
@@ -6406,13 +6401,13 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeExecOutputReferen
 export interface DeploymentV1SpecTemplateSpecContainerLivenessProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#service DeploymentV1#service}
   */
   readonly service?: string;
@@ -6531,13 +6526,13 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeGrpcList extends 
 export interface DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#value DeploymentV1#value}
   */
   readonly value?: string;
@@ -6659,31 +6654,31 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader
 export interface DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#host DeploymentV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#path DeploymentV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#scheme DeploymentV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#http_header DeploymentV1#http_header}
   */
   readonly httpHeader?: DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -6842,7 +6837,7 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGetOutputRefe
 export interface DeploymentV1SpecTemplateSpecContainerLivenessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port: string;
@@ -6938,55 +6933,55 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeTcpSocketList ext
 export interface DeploymentV1SpecTemplateSpecContainerLivenessProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#failure_threshold DeploymentV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#initial_delay_seconds DeploymentV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#period_seconds DeploymentV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#success_threshold DeploymentV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#timeout_seconds DeploymentV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#exec DeploymentV1#exec}
   */
   readonly exec?: DeploymentV1SpecTemplateSpecContainerLivenessProbeExec;
   /**
   * grpc block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#grpc DeploymentV1#grpc}
   */
   readonly grpc?: DeploymentV1SpecTemplateSpecContainerLivenessProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#http_get DeploymentV1#http_get}
   */
   readonly httpGet?: DeploymentV1SpecTemplateSpecContainerLivenessProbeHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#tcp_socket DeploymentV1#tcp_socket}
   */
   readonly tcpSocket?: DeploymentV1SpecTemplateSpecContainerLivenessProbeTcpSocket[] | cdktf.IResolvable;
@@ -7237,31 +7232,31 @@ export class DeploymentV1SpecTemplateSpecContainerLivenessProbeOutputReference e
 export interface DeploymentV1SpecTemplateSpecContainerPort {
   /**
   * Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#container_port DeploymentV1#container_port}
   */
   readonly containerPort: number;
   /**
   * What host IP to bind the external port to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#host_ip DeploymentV1#host_ip}
   */
   readonly hostIp?: string;
   /**
   * Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#host_port DeploymentV1#host_port}
   */
   readonly hostPort?: number;
   /**
   * If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name?: string;
   /**
   * Protocol for port. Must be UDP or TCP. Defaults to "TCP".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#protocol DeploymentV1#protocol}
   */
   readonly protocol?: string;
@@ -7449,7 +7444,7 @@ export class DeploymentV1SpecTemplateSpecContainerPortList extends cdktf.Complex
 export interface DeploymentV1SpecTemplateSpecContainerReadinessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#command DeploymentV1#command}
   */
   readonly command?: string[];
@@ -7516,13 +7511,13 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeExecOutputRefere
 export interface DeploymentV1SpecTemplateSpecContainerReadinessProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#service DeploymentV1#service}
   */
   readonly service?: string;
@@ -7641,13 +7636,13 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeGrpcList extends
 export interface DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#value DeploymentV1#value}
   */
   readonly value?: string;
@@ -7769,31 +7764,31 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeade
 export interface DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#host DeploymentV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#path DeploymentV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#scheme DeploymentV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#http_header DeploymentV1#http_header}
   */
   readonly httpHeader?: DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -7952,7 +7947,7 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGetOutputRef
 export interface DeploymentV1SpecTemplateSpecContainerReadinessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port: string;
@@ -8048,55 +8043,55 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeTcpSocketList ex
 export interface DeploymentV1SpecTemplateSpecContainerReadinessProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#failure_threshold DeploymentV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#initial_delay_seconds DeploymentV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#period_seconds DeploymentV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#success_threshold DeploymentV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#timeout_seconds DeploymentV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#exec DeploymentV1#exec}
   */
   readonly exec?: DeploymentV1SpecTemplateSpecContainerReadinessProbeExec;
   /**
   * grpc block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#grpc DeploymentV1#grpc}
   */
   readonly grpc?: DeploymentV1SpecTemplateSpecContainerReadinessProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#http_get DeploymentV1#http_get}
   */
   readonly httpGet?: DeploymentV1SpecTemplateSpecContainerReadinessProbeHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#tcp_socket DeploymentV1#tcp_socket}
   */
   readonly tcpSocket?: DeploymentV1SpecTemplateSpecContainerReadinessProbeTcpSocket[] | cdktf.IResolvable;
@@ -8347,13 +8342,13 @@ export class DeploymentV1SpecTemplateSpecContainerReadinessProbeOutputReference 
 export interface DeploymentV1SpecTemplateSpecContainerResources {
   /**
   * Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#limits DeploymentV1#limits}
   */
   readonly limits?: { [key: string]: string };
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#requests DeploymentV1#requests}
   */
   readonly requests?: { [key: string]: string };
@@ -8443,13 +8438,13 @@ export class DeploymentV1SpecTemplateSpecContainerResourcesOutputReference exten
 export interface DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilities {
   /**
   * Added capabilities
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#add DeploymentV1#add}
   */
   readonly add?: string[];
   /**
   * Removed capabilities
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#drop DeploymentV1#drop}
   */
   readonly drop?: string[];
@@ -8539,25 +8534,25 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilitiesOut
 export interface DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions {
   /**
   * Level is SELinux level label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#level DeploymentV1#level}
   */
   readonly level?: string;
   /**
   * Role is a SELinux role label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#role DeploymentV1#role}
   */
   readonly role?: string;
   /**
   * Type is a SELinux type label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#type DeploymentV1#type}
   */
   readonly type?: string;
   /**
   * User is a SELinux user label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#user DeploymentV1#user}
   */
   readonly user?: string;
@@ -8693,13 +8688,13 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsO
 export interface DeploymentV1SpecTemplateSpecContainerSecurityContextSeccompProfile {
   /**
   * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#localhost_profile DeploymentV1#localhost_profile}
   */
   readonly localhostProfile?: string;
   /**
   * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#type DeploymentV1#type}
   */
   readonly type?: string;
@@ -8789,55 +8784,55 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextSeccompProfileO
 export interface DeploymentV1SpecTemplateSpecContainerSecurityContext {
   /**
   * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#allow_privilege_escalation DeploymentV1#allow_privilege_escalation}
   */
   readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#privileged DeploymentV1#privileged}
   */
   readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * Whether this container has a read-only root filesystem. Default is false.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#read_only_root_filesystem DeploymentV1#read_only_root_filesystem}
   */
   readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
   /**
   * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#run_as_group DeploymentV1#run_as_group}
   */
   readonly runAsGroup?: string;
   /**
   * Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#run_as_non_root DeploymentV1#run_as_non_root}
   */
   readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#run_as_user DeploymentV1#run_as_user}
   */
   readonly runAsUser?: string;
   /**
   * capabilities block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#capabilities DeploymentV1#capabilities}
   */
   readonly capabilities?: DeploymentV1SpecTemplateSpecContainerSecurityContextCapabilities;
   /**
   * se_linux_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#se_linux_options DeploymentV1#se_linux_options}
   */
   readonly seLinuxOptions?: DeploymentV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions;
   /**
   * seccomp_profile block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#seccomp_profile DeploymentV1#seccomp_profile}
   */
   readonly seccompProfile?: DeploymentV1SpecTemplateSpecContainerSecurityContextSeccompProfile;
@@ -9088,7 +9083,7 @@ export class DeploymentV1SpecTemplateSpecContainerSecurityContextOutputReference
 export interface DeploymentV1SpecTemplateSpecContainerStartupProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#command DeploymentV1#command}
   */
   readonly command?: string[];
@@ -9155,13 +9150,13 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeExecOutputReferenc
 export interface DeploymentV1SpecTemplateSpecContainerStartupProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#service DeploymentV1#service}
   */
   readonly service?: string;
@@ -9280,13 +9275,13 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeGrpcList extends c
 export interface DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#value DeploymentV1#value}
   */
   readonly value?: string;
@@ -9408,31 +9403,31 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeaderL
 export interface DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#host DeploymentV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#path DeploymentV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#scheme DeploymentV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#http_header DeploymentV1#http_header}
   */
   readonly httpHeader?: DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -9591,7 +9586,7 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGetOutputRefer
 export interface DeploymentV1SpecTemplateSpecContainerStartupProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port: string;
@@ -9687,55 +9682,55 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeTcpSocketList exte
 export interface DeploymentV1SpecTemplateSpecContainerStartupProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#failure_threshold DeploymentV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#initial_delay_seconds DeploymentV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#period_seconds DeploymentV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#success_threshold DeploymentV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#timeout_seconds DeploymentV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#exec DeploymentV1#exec}
   */
   readonly exec?: DeploymentV1SpecTemplateSpecContainerStartupProbeExec;
   /**
   * grpc block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#grpc DeploymentV1#grpc}
   */
   readonly grpc?: DeploymentV1SpecTemplateSpecContainerStartupProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#http_get DeploymentV1#http_get}
   */
   readonly httpGet?: DeploymentV1SpecTemplateSpecContainerStartupProbeHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#tcp_socket DeploymentV1#tcp_socket}
   */
   readonly tcpSocket?: DeploymentV1SpecTemplateSpecContainerStartupProbeTcpSocket[] | cdktf.IResolvable;
@@ -9986,31 +9981,31 @@ export class DeploymentV1SpecTemplateSpecContainerStartupProbeOutputReference ex
 export interface DeploymentV1SpecTemplateSpecContainerVolumeMount {
   /**
   * Path within the container at which the volume should be mounted. Must not contain ':'.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#mount_path DeploymentV1#mount_path}
   */
   readonly mountPath: string;
   /**
   * Mount propagation mode. mount_propagation determines how mounts are propagated from the host to container and the other way around. Valid values are None (default), HostToContainer and Bidirectional.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#mount_propagation DeploymentV1#mount_propagation}
   */
   readonly mountPropagation?: string;
   /**
   * This must match the Name of a Volume.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name: string;
   /**
   * Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#read_only DeploymentV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#sub_path DeploymentV1#sub_path}
   */
   readonly subPath?: string;
@@ -10195,127 +10190,127 @@ export class DeploymentV1SpecTemplateSpecContainerVolumeMountList extends cdktf.
 export interface DeploymentV1SpecTemplateSpecContainer {
   /**
   * Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#args DeploymentV1#args}
   */
   readonly args?: string[];
   /**
   * Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#command DeploymentV1#command}
   */
   readonly command?: string[];
   /**
   * Docker image name. More info: http://kubernetes.io/docs/user-guide/images
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#image DeploymentV1#image}
   */
   readonly image?: string;
   /**
   * Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/images#updating-images
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#image_pull_policy DeploymentV1#image_pull_policy}
   */
   readonly imagePullPolicy?: string;
   /**
   * Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name: string;
   /**
   * Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF. 
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#stdin DeploymentV1#stdin}
   */
   readonly stdin?: boolean | cdktf.IResolvable;
   /**
   * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#stdin_once DeploymentV1#stdin_once}
   */
   readonly stdinOnce?: boolean | cdktf.IResolvable;
   /**
   * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#termination_message_path DeploymentV1#termination_message_path}
   */
   readonly terminationMessagePath?: string;
   /**
   * Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#termination_message_policy DeploymentV1#termination_message_policy}
   */
   readonly terminationMessagePolicy?: string;
   /**
   * Whether this container should allocate a TTY for itself
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#tty DeploymentV1#tty}
   */
   readonly tty?: boolean | cdktf.IResolvable;
   /**
   * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#working_dir DeploymentV1#working_dir}
   */
   readonly workingDir?: string;
   /**
   * env block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#env DeploymentV1#env}
   */
   readonly env?: DeploymentV1SpecTemplateSpecContainerEnv[] | cdktf.IResolvable;
   /**
   * env_from block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#env_from DeploymentV1#env_from}
   */
   readonly envFrom?: DeploymentV1SpecTemplateSpecContainerEnvFrom[] | cdktf.IResolvable;
   /**
   * lifecycle block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#lifecycle DeploymentV1#lifecycle}
   */
   readonly lifecycle?: DeploymentV1SpecTemplateSpecContainerLifecycle;
   /**
   * liveness_probe block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#liveness_probe DeploymentV1#liveness_probe}
   */
   readonly livenessProbe?: DeploymentV1SpecTemplateSpecContainerLivenessProbe;
   /**
   * port block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port?: DeploymentV1SpecTemplateSpecContainerPort[] | cdktf.IResolvable;
   /**
   * readiness_probe block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#readiness_probe DeploymentV1#readiness_probe}
   */
   readonly readinessProbe?: DeploymentV1SpecTemplateSpecContainerReadinessProbe;
   /**
   * resources block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#resources DeploymentV1#resources}
   */
   readonly resources?: DeploymentV1SpecTemplateSpecContainerResources;
   /**
   * security_context block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#security_context DeploymentV1#security_context}
   */
   readonly securityContext?: DeploymentV1SpecTemplateSpecContainerSecurityContext;
   /**
   * startup_probe block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#startup_probe DeploymentV1#startup_probe}
   */
   readonly startupProbe?: DeploymentV1SpecTemplateSpecContainerStartupProbe;
   /**
   * volume_mount block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#volume_mount DeploymentV1#volume_mount}
   */
   readonly volumeMount?: DeploymentV1SpecTemplateSpecContainerVolumeMount[] | cdktf.IResolvable;
@@ -10871,13 +10866,13 @@ export class DeploymentV1SpecTemplateSpecContainerList extends cdktf.ComplexList
 export interface DeploymentV1SpecTemplateSpecDnsConfigOption {
   /**
   * Name of the option.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name: string;
   /**
   * Value of the option. Optional: Defaults to empty.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#value DeploymentV1#value}
   */
   readonly value?: string;
@@ -10996,19 +10991,19 @@ export class DeploymentV1SpecTemplateSpecDnsConfigOptionList extends cdktf.Compl
 export interface DeploymentV1SpecTemplateSpecDnsConfig {
   /**
   * A list of DNS name server IP addresses. This will be appended to the base nameservers generated from DNSPolicy. Duplicated nameservers will be removed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#nameservers DeploymentV1#nameservers}
   */
   readonly nameservers?: string[];
   /**
   * A list of DNS search domains for host-name lookup. This will be appended to the base search paths generated from DNSPolicy. Duplicated search paths will be removed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#searches DeploymentV1#searches}
   */
   readonly searches?: string[];
   /**
   * option block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#option DeploymentV1#option}
   */
   readonly option?: DeploymentV1SpecTemplateSpecDnsConfigOption[] | cdktf.IResolvable;
@@ -11121,13 +11116,13 @@ export class DeploymentV1SpecTemplateSpecDnsConfigOutputReference extends cdktf.
 export interface DeploymentV1SpecTemplateSpecHostAliases {
   /**
   * Hostnames for the IP address.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#hostnames DeploymentV1#hostnames}
   */
   readonly hostnames: string[];
   /**
   * IP address of the host file entry.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#ip DeploymentV1#ip}
   */
   readonly ip: string;
@@ -11243,7 +11238,7 @@ export class DeploymentV1SpecTemplateSpecHostAliasesList extends cdktf.ComplexLi
 export interface DeploymentV1SpecTemplateSpecImagePullSecrets {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name: string;
@@ -11339,19 +11334,19 @@ export class DeploymentV1SpecTemplateSpecImagePullSecretsList extends cdktf.Comp
 export interface DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef {
   /**
   * The key to select.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#key DeploymentV1#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name?: string;
   /**
   * Specify whether the ConfigMap or its key must be defined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#optional DeploymentV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -11464,13 +11459,13 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRe
 export interface DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRef {
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to "v1".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#api_version DeploymentV1#api_version}
   */
   readonly apiVersion?: string;
   /**
   * Path of the field to select in the specified API version
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#field_path DeploymentV1#field_path}
   */
   readonly fieldPath?: string;
@@ -11568,7 +11563,7 @@ export interface DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFi
   readonly divisor?: string;
   /**
   * Resource to select
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#resource DeploymentV1#resource}
   */
   readonly resource: string;
@@ -11678,19 +11673,19 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldR
 export interface DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRef {
   /**
   * The key of the secret to select from. Must be a valid secret key.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#key DeploymentV1#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name?: string;
   /**
   * Specify whether the Secret or its key must be defined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#optional DeploymentV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -11803,25 +11798,25 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOu
 export interface DeploymentV1SpecTemplateSpecInitContainerEnvValueFrom {
   /**
   * config_map_key_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#config_map_key_ref DeploymentV1#config_map_key_ref}
   */
   readonly configMapKeyRef?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef;
   /**
   * field_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#field_ref DeploymentV1#field_ref}
   */
   readonly fieldRef?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromFieldRef;
   /**
   * resource_field_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#resource_field_ref DeploymentV1#resource_field_ref}
   */
   readonly resourceFieldRef?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRef;
   /**
   * secret_key_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#secret_key_ref DeploymentV1#secret_key_ref}
   */
   readonly secretKeyRef?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRef;
@@ -11957,19 +11952,19 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvValueFromOutputReferenc
 export interface DeploymentV1SpecTemplateSpecInitContainerEnv {
   /**
   * Name of the environment variable. Must be a C_IDENTIFIER
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name: string;
   /**
   * Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#value DeploymentV1#value}
   */
   readonly value?: string;
   /**
   * value_from block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#value_from DeploymentV1#value_from}
   */
   readonly valueFrom?: DeploymentV1SpecTemplateSpecInitContainerEnvValueFrom;
@@ -12111,13 +12106,13 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvList extends cdktf.Comp
 export interface DeploymentV1SpecTemplateSpecInitContainerEnvFromConfigMapRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name: string;
   /**
   * Specify whether the ConfigMap must be defined
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#optional DeploymentV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -12204,13 +12199,13 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvFromConfigMapRefOutputR
 export interface DeploymentV1SpecTemplateSpecInitContainerEnvFromSecretRef {
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name: string;
   /**
   * Specify whether the Secret must be defined
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#optional DeploymentV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -12297,19 +12292,19 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvFromSecretRefOutputRefe
 export interface DeploymentV1SpecTemplateSpecInitContainerEnvFrom {
   /**
   * An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#prefix DeploymentV1#prefix}
   */
   readonly prefix?: string;
   /**
   * config_map_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#config_map_ref DeploymentV1#config_map_ref}
   */
   readonly configMapRef?: DeploymentV1SpecTemplateSpecInitContainerEnvFromConfigMapRef;
   /**
   * secret_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#secret_ref DeploymentV1#secret_ref}
   */
   readonly secretRef?: DeploymentV1SpecTemplateSpecInitContainerEnvFromSecretRef;
@@ -12454,7 +12449,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerEnvFromList extends cdktf.
 export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#command DeploymentV1#command}
   */
   readonly command?: string[];
@@ -12521,13 +12516,13 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartExecOutp
 export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#value DeploymentV1#value}
   */
   readonly value?: string;
@@ -12649,31 +12644,31 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetH
 export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#host DeploymentV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#path DeploymentV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#scheme DeploymentV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#http_header DeploymentV1#http_header}
   */
   readonly httpHeader?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -12832,7 +12827,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetO
 export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port: string;
@@ -12928,19 +12923,19 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocke
 export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStart {
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#exec DeploymentV1#exec}
   */
   readonly exec?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartExec;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#http_get DeploymentV1#http_get}
   */
   readonly httpGet?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#tcp_socket DeploymentV1#tcp_socket}
   */
   readonly tcpSocket?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocket[] | cdktf.IResolvable;
@@ -13085,7 +13080,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStartList ext
 export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#command DeploymentV1#command}
   */
   readonly command?: string[];
@@ -13152,13 +13147,13 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopExecOutput
 export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#value DeploymentV1#value}
   */
   readonly value?: string;
@@ -13280,31 +13275,31 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHtt
 export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#host DeploymentV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#path DeploymentV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#scheme DeploymentV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#http_header DeploymentV1#http_header}
   */
   readonly httpHeader?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -13463,7 +13458,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetOut
 export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port: string;
@@ -13559,19 +13554,19 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocketL
 export interface DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStop {
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#exec DeploymentV1#exec}
   */
   readonly exec?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopExec;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#http_get DeploymentV1#http_get}
   */
   readonly httpGet?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#tcp_socket DeploymentV1#tcp_socket}
   */
   readonly tcpSocket?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocket[] | cdktf.IResolvable;
@@ -13716,13 +13711,13 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStopList exten
 export interface DeploymentV1SpecTemplateSpecInitContainerLifecycle {
   /**
   * post_start block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#post_start DeploymentV1#post_start}
   */
   readonly postStart?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePostStart[] | cdktf.IResolvable;
   /**
   * pre_stop block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#pre_stop DeploymentV1#pre_stop}
   */
   readonly preStop?: DeploymentV1SpecTemplateSpecInitContainerLifecyclePreStop[] | cdktf.IResolvable;
@@ -13812,7 +13807,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerLifecycleOutputReference e
 export interface DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#command DeploymentV1#command}
   */
   readonly command?: string[];
@@ -13879,13 +13874,13 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExecOutputRef
 export interface DeploymentV1SpecTemplateSpecInitContainerLivenessProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#service DeploymentV1#service}
   */
   readonly service?: string;
@@ -14004,13 +13999,13 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeGrpcList exte
 export interface DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#value DeploymentV1#value}
   */
   readonly value?: string;
@@ -14132,31 +14127,31 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHe
 export interface DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#host DeploymentV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#path DeploymentV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#scheme DeploymentV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#http_header DeploymentV1#http_header}
   */
   readonly httpHeader?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -14315,7 +14310,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGetOutput
 export interface DeploymentV1SpecTemplateSpecInitContainerLivenessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port: string;
@@ -14411,55 +14406,55 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeTcpSocketList
 export interface DeploymentV1SpecTemplateSpecInitContainerLivenessProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#failure_threshold DeploymentV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#initial_delay_seconds DeploymentV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#period_seconds DeploymentV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#success_threshold DeploymentV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#timeout_seconds DeploymentV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#exec DeploymentV1#exec}
   */
   readonly exec?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeExec;
   /**
   * grpc block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#grpc DeploymentV1#grpc}
   */
   readonly grpc?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#http_get DeploymentV1#http_get}
   */
   readonly httpGet?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#tcp_socket DeploymentV1#tcp_socket}
   */
   readonly tcpSocket?: DeploymentV1SpecTemplateSpecInitContainerLivenessProbeTcpSocket[] | cdktf.IResolvable;
@@ -14710,31 +14705,31 @@ export class DeploymentV1SpecTemplateSpecInitContainerLivenessProbeOutputReferen
 export interface DeploymentV1SpecTemplateSpecInitContainerPort {
   /**
   * Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#container_port DeploymentV1#container_port}
   */
   readonly containerPort: number;
   /**
   * What host IP to bind the external port to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#host_ip DeploymentV1#host_ip}
   */
   readonly hostIp?: string;
   /**
   * Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#host_port DeploymentV1#host_port}
   */
   readonly hostPort?: number;
   /**
   * If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name?: string;
   /**
   * Protocol for port. Must be UDP or TCP. Defaults to "TCP".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#protocol DeploymentV1#protocol}
   */
   readonly protocol?: string;
@@ -14922,7 +14917,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerPortList extends cdktf.Com
 export interface DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#command DeploymentV1#command}
   */
   readonly command?: string[];
@@ -14989,13 +14984,13 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExecOutputRe
 export interface DeploymentV1SpecTemplateSpecInitContainerReadinessProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#service DeploymentV1#service}
   */
   readonly service?: string;
@@ -15114,13 +15109,13 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeGrpcList ext
 export interface DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#name DeploymentV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#value DeploymentV1#value}
   */
   readonly value?: string;
@@ -15242,31 +15237,31 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpH
 export interface DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#host DeploymentV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#path DeploymentV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#scheme DeploymentV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#http_header DeploymentV1#http_header}
   */
   readonly httpHeader?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -15425,7 +15420,7 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutpu
 export interface DeploymentV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#port DeploymentV1#port}
   */
   readonly port: string;
@@ -15521,55 +15516,55 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketLis
 export interface DeploymentV1SpecTemplateSpecInitContainerReadinessProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#failure_threshold DeploymentV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#initial_delay_seconds DeploymentV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#period_seconds DeploymentV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#success_threshold DeploymentV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#timeout_seconds DeploymentV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#exec DeploymentV1#exec}
   */
   readonly exec?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeExec;
   /**
   * grpc block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#grpc DeploymentV1#grpc}
   */
   readonly grpc?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#http_get DeploymentV1#http_get}
   */
   readonly httpGet?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#tcp_socket DeploymentV1#tcp_socket}
   */
   readonly tcpSocket?: DeploymentV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket[] | cdktf.IResolvable;
@@ -15820,13 +15815,13 @@ export class DeploymentV1SpecTemplateSpecInitContainerReadinessProbeOutputRefere
 export interface DeploymentV1SpecTemplateSpecInitContainerResources {
   /**
   * Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#limits DeploymentV1#limits}
   */
   readonly limits?: { [key: string]: string };
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#requests DeploymentV1#requests}
   */
   readonly requests?: { [key: string]: string };
@@ -15916,13 +15911,13 @@ export class DeploymentV1SpecTemplateSpecInitContainerResourcesOutputReference e
 export interface DeploymentV1SpecTemplateSpecInitContainerSecurityContextCapabilities {
   /**
   * Added capabilities
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#add DeploymentV1#add}
   */
   readonly add?: string[];
   /**
   * Removed capabilities
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/deployment_v1#drop DeploymentV1#drop}
   */
   readonly drop?: string[];

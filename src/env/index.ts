@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env
 // generated from terraform resource schema
 
@@ -14,25 +9,25 @@ import * as cdktf from 'cdktf';
 export interface EnvConfig extends cdktf.TerraformMetaArguments {
   /**
   * Resource API version
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#api_version Env#api_version}
   */
   readonly apiVersion: string;
   /**
   * Name of the container for which we are updating the environment variables.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#container Env#container}
   */
   readonly container?: string;
   /**
   * Set the name of the field manager for the specified environment variables.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#field_manager Env#field_manager}
   */
   readonly fieldManager?: string;
   /**
   * Force overwriting environments that were created or edited outside of Terraform.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#force Env#force}
   */
   readonly force?: boolean | cdktf.IResolvable;
@@ -45,25 +40,25 @@ export interface EnvConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * Name of the initContainer for which we are updating the environment variables.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#init_container Env#init_container}
   */
   readonly initContainer?: string;
   /**
   * Resource Kind
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#kind Env#kind}
   */
   readonly kind: string;
   /**
   * env block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#env Env#env}
   */
   readonly env: EnvEnv[] | cdktf.IResolvable;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#metadata Env#metadata}
   */
   readonly metadata: EnvMetadata;
@@ -71,19 +66,19 @@ export interface EnvConfig extends cdktf.TerraformMetaArguments {
 export interface EnvEnvValueFromConfigMapKeyRef {
   /**
   * The key to select.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#key Env#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#name Env#name}
   */
   readonly name?: string;
   /**
   * Specify whether the ConfigMap or its key must be defined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#optional Env#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -196,13 +191,13 @@ export class EnvEnvValueFromConfigMapKeyRefOutputReference extends cdktf.Complex
 export interface EnvEnvValueFromFieldRef {
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to "v1".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#api_version Env#api_version}
   */
   readonly apiVersion?: string;
   /**
   * Path of the field to select in the specified API version
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#field_path Env#field_path}
   */
   readonly fieldPath?: string;
@@ -300,7 +295,7 @@ export interface EnvEnvValueFromResourceFieldRef {
   readonly divisor?: string;
   /**
   * Resource to select
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#resource Env#resource}
   */
   readonly resource: string;
@@ -410,19 +405,19 @@ export class EnvEnvValueFromResourceFieldRefOutputReference extends cdktf.Comple
 export interface EnvEnvValueFromSecretKeyRef {
   /**
   * The key of the secret to select from. Must be a valid secret key.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#key Env#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#name Env#name}
   */
   readonly name?: string;
   /**
   * Specify whether the Secret or its key must be defined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#optional Env#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -535,25 +530,25 @@ export class EnvEnvValueFromSecretKeyRefOutputReference extends cdktf.ComplexObj
 export interface EnvEnvValueFrom {
   /**
   * config_map_key_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#config_map_key_ref Env#config_map_key_ref}
   */
   readonly configMapKeyRef?: EnvEnvValueFromConfigMapKeyRef;
   /**
   * field_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#field_ref Env#field_ref}
   */
   readonly fieldRef?: EnvEnvValueFromFieldRef;
   /**
   * resource_field_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#resource_field_ref Env#resource_field_ref}
   */
   readonly resourceFieldRef?: EnvEnvValueFromResourceFieldRef;
   /**
   * secret_key_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#secret_key_ref Env#secret_key_ref}
   */
   readonly secretKeyRef?: EnvEnvValueFromSecretKeyRef;
@@ -689,19 +684,19 @@ export class EnvEnvValueFromOutputReference extends cdktf.ComplexObject {
 export interface EnvEnv {
   /**
   * Name of the environment variable. Must be a C_IDENTIFIER
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#name Env#name}
   */
   readonly name: string;
   /**
   * Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#value Env#value}
   */
   readonly value?: string;
   /**
   * value_from block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#value_from Env#value_from}
   */
   readonly valueFrom?: EnvEnvValueFrom;
@@ -843,13 +838,13 @@ export class EnvEnvList extends cdktf.ComplexList {
 export interface EnvMetadata {
   /**
   * The name of the resource.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#name Env#name}
   */
   readonly name: string;
   /**
   * The namespace of the resource.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/env#namespace Env#namespace}
   */
   readonly namespace?: string;

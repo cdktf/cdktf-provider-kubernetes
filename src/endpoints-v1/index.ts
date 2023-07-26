@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1
 // generated from terraform resource schema
 
@@ -21,13 +16,13 @@ export interface EndpointsV1Config extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1#metadata EndpointsV1#metadata}
   */
   readonly metadata: EndpointsV1Metadata;
   /**
   * subset block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1#subset EndpointsV1#subset}
   */
   readonly subset?: EndpointsV1Subset[] | cdktf.IResolvable;
@@ -35,31 +30,31 @@ export interface EndpointsV1Config extends cdktf.TerraformMetaArguments {
 export interface EndpointsV1Metadata {
   /**
   * An unstructured key value map stored with the endpoints that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1#annotations EndpointsV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1#generate_name EndpointsV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the endpoints. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1#labels EndpointsV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the endpoints, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1#name EndpointsV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the endpoints must be unique.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1#namespace EndpointsV1#namespace}
   */
   readonly namespace?: string;
@@ -233,19 +228,19 @@ export class EndpointsV1MetadataOutputReference extends cdktf.ComplexObject {
 export interface EndpointsV1SubsetAddress {
   /**
   * The Hostname of this endpoint.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1#hostname EndpointsV1#hostname}
   */
   readonly hostname?: string;
   /**
   * The IP of this endpoint. May not be loopback (127.0.0.0/8), link-local (169.254.0.0/16), or link-local multicast ((224.0.0.0/24).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1#ip EndpointsV1#ip}
   */
   readonly ip: string;
   /**
   * Node hosting this endpoint. This can be used to determine endpoints local to a node.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1#node_name EndpointsV1#node_name}
   */
   readonly nodeName?: string;
@@ -387,19 +382,19 @@ export class EndpointsV1SubsetAddressList extends cdktf.ComplexList {
 export interface EndpointsV1SubsetNotReadyAddress {
   /**
   * The Hostname of this endpoint.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1#hostname EndpointsV1#hostname}
   */
   readonly hostname?: string;
   /**
   * The IP of this endpoint. May not be loopback (127.0.0.0/8), link-local (169.254.0.0/16), or link-local multicast ((224.0.0.0/24).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1#ip EndpointsV1#ip}
   */
   readonly ip: string;
   /**
   * Node hosting this endpoint. This can be used to determine endpoints local to a node.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1#node_name EndpointsV1#node_name}
   */
   readonly nodeName?: string;
@@ -541,19 +536,19 @@ export class EndpointsV1SubsetNotReadyAddressList extends cdktf.ComplexList {
 export interface EndpointsV1SubsetPort {
   /**
   * The name of this port within the endpoint. Must be a DNS_LABEL. Optional if only one Port is defined on this endpoint.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1#name EndpointsV1#name}
   */
   readonly name?: string;
   /**
   * The port that will be exposed by this endpoint.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1#port EndpointsV1#port}
   */
   readonly port: number;
   /**
   * The IP protocol for this port. Supports `TCP` and `UDP`. Default is `TCP`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1#protocol EndpointsV1#protocol}
   */
   readonly protocol?: string;
@@ -695,19 +690,19 @@ export class EndpointsV1SubsetPortList extends cdktf.ComplexList {
 export interface EndpointsV1Subset {
   /**
   * address block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1#address EndpointsV1#address}
   */
   readonly address?: EndpointsV1SubsetAddress[] | cdktf.IResolvable;
   /**
   * not_ready_address block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1#not_ready_address EndpointsV1#not_ready_address}
   */
   readonly notReadyAddress?: EndpointsV1SubsetNotReadyAddress[] | cdktf.IResolvable;
   /**
   * port block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoints_v1#port EndpointsV1#port}
   */
   readonly port?: EndpointsV1SubsetPort[] | cdktf.IResolvable;
