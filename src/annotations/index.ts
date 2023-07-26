@@ -14,25 +14,25 @@ import * as cdktf from 'cdktf';
 export interface AnnotationsConfig extends cdktf.TerraformMetaArguments {
   /**
   * A map of annotations to apply to the resource.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/annotations#annotations Annotations#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * The apiVersion of the resource to annotate.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/annotations#api_version Annotations#api_version}
   */
   readonly apiVersion: string;
   /**
   * Set the name of the field manager for the specified labels.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/annotations#field_manager Annotations#field_manager}
   */
   readonly fieldManager?: string;
   /**
   * Force overwriting annotations that were created or edited outside of Terraform.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/annotations#force Annotations#force}
   */
   readonly force?: boolean | cdktf.IResolvable;
@@ -45,19 +45,19 @@ export interface AnnotationsConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * The kind of the resource to annotate.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/annotations#kind Annotations#kind}
   */
   readonly kind: string;
   /**
   * A map of annotations to apply to the resource template.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/annotations#template_annotations Annotations#template_annotations}
   */
   readonly templateAnnotations?: { [key: string]: string };
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/annotations#metadata Annotations#metadata}
   */
   readonly metadata: AnnotationsMetadata;
@@ -65,13 +65,13 @@ export interface AnnotationsConfig extends cdktf.TerraformMetaArguments {
 export interface AnnotationsMetadata {
   /**
   * The name of the resource.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/annotations#name Annotations#name}
   */
   readonly name: string;
   /**
   * The namespace of the resource.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/annotations#namespace Annotations#namespace}
   */
   readonly namespace?: string;

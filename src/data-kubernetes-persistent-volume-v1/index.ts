@@ -21,13 +21,13 @@ export interface DataKubernetesPersistentVolumeV1Config extends cdktf.TerraformM
   readonly id?: string;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#metadata DataKubernetesPersistentVolumeV1#metadata}
   */
   readonly metadata: DataKubernetesPersistentVolumeV1Metadata;
   /**
   * spec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#spec DataKubernetesPersistentVolumeV1#spec}
   */
   readonly spec?: DataKubernetesPersistentVolumeV1Spec[] | cdktf.IResolvable;
@@ -35,19 +35,19 @@ export interface DataKubernetesPersistentVolumeV1Config extends cdktf.TerraformM
 export interface DataKubernetesPersistentVolumeV1Metadata {
   /**
   * An unstructured key value map stored with the persistent volume that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#annotations DataKubernetesPersistentVolumeV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the persistent volume. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#labels DataKubernetesPersistentVolumeV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the persistent volume, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#name DataKubernetesPersistentVolumeV1#name}
   */
   readonly name?: string;
@@ -175,13 +175,13 @@ export class DataKubernetesPersistentVolumeV1MetadataOutputReference extends cdk
 export interface DataKubernetesPersistentVolumeV1SpecClaimRef {
   /**
   * The name of the PersistentVolumeClaim
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#name DataKubernetesPersistentVolumeV1#name}
   */
   readonly name: string;
   /**
   * The namespace of the PersistentVolumeClaim. Uses 'default' namespace if none is specified.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#namespace DataKubernetesPersistentVolumeV1#namespace}
   */
   readonly namespace?: string;
@@ -268,19 +268,19 @@ export class DataKubernetesPersistentVolumeV1SpecClaimRefOutputReference extends
 export interface DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#key DataKubernetesPersistentVolumeV1#key}
   */
   readonly key: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists`, `DoesNotExist`, `Gt`, and `Lt`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#operator DataKubernetesPersistentVolumeV1#operator}
   */
   readonly operator: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#values DataKubernetesPersistentVolumeV1#values}
   */
   readonly values?: string[];
@@ -419,19 +419,19 @@ export class DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelecto
 export interface DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFields {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#key DataKubernetesPersistentVolumeV1#key}
   */
   readonly key: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists`, `DoesNotExist`, `Gt`, and `Lt`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#operator DataKubernetesPersistentVolumeV1#operator}
   */
   readonly operator: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#values DataKubernetesPersistentVolumeV1#values}
   */
   readonly values?: string[];
@@ -570,13 +570,13 @@ export class DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelecto
 export interface DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTerm {
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#match_expressions DataKubernetesPersistentVolumeV1#match_expressions}
   */
   readonly matchExpressions?: DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressions[] | cdktf.IResolvable;
   /**
   * match_fields block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#match_fields DataKubernetesPersistentVolumeV1#match_fields}
   */
   readonly matchFields?: DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFields[] | cdktf.IResolvable;
@@ -698,7 +698,7 @@ export class DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelecto
 export interface DataKubernetesPersistentVolumeV1SpecNodeAffinityRequired {
   /**
   * node_selector_term block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#node_selector_term DataKubernetesPersistentVolumeV1#node_selector_term}
   */
   readonly nodeSelectorTerm: DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTerm[] | cdktf.IResolvable;
@@ -762,7 +762,7 @@ export class DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredOutputRefer
 export interface DataKubernetesPersistentVolumeV1SpecNodeAffinity {
   /**
   * required block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#required DataKubernetesPersistentVolumeV1#required}
   */
   readonly required?: DataKubernetesPersistentVolumeV1SpecNodeAffinityRequired;
@@ -829,25 +829,25 @@ export class DataKubernetesPersistentVolumeV1SpecNodeAffinityOutputReference ext
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStore {
   /**
   * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#fs_type DataKubernetesPersistentVolumeV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * The partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#partition DataKubernetesPersistentVolumeV1#partition}
   */
   readonly partition?: number;
   /**
   * Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#read_only DataKubernetesPersistentVolumeV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#volume_id DataKubernetesPersistentVolumeV1#volume_id}
   */
   readonly volumeId: string;
@@ -980,37 +980,37 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAwsElasti
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureDisk {
   /**
   * Host Caching mode: None, Read Only, Read Write.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#caching_mode DataKubernetesPersistentVolumeV1#caching_mode}
   */
   readonly cachingMode: string;
   /**
   * The URI the data disk in the blob storage
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#data_disk_uri DataKubernetesPersistentVolumeV1#data_disk_uri}
   */
   readonly dataDiskUri: string;
   /**
   * The Name of the data disk in the blob storage
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#disk_name DataKubernetesPersistentVolumeV1#disk_name}
   */
   readonly diskName: string;
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#fs_type DataKubernetesPersistentVolumeV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * The type for the data disk. Expected values: Shared, Dedicated, Managed. Defaults to Shared
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#kind DataKubernetesPersistentVolumeV1#kind}
   */
   readonly kind?: string;
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#read_only DataKubernetesPersistentVolumeV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
@@ -1183,25 +1183,25 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureDisk
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureFile {
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#read_only DataKubernetesPersistentVolumeV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * The name of secret that contains Azure Storage Account Name and Key
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#secret_name DataKubernetesPersistentVolumeV1#secret_name}
   */
   readonly secretName: string;
   /**
   * The namespace of the secret that contains Azure Storage Account Name and Key. For Kubernetes up to 1.18.x the default is the same as the Pod. For Kubernetes 1.19.x and later the default is "default" namespace.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#secret_namespace DataKubernetesPersistentVolumeV1#secret_namespace}
   */
   readonly secretNamespace?: string;
   /**
   * Share Name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#share_name DataKubernetesPersistentVolumeV1#share_name}
   */
   readonly shareName: string;
@@ -1331,13 +1331,13 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureFile
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#name DataKubernetesPersistentVolumeV1#name}
   */
   readonly name?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#namespace DataKubernetesPersistentVolumeV1#namespace}
   */
   readonly namespace?: string;
@@ -1427,37 +1427,37 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFsSec
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFs {
   /**
   * Monitors is a collection of Ceph monitors More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#monitors DataKubernetesPersistentVolumeV1#monitors}
   */
   readonly monitors: string[];
   /**
   * Used as the mounted root, rather than the full Ceph tree, default is /
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#path DataKubernetesPersistentVolumeV1#path}
   */
   readonly path?: string;
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to `false` (read/write). More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#read_only DataKubernetesPersistentVolumeV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * The path to key ring for User, default is /etc/ceph/user.secret More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#secret_file DataKubernetesPersistentVolumeV1#secret_file}
   */
   readonly secretFile?: string;
   /**
   * User is the rados user name, default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#user DataKubernetesPersistentVolumeV1#user}
   */
   readonly user?: string;
   /**
   * secret_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#secret_ref DataKubernetesPersistentVolumeV1#secret_ref}
   */
   readonly secretRef?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRef;
@@ -1636,19 +1636,19 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFsOut
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCinder {
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#fs_type DataKubernetesPersistentVolumeV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write). More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#read_only DataKubernetesPersistentVolumeV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Volume ID used to identify the volume in Cinder. More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#volume_id DataKubernetesPersistentVolumeV1#volume_id}
   */
   readonly volumeId: string;
@@ -1758,13 +1758,13 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCinderOut
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#name DataKubernetesPersistentVolumeV1#name}
   */
   readonly name?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#namespace DataKubernetesPersistentVolumeV1#namespace}
   */
   readonly namespace?: string;
@@ -1854,13 +1854,13 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiContro
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#name DataKubernetesPersistentVolumeV1#name}
   */
   readonly name?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#namespace DataKubernetesPersistentVolumeV1#namespace}
   */
   readonly namespace?: string;
@@ -1950,13 +1950,13 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiContro
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#name DataKubernetesPersistentVolumeV1#name}
   */
   readonly name?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#namespace DataKubernetesPersistentVolumeV1#namespace}
   */
   readonly namespace?: string;
@@ -2046,13 +2046,13 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodePu
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#name DataKubernetesPersistentVolumeV1#name}
   */
   readonly name?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#namespace DataKubernetesPersistentVolumeV1#namespace}
   */
   readonly namespace?: string;
@@ -2142,55 +2142,55 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodeSt
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsi {
   /**
   * the name of the volume driver to use. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#driver DataKubernetesPersistentVolumeV1#driver}
   */
   readonly driver: string;
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#fs_type DataKubernetesPersistentVolumeV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * Whether to set the read-only property in VolumeMounts to "true". If omitted, the default is "false". More info: http://kubernetes.io/docs/user-guide/volumes#csi
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#read_only DataKubernetesPersistentVolumeV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Attributes of the volume to publish.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#volume_attributes DataKubernetesPersistentVolumeV1#volume_attributes}
   */
   readonly volumeAttributes?: { [key: string]: string };
   /**
   * A string value that uniquely identifies the volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#csi
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#volume_handle DataKubernetesPersistentVolumeV1#volume_handle}
   */
   readonly volumeHandle: string;
   /**
   * controller_expand_secret_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#controller_expand_secret_ref DataKubernetesPersistentVolumeV1#controller_expand_secret_ref}
   */
   readonly controllerExpandSecretRef?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecretRef;
   /**
   * controller_publish_secret_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#controller_publish_secret_ref DataKubernetesPersistentVolumeV1#controller_publish_secret_ref}
   */
   readonly controllerPublishSecretRef?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSecretRef;
   /**
   * node_publish_secret_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#node_publish_secret_ref DataKubernetesPersistentVolumeV1#node_publish_secret_ref}
   */
   readonly nodePublishSecretRef?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRef;
   /**
   * node_stage_secret_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#node_stage_secret_ref DataKubernetesPersistentVolumeV1#node_stage_secret_ref}
   */
   readonly nodeStageSecretRef?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRef;
@@ -2435,25 +2435,25 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiOutput
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFc {
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#fs_type DataKubernetesPersistentVolumeV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * FC target lun number
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#lun DataKubernetesPersistentVolumeV1#lun}
   */
   readonly lun: number;
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to false (read/write).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#read_only DataKubernetesPersistentVolumeV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * FC target worldwide names (WWNs)
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#target_ww_ns DataKubernetesPersistentVolumeV1#target_ww_ns}
   */
   readonly targetWwNs: string[];
@@ -2583,13 +2583,13 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFcOutputR
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#name DataKubernetesPersistentVolumeV1#name}
   */
   readonly name?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#namespace DataKubernetesPersistentVolumeV1#namespace}
   */
   readonly namespace?: string;
@@ -2679,31 +2679,31 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVolum
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVolume {
   /**
   * Driver is the name of the driver to use for this volume.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#driver DataKubernetesPersistentVolumeV1#driver}
   */
   readonly driver: string;
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". The default filesystem depends on FlexVolume script.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#fs_type DataKubernetesPersistentVolumeV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * Extra command options if any.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#options DataKubernetesPersistentVolumeV1#options}
   */
   readonly options?: { [key: string]: string };
   /**
   * Whether to force the ReadOnly setting in VolumeMounts. Defaults to false (read/write).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#read_only DataKubernetesPersistentVolumeV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * secret_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#secret_ref DataKubernetesPersistentVolumeV1#secret_ref}
   */
   readonly secretRef?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRef;
@@ -2859,13 +2859,13 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVolum
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlocker {
   /**
   * Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#dataset_name DataKubernetesPersistentVolumeV1#dataset_name}
   */
   readonly datasetName?: string;
   /**
   * UUID of the dataset. This is unique identifier of a Flocker dataset
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#dataset_uuid DataKubernetesPersistentVolumeV1#dataset_uuid}
   */
   readonly datasetUuid?: string;
@@ -2955,25 +2955,25 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlockerOu
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDisk {
   /**
   * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#fs_type DataKubernetesPersistentVolumeV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * The partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty). More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#partition DataKubernetesPersistentVolumeV1#partition}
   */
   readonly partition?: number;
   /**
   * Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#pd_name DataKubernetesPersistentVolumeV1#pd_name}
   */
   readonly pdName: string;
   /**
   * Whether to force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#read_only DataKubernetesPersistentVolumeV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
@@ -3106,19 +3106,19 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGcePersis
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGlusterfs {
   /**
   * The endpoint name that details Glusterfs topology. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#endpoints_name DataKubernetesPersistentVolumeV1#endpoints_name}
   */
   readonly endpointsName: string;
   /**
   * The Glusterfs volume path. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#path DataKubernetesPersistentVolumeV1#path}
   */
   readonly path: string;
   /**
   * Whether to force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#read_only DataKubernetesPersistentVolumeV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
@@ -3225,13 +3225,13 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGlusterfs
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceHostPath {
   /**
   * Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#hostpath
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#path DataKubernetesPersistentVolumeV1#path}
   */
   readonly path?: string;
   /**
   * Type for HostPath volume. Allowed values are "" (default), DirectoryOrCreate, Directory, FileOrCreate, File, Socket, CharDevice and BlockDevice
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#type DataKubernetesPersistentVolumeV1#type}
   */
   readonly type?: string;
@@ -3321,37 +3321,37 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceHostPathO
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceIscsi {
   /**
   * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#iscsi
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#fs_type DataKubernetesPersistentVolumeV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * Target iSCSI Qualified Name.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#iqn DataKubernetesPersistentVolumeV1#iqn}
   */
   readonly iqn: string;
   /**
   * iSCSI interface name that uses an iSCSI transport. Defaults to 'default' (tcp).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#iscsi_interface DataKubernetesPersistentVolumeV1#iscsi_interface}
   */
   readonly iscsiInterface?: string;
   /**
   * iSCSI target lun number.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#lun DataKubernetesPersistentVolumeV1#lun}
   */
   readonly lun?: number;
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to false.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#read_only DataKubernetesPersistentVolumeV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * iSCSI target portal. The portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#target_portal DataKubernetesPersistentVolumeV1#target_portal}
   */
   readonly targetPortal: string;
@@ -3527,7 +3527,7 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceIscsiOutp
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceLocal {
   /**
   * Path of the directory on the host. More info: http://kubernetes.io/docs/user-guide/volumes#local
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#path DataKubernetesPersistentVolumeV1#path}
   */
   readonly path?: string;
@@ -3594,19 +3594,19 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceLocalOutp
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceNfs {
   /**
   * Path that is exported by the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#path DataKubernetesPersistentVolumeV1#path}
   */
   readonly path: string;
   /**
   * Whether to force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#read_only DataKubernetesPersistentVolumeV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Server is the hostname or IP address of the NFS server. More info: http://kubernetes.io/docs/user-guide/volumes#nfs
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#server DataKubernetesPersistentVolumeV1#server}
   */
   readonly server: string;
@@ -3713,13 +3713,13 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceNfsOutput
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDisk {
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#fs_type DataKubernetesPersistentVolumeV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * ID that identifies Photon Controller persistent disk
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#pd_id DataKubernetesPersistentVolumeV1#pd_id}
   */
   readonly pdId: string;
@@ -3806,31 +3806,31 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourcePhotonPer
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceQuobyte {
   /**
   * Group to map volume access to Default is no group
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#group DataKubernetesPersistentVolumeV1#group}
   */
   readonly group?: string;
   /**
   * Whether to force the Quobyte volume to be mounted with read-only permissions. Defaults to false.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#read_only DataKubernetesPersistentVolumeV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#registry DataKubernetesPersistentVolumeV1#registry}
   */
   readonly registry: string;
   /**
   * User to map volume access to Defaults to serivceaccount user
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#user DataKubernetesPersistentVolumeV1#user}
   */
   readonly user?: string;
   /**
   * Volume is a string that references an already created Quobyte volume by name.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#volume DataKubernetesPersistentVolumeV1#volume}
   */
   readonly volume: string;
@@ -3983,13 +3983,13 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceQuobyteOu
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#name DataKubernetesPersistentVolumeV1#name}
   */
   readonly name?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#namespace DataKubernetesPersistentVolumeV1#namespace}
   */
   readonly namespace?: string;
@@ -4079,49 +4079,49 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbdSecret
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbd {
   /**
   * A collection of Ceph monitors. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#ceph_monitors DataKubernetesPersistentVolumeV1#ceph_monitors}
   */
   readonly cephMonitors: string[];
   /**
   * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: http://kubernetes.io/docs/user-guide/volumes#rbd
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#fs_type DataKubernetesPersistentVolumeV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#keyring DataKubernetesPersistentVolumeV1#keyring}
   */
   readonly keyring?: string;
   /**
   * The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#rados_user DataKubernetesPersistentVolumeV1#rados_user}
   */
   readonly radosUser?: string;
   /**
   * The rados image name. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#rbd_image DataKubernetesPersistentVolumeV1#rbd_image}
   */
   readonly rbdImage: string;
   /**
   * The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#rbd_pool DataKubernetesPersistentVolumeV1#rbd_pool}
   */
   readonly rbdPool?: string;
   /**
   * Whether to force the read-only setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#read_only DataKubernetesPersistentVolumeV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * secret_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#secret_ref DataKubernetesPersistentVolumeV1#secret_ref}
   */
   readonly secretRef?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRef;
@@ -4343,13 +4343,13 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbdOutput
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceVsphereVolume {
   /**
   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#fs_type DataKubernetesPersistentVolumeV1#fs_type}
   */
   readonly fsType?: string;
   /**
   * Path that identifies vSphere volume vmdk
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#volume_path DataKubernetesPersistentVolumeV1#volume_path}
   */
   readonly volumePath: string;
@@ -4436,115 +4436,115 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceVsphereVo
 export interface DataKubernetesPersistentVolumeV1SpecPersistentVolumeSource {
   /**
   * aws_elastic_block_store block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#aws_elastic_block_store DataKubernetesPersistentVolumeV1#aws_elastic_block_store}
   */
   readonly awsElasticBlockStore?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStore;
   /**
   * azure_disk block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#azure_disk DataKubernetesPersistentVolumeV1#azure_disk}
   */
   readonly azureDisk?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureDisk;
   /**
   * azure_file block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#azure_file DataKubernetesPersistentVolumeV1#azure_file}
   */
   readonly azureFile?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureFile;
   /**
   * ceph_fs block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#ceph_fs DataKubernetesPersistentVolumeV1#ceph_fs}
   */
   readonly cephFs?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFs;
   /**
   * cinder block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#cinder DataKubernetesPersistentVolumeV1#cinder}
   */
   readonly cinder?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCinder;
   /**
   * csi block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#csi DataKubernetesPersistentVolumeV1#csi}
   */
   readonly csi?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsi;
   /**
   * fc block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#fc DataKubernetesPersistentVolumeV1#fc}
   */
   readonly fc?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFc;
   /**
   * flex_volume block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#flex_volume DataKubernetesPersistentVolumeV1#flex_volume}
   */
   readonly flexVolume?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVolume;
   /**
   * flocker block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#flocker DataKubernetesPersistentVolumeV1#flocker}
   */
   readonly flocker?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlocker;
   /**
   * gce_persistent_disk block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#gce_persistent_disk DataKubernetesPersistentVolumeV1#gce_persistent_disk}
   */
   readonly gcePersistentDisk?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDisk;
   /**
   * glusterfs block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#glusterfs DataKubernetesPersistentVolumeV1#glusterfs}
   */
   readonly glusterfs?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGlusterfs;
   /**
   * host_path block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#host_path DataKubernetesPersistentVolumeV1#host_path}
   */
   readonly hostPath?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceHostPath;
   /**
   * iscsi block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#iscsi DataKubernetesPersistentVolumeV1#iscsi}
   */
   readonly iscsi?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceIscsi;
   /**
   * local block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#local DataKubernetesPersistentVolumeV1#local}
   */
   readonly local?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceLocal;
   /**
   * nfs block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#nfs DataKubernetesPersistentVolumeV1#nfs}
   */
   readonly nfs?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceNfs;
   /**
   * photon_persistent_disk block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#photon_persistent_disk DataKubernetesPersistentVolumeV1#photon_persistent_disk}
   */
   readonly photonPersistentDisk?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDisk;
   /**
   * quobyte block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#quobyte DataKubernetesPersistentVolumeV1#quobyte}
   */
   readonly quobyte?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceQuobyte;
   /**
   * rbd block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#rbd DataKubernetesPersistentVolumeV1#rbd}
   */
   readonly rbd?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbd;
   /**
   * vsphere_volume block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#vsphere_volume DataKubernetesPersistentVolumeV1#vsphere_volume}
   */
   readonly vsphereVolume?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceVsphereVolume;
@@ -5025,55 +5025,55 @@ export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceOutputRef
 export interface DataKubernetesPersistentVolumeV1Spec {
   /**
   * Contains all ways the volume can be mounted. More info: http://kubernetes.io/docs/user-guide/persistent-volumes#access-modes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#access_modes DataKubernetesPersistentVolumeV1#access_modes}
   */
   readonly accessModes: string[];
   /**
   * A description of the persistent volume's resources and capacity. More info: http://kubernetes.io/docs/user-guide/persistent-volumes#capacity
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#capacity DataKubernetesPersistentVolumeV1#capacity}
   */
   readonly capacity: { [key: string]: string };
   /**
   * A list of mount options, e.g. ["ro", "soft"]. Not validated - mount will simply fail if one is invalid.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#mount_options DataKubernetesPersistentVolumeV1#mount_options}
   */
   readonly mountOptions?: string[];
   /**
   * What happens to a persistent volume when released from its claim. Valid options are Retain (default) and Recycle. Recycling must be supported by the volume plugin underlying this persistent volume. More info: http://kubernetes.io/docs/user-guide/persistent-volumes#recycling-policy
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#persistent_volume_reclaim_policy DataKubernetesPersistentVolumeV1#persistent_volume_reclaim_policy}
   */
   readonly persistentVolumeReclaimPolicy?: string;
   /**
   * A description of the persistent volume's class. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#storage_class_name DataKubernetesPersistentVolumeV1#storage_class_name}
   */
   readonly storageClassName?: string;
   /**
   * Defines if a volume is intended to be used with a formatted filesystem. or to remain in raw block state.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#volume_mode DataKubernetesPersistentVolumeV1#volume_mode}
   */
   readonly volumeMode?: string;
   /**
   * claim_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#claim_ref DataKubernetesPersistentVolumeV1#claim_ref}
   */
   readonly claimRef?: DataKubernetesPersistentVolumeV1SpecClaimRef;
   /**
   * node_affinity block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#node_affinity DataKubernetesPersistentVolumeV1#node_affinity}
   */
   readonly nodeAffinity?: DataKubernetesPersistentVolumeV1SpecNodeAffinity;
   /**
   * persistent_volume_source block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/persistent_volume_v1#persistent_volume_source DataKubernetesPersistentVolumeV1#persistent_volume_source}
   */
   readonly persistentVolumeSource: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSource;

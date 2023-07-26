@@ -27,19 +27,19 @@ export interface ReplicationControllerV1Config extends cdktf.TerraformMetaArgume
   readonly id?: string;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller_v1#metadata ReplicationControllerV1#metadata}
   */
   readonly metadata: ReplicationControllerV1Metadata;
   /**
   * spec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller_v1#spec ReplicationControllerV1#spec}
   */
   readonly spec: ReplicationControllerV1Spec;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/replication_controller_v1#timeouts ReplicationControllerV1#timeouts}
   */
   readonly timeouts?: ReplicationControllerV1Timeouts;

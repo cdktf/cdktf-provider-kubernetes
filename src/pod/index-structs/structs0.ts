@@ -7,31 +7,31 @@ import * as cdktf from 'cdktf';
 export interface PodMetadata {
   /**
   * An unstructured key value map stored with the pod that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#annotations Pod#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#generate_name Pod#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the pod. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#labels Pod#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the pod, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the pod must be unique.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#namespace Pod#namespace}
   */
   readonly namespace?: string;
@@ -205,19 +205,19 @@ export class PodMetadataOutputReference extends cdktf.ComplexObject {
 export interface PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#operator Pod#operator}
   */
   readonly operator?: string;
   /**
   * Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#values Pod#values}
   */
   readonly values?: string[];
@@ -362,7 +362,7 @@ export class PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringEx
 export interface PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference {
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#match_expressions Pod#match_expressions}
   */
   readonly matchExpressions?: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[] | cdktf.IResolvable;
@@ -429,13 +429,13 @@ export class PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringEx
 export interface PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution {
   /**
   * weight is in the range 1-100
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#weight Pod#weight}
   */
   readonly weight: number;
   /**
   * preference block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#preference Pod#preference}
   */
   readonly preference: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference;
@@ -551,19 +551,19 @@ export class PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringEx
 export interface PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#operator Pod#operator}
   */
   readonly operator?: string;
   /**
   * Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#values Pod#values}
   */
   readonly values?: string[];
@@ -708,7 +708,7 @@ export class PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExe
 export interface PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm {
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#match_expressions Pod#match_expressions}
   */
   readonly matchExpressions?: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions[] | cdktf.IResolvable;
@@ -807,7 +807,7 @@ export class PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExe
 export interface PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution {
   /**
   * node_selector_term block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#node_selector_term Pod#node_selector_term}
   */
   readonly nodeSelectorTerm?: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[] | cdktf.IResolvable;
@@ -874,13 +874,13 @@ export class PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExe
 export interface PodSpecAffinityNodeAffinity {
   /**
   * preferred_during_scheduling_ignored_during_execution block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#preferred_during_scheduling_ignored_during_execution Pod#preferred_during_scheduling_ignored_during_execution}
   */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
   /**
   * required_during_scheduling_ignored_during_execution block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#required_during_scheduling_ignored_during_execution Pod#required_during_scheduling_ignored_during_execution}
   */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution;
@@ -970,19 +970,19 @@ export class PodSpecAffinityNodeAffinityOutputReference extends cdktf.ComplexObj
 export interface PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#operator Pod#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#values Pod#values}
   */
   readonly values?: string[];
@@ -1127,13 +1127,13 @@ export class PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExe
 export interface PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#match_labels Pod#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#match_expressions Pod#match_expressions}
   */
   readonly matchExpressions?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[] | cdktf.IResolvable;
@@ -1255,19 +1255,19 @@ export class PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExe
 export interface PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm {
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#namespaces Pod#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#topology_key Pod#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#label_selector Pod#label_selector}
   */
   readonly labelSelector?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | cdktf.IResolvable;
@@ -1377,13 +1377,13 @@ export class PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExe
 export interface PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution {
   /**
   * weight associated with matching the corresponding podAffinityTerm, in the range 1-100
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#weight Pod#weight}
   */
   readonly weight: number;
   /**
   * pod_affinity_term block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#pod_affinity_term Pod#pod_affinity_term}
   */
   readonly podAffinityTerm: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
@@ -1499,19 +1499,19 @@ export class PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExe
 export interface PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#operator Pod#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#values Pod#values}
   */
   readonly values?: string[];
@@ -1656,13 +1656,13 @@ export class PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExec
 export interface PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#match_labels Pod#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#match_expressions Pod#match_expressions}
   */
   readonly matchExpressions?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[] | cdktf.IResolvable;
@@ -1784,19 +1784,19 @@ export class PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExec
 export interface PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution {
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#namespaces Pod#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#topology_key Pod#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#label_selector Pod#label_selector}
   */
   readonly labelSelector?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[] | cdktf.IResolvable;
@@ -1938,13 +1938,13 @@ export class PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExec
 export interface PodSpecAffinityPodAffinity {
   /**
   * preferred_during_scheduling_ignored_during_execution block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#preferred_during_scheduling_ignored_during_execution Pod#preferred_during_scheduling_ignored_during_execution}
   */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
   /**
   * required_during_scheduling_ignored_during_execution block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#required_during_scheduling_ignored_during_execution Pod#required_during_scheduling_ignored_during_execution}
   */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
@@ -2034,19 +2034,19 @@ export class PodSpecAffinityPodAffinityOutputReference extends cdktf.ComplexObje
 export interface PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#operator Pod#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#values Pod#values}
   */
   readonly values?: string[];
@@ -2191,13 +2191,13 @@ export class PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDurin
 export interface PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#match_labels Pod#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#match_expressions Pod#match_expressions}
   */
   readonly matchExpressions?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[] | cdktf.IResolvable;
@@ -2319,19 +2319,19 @@ export class PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDurin
 export interface PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm {
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#namespaces Pod#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#topology_key Pod#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#label_selector Pod#label_selector}
   */
   readonly labelSelector?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | cdktf.IResolvable;
@@ -2441,13 +2441,13 @@ export class PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDurin
 export interface PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution {
   /**
   * weight associated with matching the corresponding podAffinityTerm, in the range 1-100
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#weight Pod#weight}
   */
   readonly weight: number;
   /**
   * pod_affinity_term block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#pod_affinity_term Pod#pod_affinity_term}
   */
   readonly podAffinityTerm: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
@@ -2563,19 +2563,19 @@ export class PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDurin
 export interface PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#operator Pod#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#values Pod#values}
   */
   readonly values?: string[];
@@ -2720,13 +2720,13 @@ export class PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuring
 export interface PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#match_labels Pod#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#match_expressions Pod#match_expressions}
   */
   readonly matchExpressions?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[] | cdktf.IResolvable;
@@ -2848,19 +2848,19 @@ export class PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuring
 export interface PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution {
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#namespaces Pod#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#topology_key Pod#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#label_selector Pod#label_selector}
   */
   readonly labelSelector?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[] | cdktf.IResolvable;
@@ -3002,13 +3002,13 @@ export class PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuring
 export interface PodSpecAffinityPodAntiAffinity {
   /**
   * preferred_during_scheduling_ignored_during_execution block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#preferred_during_scheduling_ignored_during_execution Pod#preferred_during_scheduling_ignored_during_execution}
   */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
   /**
   * required_during_scheduling_ignored_during_execution block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#required_during_scheduling_ignored_during_execution Pod#required_during_scheduling_ignored_during_execution}
   */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
@@ -3098,19 +3098,19 @@ export class PodSpecAffinityPodAntiAffinityOutputReference extends cdktf.Complex
 export interface PodSpecAffinity {
   /**
   * node_affinity block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#node_affinity Pod#node_affinity}
   */
   readonly nodeAffinity?: PodSpecAffinityNodeAffinity;
   /**
   * pod_affinity block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#pod_affinity Pod#pod_affinity}
   */
   readonly podAffinity?: PodSpecAffinityPodAffinity;
   /**
   * pod_anti_affinity block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#pod_anti_affinity Pod#pod_anti_affinity}
   */
   readonly podAntiAffinity?: PodSpecAffinityPodAntiAffinity;
@@ -3223,19 +3223,19 @@ export class PodSpecAffinityOutputReference extends cdktf.ComplexObject {
 export interface PodSpecContainerEnvValueFromConfigMapKeyRef {
   /**
   * The key to select.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * Specify whether the ConfigMap or its key must be defined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#optional Pod#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -3348,13 +3348,13 @@ export class PodSpecContainerEnvValueFromConfigMapKeyRefOutputReference extends 
 export interface PodSpecContainerEnvValueFromFieldRef {
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to "v1".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#api_version Pod#api_version}
   */
   readonly apiVersion?: string;
   /**
   * Path of the field to select in the specified API version
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#field_path Pod#field_path}
   */
   readonly fieldPath?: string;
@@ -3452,7 +3452,7 @@ export interface PodSpecContainerEnvValueFromResourceFieldRef {
   readonly divisor?: string;
   /**
   * Resource to select
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#resource Pod#resource}
   */
   readonly resource: string;
@@ -3562,19 +3562,19 @@ export class PodSpecContainerEnvValueFromResourceFieldRefOutputReference extends
 export interface PodSpecContainerEnvValueFromSecretKeyRef {
   /**
   * The key of the secret to select from. Must be a valid secret key.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * Specify whether the Secret or its key must be defined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#optional Pod#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -3687,25 +3687,25 @@ export class PodSpecContainerEnvValueFromSecretKeyRefOutputReference extends cdk
 export interface PodSpecContainerEnvValueFrom {
   /**
   * config_map_key_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#config_map_key_ref Pod#config_map_key_ref}
   */
   readonly configMapKeyRef?: PodSpecContainerEnvValueFromConfigMapKeyRef;
   /**
   * field_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#field_ref Pod#field_ref}
   */
   readonly fieldRef?: PodSpecContainerEnvValueFromFieldRef;
   /**
   * resource_field_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#resource_field_ref Pod#resource_field_ref}
   */
   readonly resourceFieldRef?: PodSpecContainerEnvValueFromResourceFieldRef;
   /**
   * secret_key_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#secret_key_ref Pod#secret_key_ref}
   */
   readonly secretKeyRef?: PodSpecContainerEnvValueFromSecretKeyRef;
@@ -3841,19 +3841,19 @@ export class PodSpecContainerEnvValueFromOutputReference extends cdktf.ComplexOb
 export interface PodSpecContainerEnv {
   /**
   * Name of the environment variable. Must be a C_IDENTIFIER
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
   /**
   * Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
   /**
   * value_from block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#value_from Pod#value_from}
   */
   readonly valueFrom?: PodSpecContainerEnvValueFrom;
@@ -3995,13 +3995,13 @@ export class PodSpecContainerEnvList extends cdktf.ComplexList {
 export interface PodSpecContainerEnvFromConfigMapRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
   /**
   * Specify whether the ConfigMap must be defined
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#optional Pod#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -4088,13 +4088,13 @@ export class PodSpecContainerEnvFromConfigMapRefOutputReference extends cdktf.Co
 export interface PodSpecContainerEnvFromSecretRef {
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
   /**
   * Specify whether the Secret must be defined
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#optional Pod#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -4181,19 +4181,19 @@ export class PodSpecContainerEnvFromSecretRefOutputReference extends cdktf.Compl
 export interface PodSpecContainerEnvFrom {
   /**
   * An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#prefix Pod#prefix}
   */
   readonly prefix?: string;
   /**
   * config_map_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#config_map_ref Pod#config_map_ref}
   */
   readonly configMapRef?: PodSpecContainerEnvFromConfigMapRef;
   /**
   * secret_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#secret_ref Pod#secret_ref}
   */
   readonly secretRef?: PodSpecContainerEnvFromSecretRef;
@@ -4338,7 +4338,7 @@ export class PodSpecContainerEnvFromList extends cdktf.ComplexList {
 export interface PodSpecContainerLifecyclePostStartExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
@@ -4405,13 +4405,13 @@ export class PodSpecContainerLifecyclePostStartExecOutputReference extends cdktf
 export interface PodSpecContainerLifecyclePostStartHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
@@ -4533,31 +4533,31 @@ export class PodSpecContainerLifecyclePostStartHttpGetHttpHeaderList extends cdk
 export interface PodSpecContainerLifecyclePostStartHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#host Pod#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#path Pod#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#scheme Pod#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#http_header Pod#http_header}
   */
   readonly httpHeader?: PodSpecContainerLifecyclePostStartHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -4716,7 +4716,7 @@ export class PodSpecContainerLifecyclePostStartHttpGetOutputReference extends cd
 export interface PodSpecContainerLifecyclePostStartTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port: string;
@@ -4812,19 +4812,19 @@ export class PodSpecContainerLifecyclePostStartTcpSocketList extends cdktf.Compl
 export interface PodSpecContainerLifecyclePostStart {
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#exec Pod#exec}
   */
   readonly exec?: PodSpecContainerLifecyclePostStartExec;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#http_get Pod#http_get}
   */
   readonly httpGet?: PodSpecContainerLifecyclePostStartHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
   */
   readonly tcpSocket?: PodSpecContainerLifecyclePostStartTcpSocket[] | cdktf.IResolvable;
@@ -4969,7 +4969,7 @@ export class PodSpecContainerLifecyclePostStartList extends cdktf.ComplexList {
 export interface PodSpecContainerLifecyclePreStopExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
@@ -5036,13 +5036,13 @@ export class PodSpecContainerLifecyclePreStopExecOutputReference extends cdktf.C
 export interface PodSpecContainerLifecyclePreStopHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
@@ -5164,31 +5164,31 @@ export class PodSpecContainerLifecyclePreStopHttpGetHttpHeaderList extends cdktf
 export interface PodSpecContainerLifecyclePreStopHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#host Pod#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#path Pod#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#scheme Pod#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#http_header Pod#http_header}
   */
   readonly httpHeader?: PodSpecContainerLifecyclePreStopHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -5347,7 +5347,7 @@ export class PodSpecContainerLifecyclePreStopHttpGetOutputReference extends cdkt
 export interface PodSpecContainerLifecyclePreStopTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port: string;
@@ -5443,19 +5443,19 @@ export class PodSpecContainerLifecyclePreStopTcpSocketList extends cdktf.Complex
 export interface PodSpecContainerLifecyclePreStop {
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#exec Pod#exec}
   */
   readonly exec?: PodSpecContainerLifecyclePreStopExec;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#http_get Pod#http_get}
   */
   readonly httpGet?: PodSpecContainerLifecyclePreStopHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
   */
   readonly tcpSocket?: PodSpecContainerLifecyclePreStopTcpSocket[] | cdktf.IResolvable;
@@ -5600,13 +5600,13 @@ export class PodSpecContainerLifecyclePreStopList extends cdktf.ComplexList {
 export interface PodSpecContainerLifecycle {
   /**
   * post_start block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#post_start Pod#post_start}
   */
   readonly postStart?: PodSpecContainerLifecyclePostStart[] | cdktf.IResolvable;
   /**
   * pre_stop block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#pre_stop Pod#pre_stop}
   */
   readonly preStop?: PodSpecContainerLifecyclePreStop[] | cdktf.IResolvable;
@@ -5696,7 +5696,7 @@ export class PodSpecContainerLifecycleOutputReference extends cdktf.ComplexObjec
 export interface PodSpecContainerLivenessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
@@ -5763,13 +5763,13 @@ export class PodSpecContainerLivenessProbeExecOutputReference extends cdktf.Comp
 export interface PodSpecContainerLivenessProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#service Pod#service}
   */
   readonly service?: string;
@@ -5888,13 +5888,13 @@ export class PodSpecContainerLivenessProbeGrpcList extends cdktf.ComplexList {
 export interface PodSpecContainerLivenessProbeHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
@@ -6016,31 +6016,31 @@ export class PodSpecContainerLivenessProbeHttpGetHttpHeaderList extends cdktf.Co
 export interface PodSpecContainerLivenessProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#host Pod#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#path Pod#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#scheme Pod#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#http_header Pod#http_header}
   */
   readonly httpHeader?: PodSpecContainerLivenessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -6199,7 +6199,7 @@ export class PodSpecContainerLivenessProbeHttpGetOutputReference extends cdktf.C
 export interface PodSpecContainerLivenessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port: string;
@@ -6295,55 +6295,55 @@ export class PodSpecContainerLivenessProbeTcpSocketList extends cdktf.ComplexLis
 export interface PodSpecContainerLivenessProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#failure_threshold Pod#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#initial_delay_seconds Pod#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#period_seconds Pod#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#success_threshold Pod#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#timeout_seconds Pod#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#exec Pod#exec}
   */
   readonly exec?: PodSpecContainerLivenessProbeExec;
   /**
   * grpc block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#grpc Pod#grpc}
   */
   readonly grpc?: PodSpecContainerLivenessProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#http_get Pod#http_get}
   */
   readonly httpGet?: PodSpecContainerLivenessProbeHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
   */
   readonly tcpSocket?: PodSpecContainerLivenessProbeTcpSocket[] | cdktf.IResolvable;
@@ -6594,31 +6594,31 @@ export class PodSpecContainerLivenessProbeOutputReference extends cdktf.ComplexO
 export interface PodSpecContainerPort {
   /**
   * Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#container_port Pod#container_port}
   */
   readonly containerPort: number;
   /**
   * What host IP to bind the external port to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#host_ip Pod#host_ip}
   */
   readonly hostIp?: string;
   /**
   * Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#host_port Pod#host_port}
   */
   readonly hostPort?: number;
   /**
   * If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * Protocol for port. Must be UDP or TCP. Defaults to "TCP".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#protocol Pod#protocol}
   */
   readonly protocol?: string;
@@ -6806,7 +6806,7 @@ export class PodSpecContainerPortList extends cdktf.ComplexList {
 export interface PodSpecContainerReadinessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
@@ -6873,13 +6873,13 @@ export class PodSpecContainerReadinessProbeExecOutputReference extends cdktf.Com
 export interface PodSpecContainerReadinessProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#service Pod#service}
   */
   readonly service?: string;
@@ -6998,13 +6998,13 @@ export class PodSpecContainerReadinessProbeGrpcList extends cdktf.ComplexList {
 export interface PodSpecContainerReadinessProbeHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
@@ -7126,31 +7126,31 @@ export class PodSpecContainerReadinessProbeHttpGetHttpHeaderList extends cdktf.C
 export interface PodSpecContainerReadinessProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#host Pod#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#path Pod#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#scheme Pod#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#http_header Pod#http_header}
   */
   readonly httpHeader?: PodSpecContainerReadinessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -7309,7 +7309,7 @@ export class PodSpecContainerReadinessProbeHttpGetOutputReference extends cdktf.
 export interface PodSpecContainerReadinessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port: string;
@@ -7405,55 +7405,55 @@ export class PodSpecContainerReadinessProbeTcpSocketList extends cdktf.ComplexLi
 export interface PodSpecContainerReadinessProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#failure_threshold Pod#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#initial_delay_seconds Pod#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#period_seconds Pod#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#success_threshold Pod#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#timeout_seconds Pod#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#exec Pod#exec}
   */
   readonly exec?: PodSpecContainerReadinessProbeExec;
   /**
   * grpc block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#grpc Pod#grpc}
   */
   readonly grpc?: PodSpecContainerReadinessProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#http_get Pod#http_get}
   */
   readonly httpGet?: PodSpecContainerReadinessProbeHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
   */
   readonly tcpSocket?: PodSpecContainerReadinessProbeTcpSocket[] | cdktf.IResolvable;
@@ -7704,13 +7704,13 @@ export class PodSpecContainerReadinessProbeOutputReference extends cdktf.Complex
 export interface PodSpecContainerResources {
   /**
   * Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#limits Pod#limits}
   */
   readonly limits?: { [key: string]: string };
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#requests Pod#requests}
   */
   readonly requests?: { [key: string]: string };
@@ -7800,13 +7800,13 @@ export class PodSpecContainerResourcesOutputReference extends cdktf.ComplexObjec
 export interface PodSpecContainerSecurityContextCapabilities {
   /**
   * Added capabilities
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#add Pod#add}
   */
   readonly add?: string[];
   /**
   * Removed capabilities
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#drop Pod#drop}
   */
   readonly drop?: string[];
@@ -7896,25 +7896,25 @@ export class PodSpecContainerSecurityContextCapabilitiesOutputReference extends 
 export interface PodSpecContainerSecurityContextSeLinuxOptions {
   /**
   * Level is SELinux level label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#level Pod#level}
   */
   readonly level?: string;
   /**
   * Role is a SELinux role label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#role Pod#role}
   */
   readonly role?: string;
   /**
   * Type is a SELinux type label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#type Pod#type}
   */
   readonly type?: string;
   /**
   * User is a SELinux user label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#user Pod#user}
   */
   readonly user?: string;
@@ -8050,13 +8050,13 @@ export class PodSpecContainerSecurityContextSeLinuxOptionsOutputReference extend
 export interface PodSpecContainerSecurityContextSeccompProfile {
   /**
   * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#localhost_profile Pod#localhost_profile}
   */
   readonly localhostProfile?: string;
   /**
   * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#type Pod#type}
   */
   readonly type?: string;
@@ -8146,55 +8146,55 @@ export class PodSpecContainerSecurityContextSeccompProfileOutputReference extend
 export interface PodSpecContainerSecurityContext {
   /**
   * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#allow_privilege_escalation Pod#allow_privilege_escalation}
   */
   readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#privileged Pod#privileged}
   */
   readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * Whether this container has a read-only root filesystem. Default is false.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#read_only_root_filesystem Pod#read_only_root_filesystem}
   */
   readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
   /**
   * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#run_as_group Pod#run_as_group}
   */
   readonly runAsGroup?: string;
   /**
   * Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#run_as_non_root Pod#run_as_non_root}
   */
   readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#run_as_user Pod#run_as_user}
   */
   readonly runAsUser?: string;
   /**
   * capabilities block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#capabilities Pod#capabilities}
   */
   readonly capabilities?: PodSpecContainerSecurityContextCapabilities;
   /**
   * se_linux_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#se_linux_options Pod#se_linux_options}
   */
   readonly seLinuxOptions?: PodSpecContainerSecurityContextSeLinuxOptions;
   /**
   * seccomp_profile block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#seccomp_profile Pod#seccomp_profile}
   */
   readonly seccompProfile?: PodSpecContainerSecurityContextSeccompProfile;
@@ -8445,7 +8445,7 @@ export class PodSpecContainerSecurityContextOutputReference extends cdktf.Comple
 export interface PodSpecContainerStartupProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
@@ -8512,13 +8512,13 @@ export class PodSpecContainerStartupProbeExecOutputReference extends cdktf.Compl
 export interface PodSpecContainerStartupProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#service Pod#service}
   */
   readonly service?: string;
@@ -8637,13 +8637,13 @@ export class PodSpecContainerStartupProbeGrpcList extends cdktf.ComplexList {
 export interface PodSpecContainerStartupProbeHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
@@ -8765,31 +8765,31 @@ export class PodSpecContainerStartupProbeHttpGetHttpHeaderList extends cdktf.Com
 export interface PodSpecContainerStartupProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#host Pod#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#path Pod#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#scheme Pod#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#http_header Pod#http_header}
   */
   readonly httpHeader?: PodSpecContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -8948,7 +8948,7 @@ export class PodSpecContainerStartupProbeHttpGetOutputReference extends cdktf.Co
 export interface PodSpecContainerStartupProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port: string;
@@ -9044,55 +9044,55 @@ export class PodSpecContainerStartupProbeTcpSocketList extends cdktf.ComplexList
 export interface PodSpecContainerStartupProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#failure_threshold Pod#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#initial_delay_seconds Pod#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#period_seconds Pod#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#success_threshold Pod#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#timeout_seconds Pod#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#exec Pod#exec}
   */
   readonly exec?: PodSpecContainerStartupProbeExec;
   /**
   * grpc block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#grpc Pod#grpc}
   */
   readonly grpc?: PodSpecContainerStartupProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#http_get Pod#http_get}
   */
   readonly httpGet?: PodSpecContainerStartupProbeHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
   */
   readonly tcpSocket?: PodSpecContainerStartupProbeTcpSocket[] | cdktf.IResolvable;
@@ -9343,31 +9343,31 @@ export class PodSpecContainerStartupProbeOutputReference extends cdktf.ComplexOb
 export interface PodSpecContainerVolumeMount {
   /**
   * Path within the container at which the volume should be mounted. Must not contain ':'.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#mount_path Pod#mount_path}
   */
   readonly mountPath: string;
   /**
   * Mount propagation mode. mount_propagation determines how mounts are propagated from the host to container and the other way around. Valid values are None (default), HostToContainer and Bidirectional.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#mount_propagation Pod#mount_propagation}
   */
   readonly mountPropagation?: string;
   /**
   * This must match the Name of a Volume.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
   /**
   * Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#read_only Pod#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#sub_path Pod#sub_path}
   */
   readonly subPath?: string;
@@ -9552,127 +9552,127 @@ export class PodSpecContainerVolumeMountList extends cdktf.ComplexList {
 export interface PodSpecContainer {
   /**
   * Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#args Pod#args}
   */
   readonly args?: string[];
   /**
   * Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/containers#containers-and-commands
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
   /**
   * Docker image name. More info: http://kubernetes.io/docs/user-guide/images
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#image Pod#image}
   */
   readonly image?: string;
   /**
   * Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/images#updating-images
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#image_pull_policy Pod#image_pull_policy}
   */
   readonly imagePullPolicy?: string;
   /**
   * Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
   /**
   * Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF. 
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#stdin Pod#stdin}
   */
   readonly stdin?: boolean | cdktf.IResolvable;
   /**
   * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#stdin_once Pod#stdin_once}
   */
   readonly stdinOnce?: boolean | cdktf.IResolvable;
   /**
   * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#termination_message_path Pod#termination_message_path}
   */
   readonly terminationMessagePath?: string;
   /**
   * Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#termination_message_policy Pod#termination_message_policy}
   */
   readonly terminationMessagePolicy?: string;
   /**
   * Whether this container should allocate a TTY for itself
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#tty Pod#tty}
   */
   readonly tty?: boolean | cdktf.IResolvable;
   /**
   * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#working_dir Pod#working_dir}
   */
   readonly workingDir?: string;
   /**
   * env block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#env Pod#env}
   */
   readonly env?: PodSpecContainerEnv[] | cdktf.IResolvable;
   /**
   * env_from block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#env_from Pod#env_from}
   */
   readonly envFrom?: PodSpecContainerEnvFrom[] | cdktf.IResolvable;
   /**
   * lifecycle block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#lifecycle Pod#lifecycle}
   */
   readonly lifecycle?: PodSpecContainerLifecycle;
   /**
   * liveness_probe block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#liveness_probe Pod#liveness_probe}
   */
   readonly livenessProbe?: PodSpecContainerLivenessProbe;
   /**
   * port block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port?: PodSpecContainerPort[] | cdktf.IResolvable;
   /**
   * readiness_probe block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#readiness_probe Pod#readiness_probe}
   */
   readonly readinessProbe?: PodSpecContainerReadinessProbe;
   /**
   * resources block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#resources Pod#resources}
   */
   readonly resources?: PodSpecContainerResources;
   /**
   * security_context block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#security_context Pod#security_context}
   */
   readonly securityContext?: PodSpecContainerSecurityContext;
   /**
   * startup_probe block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#startup_probe Pod#startup_probe}
   */
   readonly startupProbe?: PodSpecContainerStartupProbe;
   /**
   * volume_mount block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#volume_mount Pod#volume_mount}
   */
   readonly volumeMount?: PodSpecContainerVolumeMount[] | cdktf.IResolvable;
@@ -10228,13 +10228,13 @@ export class PodSpecContainerList extends cdktf.ComplexList {
 export interface PodSpecDnsConfigOption {
   /**
   * Name of the option.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
   /**
   * Value of the option. Optional: Defaults to empty.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
@@ -10353,19 +10353,19 @@ export class PodSpecDnsConfigOptionList extends cdktf.ComplexList {
 export interface PodSpecDnsConfig {
   /**
   * A list of DNS name server IP addresses. This will be appended to the base nameservers generated from DNSPolicy. Duplicated nameservers will be removed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#nameservers Pod#nameservers}
   */
   readonly nameservers?: string[];
   /**
   * A list of DNS search domains for host-name lookup. This will be appended to the base search paths generated from DNSPolicy. Duplicated search paths will be removed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#searches Pod#searches}
   */
   readonly searches?: string[];
   /**
   * option block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#option Pod#option}
   */
   readonly option?: PodSpecDnsConfigOption[] | cdktf.IResolvable;
@@ -10478,13 +10478,13 @@ export class PodSpecDnsConfigOutputReference extends cdktf.ComplexObject {
 export interface PodSpecHostAliases {
   /**
   * Hostnames for the IP address.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#hostnames Pod#hostnames}
   */
   readonly hostnames: string[];
   /**
   * IP address of the host file entry.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#ip Pod#ip}
   */
   readonly ip: string;
@@ -10600,7 +10600,7 @@ export class PodSpecHostAliasesList extends cdktf.ComplexList {
 export interface PodSpecImagePullSecrets {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
@@ -10696,19 +10696,19 @@ export class PodSpecImagePullSecretsList extends cdktf.ComplexList {
 export interface PodSpecInitContainerEnvValueFromConfigMapKeyRef {
   /**
   * The key to select.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * Specify whether the ConfigMap or its key must be defined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#optional Pod#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -10821,13 +10821,13 @@ export class PodSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference exte
 export interface PodSpecInitContainerEnvValueFromFieldRef {
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to "v1".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#api_version Pod#api_version}
   */
   readonly apiVersion?: string;
   /**
   * Path of the field to select in the specified API version
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#field_path Pod#field_path}
   */
   readonly fieldPath?: string;
@@ -10925,7 +10925,7 @@ export interface PodSpecInitContainerEnvValueFromResourceFieldRef {
   readonly divisor?: string;
   /**
   * Resource to select
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#resource Pod#resource}
   */
   readonly resource: string;
@@ -11035,19 +11035,19 @@ export class PodSpecInitContainerEnvValueFromResourceFieldRefOutputReference ext
 export interface PodSpecInitContainerEnvValueFromSecretKeyRef {
   /**
   * The key of the secret to select from. Must be a valid secret key.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * Specify whether the Secret or its key must be defined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#optional Pod#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -11160,25 +11160,25 @@ export class PodSpecInitContainerEnvValueFromSecretKeyRefOutputReference extends
 export interface PodSpecInitContainerEnvValueFrom {
   /**
   * config_map_key_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#config_map_key_ref Pod#config_map_key_ref}
   */
   readonly configMapKeyRef?: PodSpecInitContainerEnvValueFromConfigMapKeyRef;
   /**
   * field_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#field_ref Pod#field_ref}
   */
   readonly fieldRef?: PodSpecInitContainerEnvValueFromFieldRef;
   /**
   * resource_field_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#resource_field_ref Pod#resource_field_ref}
   */
   readonly resourceFieldRef?: PodSpecInitContainerEnvValueFromResourceFieldRef;
   /**
   * secret_key_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#secret_key_ref Pod#secret_key_ref}
   */
   readonly secretKeyRef?: PodSpecInitContainerEnvValueFromSecretKeyRef;
@@ -11314,19 +11314,19 @@ export class PodSpecInitContainerEnvValueFromOutputReference extends cdktf.Compl
 export interface PodSpecInitContainerEnv {
   /**
   * Name of the environment variable. Must be a C_IDENTIFIER
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
   /**
   * Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
   /**
   * value_from block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#value_from Pod#value_from}
   */
   readonly valueFrom?: PodSpecInitContainerEnvValueFrom;
@@ -11468,13 +11468,13 @@ export class PodSpecInitContainerEnvList extends cdktf.ComplexList {
 export interface PodSpecInitContainerEnvFromConfigMapRef {
   /**
   * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
   /**
   * Specify whether the ConfigMap must be defined
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#optional Pod#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -11561,13 +11561,13 @@ export class PodSpecInitContainerEnvFromConfigMapRefOutputReference extends cdkt
 export interface PodSpecInitContainerEnvFromSecretRef {
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
   /**
   * Specify whether the Secret must be defined
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#optional Pod#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
@@ -11654,19 +11654,19 @@ export class PodSpecInitContainerEnvFromSecretRefOutputReference extends cdktf.C
 export interface PodSpecInitContainerEnvFrom {
   /**
   * An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#prefix Pod#prefix}
   */
   readonly prefix?: string;
   /**
   * config_map_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#config_map_ref Pod#config_map_ref}
   */
   readonly configMapRef?: PodSpecInitContainerEnvFromConfigMapRef;
   /**
   * secret_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#secret_ref Pod#secret_ref}
   */
   readonly secretRef?: PodSpecInitContainerEnvFromSecretRef;
@@ -11811,7 +11811,7 @@ export class PodSpecInitContainerEnvFromList extends cdktf.ComplexList {
 export interface PodSpecInitContainerLifecyclePostStartExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
@@ -11878,13 +11878,13 @@ export class PodSpecInitContainerLifecyclePostStartExecOutputReference extends c
 export interface PodSpecInitContainerLifecyclePostStartHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
@@ -12006,31 +12006,31 @@ export class PodSpecInitContainerLifecyclePostStartHttpGetHttpHeaderList extends
 export interface PodSpecInitContainerLifecyclePostStartHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#host Pod#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#path Pod#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#scheme Pod#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#http_header Pod#http_header}
   */
   readonly httpHeader?: PodSpecInitContainerLifecyclePostStartHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -12189,7 +12189,7 @@ export class PodSpecInitContainerLifecyclePostStartHttpGetOutputReference extend
 export interface PodSpecInitContainerLifecyclePostStartTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port: string;
@@ -12285,19 +12285,19 @@ export class PodSpecInitContainerLifecyclePostStartTcpSocketList extends cdktf.C
 export interface PodSpecInitContainerLifecyclePostStart {
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#exec Pod#exec}
   */
   readonly exec?: PodSpecInitContainerLifecyclePostStartExec;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#http_get Pod#http_get}
   */
   readonly httpGet?: PodSpecInitContainerLifecyclePostStartHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
   */
   readonly tcpSocket?: PodSpecInitContainerLifecyclePostStartTcpSocket[] | cdktf.IResolvable;
@@ -12442,7 +12442,7 @@ export class PodSpecInitContainerLifecyclePostStartList extends cdktf.ComplexLis
 export interface PodSpecInitContainerLifecyclePreStopExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
@@ -12509,13 +12509,13 @@ export class PodSpecInitContainerLifecyclePreStopExecOutputReference extends cdk
 export interface PodSpecInitContainerLifecyclePreStopHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
@@ -12637,31 +12637,31 @@ export class PodSpecInitContainerLifecyclePreStopHttpGetHttpHeaderList extends c
 export interface PodSpecInitContainerLifecyclePreStopHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#host Pod#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#path Pod#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#scheme Pod#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#http_header Pod#http_header}
   */
   readonly httpHeader?: PodSpecInitContainerLifecyclePreStopHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -12820,7 +12820,7 @@ export class PodSpecInitContainerLifecyclePreStopHttpGetOutputReference extends 
 export interface PodSpecInitContainerLifecyclePreStopTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port: string;
@@ -12916,19 +12916,19 @@ export class PodSpecInitContainerLifecyclePreStopTcpSocketList extends cdktf.Com
 export interface PodSpecInitContainerLifecyclePreStop {
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#exec Pod#exec}
   */
   readonly exec?: PodSpecInitContainerLifecyclePreStopExec;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#http_get Pod#http_get}
   */
   readonly httpGet?: PodSpecInitContainerLifecyclePreStopHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
   */
   readonly tcpSocket?: PodSpecInitContainerLifecyclePreStopTcpSocket[] | cdktf.IResolvable;
@@ -13073,13 +13073,13 @@ export class PodSpecInitContainerLifecyclePreStopList extends cdktf.ComplexList 
 export interface PodSpecInitContainerLifecycle {
   /**
   * post_start block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#post_start Pod#post_start}
   */
   readonly postStart?: PodSpecInitContainerLifecyclePostStart[] | cdktf.IResolvable;
   /**
   * pre_stop block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#pre_stop Pod#pre_stop}
   */
   readonly preStop?: PodSpecInitContainerLifecyclePreStop[] | cdktf.IResolvable;
@@ -13169,7 +13169,7 @@ export class PodSpecInitContainerLifecycleOutputReference extends cdktf.ComplexO
 export interface PodSpecInitContainerLivenessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
@@ -13236,13 +13236,13 @@ export class PodSpecInitContainerLivenessProbeExecOutputReference extends cdktf.
 export interface PodSpecInitContainerLivenessProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#service Pod#service}
   */
   readonly service?: string;
@@ -13361,13 +13361,13 @@ export class PodSpecInitContainerLivenessProbeGrpcList extends cdktf.ComplexList
 export interface PodSpecInitContainerLivenessProbeHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
@@ -13489,31 +13489,31 @@ export class PodSpecInitContainerLivenessProbeHttpGetHttpHeaderList extends cdkt
 export interface PodSpecInitContainerLivenessProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#host Pod#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#path Pod#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#scheme Pod#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#http_header Pod#http_header}
   */
   readonly httpHeader?: PodSpecInitContainerLivenessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -13672,7 +13672,7 @@ export class PodSpecInitContainerLivenessProbeHttpGetOutputReference extends cdk
 export interface PodSpecInitContainerLivenessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port: string;
@@ -13768,55 +13768,55 @@ export class PodSpecInitContainerLivenessProbeTcpSocketList extends cdktf.Comple
 export interface PodSpecInitContainerLivenessProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#failure_threshold Pod#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#initial_delay_seconds Pod#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#period_seconds Pod#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#success_threshold Pod#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#timeout_seconds Pod#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#exec Pod#exec}
   */
   readonly exec?: PodSpecInitContainerLivenessProbeExec;
   /**
   * grpc block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#grpc Pod#grpc}
   */
   readonly grpc?: PodSpecInitContainerLivenessProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#http_get Pod#http_get}
   */
   readonly httpGet?: PodSpecInitContainerLivenessProbeHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
   */
   readonly tcpSocket?: PodSpecInitContainerLivenessProbeTcpSocket[] | cdktf.IResolvable;
@@ -14067,31 +14067,31 @@ export class PodSpecInitContainerLivenessProbeOutputReference extends cdktf.Comp
 export interface PodSpecInitContainerPort {
   /**
   * Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#container_port Pod#container_port}
   */
   readonly containerPort: number;
   /**
   * What host IP to bind the external port to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#host_ip Pod#host_ip}
   */
   readonly hostIp?: string;
   /**
   * Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#host_port Pod#host_port}
   */
   readonly hostPort?: number;
   /**
   * If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * Protocol for port. Must be UDP or TCP. Defaults to "TCP".
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#protocol Pod#protocol}
   */
   readonly protocol?: string;
@@ -14279,7 +14279,7 @@ export class PodSpecInitContainerPortList extends cdktf.ComplexList {
 export interface PodSpecInitContainerReadinessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
@@ -14346,13 +14346,13 @@ export class PodSpecInitContainerReadinessProbeExecOutputReference extends cdktf
 export interface PodSpecInitContainerReadinessProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#service Pod#service}
   */
   readonly service?: string;
@@ -14471,13 +14471,13 @@ export class PodSpecInitContainerReadinessProbeGrpcList extends cdktf.ComplexLis
 export interface PodSpecInitContainerReadinessProbeHttpGetHttpHeader {
   /**
   * The header field name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * The header field value
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
@@ -14599,31 +14599,31 @@ export class PodSpecInitContainerReadinessProbeHttpGetHttpHeaderList extends cdk
 export interface PodSpecInitContainerReadinessProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#host Pod#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#path Pod#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#scheme Pod#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#http_header Pod#http_header}
   */
   readonly httpHeader?: PodSpecInitContainerReadinessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
@@ -14782,7 +14782,7 @@ export class PodSpecInitContainerReadinessProbeHttpGetOutputReference extends cd
 export interface PodSpecInitContainerReadinessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port: string;
@@ -14878,55 +14878,55 @@ export class PodSpecInitContainerReadinessProbeTcpSocketList extends cdktf.Compl
 export interface PodSpecInitContainerReadinessProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#failure_threshold Pod#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#initial_delay_seconds Pod#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#period_seconds Pod#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#success_threshold Pod#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#timeout_seconds Pod#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#exec Pod#exec}
   */
   readonly exec?: PodSpecInitContainerReadinessProbeExec;
   /**
   * grpc block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#grpc Pod#grpc}
   */
   readonly grpc?: PodSpecInitContainerReadinessProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#http_get Pod#http_get}
   */
   readonly httpGet?: PodSpecInitContainerReadinessProbeHttpGet;
   /**
   * tcp_socket block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
   */
   readonly tcpSocket?: PodSpecInitContainerReadinessProbeTcpSocket[] | cdktf.IResolvable;
@@ -15177,13 +15177,13 @@ export class PodSpecInitContainerReadinessProbeOutputReference extends cdktf.Com
 export interface PodSpecInitContainerResources {
   /**
   * Describes the maximum amount of compute resources allowed. More info: http://kubernetes.io/docs/user-guide/compute-resources/
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#limits Pod#limits}
   */
   readonly limits?: { [key: string]: string };
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#requests Pod#requests}
   */
   readonly requests?: { [key: string]: string };
@@ -15273,13 +15273,13 @@ export class PodSpecInitContainerResourcesOutputReference extends cdktf.ComplexO
 export interface PodSpecInitContainerSecurityContextCapabilities {
   /**
   * Added capabilities
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#add Pod#add}
   */
   readonly add?: string[];
   /**
   * Removed capabilities
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#drop Pod#drop}
   */
   readonly drop?: string[];
@@ -15369,25 +15369,25 @@ export class PodSpecInitContainerSecurityContextCapabilitiesOutputReference exte
 export interface PodSpecInitContainerSecurityContextSeLinuxOptions {
   /**
   * Level is SELinux level label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#level Pod#level}
   */
   readonly level?: string;
   /**
   * Role is a SELinux role label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#role Pod#role}
   */
   readonly role?: string;
   /**
   * Type is a SELinux type label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#type Pod#type}
   */
   readonly type?: string;
   /**
   * User is a SELinux user label that applies to the container.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#user Pod#user}
   */
   readonly user?: string;
@@ -15523,13 +15523,13 @@ export class PodSpecInitContainerSecurityContextSeLinuxOptionsOutputReference ex
 export interface PodSpecInitContainerSecurityContextSeccompProfile {
   /**
   * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#localhost_profile Pod#localhost_profile}
   */
   readonly localhostProfile?: string;
   /**
   * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#type Pod#type}
   */
   readonly type?: string;
@@ -15619,55 +15619,55 @@ export class PodSpecInitContainerSecurityContextSeccompProfileOutputReference ex
 export interface PodSpecInitContainerSecurityContext {
   /**
   * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#allow_privilege_escalation Pod#allow_privilege_escalation}
   */
   readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#privileged Pod#privileged}
   */
   readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * Whether this container has a read-only root filesystem. Default is false.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#read_only_root_filesystem Pod#read_only_root_filesystem}
   */
   readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
   /**
   * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#run_as_group Pod#run_as_group}
   */
   readonly runAsGroup?: string;
   /**
   * Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#run_as_non_root Pod#run_as_non_root}
   */
   readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#run_as_user Pod#run_as_user}
   */
   readonly runAsUser?: string;
   /**
   * capabilities block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#capabilities Pod#capabilities}
   */
   readonly capabilities?: PodSpecInitContainerSecurityContextCapabilities;
   /**
   * se_linux_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#se_linux_options Pod#se_linux_options}
   */
   readonly seLinuxOptions?: PodSpecInitContainerSecurityContextSeLinuxOptions;
   /**
   * seccomp_profile block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#seccomp_profile Pod#seccomp_profile}
   */
   readonly seccompProfile?: PodSpecInitContainerSecurityContextSeccompProfile;
@@ -15918,7 +15918,7 @@ export class PodSpecInitContainerSecurityContextOutputReference extends cdktf.Co
 export interface PodSpecInitContainerStartupProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
@@ -15985,13 +15985,13 @@ export class PodSpecInitContainerStartupProbeExecOutputReference extends cdktf.C
 export interface PodSpecInitContainerStartupProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#port Pod#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#service Pod#service}
   */
   readonly service?: string;

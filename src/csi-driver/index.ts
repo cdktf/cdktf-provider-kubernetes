@@ -21,13 +21,13 @@ export interface CsiDriverConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/csi_driver#metadata CsiDriver#metadata}
   */
   readonly metadata: CsiDriverMetadata;
   /**
   * spec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/csi_driver#spec CsiDriver#spec}
   */
   readonly spec?: CsiDriverSpec;
@@ -35,25 +35,25 @@ export interface CsiDriverConfig extends cdktf.TerraformMetaArguments {
 export interface CsiDriverMetadata {
   /**
   * An unstructured key value map stored with the csi driver that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/csi_driver#annotations CsiDriver#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/csi_driver#generate_name CsiDriver#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the csi driver. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/csi_driver#labels CsiDriver#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the csi driver, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/csi_driver#name CsiDriver#name}
   */
   readonly name?: string;
@@ -204,19 +204,19 @@ export class CsiDriverMetadataOutputReference extends cdktf.ComplexObject {
 export interface CsiDriverSpec {
   /**
   * Indicates if the CSI volume driver requires an attach operation
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/csi_driver#attach_required CsiDriver#attach_required}
   */
   readonly attachRequired: boolean | cdktf.IResolvable;
   /**
   * Indicates that the CSI volume driver requires additional pod information (like podName, podUID, etc.) during mount operations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/csi_driver#pod_info_on_mount CsiDriver#pod_info_on_mount}
   */
   readonly podInfoOnMount?: boolean | cdktf.IResolvable;
   /**
   * Defines what kind of volumes this CSI volume driver supports
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/csi_driver#volume_lifecycle_modes CsiDriver#volume_lifecycle_modes}
   */
   readonly volumeLifecycleModes?: string[];

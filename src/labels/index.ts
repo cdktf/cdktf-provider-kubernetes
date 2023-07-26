@@ -14,19 +14,19 @@ import * as cdktf from 'cdktf';
 export interface LabelsConfig extends cdktf.TerraformMetaArguments {
   /**
   * The apiVersion of the resource to label.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels#api_version Labels#api_version}
   */
   readonly apiVersion: string;
   /**
   * Set the name of the field manager for the specified labels.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels#field_manager Labels#field_manager}
   */
   readonly fieldManager?: string;
   /**
   * Force overwriting labels that were created or edited outside of Terraform.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels#force Labels#force}
   */
   readonly force?: boolean | cdktf.IResolvable;
@@ -39,19 +39,19 @@ export interface LabelsConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * The kind of the resource to label.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels#kind Labels#kind}
   */
   readonly kind: string;
   /**
   * A map of labels to apply to the resource.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels#labels Labels#labels}
   */
   readonly labels: { [key: string]: string };
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels#metadata Labels#metadata}
   */
   readonly metadata: LabelsMetadata;
@@ -59,13 +59,13 @@ export interface LabelsConfig extends cdktf.TerraformMetaArguments {
 export interface LabelsMetadata {
   /**
   * The name of the resource.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels#name Labels#name}
   */
   readonly name: string;
   /**
   * The namespace of the resource.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels#namespace Labels#namespace}
   */
   readonly namespace?: string;

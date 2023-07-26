@@ -21,13 +21,13 @@ export interface DataKubernetesConfigMapConfig extends cdktf.TerraformMetaArgume
   readonly id?: string;
   /**
   * Immutable, if set to true, ensures that data stored in the ConfigMap cannot be updated (only object metadata can be modified). If not set to true, the field can be modified at any time. Defaulted to nil.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/config_map#immutable DataKubernetesConfigMap#immutable}
   */
   readonly immutable?: boolean | cdktf.IResolvable;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/config_map#metadata DataKubernetesConfigMap#metadata}
   */
   readonly metadata: DataKubernetesConfigMapMetadata;
@@ -35,25 +35,25 @@ export interface DataKubernetesConfigMapConfig extends cdktf.TerraformMetaArgume
 export interface DataKubernetesConfigMapMetadata {
   /**
   * An unstructured key value map stored with the config_map that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/config_map#annotations DataKubernetesConfigMap#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the config_map. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/config_map#labels DataKubernetesConfigMap#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the config_map, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/config_map#name DataKubernetesConfigMap#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the config_map must be unique.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/config_map#namespace DataKubernetesConfigMap#namespace}
   */
   readonly namespace?: string;

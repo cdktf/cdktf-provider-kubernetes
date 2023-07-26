@@ -21,7 +21,7 @@ export interface DataKubernetesNodesConfig extends cdktf.TerraformMetaArguments 
   readonly id?: string;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/nodes#metadata DataKubernetesNodes#metadata}
   */
   readonly metadata?: DataKubernetesNodesMetadata;
@@ -617,7 +617,7 @@ export class DataKubernetesNodesNodesList extends cdktf.ComplexList {
 export interface DataKubernetesNodesMetadata {
   /**
   * Select nodes with these labels. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/nodes#labels DataKubernetesNodes#labels}
   */
   readonly labels: { [key: string]: string };

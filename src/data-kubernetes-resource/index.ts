@@ -14,25 +14,25 @@ import * as cdktf from 'cdktf';
 export interface DataKubernetesResourceConfig extends cdktf.TerraformMetaArguments {
   /**
   * The resource apiVersion.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resource#api_version DataKubernetesResource#api_version}
   */
   readonly apiVersion: string;
   /**
   * The resource kind.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resource#kind DataKubernetesResource#kind}
   */
   readonly kind: string;
   /**
   * The response from the API server.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resource#object DataKubernetesResource#object}
   */
   readonly object?: { [key: string]: any };
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resource#metadata DataKubernetesResource#metadata}
   */
   readonly metadata: DataKubernetesResourceMetadata;
@@ -40,13 +40,13 @@ export interface DataKubernetesResourceConfig extends cdktf.TerraformMetaArgumen
 export interface DataKubernetesResourceMetadata {
   /**
   * The resource name.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resource#name DataKubernetesResource#name}
   */
   readonly name: string;
   /**
   * The resource namespace.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/resource#namespace DataKubernetesResource#namespace}
   */
   readonly namespace?: string;

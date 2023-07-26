@@ -21,13 +21,13 @@ export interface RoleConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role#metadata Role#metadata}
   */
   readonly metadata: RoleMetadata;
   /**
   * rule block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role#rule Role#rule}
   */
   readonly rule: RoleRule[] | cdktf.IResolvable;
@@ -35,31 +35,31 @@ export interface RoleConfig extends cdktf.TerraformMetaArguments {
 export interface RoleMetadata {
   /**
   * An unstructured key value map stored with the role that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role#annotations Role#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role#generate_name Role#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the role. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role#labels Role#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the role, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role#name Role#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the role must be unique.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role#namespace Role#namespace}
   */
   readonly namespace?: string;
@@ -233,25 +233,25 @@ export class RoleMetadataOutputReference extends cdktf.ComplexObject {
 export interface RoleRule {
   /**
   * Name of the APIGroup that contains the resources
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role#api_groups Role#api_groups}
   */
   readonly apiGroups: string[];
   /**
   * White list of names that the rule applies to
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role#resource_names Role#resource_names}
   */
   readonly resourceNames?: string[];
   /**
   * List of resources that the rule applies to
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role#resources Role#resources}
   */
   readonly resources: string[];
   /**
   * List of Verbs that apply to ALL the ResourceKinds and AttributeRestrictions contained in this rule
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/role#verbs Role#verbs}
   */
   readonly verbs: string[];

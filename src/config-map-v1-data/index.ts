@@ -14,19 +14,19 @@ import * as cdktf from 'cdktf';
 export interface ConfigMapV1DataConfig extends cdktf.TerraformMetaArguments {
   /**
   * The data we want to add to the ConfigMap.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/config_map_v1_data#data ConfigMapV1Data#data}
   */
   readonly data: { [key: string]: string };
   /**
   * Set the name of the field manager for the specified labels.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/config_map_v1_data#field_manager ConfigMapV1Data#field_manager}
   */
   readonly fieldManager?: string;
   /**
   * Force overwriting data that is managed outside of Terraform.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/config_map_v1_data#force ConfigMapV1Data#force}
   */
   readonly force?: boolean | cdktf.IResolvable;
@@ -39,7 +39,7 @@ export interface ConfigMapV1DataConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/config_map_v1_data#metadata ConfigMapV1Data#metadata}
   */
   readonly metadata: ConfigMapV1DataMetadata;
@@ -47,13 +47,13 @@ export interface ConfigMapV1DataConfig extends cdktf.TerraformMetaArguments {
 export interface ConfigMapV1DataMetadata {
   /**
   * The name of the ConfigMap.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/config_map_v1_data#name ConfigMapV1Data#name}
   */
   readonly name: string;
   /**
   * The namespace of the ConfigMap.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/config_map_v1_data#namespace ConfigMapV1Data#namespace}
   */
   readonly namespace?: string;

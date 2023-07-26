@@ -21,13 +21,13 @@ export interface PodSecurityPolicyConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#metadata PodSecurityPolicy#metadata}
   */
   readonly metadata: PodSecurityPolicyMetadata;
   /**
   * spec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#spec PodSecurityPolicy#spec}
   */
   readonly spec: PodSecurityPolicySpec;
@@ -35,19 +35,19 @@ export interface PodSecurityPolicyConfig extends cdktf.TerraformMetaArguments {
 export interface PodSecurityPolicyMetadata {
   /**
   * An unstructured key value map stored with the podsecuritypolicy that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#annotations PodSecurityPolicy#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the podsecuritypolicy. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#labels PodSecurityPolicy#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the podsecuritypolicy, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#name PodSecurityPolicy#name}
   */
   readonly name?: string;
@@ -175,7 +175,7 @@ export class PodSecurityPolicyMetadataOutputReference extends cdktf.ComplexObjec
 export interface PodSecurityPolicySpecAllowedFlexVolumes {
   /**
   * driver is the name of the Flexvolume driver.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#driver PodSecurityPolicy#driver}
   */
   readonly driver: string;
@@ -273,13 +273,13 @@ export interface PodSecurityPolicySpecAllowedHostPaths {
   * pathPrefix is the path prefix that the host volume must match. It does not support `*`. Trailing slashes are trimmed when validating the path prefix with a host path.
 
 Examples: `/foo` would allow `/foo`, `/foo/` and `/foo/bar` `/foo` would not allow `/food` or `/etc/foo`
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#path_prefix PodSecurityPolicy#path_prefix}
   */
   readonly pathPrefix: string;
   /**
   * when set to true, will allow host volumes matching the pathPrefix only if all volume mounts are readOnly.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#read_only PodSecurityPolicy#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
@@ -398,13 +398,13 @@ export class PodSecurityPolicySpecAllowedHostPathsList extends cdktf.ComplexList
 export interface PodSecurityPolicySpecFsGroupRange {
   /**
   * max is the end of the range, inclusive.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
   */
   readonly max: number;
   /**
   * min is the start of the range, inclusive.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
   */
   readonly min: number;
@@ -520,13 +520,13 @@ export class PodSecurityPolicySpecFsGroupRangeList extends cdktf.ComplexList {
 export interface PodSecurityPolicySpecFsGroup {
   /**
   * rule is the strategy that will dictate what FSGroup is used in the SecurityContext.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
   */
   readonly rule: string;
   /**
   * range block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#range PodSecurityPolicy#range}
   */
   readonly range?: PodSecurityPolicySpecFsGroupRange[] | cdktf.IResolvable;
@@ -613,13 +613,13 @@ export class PodSecurityPolicySpecFsGroupOutputReference extends cdktf.ComplexOb
 export interface PodSecurityPolicySpecHostPorts {
   /**
   * max is the end of the range, inclusive.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
   */
   readonly max: number;
   /**
   * min is the start of the range, inclusive.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
   */
   readonly min: number;
@@ -735,13 +735,13 @@ export class PodSecurityPolicySpecHostPortsList extends cdktf.ComplexList {
 export interface PodSecurityPolicySpecRunAsGroupRange {
   /**
   * max is the end of the range, inclusive.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
   */
   readonly max: number;
   /**
   * min is the start of the range, inclusive.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
   */
   readonly min: number;
@@ -857,13 +857,13 @@ export class PodSecurityPolicySpecRunAsGroupRangeList extends cdktf.ComplexList 
 export interface PodSecurityPolicySpecRunAsGroup {
   /**
   * rule is the strategy that will dictate the allowable RunAsGroup values that may be set.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
   */
   readonly rule: string;
   /**
   * range block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#range PodSecurityPolicy#range}
   */
   readonly range?: PodSecurityPolicySpecRunAsGroupRange[] | cdktf.IResolvable;
@@ -950,13 +950,13 @@ export class PodSecurityPolicySpecRunAsGroupOutputReference extends cdktf.Comple
 export interface PodSecurityPolicySpecRunAsUserRange {
   /**
   * max is the end of the range, inclusive.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
   */
   readonly max: number;
   /**
   * min is the start of the range, inclusive.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
   */
   readonly min: number;
@@ -1072,13 +1072,13 @@ export class PodSecurityPolicySpecRunAsUserRangeList extends cdktf.ComplexList {
 export interface PodSecurityPolicySpecRunAsUser {
   /**
   * rule is the strategy that will dictate the allowable RunAsUser values that may be set.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
   */
   readonly rule: string;
   /**
   * range block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#range PodSecurityPolicy#range}
   */
   readonly range?: PodSecurityPolicySpecRunAsUserRange[] | cdktf.IResolvable;
@@ -1331,13 +1331,13 @@ export class PodSecurityPolicySpecSeLinuxSeLinuxOptionsList extends cdktf.Comple
 export interface PodSecurityPolicySpecSeLinux {
   /**
   * rule is the strategy that will dictate the allowable labels that may be set.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
   */
   readonly rule: string;
   /**
   * se_linux_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#se_linux_options PodSecurityPolicy#se_linux_options}
   */
   readonly seLinuxOptions?: PodSecurityPolicySpecSeLinuxSeLinuxOptions[] | cdktf.IResolvable;
@@ -1424,13 +1424,13 @@ export class PodSecurityPolicySpecSeLinuxOutputReference extends cdktf.ComplexOb
 export interface PodSecurityPolicySpecSupplementalGroupsRange {
   /**
   * max is the end of the range, inclusive.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
   */
   readonly max: number;
   /**
   * min is the start of the range, inclusive.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
   */
   readonly min: number;
@@ -1546,13 +1546,13 @@ export class PodSecurityPolicySpecSupplementalGroupsRangeList extends cdktf.Comp
 export interface PodSecurityPolicySpecSupplementalGroups {
   /**
   * rule is the strategy that will dictate what supplemental groups is used in the SecurityContext.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
   */
   readonly rule: string;
   /**
   * range block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#range PodSecurityPolicy#range}
   */
   readonly range?: PodSecurityPolicySpecSupplementalGroupsRange[] | cdktf.IResolvable;
@@ -1639,19 +1639,19 @@ export class PodSecurityPolicySpecSupplementalGroupsOutputReference extends cdkt
 export interface PodSecurityPolicySpec {
   /**
   * allowPrivilegeEscalation determines if a pod can request to allow privilege escalation. If unspecified, defaults to true.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#allow_privilege_escalation PodSecurityPolicy#allow_privilege_escalation}
   */
   readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * allowedCapabilities is a list of capabilities that can be requested to add to the container. Capabilities in this field may be added at the pod author's discretion. You must not list a capability in both allowedCapabilities and requiredDropCapabilities.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#allowed_capabilities PodSecurityPolicy#allowed_capabilities}
   */
   readonly allowedCapabilities?: string[];
   /**
   * AllowedProcMountTypes is an allowlist of allowed ProcMountTypes. Empty or nil indicates that only the DefaultProcMountType may be used. This requires the ProcMountType feature flag to be enabled.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#allowed_proc_mount_types PodSecurityPolicy#allowed_proc_mount_types}
   */
   readonly allowedProcMountTypes?: string[];
@@ -1659,19 +1659,19 @@ export interface PodSecurityPolicySpec {
   * allowedUnsafeSysctls is a list of explicitly allowed unsafe sysctls, defaults to none. Each entry is either a plain sysctl name or ends in "*" in which case it is considered as a prefix of allowed sysctls. Single * means all unsafe sysctls are allowed. Kubelet has to allowlist all allowed unsafe sysctls explicitly to avoid rejection.
 
 Examples: e.g. "foo/*" allows "foo/bar", "foo/baz", etc. e.g. "foo.*" allows "foo.bar", "foo.baz", etc.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#allowed_unsafe_sysctls PodSecurityPolicy#allowed_unsafe_sysctls}
   */
   readonly allowedUnsafeSysctls?: string[];
   /**
   * defaultAddCapabilities is the default set of capabilities that will be added to the container unless the pod spec specifically drops the capability.  You may not list a capability in both defaultAddCapabilities and requiredDropCapabilities. Capabilities added here are implicitly allowed, and need not be included in the allowedCapabilities list.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#default_add_capabilities PodSecurityPolicy#default_add_capabilities}
   */
   readonly defaultAddCapabilities?: string[];
   /**
   * defaultAllowPrivilegeEscalation controls the default setting for whether a process can gain more privileges than its parent process.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#default_allow_privilege_escalation PodSecurityPolicy#default_allow_privilege_escalation}
   */
   readonly defaultAllowPrivilegeEscalation?: boolean | cdktf.IResolvable;
@@ -1679,97 +1679,97 @@ Examples: e.g. "foo/*" allows "foo/bar", "foo/baz", etc. e.g. "foo.*" allows "fo
   * forbiddenSysctls is a list of explicitly forbidden sysctls, defaults to none. Each entry is either a plain sysctl name or ends in "*" in which case it is considered as a prefix of forbidden sysctls. Single * means all sysctls are forbidden.
 
 Examples: e.g. "foo/*" forbids "foo/bar", "foo/baz", etc. e.g. "foo.*" forbids "foo.bar", "foo.baz", etc.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#forbidden_sysctls PodSecurityPolicy#forbidden_sysctls}
   */
   readonly forbiddenSysctls?: string[];
   /**
   * hostIPC determines if the policy allows the use of HostIPC in the pod spec.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#host_ipc PodSecurityPolicy#host_ipc}
   */
   readonly hostIpc?: boolean | cdktf.IResolvable;
   /**
   * hostNetwork determines if the policy allows the use of HostNetwork in the pod spec.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#host_network PodSecurityPolicy#host_network}
   */
   readonly hostNetwork?: boolean | cdktf.IResolvable;
   /**
   * hostPID determines if the policy allows the use of HostPID in the pod spec.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#host_pid PodSecurityPolicy#host_pid}
   */
   readonly hostPid?: boolean | cdktf.IResolvable;
   /**
   * privileged determines if a pod can request to be run as privileged.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#privileged PodSecurityPolicy#privileged}
   */
   readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * readOnlyRootFilesystem when set to true will force containers to run with a read only root file system.  If the container specifically requests to run with a non-read only root file system the PSP should deny the pod. If set to false the container may run with a read only root file system if it wishes but it will not be forced to.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#read_only_root_filesystem PodSecurityPolicy#read_only_root_filesystem}
   */
   readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
   /**
   * requiredDropCapabilities are the capabilities that will be dropped from the container.  These are required to be dropped and cannot be added.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#required_drop_capabilities PodSecurityPolicy#required_drop_capabilities}
   */
   readonly requiredDropCapabilities?: string[];
   /**
   * volumes is an allowlist of volume plugins. Empty indicates that no volumes may be used. To allow all volumes you may use '*'.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#volumes PodSecurityPolicy#volumes}
   */
   readonly volumes?: string[];
   /**
   * allowed_flex_volumes block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#allowed_flex_volumes PodSecurityPolicy#allowed_flex_volumes}
   */
   readonly allowedFlexVolumes?: PodSecurityPolicySpecAllowedFlexVolumes[] | cdktf.IResolvable;
   /**
   * allowed_host_paths block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#allowed_host_paths PodSecurityPolicy#allowed_host_paths}
   */
   readonly allowedHostPaths?: PodSecurityPolicySpecAllowedHostPaths[] | cdktf.IResolvable;
   /**
   * fs_group block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#fs_group PodSecurityPolicy#fs_group}
   */
   readonly fsGroup: PodSecurityPolicySpecFsGroup;
   /**
   * host_ports block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#host_ports PodSecurityPolicy#host_ports}
   */
   readonly hostPorts?: PodSecurityPolicySpecHostPorts[] | cdktf.IResolvable;
   /**
   * run_as_group block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#run_as_group PodSecurityPolicy#run_as_group}
   */
   readonly runAsGroup?: PodSecurityPolicySpecRunAsGroup;
   /**
   * run_as_user block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#run_as_user PodSecurityPolicy#run_as_user}
   */
   readonly runAsUser: PodSecurityPolicySpecRunAsUser;
   /**
   * se_linux block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#se_linux PodSecurityPolicy#se_linux}
   */
   readonly seLinux?: PodSecurityPolicySpecSeLinux;
   /**
   * supplemental_groups block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod_security_policy#supplemental_groups PodSecurityPolicy#supplemental_groups}
   */
   readonly supplementalGroups: PodSecurityPolicySpecSupplementalGroups;

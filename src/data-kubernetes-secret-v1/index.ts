@@ -14,7 +14,7 @@ import * as cdktf from 'cdktf';
 export interface DataKubernetesSecretV1Config extends cdktf.TerraformMetaArguments {
   /**
   * A map of the secret data with values encoded in base64 format
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/secret_v1#binary_data DataKubernetesSecretV1#binary_data}
   */
   readonly binaryData?: { [key: string]: string };
@@ -27,7 +27,7 @@ export interface DataKubernetesSecretV1Config extends cdktf.TerraformMetaArgumen
   readonly id?: string;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/secret_v1#metadata DataKubernetesSecretV1#metadata}
   */
   readonly metadata: DataKubernetesSecretV1Metadata;
@@ -35,31 +35,31 @@ export interface DataKubernetesSecretV1Config extends cdktf.TerraformMetaArgumen
 export interface DataKubernetesSecretV1Metadata {
   /**
   * An unstructured key value map stored with the secret that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/secret_v1#annotations DataKubernetesSecretV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/secret_v1#generate_name DataKubernetesSecretV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the secret. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/secret_v1#labels DataKubernetesSecretV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the secret, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/secret_v1#name DataKubernetesSecretV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the secret must be unique.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/secret_v1#namespace DataKubernetesSecretV1#namespace}
   */
   readonly namespace?: string;

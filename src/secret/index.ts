@@ -14,13 +14,13 @@ import * as cdktf from 'cdktf';
 export interface SecretConfig extends cdktf.TerraformMetaArguments {
   /**
   * A map of the secret data in base64 encoding. Use this for binary data.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret#binary_data Secret#binary_data}
   */
   readonly binaryData?: { [key: string]: string };
   /**
   * A map of the secret data.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret#data Secret#data}
   */
   readonly data?: { [key: string]: string };
@@ -33,31 +33,31 @@ export interface SecretConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * Ensures that data stored in the Secret cannot be updated (only object metadata can be modified).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret#immutable Secret#immutable}
   */
   readonly immutable?: boolean | cdktf.IResolvable;
   /**
   * Type of secret
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret#type Secret#type}
   */
   readonly type?: string;
   /**
   * Terraform will wait for the service account token to be created.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret#wait_for_service_account_token Secret#wait_for_service_account_token}
   */
   readonly waitForServiceAccountToken?: boolean | cdktf.IResolvable;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret#metadata Secret#metadata}
   */
   readonly metadata: SecretMetadata;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret#timeouts Secret#timeouts}
   */
   readonly timeouts?: SecretTimeouts;
@@ -65,31 +65,31 @@ export interface SecretConfig extends cdktf.TerraformMetaArguments {
 export interface SecretMetadata {
   /**
   * An unstructured key value map stored with the secret that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret#annotations Secret#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret#generate_name Secret#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the secret. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret#labels Secret#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the secret, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret#name Secret#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the secret must be unique.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret#namespace Secret#namespace}
   */
   readonly namespace?: string;

@@ -14,7 +14,7 @@ import * as cdktf from 'cdktf';
 export interface EndpointSliceV1Config extends cdktf.TerraformMetaArguments {
   /**
   * address_type specifies the type of address carried by this EndpointSlice. All addresses in this slice must be the same type. This field is immutable after creation.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#address_type EndpointSliceV1#address_type}
   */
   readonly addressType: string;
@@ -27,19 +27,19 @@ export interface EndpointSliceV1Config extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * endpoint block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#endpoint EndpointSliceV1#endpoint}
   */
   readonly endpoint: EndpointSliceV1Endpoint[] | cdktf.IResolvable;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#metadata EndpointSliceV1#metadata}
   */
   readonly metadata: EndpointSliceV1Metadata;
   /**
   * port block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#port EndpointSliceV1#port}
   */
   readonly port: EndpointSliceV1Port[] | cdktf.IResolvable;
@@ -47,19 +47,19 @@ export interface EndpointSliceV1Config extends cdktf.TerraformMetaArguments {
 export interface EndpointSliceV1EndpointCondition {
   /**
   * ready indicates that this endpoint is prepared to receive traffic, according to whatever system is managing the endpoint.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#ready EndpointSliceV1#ready}
   */
   readonly ready?: boolean | cdktf.IResolvable;
   /**
   * serving is identical to ready except that it is set regardless of the terminating state of endpoints.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#serving EndpointSliceV1#serving}
   */
   readonly serving?: boolean | cdktf.IResolvable;
   /**
   * terminating indicates that this endpoint is terminating.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#terminating EndpointSliceV1#terminating}
   */
   readonly terminating?: boolean | cdktf.IResolvable;
@@ -172,31 +172,31 @@ export class EndpointSliceV1EndpointConditionOutputReference extends cdktf.Compl
 export interface EndpointSliceV1EndpointTargetRef {
   /**
   * If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2].
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#field_path EndpointSliceV1#field_path}
   */
   readonly fieldPath?: string;
   /**
   * Name of the referent.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#name EndpointSliceV1#name}
   */
   readonly name: string;
   /**
   * Namespace of the referent.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#namespace EndpointSliceV1#namespace}
   */
   readonly namespace?: string;
   /**
   * Specific resourceVersion to which this reference is made, if any.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#resource_version EndpointSliceV1#resource_version}
   */
   readonly resourceVersion?: string;
   /**
   * If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2].
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#uid EndpointSliceV1#uid}
   */
   readonly uid?: string;
@@ -352,37 +352,37 @@ export class EndpointSliceV1EndpointTargetRefOutputReference extends cdktf.Compl
 export interface EndpointSliceV1Endpoint {
   /**
   * addresses of this endpoint. The contents of this field are interpreted according to the corresponding EndpointSlice addressType field.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#addresses EndpointSliceV1#addresses}
   */
   readonly addresses: string[];
   /**
   * hostname of this endpoint. This field may be used by consumers of endpoints to distinguish endpoints from each other.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#hostname EndpointSliceV1#hostname}
   */
   readonly hostname?: string;
   /**
   * nodeName represents the name of the Node hosting this endpoint. This can be used to determine endpoints local to a Node.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#node_name EndpointSliceV1#node_name}
   */
   readonly nodeName?: string;
   /**
   * zone is the name of the Zone this endpoint exists in.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#zone EndpointSliceV1#zone}
   */
   readonly zone?: string;
   /**
   * condition block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#condition EndpointSliceV1#condition}
   */
   readonly condition: EndpointSliceV1EndpointCondition;
   /**
   * target_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#target_ref EndpointSliceV1#target_ref}
   */
   readonly targetRef?: EndpointSliceV1EndpointTargetRef;
@@ -590,31 +590,31 @@ export class EndpointSliceV1EndpointList extends cdktf.ComplexList {
 export interface EndpointSliceV1Metadata {
   /**
   * An unstructured key value map stored with the endpoint_slice that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#annotations EndpointSliceV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#generate_name EndpointSliceV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the endpoint_slice. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#labels EndpointSliceV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the endpoint_slice, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#name EndpointSliceV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the endpoint_slice must be unique.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#namespace EndpointSliceV1#namespace}
   */
   readonly namespace?: string;
@@ -788,25 +788,25 @@ export class EndpointSliceV1MetadataOutputReference extends cdktf.ComplexObject 
 export interface EndpointSliceV1Port {
   /**
   * The application protocol for this port. This is used as a hint for implementations to offer richer behavior for protocols that they understand.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#app_protocol EndpointSliceV1#app_protocol}
   */
   readonly appProtocol: string;
   /**
   * name represents the name of this port. All ports in an EndpointSlice must have a unique name.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#name EndpointSliceV1#name}
   */
   readonly name?: string;
   /**
   * port represents the port number of the endpoint.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#port EndpointSliceV1#port}
   */
   readonly port: string;
   /**
   * protocol represents the IP protocol for this port. Must be UDP, TCP, or SCTP. Default is TCP.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/endpoint_slice_v1#protocol EndpointSliceV1#protocol}
   */
   readonly protocol?: string;

@@ -27,25 +27,25 @@ export interface StatefulSetV1Config extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * Wait for the rollout of the stateful set to complete. Defaults to true.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#wait_for_rollout StatefulSetV1#wait_for_rollout}
   */
   readonly waitForRollout?: boolean | cdktf.IResolvable;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#metadata StatefulSetV1#metadata}
   */
   readonly metadata: StatefulSetV1Metadata;
   /**
   * spec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#spec StatefulSetV1#spec}
   */
   readonly spec: StatefulSetV1Spec;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/stateful_set_v1#timeouts StatefulSetV1#timeouts}
   */
   readonly timeouts?: StatefulSetV1Timeouts;
