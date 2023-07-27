@@ -13,7 +13,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/datakubernetesresources"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesresources"
 
 datakubernetesresources.NewDataKubernetesResources(scope Construct, id *string, config DataKubernetesResourcesConfig) DataKubernetesResources
 ```
@@ -305,7 +305,7 @@ func ResetObjects()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/datakubernetesresources"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesresources"
 
 datakubernetesresources.DataKubernetesResources_IsConstruct(x interface{}) *bool
 ```
@@ -337,7 +337,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/datakubernetesresources"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesresources"
 
 datakubernetesresources.DataKubernetesResources_IsTerraformElement(x interface{}) *bool
 ```
@@ -351,7 +351,7 @@ datakubernetesresources.DataKubernetesResources_IsTerraformElement(x interface{}
 ##### `IsTerraformDataSource` <a name="IsTerraformDataSource" id="@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.isTerraformDataSource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/datakubernetesresources"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesresources"
 
 datakubernetesresources.DataKubernetesResources_IsTerraformDataSource(x interface{}) *bool
 ```
@@ -682,7 +682,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResourcesConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/datakubernetesresources"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesresources"
 
 &datakubernetesresources.DataKubernetesResourcesConfig {
 	Connection: interface{},

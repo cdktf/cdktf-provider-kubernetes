@@ -13,7 +13,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.annotations.Annotations.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/annotations"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/annotations"
 
 annotations.NewAnnotations(scope Construct, id *string, config AnnotationsConfig) Annotations
 ```
@@ -318,7 +318,7 @@ func ResetTemplateAnnotations()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.annotations.Annotations.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/annotations"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/annotations"
 
 annotations.Annotations_IsConstruct(x interface{}) *bool
 ```
@@ -350,7 +350,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.annotations.Annotations.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/annotations"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/annotations"
 
 annotations.Annotations_IsTerraformElement(x interface{}) *bool
 ```
@@ -364,7 +364,7 @@ annotations.Annotations_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.annotations.Annotations.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/annotations"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/annotations"
 
 annotations.Annotations_IsTerraformResource(x interface{}) *bool
 ```
@@ -739,7 +739,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.annotations.AnnotationsConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/annotations"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/annotations"
 
 &annotations.AnnotationsConfig {
 	Connection: interface{},
@@ -751,7 +751,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/annotations"
 	Provisioners: *[]interface{},
 	ApiVersion: *string,
 	Kind: *string,
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8.annotations.AnnotationsMetadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.annotations.AnnotationsMetadata,
 	Annotations: *map[string]*string,
 	FieldManager: *string,
 	Force: interface{},
@@ -970,7 +970,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.annotations.AnnotationsMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/annotations"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/annotations"
 
 &annotations.AnnotationsMetadata {
 	Name: *string,
@@ -1022,7 +1022,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.annotations.AnnotationsMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/annotations"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/annotations"
 
 annotations.NewAnnotationsMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) AnnotationsMetadataOutputReference
 ```
