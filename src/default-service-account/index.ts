@@ -1,9 +1,4 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/default_service_account
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -15,11 +10,11 @@ export interface DefaultServiceAccountConfig extends cdktf.TerraformMetaArgument
   /**
   * Enable automatic mounting of the service account token
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account#automount_service_account_token DefaultServiceAccount#automount_service_account_token}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/default_service_account#automount_service_account_token DefaultServiceAccount#automount_service_account_token}
   */
   readonly automountServiceAccountToken?: boolean | cdktf.IResolvable;
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account#id DefaultServiceAccount#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/default_service_account#id DefaultServiceAccount#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -28,33 +23,33 @@ export interface DefaultServiceAccountConfig extends cdktf.TerraformMetaArgument
   /**
   * image_pull_secret block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account#image_pull_secret DefaultServiceAccount#image_pull_secret}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/default_service_account#image_pull_secret DefaultServiceAccount#image_pull_secret}
   */
   readonly imagePullSecret?: DefaultServiceAccountImagePullSecret[] | cdktf.IResolvable;
   /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account#metadata DefaultServiceAccount#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/default_service_account#metadata DefaultServiceAccount#metadata}
   */
   readonly metadata: DefaultServiceAccountMetadata;
   /**
   * secret block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account#secret DefaultServiceAccount#secret}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/default_service_account#secret DefaultServiceAccount#secret}
   */
   readonly secret?: DefaultServiceAccountSecret[] | cdktf.IResolvable;
   /**
   * timeouts block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account#timeouts DefaultServiceAccount#timeouts}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/default_service_account#timeouts DefaultServiceAccount#timeouts}
   */
   readonly timeouts?: DefaultServiceAccountTimeouts;
 }
 export interface DefaultServiceAccountImagePullSecret {
   /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account#name DefaultServiceAccount#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/default_service_account#name DefaultServiceAccount#name}
   */
   readonly name?: string;
 }
@@ -151,27 +146,27 @@ export class DefaultServiceAccountImagePullSecretList extends cdktf.ComplexList 
 }
 export interface DefaultServiceAccountMetadata {
   /**
-  * An unstructured key value map stored with the service account that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
+  * An unstructured key value map stored with the service account that may be used to store arbitrary metadata. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account#annotations DefaultServiceAccount#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/default_service_account#annotations DefaultServiceAccount#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
-  * Map of string keys and values that can be used to organize and categorize (scope and select) the service account. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+  * Map of string keys and values that can be used to organize and categorize (scope and select) the service account. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account#labels DefaultServiceAccount#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/default_service_account#labels DefaultServiceAccount#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
-  * Name of the service account, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * Name of the service account, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account#name DefaultServiceAccount#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/default_service_account#name DefaultServiceAccount#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the service account must be unique.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account#namespace DefaultServiceAccount#namespace}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/default_service_account#namespace DefaultServiceAccount#namespace}
   */
   readonly namespace?: string;
 }
@@ -320,9 +315,9 @@ export class DefaultServiceAccountMetadataOutputReference extends cdktf.ComplexO
 }
 export interface DefaultServiceAccountSecret {
   /**
-  * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account#name DefaultServiceAccount#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/default_service_account#name DefaultServiceAccount#name}
   */
   readonly name?: string;
 }
@@ -419,7 +414,7 @@ export class DefaultServiceAccountSecretList extends cdktf.ComplexList {
 }
 export interface DefaultServiceAccountTimeouts {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account#create DefaultServiceAccount#create}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/default_service_account#create DefaultServiceAccount#create}
   */
   readonly create?: string;
 }
@@ -494,7 +489,7 @@ export class DefaultServiceAccountTimeoutsOutputReference extends cdktf.ComplexO
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account kubernetes_default_service_account}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/default_service_account kubernetes_default_service_account}
 */
 export class DefaultServiceAccount extends cdktf.TerraformResource {
 
@@ -508,7 +503,7 @@ export class DefaultServiceAccount extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/default_service_account kubernetes_default_service_account} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/default_service_account kubernetes_default_service_account} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -519,7 +514,7 @@ export class DefaultServiceAccount extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_default_service_account',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.22.0',
+        providerVersion: '2.23.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

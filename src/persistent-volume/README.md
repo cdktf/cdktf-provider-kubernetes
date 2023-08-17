@@ -1,3 +1,3 @@
 # `kubernetes_persistent_volume`
 
-Refer to the Terraform Registory for docs: [`kubernetes_persistent_volume`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/persistent_volume).
+Refer to the Terraform Registory for docs: [`kubernetes_persistent_volume`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/persistent_volume).
