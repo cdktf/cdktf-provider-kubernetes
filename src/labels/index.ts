@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -15,23 +15,23 @@ export interface LabelsConfig extends cdktf.TerraformMetaArguments {
   /**
   * The apiVersion of the resource to label.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels#api_version Labels#api_version}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#api_version Labels#api_version}
   */
   readonly apiVersion: string;
   /**
   * Set the name of the field manager for the specified labels.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels#field_manager Labels#field_manager}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#field_manager Labels#field_manager}
   */
   readonly fieldManager?: string;
   /**
   * Force overwriting labels that were created or edited outside of Terraform.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels#force Labels#force}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#force Labels#force}
   */
   readonly force?: boolean | cdktf.IResolvable;
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels#id Labels#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#id Labels#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -40,19 +40,19 @@ export interface LabelsConfig extends cdktf.TerraformMetaArguments {
   /**
   * The kind of the resource to label.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels#kind Labels#kind}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#kind Labels#kind}
   */
   readonly kind: string;
   /**
   * A map of labels to apply to the resource.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels#labels Labels#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#labels Labels#labels}
   */
   readonly labels: { [key: string]: string };
   /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels#metadata Labels#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#metadata Labels#metadata}
   */
   readonly metadata: LabelsMetadata;
 }
@@ -60,13 +60,13 @@ export interface LabelsMetadata {
   /**
   * The name of the resource.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels#name Labels#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#name Labels#name}
   */
   readonly name: string;
   /**
   * The namespace of the resource.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels#namespace Labels#namespace}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#namespace Labels#namespace}
   */
   readonly namespace?: string;
 }
@@ -151,7 +151,7 @@ export class LabelsMetadataOutputReference extends cdktf.ComplexObject {
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels kubernetes_labels}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels kubernetes_labels}
 */
 export class Labels extends cdktf.TerraformResource {
 
@@ -165,7 +165,7 @@ export class Labels extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/labels kubernetes_labels} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels kubernetes_labels} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -176,7 +176,7 @@ export class Labels extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_labels',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.22.0',
+        providerVersion: '2.23.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

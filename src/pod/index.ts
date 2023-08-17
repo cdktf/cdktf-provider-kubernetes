@@ -19,34 +19,40 @@ import { Construct } from 'constructs';
 import * as cdktf from 'cdktf';
 export interface PodConfig extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#id Pod#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/pod#id Pod#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
   */
   readonly id?: string;
   /**
+  * A list of the pod phases that indicate whether it was successfully created. Options: "Pending", "Running", "Succeeded", "Failed", "Unknown". Default: "Running". More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-phase
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/pod#target_state Pod#target_state}
+  */
+  readonly targetState?: string[];
+  /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#metadata Pod#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/pod#metadata Pod#metadata}
   */
   readonly metadata: PodMetadata;
   /**
   * spec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#spec Pod#spec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/pod#spec Pod#spec}
   */
   readonly spec: PodSpec;
   /**
   * timeouts block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod#timeouts Pod#timeouts}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/pod#timeouts Pod#timeouts}
   */
   readonly timeouts?: PodTimeouts;
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod kubernetes_pod}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/pod kubernetes_pod}
 */
 export class Pod extends cdktf.TerraformResource {
 
@@ -60,7 +66,7 @@ export class Pod extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/pod kubernetes_pod} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/pod kubernetes_pod} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -71,7 +77,7 @@ export class Pod extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_pod',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.22.0',
+        providerVersion: '2.23.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
@@ -83,6 +89,7 @@ export class Pod extends cdktf.TerraformResource {
       forEach: config.forEach
     });
     this._id = config.id;
+    this._targetState = config.targetState;
     this._metadata.internalValue = config.metadata;
     this._spec.internalValue = config.spec;
     this._timeouts.internalValue = config.timeouts;
@@ -106,6 +113,22 @@ export class Pod extends cdktf.TerraformResource {
   // Temporarily expose input value. Use with caution.
   public get idInput() {
     return this._id;
+  }
+
+  // target_state - computed: false, optional: true, required: false
+  private _targetState?: string[]; 
+  public get targetState() {
+    return this.getListAttribute('target_state');
+  }
+  public set targetState(value: string[]) {
+    this._targetState = value;
+  }
+  public resetTargetState() {
+    this._targetState = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get targetStateInput() {
+    return this._targetState;
   }
 
   // metadata - computed: false, optional: false, required: true
@@ -157,6 +180,7 @@ export class Pod extends cdktf.TerraformResource {
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
       id: cdktf.stringToTerraform(this._id),
+      target_state: cdktf.listMapper(cdktf.stringToTerraform, false)(this._targetState),
       metadata: podMetadataToTerraform(this._metadata.internalValue),
       spec: podSpecToTerraform(this._spec.internalValue),
       timeouts: podTimeoutsToTerraform(this._timeouts.internalValue),

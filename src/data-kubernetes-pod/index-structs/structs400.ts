@@ -3512,6 +3512,515 @@ export class DataKubernetesPodSpecVolumeEmptyDirList extends cdktf.ComplexList {
     return new DataKubernetesPodSpecVolumeEmptyDirOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
+export interface DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateMetadata {
+}
+
+export function dataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateMetadataToTerraform(struct?: DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateMetadataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateMetadata | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateMetadata | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
+
+  // annotations - computed: true, optional: false, required: false
+  private _annotations = new cdktf.StringMap(this, "annotations");
+  public get annotations() {
+    return this._annotations;
+  }
+
+  // labels - computed: true, optional: false, required: false
+  private _labels = new cdktf.StringMap(this, "labels");
+  public get labels() {
+    return this._labels;
+  }
+}
+
+export class DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateMetadataList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateMetadataOutputReference {
+    return new DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateMetadataOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecResources {
+}
+
+export function dataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecResourcesToTerraform(struct?: DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecResources): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecResourcesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecResources | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecResources | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
+
+  // limits - computed: true, optional: false, required: false
+  private _limits = new cdktf.StringMap(this, "limits");
+  public get limits() {
+    return this._limits;
+  }
+
+  // requests - computed: true, optional: false, required: false
+  private _requests = new cdktf.StringMap(this, "requests");
+  public get requests() {
+    return this._requests;
+  }
+}
+
+export class DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecResourcesList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecResourcesOutputReference {
+    return new DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecResourcesOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelectorMatchExpressions {
+}
+
+export function dataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelectorMatchExpressionsToTerraform(struct?: DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelectorMatchExpressions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelectorMatchExpressions | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelectorMatchExpressions | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
+
+  // key - computed: true, optional: false, required: false
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+
+  // operator - computed: true, optional: false, required: false
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+
+  // values - computed: true, optional: false, required: false
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+}
+
+export class DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelectorMatchExpressionsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelectorMatchExpressionsOutputReference {
+    return new DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelector {
+}
+
+export function dataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelectorToTerraform(struct?: DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelector): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelector | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelector | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
+
+  // match_expressions - computed: true, optional: false, required: false
+  private _matchExpressions = new DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelectorMatchExpressionsList(this, "match_expressions", false);
+  public get matchExpressions() {
+    return this._matchExpressions;
+  }
+
+  // match_labels - computed: true, optional: false, required: false
+  private _matchLabels = new cdktf.StringMap(this, "match_labels");
+  public get matchLabels() {
+    return this._matchLabels;
+  }
+}
+
+export class DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelectorList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelectorOutputReference {
+    return new DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelectorOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpec {
+}
+
+export function dataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecToTerraform(struct?: DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpec | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpec | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
+
+  // access_modes - computed: true, optional: false, required: false
+  public get accessModes() {
+    return cdktf.Fn.tolist(this.getListAttribute('access_modes'));
+  }
+
+  // resources - computed: true, optional: false, required: false
+  private _resources = new DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecResourcesList(this, "resources", false);
+  public get resources() {
+    return this._resources;
+  }
+
+  // selector - computed: true, optional: false, required: false
+  private _selector = new DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecSelectorList(this, "selector", false);
+  public get selector() {
+    return this._selector;
+  }
+
+  // storage_class_name - computed: true, optional: false, required: false
+  public get storageClassName() {
+    return this.getStringAttribute('storage_class_name');
+  }
+
+  // volume_name - computed: true, optional: false, required: false
+  public get volumeName() {
+    return this.getStringAttribute('volume_name');
+  }
+}
+
+export class DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecOutputReference {
+    return new DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplate {
+}
+
+export function dataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateToTerraform(struct?: DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplate): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplate | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplate | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
+
+  // metadata - computed: true, optional: false, required: false
+  private _metadata = new DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateMetadataList(this, "metadata", false);
+  public get metadata() {
+    return this._metadata;
+  }
+
+  // spec - computed: true, optional: false, required: false
+  private _spec = new DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateSpecList(this, "spec", false);
+  public get spec() {
+    return this._spec;
+  }
+}
+
+export class DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateOutputReference {
+    return new DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataKubernetesPodSpecVolumeEphemeral {
+}
+
+export function dataKubernetesPodSpecVolumeEphemeralToTerraform(struct?: DataKubernetesPodSpecVolumeEphemeral): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class DataKubernetesPodSpecVolumeEphemeralOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataKubernetesPodSpecVolumeEphemeral | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataKubernetesPodSpecVolumeEphemeral | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
+
+  // volume_claim_template - computed: true, optional: false, required: false
+  private _volumeClaimTemplate = new DataKubernetesPodSpecVolumeEphemeralVolumeClaimTemplateList(this, "volume_claim_template", false);
+  public get volumeClaimTemplate() {
+    return this._volumeClaimTemplate;
+  }
+}
+
+export class DataKubernetesPodSpecVolumeEphemeralList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataKubernetesPodSpecVolumeEphemeralOutputReference {
+    return new DataKubernetesPodSpecVolumeEphemeralOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface DataKubernetesPodSpecVolumeFc {
 }
 
@@ -5860,6 +6369,12 @@ export class DataKubernetesPodSpecVolumeOutputReference extends cdktf.ComplexObj
     return this._emptyDir;
   }
 
+  // ephemeral - computed: true, optional: false, required: false
+  private _ephemeral = new DataKubernetesPodSpecVolumeEphemeralList(this, "ephemeral", false);
+  public get ephemeral() {
+    return this._ephemeral;
+  }
+
   // fc - computed: true, optional: false, required: false
   private _fc = new DataKubernetesPodSpecVolumeFcList(this, "fc", false);
   public get fc() {
@@ -6204,33 +6719,33 @@ export class DataKubernetesPodSpecList extends cdktf.ComplexList {
 }
 export interface DataKubernetesPodMetadata {
   /**
-  * An unstructured key value map stored with the pod that may be used to store arbitrary metadata. More info: http://kubernetes.io/docs/user-guide/annotations
+  * An unstructured key value map stored with the pod that may be used to store arbitrary metadata. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/pod#annotations DataKubernetesPod#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/pod#annotations DataKubernetesPod#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
-  * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
+  * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/pod#generate_name DataKubernetesPod#generate_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/pod#generate_name DataKubernetesPod#generate_name}
   */
   readonly generateName?: string;
   /**
-  * Map of string keys and values that can be used to organize and categorize (scope and select) the pod. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+  * Map of string keys and values that can be used to organize and categorize (scope and select) the pod. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/pod#labels DataKubernetesPod#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/pod#labels DataKubernetesPod#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
-  * Name of the pod, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  * Name of the pod, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/pod#name DataKubernetesPod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/pod#name DataKubernetesPod#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the pod must be unique.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/data-sources/pod#namespace DataKubernetesPod#namespace}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/pod#namespace DataKubernetesPod#namespace}
   */
   readonly namespace?: string;
 }

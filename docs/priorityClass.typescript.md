@@ -1,6 +1,6 @@
 # `kubernetes_priority_class`
 
-Refer to the Terraform Registory for docs: [`kubernetes_priority_class`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/priority_class).
+Refer to the Terraform Registory for docs: [`kubernetes_priority_class`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/priority_class).
 
 # `priorityClass` Submodule <a name="`priorityClass` Submodule" id="@cdktf/provider-kubernetes.priorityClass"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`kubernetes_priority_class`](https:/
 
 ### PriorityClass <a name="PriorityClass" id="@cdktf/provider-kubernetes.priorityClass.PriorityClass"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/priority_class kubernetes_priority_class}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/priority_class kubernetes_priority_class}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.priorityClass.PriorityClass.Initializer"></a>
 
@@ -708,7 +708,7 @@ const priorityClassConfig: priorityClass.PriorityClassConfig = { ... }
 | <code><a href="#@cdktf/provider-kubernetes.priorityClass.PriorityClassConfig.property.value">value</a></code> | <code>number</code> | The value of this priority class. |
 | <code><a href="#@cdktf/provider-kubernetes.priorityClass.PriorityClassConfig.property.description">description</a></code> | <code>string</code> | An arbitrary string that usually provides guidelines on when this priority class should be used. |
 | <code><a href="#@cdktf/provider-kubernetes.priorityClass.PriorityClassConfig.property.globalDefault">globalDefault</a></code> | <code>boolean \| cdktf.IResolvable</code> | Specifies whether this PriorityClass should be considered as the default priority for pods that do not have any priority class. |
-| <code><a href="#@cdktf/provider-kubernetes.priorityClass.PriorityClassConfig.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/priority_class#id PriorityClass#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.priorityClass.PriorityClassConfig.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/priority_class#id PriorityClass#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.priorityClass.PriorityClassConfig.property.preemptionPolicy">preemptionPolicy</a></code> | <code>string</code> | PreemptionPolicy is the Policy for preempting pods with lower priority. One of Never, PreemptLowerPriority. Defaults to PreemptLowerPriority if unset. |
 
 ---
@@ -793,7 +793,7 @@ public readonly metadata: PriorityClassMetadata;
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/priority_class#metadata PriorityClass#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/priority_class#metadata PriorityClass#metadata}
 
 ---
 
@@ -809,7 +809,7 @@ The value of this priority class.
 
 This is the actual priority that pods receive when they have the name of this class in their pod spec.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/priority_class#value PriorityClass#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/priority_class#value PriorityClass#value}
 
 ---
 
@@ -823,7 +823,7 @@ public readonly description: string;
 
 An arbitrary string that usually provides guidelines on when this priority class should be used.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/priority_class#description PriorityClass#description}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/priority_class#description PriorityClass#description}
 
 ---
 
@@ -839,7 +839,7 @@ Specifies whether this PriorityClass should be considered as the default priorit
 
 Only one PriorityClass can be marked as `globalDefault`. However, if more than one PriorityClasses exists with their `globalDefault` field set to true, the smallest value of such global default PriorityClasses will be used as the default priority.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/priority_class#global_default PriorityClass#global_default}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/priority_class#global_default PriorityClass#global_default}
 
 ---
 
@@ -851,7 +851,7 @@ public readonly id: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/priority_class#id PriorityClass#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/priority_class#id PriorityClass#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -868,7 +868,7 @@ public readonly preemptionPolicy: string;
 
 PreemptionPolicy is the Policy for preempting pods with lower priority. One of Never, PreemptLowerPriority. Defaults to PreemptLowerPriority if unset.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/priority_class#preemption_policy PriorityClass#preemption_policy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/priority_class#preemption_policy PriorityClass#preemption_policy}
 
 ---
 
@@ -889,7 +889,7 @@ const priorityClassMetadata: priorityClass.PriorityClassMetadata = { ... }
 | <code><a href="#@cdktf/provider-kubernetes.priorityClass.PriorityClassMetadata.property.annotations">annotations</a></code> | <code>{[ key: string ]: string}</code> | An unstructured key value map stored with the priority class that may be used to store arbitrary metadata. |
 | <code><a href="#@cdktf/provider-kubernetes.priorityClass.PriorityClassMetadata.property.generateName">generateName</a></code> | <code>string</code> | Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. |
 | <code><a href="#@cdktf/provider-kubernetes.priorityClass.PriorityClassMetadata.property.labels">labels</a></code> | <code>{[ key: string ]: string}</code> | Map of string keys and values that can be used to organize and categorize (scope and select) the priority class. |
-| <code><a href="#@cdktf/provider-kubernetes.priorityClass.PriorityClassMetadata.property.name">name</a></code> | <code>string</code> | Name of the priority class, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names. |
+| <code><a href="#@cdktf/provider-kubernetes.priorityClass.PriorityClassMetadata.property.name">name</a></code> | <code>string</code> | Name of the priority class, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names. |
 
 ---
 
@@ -903,9 +903,9 @@ public readonly annotations: {[ key: string ]: string};
 
 An unstructured key value map stored with the priority class that may be used to store arbitrary metadata.
 
-More info: http://kubernetes.io/docs/user-guide/annotations
+More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/priority_class#annotations PriorityClass#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/priority_class#annotations PriorityClass#annotations}
 
 ---
 
@@ -919,9 +919,9 @@ public readonly generateName: string;
 
 Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided.
 
-This value will also be combined with a unique suffix. Read more: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
+This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/priority_class#generate_name PriorityClass#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/priority_class#generate_name PriorityClass#generate_name}
 
 ---
 
@@ -935,9 +935,9 @@ public readonly labels: {[ key: string ]: string};
 
 Map of string keys and values that can be used to organize and categorize (scope and select) the priority class.
 
-May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/priority_class#labels PriorityClass#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/priority_class#labels PriorityClass#labels}
 
 ---
 
@@ -949,9 +949,9 @@ public readonly name: string;
 
 - *Type:* string
 
-Name of the priority class, must be unique. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names.
+Name of the priority class, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/priority_class#name PriorityClass#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/priority_class#name PriorityClass#name}
 
 ---
 
