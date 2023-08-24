@@ -13,7 +13,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpoints.Endpoints.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpoints"
 
 endpoints.NewEndpoints(scope Construct, id *string, config EndpointsConfig) Endpoints
 ```
@@ -310,7 +310,7 @@ func ResetSubset()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.endpoints.Endpoints.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpoints"
 
 endpoints.Endpoints_IsConstruct(x interface{}) *bool
 ```
@@ -342,7 +342,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.endpoints.Endpoints.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpoints"
 
 endpoints.Endpoints_IsTerraformElement(x interface{}) *bool
 ```
@@ -356,7 +356,7 @@ endpoints.Endpoints_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.endpoints.Endpoints.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpoints"
 
 endpoints.Endpoints_IsTerraformResource(x interface{}) *bool
 ```
@@ -621,7 +621,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.endpoints.EndpointsConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpoints"
 
 &endpoints.EndpointsConfig {
 	Connection: interface{},
@@ -631,7 +631,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8.endpoints.EndpointsMetadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.endpoints.EndpointsMetadata,
 	Id: *string,
 	Subset: interface{},
 }
@@ -772,7 +772,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.endpoints.EndpointsMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpoints"
 
 &endpoints.EndpointsMetadata {
 	Annotations: *map[string]*string,
@@ -876,7 +876,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.endpoints.EndpointsSubset.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpoints"
 
 &endpoints.EndpointsSubset {
 	Address: interface{},
@@ -942,7 +942,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.endpoints.EndpointsSubsetAddress.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpoints"
 
 &endpoints.EndpointsSubsetAddress {
 	Ip: *string,
@@ -1008,7 +1008,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.endpoints.EndpointsSubsetNotReadyAddress.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpoints"
 
 &endpoints.EndpointsSubsetNotReadyAddress {
 	Ip: *string,
@@ -1074,7 +1074,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.endpoints.EndpointsSubsetPort.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpoints"
 
 &endpoints.EndpointsSubsetPort {
 	Port: *f64,
@@ -1144,7 +1144,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpoints.EndpointsMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpoints"
 
 endpoints.NewEndpointsMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) EndpointsMetadataOutputReference
 ```
@@ -1571,7 +1571,7 @@ func InternalValue() EndpointsMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpoints.EndpointsSubsetAddressList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpoints"
 
 endpoints.NewEndpointsSubsetAddressList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) EndpointsSubsetAddressList
 ```
@@ -1714,7 +1714,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpoints.EndpointsSubsetAddressOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpoints"
 
 endpoints.NewEndpointsSubsetAddressOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) EndpointsSubsetAddressOutputReference
 ```
@@ -2061,7 +2061,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpoints.EndpointsSubsetList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpoints"
 
 endpoints.NewEndpointsSubsetList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) EndpointsSubsetList
 ```
@@ -2204,7 +2204,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpoints.EndpointsSubsetNotReadyAddressList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpoints"
 
 endpoints.NewEndpointsSubsetNotReadyAddressList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) EndpointsSubsetNotReadyAddressList
 ```
@@ -2347,7 +2347,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpoints.EndpointsSubsetNotReadyAddressOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpoints"
 
 endpoints.NewEndpointsSubsetNotReadyAddressOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) EndpointsSubsetNotReadyAddressOutputReference
 ```
@@ -2694,7 +2694,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpoints.EndpointsSubsetOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpoints"
 
 endpoints.NewEndpointsSubsetOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) EndpointsSubsetOutputReference
 ```
@@ -3087,7 +3087,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpoints.EndpointsSubsetPortList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpoints"
 
 endpoints.NewEndpointsSubsetPortList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) EndpointsSubsetPortList
 ```
@@ -3230,7 +3230,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpoints.EndpointsSubsetPortOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v8/endpoints"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpoints"
 
 endpoints.NewEndpointsSubsetPortOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) EndpointsSubsetPortOutputReference
 ```
