@@ -1444,10 +1444,11 @@ match for path p if every p is an element-wise prefix of p of the
 request path. Note that if the last element of the path is a substring
 of the last element in request path, it is not a match (e.g. /foo/bar
 matches /foo/bar/baz, but does not match /foo/barbaz).
-ImplementationSpecific: Interpretation of the Path matching is up to
-the IngressClass. Implementations can treat this as a separate PathType
-or treat it identically to Prefix or Exact path types.
-Implementations are required to support all path types.
+
+* ImplementationSpecific: Interpretation of the Path matching is up to
+  the IngressClass. Implementations can treat this as a separate PathType
+  or treat it identically to Prefix or Exact path types.
+  Implementations are required to support all path types.
 
 Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress_v1#path_type IngressV1#path_type}
 

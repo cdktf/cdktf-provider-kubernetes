@@ -228,31 +228,31 @@ export interface CertificateSigningRequestSpec {
   readonly signerName?: string;
   /**
   * allowedUsages specifies a set of usage contexts the key will be valid for. See: https://tools.ietf.org/html/rfc5280#section-4.2.1.3
-     https://tools.ietf.org/html/rfc5280#section-4.2.1.12
-Valid values are:
- "signing",
- "digital signature",
- "content commitment",
- "key encipherment",
- "key agreement",
- "data encipherment",
- "cert sign",
- "crl sign",
- "encipher only",
- "decipher only",
- "any",
- "server auth",
- "client auth",
- "code signing",
- "email protection",
- "s/mime",
- "ipsec end system",
- "ipsec tunnel",
- "ipsec user",
- "timestamping",
- "ocsp signing",
- "microsoft sgc",
- "netscape sgc"
+  *      https://tools.ietf.org/html/rfc5280#section-4.2.1.12
+  * Valid values are:
+  *  "signing",
+  *  "digital signature",
+  *  "content commitment",
+  *  "key encipherment",
+  *  "key agreement",
+  *  "data encipherment",
+  *  "cert sign",
+  *  "crl sign",
+  *  "encipher only",
+  *  "decipher only",
+  *  "any",
+  *  "server auth",
+  *  "client auth",
+  *  "code signing",
+  *  "email protection",
+  *  "s/mime",
+  *  "ipsec end system",
+  *  "ipsec tunnel",
+  *  "ipsec user",
+  *  "timestamping",
+  *  "ocsp signing",
+  *  "microsoft sgc",
+  *  "netscape sgc"
   *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/certificate_signing_request#usages CertificateSigningRequest#usages}
   */
