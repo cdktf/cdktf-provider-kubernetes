@@ -13,7 +13,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesAllNamespaces.DataKubernetesAllNamespaces.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v9/datakubernetesallnamespaces"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesallnamespaces"
 
 datakubernetesallnamespaces.NewDataKubernetesAllNamespaces(scope Construct, id *string, config DataKubernetesAllNamespacesConfig) DataKubernetesAllNamespaces
 ```
@@ -277,7 +277,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.dataKubernetesAllNamespaces.DataKubernetesAllNamespaces.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v9/datakubernetesallnamespaces"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesallnamespaces"
 
 datakubernetesallnamespaces.DataKubernetesAllNamespaces_IsConstruct(x interface{}) *bool
 ```
@@ -309,7 +309,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.dataKubernetesAllNamespaces.DataKubernetesAllNamespaces.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v9/datakubernetesallnamespaces"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesallnamespaces"
 
 datakubernetesallnamespaces.DataKubernetesAllNamespaces_IsTerraformElement(x interface{}) *bool
 ```
@@ -323,7 +323,7 @@ datakubernetesallnamespaces.DataKubernetesAllNamespaces_IsTerraformElement(x int
 ##### `IsTerraformDataSource` <a name="IsTerraformDataSource" id="@cdktf/provider-kubernetes.dataKubernetesAllNamespaces.DataKubernetesAllNamespaces.isTerraformDataSource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v9/datakubernetesallnamespaces"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesallnamespaces"
 
 datakubernetesallnamespaces.DataKubernetesAllNamespaces_IsTerraformDataSource(x interface{}) *bool
 ```
@@ -533,7 +533,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesAllNamespaces.DataKubernetesAllNamespacesConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v9/datakubernetesallnamespaces"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesallnamespaces"
 
 &datakubernetesallnamespaces.DataKubernetesAllNamespacesConfig {
 	Connection: interface{},
