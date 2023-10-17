@@ -13,7 +13,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1(scope Construct, id *string, config PodSecurityPolicyV1Beta1Config) PodSecurityPolicyV1Beta1
 ```
@@ -60,6 +60,7 @@ Must be unique amongst siblings in the same scope
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.resetOverrideLogicalId">ResetOverrideLogicalId</a></code> | Resets a previously passed logical Id to use the auto-generated logical id again. |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.toMetadata">ToMetadata</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.toTerraform">ToTerraform</a></code> | Adds this resource to the terraform JSON output. |
+| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.addMoveTarget">AddMoveTarget</a></code> | Adds a user defined moveTarget string to this resource to be later used in .moveTo(moveTarget) to resolve the location of the move. |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.getAnyMapAttribute">GetAnyMapAttribute</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.getBooleanAttribute">GetBooleanAttribute</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.getBooleanMapAttribute">GetBooleanMapAttribute</a></code> | *No description.* |
@@ -69,7 +70,9 @@ Must be unique amongst siblings in the same scope
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.getNumberMapAttribute">GetNumberMapAttribute</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.getStringAttribute">GetStringAttribute</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.getStringMapAttribute">GetStringMapAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.importFrom">ImportFrom</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.interpolationForAttribute">InterpolationForAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.moveTo">MoveTo</a></code> | Moves this resource to the target resource given by moveTarget. |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.putMetadata">PutMetadata</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.putSpec">PutSpec</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.resetId">ResetId</a></code> | *No description.* |
@@ -139,6 +142,22 @@ func ToTerraform() interface{}
 ```
 
 Adds this resource to the terraform JSON output.
+
+##### `AddMoveTarget` <a name="AddMoveTarget" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.addMoveTarget"></a>
+
+```go
+func AddMoveTarget(moveTarget *string)
+```
+
+Adds a user defined moveTarget string to this resource to be later used in .moveTo(moveTarget) to resolve the location of the move.
+
+###### `moveTarget`<sup>Required</sup> <a name="moveTarget" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.addMoveTarget.parameter.moveTarget"></a>
+
+- *Type:* *string
+
+The string move target that will correspond to this resource.
+
+---
 
 ##### `GetAnyMapAttribute` <a name="GetAnyMapAttribute" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.getAnyMapAttribute"></a>
 
@@ -248,6 +267,24 @@ func GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 
 ---
 
+##### `ImportFrom` <a name="ImportFrom" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.importFrom"></a>
+
+```go
+func ImportFrom(id *string, provider TerraformProvider)
+```
+
+###### `id`<sup>Required</sup> <a name="id" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.importFrom.parameter.id"></a>
+
+- *Type:* *string
+
+---
+
+###### `provider`<sup>Optional</sup> <a name="provider" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.importFrom.parameter.provider"></a>
+
+- *Type:* github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider
+
+---
+
 ##### `InterpolationForAttribute` <a name="InterpolationForAttribute" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.interpolationForAttribute"></a>
 
 ```go
@@ -257,6 +294,30 @@ func InterpolationForAttribute(terraformAttribute *string) IResolvable
 ###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.interpolationForAttribute.parameter.terraformAttribute"></a>
 
 - *Type:* *string
+
+---
+
+##### `MoveTo` <a name="MoveTo" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.moveTo"></a>
+
+```go
+func MoveTo(moveTarget *string, index interface{})
+```
+
+Moves this resource to the target resource given by moveTarget.
+
+###### `moveTarget`<sup>Required</sup> <a name="moveTarget" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.moveTo.parameter.moveTarget"></a>
+
+- *Type:* *string
+
+The previously set user defined string set by .addMoveTarget() corresponding to the resource to move to.
+
+---
+
+###### `index`<sup>Optional</sup> <a name="index" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.moveTo.parameter.index"></a>
+
+- *Type:* interface{}
+
+Optional The index corresponding to the key the resource is to appear in the foreach of a resource to move to.
 
 ---
 
@@ -297,13 +358,14 @@ func ResetId()
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.isConstruct">IsConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.isTerraformElement">IsTerraformElement</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.isTerraformResource">IsTerraformResource</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.generateConfigForImport">GenerateConfigForImport</a></code> | Generates CDKTF code for importing a PodSecurityPolicyV1Beta1 resource upon running "cdktf plan <stack-name>". |
 
 ---
 
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1_IsConstruct(x interface{}) *bool
 ```
@@ -335,7 +397,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1_IsTerraformElement(x interface{}) *bool
 ```
@@ -349,7 +411,7 @@ podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1_IsTerraformElement(x interface
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1_IsTerraformResource(x interface{}) *bool
 ```
@@ -357,6 +419,50 @@ podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1_IsTerraformResource(x interfac
 ###### `x`<sup>Required</sup> <a name="x" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.isTerraformResource.parameter.x"></a>
 
 - *Type:* interface{}
+
+---
+
+##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.generateConfigForImport"></a>
+
+```go
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
+
+podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
+```
+
+Generates CDKTF code for importing a PodSecurityPolicyV1Beta1 resource upon running "cdktf plan <stack-name>".
+
+###### `scope`<sup>Required</sup> <a name="scope" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.generateConfigForImport.parameter.scope"></a>
+
+- *Type:* github.com/aws/constructs-go/constructs/v10.Construct
+
+The scope in which to define this construct.
+
+---
+
+###### `importToId`<sup>Required</sup> <a name="importToId" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.generateConfigForImport.parameter.importToId"></a>
+
+- *Type:* *string
+
+The construct id used in the generated config for the PodSecurityPolicyV1Beta1 to import.
+
+---
+
+###### `importFromId`<sup>Required</sup> <a name="importFromId" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.generateConfigForImport.parameter.importFromId"></a>
+
+- *Type:* *string
+
+The id of the existing PodSecurityPolicyV1Beta1 that should be imported.
+
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/pod_security_policy_v1beta1#import import section} in the documentation of this resource for the id to use
+
+---
+
+###### `provider`<sup>Optional</sup> <a name="provider" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1.generateConfigForImport.parameter.provider"></a>
+
+- *Type:* github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider
+
+? Optional instance of the provider where the PodSecurityPolicyV1Beta1 to import is found.
 
 ---
 
@@ -614,7 +720,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 &podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1Config {
 	Connection: interface{},
@@ -624,8 +730,8 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecurity
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1Metadata,
-	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1Spec,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1Metadata,
+	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1Spec,
 	Id: *string,
 }
 ```
@@ -765,7 +871,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 &podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1Metadata {
 	Annotations: *map[string]*string,
@@ -835,12 +941,12 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1Spec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 &podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1Spec {
-	FsGroup: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecFsGroup,
-	RunAsUser: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecRunAsUser,
-	SupplementalGroups: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecSupplementalGroups,
+	FsGroup: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecFsGroup,
+	RunAsUser: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecRunAsUser,
+	SupplementalGroups: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecSupplementalGroups,
 	AllowedCapabilities: *[]*string,
 	AllowedFlexVolumes: interface{},
 	AllowedHostPaths: interface{},
@@ -857,8 +963,8 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecurity
 	Privileged: interface{},
 	ReadOnlyRootFilesystem: interface{},
 	RequiredDropCapabilities: *[]*string,
-	RunAsGroup: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecRunAsGroup,
-	SeLinux: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecSeLinux,
+	RunAsGroup: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecRunAsGroup,
+	SeLinux: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecSeLinux,
 	Volumes: *[]*string,
 }
 ```
@@ -1225,7 +1331,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecAllowedFlexVolumes.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 &podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1SpecAllowedFlexVolumes {
 	Driver: *string,
@@ -1259,7 +1365,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecAllowedHostPaths.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 &podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1SpecAllowedHostPaths {
 	PathPrefix: *string,
@@ -1313,7 +1419,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecFsGroup.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 &podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1SpecFsGroup {
 	Rule: *string,
@@ -1363,7 +1469,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecFsGroupRange.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 &podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1SpecFsGroupRange {
 	Max: *f64,
@@ -1413,7 +1519,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecHostPorts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 &podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1SpecHostPorts {
 	Max: *f64,
@@ -1463,7 +1569,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecRunAsGroup.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 &podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1SpecRunAsGroup {
 	Rule: *string,
@@ -1513,7 +1619,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecRunAsGroupRange.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 &podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1SpecRunAsGroupRange {
 	Max: *f64,
@@ -1563,7 +1669,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecRunAsUser.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 &podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1SpecRunAsUser {
 	Rule: *string,
@@ -1613,7 +1719,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecRunAsUserRange.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 &podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1SpecRunAsUserRange {
 	Max: *f64,
@@ -1663,7 +1769,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecSeLinux.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 &podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1SpecSeLinux {
 	Rule: *string,
@@ -1713,7 +1819,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 &podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptions {
 	Level: *string,
@@ -1787,7 +1893,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecSupplementalGroups.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 &podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1SpecSupplementalGroups {
 	Rule: *string,
@@ -1837,7 +1943,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecSupplementalGroupsRange.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 &podsecuritypolicyv1beta1.PodSecurityPolicyV1Beta1SpecSupplementalGroupsRange {
 	Max: *f64,
@@ -1889,7 +1995,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PodSecurityPolicyV1Beta1MetadataOutputReference
 ```
@@ -2258,7 +2364,7 @@ func InternalValue() PodSecurityPolicyV1Beta1Metadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecAllowedFlexVolumesList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecAllowedFlexVolumesList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PodSecurityPolicyV1Beta1SpecAllowedFlexVolumesList
 ```
@@ -2401,7 +2507,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecAllowedFlexVolumesOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecAllowedFlexVolumesOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PodSecurityPolicyV1Beta1SpecAllowedFlexVolumesOutputReference
 ```
@@ -2690,7 +2796,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecAllowedHostPathsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecAllowedHostPathsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PodSecurityPolicyV1Beta1SpecAllowedHostPathsList
 ```
@@ -2833,7 +2939,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecAllowedHostPathsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecAllowedHostPathsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PodSecurityPolicyV1Beta1SpecAllowedHostPathsOutputReference
 ```
@@ -3151,7 +3257,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecFsGroupOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecFsGroupOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PodSecurityPolicyV1Beta1SpecFsGroupOutputReference
 ```
@@ -3464,7 +3570,7 @@ func InternalValue() PodSecurityPolicyV1Beta1SpecFsGroup
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecFsGroupRangeList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecFsGroupRangeList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PodSecurityPolicyV1Beta1SpecFsGroupRangeList
 ```
@@ -3607,7 +3713,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecFsGroupRangeOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecFsGroupRangeOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PodSecurityPolicyV1Beta1SpecFsGroupRangeOutputReference
 ```
@@ -3918,7 +4024,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecHostPortsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecHostPortsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PodSecurityPolicyV1Beta1SpecHostPortsList
 ```
@@ -4061,7 +4167,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecHostPortsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecHostPortsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PodSecurityPolicyV1Beta1SpecHostPortsOutputReference
 ```
@@ -4372,7 +4478,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PodSecurityPolicyV1Beta1SpecOutputReference
 ```
@@ -5342,7 +5448,7 @@ func InternalValue() PodSecurityPolicyV1Beta1Spec
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecRunAsGroupOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecRunAsGroupOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PodSecurityPolicyV1Beta1SpecRunAsGroupOutputReference
 ```
@@ -5655,7 +5761,7 @@ func InternalValue() PodSecurityPolicyV1Beta1SpecRunAsGroup
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecRunAsGroupRangeList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecRunAsGroupRangeList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PodSecurityPolicyV1Beta1SpecRunAsGroupRangeList
 ```
@@ -5798,7 +5904,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecRunAsGroupRangeOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecRunAsGroupRangeOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PodSecurityPolicyV1Beta1SpecRunAsGroupRangeOutputReference
 ```
@@ -6109,7 +6215,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecRunAsUserOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecRunAsUserOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PodSecurityPolicyV1Beta1SpecRunAsUserOutputReference
 ```
@@ -6422,7 +6528,7 @@ func InternalValue() PodSecurityPolicyV1Beta1SpecRunAsUser
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecRunAsUserRangeList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecRunAsUserRangeList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PodSecurityPolicyV1Beta1SpecRunAsUserRangeList
 ```
@@ -6565,7 +6671,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecRunAsUserRangeOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecRunAsUserRangeOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PodSecurityPolicyV1Beta1SpecRunAsUserRangeOutputReference
 ```
@@ -6876,7 +6982,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecSeLinuxOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecSeLinuxOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PodSecurityPolicyV1Beta1SpecSeLinuxOutputReference
 ```
@@ -7189,7 +7295,7 @@ func InternalValue() PodSecurityPolicyV1Beta1SpecSeLinux
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptionsList
 ```
@@ -7332,7 +7438,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PodSecurityPolicyV1Beta1SpecSeLinuxSeLinuxOptionsOutputReference
 ```
@@ -7687,7 +7793,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecSupplementalGroupsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecSupplementalGroupsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PodSecurityPolicyV1Beta1SpecSupplementalGroupsOutputReference
 ```
@@ -8000,7 +8106,7 @@ func InternalValue() PodSecurityPolicyV1Beta1SpecSupplementalGroups
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecSupplementalGroupsRangeList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecSupplementalGroupsRangeList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PodSecurityPolicyV1Beta1SpecSupplementalGroupsRangeList
 ```
@@ -8143,7 +8249,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicyV1Beta1.PodSecurityPolicyV1Beta1SpecSupplementalGroupsRangeOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/podsecuritypolicyv1beta1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/podsecuritypolicyv1beta1"
 
 podsecuritypolicyv1beta1.NewPodSecurityPolicyV1Beta1SpecSupplementalGroupsRangeOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PodSecurityPolicyV1Beta1SpecSupplementalGroupsRangeOutputReference
 ```

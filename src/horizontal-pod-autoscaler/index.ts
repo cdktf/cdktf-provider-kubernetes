@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/horizontal_pod_autoscaler
 // generated from terraform resource schema
 
@@ -4028,6 +4023,20 @@ export class HorizontalPodAutoscaler extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "kubernetes_horizontal_pod_autoscaler";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a HorizontalPodAutoscaler resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the HorizontalPodAutoscaler to import
+  * @param importFromId The id of the existing HorizontalPodAutoscaler that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/horizontal_pod_autoscaler#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the HorizontalPodAutoscaler to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "kubernetes_horizontal_pod_autoscaler", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER

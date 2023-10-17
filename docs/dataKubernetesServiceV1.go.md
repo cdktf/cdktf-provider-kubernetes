@@ -13,7 +13,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 datakubernetesservicev1.NewDataKubernetesServiceV1(scope Construct, id *string, config DataKubernetesServiceV1Config) DataKubernetesServiceV1
 ```
@@ -284,13 +284,14 @@ func ResetId()
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1.isConstruct">IsConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1.isTerraformElement">IsTerraformElement</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1.isTerraformDataSource">IsTerraformDataSource</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1.generateConfigForImport">GenerateConfigForImport</a></code> | Generates CDKTF code for importing a DataKubernetesServiceV1 resource upon running "cdktf plan <stack-name>". |
 
 ---
 
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 datakubernetesservicev1.DataKubernetesServiceV1_IsConstruct(x interface{}) *bool
 ```
@@ -322,7 +323,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 datakubernetesservicev1.DataKubernetesServiceV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -336,7 +337,7 @@ datakubernetesservicev1.DataKubernetesServiceV1_IsTerraformElement(x interface{}
 ##### `IsTerraformDataSource` <a name="IsTerraformDataSource" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1.isTerraformDataSource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 datakubernetesservicev1.DataKubernetesServiceV1_IsTerraformDataSource(x interface{}) *bool
 ```
@@ -344,6 +345,50 @@ datakubernetesservicev1.DataKubernetesServiceV1_IsTerraformDataSource(x interfac
 ###### `x`<sup>Required</sup> <a name="x" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1.isTerraformDataSource.parameter.x"></a>
 
 - *Type:* interface{}
+
+---
+
+##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1.generateConfigForImport"></a>
+
+```go
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
+
+datakubernetesservicev1.DataKubernetesServiceV1_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
+```
+
+Generates CDKTF code for importing a DataKubernetesServiceV1 resource upon running "cdktf plan <stack-name>".
+
+###### `scope`<sup>Required</sup> <a name="scope" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1.generateConfigForImport.parameter.scope"></a>
+
+- *Type:* github.com/aws/constructs-go/constructs/v10.Construct
+
+The scope in which to define this construct.
+
+---
+
+###### `importToId`<sup>Required</sup> <a name="importToId" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1.generateConfigForImport.parameter.importToId"></a>
+
+- *Type:* *string
+
+The construct id used in the generated config for the DataKubernetesServiceV1 to import.
+
+---
+
+###### `importFromId`<sup>Required</sup> <a name="importFromId" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1.generateConfigForImport.parameter.importFromId"></a>
+
+- *Type:* *string
+
+The id of the existing DataKubernetesServiceV1 that should be imported.
+
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/service_v1#import import section} in the documentation of this resource for the id to use
+
+---
+
+###### `provider`<sup>Optional</sup> <a name="provider" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1.generateConfigForImport.parameter.provider"></a>
+
+- *Type:* github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider
+
+? Optional instance of the provider where the DataKubernetesServiceV1 to import is found.
 
 ---
 
@@ -579,7 +624,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 &datakubernetesservicev1.DataKubernetesServiceV1Config {
 	Connection: interface{},
@@ -589,7 +634,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.dataKubernetesServiceV1.DataKubernetesServiceV1Metadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1Metadata,
 	Id: *string,
 }
 ```
@@ -714,7 +759,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 &datakubernetesservicev1.DataKubernetesServiceV1Metadata {
 	Annotations: *map[string]*string,
@@ -800,7 +845,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1Spec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 &datakubernetesservicev1.DataKubernetesServiceV1Spec {
 
@@ -813,7 +858,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1SpecPort.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 &datakubernetesservicev1.DataKubernetesServiceV1SpecPort {
 
@@ -826,7 +871,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1SpecSessionAffinityConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 &datakubernetesservicev1.DataKubernetesServiceV1SpecSessionAffinityConfig {
 
@@ -839,7 +884,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1SpecSessionAffinityConfigClientIp.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 &datakubernetesservicev1.DataKubernetesServiceV1SpecSessionAffinityConfigClientIp {
 
@@ -852,7 +897,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1Status.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 &datakubernetesservicev1.DataKubernetesServiceV1Status {
 
@@ -865,7 +910,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1StatusLoadBalancer.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 &datakubernetesservicev1.DataKubernetesServiceV1StatusLoadBalancer {
 
@@ -878,7 +923,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1StatusLoadBalancerIngress.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 &datakubernetesservicev1.DataKubernetesServiceV1StatusLoadBalancerIngress {
 
@@ -893,7 +938,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 datakubernetesservicev1.NewDataKubernetesServiceV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) DataKubernetesServiceV1MetadataOutputReference
 ```
@@ -1291,7 +1336,7 @@ func InternalValue() DataKubernetesServiceV1Metadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1SpecList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 datakubernetesservicev1.NewDataKubernetesServiceV1SpecList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesServiceV1SpecList
 ```
@@ -1423,7 +1468,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1SpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 datakubernetesservicev1.NewDataKubernetesServiceV1SpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesServiceV1SpecOutputReference
 ```
@@ -1899,7 +1944,7 @@ func InternalValue() DataKubernetesServiceV1Spec
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1SpecPortList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 datakubernetesservicev1.NewDataKubernetesServiceV1SpecPortList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesServiceV1SpecPortList
 ```
@@ -2031,7 +2076,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1SpecPortOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 datakubernetesservicev1.NewDataKubernetesServiceV1SpecPortOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesServiceV1SpecPortOutputReference
 ```
@@ -2364,7 +2409,7 @@ func InternalValue() DataKubernetesServiceV1SpecPort
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1SpecSessionAffinityConfigClientIpList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 datakubernetesservicev1.NewDataKubernetesServiceV1SpecSessionAffinityConfigClientIpList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesServiceV1SpecSessionAffinityConfigClientIpList
 ```
@@ -2496,7 +2541,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1SpecSessionAffinityConfigClientIpOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 datakubernetesservicev1.NewDataKubernetesServiceV1SpecSessionAffinityConfigClientIpOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesServiceV1SpecSessionAffinityConfigClientIpOutputReference
 ```
@@ -2774,7 +2819,7 @@ func InternalValue() DataKubernetesServiceV1SpecSessionAffinityConfigClientIp
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1SpecSessionAffinityConfigList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 datakubernetesservicev1.NewDataKubernetesServiceV1SpecSessionAffinityConfigList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesServiceV1SpecSessionAffinityConfigList
 ```
@@ -2906,7 +2951,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1SpecSessionAffinityConfigOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 datakubernetesservicev1.NewDataKubernetesServiceV1SpecSessionAffinityConfigOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesServiceV1SpecSessionAffinityConfigOutputReference
 ```
@@ -3184,7 +3229,7 @@ func InternalValue() DataKubernetesServiceV1SpecSessionAffinityConfig
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1StatusList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 datakubernetesservicev1.NewDataKubernetesServiceV1StatusList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesServiceV1StatusList
 ```
@@ -3316,7 +3361,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1StatusLoadBalancerIngressList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 datakubernetesservicev1.NewDataKubernetesServiceV1StatusLoadBalancerIngressList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesServiceV1StatusLoadBalancerIngressList
 ```
@@ -3448,7 +3493,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1StatusLoadBalancerIngressOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 datakubernetesservicev1.NewDataKubernetesServiceV1StatusLoadBalancerIngressOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesServiceV1StatusLoadBalancerIngressOutputReference
 ```
@@ -3737,7 +3782,7 @@ func InternalValue() DataKubernetesServiceV1StatusLoadBalancerIngress
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1StatusLoadBalancerList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 datakubernetesservicev1.NewDataKubernetesServiceV1StatusLoadBalancerList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesServiceV1StatusLoadBalancerList
 ```
@@ -3869,7 +3914,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1StatusLoadBalancerOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 datakubernetesservicev1.NewDataKubernetesServiceV1StatusLoadBalancerOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesServiceV1StatusLoadBalancerOutputReference
 ```
@@ -4147,7 +4192,7 @@ func InternalValue() DataKubernetesServiceV1StatusLoadBalancer
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceV1.DataKubernetesServiceV1StatusOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesservicev1"
 
 datakubernetesservicev1.NewDataKubernetesServiceV1StatusOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesServiceV1StatusOutputReference
 ```
