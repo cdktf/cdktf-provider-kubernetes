@@ -443,6 +443,20 @@ export class StorageClass extends cdktf.TerraformResource {
   // =================
   public static readonly tfResourceType = "kubernetes_storage_class";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a StorageClass resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the StorageClass to import
+  * @param importFromId The id of the existing StorageClass that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/storage_class#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the StorageClass to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "kubernetes_storage_class", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========

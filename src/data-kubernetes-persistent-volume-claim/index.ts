@@ -765,6 +765,20 @@ export class DataKubernetesPersistentVolumeClaim extends cdktf.TerraformDataSour
   // =================
   public static readonly tfResourceType = "kubernetes_persistent_volume_claim";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataKubernetesPersistentVolumeClaim resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataKubernetesPersistentVolumeClaim to import
+  * @param importFromId The id of the existing DataKubernetesPersistentVolumeClaim that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/persistent_volume_claim#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataKubernetesPersistentVolumeClaim to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "kubernetes_persistent_volume_claim", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
