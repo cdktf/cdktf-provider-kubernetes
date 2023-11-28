@@ -1,6 +1,6 @@
 # `data_kubernetes_nodes`
 
-Refer to the Terraform Registory for docs: [`data_kubernetes_nodes`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/nodes).
+Refer to the Terraform Registory for docs: [`data_kubernetes_nodes`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/nodes).
 
 # `dataKubernetesNodes` Submodule <a name="`dataKubernetesNodes` Submodule" id="@cdktf/provider-kubernetes.dataKubernetesNodes"></a>
 
@@ -8,12 +8,12 @@ Refer to the Terraform Registory for docs: [`data_kubernetes_nodes`](https://reg
 
 ### DataKubernetesNodes <a name="DataKubernetesNodes" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodes"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/nodes kubernetes_nodes}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/nodes kubernetes_nodes}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodes.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.NewDataKubernetesNodes(scope Construct, id *string, config DataKubernetesNodesConfig) DataKubernetesNodes
 ```
@@ -298,7 +298,7 @@ func ResetMetadata()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodes.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.DataKubernetesNodes_IsConstruct(x interface{}) *bool
 ```
@@ -330,7 +330,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodes.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.DataKubernetesNodes_IsTerraformElement(x interface{}) *bool
 ```
@@ -344,7 +344,7 @@ datakubernetesnodes.DataKubernetesNodes_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformDataSource` <a name="IsTerraformDataSource" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodes.isTerraformDataSource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.DataKubernetesNodes_IsTerraformDataSource(x interface{}) *bool
 ```
@@ -358,7 +358,7 @@ datakubernetesnodes.DataKubernetesNodes_IsTerraformDataSource(x interface{}) *bo
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodes.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.DataKubernetesNodes_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -387,7 +387,7 @@ The construct id used in the generated config for the DataKubernetesNodes to imp
 
 The id of the existing DataKubernetesNodes that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/nodes#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/nodes#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -620,7 +620,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 &datakubernetesnodes.DataKubernetesNodesConfig {
 	Connection: interface{},
@@ -631,7 +631,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
 	Id: *string,
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.dataKubernetesNodes.DataKubernetesNodesMetadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.dataKubernetesNodes.DataKubernetesNodesMetadata,
 }
 ```
 
@@ -646,7 +646,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesConfig.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesConfig.property.provider">Provider</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesConfig.property.provisioners">Provisioners</a></code> | <code>*[]interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/nodes#id DataKubernetesNodes#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/nodes#id DataKubernetesNodes#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesConfig.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesMetadata">DataKubernetesNodesMetadata</a></code> | metadata block. |
 
 ---
@@ -729,7 +729,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/nodes#id DataKubernetesNodes#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/nodes#id DataKubernetesNodes#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -746,7 +746,7 @@ Metadata DataKubernetesNodesMetadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/nodes#metadata DataKubernetesNodes#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/nodes#metadata DataKubernetesNodes#metadata}
 
 ---
 
@@ -755,7 +755,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 &datakubernetesnodes.DataKubernetesNodesMetadata {
 	Labels: *map[string]*string,
@@ -780,7 +780,7 @@ Labels *map[string]*string
 
 Select nodes with these labels. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/nodes#labels DataKubernetesNodes#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/nodes#labels DataKubernetesNodes#labels}
 
 ---
 
@@ -789,7 +789,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodes.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 &datakubernetesnodes.DataKubernetesNodesNodes {
 
@@ -802,7 +802,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 &datakubernetesnodes.DataKubernetesNodesNodesMetadata {
 
@@ -815,7 +815,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesSpec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 &datakubernetesnodes.DataKubernetesNodesNodesSpec {
 
@@ -828,7 +828,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesSpecTaints.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 &datakubernetesnodes.DataKubernetesNodesNodesSpecTaints {
 
@@ -841,7 +841,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesStatus.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 &datakubernetesnodes.DataKubernetesNodesNodesStatus {
 
@@ -854,7 +854,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesStatusAddresses.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 &datakubernetesnodes.DataKubernetesNodesNodesStatusAddresses {
 
@@ -867,7 +867,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesStatusNodeInfo.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 &datakubernetesnodes.DataKubernetesNodesNodesStatusNodeInfo {
 
@@ -882,7 +882,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.NewDataKubernetesNodesMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) DataKubernetesNodesMetadataOutputReference
 ```
@@ -1153,7 +1153,7 @@ func InternalValue() DataKubernetesNodesMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.NewDataKubernetesNodesNodesList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesNodesNodesList
 ```
@@ -1285,7 +1285,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesMetadataList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.NewDataKubernetesNodesNodesMetadataList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesNodesNodesMetadataList
 ```
@@ -1417,7 +1417,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.NewDataKubernetesNodesNodesMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesNodesNodesMetadataOutputReference
 ```
@@ -1750,7 +1750,7 @@ func InternalValue() DataKubernetesNodesNodesMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.NewDataKubernetesNodesNodesOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesNodesNodesOutputReference
 ```
@@ -2050,7 +2050,7 @@ func InternalValue() DataKubernetesNodesNodes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesSpecList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.NewDataKubernetesNodesNodesSpecList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesNodesNodesSpecList
 ```
@@ -2182,7 +2182,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesSpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.NewDataKubernetesNodesNodesSpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesNodesNodesSpecOutputReference
 ```
@@ -2504,7 +2504,7 @@ func InternalValue() DataKubernetesNodesNodesSpec
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesSpecTaintsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.NewDataKubernetesNodesNodesSpecTaintsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesNodesNodesSpecTaintsList
 ```
@@ -2636,7 +2636,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesSpecTaintsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.NewDataKubernetesNodesNodesSpecTaintsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesNodesNodesSpecTaintsOutputReference
 ```
@@ -2936,7 +2936,7 @@ func InternalValue() DataKubernetesNodesNodesSpecTaints
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesStatusAddressesList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.NewDataKubernetesNodesNodesStatusAddressesList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesNodesNodesStatusAddressesList
 ```
@@ -3068,7 +3068,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesStatusAddressesOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.NewDataKubernetesNodesNodesStatusAddressesOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesNodesNodesStatusAddressesOutputReference
 ```
@@ -3357,7 +3357,7 @@ func InternalValue() DataKubernetesNodesNodesStatusAddresses
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesStatusList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.NewDataKubernetesNodesNodesStatusList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesNodesNodesStatusList
 ```
@@ -3489,7 +3489,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesStatusNodeInfoList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.NewDataKubernetesNodesNodesStatusNodeInfoList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesNodesNodesStatusNodeInfoList
 ```
@@ -3621,7 +3621,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesStatusNodeInfoOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.NewDataKubernetesNodesNodesStatusNodeInfoOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesNodesNodesStatusNodeInfoOutputReference
 ```
@@ -3998,7 +3998,7 @@ func InternalValue() DataKubernetesNodesNodesStatusNodeInfo
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNodes.DataKubernetesNodesNodesStatusOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnodes"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnodes"
 
 datakubernetesnodes.NewDataKubernetesNodesNodesStatusOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesNodesNodesStatusOutputReference
 ```

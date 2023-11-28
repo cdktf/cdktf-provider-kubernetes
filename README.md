@@ -3,7 +3,7 @@
 
 This repo builds and publishes the Terraform kubernetes Provider bindings for [CDK for Terraform](https://cdk.tf).
 
-Is based directly on kubernetes 2.23.0
+Is based directly on kubernetes 2.24.0
 
 ## Available Packages
 
@@ -63,7 +63,7 @@ This project is explicitly not tracking the Terraform kubernetes Provider versio
 These are the upstream dependencies:
 
 - [Terraform CDK](https://cdk.tf)
-- [Terraform kubernetes Provider](https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0)
+- [Terraform kubernetes Provider](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0)
     - This links to the minimum version being tracked, you can find the latest released version [in our releases](https://github.com/cdktf/cdktf-provider-kubernetes/releases)
 - [Terraform Engine](https://terraform.io)
 

@@ -1,6 +1,6 @@
 # `data_kubernetes_resources`
 
-Refer to the Terraform Registory for docs: [`data_kubernetes_resources`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/resources).
+Refer to the Terraform Registory for docs: [`data_kubernetes_resources`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/resources).
 
 # `dataKubernetesResources` Submodule <a name="`dataKubernetesResources` Submodule" id="@cdktf/provider-kubernetes.dataKubernetesResources"></a>
 
@@ -8,12 +8,12 @@ Refer to the Terraform Registory for docs: [`data_kubernetes_resources`](https:/
 
 ### DataKubernetesResources <a name="DataKubernetesResources" id="@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/resources kubernetes_resources}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/resources kubernetes_resources}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesresources"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesresources"
 
 datakubernetesresources.NewDataKubernetesResources(scope Construct, id *string, config DataKubernetesResourcesConfig) DataKubernetesResources
 ```
@@ -306,7 +306,7 @@ func ResetObjects()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesresources"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesresources"
 
 datakubernetesresources.DataKubernetesResources_IsConstruct(x interface{}) *bool
 ```
@@ -338,7 +338,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesresources"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesresources"
 
 datakubernetesresources.DataKubernetesResources_IsTerraformElement(x interface{}) *bool
 ```
@@ -352,7 +352,7 @@ datakubernetesresources.DataKubernetesResources_IsTerraformElement(x interface{}
 ##### `IsTerraformDataSource` <a name="IsTerraformDataSource" id="@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.isTerraformDataSource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesresources"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesresources"
 
 datakubernetesresources.DataKubernetesResources_IsTerraformDataSource(x interface{}) *bool
 ```
@@ -366,7 +366,7 @@ datakubernetesresources.DataKubernetesResources_IsTerraformDataSource(x interfac
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesresources"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesresources"
 
 datakubernetesresources.DataKubernetesResources_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -395,7 +395,7 @@ The construct id used in the generated config for the DataKubernetesResources to
 
 The id of the existing DataKubernetesResources that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/resources#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/resources#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -727,7 +727,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResourcesConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesresources"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesresources"
 
 &datakubernetesresources.DataKubernetesResourcesConfig {
 	Connection: interface{},
@@ -848,7 +848,7 @@ ApiVersion *string
 
 The resource apiVersion.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/resources#api_version DataKubernetesResources#api_version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/resources#api_version DataKubernetesResources#api_version}
 
 ---
 
@@ -862,7 +862,7 @@ Kind *string
 
 The resource kind.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/resources#kind DataKubernetesResources#kind}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/resources#kind DataKubernetesResources#kind}
 
 ---
 
@@ -876,7 +876,7 @@ FieldSelector *string
 
 A selector to restrict the list of returned objects by their fields.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/resources#field_selector DataKubernetesResources#field_selector}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/resources#field_selector DataKubernetesResources#field_selector}
 
 ---
 
@@ -890,7 +890,7 @@ LabelSelector *string
 
 A selector to restrict the list of returned objects by their labels.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/resources#label_selector DataKubernetesResources#label_selector}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/resources#label_selector DataKubernetesResources#label_selector}
 
 ---
 
@@ -904,7 +904,7 @@ Limit *f64
 
 Limit is a maximum number of responses to return for a list call.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/resources#limit DataKubernetesResources#limit}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/resources#limit DataKubernetesResources#limit}
 
 ---
 
@@ -918,7 +918,7 @@ Namespace *string
 
 The resource namespace.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/resources#namespace DataKubernetesResources#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/resources#namespace DataKubernetesResources#namespace}
 
 ---
 
@@ -932,7 +932,7 @@ Objects *map[string]interface{}
 
 The response from the API server.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/data-sources/resources#objects DataKubernetesResources#objects}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/resources#objects DataKubernetesResources#objects}
 
 ---
 

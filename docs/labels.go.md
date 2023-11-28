@@ -1,6 +1,6 @@
 # `kubernetes_labels`
 
-Refer to the Terraform Registory for docs: [`kubernetes_labels`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels).
+Refer to the Terraform Registory for docs: [`kubernetes_labels`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/labels).
 
 # `labels` Submodule <a name="`labels` Submodule" id="@cdktf/provider-kubernetes.labels"></a>
 
@@ -8,12 +8,12 @@ Refer to the Terraform Registory for docs: [`kubernetes_labels`](https://registr
 
 ### Labels <a name="Labels" id="@cdktf/provider-kubernetes.labels.Labels"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels kubernetes_labels}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/labels kubernetes_labels}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.labels.Labels.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/labels"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/labels"
 
 labels.NewLabels(scope Construct, id *string, config LabelsConfig) Labels
 ```
@@ -366,7 +366,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.labels.Labels.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/labels"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/labels"
 
 labels.Labels_IsConstruct(x interface{}) *bool
 ```
@@ -398,7 +398,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.labels.Labels.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/labels"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/labels"
 
 labels.Labels_IsTerraformElement(x interface{}) *bool
 ```
@@ -412,7 +412,7 @@ labels.Labels_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.labels.Labels.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/labels"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/labels"
 
 labels.Labels_IsTerraformResource(x interface{}) *bool
 ```
@@ -426,7 +426,7 @@ labels.Labels_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.labels.Labels.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/labels"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/labels"
 
 labels.Labels_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -455,7 +455,7 @@ The construct id used in the generated config for the Labels to import.
 
 The id of the existing Labels that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/labels#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -809,7 +809,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.labels.LabelsConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/labels"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/labels"
 
 &labels.LabelsConfig {
 	Connection: interface{},
@@ -822,7 +822,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/labels"
 	ApiVersion: *string,
 	Kind: *string,
 	Labels: *map[string]*string,
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.labels.LabelsMetadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.labels.LabelsMetadata,
 	FieldManager: *string,
 	Force: interface{},
 	Id: *string,
@@ -846,7 +846,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/labels"
 | <code><a href="#@cdktf/provider-kubernetes.labels.LabelsConfig.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.labels.LabelsMetadata">LabelsMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.labels.LabelsConfig.property.fieldManager">FieldManager</a></code> | <code>*string</code> | Set the name of the field manager for the specified labels. |
 | <code><a href="#@cdktf/provider-kubernetes.labels.LabelsConfig.property.force">Force</a></code> | <code>interface{}</code> | Force overwriting labels that were created or edited outside of Terraform. |
-| <code><a href="#@cdktf/provider-kubernetes.labels.LabelsConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#id Labels#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.labels.LabelsConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/labels#id Labels#id}. |
 
 ---
 
@@ -930,7 +930,7 @@ ApiVersion *string
 
 The apiVersion of the resource to label.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#api_version Labels#api_version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/labels#api_version Labels#api_version}
 
 ---
 
@@ -944,7 +944,7 @@ Kind *string
 
 The kind of the resource to label.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#kind Labels#kind}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/labels#kind Labels#kind}
 
 ---
 
@@ -958,7 +958,7 @@ Labels *map[string]*string
 
 A map of labels to apply to the resource.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#labels Labels#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/labels#labels Labels#labels}
 
 ---
 
@@ -972,7 +972,7 @@ Metadata LabelsMetadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#metadata Labels#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/labels#metadata Labels#metadata}
 
 ---
 
@@ -986,7 +986,7 @@ FieldManager *string
 
 Set the name of the field manager for the specified labels.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#field_manager Labels#field_manager}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/labels#field_manager Labels#field_manager}
 
 ---
 
@@ -1000,7 +1000,7 @@ Force interface{}
 
 Force overwriting labels that were created or edited outside of Terraform.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#force Labels#force}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/labels#force Labels#force}
 
 ---
 
@@ -1012,7 +1012,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#id Labels#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/labels#id Labels#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1024,7 +1024,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.labels.LabelsMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/labels"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/labels"
 
 &labels.LabelsMetadata {
 	Name: *string,
@@ -1051,7 +1051,7 @@ Name *string
 
 The name of the resource.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#name Labels#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/labels#name Labels#name}
 
 ---
 
@@ -1065,7 +1065,7 @@ Namespace *string
 
 The namespace of the resource.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/labels#namespace Labels#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/labels#namespace Labels#namespace}
 
 ---
 
@@ -1076,7 +1076,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.labels.LabelsMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/labels"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/labels"
 
 labels.NewLabelsMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) LabelsMetadataOutputReference
 ```

@@ -1,6 +1,6 @@
 # `kubernetes_ingress`
 
-Refer to the Terraform Registory for docs: [`kubernetes_ingress`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress).
+Refer to the Terraform Registory for docs: [`kubernetes_ingress`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress).
 
 # `ingress` Submodule <a name="`ingress` Submodule" id="@cdktf/provider-kubernetes.ingress"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`kubernetes_ingress`](https://regist
 
 ### Ingress <a name="Ingress" id="@cdktf/provider-kubernetes.ingress.Ingress"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress kubernetes_ingress}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress kubernetes_ingress}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.Ingress.Initializer"></a>
 
@@ -48,7 +48,7 @@ Ingress.Builder.create(Construct scope, java.lang.String id)
 | <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.Initializer.parameter.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.Initializer.parameter.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressMetadata">IngressMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.Initializer.parameter.spec">spec</a></code> | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpec">IngressSpec</a></code> | spec block. |
-| <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#id Ingress#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#id Ingress#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.Initializer.parameter.waitForLoadBalancer">waitForLoadBalancer</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Terraform will wait for the load balancer to have at least 1 endpoint before considering the resource created. |
 
 ---
@@ -119,7 +119,7 @@ Must be unique amongst siblings in the same scope
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#metadata Ingress#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#metadata Ingress#metadata}
 
 ---
 
@@ -129,7 +129,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 spec block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#spec Ingress#spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#spec Ingress#spec}
 
 ---
 
@@ -137,7 +137,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 - *Type:* java.lang.String
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#id Ingress#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#id Ingress#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -150,7 +150,7 @@ If you experience problems setting this value it might not be settable. Please t
 
 Terraform will wait for the load balancer to have at least 1 endpoint before considering the resource created.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#wait_for_load_balancer Ingress#wait_for_load_balancer}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#wait_for_load_balancer Ingress#wait_for_load_balancer}
 
 ---
 
@@ -567,7 +567,7 @@ The construct id used in the generated config for the Ingress to import.
 
 The id of the existing Ingress that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -901,7 +901,7 @@ IngressConfig.builder()
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressConfig.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressConfig.property.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressMetadata">IngressMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressConfig.property.spec">spec</a></code> | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpec">IngressSpec</a></code> | spec block. |
-| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressConfig.property.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#id Ingress#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressConfig.property.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#id Ingress#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressConfig.property.waitForLoadBalancer">waitForLoadBalancer</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Terraform will wait for the load balancer to have at least 1 endpoint before considering the resource created. |
 
 ---
@@ -986,7 +986,7 @@ public IngressMetadata getMetadata();
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#metadata Ingress#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#metadata Ingress#metadata}
 
 ---
 
@@ -1000,7 +1000,7 @@ public IngressSpec getSpec();
 
 spec block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#spec Ingress#spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#spec Ingress#spec}
 
 ---
 
@@ -1012,7 +1012,7 @@ public java.lang.String getId();
 
 - *Type:* java.lang.String
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#id Ingress#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#id Ingress#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1029,7 +1029,7 @@ public java.lang.Object getWaitForLoadBalancer();
 
 Terraform will wait for the load balancer to have at least 1 endpoint before considering the resource created.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#wait_for_load_balancer Ingress#wait_for_load_balancer}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#wait_for_load_balancer Ingress#wait_for_load_balancer}
 
 ---
 
@@ -1073,7 +1073,7 @@ An unstructured key value map stored with the ingress that may be used to store 
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#annotations Ingress#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#annotations Ingress#annotations}
 
 ---
 
@@ -1089,7 +1089,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#generate_name Ingress#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#generate_name Ingress#generate_name}
 
 ---
 
@@ -1105,7 +1105,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#labels Ingress#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#labels Ingress#labels}
 
 ---
 
@@ -1119,7 +1119,7 @@ public java.lang.String getName();
 
 Name of the ingress, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#name Ingress#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#name Ingress#name}
 
 ---
 
@@ -1133,7 +1133,7 @@ public java.lang.String getNamespace();
 
 Namespace defines the space within which name of the ingress must be unique.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#namespace Ingress#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#namespace Ingress#namespace}
 
 ---
 
@@ -1159,7 +1159,7 @@ IngressSpec.builder()
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpec.property.backend">backend</a></code> | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecBackend">IngressSpecBackend</a></code> | backend block. |
-| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpec.property.ingressClassName">ingressClassName</a></code> | <code>java.lang.String</code> | IngressClassName is the name of the IngressClass cluster resource. |
+| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpec.property.ingressClassName">ingressClassName</a></code> | <code>java.lang.String</code> | ingressClassName is the name of the IngressClass cluster resource. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpec.property.rule">rule</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.ingress.IngressSpecRule">IngressSpecRule</a>></code> | rule block. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpec.property.tls">tls</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.ingress.IngressSpecTls">IngressSpecTls</a>></code> | tls block. |
 
@@ -1175,7 +1175,7 @@ public IngressSpecBackend getBackend();
 
 backend block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#backend Ingress#backend}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#backend Ingress#backend}
 
 ---
 
@@ -1187,11 +1187,11 @@ public java.lang.String getIngressClassName();
 
 - *Type:* java.lang.String
 
-IngressClassName is the name of the IngressClass cluster resource.
+ingressClassName is the name of the IngressClass cluster resource.
 
 The associated IngressClass defines which controller will implement the resource. This replaces the deprecated `kubernetes.io/ingress.class` annotation. For backwards compatibility, when that annotation is set, it must be given precedence over this field. The controller may emit a warning if the field and annotation have different values. Implementations of this API should ignore Ingresses without a class specified. An IngressClass resource may be marked as default, which can be used to set a default value for this field. For more information, refer to the IngressClass documentation.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#ingress_class_name Ingress#ingress_class_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#ingress_class_name Ingress#ingress_class_name}
 
 ---
 
@@ -1205,7 +1205,7 @@ public java.lang.Object getRule();
 
 rule block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#rule Ingress#rule}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#rule Ingress#rule}
 
 ---
 
@@ -1219,7 +1219,7 @@ public java.lang.Object getTls();
 
 tls block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#tls Ingress#tls}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#tls Ingress#tls}
 
 ---
 
@@ -1255,7 +1255,7 @@ public java.lang.String getServiceName();
 
 Specifies the name of the referenced service.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#service_name Ingress#service_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#service_name Ingress#service_name}
 
 ---
 
@@ -1269,7 +1269,7 @@ public java.lang.String getServicePort();
 
 Specifies the port of the referenced service.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#service_port Ingress#service_port}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#service_port Ingress#service_port}
 
 ---
 
@@ -1291,7 +1291,7 @@ IngressSpecRule.builder()
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecRule.property.http">http</a></code> | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecRuleHttp">IngressSpecRuleHttp</a></code> | http block. |
-| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecRule.property.host">host</a></code> | <code>java.lang.String</code> | Host is the fully qualified domain name of a network host, as defined by RFC 3986. |
+| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecRule.property.host">host</a></code> | <code>java.lang.String</code> | host is the fully qualified domain name of a network host, as defined by RFC 3986. |
 
 ---
 
@@ -1305,7 +1305,7 @@ public IngressSpecRuleHttp getHttp();
 
 http block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#http Ingress#http}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#http Ingress#http}
 
 ---
 
@@ -1317,7 +1317,7 @@ public java.lang.String getHost();
 
 - *Type:* java.lang.String
 
-Host is the fully qualified domain name of a network host, as defined by RFC 3986.
+host is the fully qualified domain name of a network host, as defined by RFC 3986.
 
 Note the following deviations from the "host" part of the URI as defined in RFC 3986: 1. IPs are not allowed. Currently an IngressRuleValue can only apply to
 the IP in the Spec of the parent Ingress.
@@ -1326,9 +1326,9 @@ Currently the port of an Ingress is implicitly :80 for http and
 :443 for https.
 Both these may change in the future. Incoming requests are matched against the host before the IngressRuleValue. If the host is unspecified, the Ingress routes all traffic based on the specified IngressRuleValue.
 
-Host can be "precise" which is a domain name without the terminating dot of a network host (e.g. "foo.bar.com") or "wildcard", which is a domain name prefixed with a single wildcard label (e.g. "*.foo.com"). The wildcard character '*' must appear by itself as the first DNS label and matches only a single label. You cannot have a wildcard label by itself (e.g. Host == "*"). Requests will be matched against the Host field in the following way: 1. If Host is precise, the request matches this rule if the http host header is equal to Host. 2. If Host is a wildcard, then the request matches this rule if the http host header is to equal to the suffix (removing the first label) of the wildcard rule.
+host can be "precise" which is a domain name without the terminating dot of a network host (e.g. "foo.bar.com") or "wildcard", which is a domain name prefixed with a single wildcard label (e.g. "*.foo.com"). The wildcard character '*' must appear by itself as the first DNS label and matches only a single label. You cannot have a wildcard label by itself (e.g. Host == "*"). Requests will be matched against the Host field in the following way: 1. If Host is precise, the request matches this rule if the http host header is equal to Host. 2. If Host is a wildcard, then the request matches this rule if the http host header is to equal to the suffix (removing the first label) of the wildcard rule.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#host Ingress#host}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#host Ingress#host}
 
 ---
 
@@ -1363,7 +1363,7 @@ public java.lang.Object getPath();
 
 path block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#path Ingress#path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#path Ingress#path}
 
 ---
 
@@ -1385,7 +1385,7 @@ IngressSpecRuleHttpPath.builder()
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecRuleHttpPath.property.backend">backend</a></code> | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecRuleHttpPathBackend">IngressSpecRuleHttpPathBackend</a></code> | backend block. |
-| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecRuleHttpPath.property.path">path</a></code> | <code>java.lang.String</code> | Path is matched against the path of an incoming request. |
+| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecRuleHttpPath.property.path">path</a></code> | <code>java.lang.String</code> | path is matched against the path of an incoming request. |
 
 ---
 
@@ -1399,7 +1399,7 @@ public IngressSpecRuleHttpPathBackend getBackend();
 
 backend block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#backend Ingress#backend}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#backend Ingress#backend}
 
 ---
 
@@ -1411,11 +1411,11 @@ public java.lang.String getPath();
 
 - *Type:* java.lang.String
 
-Path is matched against the path of an incoming request.
+path is matched against the path of an incoming request.
 
 Currently it can contain characters disallowed from the conventional "path" part of a URL as defined by RFC 3986. Paths must begin with a '/' and must be present when using PathType with value "Exact" or "Prefix".
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#path Ingress#path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#path Ingress#path}
 
 ---
 
@@ -1451,7 +1451,7 @@ public java.lang.String getServiceName();
 
 Specifies the name of the referenced service.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#service_name Ingress#service_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#service_name Ingress#service_name}
 
 ---
 
@@ -1465,7 +1465,7 @@ public java.lang.String getServicePort();
 
 Specifies the port of the referenced service.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#service_port Ingress#service_port}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#service_port Ingress#service_port}
 
 ---
 
@@ -1486,8 +1486,8 @@ IngressSpecTls.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecTls.property.hosts">hosts</a></code> | <code>java.util.List<java.lang.String></code> | Hosts are a list of hosts included in the TLS certificate. |
-| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecTls.property.secretName">secretName</a></code> | <code>java.lang.String</code> | SecretName is the name of the secret used to terminate TLS traffic on port 443. |
+| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecTls.property.hosts">hosts</a></code> | <code>java.util.List<java.lang.String></code> | hosts is a list of hosts included in the TLS certificate. |
+| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecTls.property.secretName">secretName</a></code> | <code>java.lang.String</code> | secretName is the name of the secret used to terminate TLS traffic on port 443. |
 
 ---
 
@@ -1499,11 +1499,11 @@ public java.util.List<java.lang.String> getHosts();
 
 - *Type:* java.util.List<java.lang.String>
 
-Hosts are a list of hosts included in the TLS certificate.
+hosts is a list of hosts included in the TLS certificate.
 
 The values in this list must match the name/s used in the tlsSecret. Defaults to the wildcard host setting for the loadbalancer controller fulfilling this Ingress, if left unspecified.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#hosts Ingress#hosts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#hosts Ingress#hosts}
 
 ---
 
@@ -1515,11 +1515,11 @@ public java.lang.String getSecretName();
 
 - *Type:* java.lang.String
 
-SecretName is the name of the secret used to terminate TLS traffic on port 443.
+secretName is the name of the secret used to terminate TLS traffic on port 443.
 
 Field is left optional to allow TLS routing based on SNI hostname alone. If the SNI host in a listener conflicts with the "Host" header field used by an IngressRule, the SNI host is used for termination and value of the Host header is used for routing.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/ingress#secret_name Ingress#secret_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/ingress#secret_name Ingress#secret_name}
 
 ---
 

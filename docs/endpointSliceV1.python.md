@@ -1,6 +1,6 @@
 # `kubernetes_endpoint_slice_v1`
 
-Refer to the Terraform Registory for docs: [`kubernetes_endpoint_slice_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1).
+Refer to the Terraform Registory for docs: [`kubernetes_endpoint_slice_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1).
 
 # `endpointSliceV1` Submodule <a name="`endpointSliceV1` Submodule" id="@cdktf/provider-kubernetes.endpointSliceV1"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`kubernetes_endpoint_slice_v1`](http
 
 ### EndpointSliceV1 <a name="EndpointSliceV1" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1 kubernetes_endpoint_slice_v1}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1 kubernetes_endpoint_slice_v1}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.Initializer"></a>
 
@@ -48,7 +48,7 @@ endpointSliceV1.EndpointSliceV1(
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.Initializer.parameter.endpoint">endpoint</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Endpoint">EndpointSliceV1Endpoint</a>]]</code> | endpoint block. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.Initializer.parameter.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Metadata">EndpointSliceV1Metadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.Initializer.parameter.port">port</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Port">EndpointSliceV1Port</a>]]</code> | port block. |
-| <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.Initializer.parameter.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#id EndpointSliceV1#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.Initializer.parameter.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#id EndpointSliceV1#id}. |
 
 ---
 
@@ -120,7 +120,7 @@ address_type specifies the type of address carried by this EndpointSlice.
 
 All addresses in this slice must be the same type. This field is immutable after creation.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#address_type EndpointSliceV1#address_type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#address_type EndpointSliceV1#address_type}
 
 ---
 
@@ -130,7 +130,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 endpoint block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#endpoint EndpointSliceV1#endpoint}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#endpoint EndpointSliceV1#endpoint}
 
 ---
 
@@ -140,7 +140,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#metadata EndpointSliceV1#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#metadata EndpointSliceV1#metadata}
 
 ---
 
@@ -150,7 +150,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 port block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#port EndpointSliceV1#port}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#port EndpointSliceV1#port}
 
 ---
 
@@ -158,7 +158,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 - *Type:* str
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#id EndpointSliceV1#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#id EndpointSliceV1#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -504,7 +504,7 @@ An unstructured key value map stored with the endpoint_slice that may be used to
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#annotations EndpointSliceV1#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#annotations EndpointSliceV1#annotations}
 
 ---
 
@@ -516,7 +516,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#generate_name EndpointSliceV1#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#generate_name EndpointSliceV1#generate_name}
 
 ---
 
@@ -528,7 +528,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#labels EndpointSliceV1#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#labels EndpointSliceV1#labels}
 
 ---
 
@@ -538,7 +538,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 Name of the endpoint_slice, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#name EndpointSliceV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#name EndpointSliceV1#name}
 
 ---
 
@@ -548,7 +548,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 Namespace defines the space within which name of the endpoint_slice must be unique.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#namespace EndpointSliceV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#namespace EndpointSliceV1#namespace}
 
 ---
 
@@ -686,7 +686,7 @@ The construct id used in the generated config for the EndpointSliceV1 to import.
 
 The id of the existing EndpointSliceV1 that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -1029,7 +1029,7 @@ endpointSliceV1.EndpointSliceV1Config(
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Config.property.endpoint">endpoint</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Endpoint">EndpointSliceV1Endpoint</a>]]</code> | endpoint block. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Config.property.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Metadata">EndpointSliceV1Metadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Config.property.port">port</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Port">EndpointSliceV1Port</a>]]</code> | port block. |
-| <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Config.property.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#id EndpointSliceV1#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Config.property.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#id EndpointSliceV1#id}. |
 
 ---
 
@@ -1115,7 +1115,7 @@ address_type specifies the type of address carried by this EndpointSlice.
 
 All addresses in this slice must be the same type. This field is immutable after creation.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#address_type EndpointSliceV1#address_type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#address_type EndpointSliceV1#address_type}
 
 ---
 
@@ -1129,7 +1129,7 @@ endpoint: typing.Union[IResolvable, typing.List[EndpointSliceV1Endpoint]]
 
 endpoint block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#endpoint EndpointSliceV1#endpoint}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#endpoint EndpointSliceV1#endpoint}
 
 ---
 
@@ -1143,7 +1143,7 @@ metadata: EndpointSliceV1Metadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#metadata EndpointSliceV1#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#metadata EndpointSliceV1#metadata}
 
 ---
 
@@ -1157,7 +1157,7 @@ port: typing.Union[IResolvable, typing.List[EndpointSliceV1Port]]
 
 port block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#port EndpointSliceV1#port}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#port EndpointSliceV1#port}
 
 ---
 
@@ -1169,7 +1169,7 @@ id: str
 
 - *Type:* str
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#id EndpointSliceV1#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#id EndpointSliceV1#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1216,7 +1216,7 @@ addresses: typing.List[str]
 
 addresses of this endpoint. The contents of this field are interpreted according to the corresponding EndpointSlice addressType field.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#addresses EndpointSliceV1#addresses}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#addresses EndpointSliceV1#addresses}
 
 ---
 
@@ -1230,7 +1230,7 @@ condition: EndpointSliceV1EndpointCondition
 
 condition block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#condition EndpointSliceV1#condition}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#condition EndpointSliceV1#condition}
 
 ---
 
@@ -1244,7 +1244,7 @@ hostname: str
 
 hostname of this endpoint. This field may be used by consumers of endpoints to distinguish endpoints from each other.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#hostname EndpointSliceV1#hostname}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#hostname EndpointSliceV1#hostname}
 
 ---
 
@@ -1260,7 +1260,7 @@ nodeName represents the name of the Node hosting this endpoint.
 
 This can be used to determine endpoints local to a Node.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#node_name EndpointSliceV1#node_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#node_name EndpointSliceV1#node_name}
 
 ---
 
@@ -1274,7 +1274,7 @@ target_ref: EndpointSliceV1EndpointTargetRef
 
 target_ref block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#target_ref EndpointSliceV1#target_ref}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#target_ref EndpointSliceV1#target_ref}
 
 ---
 
@@ -1288,7 +1288,7 @@ zone: str
 
 zone is the name of the Zone this endpoint exists in.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#zone EndpointSliceV1#zone}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#zone EndpointSliceV1#zone}
 
 ---
 
@@ -1326,7 +1326,7 @@ ready: typing.Union[bool, IResolvable]
 
 ready indicates that this endpoint is prepared to receive traffic, according to whatever system is managing the endpoint.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#ready EndpointSliceV1#ready}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#ready EndpointSliceV1#ready}
 
 ---
 
@@ -1340,7 +1340,7 @@ serving: typing.Union[bool, IResolvable]
 
 serving is identical to ready except that it is set regardless of the terminating state of endpoints.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#serving EndpointSliceV1#serving}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#serving EndpointSliceV1#serving}
 
 ---
 
@@ -1354,7 +1354,7 @@ terminating: typing.Union[bool, IResolvable]
 
 terminating indicates that this endpoint is terminating.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#terminating EndpointSliceV1#terminating}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#terminating EndpointSliceV1#terminating}
 
 ---
 
@@ -1396,7 +1396,7 @@ name: str
 
 Name of the referent.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#name EndpointSliceV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#name EndpointSliceV1#name}
 
 ---
 
@@ -1410,7 +1410,7 @@ field_path: str
 
 If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2].
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#field_path EndpointSliceV1#field_path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#field_path EndpointSliceV1#field_path}
 
 ---
 
@@ -1424,7 +1424,7 @@ namespace: str
 
 Namespace of the referent.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#namespace EndpointSliceV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#namespace EndpointSliceV1#namespace}
 
 ---
 
@@ -1438,7 +1438,7 @@ resource_version: str
 
 Specific resourceVersion to which this reference is made, if any.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#resource_version EndpointSliceV1#resource_version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#resource_version EndpointSliceV1#resource_version}
 
 ---
 
@@ -1452,7 +1452,7 @@ uid: str
 
 If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2].
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#uid EndpointSliceV1#uid}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#uid EndpointSliceV1#uid}
 
 ---
 
@@ -1496,7 +1496,7 @@ An unstructured key value map stored with the endpoint_slice that may be used to
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#annotations EndpointSliceV1#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#annotations EndpointSliceV1#annotations}
 
 ---
 
@@ -1512,7 +1512,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#generate_name EndpointSliceV1#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#generate_name EndpointSliceV1#generate_name}
 
 ---
 
@@ -1528,7 +1528,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#labels EndpointSliceV1#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#labels EndpointSliceV1#labels}
 
 ---
 
@@ -1542,7 +1542,7 @@ name: str
 
 Name of the endpoint_slice, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#name EndpointSliceV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#name EndpointSliceV1#name}
 
 ---
 
@@ -1556,7 +1556,7 @@ namespace: str
 
 Namespace defines the space within which name of the endpoint_slice must be unique.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#namespace EndpointSliceV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#namespace EndpointSliceV1#namespace}
 
 ---
 
@@ -1598,7 +1598,7 @@ The application protocol for this port.
 
 This is used as a hint for implementations to offer richer behavior for protocols that they understand.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#app_protocol EndpointSliceV1#app_protocol}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#app_protocol EndpointSliceV1#app_protocol}
 
 ---
 
@@ -1612,7 +1612,7 @@ port: str
 
 port represents the port number of the endpoint.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#port EndpointSliceV1#port}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#port EndpointSliceV1#port}
 
 ---
 
@@ -1626,7 +1626,7 @@ name: str
 
 name represents the name of this port. All ports in an EndpointSlice must have a unique name.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#name EndpointSliceV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#name EndpointSliceV1#name}
 
 ---
 
@@ -1640,7 +1640,7 @@ protocol: str
 
 protocol represents the IP protocol for this port. Must be UDP, TCP, or SCTP. Default is TCP.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#protocol EndpointSliceV1#protocol}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#protocol EndpointSliceV1#protocol}
 
 ---
 
@@ -2429,7 +2429,7 @@ def put_condition(
 
 ready indicates that this endpoint is prepared to receive traffic, according to whatever system is managing the endpoint.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#ready EndpointSliceV1#ready}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#ready EndpointSliceV1#ready}
 
 ---
 
@@ -2439,7 +2439,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 serving is identical to ready except that it is set regardless of the terminating state of endpoints.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#serving EndpointSliceV1#serving}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#serving EndpointSliceV1#serving}
 
 ---
 
@@ -2449,7 +2449,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 terminating indicates that this endpoint is terminating.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#terminating EndpointSliceV1#terminating}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#terminating EndpointSliceV1#terminating}
 
 ---
 
@@ -2471,7 +2471,7 @@ def put_target_ref(
 
 Name of the referent.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#name EndpointSliceV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#name EndpointSliceV1#name}
 
 ---
 
@@ -2481,7 +2481,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2].
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#field_path EndpointSliceV1#field_path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#field_path EndpointSliceV1#field_path}
 
 ---
 
@@ -2491,7 +2491,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 Namespace of the referent.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#namespace EndpointSliceV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#namespace EndpointSliceV1#namespace}
 
 ---
 
@@ -2501,7 +2501,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 Specific resourceVersion to which this reference is made, if any.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#resource_version EndpointSliceV1#resource_version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#resource_version EndpointSliceV1#resource_version}
 
 ---
 
@@ -2511,7 +2511,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2].
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/endpoint_slice_v1#uid EndpointSliceV1#uid}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#uid EndpointSliceV1#uid}
 
 ---
 
