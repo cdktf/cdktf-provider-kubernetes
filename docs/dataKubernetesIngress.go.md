@@ -13,7 +13,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngress.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngress(scope Construct, id *string, config DataKubernetesIngressConfig) DataKubernetesIngress
 ```
@@ -291,7 +291,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngress.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.DataKubernetesIngress_IsConstruct(x interface{}) *bool
 ```
@@ -323,7 +323,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngress.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.DataKubernetesIngress_IsTerraformElement(x interface{}) *bool
 ```
@@ -337,7 +337,7 @@ datakubernetesingress.DataKubernetesIngress_IsTerraformElement(x interface{}) *b
 ##### `IsTerraformDataSource` <a name="IsTerraformDataSource" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngress.isTerraformDataSource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.DataKubernetesIngress_IsTerraformDataSource(x interface{}) *bool
 ```
@@ -351,7 +351,7 @@ datakubernetesingress.DataKubernetesIngress_IsTerraformDataSource(x interface{})
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngress.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.DataKubernetesIngress_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -624,7 +624,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 &datakubernetesingress.DataKubernetesIngressConfig {
 	Connection: interface{},
@@ -634,7 +634,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesi
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.dataKubernetesIngress.DataKubernetesIngressMetadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.dataKubernetesIngress.DataKubernetesIngressMetadata,
 	Id: *string,
 }
 ```
@@ -759,7 +759,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 &datakubernetesingress.DataKubernetesIngressMetadata {
 	Annotations: *map[string]*string,
@@ -845,7 +845,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 &datakubernetesingress.DataKubernetesIngressSpec {
 
@@ -858,7 +858,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecBackend.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 &datakubernetesingress.DataKubernetesIngressSpecBackend {
 
@@ -871,7 +871,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecRule.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 &datakubernetesingress.DataKubernetesIngressSpecRule {
 
@@ -884,7 +884,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecRuleHttp.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 &datakubernetesingress.DataKubernetesIngressSpecRuleHttp {
 
@@ -897,7 +897,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecRuleHttpPath.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 &datakubernetesingress.DataKubernetesIngressSpecRuleHttpPath {
 
@@ -910,7 +910,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecRuleHttpPathBackend.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 &datakubernetesingress.DataKubernetesIngressSpecRuleHttpPathBackend {
 
@@ -923,7 +923,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecTls.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 &datakubernetesingress.DataKubernetesIngressSpecTls {
 
@@ -936,7 +936,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressStatus.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 &datakubernetesingress.DataKubernetesIngressStatus {
 
@@ -949,7 +949,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressStatusLoadBalancer.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 &datakubernetesingress.DataKubernetesIngressStatusLoadBalancer {
 
@@ -962,7 +962,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressStatusLoadBalancerIngress.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 &datakubernetesingress.DataKubernetesIngressStatusLoadBalancerIngress {
 
@@ -977,7 +977,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) DataKubernetesIngressMetadataOutputReference
 ```
@@ -1375,7 +1375,7 @@ func InternalValue() DataKubernetesIngressMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecBackendList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressSpecBackendList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesIngressSpecBackendList
 ```
@@ -1507,7 +1507,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecBackendOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressSpecBackendOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesIngressSpecBackendOutputReference
 ```
@@ -1796,7 +1796,7 @@ func InternalValue() DataKubernetesIngressSpecBackend
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressSpecList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesIngressSpecList
 ```
@@ -1928,7 +1928,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressSpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesIngressSpecOutputReference
 ```
@@ -2239,7 +2239,7 @@ func InternalValue() DataKubernetesIngressSpec
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecRuleHttpList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressSpecRuleHttpList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesIngressSpecRuleHttpList
 ```
@@ -2371,7 +2371,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecRuleHttpOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressSpecRuleHttpOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesIngressSpecRuleHttpOutputReference
 ```
@@ -2649,7 +2649,7 @@ func InternalValue() DataKubernetesIngressSpecRuleHttp
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecRuleHttpPathBackendList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressSpecRuleHttpPathBackendList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesIngressSpecRuleHttpPathBackendList
 ```
@@ -2781,7 +2781,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecRuleHttpPathBackendOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressSpecRuleHttpPathBackendOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesIngressSpecRuleHttpPathBackendOutputReference
 ```
@@ -3070,7 +3070,7 @@ func InternalValue() DataKubernetesIngressSpecRuleHttpPathBackend
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecRuleHttpPathList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressSpecRuleHttpPathList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesIngressSpecRuleHttpPathList
 ```
@@ -3202,7 +3202,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecRuleHttpPathOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressSpecRuleHttpPathOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesIngressSpecRuleHttpPathOutputReference
 ```
@@ -3491,7 +3491,7 @@ func InternalValue() DataKubernetesIngressSpecRuleHttpPath
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecRuleList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressSpecRuleList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesIngressSpecRuleList
 ```
@@ -3623,7 +3623,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecRuleOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressSpecRuleOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesIngressSpecRuleOutputReference
 ```
@@ -3912,7 +3912,7 @@ func InternalValue() DataKubernetesIngressSpecRule
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecTlsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressSpecTlsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesIngressSpecTlsList
 ```
@@ -4044,7 +4044,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressSpecTlsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressSpecTlsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesIngressSpecTlsOutputReference
 ```
@@ -4333,7 +4333,7 @@ func InternalValue() DataKubernetesIngressSpecTls
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressStatusList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressStatusList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesIngressStatusList
 ```
@@ -4465,7 +4465,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressStatusLoadBalancerIngressList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressStatusLoadBalancerIngressList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesIngressStatusLoadBalancerIngressList
 ```
@@ -4597,7 +4597,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressStatusLoadBalancerIngressOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressStatusLoadBalancerIngressOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesIngressStatusLoadBalancerIngressOutputReference
 ```
@@ -4886,7 +4886,7 @@ func InternalValue() DataKubernetesIngressStatusLoadBalancerIngress
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressStatusLoadBalancerList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressStatusLoadBalancerList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesIngressStatusLoadBalancerList
 ```
@@ -5018,7 +5018,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressStatusLoadBalancerOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressStatusLoadBalancerOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesIngressStatusLoadBalancerOutputReference
 ```
@@ -5296,7 +5296,7 @@ func InternalValue() DataKubernetesIngressStatusLoadBalancer
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesIngress.DataKubernetesIngressStatusOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesingress"
 
 datakubernetesingress.NewDataKubernetesIngressStatusOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesIngressStatusOutputReference
 ```
