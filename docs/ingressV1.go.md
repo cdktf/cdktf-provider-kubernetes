@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1(scope Construct, id *string, config IngressV1Config) IngressV1
 ```
@@ -388,7 +388,7 @@ func ResetWaitForLoadBalancer()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.ingressV1.IngressV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.IngressV1_IsConstruct(x interface{}) *bool
 ```
@@ -420,7 +420,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.ingressV1.IngressV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.IngressV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -434,7 +434,7 @@ ingressv1.IngressV1_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.ingressV1.IngressV1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.IngressV1_IsTerraformResource(x interface{}) *bool
 ```
@@ -448,7 +448,7 @@ ingressv1.IngressV1_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.ingressV1.IngressV1.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.IngressV1_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -798,7 +798,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressV1.IngressV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 &ingressv1.IngressV1Config {
 	Connection: interface{},
@@ -808,10 +808,10 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.ingressV1.IngressV1Metadata,
-	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.ingressV1.IngressV1Spec,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.ingressV1.IngressV1Metadata,
+	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.ingressV1.IngressV1Spec,
 	Id: *string,
-	Timeouts: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.ingressV1.IngressV1Timeouts,
+	Timeouts: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.ingressV1.IngressV1Timeouts,
 	WaitForLoadBalancer: interface{},
 }
 ```
@@ -981,7 +981,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressV1.IngressV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 &ingressv1.IngressV1Metadata {
 	Annotations: *map[string]*string,
@@ -1085,10 +1085,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressV1.IngressV1Spec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 &ingressv1.IngressV1Spec {
-	DefaultBackend: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.ingressV1.IngressV1SpecDefaultBackend,
+	DefaultBackend: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.ingressV1.IngressV1SpecDefaultBackend,
 	IngressClassName: *string,
 	Rule: interface{},
 	Tls: interface{},
@@ -1169,11 +1169,11 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecDefaultBackend.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 &ingressv1.IngressV1SpecDefaultBackend {
-	Resource: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.ingressV1.IngressV1SpecDefaultBackendResource,
-	Service: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.ingressV1.IngressV1SpecDefaultBackendService,
+	Resource: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.ingressV1.IngressV1SpecDefaultBackendResource,
+	Service: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.ingressV1.IngressV1SpecDefaultBackendService,
 }
 ```
 
@@ -1219,7 +1219,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecDefaultBackendResource.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 &ingressv1.IngressV1SpecDefaultBackendResource {
 	ApiGroup: *string,
@@ -1287,11 +1287,11 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecDefaultBackendService.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 &ingressv1.IngressV1SpecDefaultBackendService {
 	Name: *string,
-	Port: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.ingressV1.IngressV1SpecDefaultBackendServicePort,
+	Port: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.ingressV1.IngressV1SpecDefaultBackendServicePort,
 }
 ```
 
@@ -1337,7 +1337,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecDefaultBackendServicePort.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 &ingressv1.IngressV1SpecDefaultBackendServicePort {
 	Name: *string,
@@ -1387,11 +1387,11 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecRule.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 &ingressv1.IngressV1SpecRule {
 	Host: *string,
-	Http: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.ingressV1.IngressV1SpecRuleHttp,
+	Http: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.ingressV1.IngressV1SpecRuleHttp,
 }
 ```
 
@@ -1446,7 +1446,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecRuleHttp.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 &ingressv1.IngressV1SpecRuleHttp {
 	Path: interface{},
@@ -1480,10 +1480,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecRuleHttpPath.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 &ingressv1.IngressV1SpecRuleHttpPath {
-	Backend: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.ingressV1.IngressV1SpecRuleHttpPathBackend,
+	Backend: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.ingressV1.IngressV1SpecRuleHttpPathBackend,
 	Path: *string,
 	PathType: *string,
 }
@@ -1561,11 +1561,11 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecRuleHttpPathBackend.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 &ingressv1.IngressV1SpecRuleHttpPathBackend {
-	Resource: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.ingressV1.IngressV1SpecRuleHttpPathBackendResource,
-	Service: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.ingressV1.IngressV1SpecRuleHttpPathBackendService,
+	Resource: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.ingressV1.IngressV1SpecRuleHttpPathBackendResource,
+	Service: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.ingressV1.IngressV1SpecRuleHttpPathBackendService,
 }
 ```
 
@@ -1611,7 +1611,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecRuleHttpPathBackendResource.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 &ingressv1.IngressV1SpecRuleHttpPathBackendResource {
 	ApiGroup: *string,
@@ -1679,11 +1679,11 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecRuleHttpPathBackendService.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 &ingressv1.IngressV1SpecRuleHttpPathBackendService {
 	Name: *string,
-	Port: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.ingressV1.IngressV1SpecRuleHttpPathBackendServicePort,
+	Port: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.ingressV1.IngressV1SpecRuleHttpPathBackendServicePort,
 }
 ```
 
@@ -1729,7 +1729,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecRuleHttpPathBackendServicePort.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 &ingressv1.IngressV1SpecRuleHttpPathBackendServicePort {
 	Name: *string,
@@ -1779,7 +1779,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecTls.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 &ingressv1.IngressV1SpecTls {
 	Hosts: *[]*string,
@@ -1833,7 +1833,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressV1.IngressV1Status.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 &ingressv1.IngressV1Status {
 
@@ -1846,7 +1846,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressV1.IngressV1StatusLoadBalancer.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 &ingressv1.IngressV1StatusLoadBalancer {
 
@@ -1859,7 +1859,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressV1.IngressV1StatusLoadBalancerIngress.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 &ingressv1.IngressV1StatusLoadBalancerIngress {
 
@@ -1872,7 +1872,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressV1.IngressV1Timeouts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 &ingressv1.IngressV1Timeouts {
 	Create: *string,
@@ -1920,7 +1920,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) IngressV1MetadataOutputReference
 ```
@@ -2347,7 +2347,7 @@ func InternalValue() IngressV1Metadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecDefaultBackendOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1SpecDefaultBackendOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) IngressV1SpecDefaultBackendOutputReference
 ```
@@ -2680,7 +2680,7 @@ func InternalValue() IngressV1SpecDefaultBackend
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecDefaultBackendResourceOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1SpecDefaultBackendResourceOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) IngressV1SpecDefaultBackendResourceOutputReference
 ```
@@ -2995,7 +2995,7 @@ func InternalValue() IngressV1SpecDefaultBackendResource
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecDefaultBackendServiceOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1SpecDefaultBackendServiceOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) IngressV1SpecDefaultBackendServiceOutputReference
 ```
@@ -3301,7 +3301,7 @@ func InternalValue() IngressV1SpecDefaultBackendService
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecDefaultBackendServicePortOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1SpecDefaultBackendServicePortOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) IngressV1SpecDefaultBackendServicePortOutputReference
 ```
@@ -3608,7 +3608,7 @@ func InternalValue() IngressV1SpecDefaultBackendServicePort
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1SpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) IngressV1SpecOutputReference
 ```
@@ -4012,7 +4012,7 @@ func InternalValue() IngressV1Spec
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecRuleHttpOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1SpecRuleHttpOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) IngressV1SpecRuleHttpOutputReference
 ```
@@ -4296,7 +4296,7 @@ func InternalValue() IngressV1SpecRuleHttp
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecRuleHttpPathBackendOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1SpecRuleHttpPathBackendOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) IngressV1SpecRuleHttpPathBackendOutputReference
 ```
@@ -4629,7 +4629,7 @@ func InternalValue() IngressV1SpecRuleHttpPathBackend
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecRuleHttpPathBackendResourceOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1SpecRuleHttpPathBackendResourceOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) IngressV1SpecRuleHttpPathBackendResourceOutputReference
 ```
@@ -4944,7 +4944,7 @@ func InternalValue() IngressV1SpecRuleHttpPathBackendResource
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecRuleHttpPathBackendServiceOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1SpecRuleHttpPathBackendServiceOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) IngressV1SpecRuleHttpPathBackendServiceOutputReference
 ```
@@ -5250,7 +5250,7 @@ func InternalValue() IngressV1SpecRuleHttpPathBackendService
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecRuleHttpPathBackendServicePortOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1SpecRuleHttpPathBackendServicePortOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) IngressV1SpecRuleHttpPathBackendServicePortOutputReference
 ```
@@ -5557,7 +5557,7 @@ func InternalValue() IngressV1SpecRuleHttpPathBackendServicePort
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecRuleHttpPathList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1SpecRuleHttpPathList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) IngressV1SpecRuleHttpPathList
 ```
@@ -5700,7 +5700,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecRuleHttpPathOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1SpecRuleHttpPathOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) IngressV1SpecRuleHttpPathOutputReference
 ```
@@ -6067,7 +6067,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecRuleList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1SpecRuleList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) IngressV1SpecRuleList
 ```
@@ -6210,7 +6210,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecRuleOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1SpecRuleOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) IngressV1SpecRuleOutputReference
 ```
@@ -6548,7 +6548,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecTlsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1SpecTlsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) IngressV1SpecTlsList
 ```
@@ -6691,7 +6691,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1SpecTlsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1SpecTlsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) IngressV1SpecTlsOutputReference
 ```
@@ -7016,7 +7016,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1StatusList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1StatusList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) IngressV1StatusList
 ```
@@ -7148,7 +7148,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1StatusLoadBalancerIngressList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1StatusLoadBalancerIngressList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) IngressV1StatusLoadBalancerIngressList
 ```
@@ -7280,7 +7280,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1StatusLoadBalancerIngressOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1StatusLoadBalancerIngressOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) IngressV1StatusLoadBalancerIngressOutputReference
 ```
@@ -7569,7 +7569,7 @@ func InternalValue() IngressV1StatusLoadBalancerIngress
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1StatusLoadBalancerList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1StatusLoadBalancerList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) IngressV1StatusLoadBalancerList
 ```
@@ -7701,7 +7701,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1StatusLoadBalancerOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1StatusLoadBalancerOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) IngressV1StatusLoadBalancerOutputReference
 ```
@@ -7979,7 +7979,7 @@ func InternalValue() IngressV1StatusLoadBalancer
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1StatusOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1StatusOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) IngressV1StatusOutputReference
 ```
@@ -8257,7 +8257,7 @@ func InternalValue() IngressV1Status
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressV1.IngressV1TimeoutsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressv1"
 
 ingressv1.NewIngressV1TimeoutsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) IngressV1TimeoutsOutputReference
 ```
