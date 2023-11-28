@@ -1,6 +1,6 @@
 # `kubernetes_runtime_class_v1`
 
-Refer to the Terraform Registory for docs: [`kubernetes_runtime_class_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/runtime_class_v1).
+Refer to the Terraform Registory for docs: [`kubernetes_runtime_class_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/runtime_class_v1).
 
 # `runtimeClassV1` Submodule <a name="`runtimeClassV1` Submodule" id="@cdktf/provider-kubernetes.runtimeClassV1"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`kubernetes_runtime_class_v1`](https
 
 ### RuntimeClassV1 <a name="RuntimeClassV1" id="@cdktf/provider-kubernetes.runtimeClassV1.RuntimeClassV1"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/runtime_class_v1 kubernetes_runtime_class_v1}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/runtime_class_v1 kubernetes_runtime_class_v1}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.runtimeClassV1.RuntimeClassV1.Initializer"></a>
 
@@ -441,7 +441,7 @@ The construct id used in the generated config for the RuntimeClassV1 to import.
 
 The id of the existing RuntimeClassV1 that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/runtime_class_v1#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/runtime_class_v1#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -736,7 +736,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/runtimeclas
 | <code><a href="#@cdktf/provider-kubernetes.runtimeClassV1.RuntimeClassV1Config.property.provisioners">Provisioners</a></code> | <code>*[]interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.runtimeClassV1.RuntimeClassV1Config.property.handler">Handler</a></code> | <code>*string</code> | Specifies the underlying runtime and configuration that the CRI implementation will use to handle pods of this class. |
 | <code><a href="#@cdktf/provider-kubernetes.runtimeClassV1.RuntimeClassV1Config.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.runtimeClassV1.RuntimeClassV1Metadata">RuntimeClassV1Metadata</a></code> | metadata block. |
-| <code><a href="#@cdktf/provider-kubernetes.runtimeClassV1.RuntimeClassV1Config.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/runtime_class_v1#id RuntimeClassV1#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.runtimeClassV1.RuntimeClassV1Config.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/runtime_class_v1#id RuntimeClassV1#id}. |
 
 ---
 
@@ -820,7 +820,7 @@ Handler *string
 
 Specifies the underlying runtime and configuration that the CRI implementation will use to handle pods of this class.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/runtime_class_v1#handler RuntimeClassV1#handler}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/runtime_class_v1#handler RuntimeClassV1#handler}
 
 ---
 
@@ -834,7 +834,7 @@ Metadata RuntimeClassV1Metadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/runtime_class_v1#metadata RuntimeClassV1#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/runtime_class_v1#metadata RuntimeClassV1#metadata}
 
 ---
 
@@ -846,7 +846,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/runtime_class_v1#id RuntimeClassV1#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/runtime_class_v1#id RuntimeClassV1#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -891,7 +891,7 @@ An unstructured key value map stored with the runtimeclass that may be used to s
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/runtime_class_v1#annotations RuntimeClassV1#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/runtime_class_v1#annotations RuntimeClassV1#annotations}
 
 ---
 
@@ -907,7 +907,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/runtime_class_v1#generate_name RuntimeClassV1#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/runtime_class_v1#generate_name RuntimeClassV1#generate_name}
 
 ---
 
@@ -923,7 +923,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/runtime_class_v1#labels RuntimeClassV1#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/runtime_class_v1#labels RuntimeClassV1#labels}
 
 ---
 
@@ -937,7 +937,7 @@ Name *string
 
 Name of the runtimeclass, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.23.0/docs/resources/runtime_class_v1#name RuntimeClassV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/runtime_class_v1#name RuntimeClassV1#name}
 
 ---
 
