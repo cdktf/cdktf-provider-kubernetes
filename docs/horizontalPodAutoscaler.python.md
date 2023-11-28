@@ -1,7 +1,3 @@
-# `kubernetes_horizontal_pod_autoscaler`
-
-Refer to the Terraform Registory for docs: [`kubernetes_horizontal_pod_autoscaler`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/horizontal_pod_autoscaler).
-
 # `horizontalPodAutoscaler` Submodule <a name="`horizontalPodAutoscaler` Submodule" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

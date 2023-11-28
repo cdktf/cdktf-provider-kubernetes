@@ -1,7 +1,3 @@
-# `kubernetes_config_map`
-
-Refer to the Terraform Registory for docs: [`kubernetes_config_map`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/config_map).
-
 # `configMap` Submodule <a name="`configMap` Submodule" id="@cdktf/provider-kubernetes.configMap"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

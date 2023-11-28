@@ -1,7 +1,3 @@
-# `kubernetes_service`
-
-Refer to the Terraform Registory for docs: [`kubernetes_service`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/service).
-
 # `service` Submodule <a name="`service` Submodule" id="@cdktf/provider-kubernetes.service"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

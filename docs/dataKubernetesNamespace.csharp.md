@@ -1,7 +1,3 @@
-# `data_kubernetes_namespace`
-
-Refer to the Terraform Registory for docs: [`data_kubernetes_namespace`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/namespace).
-
 # `dataKubernetesNamespace` Submodule <a name="`dataKubernetesNamespace` Submodule" id="@cdktf/provider-kubernetes.dataKubernetesNamespace"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

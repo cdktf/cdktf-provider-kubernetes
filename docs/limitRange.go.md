@@ -1,7 +1,3 @@
-# `kubernetes_limit_range`
-
-Refer to the Terraform Registory for docs: [`kubernetes_limit_range`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/limit_range).
-
 # `limitRange` Submodule <a name="`limitRange` Submodule" id="@cdktf/provider-kubernetes.limitRange"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

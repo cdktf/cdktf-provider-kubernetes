@@ -1,7 +1,3 @@
-# `data_kubernetes_nodes`
-
-Refer to the Terraform Registory for docs: [`data_kubernetes_nodes`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/nodes).
-
 # `dataKubernetesNodes` Submodule <a name="`dataKubernetesNodes` Submodule" id="@cdktf/provider-kubernetes.dataKubernetesNodes"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

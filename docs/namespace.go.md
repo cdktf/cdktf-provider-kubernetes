@@ -1,7 +1,3 @@
-# `kubernetes_namespace`
-
-Refer to the Terraform Registory for docs: [`kubernetes_namespace`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/namespace).
-
 # `namespace` Submodule <a name="`namespace` Submodule" id="@cdktf/provider-kubernetes.namespace"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

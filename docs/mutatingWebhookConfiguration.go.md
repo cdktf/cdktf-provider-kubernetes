@@ -1,7 +1,3 @@
-# `kubernetes_mutating_webhook_configuration`
-
-Refer to the Terraform Registory for docs: [`kubernetes_mutating_webhook_configuration`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/mutating_webhook_configuration).
-
 # `mutatingWebhookConfiguration` Submodule <a name="`mutatingWebhookConfiguration` Submodule" id="@cdktf/provider-kubernetes.mutatingWebhookConfiguration"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

@@ -1,7 +1,3 @@
-# `kubernetes_validating_webhook_configuration_v1`
-
-Refer to the Terraform Registory for docs: [`kubernetes_validating_webhook_configuration_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/validating_webhook_configuration_v1).
-
 # `validatingWebhookConfigurationV1` Submodule <a name="`validatingWebhookConfigurationV1` Submodule" id="@cdktf/provider-kubernetes.validatingWebhookConfigurationV1"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

@@ -1,7 +1,3 @@
-# `data_kubernetes_persistent_volume_claim`
-
-Refer to the Terraform Registory for docs: [`data_kubernetes_persistent_volume_claim`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/persistent_volume_claim).
-
 # `dataKubernetesPersistentVolumeClaim` Submodule <a name="`dataKubernetesPersistentVolumeClaim` Submodule" id="@cdktf/provider-kubernetes.dataKubernetesPersistentVolumeClaim"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

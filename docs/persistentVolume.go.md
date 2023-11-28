@@ -1,7 +1,3 @@
-# `kubernetes_persistent_volume`
-
-Refer to the Terraform Registory for docs: [`kubernetes_persistent_volume`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/persistent_volume).
-
 # `persistentVolume` Submodule <a name="`persistentVolume` Submodule" id="@cdktf/provider-kubernetes.persistentVolume"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

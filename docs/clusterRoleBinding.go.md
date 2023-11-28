@@ -1,7 +1,3 @@
-# `kubernetes_cluster_role_binding`
-
-Refer to the Terraform Registory for docs: [`kubernetes_cluster_role_binding`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role_binding).
-
 # `clusterRoleBinding` Submodule <a name="`clusterRoleBinding` Submodule" id="@cdktf/provider-kubernetes.clusterRoleBinding"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

@@ -1,7 +1,3 @@
-# `kubernetes_manifest`
-
-Refer to the Terraform Registory for docs: [`kubernetes_manifest`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/manifest).
-
 # `manifest` Submodule <a name="`manifest` Submodule" id="@cdktf/provider-kubernetes.manifest"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

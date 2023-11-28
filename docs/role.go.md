@@ -1,7 +1,3 @@
-# `kubernetes_role`
-
-Refer to the Terraform Registory for docs: [`kubernetes_role`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/role).
-
 # `role` Submodule <a name="`role` Submodule" id="@cdktf/provider-kubernetes.role"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
