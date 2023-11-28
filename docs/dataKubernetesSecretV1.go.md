@@ -1,7 +1,3 @@
-# `data_kubernetes_secret_v1`
-
-Refer to the Terraform Registory for docs: [`data_kubernetes_secret_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/secret_v1).
-
 # `dataKubernetesSecretV1` Submodule <a name="`dataKubernetesSecretV1` Submodule" id="@cdktf/provider-kubernetes.dataKubernetesSecretV1"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
@@ -13,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesSecretV1.DataKubernetesSecretV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetessecretv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetessecretv1"
 
 datakubernetessecretv1.NewDataKubernetesSecretV1(scope Construct, id *string, config DataKubernetesSecretV1Config) DataKubernetesSecretV1
 ```
@@ -298,7 +294,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.dataKubernetesSecretV1.DataKubernetesSecretV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetessecretv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetessecretv1"
 
 datakubernetessecretv1.DataKubernetesSecretV1_IsConstruct(x interface{}) *bool
 ```
@@ -330,7 +326,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.dataKubernetesSecretV1.DataKubernetesSecretV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetessecretv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetessecretv1"
 
 datakubernetessecretv1.DataKubernetesSecretV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -344,7 +340,7 @@ datakubernetessecretv1.DataKubernetesSecretV1_IsTerraformElement(x interface{}) 
 ##### `IsTerraformDataSource` <a name="IsTerraformDataSource" id="@cdktf/provider-kubernetes.dataKubernetesSecretV1.DataKubernetesSecretV1.isTerraformDataSource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetessecretv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetessecretv1"
 
 datakubernetessecretv1.DataKubernetesSecretV1_IsTerraformDataSource(x interface{}) *bool
 ```
@@ -358,7 +354,7 @@ datakubernetessecretv1.DataKubernetesSecretV1_IsTerraformDataSource(x interface{
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.dataKubernetesSecretV1.DataKubernetesSecretV1.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetessecretv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetessecretv1"
 
 datakubernetessecretv1.DataKubernetesSecretV1_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -664,7 +660,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesSecretV1.DataKubernetesSecretV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetessecretv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetessecretv1"
 
 &datakubernetessecretv1.DataKubernetesSecretV1Config {
 	Connection: interface{},
@@ -674,7 +670,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.dataKubernetesSecretV1.DataKubernetesSecretV1Metadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.dataKubernetesSecretV1.DataKubernetesSecretV1Metadata,
 	BinaryData: *map[string]*string,
 	Id: *string,
 }
@@ -815,7 +811,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesSecretV1.DataKubernetesSecretV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetessecretv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetessecretv1"
 
 &datakubernetessecretv1.DataKubernetesSecretV1Metadata {
 	Annotations: *map[string]*string,
@@ -921,7 +917,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesSecretV1.DataKubernetesSecretV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetessecretv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetessecretv1"
 
 datakubernetessecretv1.NewDataKubernetesSecretV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) DataKubernetesSecretV1MetadataOutputReference
 ```

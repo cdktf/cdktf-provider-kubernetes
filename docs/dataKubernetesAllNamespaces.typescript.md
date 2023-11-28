@@ -1,7 +1,3 @@
-# `data_kubernetes_all_namespaces`
-
-Refer to the Terraform Registory for docs: [`data_kubernetes_all_namespaces`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/all_namespaces).
-
 # `dataKubernetesAllNamespaces` Submodule <a name="`dataKubernetesAllNamespaces` Submodule" id="@cdktf/provider-kubernetes.dataKubernetesAllNamespaces"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

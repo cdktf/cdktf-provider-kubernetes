@@ -1,7 +1,3 @@
-# `kubernetes_storage_class_v1`
-
-Refer to the Terraform Registory for docs: [`kubernetes_storage_class_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/storage_class_v1).
-
 # `storageClassV1` Submodule <a name="`storageClassV1` Submodule" id="@cdktf/provider-kubernetes.storageClassV1"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
@@ -13,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 storageclassv1.NewStorageClassV1(scope Construct, id *string, config StorageClassV1Config) StorageClassV1
 ```
@@ -407,7 +403,7 @@ func ResetVolumeBindingMode()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 storageclassv1.StorageClassV1_IsConstruct(x interface{}) *bool
 ```
@@ -439,7 +435,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 storageclassv1.StorageClassV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -453,7 +449,7 @@ storageclassv1.StorageClassV1_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 storageclassv1.StorageClassV1_IsTerraformResource(x interface{}) *bool
 ```
@@ -467,7 +463,7 @@ storageclassv1.StorageClassV1_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 storageclassv1.StorageClassV1_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -894,7 +890,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1AllowedTopologies.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 &storageclassv1.StorageClassV1AllowedTopologies {
 	MatchLabelExpressions: interface{},
@@ -928,7 +924,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1AllowedTopologiesMatchLabelExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 &storageclassv1.StorageClassV1AllowedTopologiesMatchLabelExpressions {
 	Key: *string,
@@ -978,7 +974,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 &storageclassv1.StorageClassV1Config {
 	Connection: interface{},
@@ -988,9 +984,9 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/storageclas
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.storageClassV1.StorageClassV1Metadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.storageClassV1.StorageClassV1Metadata,
 	StorageProvisioner: *string,
-	AllowedTopologies: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.storageClassV1.StorageClassV1AllowedTopologies,
+	AllowedTopologies: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.storageClassV1.StorageClassV1AllowedTopologies,
 	AllowVolumeExpansion: interface{},
 	Id: *string,
 	MountOptions: *[]*string,
@@ -1225,7 +1221,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 &storageclassv1.StorageClassV1Metadata {
 	Annotations: *map[string]*string,
@@ -1315,7 +1311,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1AllowedTopologiesMatchLabelExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 storageclassv1.NewStorageClassV1AllowedTopologiesMatchLabelExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) StorageClassV1AllowedTopologiesMatchLabelExpressionsList
 ```
@@ -1458,7 +1454,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1AllowedTopologiesMatchLabelExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 storageclassv1.NewStorageClassV1AllowedTopologiesMatchLabelExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) StorageClassV1AllowedTopologiesMatchLabelExpressionsOutputReference
 ```
@@ -1783,7 +1779,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1AllowedTopologiesOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 storageclassv1.NewStorageClassV1AllowedTopologiesOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) StorageClassV1AllowedTopologiesOutputReference
 ```
@@ -2074,7 +2070,7 @@ func InternalValue() StorageClassV1AllowedTopologies
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 storageclassv1.NewStorageClassV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) StorageClassV1MetadataOutputReference
 ```

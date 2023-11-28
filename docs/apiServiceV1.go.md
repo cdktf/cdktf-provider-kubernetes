@@ -1,7 +1,3 @@
-# `kubernetes_api_service_v1`
-
-Refer to the Terraform Registory for docs: [`kubernetes_api_service_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/api_service_v1).
-
 # `apiServiceV1` Submodule <a name="`apiServiceV1` Submodule" id="@cdktf/provider-kubernetes.apiServiceV1"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
@@ -13,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.apiServiceV1.ApiServiceV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/apiservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservicev1"
 
 apiservicev1.NewApiServiceV1(scope Construct, id *string, config ApiServiceV1Config) ApiServiceV1
 ```
@@ -365,7 +361,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.apiServiceV1.ApiServiceV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/apiservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservicev1"
 
 apiservicev1.ApiServiceV1_IsConstruct(x interface{}) *bool
 ```
@@ -397,7 +393,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.apiServiceV1.ApiServiceV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/apiservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservicev1"
 
 apiservicev1.ApiServiceV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -411,7 +407,7 @@ apiservicev1.ApiServiceV1_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.apiServiceV1.ApiServiceV1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/apiservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservicev1"
 
 apiservicev1.ApiServiceV1_IsTerraformResource(x interface{}) *bool
 ```
@@ -425,7 +421,7 @@ apiservicev1.ApiServiceV1_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.apiServiceV1.ApiServiceV1.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/apiservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservicev1"
 
 apiservicev1.ApiServiceV1_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -720,7 +716,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.apiServiceV1.ApiServiceV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/apiservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservicev1"
 
 &apiservicev1.ApiServiceV1Config {
 	Connection: interface{},
@@ -730,8 +726,8 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/apiservicev
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.apiServiceV1.ApiServiceV1Metadata,
-	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.apiServiceV1.ApiServiceV1Spec,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.apiServiceV1.ApiServiceV1Metadata,
+	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.apiServiceV1.ApiServiceV1Spec,
 	Id: *string,
 }
 ```
@@ -871,7 +867,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.apiServiceV1.ApiServiceV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/apiservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservicev1"
 
 &apiservicev1.ApiServiceV1Metadata {
 	Annotations: *map[string]*string,
@@ -959,7 +955,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.apiServiceV1.ApiServiceV1Spec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/apiservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservicev1"
 
 &apiservicev1.ApiServiceV1Spec {
 	Group: *string,
@@ -968,7 +964,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/apiservicev
 	VersionPriority: *f64,
 	CaBundle: *string,
 	InsecureSkipTlsVerify: interface{},
-	Service: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.apiServiceV1.ApiServiceV1SpecService,
+	Service: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.apiServiceV1.ApiServiceV1SpecService,
 }
 ```
 
@@ -1097,7 +1093,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.apiServiceV1.ApiServiceV1SpecService.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/apiservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservicev1"
 
 &apiservicev1.ApiServiceV1SpecService {
 	Name: *string,
@@ -1167,7 +1163,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.apiServiceV1.ApiServiceV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/apiservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservicev1"
 
 apiservicev1.NewApiServiceV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ApiServiceV1MetadataOutputReference
 ```
@@ -1565,7 +1561,7 @@ func InternalValue() ApiServiceV1Metadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.apiServiceV1.ApiServiceV1SpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/apiservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservicev1"
 
 apiservicev1.NewApiServiceV1SpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ApiServiceV1SpecOutputReference
 ```
@@ -2002,7 +1998,7 @@ func InternalValue() ApiServiceV1Spec
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.apiServiceV1.ApiServiceV1SpecServiceOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/apiservicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/apiservicev1"
 
 apiservicev1.NewApiServiceV1SpecServiceOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ApiServiceV1SpecServiceOutputReference
 ```

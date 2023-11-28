@@ -1,7 +1,3 @@
-# `kubernetes_endpoint_slice_v1`
-
-Refer to the Terraform Registory for docs: [`kubernetes_endpoint_slice_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1).
-
 # `endpointSliceV1` Submodule <a name="`endpointSliceV1` Submodule" id="@cdktf/provider-kubernetes.endpointSliceV1"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

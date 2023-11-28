@@ -1,7 +1,3 @@
-# `kubernetes_csi_driver`
-
-Refer to the Terraform Registory for docs: [`kubernetes_csi_driver`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/csi_driver).
-
 # `csiDriver` Submodule <a name="`csiDriver` Submodule" id="@cdktf/provider-kubernetes.csiDriver"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
