@@ -185,9 +185,12 @@ If you experience problems setting this value it might not be settable. Please t
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.getNumberMapAttribute">getNumberMapAttribute</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.getStringAttribute">getStringAttribute</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.getStringMapAttribute">getStringMapAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.hasResourceMove">hasResourceMove</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.importFrom">importFrom</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.interpolationForAttribute">interpolationForAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.moveFromId">moveFromId</a></code> | Move the resource corresponding to "id" to this resource. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.moveTo">moveTo</a></code> | Moves this resource to the target resource given by moveTarget. |
+| <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.moveToId">moveToId</a></code> | Moves this resource to the resource corresponding to "id". |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.putEndpoint">putEndpoint</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.putMetadata">putMetadata</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.putPort">putPort</a></code> | *No description.* |
@@ -383,6 +386,12 @@ public java.util.Map<java.lang.String, java.lang.String> getStringMapAttribute(j
 
 ---
 
+##### `hasResourceMove` <a name="hasResourceMove" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.hasResourceMove"></a>
+
+```java
+public TerraformResourceMoveByTarget OR TerraformResourceMoveById hasResourceMove()
+```
+
 ##### `importFrom` <a name="importFrom" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.importFrom"></a>
 
 ```java
@@ -414,6 +423,24 @@ public IResolvable interpolationForAttribute(java.lang.String terraformAttribute
 
 ---
 
+##### `moveFromId` <a name="moveFromId" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.moveFromId"></a>
+
+```java
+public void moveFromId(java.lang.String id)
+```
+
+Move the resource corresponding to "id" to this resource.
+
+Note that the resource being moved from must be marked as moved using it's instance function.
+
+###### `id`<sup>Required</sup> <a name="id" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.moveFromId.parameter.id"></a>
+
+- *Type:* java.lang.String
+
+Full id of resource being moved from, e.g. "aws_s3_bucket.example".
+
+---
+
 ##### `moveTo` <a name="moveTo" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.moveTo"></a>
 
 ```java
@@ -436,6 +463,22 @@ The previously set user defined string set by .addMoveTarget() corresponding to 
 - *Type:* java.lang.String OR java.lang.Number
 
 Optional The index corresponding to the key the resource is to appear in the foreach of a resource to move to.
+
+---
+
+##### `moveToId` <a name="moveToId" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.moveToId"></a>
+
+```java
+public void moveToId(java.lang.String id)
+```
+
+Moves this resource to the resource corresponding to "id".
+
+###### `id`<sup>Required</sup> <a name="id" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.moveToId.parameter.id"></a>
+
+- *Type:* java.lang.String
+
+Full id of resource to move to, e.g. "aws_s3_bucket.example".
 
 ---
 
