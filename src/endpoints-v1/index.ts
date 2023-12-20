@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoints_v1
 // generated from terraform resource schema
 
