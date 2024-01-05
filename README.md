@@ -1,7 +1,7 @@
 
-# CDKTF prebuilt bindings for hashicorp/kubernetes provider version 2.24.0
+# CDKTF prebuilt bindings for hashicorp/kubernetes provider version 2.25.1
 
-This repo builds and publishes the [Terraform kubernetes provider](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs) bindings for [CDK for Terraform](https://cdk.tf).
+This repo builds and publishes the [Terraform kubernetes provider](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs) bindings for [CDK for Terraform](https://cdk.tf).
 
 ## Available Packages
 
@@ -60,7 +60,7 @@ This project is explicitly not tracking the Terraform kubernetes provider versio
 These are the upstream dependencies:
 
 - [CDK for Terraform](https://cdk.tf)
-- [Terraform kubernetes provider](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0)
+- [Terraform kubernetes provider](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1)
 - [Terraform Engine](https://terraform.io)
 
 If there are breaking changes (backward incompatible) in any of the above, the major version of this project will be bumped.

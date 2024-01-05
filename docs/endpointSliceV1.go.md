@@ -4,12 +4,12 @@
 
 ### EndpointSliceV1 <a name="EndpointSliceV1" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1 kubernetes_endpoint_slice_v1}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1 kubernetes_endpoint_slice_v1}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.NewEndpointSliceV1(scope Construct, id *string, config EndpointSliceV1Config) EndpointSliceV1
 ```
@@ -417,7 +417,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.EndpointSliceV1_IsConstruct(x interface{}) *bool
 ```
@@ -449,7 +449,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.EndpointSliceV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -463,7 +463,7 @@ endpointslicev1.EndpointSliceV1_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.EndpointSliceV1_IsTerraformResource(x interface{}) *bool
 ```
@@ -477,7 +477,7 @@ endpointslicev1.EndpointSliceV1_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.EndpointSliceV1_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -506,7 +506,7 @@ The construct id used in the generated config for the EndpointSliceV1 to import.
 
 The id of the existing EndpointSliceV1 that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -816,7 +816,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 &endpointslicev1.EndpointSliceV1Config {
 	Connection: interface{},
@@ -828,7 +828,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointsli
 	Provisioners: *[]interface{},
 	AddressType: *string,
 	Endpoint: interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.endpointSliceV1.EndpointSliceV1Metadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.endpointSliceV1.EndpointSliceV1Metadata,
 	Port: interface{},
 	Id: *string,
 }
@@ -849,7 +849,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointsli
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Config.property.endpoint">Endpoint</a></code> | <code>interface{}</code> | endpoint block. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Config.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Metadata">EndpointSliceV1Metadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Config.property.port">Port</a></code> | <code>interface{}</code> | port block. |
-| <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Config.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#id EndpointSliceV1#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Config.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#id EndpointSliceV1#id}. |
 
 ---
 
@@ -935,7 +935,7 @@ address_type specifies the type of address carried by this EndpointSlice.
 
 All addresses in this slice must be the same type. This field is immutable after creation.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#address_type EndpointSliceV1#address_type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#address_type EndpointSliceV1#address_type}
 
 ---
 
@@ -949,7 +949,7 @@ Endpoint interface{}
 
 endpoint block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#endpoint EndpointSliceV1#endpoint}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#endpoint EndpointSliceV1#endpoint}
 
 ---
 
@@ -963,7 +963,7 @@ Metadata EndpointSliceV1Metadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#metadata EndpointSliceV1#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#metadata EndpointSliceV1#metadata}
 
 ---
 
@@ -977,7 +977,7 @@ Port interface{}
 
 port block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#port EndpointSliceV1#port}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#port EndpointSliceV1#port}
 
 ---
 
@@ -989,7 +989,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#id EndpointSliceV1#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#id EndpointSliceV1#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1001,14 +1001,14 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Endpoint.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 &endpointslicev1.EndpointSliceV1Endpoint {
 	Addresses: *[]*string,
-	Condition: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.endpointSliceV1.EndpointSliceV1EndpointCondition,
+	Condition: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.endpointSliceV1.EndpointSliceV1EndpointCondition,
 	Hostname: *string,
 	NodeName: *string,
-	TargetRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.endpointSliceV1.EndpointSliceV1EndpointTargetRef,
+	TargetRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.endpointSliceV1.EndpointSliceV1EndpointTargetRef,
 	Zone: *string,
 }
 ```
@@ -1036,7 +1036,7 @@ Addresses *[]*string
 
 addresses of this endpoint. The contents of this field are interpreted according to the corresponding EndpointSlice addressType field.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#addresses EndpointSliceV1#addresses}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#addresses EndpointSliceV1#addresses}
 
 ---
 
@@ -1050,7 +1050,7 @@ Condition EndpointSliceV1EndpointCondition
 
 condition block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#condition EndpointSliceV1#condition}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#condition EndpointSliceV1#condition}
 
 ---
 
@@ -1064,7 +1064,7 @@ Hostname *string
 
 hostname of this endpoint. This field may be used by consumers of endpoints to distinguish endpoints from each other.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#hostname EndpointSliceV1#hostname}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#hostname EndpointSliceV1#hostname}
 
 ---
 
@@ -1080,7 +1080,7 @@ nodeName represents the name of the Node hosting this endpoint.
 
 This can be used to determine endpoints local to a Node.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#node_name EndpointSliceV1#node_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#node_name EndpointSliceV1#node_name}
 
 ---
 
@@ -1094,7 +1094,7 @@ TargetRef EndpointSliceV1EndpointTargetRef
 
 target_ref block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#target_ref EndpointSliceV1#target_ref}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#target_ref EndpointSliceV1#target_ref}
 
 ---
 
@@ -1108,7 +1108,7 @@ Zone *string
 
 zone is the name of the Zone this endpoint exists in.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#zone EndpointSliceV1#zone}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#zone EndpointSliceV1#zone}
 
 ---
 
@@ -1117,7 +1117,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1EndpointCondition.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 &endpointslicev1.EndpointSliceV1EndpointCondition {
 	Ready: interface{},
@@ -1146,7 +1146,7 @@ Ready interface{}
 
 ready indicates that this endpoint is prepared to receive traffic, according to whatever system is managing the endpoint.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#ready EndpointSliceV1#ready}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#ready EndpointSliceV1#ready}
 
 ---
 
@@ -1160,7 +1160,7 @@ Serving interface{}
 
 serving is identical to ready except that it is set regardless of the terminating state of endpoints.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#serving EndpointSliceV1#serving}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#serving EndpointSliceV1#serving}
 
 ---
 
@@ -1174,7 +1174,7 @@ Terminating interface{}
 
 terminating indicates that this endpoint is terminating.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#terminating EndpointSliceV1#terminating}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#terminating EndpointSliceV1#terminating}
 
 ---
 
@@ -1183,7 +1183,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1EndpointTargetRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 &endpointslicev1.EndpointSliceV1EndpointTargetRef {
 	Name: *string,
@@ -1216,7 +1216,7 @@ Name *string
 
 Name of the referent.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#name EndpointSliceV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#name EndpointSliceV1#name}
 
 ---
 
@@ -1230,7 +1230,7 @@ FieldPath *string
 
 If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2].
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#field_path EndpointSliceV1#field_path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#field_path EndpointSliceV1#field_path}
 
 ---
 
@@ -1244,7 +1244,7 @@ Namespace *string
 
 Namespace of the referent.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#namespace EndpointSliceV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#namespace EndpointSliceV1#namespace}
 
 ---
 
@@ -1258,7 +1258,7 @@ ResourceVersion *string
 
 Specific resourceVersion to which this reference is made, if any.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#resource_version EndpointSliceV1#resource_version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#resource_version EndpointSliceV1#resource_version}
 
 ---
 
@@ -1272,7 +1272,7 @@ Uid *string
 
 If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2].
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#uid EndpointSliceV1#uid}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#uid EndpointSliceV1#uid}
 
 ---
 
@@ -1281,7 +1281,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 &endpointslicev1.EndpointSliceV1Metadata {
 	Annotations: *map[string]*string,
@@ -1316,7 +1316,7 @@ An unstructured key value map stored with the endpoint_slice that may be used to
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#annotations EndpointSliceV1#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#annotations EndpointSliceV1#annotations}
 
 ---
 
@@ -1332,7 +1332,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#generate_name EndpointSliceV1#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#generate_name EndpointSliceV1#generate_name}
 
 ---
 
@@ -1348,7 +1348,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#labels EndpointSliceV1#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#labels EndpointSliceV1#labels}
 
 ---
 
@@ -1362,7 +1362,7 @@ Name *string
 
 Name of the endpoint_slice, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#name EndpointSliceV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#name EndpointSliceV1#name}
 
 ---
 
@@ -1376,7 +1376,7 @@ Namespace *string
 
 Namespace defines the space within which name of the endpoint_slice must be unique.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#namespace EndpointSliceV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#namespace EndpointSliceV1#namespace}
 
 ---
 
@@ -1385,7 +1385,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Port.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 &endpointslicev1.EndpointSliceV1Port {
 	AppProtocol: *string,
@@ -1418,7 +1418,7 @@ The application protocol for this port.
 
 This is used as a hint for implementations to offer richer behavior for protocols that they understand.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#app_protocol EndpointSliceV1#app_protocol}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#app_protocol EndpointSliceV1#app_protocol}
 
 ---
 
@@ -1432,7 +1432,7 @@ Port *string
 
 port represents the port number of the endpoint.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#port EndpointSliceV1#port}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#port EndpointSliceV1#port}
 
 ---
 
@@ -1446,7 +1446,7 @@ Name *string
 
 name represents the name of this port. All ports in an EndpointSlice must have a unique name.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#name EndpointSliceV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#name EndpointSliceV1#name}
 
 ---
 
@@ -1460,7 +1460,7 @@ Protocol *string
 
 protocol represents the IP protocol for this port. Must be UDP, TCP, or SCTP. Default is TCP.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/endpoint_slice_v1#protocol EndpointSliceV1#protocol}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/endpoint_slice_v1#protocol EndpointSliceV1#protocol}
 
 ---
 
@@ -1471,7 +1471,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1EndpointConditionOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.NewEndpointSliceV1EndpointConditionOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) EndpointSliceV1EndpointConditionOutputReference
 ```
@@ -1807,7 +1807,7 @@ func InternalValue() EndpointSliceV1EndpointCondition
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1EndpointList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.NewEndpointSliceV1EndpointList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) EndpointSliceV1EndpointList
 ```
@@ -1950,7 +1950,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1EndpointOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.NewEndpointSliceV1EndpointOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) EndpointSliceV1EndpointOutputReference
 ```
@@ -2410,7 +2410,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1EndpointTargetRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.NewEndpointSliceV1EndpointTargetRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) EndpointSliceV1EndpointTargetRefOutputReference
 ```
@@ -2797,7 +2797,7 @@ func InternalValue() EndpointSliceV1EndpointTargetRef
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.NewEndpointSliceV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) EndpointSliceV1MetadataOutputReference
 ```
@@ -3224,7 +3224,7 @@ func InternalValue() EndpointSliceV1Metadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1PortList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.NewEndpointSliceV1PortList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) EndpointSliceV1PortList
 ```
@@ -3367,7 +3367,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1PortOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.NewEndpointSliceV1PortOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) EndpointSliceV1PortOutputReference
 ```

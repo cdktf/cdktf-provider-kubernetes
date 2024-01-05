@@ -4,12 +4,12 @@
 
 ### DataKubernetesSecret <a name="DataKubernetesSecret" id="@cdktf/provider-kubernetes.dataKubernetesSecret.DataKubernetesSecret"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/secret kubernetes_secret}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/secret kubernetes_secret}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesSecret.DataKubernetesSecret.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetessecret"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetessecret"
 
 datakubernetessecret.NewDataKubernetesSecret(scope Construct, id *string, config DataKubernetesSecretConfig) DataKubernetesSecret
 ```
@@ -294,7 +294,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.dataKubernetesSecret.DataKubernetesSecret.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetessecret"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetessecret"
 
 datakubernetessecret.DataKubernetesSecret_IsConstruct(x interface{}) *bool
 ```
@@ -326,7 +326,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.dataKubernetesSecret.DataKubernetesSecret.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetessecret"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetessecret"
 
 datakubernetessecret.DataKubernetesSecret_IsTerraformElement(x interface{}) *bool
 ```
@@ -340,7 +340,7 @@ datakubernetessecret.DataKubernetesSecret_IsTerraformElement(x interface{}) *boo
 ##### `IsTerraformDataSource` <a name="IsTerraformDataSource" id="@cdktf/provider-kubernetes.dataKubernetesSecret.DataKubernetesSecret.isTerraformDataSource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetessecret"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetessecret"
 
 datakubernetessecret.DataKubernetesSecret_IsTerraformDataSource(x interface{}) *bool
 ```
@@ -354,7 +354,7 @@ datakubernetessecret.DataKubernetesSecret_IsTerraformDataSource(x interface{}) *
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.dataKubernetesSecret.DataKubernetesSecret.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetessecret"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetessecret"
 
 datakubernetessecret.DataKubernetesSecret_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -383,7 +383,7 @@ The construct id used in the generated config for the DataKubernetesSecret to im
 
 The id of the existing DataKubernetesSecret that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/secret#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/secret#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -660,7 +660,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesSecret.DataKubernetesSecretConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetessecret"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetessecret"
 
 &datakubernetessecret.DataKubernetesSecretConfig {
 	Connection: interface{},
@@ -670,7 +670,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.dataKubernetesSecret.DataKubernetesSecretMetadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.dataKubernetesSecret.DataKubernetesSecretMetadata,
 	BinaryData: *map[string]*string,
 	Id: *string,
 }
@@ -689,7 +689,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesSecret.DataKubernetesSecretConfig.property.provisioners">Provisioners</a></code> | <code>*[]interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesSecret.DataKubernetesSecretConfig.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesSecret.DataKubernetesSecretMetadata">DataKubernetesSecretMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesSecret.DataKubernetesSecretConfig.property.binaryData">BinaryData</a></code> | <code>*map[string]*string</code> | A map of the secret data with values encoded in base64 format. |
-| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesSecret.DataKubernetesSecretConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/secret#id DataKubernetesSecret#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesSecret.DataKubernetesSecretConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/secret#id DataKubernetesSecret#id}. |
 
 ---
 
@@ -773,7 +773,7 @@ Metadata DataKubernetesSecretMetadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/secret#metadata DataKubernetesSecret#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/secret#metadata DataKubernetesSecret#metadata}
 
 ---
 
@@ -787,7 +787,7 @@ BinaryData *map[string]*string
 
 A map of the secret data with values encoded in base64 format.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/secret#binary_data DataKubernetesSecret#binary_data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/secret#binary_data DataKubernetesSecret#binary_data}
 
 ---
 
@@ -799,7 +799,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/secret#id DataKubernetesSecret#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/secret#id DataKubernetesSecret#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -811,7 +811,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesSecret.DataKubernetesSecretMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetessecret"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetessecret"
 
 &datakubernetessecret.DataKubernetesSecretMetadata {
 	Annotations: *map[string]*string,
@@ -846,7 +846,7 @@ An unstructured key value map stored with the secret that may be used to store a
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/secret#annotations DataKubernetesSecret#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/secret#annotations DataKubernetesSecret#annotations}
 
 ---
 
@@ -862,7 +862,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/secret#generate_name DataKubernetesSecret#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/secret#generate_name DataKubernetesSecret#generate_name}
 
 ---
 
@@ -878,7 +878,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/secret#labels DataKubernetesSecret#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/secret#labels DataKubernetesSecret#labels}
 
 ---
 
@@ -892,7 +892,7 @@ Name *string
 
 Name of the secret, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/secret#name DataKubernetesSecret#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/secret#name DataKubernetesSecret#name}
 
 ---
 
@@ -906,7 +906,7 @@ Namespace *string
 
 Namespace defines the space within which name of the secret must be unique.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/data-sources/secret#namespace DataKubernetesSecret#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/secret#namespace DataKubernetesSecret#namespace}
 
 ---
 
@@ -917,7 +917,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesSecret.DataKubernetesSecretMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetessecret"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetessecret"
 
 datakubernetessecret.NewDataKubernetesSecretMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) DataKubernetesSecretMetadataOutputReference
 ```

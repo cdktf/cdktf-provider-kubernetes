@@ -4,7 +4,7 @@
 
 ### PodSecurityPolicy <a name="PodSecurityPolicy" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicy"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy kubernetes_pod_security_policy}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy kubernetes_pod_security_policy}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicy.Initializer"></a>
 
@@ -493,7 +493,7 @@ The construct id used in the generated config for the PodSecurityPolicy to impor
 
 The id of the existing PodSecurityPolicy that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -788,7 +788,7 @@ new PodSecurityPolicyConfig {
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyConfig.property.provisioners">Provisioners</a></code> | <code>object[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyConfig.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyMetadata">PodSecurityPolicyMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyConfig.property.spec">Spec</a></code> | <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpec">PodSecurityPolicySpec</a></code> | spec block. |
-| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#id PodSecurityPolicy#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicyConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#id PodSecurityPolicy#id}. |
 
 ---
 
@@ -872,7 +872,7 @@ public PodSecurityPolicyMetadata Metadata { get; set; }
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#metadata PodSecurityPolicy#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#metadata PodSecurityPolicy#metadata}
 
 ---
 
@@ -886,7 +886,7 @@ public PodSecurityPolicySpec Spec { get; set; }
 
 spec block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#spec PodSecurityPolicy#spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#spec PodSecurityPolicy#spec}
 
 ---
 
@@ -898,7 +898,7 @@ public string Id { get; set; }
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#id PodSecurityPolicy#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#id PodSecurityPolicy#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -941,7 +941,7 @@ An unstructured key value map stored with the podsecuritypolicy that may be used
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#annotations PodSecurityPolicy#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#annotations PodSecurityPolicy#annotations}
 
 ---
 
@@ -957,7 +957,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#labels PodSecurityPolicy#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#labels PodSecurityPolicy#labels}
 
 ---
 
@@ -971,7 +971,7 @@ public string Name { get; set; }
 
 Name of the podsecuritypolicy, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#name PodSecurityPolicy#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#name PodSecurityPolicy#name}
 
 ---
 
@@ -1047,7 +1047,7 @@ public PodSecurityPolicySpecFsGroup FsGroup { get; set; }
 
 fs_group block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#fs_group PodSecurityPolicy#fs_group}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#fs_group PodSecurityPolicy#fs_group}
 
 ---
 
@@ -1061,7 +1061,7 @@ public PodSecurityPolicySpecRunAsUser RunAsUser { get; set; }
 
 run_as_user block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#run_as_user PodSecurityPolicy#run_as_user}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#run_as_user PodSecurityPolicy#run_as_user}
 
 ---
 
@@ -1075,7 +1075,7 @@ public PodSecurityPolicySpecSupplementalGroups SupplementalGroups { get; set; }
 
 supplemental_groups block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#supplemental_groups PodSecurityPolicy#supplemental_groups}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#supplemental_groups PodSecurityPolicy#supplemental_groups}
 
 ---
 
@@ -1091,7 +1091,7 @@ allowedCapabilities is a list of capabilities that can be requested to add to th
 
 Capabilities in this field may be added at the pod author's discretion. You must not list a capability in both allowedCapabilities and requiredDropCapabilities.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#allowed_capabilities PodSecurityPolicy#allowed_capabilities}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#allowed_capabilities PodSecurityPolicy#allowed_capabilities}
 
 ---
 
@@ -1105,7 +1105,7 @@ public object AllowedFlexVolumes { get; set; }
 
 allowed_flex_volumes block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#allowed_flex_volumes PodSecurityPolicy#allowed_flex_volumes}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#allowed_flex_volumes PodSecurityPolicy#allowed_flex_volumes}
 
 ---
 
@@ -1119,7 +1119,7 @@ public object AllowedHostPaths { get; set; }
 
 allowed_host_paths block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#allowed_host_paths PodSecurityPolicy#allowed_host_paths}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#allowed_host_paths PodSecurityPolicy#allowed_host_paths}
 
 ---
 
@@ -1135,7 +1135,7 @@ AllowedProcMountTypes is an allowlist of allowed ProcMountTypes.
 
 Empty or nil indicates that only the DefaultProcMountType may be used. This requires the ProcMountType feature flag to be enabled.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#allowed_proc_mount_types PodSecurityPolicy#allowed_proc_mount_types}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#allowed_proc_mount_types PodSecurityPolicy#allowed_proc_mount_types}
 
 ---
 
@@ -1153,7 +1153,7 @@ Each entry is either a plain sysctl name or ends in "*" in which case it is cons
 
 Examples: e.g. "foo/*" allows "foo/bar", "foo/baz", etc. e.g. "foo.*" allows "foo.bar", "foo.baz", etc.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#allowed_unsafe_sysctls PodSecurityPolicy#allowed_unsafe_sysctls}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#allowed_unsafe_sysctls PodSecurityPolicy#allowed_unsafe_sysctls}
 
 ---
 
@@ -1167,7 +1167,7 @@ public object AllowPrivilegeEscalation { get; set; }
 
 allowPrivilegeEscalation determines if a pod can request to allow privilege escalation. If unspecified, defaults to true.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#allow_privilege_escalation PodSecurityPolicy#allow_privilege_escalation}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#allow_privilege_escalation PodSecurityPolicy#allow_privilege_escalation}
 
 ---
 
@@ -1183,7 +1183,7 @@ defaultAddCapabilities is the default set of capabilities that will be added to 
 
 You may not list a capability in both defaultAddCapabilities and requiredDropCapabilities. Capabilities added here are implicitly allowed, and need not be included in the allowedCapabilities list.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#default_add_capabilities PodSecurityPolicy#default_add_capabilities}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#default_add_capabilities PodSecurityPolicy#default_add_capabilities}
 
 ---
 
@@ -1197,7 +1197,7 @@ public object DefaultAllowPrivilegeEscalation { get; set; }
 
 defaultAllowPrivilegeEscalation controls the default setting for whether a process can gain more privileges than its parent process.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#default_allow_privilege_escalation PodSecurityPolicy#default_allow_privilege_escalation}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#default_allow_privilege_escalation PodSecurityPolicy#default_allow_privilege_escalation}
 
 ---
 
@@ -1215,7 +1215,7 @@ Each entry is either a plain sysctl name or ends in "*" in which case it is cons
 
 Examples: e.g. "foo/*" forbids "foo/bar", "foo/baz", etc. e.g. "foo.*" forbids "foo.bar", "foo.baz", etc.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#forbidden_sysctls PodSecurityPolicy#forbidden_sysctls}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#forbidden_sysctls PodSecurityPolicy#forbidden_sysctls}
 
 ---
 
@@ -1229,7 +1229,7 @@ public object HostIpc { get; set; }
 
 hostIPC determines if the policy allows the use of HostIPC in the pod spec.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#host_ipc PodSecurityPolicy#host_ipc}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#host_ipc PodSecurityPolicy#host_ipc}
 
 ---
 
@@ -1243,7 +1243,7 @@ public object HostNetwork { get; set; }
 
 hostNetwork determines if the policy allows the use of HostNetwork in the pod spec.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#host_network PodSecurityPolicy#host_network}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#host_network PodSecurityPolicy#host_network}
 
 ---
 
@@ -1257,7 +1257,7 @@ public object HostPid { get; set; }
 
 hostPID determines if the policy allows the use of HostPID in the pod spec.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#host_pid PodSecurityPolicy#host_pid}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#host_pid PodSecurityPolicy#host_pid}
 
 ---
 
@@ -1271,7 +1271,7 @@ public object HostPorts { get; set; }
 
 host_ports block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#host_ports PodSecurityPolicy#host_ports}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#host_ports PodSecurityPolicy#host_ports}
 
 ---
 
@@ -1285,7 +1285,7 @@ public object Privileged { get; set; }
 
 privileged determines if a pod can request to be run as privileged.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#privileged PodSecurityPolicy#privileged}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#privileged PodSecurityPolicy#privileged}
 
 ---
 
@@ -1301,7 +1301,7 @@ readOnlyRootFilesystem when set to true will force containers to run with a read
 
 If the container specifically requests to run with a non-read only root file system the PSP should deny the pod. If set to false the container may run with a read only root file system if it wishes but it will not be forced to.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#read_only_root_filesystem PodSecurityPolicy#read_only_root_filesystem}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#read_only_root_filesystem PodSecurityPolicy#read_only_root_filesystem}
 
 ---
 
@@ -1317,7 +1317,7 @@ requiredDropCapabilities are the capabilities that will be dropped from the cont
 
 These are required to be dropped and cannot be added.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#required_drop_capabilities PodSecurityPolicy#required_drop_capabilities}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#required_drop_capabilities PodSecurityPolicy#required_drop_capabilities}
 
 ---
 
@@ -1331,7 +1331,7 @@ public PodSecurityPolicySpecRunAsGroup RunAsGroup { get; set; }
 
 run_as_group block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#run_as_group PodSecurityPolicy#run_as_group}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#run_as_group PodSecurityPolicy#run_as_group}
 
 ---
 
@@ -1345,7 +1345,7 @@ public PodSecurityPolicySpecSeLinux SeLinux { get; set; }
 
 se_linux block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#se_linux PodSecurityPolicy#se_linux}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#se_linux PodSecurityPolicy#se_linux}
 
 ---
 
@@ -1361,7 +1361,7 @@ volumes is an allowlist of volume plugins.
 
 Empty indicates that no volumes may be used. To allow all volumes you may use '*'.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#volumes PodSecurityPolicy#volumes}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#volumes PodSecurityPolicy#volumes}
 
 ---
 
@@ -1395,7 +1395,7 @@ public string Driver { get; set; }
 
 driver is the name of the Flexvolume driver.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#driver PodSecurityPolicy#driver}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#driver PodSecurityPolicy#driver}
 
 ---
 
@@ -1435,7 +1435,7 @@ It does not support `*`. Trailing slashes are trimmed when validating the path p
 
 Examples: `/foo` would allow `/foo`, `/foo/` and `/foo/bar` `/foo` would not allow `/food` or `/etc/foo`
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#path_prefix PodSecurityPolicy#path_prefix}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#path_prefix PodSecurityPolicy#path_prefix}
 
 ---
 
@@ -1449,7 +1449,7 @@ public object ReadOnly { get; set; }
 
 when set to true, will allow host volumes matching the pathPrefix only if all volume mounts are readOnly.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#read_only PodSecurityPolicy#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#read_only PodSecurityPolicy#read_only}
 
 ---
 
@@ -1485,7 +1485,7 @@ public string Rule { get; set; }
 
 rule is the strategy that will dictate what FSGroup is used in the SecurityContext.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
 
 ---
 
@@ -1499,7 +1499,7 @@ public object Range { get; set; }
 
 range block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#range PodSecurityPolicy#range}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#range PodSecurityPolicy#range}
 
 ---
 
@@ -1535,7 +1535,7 @@ public double Max { get; set; }
 
 max is the end of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
 
 ---
 
@@ -1549,7 +1549,7 @@ public double Min { get; set; }
 
 min is the start of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
 
 ---
 
@@ -1585,7 +1585,7 @@ public double Max { get; set; }
 
 max is the end of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
 
 ---
 
@@ -1599,7 +1599,7 @@ public double Min { get; set; }
 
 min is the start of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
 
 ---
 
@@ -1635,7 +1635,7 @@ public string Rule { get; set; }
 
 rule is the strategy that will dictate the allowable RunAsGroup values that may be set.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
 
 ---
 
@@ -1649,7 +1649,7 @@ public object Range { get; set; }
 
 range block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#range PodSecurityPolicy#range}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#range PodSecurityPolicy#range}
 
 ---
 
@@ -1685,7 +1685,7 @@ public double Max { get; set; }
 
 max is the end of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
 
 ---
 
@@ -1699,7 +1699,7 @@ public double Min { get; set; }
 
 min is the start of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
 
 ---
 
@@ -1735,7 +1735,7 @@ public string Rule { get; set; }
 
 rule is the strategy that will dictate the allowable RunAsUser values that may be set.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
 
 ---
 
@@ -1749,7 +1749,7 @@ public object Range { get; set; }
 
 range block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#range PodSecurityPolicy#range}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#range PodSecurityPolicy#range}
 
 ---
 
@@ -1785,7 +1785,7 @@ public double Max { get; set; }
 
 max is the end of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
 
 ---
 
@@ -1799,7 +1799,7 @@ public double Min { get; set; }
 
 min is the start of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
 
 ---
 
@@ -1835,7 +1835,7 @@ public string Rule { get; set; }
 
 rule is the strategy that will dictate the allowable labels that may be set.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
 
 ---
 
@@ -1849,7 +1849,7 @@ public object SeLinuxOptions { get; set; }
 
 se_linux_options block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#se_linux_options PodSecurityPolicy#se_linux_options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#se_linux_options PodSecurityPolicy#se_linux_options}
 
 ---
 
@@ -1872,10 +1872,10 @@ new PodSecurityPolicySpecSeLinuxSeLinuxOptions {
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptions.property.level">Level</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#level PodSecurityPolicy#level}. |
-| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptions.property.role">Role</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#role PodSecurityPolicy#role}. |
-| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptions.property.type">Type</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#type PodSecurityPolicy#type}. |
-| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptions.property.user">User</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#user PodSecurityPolicy#user}. |
+| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptions.property.level">Level</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#level PodSecurityPolicy#level}. |
+| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptions.property.role">Role</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#role PodSecurityPolicy#role}. |
+| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptions.property.type">Type</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#type PodSecurityPolicy#type}. |
+| <code><a href="#@cdktf/provider-kubernetes.podSecurityPolicy.PodSecurityPolicySpecSeLinuxSeLinuxOptions.property.user">User</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#user PodSecurityPolicy#user}. |
 
 ---
 
@@ -1887,7 +1887,7 @@ public string Level { get; set; }
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#level PodSecurityPolicy#level}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#level PodSecurityPolicy#level}.
 
 ---
 
@@ -1899,7 +1899,7 @@ public string Role { get; set; }
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#role PodSecurityPolicy#role}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#role PodSecurityPolicy#role}.
 
 ---
 
@@ -1911,7 +1911,7 @@ public string Type { get; set; }
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#type PodSecurityPolicy#type}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#type PodSecurityPolicy#type}.
 
 ---
 
@@ -1923,7 +1923,7 @@ public string User { get; set; }
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#user PodSecurityPolicy#user}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#user PodSecurityPolicy#user}.
 
 ---
 
@@ -1959,7 +1959,7 @@ public string Rule { get; set; }
 
 rule is the strategy that will dictate what supplemental groups is used in the SecurityContext.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#rule PodSecurityPolicy#rule}
 
 ---
 
@@ -1973,7 +1973,7 @@ public object Range { get; set; }
 
 range block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#range PodSecurityPolicy#range}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#range PodSecurityPolicy#range}
 
 ---
 
@@ -2009,7 +2009,7 @@ public double Max { get; set; }
 
 max is the end of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#max PodSecurityPolicy#max}
 
 ---
 
@@ -2023,7 +2023,7 @@ public double Min { get; set; }
 
 min is the start of the range, inclusive.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/pod_security_policy#min PodSecurityPolicy#min}
 
 ---
 
