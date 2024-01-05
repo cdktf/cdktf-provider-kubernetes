@@ -4,7 +4,7 @@
 
 ### ClusterRole <a name="ClusterRole" id="@cdktf/provider-kubernetes.clusterRole.ClusterRole"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role kubernetes_cluster_role}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role kubernetes_cluster_role}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.clusterRole.ClusterRole.Initializer"></a>
 
@@ -520,7 +520,7 @@ The construct id used in the generated config for the ClusterRole to import.
 
 The id of the existing ClusterRole that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -833,7 +833,7 @@ public object ClusterRoleSelectors { get; set; }
 
 cluster_role_selectors block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#cluster_role_selectors ClusterRole#cluster_role_selectors}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#cluster_role_selectors ClusterRole#cluster_role_selectors}
 
 ---
 
@@ -869,7 +869,7 @@ public object MatchExpressions { get; set; }
 
 match_expressions block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#match_expressions ClusterRole#match_expressions}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#match_expressions ClusterRole#match_expressions}
 
 ---
 
@@ -885,7 +885,7 @@ A map of {key,value} pairs.
 
 A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#match_labels ClusterRole#match_labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#match_labels ClusterRole#match_labels}
 
 ---
 
@@ -923,7 +923,7 @@ public string Key { get; set; }
 
 The label key that the selector applies to.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#key ClusterRole#key}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#key ClusterRole#key}
 
 ---
 
@@ -937,7 +937,7 @@ public string Operator { get; set; }
 
 A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#operator ClusterRole#operator}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#operator ClusterRole#operator}
 
 ---
 
@@ -953,7 +953,7 @@ An array of string values.
 
 If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#values ClusterRole#values}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#values ClusterRole#values}
 
 ---
 
@@ -992,7 +992,7 @@ new ClusterRoleConfig {
 | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.property.provisioners">Provisioners</a></code> | <code>object[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleMetadata">ClusterRoleMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.property.aggregationRule">AggregationRule</a></code> | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleAggregationRule">ClusterRoleAggregationRule</a></code> | aggregation_rule block. |
-| <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#id ClusterRole#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#id ClusterRole#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRole.ClusterRoleConfig.property.rule">Rule</a></code> | <code>object</code> | rule block. |
 
 ---
@@ -1077,7 +1077,7 @@ public ClusterRoleMetadata Metadata { get; set; }
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#metadata ClusterRole#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#metadata ClusterRole#metadata}
 
 ---
 
@@ -1091,7 +1091,7 @@ public ClusterRoleAggregationRule AggregationRule { get; set; }
 
 aggregation_rule block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#aggregation_rule ClusterRole#aggregation_rule}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#aggregation_rule ClusterRole#aggregation_rule}
 
 ---
 
@@ -1103,7 +1103,7 @@ public string Id { get; set; }
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#id ClusterRole#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#id ClusterRole#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1120,7 +1120,7 @@ public object Rule { get; set; }
 
 rule block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#rule ClusterRole#rule}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#rule ClusterRole#rule}
 
 ---
 
@@ -1162,7 +1162,7 @@ An unstructured key value map stored with the clusterRole that may be used to st
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#annotations ClusterRole#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#annotations ClusterRole#annotations}
 
 ---
 
@@ -1178,7 +1178,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#generate_name ClusterRole#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#generate_name ClusterRole#generate_name}
 
 ---
 
@@ -1194,7 +1194,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#labels ClusterRole#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#labels ClusterRole#labels}
 
 ---
 
@@ -1208,7 +1208,7 @@ public string Name { get; set; }
 
 Name of the clusterRole, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#name ClusterRole#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#name ClusterRole#name}
 
 ---
 
@@ -1252,7 +1252,7 @@ Verbs is a list of Verbs that apply to ALL the ResourceKinds and AttributeRestri
 
 VerbAll represents all kinds.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#verbs ClusterRole#verbs}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#verbs ClusterRole#verbs}
 
 ---
 
@@ -1268,7 +1268,7 @@ APIGroups is the name of the APIGroup that contains the resources.
 
 If multiple API groups are specified, any action requested against one of the enumerated resources in any API group will be allowed.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#api_groups ClusterRole#api_groups}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#api_groups ClusterRole#api_groups}
 
 ---
 
@@ -1284,7 +1284,7 @@ NonResourceURLs is a set of partial urls that a user should have access to.
 
 *s are allowed, but only as the full, final step in the path Since non-resource URLs are not namespaced, this field is only applicable for ClusterRoles referenced from a ClusterRoleBinding. Rules can either apply to API resources (such as "pods" or "secrets") or non-resource URL paths (such as "/api"), but not both.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#non_resource_urls ClusterRole#non_resource_urls}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#non_resource_urls ClusterRole#non_resource_urls}
 
 ---
 
@@ -1300,7 +1300,7 @@ ResourceNames is an optional white list of names that the rule applies to.
 
 An empty set means that everything is allowed.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#resource_names ClusterRole#resource_names}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#resource_names ClusterRole#resource_names}
 
 ---
 
@@ -1314,7 +1314,7 @@ public string[] Resources { get; set; }
 
 Resources is a list of resources this rule applies to. ResourceAll represents all resources.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/cluster_role#resources ClusterRole#resources}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/cluster_role#resources ClusterRole#resources}
 
 ---
 
