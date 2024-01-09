@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNamespaceV1.DataKubernetesNamespaceV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnamespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnamespacev1"
 
 datakubernetesnamespacev1.NewDataKubernetesNamespaceV1(scope Construct, id *string, config DataKubernetesNamespaceV1Config) DataKubernetesNamespaceV1
 ```
@@ -287,7 +287,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.dataKubernetesNamespaceV1.DataKubernetesNamespaceV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnamespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnamespacev1"
 
 datakubernetesnamespacev1.DataKubernetesNamespaceV1_IsConstruct(x interface{}) *bool
 ```
@@ -319,7 +319,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.dataKubernetesNamespaceV1.DataKubernetesNamespaceV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnamespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnamespacev1"
 
 datakubernetesnamespacev1.DataKubernetesNamespaceV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -333,7 +333,7 @@ datakubernetesnamespacev1.DataKubernetesNamespaceV1_IsTerraformElement(x interfa
 ##### `IsTerraformDataSource` <a name="IsTerraformDataSource" id="@cdktf/provider-kubernetes.dataKubernetesNamespaceV1.DataKubernetesNamespaceV1.isTerraformDataSource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnamespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnamespacev1"
 
 datakubernetesnamespacev1.DataKubernetesNamespaceV1_IsTerraformDataSource(x interface{}) *bool
 ```
@@ -347,7 +347,7 @@ datakubernetesnamespacev1.DataKubernetesNamespaceV1_IsTerraformDataSource(x inte
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.dataKubernetesNamespaceV1.DataKubernetesNamespaceV1.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnamespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnamespacev1"
 
 datakubernetesnamespacev1.DataKubernetesNamespaceV1_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -609,7 +609,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesNamespaceV1.DataKubernetesNamespaceV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnamespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnamespacev1"
 
 &datakubernetesnamespacev1.DataKubernetesNamespaceV1Config {
 	Connection: interface{},
@@ -619,7 +619,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.dataKubernetesNamespaceV1.DataKubernetesNamespaceV1Metadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.dataKubernetesNamespaceV1.DataKubernetesNamespaceV1Metadata,
 	Id: *string,
 }
 ```
@@ -744,7 +744,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesNamespaceV1.DataKubernetesNamespaceV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnamespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnamespacev1"
 
 &datakubernetesnamespacev1.DataKubernetesNamespaceV1Metadata {
 	Annotations: *map[string]*string,
@@ -814,7 +814,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesNamespaceV1.DataKubernetesNamespaceV1Spec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnamespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnamespacev1"
 
 &datakubernetesnamespacev1.DataKubernetesNamespaceV1Spec {
 
@@ -829,7 +829,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNamespaceV1.DataKubernetesNamespaceV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnamespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnamespacev1"
 
 datakubernetesnamespacev1.NewDataKubernetesNamespaceV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) DataKubernetesNamespaceV1MetadataOutputReference
 ```
@@ -1198,7 +1198,7 @@ func InternalValue() DataKubernetesNamespaceV1Metadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNamespaceV1.DataKubernetesNamespaceV1SpecList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnamespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnamespacev1"
 
 datakubernetesnamespacev1.NewDataKubernetesNamespaceV1SpecList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesNamespaceV1SpecList
 ```
@@ -1330,7 +1330,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesNamespaceV1.DataKubernetesNamespaceV1SpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesnamespacev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesnamespacev1"
 
 datakubernetesnamespacev1.NewDataKubernetesNamespaceV1SpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesNamespaceV1SpecOutputReference
 ```

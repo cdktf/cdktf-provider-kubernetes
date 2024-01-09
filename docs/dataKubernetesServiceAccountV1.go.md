@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceAccountV1.DataKubernetesServiceAccountV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesserviceaccountv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesserviceaccountv1"
 
 datakubernetesserviceaccountv1.NewDataKubernetesServiceAccountV1(scope Construct, id *string, config DataKubernetesServiceAccountV1Config) DataKubernetesServiceAccountV1
 ```
@@ -287,7 +287,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.dataKubernetesServiceAccountV1.DataKubernetesServiceAccountV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesserviceaccountv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesserviceaccountv1"
 
 datakubernetesserviceaccountv1.DataKubernetesServiceAccountV1_IsConstruct(x interface{}) *bool
 ```
@@ -319,7 +319,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.dataKubernetesServiceAccountV1.DataKubernetesServiceAccountV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesserviceaccountv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesserviceaccountv1"
 
 datakubernetesserviceaccountv1.DataKubernetesServiceAccountV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -333,7 +333,7 @@ datakubernetesserviceaccountv1.DataKubernetesServiceAccountV1_IsTerraformElement
 ##### `IsTerraformDataSource` <a name="IsTerraformDataSource" id="@cdktf/provider-kubernetes.dataKubernetesServiceAccountV1.DataKubernetesServiceAccountV1.isTerraformDataSource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesserviceaccountv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesserviceaccountv1"
 
 datakubernetesserviceaccountv1.DataKubernetesServiceAccountV1_IsTerraformDataSource(x interface{}) *bool
 ```
@@ -347,7 +347,7 @@ datakubernetesserviceaccountv1.DataKubernetesServiceAccountV1_IsTerraformDataSou
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.dataKubernetesServiceAccountV1.DataKubernetesServiceAccountV1.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesserviceaccountv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesserviceaccountv1"
 
 datakubernetesserviceaccountv1.DataKubernetesServiceAccountV1_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -642,7 +642,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesServiceAccountV1.DataKubernetesServiceAccountV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesserviceaccountv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesserviceaccountv1"
 
 &datakubernetesserviceaccountv1.DataKubernetesServiceAccountV1Config {
 	Connection: interface{},
@@ -652,7 +652,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.dataKubernetesServiceAccountV1.DataKubernetesServiceAccountV1Metadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.dataKubernetesServiceAccountV1.DataKubernetesServiceAccountV1Metadata,
 	Id: *string,
 }
 ```
@@ -777,7 +777,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesServiceAccountV1.DataKubernetesServiceAccountV1ImagePullSecret.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesserviceaccountv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesserviceaccountv1"
 
 &datakubernetesserviceaccountv1.DataKubernetesServiceAccountV1ImagePullSecret {
 
@@ -790,7 +790,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesServiceAccountV1.DataKubernetesServiceAccountV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesserviceaccountv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesserviceaccountv1"
 
 &datakubernetesserviceaccountv1.DataKubernetesServiceAccountV1Metadata {
 	Annotations: *map[string]*string,
@@ -876,7 +876,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesServiceAccountV1.DataKubernetesServiceAccountV1Secret.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesserviceaccountv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesserviceaccountv1"
 
 &datakubernetesserviceaccountv1.DataKubernetesServiceAccountV1Secret {
 
@@ -891,7 +891,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceAccountV1.DataKubernetesServiceAccountV1ImagePullSecretList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesserviceaccountv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesserviceaccountv1"
 
 datakubernetesserviceaccountv1.NewDataKubernetesServiceAccountV1ImagePullSecretList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesServiceAccountV1ImagePullSecretList
 ```
@@ -1023,7 +1023,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceAccountV1.DataKubernetesServiceAccountV1ImagePullSecretOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesserviceaccountv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesserviceaccountv1"
 
 datakubernetesserviceaccountv1.NewDataKubernetesServiceAccountV1ImagePullSecretOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesServiceAccountV1ImagePullSecretOutputReference
 ```
@@ -1301,7 +1301,7 @@ func InternalValue() DataKubernetesServiceAccountV1ImagePullSecret
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceAccountV1.DataKubernetesServiceAccountV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesserviceaccountv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesserviceaccountv1"
 
 datakubernetesserviceaccountv1.NewDataKubernetesServiceAccountV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) DataKubernetesServiceAccountV1MetadataOutputReference
 ```
@@ -1699,7 +1699,7 @@ func InternalValue() DataKubernetesServiceAccountV1Metadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceAccountV1.DataKubernetesServiceAccountV1SecretList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesserviceaccountv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesserviceaccountv1"
 
 datakubernetesserviceaccountv1.NewDataKubernetesServiceAccountV1SecretList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataKubernetesServiceAccountV1SecretList
 ```
@@ -1831,7 +1831,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesServiceAccountV1.DataKubernetesServiceAccountV1SecretOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesserviceaccountv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesserviceaccountv1"
 
 datakubernetesserviceaccountv1.NewDataKubernetesServiceAccountV1SecretOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataKubernetesServiceAccountV1SecretOutputReference
 ```
