@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/config_map_v1_data
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/config_map_v1_data
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -15,23 +15,23 @@ export interface ConfigMapV1DataConfig extends cdktf.TerraformMetaArguments {
   /**
   * The data we want to add to the ConfigMap.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/config_map_v1_data#data ConfigMapV1Data#data}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/config_map_v1_data#data ConfigMapV1Data#data}
   */
   readonly data: { [key: string]: string };
   /**
   * Set the name of the field manager for the specified labels.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/config_map_v1_data#field_manager ConfigMapV1Data#field_manager}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/config_map_v1_data#field_manager ConfigMapV1Data#field_manager}
   */
   readonly fieldManager?: string;
   /**
   * Force overwriting data that is managed outside of Terraform.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/config_map_v1_data#force ConfigMapV1Data#force}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/config_map_v1_data#force ConfigMapV1Data#force}
   */
   readonly force?: boolean | cdktf.IResolvable;
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/config_map_v1_data#id ConfigMapV1Data#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/config_map_v1_data#id ConfigMapV1Data#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -40,7 +40,7 @@ export interface ConfigMapV1DataConfig extends cdktf.TerraformMetaArguments {
   /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/config_map_v1_data#metadata ConfigMapV1Data#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/config_map_v1_data#metadata ConfigMapV1Data#metadata}
   */
   readonly metadata: ConfigMapV1DataMetadata;
 }
@@ -48,13 +48,13 @@ export interface ConfigMapV1DataMetadata {
   /**
   * The name of the ConfigMap.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/config_map_v1_data#name ConfigMapV1Data#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/config_map_v1_data#name ConfigMapV1Data#name}
   */
   readonly name: string;
   /**
   * The namespace of the ConfigMap.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/config_map_v1_data#namespace ConfigMapV1Data#namespace}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/config_map_v1_data#namespace ConfigMapV1Data#namespace}
   */
   readonly namespace?: string;
 }
@@ -139,7 +139,7 @@ export class ConfigMapV1DataMetadataOutputReference extends cdktf.ComplexObject 
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/config_map_v1_data kubernetes_config_map_v1_data}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/config_map_v1_data kubernetes_config_map_v1_data}
 */
 export class ConfigMapV1Data extends cdktf.TerraformResource {
 
@@ -155,7 +155,7 @@ export class ConfigMapV1Data extends cdktf.TerraformResource {
   * Generates CDKTF code for importing a ConfigMapV1Data resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the ConfigMapV1Data to import
-  * @param importFromId The id of the existing ConfigMapV1Data that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/config_map_v1_data#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing ConfigMapV1Data that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/config_map_v1_data#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the ConfigMapV1Data to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -167,7 +167,7 @@ export class ConfigMapV1Data extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/config_map_v1_data kubernetes_config_map_v1_data} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/config_map_v1_data kubernetes_config_map_v1_data} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -178,7 +178,7 @@ export class ConfigMapV1Data extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_config_map_v1_data',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.25.1',
+        providerVersion: '2.25.2',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
