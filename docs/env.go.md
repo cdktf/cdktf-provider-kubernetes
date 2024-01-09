@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.env.Env.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 env.NewEnv(scope Construct, id *string, config EnvConfig) Env
 ```
@@ -432,7 +432,7 @@ func ResetInitContainer()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.env.Env.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 env.Env_IsConstruct(x interface{}) *bool
 ```
@@ -464,7 +464,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.env.Env.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 env.Env_IsTerraformElement(x interface{}) *bool
 ```
@@ -478,7 +478,7 @@ env.Env_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.env.Env.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 env.Env_IsTerraformResource(x interface{}) *bool
 ```
@@ -492,7 +492,7 @@ env.Env_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.env.Env.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 env.Env_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -919,7 +919,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.env.EnvConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 &env.EnvConfig {
 	Connection: interface{},
@@ -932,7 +932,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
 	ApiVersion: *string,
 	Env: interface{},
 	Kind: *string,
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.env.EnvMetadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.env.EnvMetadata,
 	Container: *string,
 	FieldManager: *string,
 	Force: interface{},
@@ -1166,12 +1166,12 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.env.EnvEnv.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 &env.EnvEnv {
 	Name: *string,
 	Value: *string,
-	ValueFrom: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.env.EnvEnvValueFrom,
+	ValueFrom: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.env.EnvEnvValueFrom,
 }
 ```
 
@@ -1234,13 +1234,13 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.env.EnvEnvValueFrom.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 &env.EnvEnvValueFrom {
-	ConfigMapKeyRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.env.EnvEnvValueFromConfigMapKeyRef,
-	FieldRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.env.EnvEnvValueFromFieldRef,
-	ResourceFieldRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.env.EnvEnvValueFromResourceFieldRef,
-	SecretKeyRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.env.EnvEnvValueFromSecretKeyRef,
+	ConfigMapKeyRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.env.EnvEnvValueFromConfigMapKeyRef,
+	FieldRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.env.EnvEnvValueFromFieldRef,
+	ResourceFieldRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.env.EnvEnvValueFromResourceFieldRef,
+	SecretKeyRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.env.EnvEnvValueFromSecretKeyRef,
 }
 ```
 
@@ -1316,7 +1316,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.env.EnvEnvValueFromConfigMapKeyRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 &env.EnvEnvValueFromConfigMapKeyRef {
 	Key: *string,
@@ -1382,7 +1382,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.env.EnvEnvValueFromFieldRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 &env.EnvEnvValueFromFieldRef {
 	ApiVersion: *string,
@@ -1432,7 +1432,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.env.EnvEnvValueFromResourceFieldRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 &env.EnvEnvValueFromResourceFieldRef {
 	Resource: *string,
@@ -1494,7 +1494,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.env.EnvEnvValueFromSecretKeyRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 &env.EnvEnvValueFromSecretKeyRef {
 	Key: *string,
@@ -1560,7 +1560,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.env.EnvMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 &env.EnvMetadata {
 	Name: *string,
@@ -1612,7 +1612,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.env.EnvEnvList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 env.NewEnvEnvList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) EnvEnvList
 ```
@@ -1755,7 +1755,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.env.EnvEnvOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 env.NewEnvEnvOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) EnvEnvOutputReference
 ```
@@ -2115,7 +2115,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.env.EnvEnvValueFromConfigMapKeyRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 env.NewEnvEnvValueFromConfigMapKeyRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) EnvEnvValueFromConfigMapKeyRefOutputReference
 ```
@@ -2451,7 +2451,7 @@ func InternalValue() EnvEnvValueFromConfigMapKeyRef
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.env.EnvEnvValueFromFieldRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 env.NewEnvEnvValueFromFieldRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) EnvEnvValueFromFieldRefOutputReference
 ```
@@ -2758,7 +2758,7 @@ func InternalValue() EnvEnvValueFromFieldRef
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.env.EnvEnvValueFromOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 env.NewEnvEnvValueFromOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) EnvEnvValueFromOutputReference
 ```
@@ -3175,7 +3175,7 @@ func InternalValue() EnvEnvValueFrom
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.env.EnvEnvValueFromResourceFieldRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 env.NewEnvEnvValueFromResourceFieldRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) EnvEnvValueFromResourceFieldRefOutputReference
 ```
@@ -3504,7 +3504,7 @@ func InternalValue() EnvEnvValueFromResourceFieldRef
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.env.EnvEnvValueFromSecretKeyRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 env.NewEnvEnvValueFromSecretKeyRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) EnvEnvValueFromSecretKeyRefOutputReference
 ```
@@ -3840,7 +3840,7 @@ func InternalValue() EnvEnvValueFromSecretKeyRef
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.env.EnvMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/env"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/env"
 
 env.NewEnvMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) EnvMetadataOutputReference
 ```
