@@ -4,12 +4,12 @@
 
 ### IngressClass <a name="IngressClass" id="@cdktf/provider-kubernetes.ingressClass.IngressClass"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/ingress_class kubernetes_ingress_class}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/ingress_class kubernetes_ingress_class}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressClass.IngressClass.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressclass"
 
 ingressclass.NewIngressClass(scope Construct, id *string, config IngressClassConfig) IngressClass
 ```
@@ -404,7 +404,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.ingressClass.IngressClass.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressclass"
 
 ingressclass.IngressClass_IsConstruct(x interface{}) *bool
 ```
@@ -436,7 +436,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.ingressClass.IngressClass.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressclass"
 
 ingressclass.IngressClass_IsTerraformElement(x interface{}) *bool
 ```
@@ -450,7 +450,7 @@ ingressclass.IngressClass_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.ingressClass.IngressClass.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressclass"
 
 ingressclass.IngressClass_IsTerraformResource(x interface{}) *bool
 ```
@@ -464,7 +464,7 @@ ingressclass.IngressClass_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.ingressClass.IngressClass.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressclass"
 
 ingressclass.IngressClass_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -493,7 +493,7 @@ The construct id used in the generated config for the IngressClass to import.
 
 The id of the existing IngressClass that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/ingress_class#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/ingress_class#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -759,7 +759,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressClass.IngressClassConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressclass"
 
 &ingressclass.IngressClassConfig {
 	Connection: interface{},
@@ -769,8 +769,8 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressclas
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.ingressClass.IngressClassMetadata,
-	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.ingressClass.IngressClassSpec,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.ingressClass.IngressClassMetadata,
+	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.ingressClass.IngressClassSpec,
 	Id: *string,
 }
 ```
@@ -788,7 +788,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressclas
 | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassConfig.property.provisioners">Provisioners</a></code> | <code>*[]interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassConfig.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassMetadata">IngressClassMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassConfig.property.spec">Spec</a></code> | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassSpec">IngressClassSpec</a></code> | spec block. |
-| <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/ingress_class#id IngressClass#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/ingress_class#id IngressClass#id}. |
 
 ---
 
@@ -872,7 +872,7 @@ Metadata IngressClassMetadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/ingress_class#metadata IngressClass#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/ingress_class#metadata IngressClass#metadata}
 
 ---
 
@@ -886,7 +886,7 @@ Spec IngressClassSpec
 
 spec block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/ingress_class#spec IngressClass#spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/ingress_class#spec IngressClass#spec}
 
 ---
 
@@ -898,7 +898,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/ingress_class#id IngressClass#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/ingress_class#id IngressClass#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -910,7 +910,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressClass.IngressClassMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressclass"
 
 &ingressclass.IngressClassMetadata {
 	Annotations: *map[string]*string,
@@ -943,7 +943,7 @@ An unstructured key value map stored with the ingress_class_v1 that may be used 
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/ingress_class#annotations IngressClass#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/ingress_class#annotations IngressClass#annotations}
 
 ---
 
@@ -959,7 +959,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/ingress_class#generate_name IngressClass#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/ingress_class#generate_name IngressClass#generate_name}
 
 ---
 
@@ -975,7 +975,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/ingress_class#labels IngressClass#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/ingress_class#labels IngressClass#labels}
 
 ---
 
@@ -989,7 +989,7 @@ Name *string
 
 Name of the ingress_class_v1, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/ingress_class#name IngressClass#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/ingress_class#name IngressClass#name}
 
 ---
 
@@ -998,7 +998,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressClass.IngressClassSpec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressclass"
 
 &ingressclass.IngressClassSpec {
 	Controller: *string,
@@ -1027,7 +1027,7 @@ controller refers to the name of the controller that should handle this class.
 
 This allows for different "flavors" that are controlled by the same controller. For example, you may have different parameters for the same implementing controller. This should be specified as a domain-prefixed path no more than 250 characters in length, e.g. "acme.io/ingress-controller". This field is immutable.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/ingress_class#controller IngressClass#controller}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/ingress_class#controller IngressClass#controller}
 
 ---
 
@@ -1041,7 +1041,7 @@ Parameters interface{}
 
 parameters block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/ingress_class#parameters IngressClass#parameters}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/ingress_class#parameters IngressClass#parameters}
 
 ---
 
@@ -1050,7 +1050,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingressClass.IngressClassSpecParameters.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressclass"
 
 &ingressclass.IngressClassSpecParameters {
 	Kind: *string,
@@ -1068,8 +1068,8 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressclas
 | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassSpecParameters.property.kind">Kind</a></code> | <code>*string</code> | Kind is the type of resource being referenced. |
 | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassSpecParameters.property.name">Name</a></code> | <code>*string</code> | Name is the name of resource being referenced. |
 | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassSpecParameters.property.apiGroup">ApiGroup</a></code> | <code>*string</code> | APIGroup is the group for the resource being referenced. |
-| <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassSpecParameters.property.namespace">Namespace</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/ingress_class#namespace IngressClass#namespace}. |
-| <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassSpecParameters.property.scope">Scope</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/ingress_class#scope IngressClass#scope}. |
+| <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassSpecParameters.property.namespace">Namespace</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/ingress_class#namespace IngressClass#namespace}. |
+| <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassSpecParameters.property.scope">Scope</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/ingress_class#scope IngressClass#scope}. |
 
 ---
 
@@ -1083,7 +1083,7 @@ Kind *string
 
 Kind is the type of resource being referenced.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/ingress_class#kind IngressClass#kind}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/ingress_class#kind IngressClass#kind}
 
 ---
 
@@ -1097,7 +1097,7 @@ Name *string
 
 Name is the name of resource being referenced.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/ingress_class#name IngressClass#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/ingress_class#name IngressClass#name}
 
 ---
 
@@ -1113,7 +1113,7 @@ APIGroup is the group for the resource being referenced.
 
 If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/ingress_class#api_group IngressClass#api_group}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/ingress_class#api_group IngressClass#api_group}
 
 ---
 
@@ -1125,7 +1125,7 @@ Namespace *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/ingress_class#namespace IngressClass#namespace}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/ingress_class#namespace IngressClass#namespace}.
 
 ---
 
@@ -1137,7 +1137,7 @@ Scope *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/ingress_class#scope IngressClass#scope}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/ingress_class#scope IngressClass#scope}.
 
 ---
 
@@ -1148,7 +1148,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressClass.IngressClassMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressclass"
 
 ingressclass.NewIngressClassMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) IngressClassMetadataOutputReference
 ```
@@ -1546,7 +1546,7 @@ func InternalValue() IngressClassMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressClass.IngressClassSpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressclass"
 
 ingressclass.NewIngressClassSpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) IngressClassSpecOutputReference
 ```
@@ -1866,7 +1866,7 @@ func InternalValue() IngressClassSpec
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressClass.IngressClassSpecParametersList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressclass"
 
 ingressclass.NewIngressClassSpecParametersList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) IngressClassSpecParametersList
 ```
@@ -2009,7 +2009,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressClass.IngressClassSpecParametersOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingressclass"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingressclass"
 
 ingressclass.NewIngressClassSpecParametersOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) IngressClassSpecParametersOutputReference
 ```

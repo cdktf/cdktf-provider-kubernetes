@@ -4,7 +4,7 @@
 
 ### DataKubernetesResources <a name="DataKubernetesResources" id="@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/resources kubernetes_resources}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/data-sources/resources kubernetes_resources}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesResources.DataKubernetesResources.Initializer"></a>
 
@@ -391,7 +391,7 @@ The construct id used in the generated config for the DataKubernetesResources to
 
 The id of the existing DataKubernetesResources that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/resources#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/data-sources/resources#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -844,7 +844,7 @@ public string ApiVersion { get; set; }
 
 The resource apiVersion.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/resources#api_version DataKubernetesResources#api_version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/data-sources/resources#api_version DataKubernetesResources#api_version}
 
 ---
 
@@ -858,7 +858,7 @@ public string Kind { get; set; }
 
 The resource kind.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/resources#kind DataKubernetesResources#kind}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/data-sources/resources#kind DataKubernetesResources#kind}
 
 ---
 
@@ -872,7 +872,7 @@ public string FieldSelector { get; set; }
 
 A selector to restrict the list of returned objects by their fields.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/resources#field_selector DataKubernetesResources#field_selector}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/data-sources/resources#field_selector DataKubernetesResources#field_selector}
 
 ---
 
@@ -886,7 +886,7 @@ public string LabelSelector { get; set; }
 
 A selector to restrict the list of returned objects by their labels.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/resources#label_selector DataKubernetesResources#label_selector}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/data-sources/resources#label_selector DataKubernetesResources#label_selector}
 
 ---
 
@@ -900,7 +900,7 @@ public double Limit { get; set; }
 
 Limit is a maximum number of responses to return for a list call.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/resources#limit DataKubernetesResources#limit}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/data-sources/resources#limit DataKubernetesResources#limit}
 
 ---
 
@@ -914,7 +914,7 @@ public string Namespace { get; set; }
 
 The resource namespace.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/resources#namespace DataKubernetesResources#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/data-sources/resources#namespace DataKubernetesResources#namespace}
 
 ---
 
@@ -928,7 +928,7 @@ public System.Collections.Generic.IDictionary<string, object> Objects { get; set
 
 The response from the API server.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/data-sources/resources#objects DataKubernetesResources#objects}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/data-sources/resources#objects DataKubernetesResources#objects}
 
 ---
 

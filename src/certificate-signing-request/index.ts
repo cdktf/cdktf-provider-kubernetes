@@ -1,9 +1,4 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/certificate_signing_request
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/certificate_signing_request
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -15,11 +10,11 @@ export interface CertificateSigningRequestConfig extends cdktf.TerraformMetaArgu
   /**
   * Automatically approve the CertificateSigningRequest
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/certificate_signing_request#auto_approve CertificateSigningRequest#auto_approve}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/certificate_signing_request#auto_approve CertificateSigningRequest#auto_approve}
   */
   readonly autoApprove?: boolean | cdktf.IResolvable;
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/certificate_signing_request#id CertificateSigningRequest#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/certificate_signing_request#id CertificateSigningRequest#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -28,19 +23,19 @@ export interface CertificateSigningRequestConfig extends cdktf.TerraformMetaArgu
   /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/certificate_signing_request#metadata CertificateSigningRequest#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/certificate_signing_request#metadata CertificateSigningRequest#metadata}
   */
   readonly metadata: CertificateSigningRequestMetadata;
   /**
   * spec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/certificate_signing_request#spec CertificateSigningRequest#spec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/certificate_signing_request#spec CertificateSigningRequest#spec}
   */
   readonly spec: CertificateSigningRequestSpec;
   /**
   * timeouts block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/certificate_signing_request#timeouts CertificateSigningRequest#timeouts}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/certificate_signing_request#timeouts CertificateSigningRequest#timeouts}
   */
   readonly timeouts?: CertificateSigningRequestTimeouts;
 }
@@ -48,25 +43,25 @@ export interface CertificateSigningRequestMetadata {
   /**
   * An unstructured key value map stored with the certificate signing request that may be used to store arbitrary metadata. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/certificate_signing_request#annotations CertificateSigningRequest#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/certificate_signing_request#annotations CertificateSigningRequest#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/certificate_signing_request#generate_name CertificateSigningRequest#generate_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/certificate_signing_request#generate_name CertificateSigningRequest#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the certificate signing request. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/certificate_signing_request#labels CertificateSigningRequest#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/certificate_signing_request#labels CertificateSigningRequest#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the certificate signing request, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/certificate_signing_request#name CertificateSigningRequest#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/certificate_signing_request#name CertificateSigningRequest#name}
   */
   readonly name?: string;
 }
@@ -217,13 +212,13 @@ export interface CertificateSigningRequestSpec {
   /**
   * Base64-encoded PKCS#10 CSR data
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/certificate_signing_request#request CertificateSigningRequest#request}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/certificate_signing_request#request CertificateSigningRequest#request}
   */
   readonly request: string;
   /**
   * Requested signer for the request. It is a qualified name in the form: `scope-hostname.io/name`.If empty, it will be defaulted: 1. If it's a kubelet client certificate, it is assigned `kubernetes.io/kube-apiserver-client-kubelet`.2. If it's a kubelet serving certificate, it is assigned `kubernetes.io/kubelet-serving`.3. Otherwise, it is assigned `kubernetes.io/legacy-unknown`. Distribution of trust for signers happens out of band.You can select on this field using `spec.signerName`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/certificate_signing_request#signer_name CertificateSigningRequest#signer_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/certificate_signing_request#signer_name CertificateSigningRequest#signer_name}
   */
   readonly signerName?: string;
   /**
@@ -256,7 +251,7 @@ export interface CertificateSigningRequestSpec {
   *  "microsoft sgc",
   *  "netscape sgc"
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/certificate_signing_request#usages CertificateSigningRequest#usages}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/certificate_signing_request#usages CertificateSigningRequest#usages}
   */
   readonly usages?: string[];
 }
@@ -364,7 +359,7 @@ export class CertificateSigningRequestSpecOutputReference extends cdktf.ComplexO
 }
 export interface CertificateSigningRequestTimeouts {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/certificate_signing_request#create CertificateSigningRequest#create}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/certificate_signing_request#create CertificateSigningRequest#create}
   */
   readonly create?: string;
 }
@@ -439,7 +434,7 @@ export class CertificateSigningRequestTimeoutsOutputReference extends cdktf.Comp
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/certificate_signing_request kubernetes_certificate_signing_request}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/certificate_signing_request kubernetes_certificate_signing_request}
 */
 export class CertificateSigningRequest extends cdktf.TerraformResource {
 
@@ -455,7 +450,7 @@ export class CertificateSigningRequest extends cdktf.TerraformResource {
   * Generates CDKTF code for importing a CertificateSigningRequest resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the CertificateSigningRequest to import
-  * @param importFromId The id of the existing CertificateSigningRequest that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/certificate_signing_request#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing CertificateSigningRequest that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/certificate_signing_request#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the CertificateSigningRequest to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -467,7 +462,7 @@ export class CertificateSigningRequest extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/certificate_signing_request kubernetes_certificate_signing_request} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/certificate_signing_request kubernetes_certificate_signing_request} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -478,7 +473,7 @@ export class CertificateSigningRequest extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_certificate_signing_request',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.25.1',
+        providerVersion: '2.25.2',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

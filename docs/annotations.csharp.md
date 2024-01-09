@@ -4,7 +4,7 @@
 
 ### Annotations <a name="Annotations" id="@cdktf/provider-kubernetes.annotations.Annotations"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/annotations kubernetes_annotations}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/annotations kubernetes_annotations}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.annotations.Annotations.Initializer"></a>
 
@@ -508,7 +508,7 @@ The construct id used in the generated config for the Annotations to import.
 
 The id of the existing Annotations that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/annotations#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/annotations#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -922,7 +922,7 @@ new AnnotationsConfig {
 | <code><a href="#@cdktf/provider-kubernetes.annotations.AnnotationsConfig.property.annotations">Annotations</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | A map of annotations to apply to the resource. |
 | <code><a href="#@cdktf/provider-kubernetes.annotations.AnnotationsConfig.property.fieldManager">FieldManager</a></code> | <code>string</code> | Set the name of the field manager for the specified labels. |
 | <code><a href="#@cdktf/provider-kubernetes.annotations.AnnotationsConfig.property.force">Force</a></code> | <code>object</code> | Force overwriting annotations that were created or edited outside of Terraform. |
-| <code><a href="#@cdktf/provider-kubernetes.annotations.AnnotationsConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/annotations#id Annotations#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.annotations.AnnotationsConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/annotations#id Annotations#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.annotations.AnnotationsConfig.property.templateAnnotations">TemplateAnnotations</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | A map of annotations to apply to the resource template. |
 
 ---
@@ -1007,7 +1007,7 @@ public string ApiVersion { get; set; }
 
 The apiVersion of the resource to annotate.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/annotations#api_version Annotations#api_version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/annotations#api_version Annotations#api_version}
 
 ---
 
@@ -1021,7 +1021,7 @@ public string Kind { get; set; }
 
 The kind of the resource to annotate.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/annotations#kind Annotations#kind}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/annotations#kind Annotations#kind}
 
 ---
 
@@ -1035,7 +1035,7 @@ public AnnotationsMetadata Metadata { get; set; }
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/annotations#metadata Annotations#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/annotations#metadata Annotations#metadata}
 
 ---
 
@@ -1049,7 +1049,7 @@ public System.Collections.Generic.IDictionary<string, string> Annotations { get;
 
 A map of annotations to apply to the resource.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/annotations#annotations Annotations#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/annotations#annotations Annotations#annotations}
 
 ---
 
@@ -1063,7 +1063,7 @@ public string FieldManager { get; set; }
 
 Set the name of the field manager for the specified labels.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/annotations#field_manager Annotations#field_manager}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/annotations#field_manager Annotations#field_manager}
 
 ---
 
@@ -1077,7 +1077,7 @@ public object Force { get; set; }
 
 Force overwriting annotations that were created or edited outside of Terraform.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/annotations#force Annotations#force}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/annotations#force Annotations#force}
 
 ---
 
@@ -1089,7 +1089,7 @@ public string Id { get; set; }
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/annotations#id Annotations#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/annotations#id Annotations#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1106,7 +1106,7 @@ public System.Collections.Generic.IDictionary<string, string> TemplateAnnotation
 
 A map of annotations to apply to the resource template.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/annotations#template_annotations Annotations#template_annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/annotations#template_annotations Annotations#template_annotations}
 
 ---
 
@@ -1142,7 +1142,7 @@ public string Name { get; set; }
 
 The name of the resource.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/annotations#name Annotations#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/annotations#name Annotations#name}
 
 ---
 
@@ -1156,7 +1156,7 @@ public string Namespace { get; set; }
 
 The namespace of the resource.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.1/docs/resources/annotations#namespace Annotations#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/annotations#namespace Annotations#namespace}
 
 ---
 
