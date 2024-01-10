@@ -1,18 +1,16 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // generated from terraform resource schema
 
 import { StatefulSetMetadata, 
 statefulSetMetadataToTerraform, 
+statefulSetMetadataToHclTerraform, 
 StatefulSetMetadataOutputReference, 
 StatefulSetSpec, 
 statefulSetSpecToTerraform, 
+statefulSetSpecToHclTerraform, 
 StatefulSetSpecOutputReference, 
 StatefulSetTimeouts, 
 statefulSetTimeoutsToTerraform, 
+statefulSetTimeoutsToHclTerraform, 
 StatefulSetTimeoutsOutputReference} from './index-structs'
 export * from './index-structs'
 import { Construct } from 'constructs';
@@ -199,5 +197,43 @@ export class StatefulSet extends cdktf.TerraformResource {
       spec: statefulSetSpecToTerraform(this._spec.internalValue),
       timeouts: statefulSetTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      wait_for_rollout: {
+        value: cdktf.booleanToHclTerraform(this._waitForRollout),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      metadata: {
+        value: statefulSetMetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "StatefulSetMetadataList",
+      },
+      spec: {
+        value: statefulSetSpecToHclTerraform(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "StatefulSetSpecList",
+      },
+      timeouts: {
+        value: statefulSetTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "StatefulSetTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

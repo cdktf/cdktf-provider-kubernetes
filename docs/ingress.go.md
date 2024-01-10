@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.Ingress.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.NewIngress(scope Construct, id *string, config IngressConfig) Ingress
 ```
@@ -54,6 +54,7 @@ Must be unique amongst siblings in the same scope
 | <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.addOverride">AddOverride</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.overrideLogicalId">OverrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.resetOverrideLogicalId">ResetOverrideLogicalId</a></code> | Resets a previously passed logical Id to use the auto-generated logical id again. |
+| <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.toHclTerraform">ToHclTerraform</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.toMetadata">ToMetadata</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.toTerraform">ToTerraform</a></code> | Adds this resource to the terraform JSON output. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.Ingress.addMoveTarget">AddMoveTarget</a></code> | Adds a user defined moveTarget string to this resource to be later used in .moveTo(moveTarget) to resolve the location of the move. |
@@ -128,6 +129,12 @@ func ResetOverrideLogicalId()
 ```
 
 Resets a previously passed logical Id to use the auto-generated logical id again.
+
+##### `ToHclTerraform` <a name="ToHclTerraform" id="@cdktf/provider-kubernetes.ingress.Ingress.toHclTerraform"></a>
+
+```go
+func ToHclTerraform() interface{}
+```
 
 ##### `ToMetadata` <a name="ToMetadata" id="@cdktf/provider-kubernetes.ingress.Ingress.toMetadata"></a>
 
@@ -411,7 +418,7 @@ func ResetWaitForLoadBalancer()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.ingress.Ingress.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.Ingress_IsConstruct(x interface{}) *bool
 ```
@@ -443,7 +450,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.ingress.Ingress.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.Ingress_IsTerraformElement(x interface{}) *bool
 ```
@@ -457,7 +464,7 @@ ingress.Ingress_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.ingress.Ingress.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.Ingress_IsTerraformResource(x interface{}) *bool
 ```
@@ -471,7 +478,7 @@ ingress.Ingress_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.ingress.Ingress.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.Ingress_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -799,7 +806,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingress.IngressConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 &ingress.IngressConfig {
 	Connection: interface{},
@@ -809,8 +816,8 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.ingress.IngressMetadata,
-	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.ingress.IngressSpec,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.ingress.IngressMetadata,
+	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.ingress.IngressSpec,
 	Id: *string,
 	WaitForLoadBalancer: interface{},
 }
@@ -966,7 +973,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingress.IngressMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 &ingress.IngressMetadata {
 	Annotations: *map[string]*string,
@@ -1070,10 +1077,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingress.IngressSpec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 &ingress.IngressSpec {
-	Backend: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.ingress.IngressSpecBackend,
+	Backend: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.ingress.IngressSpecBackend,
 	IngressClassName: *string,
 	Rule: interface{},
 	Tls: interface{},
@@ -1154,7 +1161,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingress.IngressSpecBackend.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 &ingress.IngressSpecBackend {
 	ServiceName: *string,
@@ -1204,10 +1211,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingress.IngressSpecRule.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 &ingress.IngressSpecRule {
-	Http: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.ingress.IngressSpecRuleHttp,
+	Http: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.ingress.IngressSpecRuleHttp,
 	Host: *string,
 }
 ```
@@ -1263,7 +1270,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingress.IngressSpecRuleHttp.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 &ingress.IngressSpecRuleHttp {
 	Path: interface{},
@@ -1297,10 +1304,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingress.IngressSpecRuleHttpPath.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 &ingress.IngressSpecRuleHttpPath {
-	Backend: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.ingress.IngressSpecRuleHttpPathBackend,
+	Backend: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.ingress.IngressSpecRuleHttpPathBackend,
 	Path: *string,
 }
 ```
@@ -1349,7 +1356,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingress.IngressSpecRuleHttpPathBackend.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 &ingress.IngressSpecRuleHttpPathBackend {
 	ServiceName: *string,
@@ -1399,7 +1406,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingress.IngressSpecTls.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 &ingress.IngressSpecTls {
 	Hosts: *[]*string,
@@ -1453,7 +1460,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingress.IngressStatus.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 &ingress.IngressStatus {
 
@@ -1466,7 +1473,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancer.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 &ingress.IngressStatusLoadBalancer {
 
@@ -1479,7 +1486,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancerIngress.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 &ingress.IngressStatusLoadBalancerIngress {
 
@@ -1494,7 +1501,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.IngressMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.NewIngressMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) IngressMetadataOutputReference
 ```
@@ -1921,7 +1928,7 @@ func InternalValue() IngressMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.IngressSpecBackendOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.NewIngressSpecBackendOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) IngressSpecBackendOutputReference
 ```
@@ -2228,7 +2235,7 @@ func InternalValue() IngressSpecBackend
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.IngressSpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.NewIngressSpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) IngressSpecOutputReference
 ```
@@ -2632,7 +2639,7 @@ func InternalValue() IngressSpec
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.IngressSpecRuleHttpOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.NewIngressSpecRuleHttpOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) IngressSpecRuleHttpOutputReference
 ```
@@ -2916,7 +2923,7 @@ func InternalValue() IngressSpecRuleHttp
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.IngressSpecRuleHttpPathBackendOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.NewIngressSpecRuleHttpPathBackendOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) IngressSpecRuleHttpPathBackendOutputReference
 ```
@@ -3223,7 +3230,7 @@ func InternalValue() IngressSpecRuleHttpPathBackend
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.IngressSpecRuleHttpPathList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.NewIngressSpecRuleHttpPathList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) IngressSpecRuleHttpPathList
 ```
@@ -3264,10 +3271,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecRuleHttpPathList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecRuleHttpPathList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecRuleHttpPathList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecRuleHttpPathList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecRuleHttpPathList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.ingress.IngressSpecRuleHttpPathList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.ingress.IngressSpecRuleHttpPathList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -3366,7 +3390,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.IngressSpecRuleHttpPathOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.NewIngressSpecRuleHttpPathOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) IngressSpecRuleHttpPathOutputReference
 ```
@@ -3704,7 +3728,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.IngressSpecRuleList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.NewIngressSpecRuleList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) IngressSpecRuleList
 ```
@@ -3745,10 +3769,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecRuleList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecRuleList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecRuleList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecRuleList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecRuleList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.ingress.IngressSpecRuleList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.ingress.IngressSpecRuleList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -3847,7 +3888,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.IngressSpecRuleOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.NewIngressSpecRuleOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) IngressSpecRuleOutputReference
 ```
@@ -4178,7 +4219,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.IngressSpecTlsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.NewIngressSpecTlsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) IngressSpecTlsList
 ```
@@ -4219,10 +4260,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecTlsList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecTlsList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecTlsList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecTlsList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressSpecTlsList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.ingress.IngressSpecTlsList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.ingress.IngressSpecTlsList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -4321,7 +4379,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.IngressSpecTlsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.NewIngressSpecTlsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) IngressSpecTlsOutputReference
 ```
@@ -4646,7 +4704,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.IngressStatusList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.NewIngressStatusList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) IngressStatusList
 ```
@@ -4687,10 +4745,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressStatusList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressStatusList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressStatusList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressStatusList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressStatusList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.ingress.IngressStatusList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.ingress.IngressStatusList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -4778,7 +4853,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancerIngressList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.NewIngressStatusLoadBalancerIngressList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) IngressStatusLoadBalancerIngressList
 ```
@@ -4819,10 +4894,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancerIngressList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancerIngressList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancerIngressList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancerIngressList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancerIngressList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancerIngressList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancerIngressList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -4910,7 +5002,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancerIngressOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.NewIngressStatusLoadBalancerIngressOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) IngressStatusLoadBalancerIngressOutputReference
 ```
@@ -5199,7 +5291,7 @@ func InternalValue() IngressStatusLoadBalancerIngress
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancerList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.NewIngressStatusLoadBalancerList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) IngressStatusLoadBalancerList
 ```
@@ -5240,10 +5332,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancerList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancerList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancerList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancerList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancerList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancerList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancerList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -5331,7 +5440,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.IngressStatusLoadBalancerOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.NewIngressStatusLoadBalancerOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) IngressStatusLoadBalancerOutputReference
 ```
@@ -5609,7 +5718,7 @@ func InternalValue() IngressStatusLoadBalancer
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingress.IngressStatusOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/ingress"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/ingress"
 
 ingress.NewIngressStatusOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) IngressStatusOutputReference
 ```

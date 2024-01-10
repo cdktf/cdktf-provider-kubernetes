@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 import * as cdktf from 'cdktf';
 export interface ReplicationControllerV1Metadata {
   /**
@@ -49,6 +44,49 @@ export function replicationControllerV1MetadataToTerraform(struct?: ReplicationC
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
+}
+
+
+export function replicationControllerV1MetadataToHclTerraform(struct?: ReplicationControllerV1MetadataOutputReference | ReplicationControllerV1Metadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    generate_name: {
+      value: cdktf.stringToHclTerraform(struct!.generateName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1MetadataOutputReference extends cdktf.ComplexObject {
@@ -249,6 +287,49 @@ export function replicationControllerV1SpecTemplateMetadataToTerraform(struct?: 
   }
 }
 
+
+export function replicationControllerV1SpecTemplateMetadataToHclTerraform(struct?: ReplicationControllerV1SpecTemplateMetadataOutputReference | ReplicationControllerV1SpecTemplateMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    generate_name: {
+      value: cdktf.stringToHclTerraform(struct!.generateName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateMetadataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -433,6 +514,37 @@ export function replicationControllerV1SpecTemplateSpecAffinityNodeAffinityPrefe
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -590,6 +702,37 @@ export function replicationControllerV1SpecTemplateSpecAffinityNodeAffinityPrefe
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchFieldsToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchFields | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchFieldsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -734,6 +877,31 @@ export function replicationControllerV1SpecTemplateSpecAffinityNodeAffinityPrefe
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceOutputReference | ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    match_expressions: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsToHclTerraform, true)(struct!.matchExpressions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressionsList",
+    },
+    match_fields: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchFieldsToHclTerraform, true)(struct!.matchFields),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchFieldsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -828,6 +996,31 @@ export function replicationControllerV1SpecTemplateSpecAffinityNodeAffinityPrefe
     weight: cdktf.numberToTerraform(struct!.weight),
     preference: replicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceToTerraform(struct!.preference),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    weight: {
+      value: cdktf.numberToHclTerraform(struct!.weight),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    preference: {
+      value: replicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceToHclTerraform(struct!.preference),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionOutputReference extends cdktf.ComplexObject {
@@ -957,6 +1150,37 @@ export function replicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequi
     operator: cdktf.stringToTerraform(struct!.operator),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsOutputReference extends cdktf.ComplexObject {
@@ -1116,6 +1340,37 @@ export function replicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequi
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchFieldsToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchFields | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchFieldsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1260,6 +1515,31 @@ export function replicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequi
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    match_expressions: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsToHclTerraform, true)(struct!.matchExpressions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressionsList",
+    },
+    match_fields: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchFieldsToHclTerraform, true)(struct!.matchFields),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchFieldsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1381,6 +1661,25 @@ export function replicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequi
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference | ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    node_selector_term: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermToHclTerraform, true)(struct!.nodeSelectorTerm),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1453,6 +1752,31 @@ export function replicationControllerV1SpecTemplateSpecAffinityNodeAffinityToTer
     preferred_during_scheduling_ignored_during_execution: cdktf.listMapper(replicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionToTerraform, true)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
     required_during_scheduling_ignored_during_execution: replicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct!.requiredDuringSchedulingIgnoredDuringExecution),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecAffinityNodeAffinityToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityOutputReference | ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinity): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    preferred_during_scheduling_ignored_during_execution: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionToHclTerraform, true)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionList",
+    },
+    required_during_scheduling_ignored_during_execution: {
+      value: replicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionToHclTerraform(struct!.requiredDuringSchedulingIgnoredDuringExecution),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityOutputReference extends cdktf.ComplexObject {
@@ -1556,6 +1880,37 @@ export function replicationControllerV1SpecTemplateSpecAffinityPodAffinityPrefer
     operator: cdktf.stringToTerraform(struct!.operator),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
@@ -1708,6 +2063,31 @@ export function replicationControllerV1SpecTemplateSpecAffinityPodAffinityPrefer
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    match_labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.matchLabels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    match_expressions: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToHclTerraform, true)(struct!.matchExpressions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1843,6 +2223,37 @@ export function replicationControllerV1SpecTemplateSpecAffinityPodAffinityPrefer
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference | ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    namespaces: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.namespaces),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    topology_key: {
+      value: cdktf.stringToHclTerraform(struct!.topologyKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    label_selector: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToHclTerraform, true)(struct!.labelSelector),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1956,6 +2367,31 @@ export function replicationControllerV1SpecTemplateSpecAffinityPodAffinityPrefer
     weight: cdktf.numberToTerraform(struct!.weight),
     pod_affinity_term: replicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct!.podAffinityTerm),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    weight: {
+      value: cdktf.numberToHclTerraform(struct!.weight),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    pod_affinity_term: {
+      value: replicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToHclTerraform(struct!.podAffinityTerm),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionOutputReference extends cdktf.ComplexObject {
@@ -2085,6 +2521,37 @@ export function replicationControllerV1SpecTemplateSpecAffinityPodAffinityRequir
     operator: cdktf.stringToTerraform(struct!.operator),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
@@ -2237,6 +2704,31 @@ export function replicationControllerV1SpecTemplateSpecAffinityPodAffinityRequir
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    match_labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.matchLabels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    match_expressions: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToHclTerraform, true)(struct!.matchExpressions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -2370,6 +2862,37 @@ export function replicationControllerV1SpecTemplateSpecAffinityPodAffinityRequir
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
     label_selector: cdktf.listMapper(replicationControllerV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform, true)(struct!.labelSelector),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    namespaces: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.namespaces),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    topology_key: {
+      value: cdktf.stringToHclTerraform(struct!.topologyKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    label_selector: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToHclTerraform, true)(struct!.labelSelector),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference extends cdktf.ComplexObject {
@@ -2519,6 +3042,31 @@ export function replicationControllerV1SpecTemplateSpecAffinityPodAffinityToTerr
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecAffinityPodAffinityToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityOutputReference | ReplicationControllerV1SpecTemplateSpecAffinityPodAffinity): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    preferred_during_scheduling_ignored_during_execution: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionToHclTerraform, true)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionList",
+    },
+    required_during_scheduling_ignored_during_execution: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionToHclTerraform, true)(struct!.requiredDuringSchedulingIgnoredDuringExecution),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2620,6 +3168,37 @@ export function replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPr
     operator: cdktf.stringToTerraform(struct!.operator),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
@@ -2772,6 +3351,31 @@ export function replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPr
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    match_labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.matchLabels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    match_expressions: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsToHclTerraform, true)(struct!.matchExpressions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -2907,6 +3511,37 @@ export function replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPr
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference | ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    namespaces: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.namespaces),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    topology_key: {
+      value: cdktf.stringToHclTerraform(struct!.topologyKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    label_selector: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToHclTerraform, true)(struct!.labelSelector),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3020,6 +3655,31 @@ export function replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPr
     weight: cdktf.numberToTerraform(struct!.weight),
     pod_affinity_term: replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct!.podAffinityTerm),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    weight: {
+      value: cdktf.numberToHclTerraform(struct!.weight),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    pod_affinity_term: {
+      value: replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToHclTerraform(struct!.podAffinityTerm),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionOutputReference extends cdktf.ComplexObject {
@@ -3149,6 +3809,37 @@ export function replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRe
     operator: cdktf.stringToTerraform(struct!.operator),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
@@ -3301,6 +3992,31 @@ export function replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRe
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    match_labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.matchLabels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    match_expressions: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsToHclTerraform, true)(struct!.matchExpressions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -3434,6 +4150,37 @@ export function replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRe
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
     label_selector: cdktf.listMapper(replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform, true)(struct!.labelSelector),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    namespaces: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.namespaces),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    topology_key: {
+      value: cdktf.stringToHclTerraform(struct!.topologyKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    label_selector: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToHclTerraform, true)(struct!.labelSelector),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionOutputReference extends cdktf.ComplexObject {
@@ -3583,6 +4330,31 @@ export function replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityTo
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityOutputReference | ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinity): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    preferred_during_scheduling_ignored_during_execution: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionToHclTerraform, true)(struct!.preferredDuringSchedulingIgnoredDuringExecution),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionList",
+    },
+    required_during_scheduling_ignored_during_execution: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionToHclTerraform, true)(struct!.requiredDuringSchedulingIgnoredDuringExecution),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3684,6 +4456,37 @@ export function replicationControllerV1SpecTemplateSpecAffinityToTerraform(struc
     pod_affinity: replicationControllerV1SpecTemplateSpecAffinityPodAffinityToTerraform(struct!.podAffinity),
     pod_anti_affinity: replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityToTerraform(struct!.podAntiAffinity),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecAffinityToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecAffinityOutputReference | ReplicationControllerV1SpecTemplateSpecAffinity): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    node_affinity: {
+      value: replicationControllerV1SpecTemplateSpecAffinityNodeAffinityToHclTerraform(struct!.nodeAffinity),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityNodeAffinityList",
+    },
+    pod_affinity: {
+      value: replicationControllerV1SpecTemplateSpecAffinityPodAffinityToHclTerraform(struct!.podAffinity),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityPodAffinityList",
+    },
+    pod_anti_affinity: {
+      value: replicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityToHclTerraform(struct!.podAntiAffinity),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecAffinityPodAntiAffinityList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecAffinityOutputReference extends cdktf.ComplexObject {
@@ -3811,6 +4614,37 @@ export function replicationControllerV1SpecTemplateSpecContainerEnvValueFromConf
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputReference | ReplicationControllerV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    optional: {
+      value: cdktf.booleanToHclTerraform(struct!.optional),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3929,6 +4763,31 @@ export function replicationControllerV1SpecTemplateSpecContainerEnvValueFromFiel
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecContainerEnvValueFromFieldRefToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerEnvValueFromFieldRefOutputReference | ReplicationControllerV1SpecTemplateSpecContainerEnvValueFromFieldRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    api_version: {
+      value: cdktf.stringToHclTerraform(struct!.apiVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    field_path: {
+      value: cdktf.stringToHclTerraform(struct!.fieldPath),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecContainerEnvValueFromFieldRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4026,6 +4885,37 @@ export function replicationControllerV1SpecTemplateSpecContainerEnvValueFromReso
     divisor: cdktf.stringToTerraform(struct!.divisor),
     resource: cdktf.stringToTerraform(struct!.resource),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputReference | ReplicationControllerV1SpecTemplateSpecContainerEnvValueFromResourceFieldRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    container_name: {
+      value: cdktf.stringToHclTerraform(struct!.containerName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    divisor: {
+      value: cdktf.stringToHclTerraform(struct!.divisor),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    resource: {
+      value: cdktf.stringToHclTerraform(struct!.resource),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefOutputReference extends cdktf.ComplexObject {
@@ -4148,6 +5038,37 @@ export function replicationControllerV1SpecTemplateSpecContainerEnvValueFromSecr
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference | ReplicationControllerV1SpecTemplateSpecContainerEnvValueFromSecretKeyRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    optional: {
+      value: cdktf.booleanToHclTerraform(struct!.optional),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefOutputReference extends cdktf.ComplexObject {
@@ -4280,6 +5201,43 @@ export function replicationControllerV1SpecTemplateSpecContainerEnvValueFromToTe
     resource_field_ref: replicationControllerV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefToTerraform(struct!.resourceFieldRef),
     secret_key_ref: replicationControllerV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefToTerraform(struct!.secretKeyRef),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerEnvValueFromToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerEnvValueFromOutputReference | ReplicationControllerV1SpecTemplateSpecContainerEnvValueFrom): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    config_map_key_ref: {
+      value: replicationControllerV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefToHclTerraform(struct!.configMapKeyRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRefList",
+    },
+    field_ref: {
+      value: replicationControllerV1SpecTemplateSpecContainerEnvValueFromFieldRefToHclTerraform(struct!.fieldRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerEnvValueFromFieldRefList",
+    },
+    resource_field_ref: {
+      value: replicationControllerV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefToHclTerraform(struct!.resourceFieldRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerEnvValueFromResourceFieldRefList",
+    },
+    secret_key_ref: {
+      value: replicationControllerV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefToHclTerraform(struct!.secretKeyRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerEnvValueFromSecretKeyRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerEnvValueFromOutputReference extends cdktf.ComplexObject {
@@ -4429,6 +5387,37 @@ export function replicationControllerV1SpecTemplateSpecContainerEnvToTerraform(s
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecContainerEnvToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerEnv | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value_from: {
+      value: replicationControllerV1SpecTemplateSpecContainerEnvValueFromToHclTerraform(struct!.valueFrom),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerEnvValueFromList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecContainerEnvOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -4576,6 +5565,31 @@ export function replicationControllerV1SpecTemplateSpecContainerEnvFromConfigMap
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecContainerEnvFromConfigMapRefToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerEnvFromConfigMapRefOutputReference | ReplicationControllerV1SpecTemplateSpecContainerEnvFromConfigMapRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    optional: {
+      value: cdktf.booleanToHclTerraform(struct!.optional),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecContainerEnvFromConfigMapRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4667,6 +5681,31 @@ export function replicationControllerV1SpecTemplateSpecContainerEnvFromSecretRef
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerEnvFromSecretRefToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerEnvFromSecretRefOutputReference | ReplicationControllerV1SpecTemplateSpecContainerEnvFromSecretRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    optional: {
+      value: cdktf.booleanToHclTerraform(struct!.optional),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerEnvFromSecretRefOutputReference extends cdktf.ComplexObject {
@@ -4767,6 +5806,37 @@ export function replicationControllerV1SpecTemplateSpecContainerEnvFromToTerrafo
     config_map_ref: replicationControllerV1SpecTemplateSpecContainerEnvFromConfigMapRefToTerraform(struct!.configMapRef),
     secret_ref: replicationControllerV1SpecTemplateSpecContainerEnvFromSecretRefToTerraform(struct!.secretRef),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerEnvFromToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerEnvFrom | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    prefix: {
+      value: cdktf.stringToHclTerraform(struct!.prefix),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    config_map_ref: {
+      value: replicationControllerV1SpecTemplateSpecContainerEnvFromConfigMapRefToHclTerraform(struct!.configMapRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerEnvFromConfigMapRefList",
+    },
+    secret_ref: {
+      value: replicationControllerV1SpecTemplateSpecContainerEnvFromSecretRefToHclTerraform(struct!.secretRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerEnvFromSecretRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerEnvFromOutputReference extends cdktf.ComplexObject {
@@ -4912,6 +5982,25 @@ export function replicationControllerV1SpecTemplateSpecContainerLifecyclePostSta
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecContainerLifecyclePostStartExecToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerLifecyclePostStartExecOutputReference | ReplicationControllerV1SpecTemplateSpecContainerLifecyclePostStartExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    command: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.command),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecContainerLifecyclePostStartExecOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4984,6 +6073,31 @@ export function replicationControllerV1SpecTemplateSpecContainerLifecyclePostSta
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeaderToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
@@ -5133,6 +6247,49 @@ export function replicationControllerV1SpecTemplateSpecContainerLifecyclePostSta
     scheme: cdktf.stringToTerraform(struct!.scheme),
     http_header: cdktf.listMapper(replicationControllerV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerLifecyclePostStartHttpGetToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerLifecyclePostStartHttpGetOutputReference | ReplicationControllerV1SpecTemplateSpecContainerLifecyclePostStartHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    host: {
+      value: cdktf.stringToHclTerraform(struct!.host),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.stringToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scheme: {
+      value: cdktf.stringToHclTerraform(struct!.scheme),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    http_header: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeaderToHclTerraform, true)(struct!.httpHeader),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeaderList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerLifecyclePostStartHttpGetOutputReference extends cdktf.ComplexObject {
@@ -5290,6 +6447,25 @@ export function replicationControllerV1SpecTemplateSpecContainerLifecyclePostSta
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecContainerLifecyclePostStartTcpSocketToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerLifecyclePostStartTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    port: {
+      value: cdktf.stringToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecContainerLifecyclePostStartTcpSocketOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -5398,6 +6574,37 @@ export function replicationControllerV1SpecTemplateSpecContainerLifecyclePostSta
     http_get: replicationControllerV1SpecTemplateSpecContainerLifecyclePostStartHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(replicationControllerV1SpecTemplateSpecContainerLifecyclePostStartTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerLifecyclePostStartToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerLifecyclePostStart | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    exec: {
+      value: replicationControllerV1SpecTemplateSpecContainerLifecyclePostStartExecToHclTerraform(struct!.exec),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerLifecyclePostStartExecList",
+    },
+    http_get: {
+      value: replicationControllerV1SpecTemplateSpecContainerLifecyclePostStartHttpGetToHclTerraform(struct!.httpGet),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerLifecyclePostStartHttpGetList",
+    },
+    tcp_socket: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecContainerLifecyclePostStartTcpSocketToHclTerraform, true)(struct!.tcpSocket),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerLifecyclePostStartTcpSocketList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerLifecyclePostStartOutputReference extends cdktf.ComplexObject {
@@ -5543,6 +6750,25 @@ export function replicationControllerV1SpecTemplateSpecContainerLifecyclePreStop
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecContainerLifecyclePreStopExecToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerLifecyclePreStopExecOutputReference | ReplicationControllerV1SpecTemplateSpecContainerLifecyclePreStopExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    command: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.command),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecContainerLifecyclePreStopExecOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -5615,6 +6841,31 @@ export function replicationControllerV1SpecTemplateSpecContainerLifecyclePreStop
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeaderToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
@@ -5764,6 +7015,49 @@ export function replicationControllerV1SpecTemplateSpecContainerLifecyclePreStop
     scheme: cdktf.stringToTerraform(struct!.scheme),
     http_header: cdktf.listMapper(replicationControllerV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerLifecyclePreStopHttpGetToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerLifecyclePreStopHttpGetOutputReference | ReplicationControllerV1SpecTemplateSpecContainerLifecyclePreStopHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    host: {
+      value: cdktf.stringToHclTerraform(struct!.host),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.stringToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scheme: {
+      value: cdktf.stringToHclTerraform(struct!.scheme),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    http_header: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeaderToHclTerraform, true)(struct!.httpHeader),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeaderList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerLifecyclePreStopHttpGetOutputReference extends cdktf.ComplexObject {
@@ -5921,6 +7215,25 @@ export function replicationControllerV1SpecTemplateSpecContainerLifecyclePreStop
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecContainerLifecyclePreStopTcpSocketToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerLifecyclePreStopTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    port: {
+      value: cdktf.stringToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecContainerLifecyclePreStopTcpSocketOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -6029,6 +7342,37 @@ export function replicationControllerV1SpecTemplateSpecContainerLifecyclePreStop
     http_get: replicationControllerV1SpecTemplateSpecContainerLifecyclePreStopHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(replicationControllerV1SpecTemplateSpecContainerLifecyclePreStopTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerLifecyclePreStopToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerLifecyclePreStop | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    exec: {
+      value: replicationControllerV1SpecTemplateSpecContainerLifecyclePreStopExecToHclTerraform(struct!.exec),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerLifecyclePreStopExecList",
+    },
+    http_get: {
+      value: replicationControllerV1SpecTemplateSpecContainerLifecyclePreStopHttpGetToHclTerraform(struct!.httpGet),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerLifecyclePreStopHttpGetList",
+    },
+    tcp_socket: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecContainerLifecyclePreStopTcpSocketToHclTerraform, true)(struct!.tcpSocket),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerLifecyclePreStopTcpSocketList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerLifecyclePreStopOutputReference extends cdktf.ComplexObject {
@@ -6181,6 +7525,31 @@ export function replicationControllerV1SpecTemplateSpecContainerLifecycleToTerra
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecContainerLifecycleToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerLifecycleOutputReference | ReplicationControllerV1SpecTemplateSpecContainerLifecycle): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    post_start: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecContainerLifecyclePostStartToHclTerraform, true)(struct!.postStart),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerLifecyclePostStartList",
+    },
+    pre_stop: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecContainerLifecyclePreStopToHclTerraform, true)(struct!.preStop),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerLifecyclePreStopList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecContainerLifecycleOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -6270,6 +7639,25 @@ export function replicationControllerV1SpecTemplateSpecContainerLivenessProbeExe
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecContainerLivenessProbeExecToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeExecOutputReference | ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    command: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.command),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeExecOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -6342,6 +7730,31 @@ export function replicationControllerV1SpecTemplateSpecContainerLivenessProbeGrp
     port: cdktf.numberToTerraform(struct!.port),
     service: cdktf.stringToTerraform(struct!.service),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerLivenessProbeGrpcToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeGrpc | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    service: {
+      value: cdktf.stringToHclTerraform(struct!.service),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeGrpcOutputReference extends cdktf.ComplexObject {
@@ -6467,6 +7880,31 @@ export function replicationControllerV1SpecTemplateSpecContainerLivenessProbeHtt
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeaderToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
@@ -6616,6 +8054,49 @@ export function replicationControllerV1SpecTemplateSpecContainerLivenessProbeHtt
     scheme: cdktf.stringToTerraform(struct!.scheme),
     http_header: cdktf.listMapper(replicationControllerV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerLivenessProbeHttpGetToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeHttpGetOutputReference | ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    host: {
+      value: cdktf.stringToHclTerraform(struct!.host),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.stringToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scheme: {
+      value: cdktf.stringToHclTerraform(struct!.scheme),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    http_header: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeaderToHclTerraform, true)(struct!.httpHeader),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeaderList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeHttpGetOutputReference extends cdktf.ComplexObject {
@@ -6773,6 +8254,25 @@ export function replicationControllerV1SpecTemplateSpecContainerLivenessProbeTcp
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecContainerLivenessProbeTcpSocketToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    port: {
+      value: cdktf.stringToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeTcpSocketOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -6923,6 +8423,73 @@ export function replicationControllerV1SpecTemplateSpecContainerLivenessProbeToT
     http_get: replicationControllerV1SpecTemplateSpecContainerLivenessProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(replicationControllerV1SpecTemplateSpecContainerLivenessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerLivenessProbeToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeOutputReference | ReplicationControllerV1SpecTemplateSpecContainerLivenessProbe): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    failure_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.failureThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    initial_delay_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.initialDelaySeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    period_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.periodSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    success_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.successThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    timeout_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.timeoutSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    exec: {
+      value: replicationControllerV1SpecTemplateSpecContainerLivenessProbeExecToHclTerraform(struct!.exec),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeExecList",
+    },
+    grpc: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecContainerLivenessProbeGrpcToHclTerraform, true)(struct!.grpc),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeGrpcList",
+    },
+    http_get: {
+      value: replicationControllerV1SpecTemplateSpecContainerLivenessProbeHttpGetToHclTerraform(struct!.httpGet),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeHttpGetList",
+    },
+    tcp_socket: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecContainerLivenessProbeTcpSocketToHclTerraform, true)(struct!.tcpSocket),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeTcpSocketList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeOutputReference extends cdktf.ComplexObject {
@@ -7196,6 +8763,49 @@ export function replicationControllerV1SpecTemplateSpecContainerPortToTerraform(
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecContainerPortToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerPort | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    container_port: {
+      value: cdktf.numberToHclTerraform(struct!.containerPort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    host_ip: {
+      value: cdktf.stringToHclTerraform(struct!.hostIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    host_port: {
+      value: cdktf.numberToHclTerraform(struct!.hostPort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecContainerPortOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -7380,6 +8990,25 @@ export function replicationControllerV1SpecTemplateSpecContainerReadinessProbeEx
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecContainerReadinessProbeExecToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeExecOutputReference | ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    command: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.command),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeExecOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -7452,6 +9081,31 @@ export function replicationControllerV1SpecTemplateSpecContainerReadinessProbeGr
     port: cdktf.numberToTerraform(struct!.port),
     service: cdktf.stringToTerraform(struct!.service),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerReadinessProbeGrpcToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeGrpc | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    service: {
+      value: cdktf.stringToHclTerraform(struct!.service),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeGrpcOutputReference extends cdktf.ComplexObject {
@@ -7577,6 +9231,31 @@ export function replicationControllerV1SpecTemplateSpecContainerReadinessProbeHt
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeaderToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
@@ -7726,6 +9405,49 @@ export function replicationControllerV1SpecTemplateSpecContainerReadinessProbeHt
     scheme: cdktf.stringToTerraform(struct!.scheme),
     http_header: cdktf.listMapper(replicationControllerV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerReadinessProbeHttpGetToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeHttpGetOutputReference | ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    host: {
+      value: cdktf.stringToHclTerraform(struct!.host),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.stringToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scheme: {
+      value: cdktf.stringToHclTerraform(struct!.scheme),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    http_header: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeaderToHclTerraform, true)(struct!.httpHeader),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeaderList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeHttpGetOutputReference extends cdktf.ComplexObject {
@@ -7883,6 +9605,25 @@ export function replicationControllerV1SpecTemplateSpecContainerReadinessProbeTc
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecContainerReadinessProbeTcpSocketToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    port: {
+      value: cdktf.stringToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeTcpSocketOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -8033,6 +9774,73 @@ export function replicationControllerV1SpecTemplateSpecContainerReadinessProbeTo
     http_get: replicationControllerV1SpecTemplateSpecContainerReadinessProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(replicationControllerV1SpecTemplateSpecContainerReadinessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerReadinessProbeToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeOutputReference | ReplicationControllerV1SpecTemplateSpecContainerReadinessProbe): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    failure_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.failureThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    initial_delay_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.initialDelaySeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    period_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.periodSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    success_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.successThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    timeout_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.timeoutSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    exec: {
+      value: replicationControllerV1SpecTemplateSpecContainerReadinessProbeExecToHclTerraform(struct!.exec),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeExecList",
+    },
+    grpc: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecContainerReadinessProbeGrpcToHclTerraform, true)(struct!.grpc),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeGrpcList",
+    },
+    http_get: {
+      value: replicationControllerV1SpecTemplateSpecContainerReadinessProbeHttpGetToHclTerraform(struct!.httpGet),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeHttpGetList",
+    },
+    tcp_socket: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecContainerReadinessProbeTcpSocketToHclTerraform, true)(struct!.tcpSocket),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeTcpSocketList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeOutputReference extends cdktf.ComplexObject {
@@ -8285,6 +10093,31 @@ export function replicationControllerV1SpecTemplateSpecContainerResourcesToTerra
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecContainerResourcesToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerResourcesOutputReference | ReplicationControllerV1SpecTemplateSpecContainerResources): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    limits: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.limits),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    requests: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.requests),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecContainerResourcesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -8379,6 +10212,31 @@ export function replicationControllerV1SpecTemplateSpecContainerSecurityContextC
     add: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.add),
     drop: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.drop),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerSecurityContextCapabilitiesToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerSecurityContextCapabilitiesOutputReference | ReplicationControllerV1SpecTemplateSpecContainerSecurityContextCapabilities): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    add: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.add),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    drop: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.drop),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerSecurityContextCapabilitiesOutputReference extends cdktf.ComplexObject {
@@ -8489,6 +10347,43 @@ export function replicationControllerV1SpecTemplateSpecContainerSecurityContextS
     type: cdktf.stringToTerraform(struct!.type),
     user: cdktf.stringToTerraform(struct!.user),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputReference | ReplicationControllerV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    level: {
+      value: cdktf.stringToHclTerraform(struct!.level),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    role: {
+      value: cdktf.stringToHclTerraform(struct!.role),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    user: {
+      value: cdktf.stringToHclTerraform(struct!.user),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsOutputReference extends cdktf.ComplexObject {
@@ -8629,6 +10524,31 @@ export function replicationControllerV1SpecTemplateSpecContainerSecurityContextS
     localhost_profile: cdktf.stringToTerraform(struct!.localhostProfile),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerSecurityContextSeccompProfileToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerSecurityContextSeccompProfileOutputReference | ReplicationControllerV1SpecTemplateSpecContainerSecurityContextSeccompProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    localhost_profile: {
+      value: cdktf.stringToHclTerraform(struct!.localhostProfile),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
@@ -8774,6 +10694,73 @@ export function replicationControllerV1SpecTemplateSpecContainerSecurityContextT
     se_linux_options: replicationControllerV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsToTerraform(struct!.seLinuxOptions),
     seccomp_profile: replicationControllerV1SpecTemplateSpecContainerSecurityContextSeccompProfileToTerraform(struct!.seccompProfile),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerSecurityContextToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerSecurityContextOutputReference | ReplicationControllerV1SpecTemplateSpecContainerSecurityContext): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    allow_privilege_escalation: {
+      value: cdktf.booleanToHclTerraform(struct!.allowPrivilegeEscalation),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    privileged: {
+      value: cdktf.booleanToHclTerraform(struct!.privileged),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    read_only_root_filesystem: {
+      value: cdktf.booleanToHclTerraform(struct!.readOnlyRootFilesystem),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    run_as_group: {
+      value: cdktf.stringToHclTerraform(struct!.runAsGroup),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    run_as_non_root: {
+      value: cdktf.booleanToHclTerraform(struct!.runAsNonRoot),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    run_as_user: {
+      value: cdktf.stringToHclTerraform(struct!.runAsUser),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    capabilities: {
+      value: replicationControllerV1SpecTemplateSpecContainerSecurityContextCapabilitiesToHclTerraform(struct!.capabilities),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerSecurityContextCapabilitiesList",
+    },
+    se_linux_options: {
+      value: replicationControllerV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsToHclTerraform(struct!.seLinuxOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerSecurityContextSeLinuxOptionsList",
+    },
+    seccomp_profile: {
+      value: replicationControllerV1SpecTemplateSpecContainerSecurityContextSeccompProfileToHclTerraform(struct!.seccompProfile),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerSecurityContextSeccompProfileList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerSecurityContextOutputReference extends cdktf.ComplexObject {
@@ -9019,6 +11006,25 @@ export function replicationControllerV1SpecTemplateSpecContainerStartupProbeExec
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecContainerStartupProbeExecToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerStartupProbeExecOutputReference | ReplicationControllerV1SpecTemplateSpecContainerStartupProbeExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    command: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.command),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecContainerStartupProbeExecOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -9091,6 +11097,31 @@ export function replicationControllerV1SpecTemplateSpecContainerStartupProbeGrpc
     port: cdktf.numberToTerraform(struct!.port),
     service: cdktf.stringToTerraform(struct!.service),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerStartupProbeGrpcToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerStartupProbeGrpc | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    service: {
+      value: cdktf.stringToHclTerraform(struct!.service),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerStartupProbeGrpcOutputReference extends cdktf.ComplexObject {
@@ -9216,6 +11247,31 @@ export function replicationControllerV1SpecTemplateSpecContainerStartupProbeHttp
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeaderToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
@@ -9365,6 +11421,49 @@ export function replicationControllerV1SpecTemplateSpecContainerStartupProbeHttp
     scheme: cdktf.stringToTerraform(struct!.scheme),
     http_header: cdktf.listMapper(replicationControllerV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerStartupProbeHttpGetToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerStartupProbeHttpGetOutputReference | ReplicationControllerV1SpecTemplateSpecContainerStartupProbeHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    host: {
+      value: cdktf.stringToHclTerraform(struct!.host),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.stringToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scheme: {
+      value: cdktf.stringToHclTerraform(struct!.scheme),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    http_header: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeaderToHclTerraform, true)(struct!.httpHeader),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeaderList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerStartupProbeHttpGetOutputReference extends cdktf.ComplexObject {
@@ -9522,6 +11621,25 @@ export function replicationControllerV1SpecTemplateSpecContainerStartupProbeTcpS
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecContainerStartupProbeTcpSocketToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerStartupProbeTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    port: {
+      value: cdktf.stringToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecContainerStartupProbeTcpSocketOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -9672,6 +11790,73 @@ export function replicationControllerV1SpecTemplateSpecContainerStartupProbeToTe
     http_get: replicationControllerV1SpecTemplateSpecContainerStartupProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(replicationControllerV1SpecTemplateSpecContainerStartupProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerStartupProbeToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerStartupProbeOutputReference | ReplicationControllerV1SpecTemplateSpecContainerStartupProbe): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    failure_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.failureThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    initial_delay_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.initialDelaySeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    period_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.periodSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    success_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.successThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    timeout_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.timeoutSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    exec: {
+      value: replicationControllerV1SpecTemplateSpecContainerStartupProbeExecToHclTerraform(struct!.exec),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerStartupProbeExecList",
+    },
+    grpc: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecContainerStartupProbeGrpcToHclTerraform, true)(struct!.grpc),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerStartupProbeGrpcList",
+    },
+    http_get: {
+      value: replicationControllerV1SpecTemplateSpecContainerStartupProbeHttpGetToHclTerraform(struct!.httpGet),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerStartupProbeHttpGetList",
+    },
+    tcp_socket: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecContainerStartupProbeTcpSocketToHclTerraform, true)(struct!.tcpSocket),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerStartupProbeTcpSocketList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerStartupProbeOutputReference extends cdktf.ComplexObject {
@@ -9943,6 +12128,49 @@ export function replicationControllerV1SpecTemplateSpecContainerVolumeMountToTer
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     sub_path: cdktf.stringToTerraform(struct!.subPath),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerVolumeMountToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainerVolumeMount | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    mount_path: {
+      value: cdktf.stringToHclTerraform(struct!.mountPath),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    mount_propagation: {
+      value: cdktf.stringToHclTerraform(struct!.mountPropagation),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    read_only: {
+      value: cdktf.booleanToHclTerraform(struct!.readOnly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    sub_path: {
+      value: cdktf.stringToHclTerraform(struct!.subPath),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerVolumeMountOutputReference extends cdktf.ComplexObject {
@@ -10264,6 +12492,145 @@ export function replicationControllerV1SpecTemplateSpecContainerToTerraform(stru
     startup_probe: replicationControllerV1SpecTemplateSpecContainerStartupProbeToTerraform(struct!.startupProbe),
     volume_mount: cdktf.listMapper(replicationControllerV1SpecTemplateSpecContainerVolumeMountToTerraform, true)(struct!.volumeMount),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecContainerToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecContainer | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    args: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.args),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    command: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.command),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    image: {
+      value: cdktf.stringToHclTerraform(struct!.image),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    image_pull_policy: {
+      value: cdktf.stringToHclTerraform(struct!.imagePullPolicy),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    stdin: {
+      value: cdktf.booleanToHclTerraform(struct!.stdin),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    stdin_once: {
+      value: cdktf.booleanToHclTerraform(struct!.stdinOnce),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    termination_message_path: {
+      value: cdktf.stringToHclTerraform(struct!.terminationMessagePath),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    termination_message_policy: {
+      value: cdktf.stringToHclTerraform(struct!.terminationMessagePolicy),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    tty: {
+      value: cdktf.booleanToHclTerraform(struct!.tty),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    working_dir: {
+      value: cdktf.stringToHclTerraform(struct!.workingDir),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    env: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecContainerEnvToHclTerraform, true)(struct!.env),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerEnvList",
+    },
+    env_from: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecContainerEnvFromToHclTerraform, true)(struct!.envFrom),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerEnvFromList",
+    },
+    lifecycle: {
+      value: replicationControllerV1SpecTemplateSpecContainerLifecycleToHclTerraform(struct!.lifecycle),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerLifecycleList",
+    },
+    liveness_probe: {
+      value: replicationControllerV1SpecTemplateSpecContainerLivenessProbeToHclTerraform(struct!.livenessProbe),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerLivenessProbeList",
+    },
+    port: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecContainerPortToHclTerraform, true)(struct!.port),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerPortList",
+    },
+    readiness_probe: {
+      value: replicationControllerV1SpecTemplateSpecContainerReadinessProbeToHclTerraform(struct!.readinessProbe),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerReadinessProbeList",
+    },
+    resources: {
+      value: replicationControllerV1SpecTemplateSpecContainerResourcesToHclTerraform(struct!.resources),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerResourcesList",
+    },
+    security_context: {
+      value: replicationControllerV1SpecTemplateSpecContainerSecurityContextToHclTerraform(struct!.securityContext),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerSecurityContextList",
+    },
+    startup_probe: {
+      value: replicationControllerV1SpecTemplateSpecContainerStartupProbeToHclTerraform(struct!.startupProbe),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerStartupProbeList",
+    },
+    volume_mount: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecContainerVolumeMountToHclTerraform, true)(struct!.volumeMount),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecContainerVolumeMountList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecContainerOutputReference extends cdktf.ComplexObject {
@@ -10809,6 +13176,31 @@ export function replicationControllerV1SpecTemplateSpecDnsConfigOptionToTerrafor
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecDnsConfigOptionToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecDnsConfigOption | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecDnsConfigOptionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -10941,6 +13333,37 @@ export function replicationControllerV1SpecTemplateSpecDnsConfigToTerraform(stru
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecDnsConfigToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecDnsConfigOutputReference | ReplicationControllerV1SpecTemplateSpecDnsConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    nameservers: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.nameservers),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    searches: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.searches),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    option: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecDnsConfigOptionToHclTerraform, true)(struct!.option),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecDnsConfigOptionList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecDnsConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -11059,6 +13482,31 @@ export function replicationControllerV1SpecTemplateSpecHostAliasesToTerraform(st
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecHostAliasesToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecHostAliases | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    hostnames: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.hostnames),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    ip: {
+      value: cdktf.stringToHclTerraform(struct!.ip),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecHostAliasesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -11174,6 +13622,25 @@ export function replicationControllerV1SpecTemplateSpecImagePullSecretsToTerrafo
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecImagePullSecretsToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecImagePullSecrets | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecImagePullSecretsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -11282,6 +13749,37 @@ export function replicationControllerV1SpecTemplateSpecInitContainerEnvValueFrom
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    optional: {
+      value: cdktf.booleanToHclTerraform(struct!.optional),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefOutputReference extends cdktf.ComplexObject {
@@ -11402,6 +13900,31 @@ export function replicationControllerV1SpecTemplateSpecInitContainerEnvValueFrom
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecInitContainerEnvValueFromFieldRefToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFromFieldRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    api_version: {
+      value: cdktf.stringToHclTerraform(struct!.apiVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    field_path: {
+      value: cdktf.stringToHclTerraform(struct!.fieldPath),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -11499,6 +14022,37 @@ export function replicationControllerV1SpecTemplateSpecInitContainerEnvValueFrom
     divisor: cdktf.stringToTerraform(struct!.divisor),
     resource: cdktf.stringToTerraform(struct!.resource),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRefToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    container_name: {
+      value: cdktf.stringToHclTerraform(struct!.containerName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    divisor: {
+      value: cdktf.stringToHclTerraform(struct!.divisor),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    resource: {
+      value: cdktf.stringToHclTerraform(struct!.resource),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRefOutputReference extends cdktf.ComplexObject {
@@ -11621,6 +14175,37 @@ export function replicationControllerV1SpecTemplateSpecInitContainerEnvValueFrom
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    optional: {
+      value: cdktf.booleanToHclTerraform(struct!.optional),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefOutputReference extends cdktf.ComplexObject {
@@ -11753,6 +14338,43 @@ export function replicationControllerV1SpecTemplateSpecInitContainerEnvValueFrom
     resource_field_ref: replicationControllerV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRefToTerraform(struct!.resourceFieldRef),
     secret_key_ref: replicationControllerV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefToTerraform(struct!.secretKeyRef),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerEnvValueFromToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFromOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFrom): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    config_map_key_ref: {
+      value: replicationControllerV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefToHclTerraform(struct!.configMapKeyRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRefList",
+    },
+    field_ref: {
+      value: replicationControllerV1SpecTemplateSpecInitContainerEnvValueFromFieldRefToHclTerraform(struct!.fieldRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFromFieldRefList",
+    },
+    resource_field_ref: {
+      value: replicationControllerV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRefToHclTerraform(struct!.resourceFieldRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRefList",
+    },
+    secret_key_ref: {
+      value: replicationControllerV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefToHclTerraform(struct!.secretKeyRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFromOutputReference extends cdktf.ComplexObject {
@@ -11902,6 +14524,37 @@ export function replicationControllerV1SpecTemplateSpecInitContainerEnvToTerrafo
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecInitContainerEnvToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerEnv | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value_from: {
+      value: replicationControllerV1SpecTemplateSpecInitContainerEnvValueFromToHclTerraform(struct!.valueFrom),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerEnvValueFromList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecInitContainerEnvOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -12049,6 +14702,31 @@ export function replicationControllerV1SpecTemplateSpecInitContainerEnvFromConfi
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecInitContainerEnvFromConfigMapRefToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerEnvFromConfigMapRefOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerEnvFromConfigMapRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    optional: {
+      value: cdktf.booleanToHclTerraform(struct!.optional),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecInitContainerEnvFromConfigMapRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -12140,6 +14818,31 @@ export function replicationControllerV1SpecTemplateSpecInitContainerEnvFromSecre
     name: cdktf.stringToTerraform(struct!.name),
     optional: cdktf.booleanToTerraform(struct!.optional),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerEnvFromSecretRefToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerEnvFromSecretRefOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerEnvFromSecretRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    optional: {
+      value: cdktf.booleanToHclTerraform(struct!.optional),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerEnvFromSecretRefOutputReference extends cdktf.ComplexObject {
@@ -12240,6 +14943,37 @@ export function replicationControllerV1SpecTemplateSpecInitContainerEnvFromToTer
     config_map_ref: replicationControllerV1SpecTemplateSpecInitContainerEnvFromConfigMapRefToTerraform(struct!.configMapRef),
     secret_ref: replicationControllerV1SpecTemplateSpecInitContainerEnvFromSecretRefToTerraform(struct!.secretRef),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerEnvFromToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerEnvFrom | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    prefix: {
+      value: cdktf.stringToHclTerraform(struct!.prefix),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    config_map_ref: {
+      value: replicationControllerV1SpecTemplateSpecInitContainerEnvFromConfigMapRefToHclTerraform(struct!.configMapRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerEnvFromConfigMapRefList",
+    },
+    secret_ref: {
+      value: replicationControllerV1SpecTemplateSpecInitContainerEnvFromSecretRefToHclTerraform(struct!.secretRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerEnvFromSecretRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerEnvFromOutputReference extends cdktf.ComplexObject {
@@ -12385,6 +15119,25 @@ export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePos
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartExecToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartExecOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    command: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.command),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartExecOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -12457,6 +15210,31 @@ export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePos
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeaderToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
@@ -12606,6 +15384,49 @@ export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePos
     scheme: cdktf.stringToTerraform(struct!.scheme),
     http_header: cdktf.listMapper(replicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    host: {
+      value: cdktf.stringToHclTerraform(struct!.host),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.stringToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scheme: {
+      value: cdktf.stringToHclTerraform(struct!.scheme),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    http_header: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeaderToHclTerraform, true)(struct!.httpHeader),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeaderList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetOutputReference extends cdktf.ComplexObject {
@@ -12763,6 +15584,25 @@ export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePos
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocketToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    port: {
+      value: cdktf.stringToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocketOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -12871,6 +15711,37 @@ export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePos
     http_get: replicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(replicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStart | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    exec: {
+      value: replicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartExecToHclTerraform(struct!.exec),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartExecList",
+    },
+    http_get: {
+      value: replicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetToHclTerraform(struct!.httpGet),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetList",
+    },
+    tcp_socket: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocketToHclTerraform, true)(struct!.tcpSocket),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocketList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartOutputReference extends cdktf.ComplexObject {
@@ -13016,6 +15887,25 @@ export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePre
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopExecToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopExecOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    command: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.command),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopExecOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -13088,6 +15978,31 @@ export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePre
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeaderToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
@@ -13237,6 +16152,49 @@ export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePre
     scheme: cdktf.stringToTerraform(struct!.scheme),
     http_header: cdktf.listMapper(replicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    host: {
+      value: cdktf.stringToHclTerraform(struct!.host),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.stringToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scheme: {
+      value: cdktf.stringToHclTerraform(struct!.scheme),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    http_header: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeaderToHclTerraform, true)(struct!.httpHeader),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeaderList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetOutputReference extends cdktf.ComplexObject {
@@ -13394,6 +16352,25 @@ export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePre
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocketToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    port: {
+      value: cdktf.stringToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocketOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -13502,6 +16479,37 @@ export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePre
     http_get: replicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(replicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStop | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    exec: {
+      value: replicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopExecToHclTerraform(struct!.exec),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopExecList",
+    },
+    http_get: {
+      value: replicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetToHclTerraform(struct!.httpGet),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetList",
+    },
+    tcp_socket: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocketToHclTerraform, true)(struct!.tcpSocket),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocketList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopOutputReference extends cdktf.ComplexObject {
@@ -13654,6 +16662,31 @@ export function replicationControllerV1SpecTemplateSpecInitContainerLifecycleToT
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecInitContainerLifecycleToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerLifecycleOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerLifecycle): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    post_start: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartToHclTerraform, true)(struct!.postStart),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePostStartList",
+    },
+    pre_stop: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopToHclTerraform, true)(struct!.preStop),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerLifecyclePreStopList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecInitContainerLifecycleOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -13743,6 +16776,25 @@ export function replicationControllerV1SpecTemplateSpecInitContainerLivenessProb
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecInitContainerLivenessProbeExecToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbeExecOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbeExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    command: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.command),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbeExecOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -13815,6 +16867,31 @@ export function replicationControllerV1SpecTemplateSpecInitContainerLivenessProb
     port: cdktf.numberToTerraform(struct!.port),
     service: cdktf.stringToTerraform(struct!.service),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerLivenessProbeGrpcToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbeGrpc | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    service: {
+      value: cdktf.stringToHclTerraform(struct!.service),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbeGrpcOutputReference extends cdktf.ComplexObject {
@@ -13940,6 +17017,31 @@ export function replicationControllerV1SpecTemplateSpecInitContainerLivenessProb
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeaderToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
@@ -14089,6 +17191,49 @@ export function replicationControllerV1SpecTemplateSpecInitContainerLivenessProb
     scheme: cdktf.stringToTerraform(struct!.scheme),
     http_header: cdktf.listMapper(replicationControllerV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerLivenessProbeHttpGetToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbeHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    host: {
+      value: cdktf.stringToHclTerraform(struct!.host),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.stringToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scheme: {
+      value: cdktf.stringToHclTerraform(struct!.scheme),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    http_header: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeaderToHclTerraform, true)(struct!.httpHeader),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeaderList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbeHttpGetOutputReference extends cdktf.ComplexObject {
@@ -14246,6 +17391,25 @@ export function replicationControllerV1SpecTemplateSpecInitContainerLivenessProb
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecInitContainerLivenessProbeTcpSocketToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbeTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    port: {
+      value: cdktf.stringToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbeTcpSocketOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -14396,6 +17560,73 @@ export function replicationControllerV1SpecTemplateSpecInitContainerLivenessProb
     http_get: replicationControllerV1SpecTemplateSpecInitContainerLivenessProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(replicationControllerV1SpecTemplateSpecInitContainerLivenessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerLivenessProbeToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbeOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbe): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    failure_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.failureThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    initial_delay_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.initialDelaySeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    period_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.periodSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    success_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.successThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    timeout_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.timeoutSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    exec: {
+      value: replicationControllerV1SpecTemplateSpecInitContainerLivenessProbeExecToHclTerraform(struct!.exec),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbeExecList",
+    },
+    grpc: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecInitContainerLivenessProbeGrpcToHclTerraform, true)(struct!.grpc),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbeGrpcList",
+    },
+    http_get: {
+      value: replicationControllerV1SpecTemplateSpecInitContainerLivenessProbeHttpGetToHclTerraform(struct!.httpGet),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbeHttpGetList",
+    },
+    tcp_socket: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecInitContainerLivenessProbeTcpSocketToHclTerraform, true)(struct!.tcpSocket),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbeTcpSocketList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerLivenessProbeOutputReference extends cdktf.ComplexObject {
@@ -14669,6 +17900,49 @@ export function replicationControllerV1SpecTemplateSpecInitContainerPortToTerraf
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecInitContainerPortToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerPort | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    container_port: {
+      value: cdktf.numberToHclTerraform(struct!.containerPort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    host_ip: {
+      value: cdktf.stringToHclTerraform(struct!.hostIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    host_port: {
+      value: cdktf.numberToHclTerraform(struct!.hostPort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecInitContainerPortOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -14853,6 +18127,25 @@ export function replicationControllerV1SpecTemplateSpecInitContainerReadinessPro
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecInitContainerReadinessProbeExecToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbeExecOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbeExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    command: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.command),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbeExecOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -14925,6 +18218,31 @@ export function replicationControllerV1SpecTemplateSpecInitContainerReadinessPro
     port: cdktf.numberToTerraform(struct!.port),
     service: cdktf.stringToTerraform(struct!.service),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerReadinessProbeGrpcToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbeGrpc | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    service: {
+      value: cdktf.stringToHclTerraform(struct!.service),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbeGrpcOutputReference extends cdktf.ComplexObject {
@@ -15050,6 +18368,31 @@ export function replicationControllerV1SpecTemplateSpecInitContainerReadinessPro
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
@@ -15199,6 +18542,49 @@ export function replicationControllerV1SpecTemplateSpecInitContainerReadinessPro
     scheme: cdktf.stringToTerraform(struct!.scheme),
     http_header: cdktf.listMapper(replicationControllerV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerReadinessProbeHttpGetToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbeHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    host: {
+      value: cdktf.stringToHclTerraform(struct!.host),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.stringToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scheme: {
+      value: cdktf.stringToHclTerraform(struct!.scheme),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    http_header: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderToHclTerraform, true)(struct!.httpHeader),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference extends cdktf.ComplexObject {
@@ -15356,6 +18742,25 @@ export function replicationControllerV1SpecTemplateSpecInitContainerReadinessPro
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    port: {
+      value: cdktf.stringToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -15506,6 +18911,73 @@ export function replicationControllerV1SpecTemplateSpecInitContainerReadinessPro
     http_get: replicationControllerV1SpecTemplateSpecInitContainerReadinessProbeHttpGetToTerraform(struct!.httpGet),
     tcp_socket: cdktf.listMapper(replicationControllerV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerReadinessProbeToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbeOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbe): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    failure_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.failureThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    initial_delay_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.initialDelaySeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    period_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.periodSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    success_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.successThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    timeout_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.timeoutSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    exec: {
+      value: replicationControllerV1SpecTemplateSpecInitContainerReadinessProbeExecToHclTerraform(struct!.exec),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbeExecList",
+    },
+    grpc: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecInitContainerReadinessProbeGrpcToHclTerraform, true)(struct!.grpc),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbeGrpcList",
+    },
+    http_get: {
+      value: replicationControllerV1SpecTemplateSpecInitContainerReadinessProbeHttpGetToHclTerraform(struct!.httpGet),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbeHttpGetList",
+    },
+    tcp_socket: {
+      value: cdktf.listMapperHcl(replicationControllerV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketToHclTerraform, true)(struct!.tcpSocket),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerReadinessProbeOutputReference extends cdktf.ComplexObject {
@@ -15758,6 +19230,31 @@ export function replicationControllerV1SpecTemplateSpecInitContainerResourcesToT
   }
 }
 
+
+export function replicationControllerV1SpecTemplateSpecInitContainerResourcesToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerResourcesOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerResources): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    limits: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.limits),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    requests: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.requests),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ReplicationControllerV1SpecTemplateSpecInitContainerResourcesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -15852,6 +19349,31 @@ export function replicationControllerV1SpecTemplateSpecInitContainerSecurityCont
     add: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.add),
     drop: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.drop),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerSecurityContextCapabilitiesToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerSecurityContextCapabilities): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    add: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.add),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    drop: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.drop),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerSecurityContextCapabilitiesOutputReference extends cdktf.ComplexObject {
@@ -15962,6 +19484,43 @@ export function replicationControllerV1SpecTemplateSpecInitContainerSecurityCont
     type: cdktf.stringToTerraform(struct!.type),
     user: cdktf.stringToTerraform(struct!.user),
   }
+}
+
+
+export function replicationControllerV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsToHclTerraform(struct?: ReplicationControllerV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference | ReplicationControllerV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    level: {
+      value: cdktf.stringToHclTerraform(struct!.level),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    role: {
+      value: cdktf.stringToHclTerraform(struct!.role),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    user: {
+      value: cdktf.stringToHclTerraform(struct!.user),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ReplicationControllerV1SpecTemplateSpecInitContainerSecurityContextSeLinuxOptionsOutputReference extends cdktf.ComplexObject {

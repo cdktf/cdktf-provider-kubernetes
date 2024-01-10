@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolume.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolume(scope Construct, id *string, config PersistentVolumeConfig) PersistentVolume
 ```
@@ -54,6 +54,7 @@ Must be unique amongst siblings in the same scope
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolume.addOverride">AddOverride</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolume.overrideLogicalId">OverrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolume.resetOverrideLogicalId">ResetOverrideLogicalId</a></code> | Resets a previously passed logical Id to use the auto-generated logical id again. |
+| <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolume.toHclTerraform">ToHclTerraform</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolume.toMetadata">ToMetadata</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolume.toTerraform">ToTerraform</a></code> | Adds this resource to the terraform JSON output. |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolume.addMoveTarget">AddMoveTarget</a></code> | Adds a user defined moveTarget string to this resource to be later used in .moveTo(moveTarget) to resolve the location of the move. |
@@ -129,6 +130,12 @@ func ResetOverrideLogicalId()
 ```
 
 Resets a previously passed logical Id to use the auto-generated logical id again.
+
+##### `ToHclTerraform` <a name="ToHclTerraform" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolume.toHclTerraform"></a>
+
+```go
+func ToHclTerraform() interface{}
+```
 
 ##### `ToMetadata` <a name="ToMetadata" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolume.toMetadata"></a>
 
@@ -424,7 +431,7 @@ func ResetTimeouts()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolume.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.PersistentVolume_IsConstruct(x interface{}) *bool
 ```
@@ -456,7 +463,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolume.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.PersistentVolume_IsTerraformElement(x interface{}) *bool
 ```
@@ -470,7 +477,7 @@ persistentvolume.PersistentVolume_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolume.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.PersistentVolume_IsTerraformResource(x interface{}) *bool
 ```
@@ -484,7 +491,7 @@ persistentvolume.PersistentVolume_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolume.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.PersistentVolume_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -801,7 +808,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeConfig {
 	Connection: interface{},
@@ -811,10 +818,10 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentv
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeMetadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeMetadata,
 	Spec: interface{},
 	Id: *string,
-	Timeouts: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeTimeouts,
+	Timeouts: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeTimeouts,
 }
 ```
 
@@ -968,7 +975,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeMetadata {
 	Annotations: *map[string]*string,
@@ -1038,15 +1045,15 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpec {
 	AccessModes: *[]*string,
 	Capacity: *map[string]*string,
-	PersistentVolumeSource: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSource,
-	ClaimRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecClaimRef,
+	PersistentVolumeSource: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSource,
+	ClaimRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecClaimRef,
 	MountOptions: *[]*string,
-	NodeAffinity: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecNodeAffinity,
+	NodeAffinity: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinity,
 	PersistentVolumeReclaimPolicy: *string,
 	StorageClassName: *string,
 	VolumeMode: *string,
@@ -1204,7 +1211,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecClaimRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecClaimRef {
 	Name: *string,
@@ -1254,10 +1261,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinity.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecNodeAffinity {
-	Required: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecNodeAffinityRequired,
+	Required: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequired,
 }
 ```
 
@@ -1288,7 +1295,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequired.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecNodeAffinityRequired {
 	NodeSelectorTerm: interface{},
@@ -1322,7 +1329,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTerm.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTerm {
 	MatchExpressions: interface{},
@@ -1372,7 +1379,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressions {
 	Key: *string,
@@ -1440,7 +1447,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFields.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFields {
 	Key: *string,
@@ -1508,28 +1515,28 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSource.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSource {
-	AwsElasticBlockStore: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStore,
-	AzureDisk: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceAzureDisk,
-	AzureFile: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceAzureFile,
-	CephFs: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCephFs,
-	Cinder: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCinder,
-	Csi: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsi,
-	Fc: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceFc,
-	FlexVolume: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceFlexVolume,
-	Flocker: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceFlocker,
-	GcePersistentDisk: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk,
-	Glusterfs: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceGlusterfs,
-	HostPath: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceHostPath,
-	Iscsi: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceIscsi,
-	Local: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceLocal,
-	Nfs: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceNfs,
-	PhotonPersistentDisk: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDisk,
-	Quobyte: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceQuobyte,
-	Rbd: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceRbd,
-	VsphereVolume: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceVsphereVolume,
+	AwsElasticBlockStore: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStore,
+	AzureDisk: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceAzureDisk,
+	AzureFile: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceAzureFile,
+	CephFs: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCephFs,
+	Cinder: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCinder,
+	Csi: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsi,
+	Fc: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceFc,
+	FlexVolume: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceFlexVolume,
+	Flocker: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceFlocker,
+	GcePersistentDisk: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk,
+	Glusterfs: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceGlusterfs,
+	HostPath: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceHostPath,
+	Iscsi: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceIscsi,
+	Local: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceLocal,
+	Nfs: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceNfs,
+	PhotonPersistentDisk: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDisk,
+	Quobyte: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceQuobyte,
+	Rbd: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceRbd,
+	VsphereVolume: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceVsphereVolume,
 }
 ```
 
@@ -1830,7 +1837,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStore.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStore {
 	VolumeId: *string,
@@ -1916,7 +1923,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceAzureDisk.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceAzureDisk {
 	CachingMode: *string,
@@ -2032,7 +2039,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceAzureFile.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceAzureFile {
 	SecretName: *string,
@@ -2116,14 +2123,14 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCephFs.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceCephFs {
 	Monitors: *[]*string,
 	Path: *string,
 	ReadOnly: interface{},
 	SecretFile: *string,
-	SecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef,
+	SecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef,
 	User: *string,
 }
 ```
@@ -2230,7 +2237,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef {
 	Name: *string,
@@ -2280,7 +2287,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCinder.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceCinder {
 	VolumeId: *string,
@@ -2348,16 +2355,16 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsi.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceCsi {
 	Driver: *string,
 	VolumeHandle: *string,
-	ControllerExpandSecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRef,
-	ControllerPublishSecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRef,
+	ControllerExpandSecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRef,
+	ControllerPublishSecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRef,
 	FsType: *string,
-	NodePublishSecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRef,
-	NodeStageSecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef,
+	NodePublishSecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRef,
+	NodeStageSecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef,
 	ReadOnly: interface{},
 	VolumeAttributes: *map[string]*string,
 }
@@ -2512,7 +2519,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRef {
 	Name: *string,
@@ -2562,7 +2569,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRef {
 	Name: *string,
@@ -2612,7 +2619,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRef {
 	Name: *string,
@@ -2662,7 +2669,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRef {
 	Name: *string,
@@ -2712,7 +2719,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceFc.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceFc {
 	Lun: *f64,
@@ -2796,14 +2803,14 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceFlexVolume.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceFlexVolume {
 	Driver: *string,
 	FsType: *string,
 	Options: *map[string]*string,
 	ReadOnly: interface{},
-	SecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef,
+	SecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef,
 }
 ```
 
@@ -2896,7 +2903,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRef {
 	Name: *string,
@@ -2946,7 +2953,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceFlocker.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceFlocker {
 	DatasetName: *string,
@@ -2996,7 +3003,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk {
 	PdName: *string,
@@ -3082,7 +3089,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceGlusterfs.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceGlusterfs {
 	EndpointsName: *string,
@@ -3148,7 +3155,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceHostPath.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceHostPath {
 	Path: *string,
@@ -3198,7 +3205,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceIscsi.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceIscsi {
 	Iqn: *string,
@@ -3316,7 +3323,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceLocal.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceLocal {
 	Path: *string,
@@ -3350,7 +3357,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceNfs.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceNfs {
 	Path: *string,
@@ -3416,7 +3423,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDisk.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDisk {
 	PdId: *string,
@@ -3468,7 +3475,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceQuobyte.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceQuobyte {
 	Registry: *string,
@@ -3566,7 +3573,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceRbd.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceRbd {
 	CephMonitors: *[]*string,
@@ -3576,7 +3583,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentv
 	RadosUser: *string,
 	RbdPool: *string,
 	ReadOnly: interface{},
-	SecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef,
+	SecretRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef,
 }
 ```
 
@@ -3714,7 +3721,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef {
 	Name: *string,
@@ -3764,7 +3771,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceVsphereVolume.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeSpecPersistentVolumeSourceVsphereVolume {
 	VolumePath: *string,
@@ -3816,7 +3823,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeTimeouts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 &persistentvolume.PersistentVolumeTimeouts {
 	Create: *string,
@@ -3850,7 +3857,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeMetadataOutputReference
 ```
@@ -4219,7 +4226,7 @@ func InternalValue() PersistentVolumeMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecClaimRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecClaimRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecClaimRefOutputReference
 ```
@@ -4519,7 +4526,7 @@ func InternalValue() PersistentVolumeSpecClaimRef
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PersistentVolumeSpecList
 ```
@@ -4560,10 +4567,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -4662,7 +4686,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecNodeAffinityOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecNodeAffinityOutputReference
 ```
@@ -4953,7 +4977,7 @@ func InternalValue() PersistentVolumeSpecNodeAffinity
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermList
 ```
@@ -4994,10 +5018,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -5096,7 +5137,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsList
 ```
@@ -5137,10 +5178,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -5239,7 +5297,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsOutputReference
 ```
@@ -5579,7 +5637,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFieldsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFieldsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFieldsList
 ```
@@ -5620,10 +5678,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFieldsList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFieldsList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFieldsList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFieldsList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFieldsList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFieldsList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFieldsList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -5722,7 +5797,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFieldsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFieldsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermMatchFieldsOutputReference
 ```
@@ -6062,7 +6137,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PersistentVolumeSpecNodeAffinityRequiredNodeSelectorTermOutputReference
 ```
@@ -6413,7 +6488,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecNodeAffinityRequiredOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecNodeAffinityRequiredOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecNodeAffinityRequiredOutputReference
 ```
@@ -6697,7 +6772,7 @@ func InternalValue() PersistentVolumeSpecNodeAffinityRequired
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PersistentVolumeSpecOutputReference
 ```
@@ -7243,7 +7318,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockStoreOutputReference
 ```
@@ -7601,7 +7676,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceAwsElasticBlockSt
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceAzureDiskOutputReference
 ```
@@ -8003,7 +8078,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceAzureDisk
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceAzureFileOutputReference
 ```
@@ -8354,7 +8429,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceAzureFile
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceCephFsOutputReference
 ```
@@ -8783,7 +8858,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceCephFs
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceCephFsSecretRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRefOutputReference
 ```
@@ -9090,7 +9165,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceCephFsSecretRef
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCinderOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceCinderOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceCinderOutputReference
 ```
@@ -9419,7 +9494,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceCinder
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpandSecretRefOutputReference
 ```
@@ -9726,7 +9801,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceCsiControllerExpa
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceCsiControllerPublishSecretRefOutputReference
 ```
@@ -10033,7 +10108,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceCsiControllerPubl
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSecretRefOutputReference
 ```
@@ -10340,7 +10415,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceCsiNodePublishSec
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecretRefOutputReference
 ```
@@ -10647,7 +10722,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceCsiNodeStageSecre
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceCsiOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceCsiOutputReference
 ```
@@ -11195,7 +11270,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceCsi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceFcOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceFcOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceFcOutputReference
 ```
@@ -11546,7 +11621,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceFc
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceFlexVolumeOutputReference
 ```
@@ -11946,7 +12021,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceFlexVolume
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretRefOutputReference
 ```
@@ -12253,7 +12328,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceFlexVolumeSecretR
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceFlockerOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceFlockerOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceFlockerOutputReference
 ```
@@ -12560,7 +12635,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceFlocker
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceGcePersistentDiskOutputReference
 ```
@@ -12918,7 +12993,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceGcePersistentDisk
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceGlusterfsOutputReference
 ```
@@ -13240,7 +13315,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceGlusterfs
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceHostPathOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceHostPathOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceHostPathOutputReference
 ```
@@ -13547,7 +13622,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceHostPath
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceIscsiOutputReference
 ```
@@ -13956,7 +14031,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceIscsi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceLocalOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceLocalOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceLocalOutputReference
 ```
@@ -14234,7 +14309,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceLocal
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceNfsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceNfsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceNfsOutputReference
 ```
@@ -14556,7 +14631,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceNfs
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceOutputReference
 ```
@@ -15603,7 +15678,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSource
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentDiskOutputReference
 ```
@@ -15903,7 +15978,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourcePhotonPersistentD
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceQuobyteOutputReference
 ```
@@ -16283,7 +16358,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceQuobyte
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceRbdOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceRbdOutputReference
 ```
@@ -16763,7 +16838,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceRbd
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceRbdSecretRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceRbdSecretRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceRbdSecretRefOutputReference
 ```
@@ -17070,7 +17145,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceRbdSecretRef
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeSpecPersistentVolumeSourceVsphereVolumeOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeSpecPersistentVolumeSourceVsphereVolumeOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeSpecPersistentVolumeSourceVsphereVolumeOutputReference
 ```
@@ -17370,7 +17445,7 @@ func InternalValue() PersistentVolumeSpecPersistentVolumeSourceVsphereVolume
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.persistentVolume.PersistentVolumeTimeoutsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/persistentvolume"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/persistentvolume"
 
 persistentvolume.NewPersistentVolumeTimeoutsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PersistentVolumeTimeoutsOutputReference
 ```

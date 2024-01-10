@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/cluster_role_binding_v1
 // generated from terraform resource schema
 
@@ -76,6 +71,43 @@ export function clusterRoleBindingV1MetadataToTerraform(struct?: ClusterRoleBind
     labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     name: cdktf.stringToTerraform(struct!.name),
   }
+}
+
+
+export function clusterRoleBindingV1MetadataToHclTerraform(struct?: ClusterRoleBindingV1MetadataOutputReference | ClusterRoleBindingV1Metadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    generate_name: {
+      value: cdktf.stringToHclTerraform(struct!.generateName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ClusterRoleBindingV1MetadataOutputReference extends cdktf.ComplexObject {
@@ -240,6 +272,37 @@ export function clusterRoleBindingV1RoleRefToTerraform(struct?: ClusterRoleBindi
   }
 }
 
+
+export function clusterRoleBindingV1RoleRefToHclTerraform(struct?: ClusterRoleBindingV1RoleRefOutputReference | ClusterRoleBindingV1RoleRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    api_group: {
+      value: cdktf.stringToHclTerraform(struct!.apiGroup),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    kind: {
+      value: cdktf.stringToHclTerraform(struct!.kind),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ClusterRoleBindingV1RoleRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -361,6 +424,43 @@ export function clusterRoleBindingV1SubjectToTerraform(struct?: ClusterRoleBindi
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
+}
+
+
+export function clusterRoleBindingV1SubjectToHclTerraform(struct?: ClusterRoleBindingV1Subject | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    api_group: {
+      value: cdktf.stringToHclTerraform(struct!.apiGroup),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    kind: {
+      value: cdktf.stringToHclTerraform(struct!.kind),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ClusterRoleBindingV1SubjectOutputReference extends cdktf.ComplexObject {
@@ -631,5 +731,37 @@ export class ClusterRoleBindingV1 extends cdktf.TerraformResource {
       role_ref: clusterRoleBindingV1RoleRefToTerraform(this._roleRef.internalValue),
       subject: cdktf.listMapper(clusterRoleBindingV1SubjectToTerraform, true)(this._subject.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: clusterRoleBindingV1MetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ClusterRoleBindingV1MetadataList",
+      },
+      role_ref: {
+        value: clusterRoleBindingV1RoleRefToHclTerraform(this._roleRef.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ClusterRoleBindingV1RoleRefList",
+      },
+      subject: {
+        value: cdktf.listMapperHcl(clusterRoleBindingV1SubjectToHclTerraform, true)(this._subject.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ClusterRoleBindingV1SubjectList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

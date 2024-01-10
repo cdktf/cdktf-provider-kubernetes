@@ -1,18 +1,16 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // generated from terraform resource schema
 
 import { CronJobMetadata, 
 cronJobMetadataToTerraform, 
+cronJobMetadataToHclTerraform, 
 CronJobMetadataOutputReference, 
 CronJobSpec, 
 cronJobSpecToTerraform, 
+cronJobSpecToHclTerraform, 
 CronJobSpecOutputReference, 
 CronJobTimeouts, 
 cronJobTimeoutsToTerraform, 
+cronJobTimeoutsToHclTerraform, 
 CronJobTimeoutsOutputReference} from './index-structs'
 export * from './index-structs'
 import { Construct } from 'constructs';
@@ -175,5 +173,37 @@ export class CronJob extends cdktf.TerraformResource {
       spec: cronJobSpecToTerraform(this._spec.internalValue),
       timeouts: cronJobTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: cronJobMetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CronJobMetadataList",
+      },
+      spec: {
+        value: cronJobSpecToHclTerraform(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CronJobSpecList",
+      },
+      timeouts: {
+        value: cronJobTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CronJobTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

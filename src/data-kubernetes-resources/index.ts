@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/data-sources/resources
 // generated from terraform resource schema
 
@@ -240,5 +235,55 @@ export class DataKubernetesResources extends cdktf.TerraformDataSource {
       namespace: cdktf.stringToTerraform(this._namespace),
       objects: cdktf.hashMapper(cdktf.anyToTerraform)(this._objects),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      api_version: {
+        value: cdktf.stringToHclTerraform(this._apiVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      field_selector: {
+        value: cdktf.stringToHclTerraform(this._fieldSelector),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      kind: {
+        value: cdktf.stringToHclTerraform(this._kind),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      label_selector: {
+        value: cdktf.stringToHclTerraform(this._labelSelector),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      limit: {
+        value: cdktf.numberToHclTerraform(this._limit),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      objects: {
+        value: cdktf.hashMapperHcl(cdktf.anyToHclTerraform)(this._objects),
+        isBlock: false,
+        type: "map",
+        storageClassType: "anyMap",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

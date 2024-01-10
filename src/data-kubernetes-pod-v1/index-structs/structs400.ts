@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 import * as cdktf from 'cdktf';
 import { DataKubernetesPodV1SpecInitContainerLivenessProbeExecList,
 DataKubernetesPodV1SpecInitContainerLivenessProbeGrpcList,
@@ -25,6 +20,17 @@ export function dataKubernetesPodV1SpecInitContainerLivenessProbeTcpSocketToTerr
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecInitContainerLivenessProbeTcpSocketToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerLivenessProbeTcpSocket): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecInitContainerLivenessProbeTcpSocketOutputReference extends cdktf.ComplexObject {
@@ -89,6 +95,17 @@ export function dataKubernetesPodV1SpecInitContainerLivenessProbeToTerraform(str
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecInitContainerLivenessProbeToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerLivenessProbe): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecInitContainerLivenessProbeOutputReference extends cdktf.ComplexObject {
@@ -199,6 +216,17 @@ export function dataKubernetesPodV1SpecInitContainerPortToTerraform(struct?: Dat
   }
 }
 
+
+export function dataKubernetesPodV1SpecInitContainerPortToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerPort): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecInitContainerPortOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -283,6 +311,17 @@ export function dataKubernetesPodV1SpecInitContainerReadinessProbeExecToTerrafor
   }
 }
 
+
+export function dataKubernetesPodV1SpecInitContainerReadinessProbeExecToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerReadinessProbeExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecInitContainerReadinessProbeExecOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -345,6 +384,17 @@ export function dataKubernetesPodV1SpecInitContainerReadinessProbeGrpcToTerrafor
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecInitContainerReadinessProbeGrpcToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerReadinessProbeGrpc): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecInitContainerReadinessProbeGrpcOutputReference extends cdktf.ComplexObject {
@@ -416,6 +466,17 @@ export function dataKubernetesPodV1SpecInitContainerReadinessProbeHttpGetHttpHea
   }
 }
 
+
+export function dataKubernetesPodV1SpecInitContainerReadinessProbeHttpGetHttpHeaderToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerReadinessProbeHttpGetHttpHeader): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecInitContainerReadinessProbeHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -483,6 +544,17 @@ export function dataKubernetesPodV1SpecInitContainerReadinessProbeHttpGetToTerra
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecInitContainerReadinessProbeHttpGetToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerReadinessProbeHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecInitContainerReadinessProbeHttpGetOutputReference extends cdktf.ComplexObject {
@@ -570,6 +642,17 @@ export function dataKubernetesPodV1SpecInitContainerReadinessProbeTcpSocketToTer
   }
 }
 
+
+export function dataKubernetesPodV1SpecInitContainerReadinessProbeTcpSocketToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerReadinessProbeTcpSocket): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecInitContainerReadinessProbeTcpSocketOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -632,6 +715,17 @@ export function dataKubernetesPodV1SpecInitContainerReadinessProbeToTerraform(st
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecInitContainerReadinessProbeToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerReadinessProbe): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecInitContainerReadinessProbeOutputReference extends cdktf.ComplexObject {
@@ -742,6 +836,17 @@ export function dataKubernetesPodV1SpecInitContainerResourcesToTerraform(struct?
   }
 }
 
+
+export function dataKubernetesPodV1SpecInitContainerResourcesToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerResources): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecInitContainerResourcesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -813,6 +918,17 @@ export function dataKubernetesPodV1SpecInitContainerSecurityContextCapabilitiesT
   }
 }
 
+
+export function dataKubernetesPodV1SpecInitContainerSecurityContextCapabilitiesToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerSecurityContextCapabilities): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecInitContainerSecurityContextCapabilitiesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -880,6 +996,17 @@ export function dataKubernetesPodV1SpecInitContainerSecurityContextSeLinuxOption
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecInitContainerSecurityContextSeLinuxOptionsToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerSecurityContextSeLinuxOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecInitContainerSecurityContextSeLinuxOptionsOutputReference extends cdktf.ComplexObject {
@@ -961,6 +1088,17 @@ export function dataKubernetesPodV1SpecInitContainerSecurityContextSeccompProfil
   }
 }
 
+
+export function dataKubernetesPodV1SpecInitContainerSecurityContextSeccompProfileToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerSecurityContextSeccompProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecInitContainerSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1028,6 +1166,17 @@ export function dataKubernetesPodV1SpecInitContainerSecurityContextToTerraform(s
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecInitContainerSecurityContextToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerSecurityContext): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecInitContainerSecurityContextOutputReference extends cdktf.ComplexObject {
@@ -1137,6 +1286,17 @@ export function dataKubernetesPodV1SpecInitContainerStartupProbeExecToTerraform(
   }
 }
 
+
+export function dataKubernetesPodV1SpecInitContainerStartupProbeExecToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerStartupProbeExec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecInitContainerStartupProbeExecOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1199,6 +1359,17 @@ export function dataKubernetesPodV1SpecInitContainerStartupProbeGrpcToTerraform(
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecInitContainerStartupProbeGrpcToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerStartupProbeGrpc): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecInitContainerStartupProbeGrpcOutputReference extends cdktf.ComplexObject {
@@ -1270,6 +1441,17 @@ export function dataKubernetesPodV1SpecInitContainerStartupProbeHttpGetHttpHeade
   }
 }
 
+
+export function dataKubernetesPodV1SpecInitContainerStartupProbeHttpGetHttpHeaderToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerStartupProbeHttpGetHttpHeader): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecInitContainerStartupProbeHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1337,6 +1519,17 @@ export function dataKubernetesPodV1SpecInitContainerStartupProbeHttpGetToTerrafo
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecInitContainerStartupProbeHttpGetToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerStartupProbeHttpGet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecInitContainerStartupProbeHttpGetOutputReference extends cdktf.ComplexObject {
@@ -1424,6 +1617,17 @@ export function dataKubernetesPodV1SpecInitContainerStartupProbeTcpSocketToTerra
   }
 }
 
+
+export function dataKubernetesPodV1SpecInitContainerStartupProbeTcpSocketToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerStartupProbeTcpSocket): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecInitContainerStartupProbeTcpSocketOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1486,6 +1690,17 @@ export function dataKubernetesPodV1SpecInitContainerStartupProbeToTerraform(stru
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecInitContainerStartupProbeToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerStartupProbe): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecInitContainerStartupProbeOutputReference extends cdktf.ComplexObject {
@@ -1596,6 +1811,17 @@ export function dataKubernetesPodV1SpecInitContainerVolumeMountToTerraform(struc
   }
 }
 
+
+export function dataKubernetesPodV1SpecInitContainerVolumeMountToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainerVolumeMount): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecInitContainerVolumeMountOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1678,6 +1904,17 @@ export function dataKubernetesPodV1SpecInitContainerToTerraform(struct?: DataKub
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecInitContainerToHclTerraform(struct?: DataKubernetesPodV1SpecInitContainer): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecInitContainerOutputReference extends cdktf.ComplexObject {
@@ -1854,6 +2091,17 @@ export function dataKubernetesPodV1SpecOsToTerraform(struct?: DataKubernetesPodV
   }
 }
 
+
+export function dataKubernetesPodV1SpecOsToHclTerraform(struct?: DataKubernetesPodV1SpecOs): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecOsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1918,6 +2166,17 @@ export function dataKubernetesPodV1SpecReadinessGateToTerraform(struct?: DataKub
   }
 }
 
+
+export function dataKubernetesPodV1SpecReadinessGateToHclTerraform(struct?: DataKubernetesPodV1SpecReadinessGate): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecReadinessGateOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1980,6 +2239,17 @@ export function dataKubernetesPodV1SpecSecurityContextSeLinuxOptionsToTerraform(
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecSecurityContextSeLinuxOptionsToHclTerraform(struct?: DataKubernetesPodV1SpecSecurityContextSeLinuxOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecSecurityContextSeLinuxOptionsOutputReference extends cdktf.ComplexObject {
@@ -2061,6 +2331,17 @@ export function dataKubernetesPodV1SpecSecurityContextSeccompProfileToTerraform(
   }
 }
 
+
+export function dataKubernetesPodV1SpecSecurityContextSeccompProfileToHclTerraform(struct?: DataKubernetesPodV1SpecSecurityContextSeccompProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2130,6 +2411,17 @@ export function dataKubernetesPodV1SpecSecurityContextSysctlToTerraform(struct?:
   }
 }
 
+
+export function dataKubernetesPodV1SpecSecurityContextSysctlToHclTerraform(struct?: DataKubernetesPodV1SpecSecurityContextSysctl): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecSecurityContextSysctlOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2197,6 +2489,17 @@ export function dataKubernetesPodV1SpecSecurityContextWindowsOptionsToTerraform(
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecSecurityContextWindowsOptionsToHclTerraform(struct?: DataKubernetesPodV1SpecSecurityContextWindowsOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecSecurityContextWindowsOptionsOutputReference extends cdktf.ComplexObject {
@@ -2276,6 +2579,17 @@ export function dataKubernetesPodV1SpecSecurityContextToTerraform(struct?: DataK
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecSecurityContextToHclTerraform(struct?: DataKubernetesPodV1SpecSecurityContext): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecSecurityContextOutputReference extends cdktf.ComplexObject {
@@ -2391,6 +2705,17 @@ export function dataKubernetesPodV1SpecTolerationToTerraform(struct?: DataKubern
   }
 }
 
+
+export function dataKubernetesPodV1SpecTolerationToHclTerraform(struct?: DataKubernetesPodV1SpecToleration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecTolerationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2475,6 +2800,17 @@ export function dataKubernetesPodV1SpecTopologySpreadConstraintLabelSelectorMatc
   }
 }
 
+
+export function dataKubernetesPodV1SpecTopologySpreadConstraintLabelSelectorMatchExpressionsToHclTerraform(struct?: DataKubernetesPodV1SpecTopologySpreadConstraintLabelSelectorMatchExpressions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecTopologySpreadConstraintLabelSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2549,6 +2885,17 @@ export function dataKubernetesPodV1SpecTopologySpreadConstraintLabelSelectorToTe
   }
 }
 
+
+export function dataKubernetesPodV1SpecTopologySpreadConstraintLabelSelectorToHclTerraform(struct?: DataKubernetesPodV1SpecTopologySpreadConstraintLabelSelector): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecTopologySpreadConstraintLabelSelectorOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2618,6 +2965,17 @@ export function dataKubernetesPodV1SpecTopologySpreadConstraintToTerraform(struc
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecTopologySpreadConstraintToHclTerraform(struct?: DataKubernetesPodV1SpecTopologySpreadConstraint): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecTopologySpreadConstraintOutputReference extends cdktf.ComplexObject {
@@ -2700,6 +3058,17 @@ export function dataKubernetesPodV1SpecVolumeAwsElasticBlockStoreToTerraform(str
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeAwsElasticBlockStoreToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeAwsElasticBlockStore): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeAwsElasticBlockStoreOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2777,6 +3146,17 @@ export function dataKubernetesPodV1SpecVolumeAzureDiskToTerraform(struct?: DataK
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeAzureDiskToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeAzureDisk): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeAzureDiskOutputReference extends cdktf.ComplexObject {
@@ -2868,6 +3248,17 @@ export function dataKubernetesPodV1SpecVolumeAzureFileToTerraform(struct?: DataK
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeAzureFileToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeAzureFile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeAzureFileOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2947,6 +3338,17 @@ export function dataKubernetesPodV1SpecVolumeCephFsSecretRefToTerraform(struct?:
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeCephFsSecretRefToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeCephFsSecretRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeCephFsSecretRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3014,6 +3416,17 @@ export function dataKubernetesPodV1SpecVolumeCephFsToTerraform(struct?: DataKube
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeCephFsToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeCephFs): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeCephFsOutputReference extends cdktf.ComplexObject {
@@ -3106,6 +3519,17 @@ export function dataKubernetesPodV1SpecVolumeCinderToTerraform(struct?: DataKube
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeCinderToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeCinder): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeCinderOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3180,6 +3604,17 @@ export function dataKubernetesPodV1SpecVolumeConfigMapItemsToTerraform(struct?: 
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeConfigMapItemsToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeConfigMapItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeConfigMapItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3252,6 +3687,17 @@ export function dataKubernetesPodV1SpecVolumeConfigMapToTerraform(struct?: DataK
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeConfigMapToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeConfigMap): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeConfigMapOutputReference extends cdktf.ComplexObject {
@@ -3334,6 +3780,17 @@ export function dataKubernetesPodV1SpecVolumeCsiNodePublishSecretRefToTerraform(
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeCsiNodePublishSecretRefToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeCsiNodePublishSecretRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeCsiNodePublishSecretRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3396,6 +3853,17 @@ export function dataKubernetesPodV1SpecVolumeCsiToTerraform(struct?: DataKuberne
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeCsiToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeCsi): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeCsiOutputReference extends cdktf.ComplexObject {
@@ -3484,6 +3952,17 @@ export function dataKubernetesPodV1SpecVolumeDownwardApiItemsFieldRefToTerraform
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeDownwardApiItemsFieldRefToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeDownwardApiItemsFieldRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeDownwardApiItemsFieldRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3551,6 +4030,17 @@ export function dataKubernetesPodV1SpecVolumeDownwardApiItemsResourceFieldRefToT
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeDownwardApiItemsResourceFieldRefToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeDownwardApiItemsResourceFieldRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeDownwardApiItemsResourceFieldRefOutputReference extends cdktf.ComplexObject {
@@ -3625,6 +4115,17 @@ export function dataKubernetesPodV1SpecVolumeDownwardApiItemsToTerraform(struct?
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeDownwardApiItemsToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeDownwardApiItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeDownwardApiItemsOutputReference extends cdktf.ComplexObject {
@@ -3708,6 +4209,17 @@ export function dataKubernetesPodV1SpecVolumeDownwardApiToTerraform(struct?: Dat
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeDownwardApiToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeDownwardApi): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeDownwardApiOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3778,6 +4290,17 @@ export function dataKubernetesPodV1SpecVolumeEmptyDirToTerraform(struct?: DataKu
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeEmptyDirToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeEmptyDir): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeEmptyDirOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3845,6 +4368,17 @@ export function dataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateMetadat
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateMetadataToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateMetadataOutputReference extends cdktf.ComplexObject {
@@ -3918,6 +4452,17 @@ export function dataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateSpecRes
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateSpecResourcesToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateSpecResources): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateSpecResourcesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3987,6 +4532,17 @@ export function dataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateSpecSel
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateSpecSelectorMatchExpressionsToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateSpecSelectorMatchExpressions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateSpecSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
@@ -4063,6 +4619,17 @@ export function dataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateSpecSel
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateSpecSelectorToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateSpecSelector): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateSpecSelectorOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4132,6 +4699,17 @@ export function dataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateSpecToT
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateSpecToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateSpec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateSpecOutputReference extends cdktf.ComplexObject {
@@ -4225,6 +4803,17 @@ export function dataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateToTerra
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplate): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeEphemeralVolumeClaimTemplateOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4296,6 +4885,17 @@ export function dataKubernetesPodV1SpecVolumeEphemeralToTerraform(struct?: DataK
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeEphemeralToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeEphemeral): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeEphemeralOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4359,6 +4959,17 @@ export function dataKubernetesPodV1SpecVolumeFcToTerraform(struct?: DataKubernet
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeFcToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeFc): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeFcOutputReference extends cdktf.ComplexObject {
@@ -4440,6 +5051,17 @@ export function dataKubernetesPodV1SpecVolumeFlexVolumeSecretRefToTerraform(stru
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeFlexVolumeSecretRefToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeFlexVolumeSecretRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeFlexVolumeSecretRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4507,6 +5129,17 @@ export function dataKubernetesPodV1SpecVolumeFlexVolumeToTerraform(struct?: Data
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeFlexVolumeToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeFlexVolume): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeFlexVolumeOutputReference extends cdktf.ComplexObject {
@@ -4595,6 +5228,17 @@ export function dataKubernetesPodV1SpecVolumeFlockerToTerraform(struct?: DataKub
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeFlockerToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeFlocker): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeFlockerOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4662,6 +5306,17 @@ export function dataKubernetesPodV1SpecVolumeGcePersistentDiskToTerraform(struct
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeGcePersistentDiskToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeGcePersistentDisk): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeGcePersistentDiskOutputReference extends cdktf.ComplexObject {
@@ -4743,6 +5398,17 @@ export function dataKubernetesPodV1SpecVolumeGitRepoToTerraform(struct?: DataKub
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeGitRepoToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeGitRepo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeGitRepoOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4815,6 +5481,17 @@ export function dataKubernetesPodV1SpecVolumeGlusterfsToTerraform(struct?: DataK
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeGlusterfsToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeGlusterfs): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeGlusterfsOutputReference extends cdktf.ComplexObject {
@@ -4891,6 +5568,17 @@ export function dataKubernetesPodV1SpecVolumeHostPathToTerraform(struct?: DataKu
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeHostPathToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeHostPath): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeHostPathOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4958,6 +5646,17 @@ export function dataKubernetesPodV1SpecVolumeIscsiToTerraform(struct?: DataKuber
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeIscsiToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeIscsi): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeIscsiOutputReference extends cdktf.ComplexObject {
@@ -5049,6 +5748,17 @@ export function dataKubernetesPodV1SpecVolumeLocalToTerraform(struct?: DataKuber
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeLocalToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeLocal): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeLocalOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -5111,6 +5821,17 @@ export function dataKubernetesPodV1SpecVolumeNfsToTerraform(struct?: DataKuberne
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeNfsToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeNfs): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeNfsOutputReference extends cdktf.ComplexObject {
@@ -5187,6 +5908,17 @@ export function dataKubernetesPodV1SpecVolumePersistentVolumeClaimToTerraform(st
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumePersistentVolumeClaimToHclTerraform(struct?: DataKubernetesPodV1SpecVolumePersistentVolumeClaim): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumePersistentVolumeClaimOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -5256,6 +5988,17 @@ export function dataKubernetesPodV1SpecVolumePhotonPersistentDiskToTerraform(str
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumePhotonPersistentDiskToHclTerraform(struct?: DataKubernetesPodV1SpecVolumePhotonPersistentDisk): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumePhotonPersistentDiskOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -5323,6 +6066,17 @@ export function dataKubernetesPodV1SpecVolumeProjectedSourcesConfigMapItemsToTer
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeProjectedSourcesConfigMapItemsToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeProjectedSourcesConfigMapItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeProjectedSourcesConfigMapItemsOutputReference extends cdktf.ComplexObject {
@@ -5397,6 +6151,17 @@ export function dataKubernetesPodV1SpecVolumeProjectedSourcesConfigMapToTerrafor
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeProjectedSourcesConfigMapToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeProjectedSourcesConfigMap): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeProjectedSourcesConfigMapOutputReference extends cdktf.ComplexObject {
@@ -5474,6 +6239,17 @@ export function dataKubernetesPodV1SpecVolumeProjectedSourcesDownwardApiItemsFie
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeProjectedSourcesDownwardApiItemsFieldRefToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeProjectedSourcesDownwardApiItemsFieldRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeProjectedSourcesDownwardApiItemsFieldRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -5541,6 +6317,17 @@ export function dataKubernetesPodV1SpecVolumeProjectedSourcesDownwardApiItemsRes
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeProjectedSourcesDownwardApiItemsResourceFieldRefOutputReference extends cdktf.ComplexObject {
@@ -5615,6 +6402,17 @@ export function dataKubernetesPodV1SpecVolumeProjectedSourcesDownwardApiItemsToT
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeProjectedSourcesDownwardApiItemsToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeProjectedSourcesDownwardApiItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeProjectedSourcesDownwardApiItemsOutputReference extends cdktf.ComplexObject {
@@ -5698,6 +6496,17 @@ export function dataKubernetesPodV1SpecVolumeProjectedSourcesDownwardApiToTerraf
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeProjectedSourcesDownwardApiToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeProjectedSourcesDownwardApi): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeProjectedSourcesDownwardApiOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -5761,6 +6570,17 @@ export function dataKubernetesPodV1SpecVolumeProjectedSourcesSecretItemsToTerraf
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeProjectedSourcesSecretItemsToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeProjectedSourcesSecretItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeProjectedSourcesSecretItemsOutputReference extends cdktf.ComplexObject {
@@ -5835,6 +6655,17 @@ export function dataKubernetesPodV1SpecVolumeProjectedSourcesSecretToTerraform(s
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeProjectedSourcesSecretToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeProjectedSourcesSecret): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeProjectedSourcesSecretOutputReference extends cdktf.ComplexObject {
@@ -5912,6 +6743,17 @@ export function dataKubernetesPodV1SpecVolumeProjectedSourcesServiceAccountToken
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeProjectedSourcesServiceAccountTokenToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeProjectedSourcesServiceAccountToken): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeProjectedSourcesServiceAccountTokenOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -5984,6 +6826,17 @@ export function dataKubernetesPodV1SpecVolumeProjectedSourcesToTerraform(struct?
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeProjectedSourcesToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeProjectedSources): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeProjectedSourcesOutputReference extends cdktf.ComplexObject {
@@ -6069,6 +6922,17 @@ export function dataKubernetesPodV1SpecVolumeProjectedToTerraform(struct?: DataK
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeProjectedToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeProjected): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeProjectedOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -6137,6 +7001,17 @@ export function dataKubernetesPodV1SpecVolumeQuobyteToTerraform(struct?: DataKub
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeQuobyteToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeQuobyte): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeQuobyteOutputReference extends cdktf.ComplexObject {
@@ -6223,6 +7098,17 @@ export function dataKubernetesPodV1SpecVolumeRbdSecretRefToTerraform(struct?: Da
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeRbdSecretRefToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeRbdSecretRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeRbdSecretRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -6290,6 +7176,17 @@ export function dataKubernetesPodV1SpecVolumeRbdToTerraform(struct?: DataKuberne
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeRbdToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeRbd): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeRbdOutputReference extends cdktf.ComplexObject {
@@ -6392,6 +7289,17 @@ export function dataKubernetesPodV1SpecVolumeSecretItemsToTerraform(struct?: Dat
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeSecretItemsToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeSecretItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeSecretItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -6464,6 +7372,17 @@ export function dataKubernetesPodV1SpecVolumeSecretToTerraform(struct?: DataKube
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeSecretToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeSecret): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeSecretOutputReference extends cdktf.ComplexObject {
@@ -6546,6 +7465,17 @@ export function dataKubernetesPodV1SpecVolumeVsphereVolumeToTerraform(struct?: D
   }
 }
 
+
+export function dataKubernetesPodV1SpecVolumeVsphereVolumeToHclTerraform(struct?: DataKubernetesPodV1SpecVolumeVsphereVolume): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesPodV1SpecVolumeVsphereVolumeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -6613,6 +7543,17 @@ export function dataKubernetesPodV1SpecVolumeToTerraform(struct?: DataKubernetes
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecVolumeToHclTerraform(struct?: DataKubernetesPodV1SpecVolume): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecVolumeOutputReference extends cdktf.ComplexObject {
@@ -6839,6 +7780,17 @@ export function dataKubernetesPodV1SpecToTerraform(struct?: DataKubernetesPodV1S
   }
   return {
   }
+}
+
+
+export function dataKubernetesPodV1SpecToHclTerraform(struct?: DataKubernetesPodV1Spec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesPodV1SpecOutputReference extends cdktf.ComplexObject {
@@ -7096,6 +8048,49 @@ export function dataKubernetesPodV1MetadataToTerraform(struct?: DataKubernetesPo
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
+}
+
+
+export function dataKubernetesPodV1MetadataToHclTerraform(struct?: DataKubernetesPodV1MetadataOutputReference | DataKubernetesPodV1Metadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    generate_name: {
+      value: cdktf.stringToHclTerraform(struct!.generateName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesPodV1MetadataOutputReference extends cdktf.ComplexObject {

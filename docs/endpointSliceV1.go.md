@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.NewEndpointSliceV1(scope Construct, id *string, config EndpointSliceV1Config) EndpointSliceV1
 ```
@@ -54,6 +54,7 @@ Must be unique amongst siblings in the same scope
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.addOverride">AddOverride</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.overrideLogicalId">OverrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.resetOverrideLogicalId">ResetOverrideLogicalId</a></code> | Resets a previously passed logical Id to use the auto-generated logical id again. |
+| <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.toHclTerraform">ToHclTerraform</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.toMetadata">ToMetadata</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.toTerraform">ToTerraform</a></code> | Adds this resource to the terraform JSON output. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.addMoveTarget">AddMoveTarget</a></code> | Adds a user defined moveTarget string to this resource to be later used in .moveTo(moveTarget) to resolve the location of the move. |
@@ -128,6 +129,12 @@ func ResetOverrideLogicalId()
 ```
 
 Resets a previously passed logical Id to use the auto-generated logical id again.
+
+##### `ToHclTerraform` <a name="ToHclTerraform" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.toHclTerraform"></a>
+
+```go
+func ToHclTerraform() interface{}
+```
 
 ##### `ToMetadata` <a name="ToMetadata" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.toMetadata"></a>
 
@@ -417,7 +424,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.EndpointSliceV1_IsConstruct(x interface{}) *bool
 ```
@@ -449,7 +456,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.EndpointSliceV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -463,7 +470,7 @@ endpointslicev1.EndpointSliceV1_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.EndpointSliceV1_IsTerraformResource(x interface{}) *bool
 ```
@@ -477,7 +484,7 @@ endpointslicev1.EndpointSliceV1_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.EndpointSliceV1_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -816,7 +823,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 &endpointslicev1.EndpointSliceV1Config {
 	Connection: interface{},
@@ -828,7 +835,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointsli
 	Provisioners: *[]interface{},
 	AddressType: *string,
 	Endpoint: interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.endpointSliceV1.EndpointSliceV1Metadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.endpointSliceV1.EndpointSliceV1Metadata,
 	Port: interface{},
 	Id: *string,
 }
@@ -1001,14 +1008,14 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Endpoint.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 &endpointslicev1.EndpointSliceV1Endpoint {
 	Addresses: *[]*string,
-	Condition: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.endpointSliceV1.EndpointSliceV1EndpointCondition,
+	Condition: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.endpointSliceV1.EndpointSliceV1EndpointCondition,
 	Hostname: *string,
 	NodeName: *string,
-	TargetRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.endpointSliceV1.EndpointSliceV1EndpointTargetRef,
+	TargetRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.endpointSliceV1.EndpointSliceV1EndpointTargetRef,
 	Zone: *string,
 }
 ```
@@ -1117,7 +1124,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1EndpointCondition.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 &endpointslicev1.EndpointSliceV1EndpointCondition {
 	Ready: interface{},
@@ -1183,7 +1190,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1EndpointTargetRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 &endpointslicev1.EndpointSliceV1EndpointTargetRef {
 	Name: *string,
@@ -1281,7 +1288,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 &endpointslicev1.EndpointSliceV1Metadata {
 	Annotations: *map[string]*string,
@@ -1385,7 +1392,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1Port.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 &endpointslicev1.EndpointSliceV1Port {
 	AppProtocol: *string,
@@ -1471,7 +1478,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1EndpointConditionOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.NewEndpointSliceV1EndpointConditionOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) EndpointSliceV1EndpointConditionOutputReference
 ```
@@ -1807,7 +1814,7 @@ func InternalValue() EndpointSliceV1EndpointCondition
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1EndpointList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.NewEndpointSliceV1EndpointList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) EndpointSliceV1EndpointList
 ```
@@ -1848,10 +1855,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1EndpointList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1EndpointList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1EndpointList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1EndpointList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1EndpointList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1EndpointList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1EndpointList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -1950,7 +1974,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1EndpointOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.NewEndpointSliceV1EndpointOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) EndpointSliceV1EndpointOutputReference
 ```
@@ -2410,7 +2434,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1EndpointTargetRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.NewEndpointSliceV1EndpointTargetRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) EndpointSliceV1EndpointTargetRefOutputReference
 ```
@@ -2797,7 +2821,7 @@ func InternalValue() EndpointSliceV1EndpointTargetRef
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.NewEndpointSliceV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) EndpointSliceV1MetadataOutputReference
 ```
@@ -3224,7 +3248,7 @@ func InternalValue() EndpointSliceV1Metadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1PortList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.NewEndpointSliceV1PortList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) EndpointSliceV1PortList
 ```
@@ -3265,10 +3289,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1PortList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1PortList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1PortList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1PortList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1PortList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1PortList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1PortList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -3367,7 +3408,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.endpointSliceV1.EndpointSliceV1PortOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/endpointslicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/endpointslicev1"
 
 endpointslicev1.NewEndpointSliceV1PortOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) EndpointSliceV1PortOutputReference
 ```

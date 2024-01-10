@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/csi_driver_v1
 // generated from terraform resource schema
 
@@ -70,6 +65,43 @@ export function csiDriverV1MetadataToTerraform(struct?: CsiDriverV1MetadataOutpu
     labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     name: cdktf.stringToTerraform(struct!.name),
   }
+}
+
+
+export function csiDriverV1MetadataToHclTerraform(struct?: CsiDriverV1MetadataOutputReference | CsiDriverV1Metadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    generate_name: {
+      value: cdktf.stringToHclTerraform(struct!.generateName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CsiDriverV1MetadataOutputReference extends cdktf.ComplexObject {
@@ -232,6 +264,37 @@ export function csiDriverV1SpecToTerraform(struct?: CsiDriverV1SpecOutputReferen
     pod_info_on_mount: cdktf.booleanToTerraform(struct!.podInfoOnMount),
     volume_lifecycle_modes: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.volumeLifecycleModes),
   }
+}
+
+
+export function csiDriverV1SpecToHclTerraform(struct?: CsiDriverV1SpecOutputReference | CsiDriverV1Spec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    attach_required: {
+      value: cdktf.booleanToHclTerraform(struct!.attachRequired),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    pod_info_on_mount: {
+      value: cdktf.booleanToHclTerraform(struct!.podInfoOnMount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    volume_lifecycle_modes: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.volumeLifecycleModes),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CsiDriverV1SpecOutputReference extends cdktf.ComplexObject {
@@ -439,5 +502,31 @@ export class CsiDriverV1 extends cdktf.TerraformResource {
       metadata: csiDriverV1MetadataToTerraform(this._metadata.internalValue),
       spec: csiDriverV1SpecToTerraform(this._spec.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: csiDriverV1MetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CsiDriverV1MetadataList",
+      },
+      spec: {
+        value: csiDriverV1SpecToHclTerraform(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CsiDriverV1SpecList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -1,18 +1,16 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // generated from terraform resource schema
 
 import { DeploymentMetadata, 
 deploymentMetadataToTerraform, 
+deploymentMetadataToHclTerraform, 
 DeploymentMetadataOutputReference, 
 DeploymentSpec, 
 deploymentSpecToTerraform, 
+deploymentSpecToHclTerraform, 
 DeploymentSpecOutputReference, 
 DeploymentTimeouts, 
 deploymentTimeoutsToTerraform, 
+deploymentTimeoutsToHclTerraform, 
 DeploymentTimeoutsOutputReference} from './index-structs'
 export * from './index-structs'
 import { Construct } from 'constructs';
@@ -199,5 +197,43 @@ export class Deployment extends cdktf.TerraformResource {
       spec: deploymentSpecToTerraform(this._spec.internalValue),
       timeouts: deploymentTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      wait_for_rollout: {
+        value: cdktf.booleanToHclTerraform(this._waitForRollout),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      metadata: {
+        value: deploymentMetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DeploymentMetadataList",
+      },
+      spec: {
+        value: deploymentSpecToHclTerraform(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DeploymentSpecList",
+      },
+      timeouts: {
+        value: deploymentTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DeploymentTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

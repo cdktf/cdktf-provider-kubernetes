@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/data-sources/persistent_volume_v1
 // generated from terraform resource schema
 
@@ -63,6 +58,37 @@ export function dataKubernetesPersistentVolumeV1MetadataToTerraform(struct?: Dat
     labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     name: cdktf.stringToTerraform(struct!.name),
   }
+}
+
+
+export function dataKubernetesPersistentVolumeV1MetadataToHclTerraform(struct?: DataKubernetesPersistentVolumeV1MetadataOutputReference | DataKubernetesPersistentVolumeV1Metadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesPersistentVolumeV1MetadataOutputReference extends cdktf.ComplexObject {
@@ -198,6 +224,31 @@ export function dataKubernetesPersistentVolumeV1SpecClaimRefToTerraform(struct?:
   }
 }
 
+
+export function dataKubernetesPersistentVolumeV1SpecClaimRefToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecClaimRefOutputReference | DataKubernetesPersistentVolumeV1SpecClaimRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataKubernetesPersistentVolumeV1SpecClaimRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -296,6 +347,37 @@ export function dataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSele
     operator: cdktf.stringToTerraform(struct!.operator),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsOutputReference extends cdktf.ComplexObject {
@@ -449,6 +531,37 @@ export function dataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSele
   }
 }
 
+
+export function dataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFieldsToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFields | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFieldsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -593,6 +706,31 @@ export function dataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSele
   }
 }
 
+
+export function dataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTerm | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    match_expressions: {
+      value: cdktf.listMapperHcl(dataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsToHclTerraform, true)(struct!.matchExpressions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchExpressionsList",
+    },
+    match_fields: {
+      value: cdktf.listMapperHcl(dataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFieldsToHclTerraform, true)(struct!.matchFields),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermMatchFieldsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -714,6 +852,25 @@ export function dataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredToTerraf
   }
 }
 
+
+export function dataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredOutputReference | DataKubernetesPersistentVolumeV1SpecNodeAffinityRequired): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    node_selector_term: {
+      value: cdktf.listMapperHcl(dataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermToHclTerraform, true)(struct!.nodeSelectorTerm),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredNodeSelectorTermList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -776,6 +933,25 @@ export function dataKubernetesPersistentVolumeV1SpecNodeAffinityToTerraform(stru
   return {
     required: dataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredToTerraform(struct!.required),
   }
+}
+
+
+export function dataKubernetesPersistentVolumeV1SpecNodeAffinityToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecNodeAffinityOutputReference | DataKubernetesPersistentVolumeV1SpecNodeAffinity): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    required: {
+      value: dataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredToHclTerraform(struct!.required),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecNodeAffinityRequiredList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesPersistentVolumeV1SpecNodeAffinityOutputReference extends cdktf.ComplexObject {
@@ -864,6 +1040,43 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAwsEla
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     volume_id: cdktf.stringToTerraform(struct!.volumeId),
   }
+}
+
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStoreToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStoreOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStore): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    fs_type: {
+      value: cdktf.stringToHclTerraform(struct!.fsType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    partition: {
+      value: cdktf.numberToHclTerraform(struct!.partition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    read_only: {
+      value: cdktf.booleanToHclTerraform(struct!.readOnly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    volume_id: {
+      value: cdktf.stringToHclTerraform(struct!.volumeId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStoreOutputReference extends cdktf.ComplexObject {
@@ -1029,6 +1242,55 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureD
     kind: cdktf.stringToTerraform(struct!.kind),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
   }
+}
+
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureDiskToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureDiskOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureDisk): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    caching_mode: {
+      value: cdktf.stringToHclTerraform(struct!.cachingMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    data_disk_uri: {
+      value: cdktf.stringToHclTerraform(struct!.dataDiskUri),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    disk_name: {
+      value: cdktf.stringToHclTerraform(struct!.diskName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    fs_type: {
+      value: cdktf.stringToHclTerraform(struct!.fsType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    kind: {
+      value: cdktf.stringToHclTerraform(struct!.kind),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    read_only: {
+      value: cdktf.booleanToHclTerraform(struct!.readOnly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureDiskOutputReference extends cdktf.ComplexObject {
@@ -1220,6 +1482,43 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureF
   }
 }
 
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureFileToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureFileOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureFile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    read_only: {
+      value: cdktf.booleanToHclTerraform(struct!.readOnly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    secret_name: {
+      value: cdktf.stringToHclTerraform(struct!.secretName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    secret_namespace: {
+      value: cdktf.stringToHclTerraform(struct!.secretNamespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    share_name: {
+      value: cdktf.stringToHclTerraform(struct!.shareName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureFileOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1354,6 +1653,31 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFs
   }
 }
 
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRefToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRefOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1476,6 +1800,55 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFs
     user: cdktf.stringToTerraform(struct!.user),
     secret_ref: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRefToTerraform(struct!.secretRef),
   }
+}
+
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFsToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFsOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFs): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    monitors: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.monitors),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    read_only: {
+      value: cdktf.booleanToHclTerraform(struct!.readOnly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    secret_file: {
+      value: cdktf.stringToHclTerraform(struct!.secretFile),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    user: {
+      value: cdktf.stringToHclTerraform(struct!.user),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    secret_ref: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRefToHclTerraform(struct!.secretRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFsSecretRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFsOutputReference extends cdktf.ComplexObject {
@@ -1666,6 +2039,37 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCinder
   }
 }
 
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCinderToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCinderOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCinder): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    fs_type: {
+      value: cdktf.stringToHclTerraform(struct!.fsType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    read_only: {
+      value: cdktf.booleanToHclTerraform(struct!.readOnly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    volume_id: {
+      value: cdktf.stringToHclTerraform(struct!.volumeId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCinderOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1781,6 +2185,31 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiCon
   }
 }
 
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecretRefToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecretRefOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecretRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecretRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1875,6 +2304,31 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiCon
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
+}
+
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSecretRefToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSecretRefOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSecretRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSecretRefOutputReference extends cdktf.ComplexObject {
@@ -1973,6 +2427,31 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNod
   }
 }
 
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRefToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRefOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2067,6 +2546,31 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNod
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
+}
+
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRefToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRefOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRefOutputReference extends cdktf.ComplexObject {
@@ -2212,6 +2716,73 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiToT
     node_publish_secret_ref: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRefToTerraform(struct!.nodePublishSecretRef),
     node_stage_secret_ref: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRefToTerraform(struct!.nodeStageSecretRef),
   }
+}
+
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsi): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    driver: {
+      value: cdktf.stringToHclTerraform(struct!.driver),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    fs_type: {
+      value: cdktf.stringToHclTerraform(struct!.fsType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    read_only: {
+      value: cdktf.booleanToHclTerraform(struct!.readOnly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    volume_attributes: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.volumeAttributes),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    volume_handle: {
+      value: cdktf.stringToHclTerraform(struct!.volumeHandle),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    controller_expand_secret_ref: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecretRefToHclTerraform(struct!.controllerExpandSecretRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiControllerExpandSecretRefList",
+    },
+    controller_publish_secret_ref: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSecretRefToHclTerraform(struct!.controllerPublishSecretRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiControllerPublishSecretRefList",
+    },
+    node_publish_secret_ref: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRefToHclTerraform(struct!.nodePublishSecretRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodePublishSecretRefList",
+    },
+    node_stage_secret_ref: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRefToHclTerraform(struct!.nodeStageSecretRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiNodeStageSecretRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiOutputReference extends cdktf.ComplexObject {
@@ -2472,6 +3043,43 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFcToTe
   }
 }
 
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFcToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFcOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFc): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    fs_type: {
+      value: cdktf.stringToHclTerraform(struct!.fsType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    lun: {
+      value: cdktf.numberToHclTerraform(struct!.lun),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    read_only: {
+      value: cdktf.booleanToHclTerraform(struct!.readOnly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    target_ww_ns: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.targetWwNs),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFcOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2606,6 +3214,31 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVo
   }
 }
 
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRefToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRefOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2721,6 +3354,49 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVo
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     secret_ref: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRefToTerraform(struct!.secretRef),
   }
+}
+
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVolume): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    driver: {
+      value: cdktf.stringToHclTerraform(struct!.driver),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    fs_type: {
+      value: cdktf.stringToHclTerraform(struct!.fsType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    options: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.options),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    read_only: {
+      value: cdktf.booleanToHclTerraform(struct!.readOnly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    secret_ref: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRefToHclTerraform(struct!.secretRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeSecretRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeOutputReference extends cdktf.ComplexObject {
@@ -2882,6 +3558,31 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlocke
   }
 }
 
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlockerToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlockerOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlocker): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    dataset_name: {
+      value: cdktf.stringToHclTerraform(struct!.datasetName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dataset_uuid: {
+      value: cdktf.stringToHclTerraform(struct!.datasetUuid),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlockerOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2990,6 +3691,43 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGcePer
     pd_name: cdktf.stringToTerraform(struct!.pdName),
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
   }
+}
+
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDiskToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDiskOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDisk): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    fs_type: {
+      value: cdktf.stringToHclTerraform(struct!.fsType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    partition: {
+      value: cdktf.numberToHclTerraform(struct!.partition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    pd_name: {
+      value: cdktf.stringToHclTerraform(struct!.pdName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    read_only: {
+      value: cdktf.booleanToHclTerraform(struct!.readOnly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDiskOutputReference extends cdktf.ComplexObject {
@@ -3136,6 +3874,37 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGluste
   }
 }
 
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGlusterfsToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGlusterfsOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGlusterfs): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    endpoints_name: {
+      value: cdktf.stringToHclTerraform(struct!.endpointsName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    read_only: {
+      value: cdktf.booleanToHclTerraform(struct!.readOnly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGlusterfsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3246,6 +4015,31 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceHostPa
     path: cdktf.stringToTerraform(struct!.path),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceHostPathToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceHostPathOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceHostPath): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceHostPathOutputReference extends cdktf.ComplexObject {
@@ -3370,6 +4164,55 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceIscsiT
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     target_portal: cdktf.stringToTerraform(struct!.targetPortal),
   }
+}
+
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceIscsiToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceIscsiOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceIscsi): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    fs_type: {
+      value: cdktf.stringToHclTerraform(struct!.fsType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    iqn: {
+      value: cdktf.stringToHclTerraform(struct!.iqn),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    iscsi_interface: {
+      value: cdktf.stringToHclTerraform(struct!.iscsiInterface),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    lun: {
+      value: cdktf.numberToHclTerraform(struct!.lun),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    read_only: {
+      value: cdktf.booleanToHclTerraform(struct!.readOnly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    target_portal: {
+      value: cdktf.stringToHclTerraform(struct!.targetPortal),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceIscsiOutputReference extends cdktf.ComplexObject {
@@ -3543,6 +4386,25 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceLocalT
   }
 }
 
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceLocalToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceLocalOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceLocal): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceLocalOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3622,6 +4484,37 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceNfsToT
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     server: cdktf.stringToTerraform(struct!.server),
   }
+}
+
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceNfsToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceNfsOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceNfs): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    read_only: {
+      value: cdktf.booleanToHclTerraform(struct!.readOnly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    server: {
+      value: cdktf.stringToHclTerraform(struct!.server),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceNfsOutputReference extends cdktf.ComplexObject {
@@ -3736,6 +4629,31 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourcePhoton
   }
 }
 
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDiskToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDiskOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDisk): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    fs_type: {
+      value: cdktf.stringToHclTerraform(struct!.fsType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    pd_id: {
+      value: cdktf.stringToHclTerraform(struct!.pdId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDiskOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3848,6 +4766,49 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceQuobyt
     user: cdktf.stringToTerraform(struct!.user),
     volume: cdktf.stringToTerraform(struct!.volume),
   }
+}
+
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceQuobyteToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceQuobyteOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceQuobyte): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    group: {
+      value: cdktf.stringToHclTerraform(struct!.group),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    read_only: {
+      value: cdktf.booleanToHclTerraform(struct!.readOnly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    registry: {
+      value: cdktf.stringToHclTerraform(struct!.registry),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    user: {
+      value: cdktf.stringToHclTerraform(struct!.user),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    volume: {
+      value: cdktf.stringToHclTerraform(struct!.volume),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceQuobyteOutputReference extends cdktf.ComplexObject {
@@ -4006,6 +4967,31 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbdSec
   }
 }
 
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRefToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRefOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4142,6 +5128,67 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbdToT
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     secret_ref: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRefToTerraform(struct!.secretRef),
   }
+}
+
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbdToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbdOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbd): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ceph_monitors: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.cephMonitors),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    fs_type: {
+      value: cdktf.stringToHclTerraform(struct!.fsType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    keyring: {
+      value: cdktf.stringToHclTerraform(struct!.keyring),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    rados_user: {
+      value: cdktf.stringToHclTerraform(struct!.radosUser),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    rbd_image: {
+      value: cdktf.stringToHclTerraform(struct!.rbdImage),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    rbd_pool: {
+      value: cdktf.stringToHclTerraform(struct!.rbdPool),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    read_only: {
+      value: cdktf.booleanToHclTerraform(struct!.readOnly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    secret_ref: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRefToHclTerraform(struct!.secretRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbdSecretRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbdOutputReference extends cdktf.ComplexObject {
@@ -4366,6 +5413,31 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceVspher
   }
 }
 
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceVsphereVolumeToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceVsphereVolumeOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceVsphereVolume): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    fs_type: {
+      value: cdktf.stringToHclTerraform(struct!.fsType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    volume_path: {
+      value: cdktf.stringToHclTerraform(struct!.volumePath),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceVsphereVolumeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4576,6 +5648,133 @@ export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceToTerr
     rbd: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbdToTerraform(struct!.rbd),
     vsphere_volume: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceVsphereVolumeToTerraform(struct!.vsphereVolume),
   }
+}
+
+
+export function dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceToHclTerraform(struct?: DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceOutputReference | DataKubernetesPersistentVolumeV1SpecPersistentVolumeSource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    aws_elastic_block_store: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStoreToHclTerraform(struct!.awsElasticBlockStore),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAwsElasticBlockStoreList",
+    },
+    azure_disk: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureDiskToHclTerraform(struct!.azureDisk),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureDiskList",
+    },
+    azure_file: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureFileToHclTerraform(struct!.azureFile),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceAzureFileList",
+    },
+    ceph_fs: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFsToHclTerraform(struct!.cephFs),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCephFsList",
+    },
+    cinder: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCinderToHclTerraform(struct!.cinder),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCinderList",
+    },
+    csi: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiToHclTerraform(struct!.csi),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceCsiList",
+    },
+    fc: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFcToHclTerraform(struct!.fc),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFcList",
+    },
+    flex_volume: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeToHclTerraform(struct!.flexVolume),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlexVolumeList",
+    },
+    flocker: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlockerToHclTerraform(struct!.flocker),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceFlockerList",
+    },
+    gce_persistent_disk: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDiskToHclTerraform(struct!.gcePersistentDisk),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGcePersistentDiskList",
+    },
+    glusterfs: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGlusterfsToHclTerraform(struct!.glusterfs),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceGlusterfsList",
+    },
+    host_path: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceHostPathToHclTerraform(struct!.hostPath),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceHostPathList",
+    },
+    iscsi: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceIscsiToHclTerraform(struct!.iscsi),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceIscsiList",
+    },
+    local: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceLocalToHclTerraform(struct!.local),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceLocalList",
+    },
+    nfs: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceNfsToHclTerraform(struct!.nfs),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceNfsList",
+    },
+    photon_persistent_disk: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDiskToHclTerraform(struct!.photonPersistentDisk),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourcePhotonPersistentDiskList",
+    },
+    quobyte: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceQuobyteToHclTerraform(struct!.quobyte),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceQuobyteList",
+    },
+    rbd: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbdToHclTerraform(struct!.rbd),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceRbdList",
+    },
+    vsphere_volume: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceVsphereVolumeToHclTerraform(struct!.vsphereVolume),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceVsphereVolumeList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceOutputReference extends cdktf.ComplexObject {
@@ -5097,6 +6296,73 @@ export function dataKubernetesPersistentVolumeV1SpecToTerraform(struct?: DataKub
   }
 }
 
+
+export function dataKubernetesPersistentVolumeV1SpecToHclTerraform(struct?: DataKubernetesPersistentVolumeV1Spec | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    access_modes: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.accessModes),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    capacity: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.capacity),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    mount_options: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.mountOptions),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    persistent_volume_reclaim_policy: {
+      value: cdktf.stringToHclTerraform(struct!.persistentVolumeReclaimPolicy),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    storage_class_name: {
+      value: cdktf.stringToHclTerraform(struct!.storageClassName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    volume_mode: {
+      value: cdktf.stringToHclTerraform(struct!.volumeMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    claim_ref: {
+      value: dataKubernetesPersistentVolumeV1SpecClaimRefToHclTerraform(struct!.claimRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecClaimRefList",
+    },
+    node_affinity: {
+      value: dataKubernetesPersistentVolumeV1SpecNodeAffinityToHclTerraform(struct!.nodeAffinity),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecNodeAffinityList",
+    },
+    persistent_volume_source: {
+      value: dataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceToHclTerraform(struct!.persistentVolumeSource),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesPersistentVolumeV1SpecPersistentVolumeSourceList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataKubernetesPersistentVolumeV1SpecOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -5460,5 +6726,31 @@ export class DataKubernetesPersistentVolumeV1 extends cdktf.TerraformDataSource 
       metadata: dataKubernetesPersistentVolumeV1MetadataToTerraform(this._metadata.internalValue),
       spec: cdktf.listMapper(dataKubernetesPersistentVolumeV1SpecToTerraform, true)(this._spec.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: dataKubernetesPersistentVolumeV1MetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataKubernetesPersistentVolumeV1MetadataList",
+      },
+      spec: {
+        value: cdktf.listMapperHcl(dataKubernetesPersistentVolumeV1SpecToHclTerraform, true)(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataKubernetesPersistentVolumeV1SpecList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

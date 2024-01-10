@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/data-sources/storage_class
 // generated from terraform resource schema
 
@@ -86,6 +81,31 @@ export function dataKubernetesStorageClassAllowedTopologiesMatchLabelExpressions
     key: cdktf.stringToTerraform(struct!.key),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataKubernetesStorageClassAllowedTopologiesMatchLabelExpressionsToHclTerraform(struct?: DataKubernetesStorageClassAllowedTopologiesMatchLabelExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesStorageClassAllowedTopologiesMatchLabelExpressionsOutputReference extends cdktf.ComplexObject {
@@ -209,6 +229,25 @@ export function dataKubernetesStorageClassAllowedTopologiesToTerraform(struct?: 
   }
 }
 
+
+export function dataKubernetesStorageClassAllowedTopologiesToHclTerraform(struct?: DataKubernetesStorageClassAllowedTopologiesOutputReference | DataKubernetesStorageClassAllowedTopologies): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    match_label_expressions: {
+      value: cdktf.listMapperHcl(dataKubernetesStorageClassAllowedTopologiesMatchLabelExpressionsToHclTerraform, true)(struct!.matchLabelExpressions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataKubernetesStorageClassAllowedTopologiesMatchLabelExpressionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataKubernetesStorageClassAllowedTopologiesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -288,6 +327,37 @@ export function dataKubernetesStorageClassMetadataToTerraform(struct?: DataKuber
     labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     name: cdktf.stringToTerraform(struct!.name),
   }
+}
+
+
+export function dataKubernetesStorageClassMetadataToHclTerraform(struct?: DataKubernetesStorageClassMetadataOutputReference | DataKubernetesStorageClassMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesStorageClassMetadataOutputReference extends cdktf.ComplexObject {
@@ -608,5 +678,61 @@ export class DataKubernetesStorageClass extends cdktf.TerraformDataSource {
       allowed_topologies: dataKubernetesStorageClassAllowedTopologiesToTerraform(this._allowedTopologies.internalValue),
       metadata: dataKubernetesStorageClassMetadataToTerraform(this._metadata.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      allow_volume_expansion: {
+        value: cdktf.booleanToHclTerraform(this._allowVolumeExpansion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      mount_options: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._mountOptions),
+        isBlock: false,
+        type: "set",
+        storageClassType: "stringList",
+      },
+      parameters: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._parameters),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      reclaim_policy: {
+        value: cdktf.stringToHclTerraform(this._reclaimPolicy),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      volume_binding_mode: {
+        value: cdktf.stringToHclTerraform(this._volumeBindingMode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      allowed_topologies: {
+        value: dataKubernetesStorageClassAllowedTopologiesToHclTerraform(this._allowedTopologies.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataKubernetesStorageClassAllowedTopologiesList",
+      },
+      metadata: {
+        value: dataKubernetesStorageClassMetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataKubernetesStorageClassMetadataList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/data-sources/service_account_v1
 // generated from terraform resource schema
 
@@ -36,6 +31,17 @@ export function dataKubernetesServiceAccountV1ImagePullSecretToTerraform(struct?
   }
   return {
   }
+}
+
+
+export function dataKubernetesServiceAccountV1ImagePullSecretToHclTerraform(struct?: DataKubernetesServiceAccountV1ImagePullSecret): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesServiceAccountV1ImagePullSecretOutputReference extends cdktf.ComplexObject {
@@ -100,6 +106,17 @@ export function dataKubernetesServiceAccountV1SecretToTerraform(struct?: DataKub
   }
   return {
   }
+}
+
+
+export function dataKubernetesServiceAccountV1SecretToHclTerraform(struct?: DataKubernetesServiceAccountV1Secret): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesServiceAccountV1SecretOutputReference extends cdktf.ComplexObject {
@@ -192,6 +209,43 @@ export function dataKubernetesServiceAccountV1MetadataToTerraform(struct?: DataK
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
+}
+
+
+export function dataKubernetesServiceAccountV1MetadataToHclTerraform(struct?: DataKubernetesServiceAccountV1MetadataOutputReference | DataKubernetesServiceAccountV1Metadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesServiceAccountV1MetadataOutputReference extends cdktf.ComplexObject {
@@ -443,5 +497,25 @@ export class DataKubernetesServiceAccountV1 extends cdktf.TerraformDataSource {
       id: cdktf.stringToTerraform(this._id),
       metadata: dataKubernetesServiceAccountV1MetadataToTerraform(this._metadata.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: dataKubernetesServiceAccountV1MetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataKubernetesServiceAccountV1MetadataList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

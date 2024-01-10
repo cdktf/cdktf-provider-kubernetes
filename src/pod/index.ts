@@ -1,18 +1,16 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // generated from terraform resource schema
 
 import { PodMetadata, 
 podMetadataToTerraform, 
+podMetadataToHclTerraform, 
 PodMetadataOutputReference, 
 PodSpec, 
 podSpecToTerraform, 
+podSpecToHclTerraform, 
 PodSpecOutputReference, 
 PodTimeouts, 
 podTimeoutsToTerraform, 
+podTimeoutsToHclTerraform, 
 PodTimeoutsOutputReference} from './index-structs'
 export * from './index-structs'
 import { Construct } from 'constructs';
@@ -199,5 +197,43 @@ export class Pod extends cdktf.TerraformResource {
       spec: podSpecToTerraform(this._spec.internalValue),
       timeouts: podTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_state: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._targetState),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      metadata: {
+        value: podMetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "PodMetadataList",
+      },
+      spec: {
+        value: podSpecToHclTerraform(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "PodSpecList",
+      },
+      timeouts: {
+        value: podTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "PodTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

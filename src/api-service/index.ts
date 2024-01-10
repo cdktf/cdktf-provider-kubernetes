@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/api_service
 // generated from terraform resource schema
 
@@ -70,6 +65,43 @@ export function apiServiceMetadataToTerraform(struct?: ApiServiceMetadataOutputR
     labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     name: cdktf.stringToTerraform(struct!.name),
   }
+}
+
+
+export function apiServiceMetadataToHclTerraform(struct?: ApiServiceMetadataOutputReference | ApiServiceMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    generate_name: {
+      value: cdktf.stringToHclTerraform(struct!.generateName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApiServiceMetadataOutputReference extends cdktf.ComplexObject {
@@ -234,6 +266,37 @@ export function apiServiceSpecServiceToTerraform(struct?: ApiServiceSpecServiceO
   }
 }
 
+
+export function apiServiceSpecServiceToHclTerraform(struct?: ApiServiceSpecServiceOutputReference | ApiServiceSpecService): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApiServiceSpecServiceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -379,6 +442,61 @@ export function apiServiceSpecToTerraform(struct?: ApiServiceSpecOutputReference
     version_priority: cdktf.numberToTerraform(struct!.versionPriority),
     service: apiServiceSpecServiceToTerraform(struct!.service),
   }
+}
+
+
+export function apiServiceSpecToHclTerraform(struct?: ApiServiceSpecOutputReference | ApiServiceSpec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ca_bundle: {
+      value: cdktf.stringToHclTerraform(struct!.caBundle),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    group: {
+      value: cdktf.stringToHclTerraform(struct!.group),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    group_priority_minimum: {
+      value: cdktf.numberToHclTerraform(struct!.groupPriorityMinimum),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    insecure_skip_tls_verify: {
+      value: cdktf.booleanToHclTerraform(struct!.insecureSkipTlsVerify),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    version: {
+      value: cdktf.stringToHclTerraform(struct!.version),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    version_priority: {
+      value: cdktf.numberToHclTerraform(struct!.versionPriority),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    service: {
+      value: apiServiceSpecServiceToHclTerraform(struct!.service),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApiServiceSpecServiceList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApiServiceSpecOutputReference extends cdktf.ComplexObject {
@@ -662,5 +780,31 @@ export class ApiService extends cdktf.TerraformResource {
       metadata: apiServiceMetadataToTerraform(this._metadata.internalValue),
       spec: apiServiceSpecToTerraform(this._spec.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: apiServiceMetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ApiServiceMetadataList",
+      },
+      spec: {
+        value: apiServiceSpecToHclTerraform(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ApiServiceSpecList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

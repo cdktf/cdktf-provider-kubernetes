@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/endpoints
 // generated from terraform resource schema
 
@@ -77,6 +72,49 @@ export function endpointsMetadataToTerraform(struct?: EndpointsMetadataOutputRef
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
+}
+
+
+export function endpointsMetadataToHclTerraform(struct?: EndpointsMetadataOutputReference | EndpointsMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    generate_name: {
+      value: cdktf.stringToHclTerraform(struct!.generateName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class EndpointsMetadataOutputReference extends cdktf.ComplexObject {
@@ -263,6 +301,37 @@ export function endpointsSubsetAddressToTerraform(struct?: EndpointsSubsetAddres
   }
 }
 
+
+export function endpointsSubsetAddressToHclTerraform(struct?: EndpointsSubsetAddress | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    hostname: {
+      value: cdktf.stringToHclTerraform(struct!.hostname),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ip: {
+      value: cdktf.stringToHclTerraform(struct!.ip),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    node_name: {
+      value: cdktf.stringToHclTerraform(struct!.nodeName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class EndpointsSubsetAddressOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -415,6 +484,37 @@ export function endpointsSubsetNotReadyAddressToTerraform(struct?: EndpointsSubs
     ip: cdktf.stringToTerraform(struct!.ip),
     node_name: cdktf.stringToTerraform(struct!.nodeName),
   }
+}
+
+
+export function endpointsSubsetNotReadyAddressToHclTerraform(struct?: EndpointsSubsetNotReadyAddress | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    hostname: {
+      value: cdktf.stringToHclTerraform(struct!.hostname),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ip: {
+      value: cdktf.stringToHclTerraform(struct!.ip),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    node_name: {
+      value: cdktf.stringToHclTerraform(struct!.nodeName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class EndpointsSubsetNotReadyAddressOutputReference extends cdktf.ComplexObject {
@@ -571,6 +671,37 @@ export function endpointsSubsetPortToTerraform(struct?: EndpointsSubsetPort | cd
   }
 }
 
+
+export function endpointsSubsetPortToHclTerraform(struct?: EndpointsSubsetPort | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class EndpointsSubsetPortOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -723,6 +854,37 @@ export function endpointsSubsetToTerraform(struct?: EndpointsSubset | cdktf.IRes
     not_ready_address: cdktf.listMapper(endpointsSubsetNotReadyAddressToTerraform, true)(struct!.notReadyAddress),
     port: cdktf.listMapper(endpointsSubsetPortToTerraform, true)(struct!.port),
   }
+}
+
+
+export function endpointsSubsetToHclTerraform(struct?: EndpointsSubset | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    address: {
+      value: cdktf.listMapperHcl(endpointsSubsetAddressToHclTerraform, true)(struct!.address),
+      isBlock: true,
+      type: "set",
+      storageClassType: "EndpointsSubsetAddressList",
+    },
+    not_ready_address: {
+      value: cdktf.listMapperHcl(endpointsSubsetNotReadyAddressToHclTerraform, true)(struct!.notReadyAddress),
+      isBlock: true,
+      type: "set",
+      storageClassType: "EndpointsSubsetNotReadyAddressList",
+    },
+    port: {
+      value: cdktf.listMapperHcl(endpointsSubsetPortToHclTerraform, true)(struct!.port),
+      isBlock: true,
+      type: "set",
+      storageClassType: "EndpointsSubsetPortList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class EndpointsSubsetOutputReference extends cdktf.ComplexObject {
@@ -965,5 +1127,31 @@ export class Endpoints extends cdktf.TerraformResource {
       metadata: endpointsMetadataToTerraform(this._metadata.internalValue),
       subset: cdktf.listMapper(endpointsSubsetToTerraform, true)(this._subset.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: endpointsMetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "EndpointsMetadataList",
+      },
+      subset: {
+        value: cdktf.listMapperHcl(endpointsSubsetToHclTerraform, true)(this._subset.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "EndpointsSubsetList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

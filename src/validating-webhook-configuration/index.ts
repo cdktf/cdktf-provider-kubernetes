@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/validating_webhook_configuration
 // generated from terraform resource schema
 
@@ -70,6 +65,43 @@ export function validatingWebhookConfigurationMetadataToTerraform(struct?: Valid
     labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     name: cdktf.stringToTerraform(struct!.name),
   }
+}
+
+
+export function validatingWebhookConfigurationMetadataToHclTerraform(struct?: ValidatingWebhookConfigurationMetadataOutputReference | ValidatingWebhookConfigurationMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    generate_name: {
+      value: cdktf.stringToHclTerraform(struct!.generateName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ValidatingWebhookConfigurationMetadataOutputReference extends cdktf.ComplexObject {
@@ -241,6 +273,43 @@ export function validatingWebhookConfigurationWebhookClientConfigServiceToTerraf
   }
 }
 
+
+export function validatingWebhookConfigurationWebhookClientConfigServiceToHclTerraform(struct?: ValidatingWebhookConfigurationWebhookClientConfigServiceOutputReference | ValidatingWebhookConfigurationWebhookClientConfigService): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ValidatingWebhookConfigurationWebhookClientConfigServiceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -392,6 +461,37 @@ export function validatingWebhookConfigurationWebhookClientConfigToTerraform(str
   }
 }
 
+
+export function validatingWebhookConfigurationWebhookClientConfigToHclTerraform(struct?: ValidatingWebhookConfigurationWebhookClientConfigOutputReference | ValidatingWebhookConfigurationWebhookClientConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ca_bundle: {
+      value: cdktf.stringToHclTerraform(struct!.caBundle),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    url: {
+      value: cdktf.stringToHclTerraform(struct!.url),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    service: {
+      value: validatingWebhookConfigurationWebhookClientConfigServiceToHclTerraform(struct!.service),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ValidatingWebhookConfigurationWebhookClientConfigServiceList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ValidatingWebhookConfigurationWebhookClientConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -515,6 +615,37 @@ export function validatingWebhookConfigurationWebhookNamespaceSelectorMatchExpre
     operator: cdktf.stringToTerraform(struct!.operator),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function validatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsToHclTerraform(struct?: ValidatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ValidatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
@@ -667,6 +798,31 @@ export function validatingWebhookConfigurationWebhookNamespaceSelectorToTerrafor
   }
 }
 
+
+export function validatingWebhookConfigurationWebhookNamespaceSelectorToHclTerraform(struct?: ValidatingWebhookConfigurationWebhookNamespaceSelectorOutputReference | ValidatingWebhookConfigurationWebhookNamespaceSelector): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    match_labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.matchLabels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    match_expressions: {
+      value: cdktf.listMapperHcl(validatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsToHclTerraform, true)(struct!.matchExpressions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ValidatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ValidatingWebhookConfigurationWebhookNamespaceSelectorOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -768,6 +924,37 @@ export function validatingWebhookConfigurationWebhookObjectSelectorMatchExpressi
     operator: cdktf.stringToTerraform(struct!.operator),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function validatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsToHclTerraform(struct?: ValidatingWebhookConfigurationWebhookObjectSelectorMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ValidatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
@@ -920,6 +1107,31 @@ export function validatingWebhookConfigurationWebhookObjectSelectorToTerraform(s
   }
 }
 
+
+export function validatingWebhookConfigurationWebhookObjectSelectorToHclTerraform(struct?: ValidatingWebhookConfigurationWebhookObjectSelectorOutputReference | ValidatingWebhookConfigurationWebhookObjectSelector): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    match_labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.matchLabels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    match_expressions: {
+      value: cdktf.listMapperHcl(validatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsToHclTerraform, true)(struct!.matchExpressions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ValidatingWebhookConfigurationWebhookObjectSelectorMatchExpressionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ValidatingWebhookConfigurationWebhookObjectSelectorOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1027,6 +1239,49 @@ export function validatingWebhookConfigurationWebhookRuleToTerraform(struct?: Va
     resources: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.resources),
     scope: cdktf.stringToTerraform(struct!.scope),
   }
+}
+
+
+export function validatingWebhookConfigurationWebhookRuleToHclTerraform(struct?: ValidatingWebhookConfigurationWebhookRule | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    api_groups: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.apiGroups),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    api_versions: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.apiVersions),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    operations: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.operations),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    resources: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.resources),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    scope: {
+      value: cdktf.stringToHclTerraform(struct!.scope),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ValidatingWebhookConfigurationWebhookRuleOutputReference extends cdktf.ComplexObject {
@@ -1271,6 +1526,79 @@ export function validatingWebhookConfigurationWebhookToTerraform(struct?: Valida
     object_selector: validatingWebhookConfigurationWebhookObjectSelectorToTerraform(struct!.objectSelector),
     rule: cdktf.listMapper(validatingWebhookConfigurationWebhookRuleToTerraform, true)(struct!.rule),
   }
+}
+
+
+export function validatingWebhookConfigurationWebhookToHclTerraform(struct?: ValidatingWebhookConfigurationWebhook | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    admission_review_versions: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.admissionReviewVersions),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    failure_policy: {
+      value: cdktf.stringToHclTerraform(struct!.failurePolicy),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    match_policy: {
+      value: cdktf.stringToHclTerraform(struct!.matchPolicy),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    side_effects: {
+      value: cdktf.stringToHclTerraform(struct!.sideEffects),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    timeout_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.timeoutSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    client_config: {
+      value: validatingWebhookConfigurationWebhookClientConfigToHclTerraform(struct!.clientConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ValidatingWebhookConfigurationWebhookClientConfigList",
+    },
+    namespace_selector: {
+      value: validatingWebhookConfigurationWebhookNamespaceSelectorToHclTerraform(struct!.namespaceSelector),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ValidatingWebhookConfigurationWebhookNamespaceSelectorList",
+    },
+    object_selector: {
+      value: validatingWebhookConfigurationWebhookObjectSelectorToHclTerraform(struct!.objectSelector),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ValidatingWebhookConfigurationWebhookObjectSelectorList",
+    },
+    rule: {
+      value: cdktf.listMapperHcl(validatingWebhookConfigurationWebhookRuleToHclTerraform, true)(struct!.rule),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ValidatingWebhookConfigurationWebhookRuleList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ValidatingWebhookConfigurationWebhookOutputReference extends cdktf.ComplexObject {
@@ -1658,5 +1986,31 @@ export class ValidatingWebhookConfiguration extends cdktf.TerraformResource {
       metadata: validatingWebhookConfigurationMetadataToTerraform(this._metadata.internalValue),
       webhook: cdktf.listMapper(validatingWebhookConfigurationWebhookToTerraform, true)(this._webhook.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: validatingWebhookConfigurationMetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ValidatingWebhookConfigurationMetadataList",
+      },
+      webhook: {
+        value: cdktf.listMapperHcl(validatingWebhookConfigurationWebhookToHclTerraform, true)(this._webhook.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ValidatingWebhookConfigurationWebhookList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

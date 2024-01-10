@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/manifest
 // generated from terraform resource schema
 
@@ -70,6 +65,25 @@ export function manifestWaitForToTerraform(struct?: ManifestWaitFor | cdktf.IRes
   return {
     fields: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.fields),
   }
+}
+
+
+export function manifestWaitForToHclTerraform(struct?: ManifestWaitFor | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    fields: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.fields),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ManifestWaitForOutputReference extends cdktf.ComplexObject {
@@ -154,6 +168,31 @@ export function manifestFieldManagerToTerraform(struct?: ManifestFieldManagerOut
     force_conflicts: cdktf.booleanToTerraform(struct!.forceConflicts),
     name: cdktf.stringToTerraform(struct!.name),
   }
+}
+
+
+export function manifestFieldManagerToHclTerraform(struct?: ManifestFieldManagerOutputReference | ManifestFieldManager): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    force_conflicts: {
+      value: cdktf.booleanToHclTerraform(struct!.forceConflicts),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ManifestFieldManagerOutputReference extends cdktf.ComplexObject {
@@ -257,6 +296,37 @@ export function manifestTimeoutsToTerraform(struct?: ManifestTimeoutsOutputRefer
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function manifestTimeoutsToHclTerraform(struct?: ManifestTimeoutsOutputReference | ManifestTimeouts): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ManifestTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -375,6 +445,31 @@ export function manifestWaitConditionToTerraform(struct?: ManifestWaitCondition 
     status: cdktf.stringToTerraform(struct!.status),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function manifestWaitConditionToHclTerraform(struct?: ManifestWaitCondition | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    status: {
+      value: cdktf.stringToHclTerraform(struct!.status),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ManifestWaitConditionOutputReference extends cdktf.ComplexObject {
@@ -510,6 +605,37 @@ export function manifestWaitToTerraform(struct?: ManifestWaitOutputReference | M
     rollout: cdktf.booleanToTerraform(struct!.rollout),
     condition: cdktf.listMapper(manifestWaitConditionToTerraform, true)(struct!.condition),
   }
+}
+
+
+export function manifestWaitToHclTerraform(struct?: ManifestWaitOutputReference | ManifestWait): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    fields: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.fields),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    rollout: {
+      value: cdktf.booleanToHclTerraform(struct!.rollout),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    condition: {
+      value: cdktf.listMapperHcl(manifestWaitConditionToHclTerraform, true)(struct!.condition),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ManifestWaitConditionList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ManifestWaitOutputReference extends cdktf.ComplexObject {
@@ -792,5 +918,55 @@ export class Manifest extends cdktf.TerraformResource {
       timeouts: manifestTimeoutsToTerraform(this._timeouts.internalValue),
       wait: manifestWaitToTerraform(this._wait.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      computed_fields: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._computedFields),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      manifest: {
+        value: cdktf.hashMapperHcl(cdktf.anyToHclTerraform)(this._manifest),
+        isBlock: false,
+        type: "map",
+        storageClassType: "anyMap",
+      },
+      object: {
+        value: cdktf.hashMapperHcl(cdktf.anyToHclTerraform)(this._object),
+        isBlock: false,
+        type: "map",
+        storageClassType: "anyMap",
+      },
+      wait_for: {
+        value: manifestWaitForToHclTerraform(this._waitFor.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ManifestWaitFor",
+      },
+      field_manager: {
+        value: manifestFieldManagerToHclTerraform(this._fieldManager.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ManifestFieldManagerList",
+      },
+      timeouts: {
+        value: manifestTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ManifestTimeoutsList",
+      },
+      wait: {
+        value: manifestWaitToHclTerraform(this._wait.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ManifestWaitList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

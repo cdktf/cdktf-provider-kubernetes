@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/resource_quota
 // generated from terraform resource schema
 
@@ -83,6 +78,49 @@ export function resourceQuotaMetadataToTerraform(struct?: ResourceQuotaMetadataO
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
+}
+
+
+export function resourceQuotaMetadataToHclTerraform(struct?: ResourceQuotaMetadataOutputReference | ResourceQuotaMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    generate_name: {
+      value: cdktf.stringToHclTerraform(struct!.generateName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ResourceQuotaMetadataOutputReference extends cdktf.ComplexObject {
@@ -269,6 +307,37 @@ export function resourceQuotaSpecScopeSelectorMatchExpressionToTerraform(struct?
   }
 }
 
+
+export function resourceQuotaSpecScopeSelectorMatchExpressionToHclTerraform(struct?: ResourceQuotaSpecScopeSelectorMatchExpression | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scope_name: {
+      value: cdktf.stringToHclTerraform(struct!.scopeName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ResourceQuotaSpecScopeSelectorMatchExpressionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -406,6 +475,25 @@ export function resourceQuotaSpecScopeSelectorToTerraform(struct?: ResourceQuota
   }
 }
 
+
+export function resourceQuotaSpecScopeSelectorToHclTerraform(struct?: ResourceQuotaSpecScopeSelectorOutputReference | ResourceQuotaSpecScopeSelector): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    match_expression: {
+      value: cdktf.listMapperHcl(resourceQuotaSpecScopeSelectorMatchExpressionToHclTerraform, true)(struct!.matchExpression),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ResourceQuotaSpecScopeSelectorMatchExpressionList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ResourceQuotaSpecScopeSelectorOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -485,6 +573,37 @@ export function resourceQuotaSpecToTerraform(struct?: ResourceQuotaSpecOutputRef
     scopes: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.scopes),
     scope_selector: resourceQuotaSpecScopeSelectorToTerraform(struct!.scopeSelector),
   }
+}
+
+
+export function resourceQuotaSpecToHclTerraform(struct?: ResourceQuotaSpecOutputReference | ResourceQuotaSpec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    hard: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.hard),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    scopes: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.scopes),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    scope_selector: {
+      value: resourceQuotaSpecScopeSelectorToHclTerraform(struct!.scopeSelector),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ResourceQuotaSpecScopeSelectorList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ResourceQuotaSpecOutputReference extends cdktf.ComplexObject {
@@ -599,6 +718,31 @@ export function resourceQuotaTimeoutsToTerraform(struct?: ResourceQuotaTimeouts 
     create: cdktf.stringToTerraform(struct!.create),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function resourceQuotaTimeoutsToHclTerraform(struct?: ResourceQuotaTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ResourceQuotaTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -815,5 +959,37 @@ export class ResourceQuota extends cdktf.TerraformResource {
       spec: resourceQuotaSpecToTerraform(this._spec.internalValue),
       timeouts: resourceQuotaTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: resourceQuotaMetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ResourceQuotaMetadataList",
+      },
+      spec: {
+        value: resourceQuotaSpecToHclTerraform(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ResourceQuotaSpecList",
+      },
+      timeouts: {
+        value: resourceQuotaTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ResourceQuotaTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

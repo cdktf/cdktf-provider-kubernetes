@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/certificate_signing_request_v1
 // generated from terraform resource schema
 
@@ -82,6 +77,43 @@ export function certificateSigningRequestV1MetadataToTerraform(struct?: Certific
     labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     name: cdktf.stringToTerraform(struct!.name),
   }
+}
+
+
+export function certificateSigningRequestV1MetadataToHclTerraform(struct?: CertificateSigningRequestV1MetadataOutputReference | CertificateSigningRequestV1Metadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    generate_name: {
+      value: cdktf.stringToHclTerraform(struct!.generateName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CertificateSigningRequestV1MetadataOutputReference extends cdktf.ComplexObject {
@@ -279,6 +311,37 @@ export function certificateSigningRequestV1SpecToTerraform(struct?: CertificateS
   }
 }
 
+
+export function certificateSigningRequestV1SpecToHclTerraform(struct?: CertificateSigningRequestV1SpecOutputReference | CertificateSigningRequestV1Spec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    request: {
+      value: cdktf.stringToHclTerraform(struct!.request),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    signer_name: {
+      value: cdktf.stringToHclTerraform(struct!.signerName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    usages: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.usages),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CertificateSigningRequestV1SpecOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -380,6 +443,25 @@ export function certificateSigningRequestV1TimeoutsToTerraform(struct?: Certific
   return {
     create: cdktf.stringToTerraform(struct!.create),
   }
+}
+
+
+export function certificateSigningRequestV1TimeoutsToHclTerraform(struct?: CertificateSigningRequestV1Timeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CertificateSigningRequestV1TimeoutsOutputReference extends cdktf.ComplexObject {
@@ -594,5 +676,43 @@ export class CertificateSigningRequestV1 extends cdktf.TerraformResource {
       spec: certificateSigningRequestV1SpecToTerraform(this._spec.internalValue),
       timeouts: certificateSigningRequestV1TimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      auto_approve: {
+        value: cdktf.booleanToHclTerraform(this._autoApprove),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: certificateSigningRequestV1MetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CertificateSigningRequestV1MetadataList",
+      },
+      spec: {
+        value: certificateSigningRequestV1SpecToHclTerraform(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CertificateSigningRequestV1SpecList",
+      },
+      timeouts: {
+        value: certificateSigningRequestV1TimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CertificateSigningRequestV1Timeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

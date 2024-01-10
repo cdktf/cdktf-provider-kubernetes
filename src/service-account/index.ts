@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/service_account
 // generated from terraform resource schema
 
@@ -67,6 +62,25 @@ export function serviceAccountImagePullSecretToTerraform(struct?: ServiceAccount
   return {
     name: cdktf.stringToTerraform(struct!.name),
   }
+}
+
+
+export function serviceAccountImagePullSecretToHclTerraform(struct?: ServiceAccountImagePullSecret | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ServiceAccountImagePullSecretOutputReference extends cdktf.ComplexObject {
@@ -194,6 +208,49 @@ export function serviceAccountMetadataToTerraform(struct?: ServiceAccountMetadat
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
+}
+
+
+export function serviceAccountMetadataToHclTerraform(struct?: ServiceAccountMetadataOutputReference | ServiceAccountMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    generate_name: {
+      value: cdktf.stringToHclTerraform(struct!.generateName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ServiceAccountMetadataOutputReference extends cdktf.ComplexObject {
@@ -366,6 +423,25 @@ export function serviceAccountSecretToTerraform(struct?: ServiceAccountSecret | 
   }
 }
 
+
+export function serviceAccountSecretToHclTerraform(struct?: ServiceAccountSecret | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ServiceAccountSecretOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -461,6 +537,25 @@ export function serviceAccountTimeoutsToTerraform(struct?: ServiceAccountTimeout
   return {
     create: cdktf.stringToTerraform(struct!.create),
   }
+}
+
+
+export function serviceAccountTimeoutsToHclTerraform(struct?: ServiceAccountTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ServiceAccountTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -696,5 +791,49 @@ export class ServiceAccount extends cdktf.TerraformResource {
       secret: cdktf.listMapper(serviceAccountSecretToTerraform, true)(this._secret.internalValue),
       timeouts: serviceAccountTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      automount_service_account_token: {
+        value: cdktf.booleanToHclTerraform(this._automountServiceAccountToken),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      image_pull_secret: {
+        value: cdktf.listMapperHcl(serviceAccountImagePullSecretToHclTerraform, true)(this._imagePullSecret.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "ServiceAccountImagePullSecretList",
+      },
+      metadata: {
+        value: serviceAccountMetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ServiceAccountMetadataList",
+      },
+      secret: {
+        value: cdktf.listMapperHcl(serviceAccountSecretToHclTerraform, true)(this._secret.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "ServiceAccountSecretList",
+      },
+      timeouts: {
+        value: serviceAccountTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ServiceAccountTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }
