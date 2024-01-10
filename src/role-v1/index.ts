@@ -79,6 +79,49 @@ export function roleV1MetadataToTerraform(struct?: RoleV1MetadataOutputReference
   }
 }
 
+
+export function roleV1MetadataToHclTerraform(struct?: RoleV1MetadataOutputReference | RoleV1Metadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    generate_name: {
+      value: cdktf.stringToHclTerraform(struct!.generateName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class RoleV1MetadataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -268,6 +311,43 @@ export function roleV1RuleToTerraform(struct?: RoleV1Rule | cdktf.IResolvable): 
     resources: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.resources),
     verbs: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.verbs),
   }
+}
+
+
+export function roleV1RuleToHclTerraform(struct?: RoleV1Rule | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    api_groups: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.apiGroups),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    resource_names: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.resourceNames),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    resources: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.resources),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    verbs: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.verbs),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class RoleV1RuleOutputReference extends cdktf.ComplexObject {
@@ -520,5 +600,31 @@ export class RoleV1 extends cdktf.TerraformResource {
       metadata: roleV1MetadataToTerraform(this._metadata.internalValue),
       rule: cdktf.listMapper(roleV1RuleToTerraform, true)(this._rule.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: roleV1MetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "RoleV1MetadataList",
+      },
+      rule: {
+        value: cdktf.listMapperHcl(roleV1RuleToHclTerraform, true)(this._rule.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "RoleV1RuleList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

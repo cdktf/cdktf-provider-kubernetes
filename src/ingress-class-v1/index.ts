@@ -72,6 +72,43 @@ export function ingressClassV1MetadataToTerraform(struct?: IngressClassV1Metadat
   }
 }
 
+
+export function ingressClassV1MetadataToHclTerraform(struct?: IngressClassV1MetadataOutputReference | IngressClassV1Metadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    generate_name: {
+      value: cdktf.stringToHclTerraform(struct!.generateName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IngressClassV1MetadataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -242,6 +279,49 @@ export function ingressClassV1SpecParametersToTerraform(struct?: IngressClassV1S
     namespace: cdktf.stringToTerraform(struct!.namespace),
     scope: cdktf.stringToTerraform(struct!.scope),
   }
+}
+
+
+export function ingressClassV1SpecParametersToHclTerraform(struct?: IngressClassV1SpecParameters | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    api_group: {
+      value: cdktf.stringToHclTerraform(struct!.apiGroup),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    kind: {
+      value: cdktf.stringToHclTerraform(struct!.kind),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scope: {
+      value: cdktf.stringToHclTerraform(struct!.scope),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IngressClassV1SpecParametersOutputReference extends cdktf.ComplexObject {
@@ -432,6 +512,31 @@ export function ingressClassV1SpecToTerraform(struct?: IngressClassV1SpecOutputR
   }
 }
 
+
+export function ingressClassV1SpecToHclTerraform(struct?: IngressClassV1SpecOutputReference | IngressClassV1Spec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    controller: {
+      value: cdktf.stringToHclTerraform(struct!.controller),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    parameters: {
+      value: cdktf.listMapperHcl(ingressClassV1SpecParametersToHclTerraform, true)(struct!.parameters),
+      isBlock: true,
+      type: "list",
+      storageClassType: "IngressClassV1SpecParametersList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IngressClassV1SpecOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -615,5 +720,31 @@ export class IngressClassV1 extends cdktf.TerraformResource {
       metadata: ingressClassV1MetadataToTerraform(this._metadata.internalValue),
       spec: ingressClassV1SpecToTerraform(this._spec.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: ingressClassV1MetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IngressClassV1MetadataList",
+      },
+      spec: {
+        value: ingressClassV1SpecToHclTerraform(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IngressClassV1SpecList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

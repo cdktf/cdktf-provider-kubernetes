@@ -79,6 +79,49 @@ export function limitRangeV1MetadataToTerraform(struct?: LimitRangeV1MetadataOut
   }
 }
 
+
+export function limitRangeV1MetadataToHclTerraform(struct?: LimitRangeV1MetadataOutputReference | LimitRangeV1Metadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    generate_name: {
+      value: cdktf.stringToHclTerraform(struct!.generateName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LimitRangeV1MetadataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -282,6 +325,55 @@ export function limitRangeV1SpecLimitToTerraform(struct?: LimitRangeV1SpecLimit 
     min: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.min),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function limitRangeV1SpecLimitToHclTerraform(struct?: LimitRangeV1SpecLimit | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    default: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.default),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    default_request: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.defaultRequest),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    max: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.max),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    max_limit_request_ratio: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.maxLimitRequestRatio),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    min: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.min),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LimitRangeV1SpecLimitOutputReference extends cdktf.ComplexObject {
@@ -493,6 +585,25 @@ export function limitRangeV1SpecToTerraform(struct?: LimitRangeV1SpecOutputRefer
   }
 }
 
+
+export function limitRangeV1SpecToHclTerraform(struct?: LimitRangeV1SpecOutputReference | LimitRangeV1Spec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    limit: {
+      value: cdktf.listMapperHcl(limitRangeV1SpecLimitToHclTerraform, true)(struct!.limit),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LimitRangeV1SpecLimitList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LimitRangeV1SpecOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -657,5 +768,31 @@ export class LimitRangeV1 extends cdktf.TerraformResource {
       metadata: limitRangeV1MetadataToTerraform(this._metadata.internalValue),
       spec: limitRangeV1SpecToTerraform(this._spec.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: limitRangeV1MetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "LimitRangeV1MetadataList",
+      },
+      spec: {
+        value: limitRangeV1SpecToHclTerraform(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "LimitRangeV1SpecList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

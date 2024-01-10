@@ -7,12 +7,15 @@
 
 import { PodV1Metadata, 
 podV1MetadataToTerraform, 
+podV1MetadataToHclTerraform, 
 PodV1MetadataOutputReference, 
 PodV1Spec, 
 podV1SpecToTerraform, 
+podV1SpecToHclTerraform, 
 PodV1SpecOutputReference, 
 PodV1Timeouts, 
 podV1TimeoutsToTerraform, 
+podV1TimeoutsToHclTerraform, 
 PodV1TimeoutsOutputReference} from './index-structs'
 export * from './index-structs'
 import { Construct } from 'constructs';
@@ -199,5 +202,43 @@ export class PodV1 extends cdktf.TerraformResource {
       spec: podV1SpecToTerraform(this._spec.internalValue),
       timeouts: podV1TimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_state: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._targetState),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      metadata: {
+        value: podV1MetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "PodV1MetadataList",
+      },
+      spec: {
+        value: podV1SpecToHclTerraform(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "PodV1SpecList",
+      },
+      timeouts: {
+        value: podV1TimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "PodV1Timeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

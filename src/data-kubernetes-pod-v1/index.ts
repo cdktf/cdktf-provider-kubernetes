@@ -8,6 +8,7 @@
 import { DataKubernetesPodV1SpecList, 
 DataKubernetesPodV1Metadata, 
 dataKubernetesPodV1MetadataToTerraform, 
+dataKubernetesPodV1MetadataToHclTerraform, 
 DataKubernetesPodV1MetadataOutputReference} from './index-structs'
 export * from './index-structs'
 import { Construct } from 'constructs';
@@ -136,5 +137,25 @@ export class DataKubernetesPodV1 extends cdktf.TerraformDataSource {
       id: cdktf.stringToTerraform(this._id),
       metadata: dataKubernetesPodV1MetadataToTerraform(this._metadata.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: dataKubernetesPodV1MetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataKubernetesPodV1MetadataList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

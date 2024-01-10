@@ -7,12 +7,15 @@
 
 import { StatefulSetV1Metadata, 
 statefulSetV1MetadataToTerraform, 
+statefulSetV1MetadataToHclTerraform, 
 StatefulSetV1MetadataOutputReference, 
 StatefulSetV1Spec, 
 statefulSetV1SpecToTerraform, 
+statefulSetV1SpecToHclTerraform, 
 StatefulSetV1SpecOutputReference, 
 StatefulSetV1Timeouts, 
 statefulSetV1TimeoutsToTerraform, 
+statefulSetV1TimeoutsToHclTerraform, 
 StatefulSetV1TimeoutsOutputReference} from './index-structs'
 export * from './index-structs'
 import { Construct } from 'constructs';
@@ -199,5 +202,43 @@ export class StatefulSetV1 extends cdktf.TerraformResource {
       spec: statefulSetV1SpecToTerraform(this._spec.internalValue),
       timeouts: statefulSetV1TimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      wait_for_rollout: {
+        value: cdktf.booleanToHclTerraform(this._waitForRollout),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      metadata: {
+        value: statefulSetV1MetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "StatefulSetV1MetadataList",
+      },
+      spec: {
+        value: statefulSetV1SpecToHclTerraform(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "StatefulSetV1SpecList",
+      },
+      timeouts: {
+        value: statefulSetV1TimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "StatefulSetV1Timeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

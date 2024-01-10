@@ -38,6 +38,17 @@ export function dataKubernetesServiceSpecPortToTerraform(struct?: DataKubernetes
   }
 }
 
+
+export function dataKubernetesServiceSpecPortToHclTerraform(struct?: DataKubernetesServiceSpecPort): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesServiceSpecPortOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -127,6 +138,17 @@ export function dataKubernetesServiceSpecSessionAffinityConfigClientIpToTerrafor
   }
 }
 
+
+export function dataKubernetesServiceSpecSessionAffinityConfigClientIpToHclTerraform(struct?: DataKubernetesServiceSpecSessionAffinityConfigClientIp): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesServiceSpecSessionAffinityConfigClientIpOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -189,6 +211,17 @@ export function dataKubernetesServiceSpecSessionAffinityConfigToTerraform(struct
   }
   return {
   }
+}
+
+
+export function dataKubernetesServiceSpecSessionAffinityConfigToHclTerraform(struct?: DataKubernetesServiceSpecSessionAffinityConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesServiceSpecSessionAffinityConfigOutputReference extends cdktf.ComplexObject {
@@ -254,6 +287,17 @@ export function dataKubernetesServiceSpecToTerraform(struct?: DataKubernetesServ
   }
   return {
   }
+}
+
+
+export function dataKubernetesServiceSpecToHclTerraform(struct?: DataKubernetesServiceSpec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesServiceSpecOutputReference extends cdktf.ComplexObject {
@@ -413,6 +457,17 @@ export function dataKubernetesServiceStatusLoadBalancerIngressToTerraform(struct
   }
 }
 
+
+export function dataKubernetesServiceStatusLoadBalancerIngressToHclTerraform(struct?: DataKubernetesServiceStatusLoadBalancerIngress): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesServiceStatusLoadBalancerIngressOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -482,6 +537,17 @@ export function dataKubernetesServiceStatusLoadBalancerToTerraform(struct?: Data
   }
 }
 
+
+export function dataKubernetesServiceStatusLoadBalancerToHclTerraform(struct?: DataKubernetesServiceStatusLoadBalancer): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataKubernetesServiceStatusLoadBalancerOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -545,6 +611,17 @@ export function dataKubernetesServiceStatusToTerraform(struct?: DataKubernetesSe
   }
   return {
   }
+}
+
+
+export function dataKubernetesServiceStatusToHclTerraform(struct?: DataKubernetesServiceStatus): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataKubernetesServiceStatusOutputReference extends cdktf.ComplexObject {
@@ -638,6 +715,43 @@ export function dataKubernetesServiceMetadataToTerraform(struct?: DataKubernetes
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
+}
+
+
+export function dataKubernetesServiceMetadataToHclTerraform(struct?: DataKubernetesServiceMetadataOutputReference | DataKubernetesServiceMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataKubernetesServiceMetadataOutputReference extends cdktf.ComplexObject {
@@ -879,5 +993,25 @@ export class DataKubernetesService extends cdktf.TerraformDataSource {
       id: cdktf.stringToTerraform(this._id),
       metadata: dataKubernetesServiceMetadataToTerraform(this._metadata.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: dataKubernetesServiceMetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataKubernetesServiceMetadataList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

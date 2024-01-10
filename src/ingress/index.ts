@@ -50,6 +50,17 @@ export function ingressStatusLoadBalancerIngressToTerraform(struct?: IngressStat
   }
 }
 
+
+export function ingressStatusLoadBalancerIngressToHclTerraform(struct?: IngressStatusLoadBalancerIngress): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class IngressStatusLoadBalancerIngressOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -119,6 +130,17 @@ export function ingressStatusLoadBalancerToTerraform(struct?: IngressStatusLoadB
   }
 }
 
+
+export function ingressStatusLoadBalancerToHclTerraform(struct?: IngressStatusLoadBalancer): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class IngressStatusLoadBalancerOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -182,6 +204,17 @@ export function ingressStatusToTerraform(struct?: IngressStatus): any {
   }
   return {
   }
+}
+
+
+export function ingressStatusToHclTerraform(struct?: IngressStatus): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IngressStatusOutputReference extends cdktf.ComplexObject {
@@ -282,6 +315,49 @@ export function ingressMetadataToTerraform(struct?: IngressMetadataOutputReferen
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
+}
+
+
+export function ingressMetadataToHclTerraform(struct?: IngressMetadataOutputReference | IngressMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    generate_name: {
+      value: cdktf.stringToHclTerraform(struct!.generateName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IngressMetadataOutputReference extends cdktf.ComplexObject {
@@ -461,6 +537,31 @@ export function ingressSpecBackendToTerraform(struct?: IngressSpecBackendOutputR
   }
 }
 
+
+export function ingressSpecBackendToHclTerraform(struct?: IngressSpecBackendOutputReference | IngressSpecBackend): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    service_name: {
+      value: cdktf.stringToHclTerraform(struct!.serviceName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    service_port: {
+      value: cdktf.stringToHclTerraform(struct!.servicePort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IngressSpecBackendOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -557,6 +658,31 @@ export function ingressSpecRuleHttpPathBackendToTerraform(struct?: IngressSpecRu
   }
 }
 
+
+export function ingressSpecRuleHttpPathBackendToHclTerraform(struct?: IngressSpecRuleHttpPathBackendOutputReference | IngressSpecRuleHttpPathBackend): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    service_name: {
+      value: cdktf.stringToHclTerraform(struct!.serviceName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    service_port: {
+      value: cdktf.stringToHclTerraform(struct!.servicePort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IngressSpecRuleHttpPathBackendOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -651,6 +777,31 @@ export function ingressSpecRuleHttpPathToTerraform(struct?: IngressSpecRuleHttpP
     path: cdktf.stringToTerraform(struct!.path),
     backend: ingressSpecRuleHttpPathBackendToTerraform(struct!.backend),
   }
+}
+
+
+export function ingressSpecRuleHttpPathToHclTerraform(struct?: IngressSpecRuleHttpPath | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    backend: {
+      value: ingressSpecRuleHttpPathBackendToHclTerraform(struct!.backend),
+      isBlock: true,
+      type: "list",
+      storageClassType: "IngressSpecRuleHttpPathBackendList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IngressSpecRuleHttpPathOutputReference extends cdktf.ComplexObject {
@@ -774,6 +925,25 @@ export function ingressSpecRuleHttpToTerraform(struct?: IngressSpecRuleHttpOutpu
   }
 }
 
+
+export function ingressSpecRuleHttpToHclTerraform(struct?: IngressSpecRuleHttpOutputReference | IngressSpecRuleHttp): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    path: {
+      value: cdktf.listMapperHcl(ingressSpecRuleHttpPathToHclTerraform, true)(struct!.path),
+      isBlock: true,
+      type: "list",
+      storageClassType: "IngressSpecRuleHttpPathList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IngressSpecRuleHttpOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -850,6 +1020,31 @@ export function ingressSpecRuleToTerraform(struct?: IngressSpecRule | cdktf.IRes
     host: cdktf.stringToTerraform(struct!.host),
     http: ingressSpecRuleHttpToTerraform(struct!.http),
   }
+}
+
+
+export function ingressSpecRuleToHclTerraform(struct?: IngressSpecRule | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    host: {
+      value: cdktf.stringToHclTerraform(struct!.host),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    http: {
+      value: ingressSpecRuleHttpToHclTerraform(struct!.http),
+      isBlock: true,
+      type: "list",
+      storageClassType: "IngressSpecRuleHttpList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IngressSpecRuleOutputReference extends cdktf.ComplexObject {
@@ -975,6 +1170,31 @@ export function ingressSpecTlsToTerraform(struct?: IngressSpecTls | cdktf.IResol
     hosts: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.hosts),
     secret_name: cdktf.stringToTerraform(struct!.secretName),
   }
+}
+
+
+export function ingressSpecTlsToHclTerraform(struct?: IngressSpecTls | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    hosts: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.hosts),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    secret_name: {
+      value: cdktf.stringToHclTerraform(struct!.secretName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IngressSpecTlsOutputReference extends cdktf.ComplexObject {
@@ -1117,6 +1337,43 @@ export function ingressSpecToTerraform(struct?: IngressSpecOutputReference | Ing
     rule: cdktf.listMapper(ingressSpecRuleToTerraform, true)(struct!.rule),
     tls: cdktf.listMapper(ingressSpecTlsToTerraform, true)(struct!.tls),
   }
+}
+
+
+export function ingressSpecToHclTerraform(struct?: IngressSpecOutputReference | IngressSpec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ingress_class_name: {
+      value: cdktf.stringToHclTerraform(struct!.ingressClassName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    backend: {
+      value: ingressSpecBackendToHclTerraform(struct!.backend),
+      isBlock: true,
+      type: "list",
+      storageClassType: "IngressSpecBackendList",
+    },
+    rule: {
+      value: cdktf.listMapperHcl(ingressSpecRuleToHclTerraform, true)(struct!.rule),
+      isBlock: true,
+      type: "list",
+      storageClassType: "IngressSpecRuleList",
+    },
+    tls: {
+      value: cdktf.listMapperHcl(ingressSpecTlsToHclTerraform, true)(struct!.tls),
+      isBlock: true,
+      type: "list",
+      storageClassType: "IngressSpecTlsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IngressSpecOutputReference extends cdktf.ComplexObject {
@@ -1370,5 +1627,37 @@ export class Ingress extends cdktf.TerraformResource {
       metadata: ingressMetadataToTerraform(this._metadata.internalValue),
       spec: ingressSpecToTerraform(this._spec.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      wait_for_load_balancer: {
+        value: cdktf.booleanToHclTerraform(this._waitForLoadBalancer),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      metadata: {
+        value: ingressMetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IngressMetadataList",
+      },
+      spec: {
+        value: ingressSpecToHclTerraform(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IngressSpecList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

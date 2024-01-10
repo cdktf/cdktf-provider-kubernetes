@@ -159,6 +159,43 @@ export function kubernetesProviderExecToTerraform(struct?: KubernetesProviderExe
   }
 }
 
+
+export function kubernetesProviderExecToHclTerraform(struct?: KubernetesProviderExec | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    api_version: {
+      value: cdktf.stringToHclTerraform(struct!.apiVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    args: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.args),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    command: {
+      value: cdktf.stringToHclTerraform(struct!.command),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    env: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.env),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export interface KubernetesProviderExperiments {
   /**
   * Enable the `kubernetes_manifest` resource.
@@ -176,6 +213,25 @@ export function kubernetesProviderExperimentsToTerraform(struct?: KubernetesProv
   return {
     manifest_resource: cdktf.booleanToTerraform(struct!.manifestResource),
   }
+}
+
+
+export function kubernetesProviderExperimentsToHclTerraform(struct?: KubernetesProviderExperiments | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    manifest_resource: {
+      value: cdktf.booleanToHclTerraform(struct!.manifestResource),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 
@@ -597,5 +653,133 @@ export class KubernetesProvider extends cdktf.TerraformProvider {
       exec: cdktf.listMapper(kubernetesProviderExecToTerraform, true)(this._exec),
       experiments: cdktf.listMapper(kubernetesProviderExperimentsToTerraform, true)(this._experiments),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      client_certificate: {
+        value: cdktf.stringToHclTerraform(this._clientCertificate),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      client_key: {
+        value: cdktf.stringToHclTerraform(this._clientKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cluster_ca_certificate: {
+        value: cdktf.stringToHclTerraform(this._clusterCaCertificate),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      config_context: {
+        value: cdktf.stringToHclTerraform(this._configContext),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      config_context_auth_info: {
+        value: cdktf.stringToHclTerraform(this._configContextAuthInfo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      config_context_cluster: {
+        value: cdktf.stringToHclTerraform(this._configContextCluster),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      config_path: {
+        value: cdktf.stringToHclTerraform(this._configPath),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      config_paths: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._configPaths),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      host: {
+        value: cdktf.stringToHclTerraform(this._host),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ignore_annotations: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._ignoreAnnotations),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      ignore_labels: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._ignoreLabels),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      insecure: {
+        value: cdktf.booleanToHclTerraform(this._insecure),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      password: {
+        value: cdktf.stringToHclTerraform(this._password),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      proxy_url: {
+        value: cdktf.stringToHclTerraform(this._proxyUrl),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      tls_server_name: {
+        value: cdktf.stringToHclTerraform(this._tlsServerName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      token: {
+        value: cdktf.stringToHclTerraform(this._token),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      username: {
+        value: cdktf.stringToHclTerraform(this._username),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      alias: {
+        value: cdktf.stringToHclTerraform(this._alias),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      exec: {
+        value: cdktf.listMapperHcl(kubernetesProviderExecToHclTerraform, true)(this._exec),
+        isBlock: true,
+        type: "list",
+        storageClassType: "KubernetesProviderExecList",
+      },
+      experiments: {
+        value: cdktf.listMapperHcl(kubernetesProviderExperimentsToHclTerraform, true)(this._experiments),
+        isBlock: true,
+        type: "list",
+        storageClassType: "KubernetesProviderExperimentsList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

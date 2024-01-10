@@ -7,12 +7,15 @@
 
 import { DeploymentV1Metadata, 
 deploymentV1MetadataToTerraform, 
+deploymentV1MetadataToHclTerraform, 
 DeploymentV1MetadataOutputReference, 
 DeploymentV1Spec, 
 deploymentV1SpecToTerraform, 
+deploymentV1SpecToHclTerraform, 
 DeploymentV1SpecOutputReference, 
 DeploymentV1Timeouts, 
 deploymentV1TimeoutsToTerraform, 
+deploymentV1TimeoutsToHclTerraform, 
 DeploymentV1TimeoutsOutputReference} from './index-structs'
 export * from './index-structs'
 import { Construct } from 'constructs';
@@ -199,5 +202,43 @@ export class DeploymentV1 extends cdktf.TerraformResource {
       spec: deploymentV1SpecToTerraform(this._spec.internalValue),
       timeouts: deploymentV1TimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      wait_for_rollout: {
+        value: cdktf.booleanToHclTerraform(this._waitForRollout),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      metadata: {
+        value: deploymentV1MetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DeploymentV1MetadataList",
+      },
+      spec: {
+        value: deploymentV1SpecToHclTerraform(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DeploymentV1SpecList",
+      },
+      timeouts: {
+        value: deploymentV1TimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DeploymentV1Timeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

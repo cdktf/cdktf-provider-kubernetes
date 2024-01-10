@@ -63,6 +63,25 @@ export function nodeTaintMetadataToTerraform(struct?: NodeTaintMetadataOutputRef
   }
 }
 
+
+export function nodeTaintMetadataToHclTerraform(struct?: NodeTaintMetadataOutputReference | NodeTaintMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class NodeTaintMetadataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -139,6 +158,37 @@ export function nodeTaintTaintToTerraform(struct?: NodeTaintTaint | cdktf.IResol
     key: cdktf.stringToTerraform(struct!.key),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function nodeTaintTaintToHclTerraform(struct?: NodeTaintTaint | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    effect: {
+      value: cdktf.stringToHclTerraform(struct!.effect),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class NodeTaintTaintOutputReference extends cdktf.ComplexObject {
@@ -405,5 +455,43 @@ export class NodeTaint extends cdktf.TerraformResource {
       metadata: nodeTaintMetadataToTerraform(this._metadata.internalValue),
       taint: cdktf.listMapper(nodeTaintTaintToTerraform, true)(this._taint.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      field_manager: {
+        value: cdktf.stringToHclTerraform(this._fieldManager),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      force: {
+        value: cdktf.booleanToHclTerraform(this._force),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: nodeTaintMetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "NodeTaintMetadataList",
+      },
+      taint: {
+        value: cdktf.listMapperHcl(nodeTaintTaintToHclTerraform, true)(this._taint.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "NodeTaintTaintList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

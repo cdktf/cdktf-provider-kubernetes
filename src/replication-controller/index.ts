@@ -7,12 +7,15 @@
 
 import { ReplicationControllerMetadata, 
 replicationControllerMetadataToTerraform, 
+replicationControllerMetadataToHclTerraform, 
 ReplicationControllerMetadataOutputReference, 
 ReplicationControllerSpec, 
 replicationControllerSpecToTerraform, 
+replicationControllerSpecToHclTerraform, 
 ReplicationControllerSpecOutputReference, 
 ReplicationControllerTimeouts, 
 replicationControllerTimeoutsToTerraform, 
+replicationControllerTimeoutsToHclTerraform, 
 ReplicationControllerTimeoutsOutputReference} from './index-structs'
 export * from './index-structs'
 import { Construct } from 'constructs';
@@ -175,5 +178,37 @@ export class ReplicationController extends cdktf.TerraformResource {
       spec: replicationControllerSpecToTerraform(this._spec.internalValue),
       timeouts: replicationControllerTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: replicationControllerMetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ReplicationControllerMetadataList",
+      },
+      spec: {
+        value: replicationControllerSpecToHclTerraform(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ReplicationControllerSpecList",
+      },
+      timeouts: {
+        value: replicationControllerTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ReplicationControllerTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

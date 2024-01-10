@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesResource.DataKubernetesResource.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesresource"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/datakubernetesresource"
 
 datakubernetesresource.NewDataKubernetesResource(scope Construct, id *string, config DataKubernetesResourceConfig) DataKubernetesResource
 ```
@@ -54,6 +54,7 @@ Must be unique amongst siblings in the same scope
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResource.DataKubernetesResource.addOverride">AddOverride</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResource.DataKubernetesResource.overrideLogicalId">OverrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResource.DataKubernetesResource.resetOverrideLogicalId">ResetOverrideLogicalId</a></code> | Resets a previously passed logical Id to use the auto-generated logical id again. |
+| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResource.DataKubernetesResource.toHclTerraform">ToHclTerraform</a></code> | Adds this resource to the terraform JSON output. |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResource.DataKubernetesResource.toMetadata">ToMetadata</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResource.DataKubernetesResource.toTerraform">ToTerraform</a></code> | Adds this resource to the terraform JSON output. |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesResource.DataKubernetesResource.getAnyMapAttribute">GetAnyMapAttribute</a></code> | *No description.* |
@@ -120,6 +121,14 @@ func ResetOverrideLogicalId()
 ```
 
 Resets a previously passed logical Id to use the auto-generated logical id again.
+
+##### `ToHclTerraform` <a name="ToHclTerraform" id="@cdktf/provider-kubernetes.dataKubernetesResource.DataKubernetesResource.toHclTerraform"></a>
+
+```go
+func ToHclTerraform() interface{}
+```
+
+Adds this resource to the terraform JSON output.
 
 ##### `ToMetadata` <a name="ToMetadata" id="@cdktf/provider-kubernetes.dataKubernetesResource.DataKubernetesResource.toMetadata"></a>
 
@@ -287,7 +296,7 @@ func ResetObject()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.dataKubernetesResource.DataKubernetesResource.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesresource"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/datakubernetesresource"
 
 datakubernetesresource.DataKubernetesResource_IsConstruct(x interface{}) *bool
 ```
@@ -319,7 +328,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.dataKubernetesResource.DataKubernetesResource.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesresource"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/datakubernetesresource"
 
 datakubernetesresource.DataKubernetesResource_IsTerraformElement(x interface{}) *bool
 ```
@@ -333,7 +342,7 @@ datakubernetesresource.DataKubernetesResource_IsTerraformElement(x interface{}) 
 ##### `IsTerraformDataSource` <a name="IsTerraformDataSource" id="@cdktf/provider-kubernetes.dataKubernetesResource.DataKubernetesResource.isTerraformDataSource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesresource"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/datakubernetesresource"
 
 datakubernetesresource.DataKubernetesResource_IsTerraformDataSource(x interface{}) *bool
 ```
@@ -347,7 +356,7 @@ datakubernetesresource.DataKubernetesResource_IsTerraformDataSource(x interface{
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.dataKubernetesResource.DataKubernetesResource.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesresource"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/datakubernetesresource"
 
 datakubernetesresource.DataKubernetesResource_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -642,7 +651,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesResource.DataKubernetesResourceConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesresource"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/datakubernetesresource"
 
 &datakubernetesresource.DataKubernetesResourceConfig {
 	Connection: interface{},
@@ -654,7 +663,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakuberne
 	Provisioners: *[]interface{},
 	ApiVersion: *string,
 	Kind: *string,
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.dataKubernetesResource.DataKubernetesResourceMetadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.dataKubernetesResource.DataKubernetesResourceMetadata,
 	Object: *map[string]interface{},
 }
 ```
@@ -808,7 +817,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesResource.DataKubernetesResourceMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesresource"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/datakubernetesresource"
 
 &datakubernetesresource.DataKubernetesResourceMetadata {
 	Name: *string,
@@ -860,7 +869,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesResource.DataKubernetesResourceMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/datakubernetesresource"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/datakubernetesresource"
 
 datakubernetesresource.NewDataKubernetesResourceMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) DataKubernetesResourceMetadataOutputReference
 ```

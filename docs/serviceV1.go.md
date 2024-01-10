@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 servicev1.NewServiceV1(scope Construct, id *string, config ServiceV1Config) ServiceV1
 ```
@@ -54,6 +54,7 @@ Must be unique amongst siblings in the same scope
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1.addOverride">AddOverride</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1.overrideLogicalId">OverrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1.resetOverrideLogicalId">ResetOverrideLogicalId</a></code> | Resets a previously passed logical Id to use the auto-generated logical id again. |
+| <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1.toHclTerraform">ToHclTerraform</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1.toMetadata">ToMetadata</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1.toTerraform">ToTerraform</a></code> | Adds this resource to the terraform JSON output. |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1.addMoveTarget">AddMoveTarget</a></code> | Adds a user defined moveTarget string to this resource to be later used in .moveTo(moveTarget) to resolve the location of the move. |
@@ -130,6 +131,12 @@ func ResetOverrideLogicalId()
 ```
 
 Resets a previously passed logical Id to use the auto-generated logical id again.
+
+##### `ToHclTerraform` <a name="ToHclTerraform" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1.toHclTerraform"></a>
+
+```go
+func ToHclTerraform() interface{}
+```
 
 ##### `ToMetadata` <a name="ToMetadata" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1.toMetadata"></a>
 
@@ -431,7 +438,7 @@ func ResetWaitForLoadBalancer()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 servicev1.ServiceV1_IsConstruct(x interface{}) *bool
 ```
@@ -463,7 +470,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 servicev1.ServiceV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -477,7 +484,7 @@ servicev1.ServiceV1_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 servicev1.ServiceV1_IsTerraformResource(x interface{}) *bool
 ```
@@ -491,7 +498,7 @@ servicev1.ServiceV1_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 servicev1.ServiceV1_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -841,7 +848,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 &servicev1.ServiceV1Config {
 	Connection: interface{},
@@ -851,10 +858,10 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.serviceV1.ServiceV1Metadata,
-	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.serviceV1.ServiceV1Spec,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.serviceV1.ServiceV1Metadata,
+	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.serviceV1.ServiceV1Spec,
 	Id: *string,
-	Timeouts: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.serviceV1.ServiceV1Timeouts,
+	Timeouts: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.serviceV1.ServiceV1Timeouts,
 	WaitForLoadBalancer: interface{},
 }
 ```
@@ -1024,7 +1031,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 &servicev1.ServiceV1Metadata {
 	Annotations: *map[string]*string,
@@ -1128,7 +1135,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1Spec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 &servicev1.ServiceV1Spec {
 	AllocateLoadBalancerNodePorts: interface{},
@@ -1148,7 +1155,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
 	PublishNotReadyAddresses: interface{},
 	Selector: *map[string]*string,
 	SessionAffinity: *string,
-	SessionAffinityConfig: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.serviceV1.ServiceV1SpecSessionAffinityConfig,
+	SessionAffinityConfig: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.serviceV1.ServiceV1SpecSessionAffinityConfig,
 	Type: *string,
 }
 ```
@@ -1480,7 +1487,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1SpecPort.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 &servicev1.ServiceV1SpecPort {
 	Port: *f64,
@@ -1602,10 +1609,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1SpecSessionAffinityConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 &servicev1.ServiceV1SpecSessionAffinityConfig {
-	ClientIp: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.serviceV1.ServiceV1SpecSessionAffinityConfigClientIp,
+	ClientIp: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.serviceV1.ServiceV1SpecSessionAffinityConfigClientIp,
 }
 ```
 
@@ -1636,7 +1643,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1SpecSessionAffinityConfigClientIp.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 &servicev1.ServiceV1SpecSessionAffinityConfigClientIp {
 	TimeoutSeconds: *f64,
@@ -1672,7 +1679,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1Status.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 &servicev1.ServiceV1Status {
 
@@ -1685,7 +1692,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancer.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 &servicev1.ServiceV1StatusLoadBalancer {
 
@@ -1698,7 +1705,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancerIngress.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 &servicev1.ServiceV1StatusLoadBalancerIngress {
 
@@ -1711,7 +1718,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1Timeouts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 &servicev1.ServiceV1Timeouts {
 	Create: *string,
@@ -1745,7 +1752,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 servicev1.NewServiceV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceV1MetadataOutputReference
 ```
@@ -2172,7 +2179,7 @@ func InternalValue() ServiceV1Metadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1SpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 servicev1.NewServiceV1SpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceV1SpecOutputReference
 ```
@@ -2998,7 +3005,7 @@ func InternalValue() ServiceV1Spec
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1SpecPortList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 servicev1.NewServiceV1SpecPortList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceV1SpecPortList
 ```
@@ -3039,10 +3046,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1SpecPortList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1SpecPortList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1SpecPortList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1SpecPortList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1SpecPortList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1SpecPortList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1SpecPortList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -3141,7 +3165,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1SpecPortOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 servicev1.NewServiceV1SpecPortOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceV1SpecPortOutputReference
 ```
@@ -3575,7 +3599,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1SpecSessionAffinityConfigClientIpOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 servicev1.NewServiceV1SpecSessionAffinityConfigClientIpOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceV1SpecSessionAffinityConfigClientIpOutputReference
 ```
@@ -3853,7 +3877,7 @@ func InternalValue() ServiceV1SpecSessionAffinityConfigClientIp
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1SpecSessionAffinityConfigOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 servicev1.NewServiceV1SpecSessionAffinityConfigOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceV1SpecSessionAffinityConfigOutputReference
 ```
@@ -4144,7 +4168,7 @@ func InternalValue() ServiceV1SpecSessionAffinityConfig
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 servicev1.NewServiceV1StatusList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceV1StatusList
 ```
@@ -4185,10 +4209,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -4276,7 +4317,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancerIngressList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 servicev1.NewServiceV1StatusLoadBalancerIngressList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceV1StatusLoadBalancerIngressList
 ```
@@ -4317,10 +4358,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancerIngressList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancerIngressList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancerIngressList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancerIngressList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancerIngressList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancerIngressList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancerIngressList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -4408,7 +4466,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancerIngressOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 servicev1.NewServiceV1StatusLoadBalancerIngressOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceV1StatusLoadBalancerIngressOutputReference
 ```
@@ -4697,7 +4755,7 @@ func InternalValue() ServiceV1StatusLoadBalancerIngress
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancerList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 servicev1.NewServiceV1StatusLoadBalancerList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceV1StatusLoadBalancerList
 ```
@@ -4738,10 +4796,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancerList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancerList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancerList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancerList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancerList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancerList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancerList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -4829,7 +4904,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusLoadBalancerOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 servicev1.NewServiceV1StatusLoadBalancerOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceV1StatusLoadBalancerOutputReference
 ```
@@ -5107,7 +5182,7 @@ func InternalValue() ServiceV1StatusLoadBalancer
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1StatusOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 servicev1.NewServiceV1StatusOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceV1StatusOutputReference
 ```
@@ -5385,7 +5460,7 @@ func InternalValue() ServiceV1Status
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.serviceV1.ServiceV1TimeoutsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/servicev1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/servicev1"
 
 servicev1.NewServiceV1TimeoutsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceV1TimeoutsOutputReference
 ```

@@ -71,6 +71,37 @@ export function clusterRoleV1AggregationRuleClusterRoleSelectorsMatchExpressions
   }
 }
 
+
+export function clusterRoleV1AggregationRuleClusterRoleSelectorsMatchExpressionsToHclTerraform(struct?: ClusterRoleV1AggregationRuleClusterRoleSelectorsMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ClusterRoleV1AggregationRuleClusterRoleSelectorsMatchExpressionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -221,6 +252,31 @@ export function clusterRoleV1AggregationRuleClusterRoleSelectorsToTerraform(stru
   }
 }
 
+
+export function clusterRoleV1AggregationRuleClusterRoleSelectorsToHclTerraform(struct?: ClusterRoleV1AggregationRuleClusterRoleSelectors | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    match_labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.matchLabels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    match_expressions: {
+      value: cdktf.listMapperHcl(clusterRoleV1AggregationRuleClusterRoleSelectorsMatchExpressionsToHclTerraform, true)(struct!.matchExpressions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ClusterRoleV1AggregationRuleClusterRoleSelectorsMatchExpressionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ClusterRoleV1AggregationRuleClusterRoleSelectorsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -342,6 +398,25 @@ export function clusterRoleV1AggregationRuleToTerraform(struct?: ClusterRoleV1Ag
   }
 }
 
+
+export function clusterRoleV1AggregationRuleToHclTerraform(struct?: ClusterRoleV1AggregationRuleOutputReference | ClusterRoleV1AggregationRule): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    cluster_role_selectors: {
+      value: cdktf.listMapperHcl(clusterRoleV1AggregationRuleClusterRoleSelectorsToHclTerraform, true)(struct!.clusterRoleSelectors),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ClusterRoleV1AggregationRuleClusterRoleSelectorsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ClusterRoleV1AggregationRuleOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -428,6 +503,43 @@ export function clusterRoleV1MetadataToTerraform(struct?: ClusterRoleV1MetadataO
     labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     name: cdktf.stringToTerraform(struct!.name),
   }
+}
+
+
+export function clusterRoleV1MetadataToHclTerraform(struct?: ClusterRoleV1MetadataOutputReference | ClusterRoleV1Metadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    generate_name: {
+      value: cdktf.stringToHclTerraform(struct!.generateName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ClusterRoleV1MetadataOutputReference extends cdktf.ComplexObject {
@@ -604,6 +716,49 @@ export function clusterRoleV1RuleToTerraform(struct?: ClusterRoleV1Rule | cdktf.
     resources: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.resources),
     verbs: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.verbs),
   }
+}
+
+
+export function clusterRoleV1RuleToHclTerraform(struct?: ClusterRoleV1Rule | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    api_groups: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.apiGroups),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    non_resource_urls: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.nonResourceUrls),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    resource_names: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.resourceNames),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    resources: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.resources),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    verbs: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.verbs),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ClusterRoleV1RuleOutputReference extends cdktf.ComplexObject {
@@ -905,5 +1060,37 @@ export class ClusterRoleV1 extends cdktf.TerraformResource {
       metadata: clusterRoleV1MetadataToTerraform(this._metadata.internalValue),
       rule: cdktf.listMapper(clusterRoleV1RuleToTerraform, true)(this._rule.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      aggregation_rule: {
+        value: clusterRoleV1AggregationRuleToHclTerraform(this._aggregationRule.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ClusterRoleV1AggregationRuleList",
+      },
+      metadata: {
+        value: clusterRoleV1MetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ClusterRoleV1MetadataList",
+      },
+      rule: {
+        value: cdktf.listMapperHcl(clusterRoleV1RuleToHclTerraform, true)(this._rule.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ClusterRoleV1RuleList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

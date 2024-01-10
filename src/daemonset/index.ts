@@ -7,12 +7,15 @@
 
 import { DaemonsetMetadata, 
 daemonsetMetadataToTerraform, 
+daemonsetMetadataToHclTerraform, 
 DaemonsetMetadataOutputReference, 
 DaemonsetSpec, 
 daemonsetSpecToTerraform, 
+daemonsetSpecToHclTerraform, 
 DaemonsetSpecOutputReference, 
 DaemonsetTimeouts, 
 daemonsetTimeoutsToTerraform, 
+daemonsetTimeoutsToHclTerraform, 
 DaemonsetTimeoutsOutputReference} from './index-structs'
 export * from './index-structs'
 import { Construct } from 'constructs';
@@ -199,5 +202,43 @@ export class Daemonset extends cdktf.TerraformResource {
       spec: daemonsetSpecToTerraform(this._spec.internalValue),
       timeouts: daemonsetTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      wait_for_rollout: {
+        value: cdktf.booleanToHclTerraform(this._waitForRollout),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      metadata: {
+        value: daemonsetMetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DaemonsetMetadataList",
+      },
+      spec: {
+        value: daemonsetSpecToHclTerraform(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DaemonsetSpecList",
+      },
+      timeouts: {
+        value: daemonsetTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DaemonsetTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

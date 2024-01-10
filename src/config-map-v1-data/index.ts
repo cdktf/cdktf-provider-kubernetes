@@ -70,6 +70,31 @@ export function configMapV1DataMetadataToTerraform(struct?: ConfigMapV1DataMetad
   }
 }
 
+
+export function configMapV1DataMetadataToHclTerraform(struct?: ConfigMapV1DataMetadataOutputReference | ConfigMapV1DataMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ConfigMapV1DataMetadataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -286,5 +311,43 @@ export class ConfigMapV1Data extends cdktf.TerraformResource {
       id: cdktf.stringToTerraform(this._id),
       metadata: configMapV1DataMetadataToTerraform(this._metadata.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      data: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._data),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      field_manager: {
+        value: cdktf.stringToHclTerraform(this._fieldManager),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      force: {
+        value: cdktf.booleanToHclTerraform(this._force),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: configMapV1DataMetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ConfigMapV1DataMetadataList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

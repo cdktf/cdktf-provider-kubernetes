@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBinding.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/clusterrolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/clusterrolebinding"
 
 clusterrolebinding.NewClusterRoleBinding(scope Construct, id *string, config ClusterRoleBindingConfig) ClusterRoleBinding
 ```
@@ -54,6 +54,7 @@ Must be unique amongst siblings in the same scope
 | <code><a href="#@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBinding.addOverride">AddOverride</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBinding.overrideLogicalId">OverrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBinding.resetOverrideLogicalId">ResetOverrideLogicalId</a></code> | Resets a previously passed logical Id to use the auto-generated logical id again. |
+| <code><a href="#@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBinding.toHclTerraform">ToHclTerraform</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBinding.toMetadata">ToMetadata</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBinding.toTerraform">ToTerraform</a></code> | Adds this resource to the terraform JSON output. |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBinding.addMoveTarget">AddMoveTarget</a></code> | Adds a user defined moveTarget string to this resource to be later used in .moveTo(moveTarget) to resolve the location of the move. |
@@ -128,6 +129,12 @@ func ResetOverrideLogicalId()
 ```
 
 Resets a previously passed logical Id to use the auto-generated logical id again.
+
+##### `ToHclTerraform` <a name="ToHclTerraform" id="@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBinding.toHclTerraform"></a>
+
+```go
+func ToHclTerraform() interface{}
+```
 
 ##### `ToMetadata` <a name="ToMetadata" id="@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBinding.toMetadata"></a>
 
@@ -417,7 +424,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBinding.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/clusterrolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/clusterrolebinding"
 
 clusterrolebinding.ClusterRoleBinding_IsConstruct(x interface{}) *bool
 ```
@@ -449,7 +456,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBinding.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/clusterrolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/clusterrolebinding"
 
 clusterrolebinding.ClusterRoleBinding_IsTerraformElement(x interface{}) *bool
 ```
@@ -463,7 +470,7 @@ clusterrolebinding.ClusterRoleBinding_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBinding.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/clusterrolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/clusterrolebinding"
 
 clusterrolebinding.ClusterRoleBinding_IsTerraformResource(x interface{}) *bool
 ```
@@ -477,7 +484,7 @@ clusterrolebinding.ClusterRoleBinding_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBinding.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/clusterrolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/clusterrolebinding"
 
 clusterrolebinding.ClusterRoleBinding_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -794,7 +801,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBindingConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/clusterrolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/clusterrolebinding"
 
 &clusterrolebinding.ClusterRoleBindingConfig {
 	Connection: interface{},
@@ -804,8 +811,8 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/clusterrole
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.clusterRoleBinding.ClusterRoleBindingMetadata,
-	RoleRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.clusterRoleBinding.ClusterRoleBindingRoleRef,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.clusterRoleBinding.ClusterRoleBindingMetadata,
+	RoleRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.clusterRoleBinding.ClusterRoleBindingRoleRef,
 	Subject: interface{},
 	Id: *string,
 }
@@ -961,7 +968,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBindingMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/clusterrolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/clusterrolebinding"
 
 &clusterrolebinding.ClusterRoleBindingMetadata {
 	Annotations: *map[string]*string,
@@ -1049,7 +1056,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBindingRoleRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/clusterrolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/clusterrolebinding"
 
 &clusterrolebinding.ClusterRoleBindingRoleRef {
 	ApiGroup: *string,
@@ -1115,7 +1122,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBindingSubject.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/clusterrolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/clusterrolebinding"
 
 &clusterrolebinding.ClusterRoleBindingSubject {
 	Kind: *string,
@@ -1199,7 +1206,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBindingMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/clusterrolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/clusterrolebinding"
 
 clusterrolebinding.NewClusterRoleBindingMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ClusterRoleBindingMetadataOutputReference
 ```
@@ -1597,7 +1604,7 @@ func InternalValue() ClusterRoleBindingMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBindingRoleRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/clusterrolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/clusterrolebinding"
 
 clusterrolebinding.NewClusterRoleBindingRoleRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ClusterRoleBindingRoleRefOutputReference
 ```
@@ -1912,7 +1919,7 @@ func InternalValue() ClusterRoleBindingRoleRef
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBindingSubjectList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/clusterrolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/clusterrolebinding"
 
 clusterrolebinding.NewClusterRoleBindingSubjectList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ClusterRoleBindingSubjectList
 ```
@@ -1953,10 +1960,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBindingSubjectList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBindingSubjectList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBindingSubjectList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBindingSubjectList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBindingSubjectList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBindingSubjectList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBindingSubjectList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -2055,7 +2079,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.clusterRoleBinding.ClusterRoleBindingSubjectOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/clusterrolebinding"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/clusterrolebinding"
 
 clusterrolebinding.NewClusterRoleBindingSubjectOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ClusterRoleBindingSubjectOutputReference
 ```

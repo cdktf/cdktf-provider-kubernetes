@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/tokenrequestv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/tokenrequestv1"
 
 tokenrequestv1.NewTokenRequestV1(scope Construct, id *string, config TokenRequestV1Config) TokenRequestV1
 ```
@@ -54,6 +54,7 @@ Must be unique amongst siblings in the same scope
 | <code><a href="#@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1.addOverride">AddOverride</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1.overrideLogicalId">OverrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1.resetOverrideLogicalId">ResetOverrideLogicalId</a></code> | Resets a previously passed logical Id to use the auto-generated logical id again. |
+| <code><a href="#@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1.toHclTerraform">ToHclTerraform</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1.toMetadata">ToMetadata</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1.toTerraform">ToTerraform</a></code> | Adds this resource to the terraform JSON output. |
 | <code><a href="#@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1.addMoveTarget">AddMoveTarget</a></code> | Adds a user defined moveTarget string to this resource to be later used in .moveTo(moveTarget) to resolve the location of the move. |
@@ -128,6 +129,12 @@ func ResetOverrideLogicalId()
 ```
 
 Resets a previously passed logical Id to use the auto-generated logical id again.
+
+##### `ToHclTerraform` <a name="ToHclTerraform" id="@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1.toHclTerraform"></a>
+
+```go
+func ToHclTerraform() interface{}
+```
 
 ##### `ToMetadata` <a name="ToMetadata" id="@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1.toMetadata"></a>
 
@@ -411,7 +418,7 @@ func ResetSpec()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/tokenrequestv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/tokenrequestv1"
 
 tokenrequestv1.TokenRequestV1_IsConstruct(x interface{}) *bool
 ```
@@ -443,7 +450,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/tokenrequestv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/tokenrequestv1"
 
 tokenrequestv1.TokenRequestV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -457,7 +464,7 @@ tokenrequestv1.TokenRequestV1_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/tokenrequestv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/tokenrequestv1"
 
 tokenrequestv1.TokenRequestV1_IsTerraformResource(x interface{}) *bool
 ```
@@ -471,7 +478,7 @@ tokenrequestv1.TokenRequestV1_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/tokenrequestv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/tokenrequestv1"
 
 tokenrequestv1.TokenRequestV1_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -777,7 +784,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/tokenrequestv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/tokenrequestv1"
 
 &tokenrequestv1.TokenRequestV1Config {
 	Connection: interface{},
@@ -787,9 +794,9 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/tokenreques
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.tokenRequestV1.TokenRequestV1Metadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.tokenRequestV1.TokenRequestV1Metadata,
 	Id: *string,
-	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.tokenRequestV1.TokenRequestV1Spec,
+	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.tokenRequestV1.TokenRequestV1Spec,
 }
 ```
 
@@ -928,7 +935,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/tokenrequestv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/tokenrequestv1"
 
 &tokenrequestv1.TokenRequestV1Metadata {
 	Annotations: *map[string]*string,
@@ -1032,11 +1039,11 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1Spec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/tokenrequestv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/tokenrequestv1"
 
 &tokenrequestv1.TokenRequestV1Spec {
 	Audiences: *[]*string,
-	BoundObjectRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.tokenRequestV1.TokenRequestV1SpecBoundObjectRef,
+	BoundObjectRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.tokenRequestV1.TokenRequestV1SpecBoundObjectRef,
 	ExpirationSeconds: *f64,
 }
 ```
@@ -1102,7 +1109,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1SpecBoundObjectRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/tokenrequestv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/tokenrequestv1"
 
 &tokenrequestv1.TokenRequestV1SpecBoundObjectRef {
 	ApiVersion: *string,
@@ -1186,7 +1193,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/tokenrequestv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/tokenrequestv1"
 
 tokenrequestv1.NewTokenRequestV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) TokenRequestV1MetadataOutputReference
 ```
@@ -1613,7 +1620,7 @@ func InternalValue() TokenRequestV1Metadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1SpecBoundObjectRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/tokenrequestv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/tokenrequestv1"
 
 tokenrequestv1.NewTokenRequestV1SpecBoundObjectRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) TokenRequestV1SpecBoundObjectRefOutputReference
 ```
@@ -1978,7 +1985,7 @@ func InternalValue() TokenRequestV1SpecBoundObjectRef
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.tokenRequestV1.TokenRequestV1SpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/tokenrequestv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/tokenrequestv1"
 
 tokenrequestv1.NewTokenRequestV1SpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) TokenRequestV1SpecOutputReference
 ```

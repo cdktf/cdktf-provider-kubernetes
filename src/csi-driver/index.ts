@@ -72,6 +72,43 @@ export function csiDriverMetadataToTerraform(struct?: CsiDriverMetadataOutputRef
   }
 }
 
+
+export function csiDriverMetadataToHclTerraform(struct?: CsiDriverMetadataOutputReference | CsiDriverMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    generate_name: {
+      value: cdktf.stringToHclTerraform(struct!.generateName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CsiDriverMetadataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -232,6 +269,37 @@ export function csiDriverSpecToTerraform(struct?: CsiDriverSpecOutputReference |
     pod_info_on_mount: cdktf.booleanToTerraform(struct!.podInfoOnMount),
     volume_lifecycle_modes: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.volumeLifecycleModes),
   }
+}
+
+
+export function csiDriverSpecToHclTerraform(struct?: CsiDriverSpecOutputReference | CsiDriverSpec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    attach_required: {
+      value: cdktf.booleanToHclTerraform(struct!.attachRequired),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    pod_info_on_mount: {
+      value: cdktf.booleanToHclTerraform(struct!.podInfoOnMount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    volume_lifecycle_modes: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.volumeLifecycleModes),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CsiDriverSpecOutputReference extends cdktf.ComplexObject {
@@ -439,5 +507,31 @@ export class CsiDriver extends cdktf.TerraformResource {
       metadata: csiDriverMetadataToTerraform(this._metadata.internalValue),
       spec: csiDriverSpecToTerraform(this._spec.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: csiDriverMetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CsiDriverMetadataList",
+      },
+      spec: {
+        value: csiDriverSpecToHclTerraform(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CsiDriverSpecList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

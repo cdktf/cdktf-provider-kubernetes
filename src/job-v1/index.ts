@@ -7,12 +7,15 @@
 
 import { JobV1Metadata, 
 jobV1MetadataToTerraform, 
+jobV1MetadataToHclTerraform, 
 JobV1MetadataOutputReference, 
 JobV1Spec, 
 jobV1SpecToTerraform, 
+jobV1SpecToHclTerraform, 
 JobV1SpecOutputReference, 
 JobV1Timeouts, 
 jobV1TimeoutsToTerraform, 
+jobV1TimeoutsToHclTerraform, 
 JobV1TimeoutsOutputReference} from './index-structs'
 export * from './index-structs'
 import { Construct } from 'constructs';
@@ -197,5 +200,43 @@ export class JobV1 extends cdktf.TerraformResource {
       spec: jobV1SpecToTerraform(this._spec.internalValue),
       timeouts: jobV1TimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      wait_for_completion: {
+        value: cdktf.booleanToHclTerraform(this._waitForCompletion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      metadata: {
+        value: jobV1MetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "JobV1MetadataList",
+      },
+      spec: {
+        value: jobV1SpecToHclTerraform(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "JobV1SpecList",
+      },
+      timeouts: {
+        value: jobV1TimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "JobV1Timeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

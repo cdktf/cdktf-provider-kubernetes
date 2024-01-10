@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.priorityClassV1.PriorityClassV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/priorityclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/priorityclassv1"
 
 priorityclassv1.NewPriorityClassV1(scope Construct, id *string, config PriorityClassV1Config) PriorityClassV1
 ```
@@ -54,6 +54,7 @@ Must be unique amongst siblings in the same scope
 | <code><a href="#@cdktf/provider-kubernetes.priorityClassV1.PriorityClassV1.addOverride">AddOverride</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.priorityClassV1.PriorityClassV1.overrideLogicalId">OverrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#@cdktf/provider-kubernetes.priorityClassV1.PriorityClassV1.resetOverrideLogicalId">ResetOverrideLogicalId</a></code> | Resets a previously passed logical Id to use the auto-generated logical id again. |
+| <code><a href="#@cdktf/provider-kubernetes.priorityClassV1.PriorityClassV1.toHclTerraform">ToHclTerraform</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.priorityClassV1.PriorityClassV1.toMetadata">ToMetadata</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.priorityClassV1.PriorityClassV1.toTerraform">ToTerraform</a></code> | Adds this resource to the terraform JSON output. |
 | <code><a href="#@cdktf/provider-kubernetes.priorityClassV1.PriorityClassV1.addMoveTarget">AddMoveTarget</a></code> | Adds a user defined moveTarget string to this resource to be later used in .moveTo(moveTarget) to resolve the location of the move. |
@@ -129,6 +130,12 @@ func ResetOverrideLogicalId()
 ```
 
 Resets a previously passed logical Id to use the auto-generated logical id again.
+
+##### `ToHclTerraform` <a name="ToHclTerraform" id="@cdktf/provider-kubernetes.priorityClassV1.PriorityClassV1.toHclTerraform"></a>
+
+```go
+func ToHclTerraform() interface{}
+```
 
 ##### `ToMetadata` <a name="ToMetadata" id="@cdktf/provider-kubernetes.priorityClassV1.PriorityClassV1.toMetadata"></a>
 
@@ -412,7 +419,7 @@ func ResetPreemptionPolicy()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.priorityClassV1.PriorityClassV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/priorityclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/priorityclassv1"
 
 priorityclassv1.PriorityClassV1_IsConstruct(x interface{}) *bool
 ```
@@ -444,7 +451,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.priorityClassV1.PriorityClassV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/priorityclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/priorityclassv1"
 
 priorityclassv1.PriorityClassV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -458,7 +465,7 @@ priorityclassv1.PriorityClassV1_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.priorityClassV1.PriorityClassV1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/priorityclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/priorityclassv1"
 
 priorityclassv1.PriorityClassV1_IsTerraformResource(x interface{}) *bool
 ```
@@ -472,7 +479,7 @@ priorityclassv1.PriorityClassV1_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.priorityClassV1.PriorityClassV1.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/priorityclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/priorityclassv1"
 
 priorityclassv1.PriorityClassV1_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -833,7 +840,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.priorityClassV1.PriorityClassV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/priorityclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/priorityclassv1"
 
 &priorityclassv1.PriorityClassV1Config {
 	Connection: interface{},
@@ -843,7 +850,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/prioritycla
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.priorityClassV1.PriorityClassV1Metadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.priorityClassV1.PriorityClassV1Metadata,
 	Value: *f64,
 	Description: *string,
 	GlobalDefault: interface{},
@@ -1036,7 +1043,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.priorityClassV1.PriorityClassV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/priorityclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/priorityclassv1"
 
 &priorityclassv1.PriorityClassV1Metadata {
 	Annotations: *map[string]*string,
@@ -1126,7 +1133,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.priorityClassV1.PriorityClassV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/priorityclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/priorityclassv1"
 
 priorityclassv1.NewPriorityClassV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) PriorityClassV1MetadataOutputReference
 ```

@@ -69,6 +69,25 @@ export function defaultServiceAccountV1ImagePullSecretToTerraform(struct?: Defau
   }
 }
 
+
+export function defaultServiceAccountV1ImagePullSecretToHclTerraform(struct?: DefaultServiceAccountV1ImagePullSecret | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DefaultServiceAccountV1ImagePullSecretOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -187,6 +206,43 @@ export function defaultServiceAccountV1MetadataToTerraform(struct?: DefaultServi
     name: cdktf.stringToTerraform(struct!.name),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
+}
+
+
+export function defaultServiceAccountV1MetadataToHclTerraform(struct?: DefaultServiceAccountV1MetadataOutputReference | DefaultServiceAccountV1Metadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DefaultServiceAccountV1MetadataOutputReference extends cdktf.ComplexObject {
@@ -337,6 +393,25 @@ export function defaultServiceAccountV1SecretToTerraform(struct?: DefaultService
   }
 }
 
+
+export function defaultServiceAccountV1SecretToHclTerraform(struct?: DefaultServiceAccountV1Secret | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DefaultServiceAccountV1SecretOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -432,6 +507,25 @@ export function defaultServiceAccountV1TimeoutsToTerraform(struct?: DefaultServi
   return {
     create: cdktf.stringToTerraform(struct!.create),
   }
+}
+
+
+export function defaultServiceAccountV1TimeoutsToHclTerraform(struct?: DefaultServiceAccountV1Timeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DefaultServiceAccountV1TimeoutsOutputReference extends cdktf.ComplexObject {
@@ -667,5 +761,49 @@ export class DefaultServiceAccountV1 extends cdktf.TerraformResource {
       secret: cdktf.listMapper(defaultServiceAccountV1SecretToTerraform, true)(this._secret.internalValue),
       timeouts: defaultServiceAccountV1TimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      automount_service_account_token: {
+        value: cdktf.booleanToHclTerraform(this._automountServiceAccountToken),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      image_pull_secret: {
+        value: cdktf.listMapperHcl(defaultServiceAccountV1ImagePullSecretToHclTerraform, true)(this._imagePullSecret.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DefaultServiceAccountV1ImagePullSecretList",
+      },
+      metadata: {
+        value: defaultServiceAccountV1MetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DefaultServiceAccountV1MetadataList",
+      },
+      secret: {
+        value: cdktf.listMapperHcl(defaultServiceAccountV1SecretToHclTerraform, true)(this._secret.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DefaultServiceAccountV1SecretList",
+      },
+      timeouts: {
+        value: defaultServiceAccountV1TimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DefaultServiceAccountV1Timeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

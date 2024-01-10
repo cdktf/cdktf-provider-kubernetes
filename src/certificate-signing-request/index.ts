@@ -84,6 +84,43 @@ export function certificateSigningRequestMetadataToTerraform(struct?: Certificat
   }
 }
 
+
+export function certificateSigningRequestMetadataToHclTerraform(struct?: CertificateSigningRequestMetadataOutputReference | CertificateSigningRequestMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    annotations: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.annotations),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    generate_name: {
+      value: cdktf.stringToHclTerraform(struct!.generateName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.labels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CertificateSigningRequestMetadataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -273,6 +310,37 @@ export function certificateSigningRequestSpecToTerraform(struct?: CertificateSig
   }
 }
 
+
+export function certificateSigningRequestSpecToHclTerraform(struct?: CertificateSigningRequestSpecOutputReference | CertificateSigningRequestSpec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    request: {
+      value: cdktf.stringToHclTerraform(struct!.request),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    signer_name: {
+      value: cdktf.stringToHclTerraform(struct!.signerName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    usages: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.usages),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CertificateSigningRequestSpecOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -377,6 +445,25 @@ export function certificateSigningRequestTimeoutsToTerraform(struct?: Certificat
   return {
     create: cdktf.stringToTerraform(struct!.create),
   }
+}
+
+
+export function certificateSigningRequestTimeoutsToHclTerraform(struct?: CertificateSigningRequestTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CertificateSigningRequestTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -591,5 +678,43 @@ export class CertificateSigningRequest extends cdktf.TerraformResource {
       spec: certificateSigningRequestSpecToTerraform(this._spec.internalValue),
       timeouts: certificateSigningRequestTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      auto_approve: {
+        value: cdktf.booleanToHclTerraform(this._autoApprove),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: certificateSigningRequestMetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CertificateSigningRequestMetadataList",
+      },
+      spec: {
+        value: certificateSigningRequestSpecToHclTerraform(this._spec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CertificateSigningRequestSpecList",
+      },
+      timeouts: {
+        value: certificateSigningRequestTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CertificateSigningRequestTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

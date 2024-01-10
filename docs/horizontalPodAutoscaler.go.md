@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscaler.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscaler(scope Construct, id *string, config HorizontalPodAutoscalerConfig) HorizontalPodAutoscaler
 ```
@@ -54,6 +54,7 @@ Must be unique amongst siblings in the same scope
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscaler.addOverride">AddOverride</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscaler.overrideLogicalId">OverrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscaler.resetOverrideLogicalId">ResetOverrideLogicalId</a></code> | Resets a previously passed logical Id to use the auto-generated logical id again. |
+| <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscaler.toHclTerraform">ToHclTerraform</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscaler.toMetadata">ToMetadata</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscaler.toTerraform">ToTerraform</a></code> | Adds this resource to the terraform JSON output. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscaler.addMoveTarget">AddMoveTarget</a></code> | Adds a user defined moveTarget string to this resource to be later used in .moveTo(moveTarget) to resolve the location of the move. |
@@ -127,6 +128,12 @@ func ResetOverrideLogicalId()
 ```
 
 Resets a previously passed logical Id to use the auto-generated logical id again.
+
+##### `ToHclTerraform` <a name="ToHclTerraform" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscaler.toHclTerraform"></a>
+
+```go
+func ToHclTerraform() interface{}
+```
 
 ##### `ToMetadata` <a name="ToMetadata" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscaler.toMetadata"></a>
 
@@ -404,7 +411,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscaler.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.HorizontalPodAutoscaler_IsConstruct(x interface{}) *bool
 ```
@@ -436,7 +443,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscaler.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.HorizontalPodAutoscaler_IsTerraformElement(x interface{}) *bool
 ```
@@ -450,7 +457,7 @@ horizontalpodautoscaler.HorizontalPodAutoscaler_IsTerraformElement(x interface{}
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscaler.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.HorizontalPodAutoscaler_IsTerraformResource(x interface{}) *bool
 ```
@@ -464,7 +471,7 @@ horizontalpodautoscaler.HorizontalPodAutoscaler_IsTerraformResource(x interface{
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscaler.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.HorizontalPodAutoscaler_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -759,7 +766,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerConfig {
 	Connection: interface{},
@@ -769,8 +776,8 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalp
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.horizontalPodAutoscaler.HorizontalPodAutoscalerMetadata,
-	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.horizontalPodAutoscaler.HorizontalPodAutoscalerSpec,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscaler.HorizontalPodAutoscalerMetadata,
+	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscaler.HorizontalPodAutoscalerSpec,
 	Id: *string,
 }
 ```
@@ -910,7 +917,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerMetadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerMetadata {
 	Annotations: *map[string]*string,
@@ -1014,12 +1021,12 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpec {
 	MaxReplicas: *f64,
-	ScaleTargetRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecScaleTargetRef,
-	Behavior: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehavior,
+	ScaleTargetRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecScaleTargetRef,
+	Behavior: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehavior,
 	Metric: interface{},
 	MinReplicas: *f64,
 	TargetCpuUtilizationPercentage: *f64,
@@ -1130,7 +1137,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehavior.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecBehavior {
 	ScaleDown: interface{},
@@ -1180,7 +1187,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDown.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDown {
 	Policy: interface{},
@@ -1248,7 +1255,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownPolicy.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownPolicy {
 	PeriodSeconds: *f64,
@@ -1316,7 +1323,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUp.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUp {
 	Policy: interface{},
@@ -1384,7 +1391,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpPolicy.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpPolicy {
 	PeriodSeconds: *f64,
@@ -1452,15 +1459,15 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetric.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetric {
 	Type: *string,
-	ContainerResource: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricContainerResource,
-	External: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternal,
-	Object: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObject,
-	Pods: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPods,
-	Resource: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricResource,
+	ContainerResource: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricContainerResource,
+	External: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternal,
+	Object: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObject,
+	Pods: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPods,
+	Resource: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricResource,
 }
 ```
 
@@ -1568,12 +1575,12 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricContainerResource.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricContainerResource {
 	Container: *string,
 	Name: *string,
-	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricContainerResourceTarget,
+	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricContainerResourceTarget,
 }
 ```
 
@@ -1634,7 +1641,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricContainerResourceTarget.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricContainerResourceTarget {
 	Type: *string,
@@ -1718,11 +1725,11 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternal.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricExternal {
-	Metric: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetric,
-	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalTarget,
+	Metric: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetric,
+	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalTarget,
 }
 ```
 
@@ -1768,7 +1775,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetric.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricExternalMetric {
 	Name: *string,
@@ -1818,7 +1825,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelector.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelector {
 	MatchExpressions: interface{},
@@ -1870,7 +1877,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressions {
 	Key: *string,
@@ -1938,7 +1945,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalTarget.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricExternalTarget {
 	Type: *string,
@@ -2022,12 +2029,12 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObject.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricObject {
-	DescribedObject: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectDescribedObject,
-	Metric: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetric,
-	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectTarget,
+	DescribedObject: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectDescribedObject,
+	Metric: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetric,
+	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectTarget,
 }
 ```
 
@@ -2088,7 +2095,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectDescribedObject.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricObjectDescribedObject {
 	ApiVersion: *string,
@@ -2154,7 +2161,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetric.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricObjectMetric {
 	Name: *string,
@@ -2204,7 +2211,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelector.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelector {
 	MatchExpressions: interface{},
@@ -2256,7 +2263,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressions {
 	Key: *string,
@@ -2324,7 +2331,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectTarget.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricObjectTarget {
 	Type: *string,
@@ -2408,11 +2415,11 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPods.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricPods {
-	Metric: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetric,
-	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsTarget,
+	Metric: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetric,
+	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsTarget,
 }
 ```
 
@@ -2458,7 +2465,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetric.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricPodsMetric {
 	Name: *string,
@@ -2508,7 +2515,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelector.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelector {
 	MatchExpressions: interface{},
@@ -2560,7 +2567,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressions {
 	Key: *string,
@@ -2628,7 +2635,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsTarget.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricPodsTarget {
 	Type: *string,
@@ -2712,11 +2719,11 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricResource.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricResource {
 	Name: *string,
-	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricResourceTarget,
+	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricResourceTarget,
 }
 ```
 
@@ -2762,7 +2769,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricResourceTarget.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecMetricResourceTarget {
 	Type: *string,
@@ -2846,7 +2853,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecScaleTargetRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 &horizontalpodautoscaler.HorizontalPodAutoscalerSpecScaleTargetRef {
 	Kind: *string,
@@ -2914,7 +2921,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerMetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerMetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerMetadataOutputReference
 ```
@@ -3341,7 +3348,7 @@ func InternalValue() HorizontalPodAutoscalerMetadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecBehaviorOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerSpecBehaviorOutputReference
 ```
@@ -3674,7 +3681,7 @@ func InternalValue() HorizontalPodAutoscalerSpecBehavior
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecBehaviorScaleDownList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerSpecBehaviorScaleDownList
 ```
@@ -3715,10 +3722,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -3817,7 +3841,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecBehaviorScaleDownOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerSpecBehaviorScaleDownOutputReference
 ```
@@ -4177,7 +4201,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownPolicyList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecBehaviorScaleDownPolicyList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerSpecBehaviorScaleDownPolicyList
 ```
@@ -4218,10 +4242,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownPolicyList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownPolicyList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownPolicyList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownPolicyList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownPolicyList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownPolicyList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownPolicyList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -4320,7 +4361,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleDownPolicyOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecBehaviorScaleDownPolicyOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerSpecBehaviorScaleDownPolicyOutputReference
 ```
@@ -4653,7 +4694,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecBehaviorScaleUpList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerSpecBehaviorScaleUpList
 ```
@@ -4694,10 +4735,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -4796,7 +4854,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecBehaviorScaleUpOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerSpecBehaviorScaleUpOutputReference
 ```
@@ -5156,7 +5214,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpPolicyList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecBehaviorScaleUpPolicyList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerSpecBehaviorScaleUpPolicyList
 ```
@@ -5197,10 +5255,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpPolicyList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpPolicyList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpPolicyList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpPolicyList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpPolicyList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpPolicyList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpPolicyList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -5299,7 +5374,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecBehaviorScaleUpPolicyOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecBehaviorScaleUpPolicyOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerSpecBehaviorScaleUpPolicyOutputReference
 ```
@@ -5632,7 +5707,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricContainerResourceOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricContainerResourceOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerSpecMetricContainerResourceOutputReference
 ```
@@ -5967,7 +6042,7 @@ func InternalValue() HorizontalPodAutoscalerSpecMetricContainerResource
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricContainerResourceTargetOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricContainerResourceTargetOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerSpecMetricContainerResourceTargetOutputReference
 ```
@@ -6325,7 +6400,7 @@ func InternalValue() HorizontalPodAutoscalerSpecMetricContainerResourceTarget
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricExternalMetricOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerSpecMetricExternalMetricOutputReference
 ```
@@ -6638,7 +6713,7 @@ func InternalValue() HorizontalPodAutoscalerSpecMetricExternalMetric
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricExternalMetricSelectorList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerSpecMetricExternalMetricSelectorList
 ```
@@ -6679,10 +6754,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -6781,7 +6873,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsList
 ```
@@ -6822,10 +6914,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -6924,7 +7033,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerSpecMetricExternalMetricSelectorMatchExpressionsOutputReference
 ```
@@ -7278,7 +7387,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalMetricSelectorOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricExternalMetricSelectorOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerSpecMetricExternalMetricSelectorOutputReference
 ```
@@ -7616,7 +7725,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricExternalOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerSpecMetricExternalOutputReference
 ```
@@ -7942,7 +8051,7 @@ func InternalValue() HorizontalPodAutoscalerSpecMetricExternal
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricExternalTargetOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricExternalTargetOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerSpecMetricExternalTargetOutputReference
 ```
@@ -8300,7 +8409,7 @@ func InternalValue() HorizontalPodAutoscalerSpecMetricExternalTarget
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerSpecMetricList
 ```
@@ -8341,10 +8450,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -8443,7 +8569,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectDescribedObjectOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricObjectDescribedObjectOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerSpecMetricObjectDescribedObjectOutputReference
 ```
@@ -8758,7 +8884,7 @@ func InternalValue() HorizontalPodAutoscalerSpecMetricObjectDescribedObject
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricObjectMetricOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerSpecMetricObjectMetricOutputReference
 ```
@@ -9071,7 +9197,7 @@ func InternalValue() HorizontalPodAutoscalerSpecMetricObjectMetric
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricObjectMetricSelectorList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerSpecMetricObjectMetricSelectorList
 ```
@@ -9112,10 +9238,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -9214,7 +9357,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsList
 ```
@@ -9255,10 +9398,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -9357,7 +9517,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerSpecMetricObjectMetricSelectorMatchExpressionsOutputReference
 ```
@@ -9711,7 +9871,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectMetricSelectorOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricObjectMetricSelectorOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerSpecMetricObjectMetricSelectorOutputReference
 ```
@@ -10049,7 +10209,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricObjectOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerSpecMetricObjectOutputReference
 ```
@@ -10410,7 +10570,7 @@ func InternalValue() HorizontalPodAutoscalerSpecMetricObject
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricObjectTargetOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricObjectTargetOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerSpecMetricObjectTargetOutputReference
 ```
@@ -10768,7 +10928,7 @@ func InternalValue() HorizontalPodAutoscalerSpecMetricObjectTarget
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerSpecMetricOutputReference
 ```
@@ -11267,7 +11427,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricPodsMetricOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerSpecMetricPodsMetricOutputReference
 ```
@@ -11580,7 +11740,7 @@ func InternalValue() HorizontalPodAutoscalerSpecMetricPodsMetric
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricPodsMetricSelectorList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerSpecMetricPodsMetricSelectorList
 ```
@@ -11621,10 +11781,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -11723,7 +11900,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsList
 ```
@@ -11764,10 +11941,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -11866,7 +12060,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerSpecMetricPodsMetricSelectorMatchExpressionsOutputReference
 ```
@@ -12220,7 +12414,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsMetricSelectorOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricPodsMetricSelectorOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerSpecMetricPodsMetricSelectorOutputReference
 ```
@@ -12558,7 +12752,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricPodsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerSpecMetricPodsOutputReference
 ```
@@ -12884,7 +13078,7 @@ func InternalValue() HorizontalPodAutoscalerSpecMetricPods
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricPodsTargetOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricPodsTargetOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerSpecMetricPodsTargetOutputReference
 ```
@@ -13242,7 +13436,7 @@ func InternalValue() HorizontalPodAutoscalerSpecMetricPodsTarget
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricResourceOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricResourceOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerSpecMetricResourceOutputReference
 ```
@@ -13555,7 +13749,7 @@ func InternalValue() HorizontalPodAutoscalerSpecMetricResource
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecMetricResourceTargetOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecMetricResourceTargetOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerSpecMetricResourceTargetOutputReference
 ```
@@ -13913,7 +14107,7 @@ func InternalValue() HorizontalPodAutoscalerSpecMetricResourceTarget
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerSpecOutputReference
 ```
@@ -14361,7 +14555,7 @@ func InternalValue() HorizontalPodAutoscalerSpec
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscaler.HorizontalPodAutoscalerSpecScaleTargetRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v10/horizontalpodautoscaler"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscaler"
 
 horizontalpodautoscaler.NewHorizontalPodAutoscalerSpecScaleTargetRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerSpecScaleTargetRefOutputReference
 ```
