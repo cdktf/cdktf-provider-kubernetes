@@ -1,38 +1,33 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 import * as cdktf from 'cdktf';
 export interface JobV1Metadata {
   /**
   * An unstructured key value map stored with the job that may be used to store arbitrary metadata. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#annotations JobV1#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#annotations JobV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#generate_name JobV1#generate_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#generate_name JobV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the job. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#labels JobV1#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#labels JobV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the job, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the job must be unique.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#namespace JobV1#namespace}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#namespace JobV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -245,23 +240,588 @@ export class JobV1MetadataOutputReference extends cdktf.ComplexObject {
     return this.getStringAttribute('uid');
   }
 }
+export interface JobV1SpecPodFailurePolicyRuleOnExitCodes {
+  /**
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#container_name JobV1#container_name}
+  */
+  readonly containerName?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#operator JobV1#operator}
+  */
+  readonly operator?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#values JobV1#values}
+  */
+  readonly values: number[];
+}
+
+export function jobV1SpecPodFailurePolicyRuleOnExitCodesToTerraform(struct?: JobV1SpecPodFailurePolicyRuleOnExitCodesOutputReference | JobV1SpecPodFailurePolicyRuleOnExitCodes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    container_name: cdktf.stringToTerraform(struct!.containerName),
+    operator: cdktf.stringToTerraform(struct!.operator),
+    values: cdktf.listMapper(cdktf.numberToTerraform, false)(struct!.values),
+  }
+}
+
+
+export function jobV1SpecPodFailurePolicyRuleOnExitCodesToHclTerraform(struct?: JobV1SpecPodFailurePolicyRuleOnExitCodesOutputReference | JobV1SpecPodFailurePolicyRuleOnExitCodes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    container_name: {
+      value: cdktf.stringToHclTerraform(struct!.containerName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.numberToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "numberList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
+export class JobV1SpecPodFailurePolicyRuleOnExitCodesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
+  }
+
+  public get internalValue(): JobV1SpecPodFailurePolicyRuleOnExitCodes | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._containerName !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.containerName = this._containerName;
+    }
+    if (this._operator !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operator = this._operator;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: JobV1SpecPodFailurePolicyRuleOnExitCodes | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._containerName = undefined;
+      this._operator = undefined;
+      this._values = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._containerName = value.containerName;
+      this._operator = value.operator;
+      this._values = value.values;
+    }
+  }
+
+  // container_name - computed: false, optional: true, required: false
+  private _containerName?: string; 
+  public get containerName() {
+    return this.getStringAttribute('container_name');
+  }
+  public set containerName(value: string) {
+    this._containerName = value;
+  }
+  public resetContainerName() {
+    this._containerName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get containerNameInput() {
+    return this._containerName;
+  }
+
+  // operator - computed: false, optional: true, required: false
+  private _operator?: string; 
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+  public set operator(value: string) {
+    this._operator = value;
+  }
+  public resetOperator() {
+    this._operator = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operatorInput() {
+    return this._operator;
+  }
+
+  // values - computed: false, optional: false, required: true
+  private _values?: number[]; 
+  public get values() {
+    return this.getNumberListAttribute('values');
+  }
+  public set values(value: number[]) {
+    this._values = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+export interface JobV1SpecPodFailurePolicyRuleOnPodCondition {
+  /**
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#status JobV1#status}
+  */
+  readonly status?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#type JobV1#type}
+  */
+  readonly type?: string;
+}
+
+export function jobV1SpecPodFailurePolicyRuleOnPodConditionToTerraform(struct?: JobV1SpecPodFailurePolicyRuleOnPodCondition | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    status: cdktf.stringToTerraform(struct!.status),
+    type: cdktf.stringToTerraform(struct!.type),
+  }
+}
+
+
+export function jobV1SpecPodFailurePolicyRuleOnPodConditionToHclTerraform(struct?: JobV1SpecPodFailurePolicyRuleOnPodCondition | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    status: {
+      value: cdktf.stringToHclTerraform(struct!.status),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
+export class JobV1SpecPodFailurePolicyRuleOnPodConditionOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): JobV1SpecPodFailurePolicyRuleOnPodCondition | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._status !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.status = this._status;
+    }
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: JobV1SpecPodFailurePolicyRuleOnPodCondition | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._status = undefined;
+      this._type = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._status = value.status;
+      this._type = value.type;
+    }
+  }
+
+  // status - computed: false, optional: true, required: false
+  private _status?: string; 
+  public get status() {
+    return this.getStringAttribute('status');
+  }
+  public set status(value: string) {
+    this._status = value;
+  }
+  public resetStatus() {
+    this._status = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get statusInput() {
+    return this._status;
+  }
+
+  // type - computed: false, optional: true, required: false
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  public resetType() {
+    this._type = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+}
+
+export class JobV1SpecPodFailurePolicyRuleOnPodConditionList extends cdktf.ComplexList {
+  public internalValue? : JobV1SpecPodFailurePolicyRuleOnPodCondition[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): JobV1SpecPodFailurePolicyRuleOnPodConditionOutputReference {
+    return new JobV1SpecPodFailurePolicyRuleOnPodConditionOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface JobV1SpecPodFailurePolicyRule {
+  /**
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#action JobV1#action}
+  */
+  readonly action?: string;
+  /**
+  * on_exit_codes block
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#on_exit_codes JobV1#on_exit_codes}
+  */
+  readonly onExitCodes?: JobV1SpecPodFailurePolicyRuleOnExitCodes;
+  /**
+  * on_pod_condition block
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#on_pod_condition JobV1#on_pod_condition}
+  */
+  readonly onPodCondition?: JobV1SpecPodFailurePolicyRuleOnPodCondition[] | cdktf.IResolvable;
+}
+
+export function jobV1SpecPodFailurePolicyRuleToTerraform(struct?: JobV1SpecPodFailurePolicyRule | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    action: cdktf.stringToTerraform(struct!.action),
+    on_exit_codes: jobV1SpecPodFailurePolicyRuleOnExitCodesToTerraform(struct!.onExitCodes),
+    on_pod_condition: cdktf.listMapper(jobV1SpecPodFailurePolicyRuleOnPodConditionToTerraform, true)(struct!.onPodCondition),
+  }
+}
+
+
+export function jobV1SpecPodFailurePolicyRuleToHclTerraform(struct?: JobV1SpecPodFailurePolicyRule | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action: {
+      value: cdktf.stringToHclTerraform(struct!.action),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    on_exit_codes: {
+      value: jobV1SpecPodFailurePolicyRuleOnExitCodesToHclTerraform(struct!.onExitCodes),
+      isBlock: true,
+      type: "list",
+      storageClassType: "JobV1SpecPodFailurePolicyRuleOnExitCodesList",
+    },
+    on_pod_condition: {
+      value: cdktf.listMapperHcl(jobV1SpecPodFailurePolicyRuleOnPodConditionToHclTerraform, true)(struct!.onPodCondition),
+      isBlock: true,
+      type: "list",
+      storageClassType: "JobV1SpecPodFailurePolicyRuleOnPodConditionList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
+export class JobV1SpecPodFailurePolicyRuleOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): JobV1SpecPodFailurePolicyRule | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._action !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.action = this._action;
+    }
+    if (this._onExitCodes?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.onExitCodes = this._onExitCodes?.internalValue;
+    }
+    if (this._onPodCondition?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.onPodCondition = this._onPodCondition?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: JobV1SpecPodFailurePolicyRule | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._action = undefined;
+      this._onExitCodes.internalValue = undefined;
+      this._onPodCondition.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._action = value.action;
+      this._onExitCodes.internalValue = value.onExitCodes;
+      this._onPodCondition.internalValue = value.onPodCondition;
+    }
+  }
+
+  // action - computed: false, optional: true, required: false
+  private _action?: string; 
+  public get action() {
+    return this.getStringAttribute('action');
+  }
+  public set action(value: string) {
+    this._action = value;
+  }
+  public resetAction() {
+    this._action = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get actionInput() {
+    return this._action;
+  }
+
+  // on_exit_codes - computed: false, optional: true, required: false
+  private _onExitCodes = new JobV1SpecPodFailurePolicyRuleOnExitCodesOutputReference(this, "on_exit_codes");
+  public get onExitCodes() {
+    return this._onExitCodes;
+  }
+  public putOnExitCodes(value: JobV1SpecPodFailurePolicyRuleOnExitCodes) {
+    this._onExitCodes.internalValue = value;
+  }
+  public resetOnExitCodes() {
+    this._onExitCodes.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get onExitCodesInput() {
+    return this._onExitCodes.internalValue;
+  }
+
+  // on_pod_condition - computed: false, optional: true, required: false
+  private _onPodCondition = new JobV1SpecPodFailurePolicyRuleOnPodConditionList(this, "on_pod_condition", false);
+  public get onPodCondition() {
+    return this._onPodCondition;
+  }
+  public putOnPodCondition(value: JobV1SpecPodFailurePolicyRuleOnPodCondition[] | cdktf.IResolvable) {
+    this._onPodCondition.internalValue = value;
+  }
+  public resetOnPodCondition() {
+    this._onPodCondition.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get onPodConditionInput() {
+    return this._onPodCondition.internalValue;
+  }
+}
+
+export class JobV1SpecPodFailurePolicyRuleList extends cdktf.ComplexList {
+  public internalValue? : JobV1SpecPodFailurePolicyRule[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): JobV1SpecPodFailurePolicyRuleOutputReference {
+    return new JobV1SpecPodFailurePolicyRuleOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface JobV1SpecPodFailurePolicy {
+  /**
+  * rule block
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#rule JobV1#rule}
+  */
+  readonly rule: JobV1SpecPodFailurePolicyRule[] | cdktf.IResolvable;
+}
+
+export function jobV1SpecPodFailurePolicyToTerraform(struct?: JobV1SpecPodFailurePolicyOutputReference | JobV1SpecPodFailurePolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    rule: cdktf.listMapper(jobV1SpecPodFailurePolicyRuleToTerraform, true)(struct!.rule),
+  }
+}
+
+
+export function jobV1SpecPodFailurePolicyToHclTerraform(struct?: JobV1SpecPodFailurePolicyOutputReference | JobV1SpecPodFailurePolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    rule: {
+      value: cdktf.listMapperHcl(jobV1SpecPodFailurePolicyRuleToHclTerraform, true)(struct!.rule),
+      isBlock: true,
+      type: "list",
+      storageClassType: "JobV1SpecPodFailurePolicyRuleList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
+export class JobV1SpecPodFailurePolicyOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
+  }
+
+  public get internalValue(): JobV1SpecPodFailurePolicy | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._rule?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.rule = this._rule?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: JobV1SpecPodFailurePolicy | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this._rule.internalValue = undefined;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this._rule.internalValue = value.rule;
+    }
+  }
+
+  // rule - computed: false, optional: false, required: true
+  private _rule = new JobV1SpecPodFailurePolicyRuleList(this, "rule", false);
+  public get rule() {
+    return this._rule;
+  }
+  public putRule(value: JobV1SpecPodFailurePolicyRule[] | cdktf.IResolvable) {
+    this._rule.internalValue = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ruleInput() {
+    return this._rule.internalValue;
+  }
+}
 export interface JobV1SpecSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#key JobV1#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#key JobV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#operator JobV1#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#operator JobV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#values JobV1#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#values JobV1#values}
   */
   readonly values?: string[];
 }
@@ -437,13 +997,13 @@ export interface JobV1SpecSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#match_labels JobV1#match_labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#match_labels JobV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#match_expressions JobV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#match_expressions JobV1#match_expressions}
   */
   readonly matchExpressions?: JobV1SpecSelectorMatchExpressions[] | cdktf.IResolvable;
 }
@@ -558,25 +1118,25 @@ export interface JobV1SpecTemplateMetadata {
   /**
   * An unstructured key value map stored with the job that may be used to store arbitrary metadata. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#annotations JobV1#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#annotations JobV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#generate_name JobV1#generate_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#generate_name JobV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the job. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#labels JobV1#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#labels JobV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the job, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name?: string;
 }
@@ -764,19 +1324,19 @@ export interface JobV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedul
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#key JobV1#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#key JobV1#key}
   */
   readonly key?: string;
   /**
   * Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#operator JobV1#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#operator JobV1#operator}
   */
   readonly operator?: string;
   /**
   * Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#values JobV1#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#values JobV1#values}
   */
   readonly values?: string[];
 }
@@ -952,19 +1512,19 @@ export interface JobV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedul
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#key JobV1#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#key JobV1#key}
   */
   readonly key: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists`, `DoesNotExist`, `Gt`, and `Lt`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#operator JobV1#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#operator JobV1#operator}
   */
   readonly operator: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#values JobV1#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#values JobV1#values}
   */
   readonly values?: string[];
 }
@@ -1134,13 +1694,13 @@ export interface JobV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedul
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#match_expressions JobV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#match_expressions JobV1#match_expressions}
   */
   readonly matchExpressions?: JobV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[] | cdktf.IResolvable;
   /**
   * match_fields block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#match_fields JobV1#match_fields}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#match_fields JobV1#match_fields}
   */
   readonly matchFields?: JobV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchFields[] | cdktf.IResolvable;
 }
@@ -1255,13 +1815,13 @@ export interface JobV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedul
   /**
   * weight is in the range 1-100
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#weight JobV1#weight}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#weight JobV1#weight}
   */
   readonly weight: number;
   /**
   * preference block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#preference JobV1#preference}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#preference JobV1#preference}
   */
   readonly preference: JobV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference;
 }
@@ -1402,19 +1962,19 @@ export interface JobV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringScheduli
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#key JobV1#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#key JobV1#key}
   */
   readonly key?: string;
   /**
   * Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#operator JobV1#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#operator JobV1#operator}
   */
   readonly operator?: string;
   /**
   * Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#values JobV1#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#values JobV1#values}
   */
   readonly values?: string[];
 }
@@ -1590,19 +2150,19 @@ export interface JobV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringScheduli
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#key JobV1#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#key JobV1#key}
   */
   readonly key: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists`, `DoesNotExist`, `Gt`, and `Lt`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#operator JobV1#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#operator JobV1#operator}
   */
   readonly operator: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#values JobV1#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#values JobV1#values}
   */
   readonly values?: string[];
 }
@@ -1772,13 +2332,13 @@ export interface JobV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringScheduli
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#match_expressions JobV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#match_expressions JobV1#match_expressions}
   */
   readonly matchExpressions?: JobV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions[] | cdktf.IResolvable;
   /**
   * match_fields block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#match_fields JobV1#match_fields}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#match_fields JobV1#match_fields}
   */
   readonly matchFields?: JobV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchFields[] | cdktf.IResolvable;
 }
@@ -1925,7 +2485,7 @@ export interface JobV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringScheduli
   /**
   * node_selector_term block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#node_selector_term JobV1#node_selector_term}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#node_selector_term JobV1#node_selector_term}
   */
   readonly nodeSelectorTerm?: JobV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[] | cdktf.IResolvable;
 }
@@ -2011,13 +2571,13 @@ export interface JobV1SpecTemplateSpecAffinityNodeAffinity {
   /**
   * preferred_during_scheduling_ignored_during_execution block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#preferred_during_scheduling_ignored_during_execution JobV1#preferred_during_scheduling_ignored_during_execution}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#preferred_during_scheduling_ignored_during_execution JobV1#preferred_during_scheduling_ignored_during_execution}
   */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: JobV1SpecTemplateSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
   /**
   * required_during_scheduling_ignored_during_execution block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#required_during_scheduling_ignored_during_execution JobV1#required_during_scheduling_ignored_during_execution}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#required_during_scheduling_ignored_during_execution JobV1#required_during_scheduling_ignored_during_execution}
   */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: JobV1SpecTemplateSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution;
 }
@@ -2132,19 +2692,19 @@ export interface JobV1SpecTemplateSpecAffinityPodAffinityPreferredDuringScheduli
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#key JobV1#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#key JobV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#operator JobV1#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#operator JobV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#values JobV1#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#values JobV1#values}
   */
   readonly values?: string[];
 }
@@ -2320,13 +2880,13 @@ export interface JobV1SpecTemplateSpecAffinityPodAffinityPreferredDuringScheduli
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#match_labels JobV1#match_labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#match_labels JobV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#match_expressions JobV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#match_expressions JobV1#match_expressions}
   */
   readonly matchExpressions?: JobV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[] | cdktf.IResolvable;
 }
@@ -2473,19 +3033,19 @@ export interface JobV1SpecTemplateSpecAffinityPodAffinityPreferredDuringScheduli
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#namespaces JobV1#namespaces}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#namespaces JobV1#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#topology_key JobV1#topology_key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#topology_key JobV1#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#label_selector JobV1#label_selector}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#label_selector JobV1#label_selector}
   */
   readonly labelSelector?: JobV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | cdktf.IResolvable;
 }
@@ -2626,13 +3186,13 @@ export interface JobV1SpecTemplateSpecAffinityPodAffinityPreferredDuringScheduli
   /**
   * weight associated with matching the corresponding podAffinityTerm, in the range 1-100
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#weight JobV1#weight}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#weight JobV1#weight}
   */
   readonly weight: number;
   /**
   * pod_affinity_term block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#pod_affinity_term JobV1#pod_affinity_term}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#pod_affinity_term JobV1#pod_affinity_term}
   */
   readonly podAffinityTerm: JobV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
 }
@@ -2773,19 +3333,19 @@ export interface JobV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulin
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#key JobV1#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#key JobV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#operator JobV1#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#operator JobV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#values JobV1#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#values JobV1#values}
   */
   readonly values?: string[];
 }
@@ -2961,13 +3521,13 @@ export interface JobV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulin
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#match_labels JobV1#match_labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#match_labels JobV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#match_expressions JobV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#match_expressions JobV1#match_expressions}
   */
   readonly matchExpressions?: JobV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[] | cdktf.IResolvable;
 }
@@ -3114,19 +3674,19 @@ export interface JobV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulin
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#namespaces JobV1#namespaces}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#namespaces JobV1#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#topology_key JobV1#topology_key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#topology_key JobV1#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#label_selector JobV1#label_selector}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#label_selector JobV1#label_selector}
   */
   readonly labelSelector?: JobV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[] | cdktf.IResolvable;
 }
@@ -3299,13 +3859,13 @@ export interface JobV1SpecTemplateSpecAffinityPodAffinity {
   /**
   * preferred_during_scheduling_ignored_during_execution block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#preferred_during_scheduling_ignored_during_execution JobV1#preferred_during_scheduling_ignored_during_execution}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#preferred_during_scheduling_ignored_during_execution JobV1#preferred_during_scheduling_ignored_during_execution}
   */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: JobV1SpecTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
   /**
   * required_during_scheduling_ignored_during_execution block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#required_during_scheduling_ignored_during_execution JobV1#required_during_scheduling_ignored_during_execution}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#required_during_scheduling_ignored_during_execution JobV1#required_during_scheduling_ignored_during_execution}
   */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: JobV1SpecTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
 }
@@ -3420,19 +3980,19 @@ export interface JobV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSche
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#key JobV1#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#key JobV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#operator JobV1#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#operator JobV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#values JobV1#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#values JobV1#values}
   */
   readonly values?: string[];
 }
@@ -3608,13 +4168,13 @@ export interface JobV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSche
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#match_labels JobV1#match_labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#match_labels JobV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#match_expressions JobV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#match_expressions JobV1#match_expressions}
   */
   readonly matchExpressions?: JobV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[] | cdktf.IResolvable;
 }
@@ -3761,19 +4321,19 @@ export interface JobV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSche
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#namespaces JobV1#namespaces}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#namespaces JobV1#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#topology_key JobV1#topology_key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#topology_key JobV1#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#label_selector JobV1#label_selector}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#label_selector JobV1#label_selector}
   */
   readonly labelSelector?: JobV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | cdktf.IResolvable;
 }
@@ -3914,13 +4474,13 @@ export interface JobV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSche
   /**
   * weight associated with matching the corresponding podAffinityTerm, in the range 1-100
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#weight JobV1#weight}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#weight JobV1#weight}
   */
   readonly weight: number;
   /**
   * pod_affinity_term block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#pod_affinity_term JobV1#pod_affinity_term}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#pod_affinity_term JobV1#pod_affinity_term}
   */
   readonly podAffinityTerm: JobV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
 }
@@ -4061,19 +4621,19 @@ export interface JobV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSched
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#key JobV1#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#key JobV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#operator JobV1#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#operator JobV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#values JobV1#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#values JobV1#values}
   */
   readonly values?: string[];
 }
@@ -4249,13 +4809,13 @@ export interface JobV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSched
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#match_labels JobV1#match_labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#match_labels JobV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#match_expressions JobV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#match_expressions JobV1#match_expressions}
   */
   readonly matchExpressions?: JobV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[] | cdktf.IResolvable;
 }
@@ -4402,19 +4962,19 @@ export interface JobV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSched
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#namespaces JobV1#namespaces}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#namespaces JobV1#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#topology_key JobV1#topology_key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#topology_key JobV1#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#label_selector JobV1#label_selector}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#label_selector JobV1#label_selector}
   */
   readonly labelSelector?: JobV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[] | cdktf.IResolvable;
 }
@@ -4587,13 +5147,13 @@ export interface JobV1SpecTemplateSpecAffinityPodAntiAffinity {
   /**
   * preferred_during_scheduling_ignored_during_execution block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#preferred_during_scheduling_ignored_during_execution JobV1#preferred_during_scheduling_ignored_during_execution}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#preferred_during_scheduling_ignored_during_execution JobV1#preferred_during_scheduling_ignored_during_execution}
   */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: JobV1SpecTemplateSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
   /**
   * required_during_scheduling_ignored_during_execution block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#required_during_scheduling_ignored_during_execution JobV1#required_during_scheduling_ignored_during_execution}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#required_during_scheduling_ignored_during_execution JobV1#required_during_scheduling_ignored_during_execution}
   */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: JobV1SpecTemplateSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
 }
@@ -4708,19 +5268,19 @@ export interface JobV1SpecTemplateSpecAffinity {
   /**
   * node_affinity block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#node_affinity JobV1#node_affinity}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#node_affinity JobV1#node_affinity}
   */
   readonly nodeAffinity?: JobV1SpecTemplateSpecAffinityNodeAffinity;
   /**
   * pod_affinity block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#pod_affinity JobV1#pod_affinity}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#pod_affinity JobV1#pod_affinity}
   */
   readonly podAffinity?: JobV1SpecTemplateSpecAffinityPodAffinity;
   /**
   * pod_anti_affinity block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#pod_anti_affinity JobV1#pod_anti_affinity}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#pod_anti_affinity JobV1#pod_anti_affinity}
   */
   readonly podAntiAffinity?: JobV1SpecTemplateSpecAffinityPodAntiAffinity;
 }
@@ -4864,19 +5424,19 @@ export interface JobV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRef {
   /**
   * The key to select.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#key JobV1#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#key JobV1#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name?: string;
   /**
   * Specify whether the ConfigMap or its key must be defined.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#optional JobV1#optional}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#optional JobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -5020,13 +5580,13 @@ export interface JobV1SpecTemplateSpecContainerEnvValueFromFieldRef {
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to "v1".
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#api_version JobV1#api_version}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#api_version JobV1#api_version}
   */
   readonly apiVersion?: string;
   /**
   * Path of the field to select in the specified API version
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#field_path JobV1#field_path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#field_path JobV1#field_path}
   */
   readonly fieldPath?: string;
 }
@@ -5139,17 +5699,17 @@ export class JobV1SpecTemplateSpecContainerEnvValueFromFieldRefOutputReference e
 }
 export interface JobV1SpecTemplateSpecContainerEnvValueFromResourceFieldRef {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#container_name JobV1#container_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#container_name JobV1#container_name}
   */
   readonly containerName?: string;
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#divisor JobV1#divisor}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#divisor JobV1#divisor}
   */
   readonly divisor?: string;
   /**
   * Resource to select
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#resource JobV1#resource}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#resource JobV1#resource}
   */
   readonly resource: string;
 }
@@ -5290,19 +5850,19 @@ export interface JobV1SpecTemplateSpecContainerEnvValueFromSecretKeyRef {
   /**
   * The key of the secret to select from. Must be a valid secret key.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#key JobV1#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#key JobV1#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name?: string;
   /**
   * Specify whether the Secret or its key must be defined.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#optional JobV1#optional}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#optional JobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -5446,25 +6006,25 @@ export interface JobV1SpecTemplateSpecContainerEnvValueFrom {
   /**
   * config_map_key_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#config_map_key_ref JobV1#config_map_key_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#config_map_key_ref JobV1#config_map_key_ref}
   */
   readonly configMapKeyRef?: JobV1SpecTemplateSpecContainerEnvValueFromConfigMapKeyRef;
   /**
   * field_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#field_ref JobV1#field_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#field_ref JobV1#field_ref}
   */
   readonly fieldRef?: JobV1SpecTemplateSpecContainerEnvValueFromFieldRef;
   /**
   * resource_field_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#resource_field_ref JobV1#resource_field_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#resource_field_ref JobV1#resource_field_ref}
   */
   readonly resourceFieldRef?: JobV1SpecTemplateSpecContainerEnvValueFromResourceFieldRef;
   /**
   * secret_key_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#secret_key_ref JobV1#secret_key_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#secret_key_ref JobV1#secret_key_ref}
   */
   readonly secretKeyRef?: JobV1SpecTemplateSpecContainerEnvValueFromSecretKeyRef;
 }
@@ -5637,19 +6197,19 @@ export interface JobV1SpecTemplateSpecContainerEnv {
   /**
   * Name of the environment variable. Must be a C_IDENTIFIER
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name: string;
   /**
   * Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#value JobV1#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#value JobV1#value}
   */
   readonly value?: string;
   /**
   * value_from block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#value_from JobV1#value_from}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#value_from JobV1#value_from}
   */
   readonly valueFrom?: JobV1SpecTemplateSpecContainerEnvValueFrom;
 }
@@ -5822,13 +6382,13 @@ export interface JobV1SpecTemplateSpecContainerEnvFromConfigMapRef {
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name: string;
   /**
   * Specify whether the ConfigMap must be defined
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#optional JobV1#optional}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#optional JobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -5940,13 +6500,13 @@ export interface JobV1SpecTemplateSpecContainerEnvFromSecretRef {
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name: string;
   /**
   * Specify whether the Secret must be defined
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#optional JobV1#optional}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#optional JobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -6058,19 +6618,19 @@ export interface JobV1SpecTemplateSpecContainerEnvFrom {
   /**
   * An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#prefix JobV1#prefix}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#prefix JobV1#prefix}
   */
   readonly prefix?: string;
   /**
   * config_map_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#config_map_ref JobV1#config_map_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#config_map_ref JobV1#config_map_ref}
   */
   readonly configMapRef?: JobV1SpecTemplateSpecContainerEnvFromConfigMapRef;
   /**
   * secret_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#secret_ref JobV1#secret_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#secret_ref JobV1#secret_ref}
   */
   readonly secretRef?: JobV1SpecTemplateSpecContainerEnvFromSecretRef;
 }
@@ -6246,7 +6806,7 @@ export interface JobV1SpecTemplateSpecContainerLifecyclePostStartExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#command JobV1#command}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#command JobV1#command}
   */
   readonly command?: string[];
 }
@@ -6332,13 +6892,13 @@ export interface JobV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHead
   /**
   * The header field name
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#value JobV1#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#value JobV1#value}
   */
   readonly value?: string;
 }
@@ -6485,31 +7045,31 @@ export interface JobV1SpecTemplateSpecContainerLifecyclePostStartHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#host JobV1#host}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#host JobV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#path JobV1#path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#path JobV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#scheme JobV1#scheme}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#scheme JobV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#http_header JobV1#http_header}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#http_header JobV1#http_header}
   */
   readonly httpHeader?: JobV1SpecTemplateSpecContainerLifecyclePostStartHttpGetHttpHeader[] | cdktf.IResolvable;
 }
@@ -6711,7 +7271,7 @@ export interface JobV1SpecTemplateSpecContainerLifecyclePostStartTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port: string;
 }
@@ -6826,19 +7386,19 @@ export interface JobV1SpecTemplateSpecContainerLifecyclePostStart {
   /**
   * exec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#exec JobV1#exec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#exec JobV1#exec}
   */
   readonly exec?: JobV1SpecTemplateSpecContainerLifecyclePostStartExec;
   /**
   * http_get block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#http_get JobV1#http_get}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#http_get JobV1#http_get}
   */
   readonly httpGet?: JobV1SpecTemplateSpecContainerLifecyclePostStartHttpGet;
   /**
   * tcp_socket block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#tcp_socket JobV1#tcp_socket}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#tcp_socket JobV1#tcp_socket}
   */
   readonly tcpSocket?: JobV1SpecTemplateSpecContainerLifecyclePostStartTcpSocket[] | cdktf.IResolvable;
 }
@@ -7014,7 +7574,7 @@ export interface JobV1SpecTemplateSpecContainerLifecyclePreStopExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#command JobV1#command}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#command JobV1#command}
   */
   readonly command?: string[];
 }
@@ -7100,13 +7660,13 @@ export interface JobV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader
   /**
   * The header field name
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#value JobV1#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#value JobV1#value}
   */
   readonly value?: string;
 }
@@ -7253,31 +7813,31 @@ export interface JobV1SpecTemplateSpecContainerLifecyclePreStopHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#host JobV1#host}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#host JobV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#path JobV1#path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#path JobV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#scheme JobV1#scheme}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#scheme JobV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#http_header JobV1#http_header}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#http_header JobV1#http_header}
   */
   readonly httpHeader?: JobV1SpecTemplateSpecContainerLifecyclePreStopHttpGetHttpHeader[] | cdktf.IResolvable;
 }
@@ -7479,7 +8039,7 @@ export interface JobV1SpecTemplateSpecContainerLifecyclePreStopTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port: string;
 }
@@ -7594,19 +8154,19 @@ export interface JobV1SpecTemplateSpecContainerLifecyclePreStop {
   /**
   * exec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#exec JobV1#exec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#exec JobV1#exec}
   */
   readonly exec?: JobV1SpecTemplateSpecContainerLifecyclePreStopExec;
   /**
   * http_get block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#http_get JobV1#http_get}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#http_get JobV1#http_get}
   */
   readonly httpGet?: JobV1SpecTemplateSpecContainerLifecyclePreStopHttpGet;
   /**
   * tcp_socket block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#tcp_socket JobV1#tcp_socket}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#tcp_socket JobV1#tcp_socket}
   */
   readonly tcpSocket?: JobV1SpecTemplateSpecContainerLifecyclePreStopTcpSocket[] | cdktf.IResolvable;
 }
@@ -7782,13 +8342,13 @@ export interface JobV1SpecTemplateSpecContainerLifecycle {
   /**
   * post_start block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#post_start JobV1#post_start}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#post_start JobV1#post_start}
   */
   readonly postStart?: JobV1SpecTemplateSpecContainerLifecyclePostStart[] | cdktf.IResolvable;
   /**
   * pre_stop block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#pre_stop JobV1#pre_stop}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#pre_stop JobV1#pre_stop}
   */
   readonly preStop?: JobV1SpecTemplateSpecContainerLifecyclePreStop[] | cdktf.IResolvable;
 }
@@ -7903,7 +8463,7 @@ export interface JobV1SpecTemplateSpecContainerLivenessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#command JobV1#command}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#command JobV1#command}
   */
   readonly command?: string[];
 }
@@ -7989,13 +8549,13 @@ export interface JobV1SpecTemplateSpecContainerLivenessProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#service JobV1#service}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#service JobV1#service}
   */
   readonly service?: string;
 }
@@ -8139,13 +8699,13 @@ export interface JobV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader {
   /**
   * The header field name
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#value JobV1#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#value JobV1#value}
   */
   readonly value?: string;
 }
@@ -8292,31 +8852,31 @@ export interface JobV1SpecTemplateSpecContainerLivenessProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#host JobV1#host}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#host JobV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#path JobV1#path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#path JobV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#scheme JobV1#scheme}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#scheme JobV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#http_header JobV1#http_header}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#http_header JobV1#http_header}
   */
   readonly httpHeader?: JobV1SpecTemplateSpecContainerLivenessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
 }
@@ -8518,7 +9078,7 @@ export interface JobV1SpecTemplateSpecContainerLivenessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port: string;
 }
@@ -8633,55 +9193,55 @@ export interface JobV1SpecTemplateSpecContainerLivenessProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#failure_threshold JobV1#failure_threshold}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#failure_threshold JobV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#initial_delay_seconds JobV1#initial_delay_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#initial_delay_seconds JobV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#period_seconds JobV1#period_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#period_seconds JobV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#success_threshold JobV1#success_threshold}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#success_threshold JobV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#timeout_seconds JobV1#timeout_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#timeout_seconds JobV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#exec JobV1#exec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#exec JobV1#exec}
   */
   readonly exec?: JobV1SpecTemplateSpecContainerLivenessProbeExec;
   /**
   * grpc block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#grpc JobV1#grpc}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#grpc JobV1#grpc}
   */
   readonly grpc?: JobV1SpecTemplateSpecContainerLivenessProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#http_get JobV1#http_get}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#http_get JobV1#http_get}
   */
   readonly httpGet?: JobV1SpecTemplateSpecContainerLivenessProbeHttpGet;
   /**
   * tcp_socket block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#tcp_socket JobV1#tcp_socket}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#tcp_socket JobV1#tcp_socket}
   */
   readonly tcpSocket?: JobV1SpecTemplateSpecContainerLivenessProbeTcpSocket[] | cdktf.IResolvable;
 }
@@ -8999,31 +9559,31 @@ export interface JobV1SpecTemplateSpecContainerPort {
   /**
   * Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#container_port JobV1#container_port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#container_port JobV1#container_port}
   */
   readonly containerPort: number;
   /**
   * What host IP to bind the external port to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#host_ip JobV1#host_ip}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#host_ip JobV1#host_ip}
   */
   readonly hostIp?: string;
   /**
   * Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#host_port JobV1#host_port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#host_port JobV1#host_port}
   */
   readonly hostPort?: number;
   /**
   * If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name?: string;
   /**
   * Protocol for port. Must be UDP or TCP. Defaults to "TCP".
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#protocol JobV1#protocol}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#protocol JobV1#protocol}
   */
   readonly protocol?: string;
 }
@@ -9254,7 +9814,7 @@ export interface JobV1SpecTemplateSpecContainerReadinessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#command JobV1#command}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#command JobV1#command}
   */
   readonly command?: string[];
 }
@@ -9340,13 +9900,13 @@ export interface JobV1SpecTemplateSpecContainerReadinessProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#service JobV1#service}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#service JobV1#service}
   */
   readonly service?: string;
 }
@@ -9490,13 +10050,13 @@ export interface JobV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader {
   /**
   * The header field name
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#value JobV1#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#value JobV1#value}
   */
   readonly value?: string;
 }
@@ -9643,31 +10203,31 @@ export interface JobV1SpecTemplateSpecContainerReadinessProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#host JobV1#host}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#host JobV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#path JobV1#path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#path JobV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#scheme JobV1#scheme}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#scheme JobV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#http_header JobV1#http_header}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#http_header JobV1#http_header}
   */
   readonly httpHeader?: JobV1SpecTemplateSpecContainerReadinessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
 }
@@ -9869,7 +10429,7 @@ export interface JobV1SpecTemplateSpecContainerReadinessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port: string;
 }
@@ -9984,55 +10544,55 @@ export interface JobV1SpecTemplateSpecContainerReadinessProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#failure_threshold JobV1#failure_threshold}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#failure_threshold JobV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#initial_delay_seconds JobV1#initial_delay_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#initial_delay_seconds JobV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#period_seconds JobV1#period_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#period_seconds JobV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#success_threshold JobV1#success_threshold}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#success_threshold JobV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#timeout_seconds JobV1#timeout_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#timeout_seconds JobV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#exec JobV1#exec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#exec JobV1#exec}
   */
   readonly exec?: JobV1SpecTemplateSpecContainerReadinessProbeExec;
   /**
   * grpc block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#grpc JobV1#grpc}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#grpc JobV1#grpc}
   */
   readonly grpc?: JobV1SpecTemplateSpecContainerReadinessProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#http_get JobV1#http_get}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#http_get JobV1#http_get}
   */
   readonly httpGet?: JobV1SpecTemplateSpecContainerReadinessProbeHttpGet;
   /**
   * tcp_socket block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#tcp_socket JobV1#tcp_socket}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#tcp_socket JobV1#tcp_socket}
   */
   readonly tcpSocket?: JobV1SpecTemplateSpecContainerReadinessProbeTcpSocket[] | cdktf.IResolvable;
 }
@@ -10350,13 +10910,13 @@ export interface JobV1SpecTemplateSpecContainerResources {
   /**
   * Describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#limits JobV1#limits}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#limits JobV1#limits}
   */
   readonly limits?: { [key: string]: string };
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#requests JobV1#requests}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#requests JobV1#requests}
   */
   readonly requests?: { [key: string]: string };
 }
@@ -10471,13 +11031,13 @@ export interface JobV1SpecTemplateSpecContainerSecurityContextCapabilities {
   /**
   * Added capabilities
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#add JobV1#add}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#add JobV1#add}
   */
   readonly add?: string[];
   /**
   * Removed capabilities
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#drop JobV1#drop}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#drop JobV1#drop}
   */
   readonly drop?: string[];
 }
@@ -10592,25 +11152,25 @@ export interface JobV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions {
   /**
   * Level is SELinux level label that applies to the container.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#level JobV1#level}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#level JobV1#level}
   */
   readonly level?: string;
   /**
   * Role is a SELinux role label that applies to the container.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#role JobV1#role}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#role JobV1#role}
   */
   readonly role?: string;
   /**
   * Type is a SELinux type label that applies to the container.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#type JobV1#type}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#type JobV1#type}
   */
   readonly type?: string;
   /**
   * User is a SELinux user label that applies to the container.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#user JobV1#user}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#user JobV1#user}
   */
   readonly user?: string;
 }
@@ -10783,13 +11343,13 @@ export interface JobV1SpecTemplateSpecContainerSecurityContextSeccompProfile {
   /**
   * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#localhost_profile JobV1#localhost_profile}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#localhost_profile JobV1#localhost_profile}
   */
   readonly localhostProfile?: string;
   /**
   * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#type JobV1#type}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#type JobV1#type}
   */
   readonly type?: string;
 }
@@ -10904,55 +11464,55 @@ export interface JobV1SpecTemplateSpecContainerSecurityContext {
   /**
   * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#allow_privilege_escalation JobV1#allow_privilege_escalation}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#allow_privilege_escalation JobV1#allow_privilege_escalation}
   */
   readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#privileged JobV1#privileged}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#privileged JobV1#privileged}
   */
   readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * Whether this container has a read-only root filesystem. Default is false.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#read_only_root_filesystem JobV1#read_only_root_filesystem}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#read_only_root_filesystem JobV1#read_only_root_filesystem}
   */
   readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
   /**
   * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#run_as_group JobV1#run_as_group}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#run_as_group JobV1#run_as_group}
   */
   readonly runAsGroup?: string;
   /**
   * Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#run_as_non_root JobV1#run_as_non_root}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#run_as_non_root JobV1#run_as_non_root}
   */
   readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#run_as_user JobV1#run_as_user}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#run_as_user JobV1#run_as_user}
   */
   readonly runAsUser?: string;
   /**
   * capabilities block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#capabilities JobV1#capabilities}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#capabilities JobV1#capabilities}
   */
   readonly capabilities?: JobV1SpecTemplateSpecContainerSecurityContextCapabilities;
   /**
   * se_linux_options block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#se_linux_options JobV1#se_linux_options}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#se_linux_options JobV1#se_linux_options}
   */
   readonly seLinuxOptions?: JobV1SpecTemplateSpecContainerSecurityContextSeLinuxOptions;
   /**
   * seccomp_profile block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#seccomp_profile JobV1#seccomp_profile}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#seccomp_profile JobV1#seccomp_profile}
   */
   readonly seccompProfile?: JobV1SpecTemplateSpecContainerSecurityContextSeccompProfile;
 }
@@ -11270,7 +11830,7 @@ export interface JobV1SpecTemplateSpecContainerStartupProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#command JobV1#command}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#command JobV1#command}
   */
   readonly command?: string[];
 }
@@ -11356,13 +11916,13 @@ export interface JobV1SpecTemplateSpecContainerStartupProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#service JobV1#service}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#service JobV1#service}
   */
   readonly service?: string;
 }
@@ -11506,13 +12066,13 @@ export interface JobV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeader {
   /**
   * The header field name
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#value JobV1#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#value JobV1#value}
   */
   readonly value?: string;
 }
@@ -11659,31 +12219,31 @@ export interface JobV1SpecTemplateSpecContainerStartupProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#host JobV1#host}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#host JobV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#path JobV1#path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#path JobV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#scheme JobV1#scheme}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#scheme JobV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#http_header JobV1#http_header}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#http_header JobV1#http_header}
   */
   readonly httpHeader?: JobV1SpecTemplateSpecContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable;
 }
@@ -11885,7 +12445,7 @@ export interface JobV1SpecTemplateSpecContainerStartupProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port: string;
 }
@@ -12000,55 +12560,55 @@ export interface JobV1SpecTemplateSpecContainerStartupProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#failure_threshold JobV1#failure_threshold}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#failure_threshold JobV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#initial_delay_seconds JobV1#initial_delay_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#initial_delay_seconds JobV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#period_seconds JobV1#period_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#period_seconds JobV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#success_threshold JobV1#success_threshold}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#success_threshold JobV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#timeout_seconds JobV1#timeout_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#timeout_seconds JobV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#exec JobV1#exec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#exec JobV1#exec}
   */
   readonly exec?: JobV1SpecTemplateSpecContainerStartupProbeExec;
   /**
   * grpc block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#grpc JobV1#grpc}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#grpc JobV1#grpc}
   */
   readonly grpc?: JobV1SpecTemplateSpecContainerStartupProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#http_get JobV1#http_get}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#http_get JobV1#http_get}
   */
   readonly httpGet?: JobV1SpecTemplateSpecContainerStartupProbeHttpGet;
   /**
   * tcp_socket block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#tcp_socket JobV1#tcp_socket}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#tcp_socket JobV1#tcp_socket}
   */
   readonly tcpSocket?: JobV1SpecTemplateSpecContainerStartupProbeTcpSocket[] | cdktf.IResolvable;
 }
@@ -12366,31 +12926,31 @@ export interface JobV1SpecTemplateSpecContainerVolumeMount {
   /**
   * Path within the container at which the volume should be mounted. Must not contain ':'.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#mount_path JobV1#mount_path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#mount_path JobV1#mount_path}
   */
   readonly mountPath: string;
   /**
   * Mount propagation mode. mount_propagation determines how mounts are propagated from the host to container and the other way around. Valid values are None (default), HostToContainer and Bidirectional.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#mount_propagation JobV1#mount_propagation}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#mount_propagation JobV1#mount_propagation}
   */
   readonly mountPropagation?: string;
   /**
   * This must match the Name of a Volume.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name: string;
   /**
   * Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#read_only JobV1#read_only}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#read_only JobV1#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#sub_path JobV1#sub_path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#sub_path JobV1#sub_path}
   */
   readonly subPath?: string;
 }
@@ -12618,127 +13178,127 @@ export interface JobV1SpecTemplateSpecContainer {
   /**
   * Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#args JobV1#args}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#args JobV1#args}
   */
   readonly args?: string[];
   /**
   * Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#command JobV1#command}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#command JobV1#command}
   */
   readonly command?: string[];
   /**
   * Docker image name. More info: https://kubernetes.io/docs/concepts/containers/images/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#image JobV1#image}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#image JobV1#image}
   */
   readonly image?: string;
   /**
   * Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. More info: https://kubernetes.io/docs/concepts/containers/images/#updating-images
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#image_pull_policy JobV1#image_pull_policy}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#image_pull_policy JobV1#image_pull_policy}
   */
   readonly imagePullPolicy?: string;
   /**
   * Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name: string;
   /**
   * Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF. 
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#stdin JobV1#stdin}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#stdin JobV1#stdin}
   */
   readonly stdin?: boolean | cdktf.IResolvable;
   /**
   * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#stdin_once JobV1#stdin_once}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#stdin_once JobV1#stdin_once}
   */
   readonly stdinOnce?: boolean | cdktf.IResolvable;
   /**
   * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#termination_message_path JobV1#termination_message_path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#termination_message_path JobV1#termination_message_path}
   */
   readonly terminationMessagePath?: string;
   /**
   * Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#termination_message_policy JobV1#termination_message_policy}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#termination_message_policy JobV1#termination_message_policy}
   */
   readonly terminationMessagePolicy?: string;
   /**
   * Whether this container should allocate a TTY for itself
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#tty JobV1#tty}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#tty JobV1#tty}
   */
   readonly tty?: boolean | cdktf.IResolvable;
   /**
   * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#working_dir JobV1#working_dir}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#working_dir JobV1#working_dir}
   */
   readonly workingDir?: string;
   /**
   * env block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#env JobV1#env}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#env JobV1#env}
   */
   readonly env?: JobV1SpecTemplateSpecContainerEnv[] | cdktf.IResolvable;
   /**
   * env_from block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#env_from JobV1#env_from}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#env_from JobV1#env_from}
   */
   readonly envFrom?: JobV1SpecTemplateSpecContainerEnvFrom[] | cdktf.IResolvable;
   /**
   * lifecycle block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#lifecycle JobV1#lifecycle}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#lifecycle JobV1#lifecycle}
   */
   readonly lifecycle?: JobV1SpecTemplateSpecContainerLifecycle;
   /**
   * liveness_probe block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#liveness_probe JobV1#liveness_probe}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#liveness_probe JobV1#liveness_probe}
   */
   readonly livenessProbe?: JobV1SpecTemplateSpecContainerLivenessProbe;
   /**
   * port block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port?: JobV1SpecTemplateSpecContainerPort[] | cdktf.IResolvable;
   /**
   * readiness_probe block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#readiness_probe JobV1#readiness_probe}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#readiness_probe JobV1#readiness_probe}
   */
   readonly readinessProbe?: JobV1SpecTemplateSpecContainerReadinessProbe;
   /**
   * resources block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#resources JobV1#resources}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#resources JobV1#resources}
   */
   readonly resources?: JobV1SpecTemplateSpecContainerResources;
   /**
   * security_context block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#security_context JobV1#security_context}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#security_context JobV1#security_context}
   */
   readonly securityContext?: JobV1SpecTemplateSpecContainerSecurityContext;
   /**
   * startup_probe block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#startup_probe JobV1#startup_probe}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#startup_probe JobV1#startup_probe}
   */
   readonly startupProbe?: JobV1SpecTemplateSpecContainerStartupProbe;
   /**
   * volume_mount block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#volume_mount JobV1#volume_mount}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#volume_mount JobV1#volume_mount}
   */
   readonly volumeMount?: JobV1SpecTemplateSpecContainerVolumeMount[] | cdktf.IResolvable;
 }
@@ -13433,13 +13993,13 @@ export interface JobV1SpecTemplateSpecDnsConfigOption {
   /**
   * Name of the option.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name: string;
   /**
   * Value of the option. Optional: Defaults to empty.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#value JobV1#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#value JobV1#value}
   */
   readonly value?: string;
 }
@@ -13583,19 +14143,19 @@ export interface JobV1SpecTemplateSpecDnsConfig {
   /**
   * A list of DNS name server IP addresses. This will be appended to the base nameservers generated from DNSPolicy. Duplicated nameservers will be removed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#nameservers JobV1#nameservers}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#nameservers JobV1#nameservers}
   */
   readonly nameservers?: string[];
   /**
   * A list of DNS search domains for host-name lookup. This will be appended to the base search paths generated from DNSPolicy. Duplicated search paths will be removed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#searches JobV1#searches}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#searches JobV1#searches}
   */
   readonly searches?: string[];
   /**
   * option block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#option JobV1#option}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#option JobV1#option}
   */
   readonly option?: JobV1SpecTemplateSpecDnsConfigOption[] | cdktf.IResolvable;
 }
@@ -13739,13 +14299,13 @@ export interface JobV1SpecTemplateSpecHostAliases {
   /**
   * Hostnames for the IP address.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#hostnames JobV1#hostnames}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#hostnames JobV1#hostnames}
   */
   readonly hostnames: string[];
   /**
   * IP address of the host file entry.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#ip JobV1#ip}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#ip JobV1#ip}
   */
   readonly ip: string;
 }
@@ -13886,7 +14446,7 @@ export interface JobV1SpecTemplateSpecImagePullSecrets {
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name: string;
 }
@@ -14001,19 +14561,19 @@ export interface JobV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef {
   /**
   * The key to select.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#key JobV1#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#key JobV1#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name?: string;
   /**
   * Specify whether the ConfigMap or its key must be defined.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#optional JobV1#optional}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#optional JobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -14157,13 +14717,13 @@ export interface JobV1SpecTemplateSpecInitContainerEnvValueFromFieldRef {
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to "v1".
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#api_version JobV1#api_version}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#api_version JobV1#api_version}
   */
   readonly apiVersion?: string;
   /**
   * Path of the field to select in the specified API version
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#field_path JobV1#field_path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#field_path JobV1#field_path}
   */
   readonly fieldPath?: string;
 }
@@ -14276,17 +14836,17 @@ export class JobV1SpecTemplateSpecInitContainerEnvValueFromFieldRefOutputReferen
 }
 export interface JobV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRef {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#container_name JobV1#container_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#container_name JobV1#container_name}
   */
   readonly containerName?: string;
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#divisor JobV1#divisor}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#divisor JobV1#divisor}
   */
   readonly divisor?: string;
   /**
   * Resource to select
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#resource JobV1#resource}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#resource JobV1#resource}
   */
   readonly resource: string;
 }
@@ -14427,19 +14987,19 @@ export interface JobV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRef {
   /**
   * The key of the secret to select from. Must be a valid secret key.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#key JobV1#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#key JobV1#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name?: string;
   /**
   * Specify whether the Secret or its key must be defined.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#optional JobV1#optional}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#optional JobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -14583,25 +15143,25 @@ export interface JobV1SpecTemplateSpecInitContainerEnvValueFrom {
   /**
   * config_map_key_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#config_map_key_ref JobV1#config_map_key_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#config_map_key_ref JobV1#config_map_key_ref}
   */
   readonly configMapKeyRef?: JobV1SpecTemplateSpecInitContainerEnvValueFromConfigMapKeyRef;
   /**
   * field_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#field_ref JobV1#field_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#field_ref JobV1#field_ref}
   */
   readonly fieldRef?: JobV1SpecTemplateSpecInitContainerEnvValueFromFieldRef;
   /**
   * resource_field_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#resource_field_ref JobV1#resource_field_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#resource_field_ref JobV1#resource_field_ref}
   */
   readonly resourceFieldRef?: JobV1SpecTemplateSpecInitContainerEnvValueFromResourceFieldRef;
   /**
   * secret_key_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#secret_key_ref JobV1#secret_key_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#secret_key_ref JobV1#secret_key_ref}
   */
   readonly secretKeyRef?: JobV1SpecTemplateSpecInitContainerEnvValueFromSecretKeyRef;
 }
@@ -14774,19 +15334,19 @@ export interface JobV1SpecTemplateSpecInitContainerEnv {
   /**
   * Name of the environment variable. Must be a C_IDENTIFIER
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name: string;
   /**
   * Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#value JobV1#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#value JobV1#value}
   */
   readonly value?: string;
   /**
   * value_from block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#value_from JobV1#value_from}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#value_from JobV1#value_from}
   */
   readonly valueFrom?: JobV1SpecTemplateSpecInitContainerEnvValueFrom;
 }
@@ -14959,13 +15519,13 @@ export interface JobV1SpecTemplateSpecInitContainerEnvFromConfigMapRef {
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name: string;
   /**
   * Specify whether the ConfigMap must be defined
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#optional JobV1#optional}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#optional JobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -15077,13 +15637,13 @@ export interface JobV1SpecTemplateSpecInitContainerEnvFromSecretRef {
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name: string;
   /**
   * Specify whether the Secret must be defined
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#optional JobV1#optional}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#optional JobV1#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -15195,19 +15755,19 @@ export interface JobV1SpecTemplateSpecInitContainerEnvFrom {
   /**
   * An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#prefix JobV1#prefix}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#prefix JobV1#prefix}
   */
   readonly prefix?: string;
   /**
   * config_map_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#config_map_ref JobV1#config_map_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#config_map_ref JobV1#config_map_ref}
   */
   readonly configMapRef?: JobV1SpecTemplateSpecInitContainerEnvFromConfigMapRef;
   /**
   * secret_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#secret_ref JobV1#secret_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#secret_ref JobV1#secret_ref}
   */
   readonly secretRef?: JobV1SpecTemplateSpecInitContainerEnvFromSecretRef;
 }
@@ -15383,7 +15943,7 @@ export interface JobV1SpecTemplateSpecInitContainerLifecyclePostStartExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#command JobV1#command}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#command JobV1#command}
   */
   readonly command?: string[];
 }
@@ -15469,13 +16029,13 @@ export interface JobV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttp
   /**
   * The header field name
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#value JobV1#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#value JobV1#value}
   */
   readonly value?: string;
 }
@@ -15622,31 +16182,31 @@ export interface JobV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#host JobV1#host}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#host JobV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#path JobV1#path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#path JobV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#scheme JobV1#scheme}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#scheme JobV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#http_header JobV1#http_header}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#http_header JobV1#http_header}
   */
   readonly httpHeader?: JobV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGetHttpHeader[] | cdktf.IResolvable;
 }
@@ -15848,7 +16408,7 @@ export interface JobV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port: string;
 }
@@ -15963,19 +16523,19 @@ export interface JobV1SpecTemplateSpecInitContainerLifecyclePostStart {
   /**
   * exec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#exec JobV1#exec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#exec JobV1#exec}
   */
   readonly exec?: JobV1SpecTemplateSpecInitContainerLifecyclePostStartExec;
   /**
   * http_get block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#http_get JobV1#http_get}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#http_get JobV1#http_get}
   */
   readonly httpGet?: JobV1SpecTemplateSpecInitContainerLifecyclePostStartHttpGet;
   /**
   * tcp_socket block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#tcp_socket JobV1#tcp_socket}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#tcp_socket JobV1#tcp_socket}
   */
   readonly tcpSocket?: JobV1SpecTemplateSpecInitContainerLifecyclePostStartTcpSocket[] | cdktf.IResolvable;
 }
@@ -16151,7 +16711,7 @@ export interface JobV1SpecTemplateSpecInitContainerLifecyclePreStopExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#command JobV1#command}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#command JobV1#command}
   */
   readonly command?: string[];
 }
@@ -16237,13 +16797,13 @@ export interface JobV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHe
   /**
   * The header field name
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#value JobV1#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#value JobV1#value}
   */
   readonly value?: string;
 }
@@ -16390,31 +16950,31 @@ export interface JobV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#host JobV1#host}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#host JobV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#path JobV1#path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#path JobV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#scheme JobV1#scheme}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#scheme JobV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#http_header JobV1#http_header}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#http_header JobV1#http_header}
   */
   readonly httpHeader?: JobV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGetHttpHeader[] | cdktf.IResolvable;
 }
@@ -16616,7 +17176,7 @@ export interface JobV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port: string;
 }
@@ -16731,19 +17291,19 @@ export interface JobV1SpecTemplateSpecInitContainerLifecyclePreStop {
   /**
   * exec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#exec JobV1#exec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#exec JobV1#exec}
   */
   readonly exec?: JobV1SpecTemplateSpecInitContainerLifecyclePreStopExec;
   /**
   * http_get block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#http_get JobV1#http_get}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#http_get JobV1#http_get}
   */
   readonly httpGet?: JobV1SpecTemplateSpecInitContainerLifecyclePreStopHttpGet;
   /**
   * tcp_socket block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#tcp_socket JobV1#tcp_socket}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#tcp_socket JobV1#tcp_socket}
   */
   readonly tcpSocket?: JobV1SpecTemplateSpecInitContainerLifecyclePreStopTcpSocket[] | cdktf.IResolvable;
 }
@@ -16919,13 +17479,13 @@ export interface JobV1SpecTemplateSpecInitContainerLifecycle {
   /**
   * post_start block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#post_start JobV1#post_start}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#post_start JobV1#post_start}
   */
   readonly postStart?: JobV1SpecTemplateSpecInitContainerLifecyclePostStart[] | cdktf.IResolvable;
   /**
   * pre_stop block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#pre_stop JobV1#pre_stop}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#pre_stop JobV1#pre_stop}
   */
   readonly preStop?: JobV1SpecTemplateSpecInitContainerLifecyclePreStop[] | cdktf.IResolvable;
 }
@@ -17040,7 +17600,7 @@ export interface JobV1SpecTemplateSpecInitContainerLivenessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#command JobV1#command}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#command JobV1#command}
   */
   readonly command?: string[];
 }
@@ -17126,13 +17686,13 @@ export interface JobV1SpecTemplateSpecInitContainerLivenessProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#service JobV1#service}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#service JobV1#service}
   */
   readonly service?: string;
 }
@@ -17276,13 +17836,13 @@ export interface JobV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeade
   /**
   * The header field name
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#value JobV1#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#value JobV1#value}
   */
   readonly value?: string;
 }
@@ -17429,31 +17989,31 @@ export interface JobV1SpecTemplateSpecInitContainerLivenessProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#host JobV1#host}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#host JobV1#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#path JobV1#path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#path JobV1#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#scheme JobV1#scheme}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#scheme JobV1#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#http_header JobV1#http_header}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#http_header JobV1#http_header}
   */
   readonly httpHeader?: JobV1SpecTemplateSpecInitContainerLivenessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
 }
@@ -17655,7 +18215,7 @@ export interface JobV1SpecTemplateSpecInitContainerLivenessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port: string;
 }
@@ -17770,55 +18330,55 @@ export interface JobV1SpecTemplateSpecInitContainerLivenessProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#failure_threshold JobV1#failure_threshold}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#failure_threshold JobV1#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#initial_delay_seconds JobV1#initial_delay_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#initial_delay_seconds JobV1#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#period_seconds JobV1#period_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#period_seconds JobV1#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#success_threshold JobV1#success_threshold}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#success_threshold JobV1#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#timeout_seconds JobV1#timeout_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#timeout_seconds JobV1#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#exec JobV1#exec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#exec JobV1#exec}
   */
   readonly exec?: JobV1SpecTemplateSpecInitContainerLivenessProbeExec;
   /**
   * grpc block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#grpc JobV1#grpc}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#grpc JobV1#grpc}
   */
   readonly grpc?: JobV1SpecTemplateSpecInitContainerLivenessProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#http_get JobV1#http_get}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#http_get JobV1#http_get}
   */
   readonly httpGet?: JobV1SpecTemplateSpecInitContainerLivenessProbeHttpGet;
   /**
   * tcp_socket block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#tcp_socket JobV1#tcp_socket}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#tcp_socket JobV1#tcp_socket}
   */
   readonly tcpSocket?: JobV1SpecTemplateSpecInitContainerLivenessProbeTcpSocket[] | cdktf.IResolvable;
 }
@@ -18136,31 +18696,31 @@ export interface JobV1SpecTemplateSpecInitContainerPort {
   /**
   * Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#container_port JobV1#container_port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#container_port JobV1#container_port}
   */
   readonly containerPort: number;
   /**
   * What host IP to bind the external port to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#host_ip JobV1#host_ip}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#host_ip JobV1#host_ip}
   */
   readonly hostIp?: string;
   /**
   * Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#host_port JobV1#host_port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#host_port JobV1#host_port}
   */
   readonly hostPort?: number;
   /**
   * If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name?: string;
   /**
   * Protocol for port. Must be UDP or TCP. Defaults to "TCP".
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#protocol JobV1#protocol}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#protocol JobV1#protocol}
   */
   readonly protocol?: string;
 }
@@ -18391,7 +18951,7 @@ export interface JobV1SpecTemplateSpecInitContainerReadinessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#command JobV1#command}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#command JobV1#command}
   */
   readonly command?: string[];
 }
@@ -18477,13 +19037,13 @@ export interface JobV1SpecTemplateSpecInitContainerReadinessProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#port JobV1#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#service JobV1#service}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#service JobV1#service}
   */
   readonly service?: string;
 }
@@ -18627,13 +19187,13 @@ export interface JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHead
   /**
   * The header field name
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#name JobV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#name JobV1#name}
   */
   readonly name?: string;
   /**
   * The header field value
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#value JobV1#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/resources/job_v1#value JobV1#value}
   */
   readonly value?: string;
 }
@@ -18774,833 +19334,5 @@ export class JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderLi
   */
   public get(index: number): JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderOutputReference {
     return new JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
-  }
-}
-export interface JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGet {
-  /**
-  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#host JobV1#host}
-  */
-  readonly host?: string;
-  /**
-  * Path to access on the HTTP server.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#path JobV1#path}
-  */
-  readonly path?: string;
-  /**
-  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
-  */
-  readonly port?: string;
-  /**
-  * Scheme to use for connecting to the host.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#scheme JobV1#scheme}
-  */
-  readonly scheme?: string;
-  /**
-  * http_header block
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#http_header JobV1#http_header}
-  */
-  readonly httpHeader?: JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
-}
-
-export function jobV1SpecTemplateSpecInitContainerReadinessProbeHttpGetToTerraform(struct?: JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference | JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGet): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    host: cdktf.stringToTerraform(struct!.host),
-    path: cdktf.stringToTerraform(struct!.path),
-    port: cdktf.stringToTerraform(struct!.port),
-    scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(jobV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
-  }
-}
-
-
-export function jobV1SpecTemplateSpecInitContainerReadinessProbeHttpGetToHclTerraform(struct?: JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference | JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGet): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  const attrs = {
-    host: {
-      value: cdktf.stringToHclTerraform(struct!.host),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-    path: {
-      value: cdktf.stringToHclTerraform(struct!.path),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-    port: {
-      value: cdktf.stringToHclTerraform(struct!.port),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-    scheme: {
-      value: cdktf.stringToHclTerraform(struct!.scheme),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-    http_header: {
-      value: cdktf.listMapperHcl(jobV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderToHclTerraform, true)(struct!.httpHeader),
-      isBlock: true,
-      type: "list",
-      storageClassType: "JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderList",
-    },
-  };
-
-  // remove undefined attributes
-  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
-}
-
-export class JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
-    super(terraformResource, terraformAttribute, false, 0);
-  }
-
-  public get internalValue(): JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._host !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.host = this._host;
-    }
-    if (this._path !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.path = this._path;
-    }
-    if (this._port !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.port = this._port;
-    }
-    if (this._scheme !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.scheme = this._scheme;
-    }
-    if (this._httpHeader?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.httpHeader = this._httpHeader?.internalValue;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGet | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._host = undefined;
-      this._path = undefined;
-      this._port = undefined;
-      this._scheme = undefined;
-      this._httpHeader.internalValue = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._host = value.host;
-      this._path = value.path;
-      this._port = value.port;
-      this._scheme = value.scheme;
-      this._httpHeader.internalValue = value.httpHeader;
-    }
-  }
-
-  // host - computed: false, optional: true, required: false
-  private _host?: string; 
-  public get host() {
-    return this.getStringAttribute('host');
-  }
-  public set host(value: string) {
-    this._host = value;
-  }
-  public resetHost() {
-    this._host = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get hostInput() {
-    return this._host;
-  }
-
-  // path - computed: false, optional: true, required: false
-  private _path?: string; 
-  public get path() {
-    return this.getStringAttribute('path');
-  }
-  public set path(value: string) {
-    this._path = value;
-  }
-  public resetPath() {
-    this._path = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get pathInput() {
-    return this._path;
-  }
-
-  // port - computed: false, optional: true, required: false
-  private _port?: string; 
-  public get port() {
-    return this.getStringAttribute('port');
-  }
-  public set port(value: string) {
-    this._port = value;
-  }
-  public resetPort() {
-    this._port = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get portInput() {
-    return this._port;
-  }
-
-  // scheme - computed: false, optional: true, required: false
-  private _scheme?: string; 
-  public get scheme() {
-    return this.getStringAttribute('scheme');
-  }
-  public set scheme(value: string) {
-    this._scheme = value;
-  }
-  public resetScheme() {
-    this._scheme = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get schemeInput() {
-    return this._scheme;
-  }
-
-  // http_header - computed: false, optional: true, required: false
-  private _httpHeader = new JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeaderList(this, "http_header", false);
-  public get httpHeader() {
-    return this._httpHeader;
-  }
-  public putHttpHeader(value: JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGetHttpHeader[] | cdktf.IResolvable) {
-    this._httpHeader.internalValue = value;
-  }
-  public resetHttpHeader() {
-    this._httpHeader.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get httpHeaderInput() {
-    return this._httpHeader.internalValue;
-  }
-}
-export interface JobV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket {
-  /**
-  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#port JobV1#port}
-  */
-  readonly port: string;
-}
-
-export function jobV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketToTerraform(struct?: JobV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket | cdktf.IResolvable): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    port: cdktf.stringToTerraform(struct!.port),
-  }
-}
-
-
-export function jobV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketToHclTerraform(struct?: JobV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket | cdktf.IResolvable): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  const attrs = {
-    port: {
-      value: cdktf.stringToHclTerraform(struct!.port),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-  };
-
-  // remove undefined attributes
-  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
-}
-
-export class JobV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-  private resolvableValue?: cdktf.IResolvable;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param complexObjectIndex the index of this item in the list
-  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
-    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
-  }
-
-  public get internalValue(): JobV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket | cdktf.IResolvable | undefined {
-    if (this.resolvableValue) {
-      return this.resolvableValue;
-    }
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._port !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.port = this._port;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: JobV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket | cdktf.IResolvable | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this.resolvableValue = undefined;
-      this._port = undefined;
-    }
-    else if (cdktf.Tokenization.isResolvable(value)) {
-      this.isEmptyObject = false;
-      this.resolvableValue = value;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this.resolvableValue = undefined;
-      this._port = value.port;
-    }
-  }
-
-  // port - computed: false, optional: false, required: true
-  private _port?: string; 
-  public get port() {
-    return this.getStringAttribute('port');
-  }
-  public set port(value: string) {
-    this._port = value;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get portInput() {
-    return this._port;
-  }
-}
-
-export class JobV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketList extends cdktf.ComplexList {
-  public internalValue? : JobV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket[] | cdktf.IResolvable
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
-  */
-  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
-    super(terraformResource, terraformAttribute, wrapsSet)
-  }
-
-  /**
-  * @param index the index of the item to return
-  */
-  public get(index: number): JobV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketOutputReference {
-    return new JobV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
-  }
-}
-export interface JobV1SpecTemplateSpecInitContainerReadinessProbe {
-  /**
-  * Minimum consecutive failures for the probe to be considered failed after having succeeded.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#failure_threshold JobV1#failure_threshold}
-  */
-  readonly failureThreshold?: number;
-  /**
-  * Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#initial_delay_seconds JobV1#initial_delay_seconds}
-  */
-  readonly initialDelaySeconds?: number;
-  /**
-  * How often (in seconds) to perform the probe
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#period_seconds JobV1#period_seconds}
-  */
-  readonly periodSeconds?: number;
-  /**
-  * Minimum consecutive successes for the probe to be considered successful after having failed.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#success_threshold JobV1#success_threshold}
-  */
-  readonly successThreshold?: number;
-  /**
-  * Number of seconds after which the probe times out. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#timeout_seconds JobV1#timeout_seconds}
-  */
-  readonly timeoutSeconds?: number;
-  /**
-  * exec block
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#exec JobV1#exec}
-  */
-  readonly exec?: JobV1SpecTemplateSpecInitContainerReadinessProbeExec;
-  /**
-  * grpc block
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#grpc JobV1#grpc}
-  */
-  readonly grpc?: JobV1SpecTemplateSpecInitContainerReadinessProbeGrpc[] | cdktf.IResolvable;
-  /**
-  * http_get block
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#http_get JobV1#http_get}
-  */
-  readonly httpGet?: JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGet;
-  /**
-  * tcp_socket block
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#tcp_socket JobV1#tcp_socket}
-  */
-  readonly tcpSocket?: JobV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket[] | cdktf.IResolvable;
-}
-
-export function jobV1SpecTemplateSpecInitContainerReadinessProbeToTerraform(struct?: JobV1SpecTemplateSpecInitContainerReadinessProbeOutputReference | JobV1SpecTemplateSpecInitContainerReadinessProbe): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    failure_threshold: cdktf.numberToTerraform(struct!.failureThreshold),
-    initial_delay_seconds: cdktf.numberToTerraform(struct!.initialDelaySeconds),
-    period_seconds: cdktf.numberToTerraform(struct!.periodSeconds),
-    success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
-    timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
-    exec: jobV1SpecTemplateSpecInitContainerReadinessProbeExecToTerraform(struct!.exec),
-    grpc: cdktf.listMapper(jobV1SpecTemplateSpecInitContainerReadinessProbeGrpcToTerraform, true)(struct!.grpc),
-    http_get: jobV1SpecTemplateSpecInitContainerReadinessProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(jobV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
-  }
-}
-
-
-export function jobV1SpecTemplateSpecInitContainerReadinessProbeToHclTerraform(struct?: JobV1SpecTemplateSpecInitContainerReadinessProbeOutputReference | JobV1SpecTemplateSpecInitContainerReadinessProbe): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  const attrs = {
-    failure_threshold: {
-      value: cdktf.numberToHclTerraform(struct!.failureThreshold),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "number",
-    },
-    initial_delay_seconds: {
-      value: cdktf.numberToHclTerraform(struct!.initialDelaySeconds),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "number",
-    },
-    period_seconds: {
-      value: cdktf.numberToHclTerraform(struct!.periodSeconds),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "number",
-    },
-    success_threshold: {
-      value: cdktf.numberToHclTerraform(struct!.successThreshold),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "number",
-    },
-    timeout_seconds: {
-      value: cdktf.numberToHclTerraform(struct!.timeoutSeconds),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "number",
-    },
-    exec: {
-      value: jobV1SpecTemplateSpecInitContainerReadinessProbeExecToHclTerraform(struct!.exec),
-      isBlock: true,
-      type: "list",
-      storageClassType: "JobV1SpecTemplateSpecInitContainerReadinessProbeExecList",
-    },
-    grpc: {
-      value: cdktf.listMapperHcl(jobV1SpecTemplateSpecInitContainerReadinessProbeGrpcToHclTerraform, true)(struct!.grpc),
-      isBlock: true,
-      type: "list",
-      storageClassType: "JobV1SpecTemplateSpecInitContainerReadinessProbeGrpcList",
-    },
-    http_get: {
-      value: jobV1SpecTemplateSpecInitContainerReadinessProbeHttpGetToHclTerraform(struct!.httpGet),
-      isBlock: true,
-      type: "list",
-      storageClassType: "JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGetList",
-    },
-    tcp_socket: {
-      value: cdktf.listMapperHcl(jobV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketToHclTerraform, true)(struct!.tcpSocket),
-      isBlock: true,
-      type: "list",
-      storageClassType: "JobV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketList",
-    },
-  };
-
-  // remove undefined attributes
-  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
-}
-
-export class JobV1SpecTemplateSpecInitContainerReadinessProbeOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
-    super(terraformResource, terraformAttribute, false, 0);
-  }
-
-  public get internalValue(): JobV1SpecTemplateSpecInitContainerReadinessProbe | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._failureThreshold !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.failureThreshold = this._failureThreshold;
-    }
-    if (this._initialDelaySeconds !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
-    }
-    if (this._periodSeconds !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.periodSeconds = this._periodSeconds;
-    }
-    if (this._successThreshold !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.successThreshold = this._successThreshold;
-    }
-    if (this._timeoutSeconds !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.timeoutSeconds = this._timeoutSeconds;
-    }
-    if (this._exec?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.exec = this._exec?.internalValue;
-    }
-    if (this._grpc?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.grpc = this._grpc?.internalValue;
-    }
-    if (this._httpGet?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.httpGet = this._httpGet?.internalValue;
-    }
-    if (this._tcpSocket?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.tcpSocket = this._tcpSocket?.internalValue;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: JobV1SpecTemplateSpecInitContainerReadinessProbe | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._failureThreshold = undefined;
-      this._initialDelaySeconds = undefined;
-      this._periodSeconds = undefined;
-      this._successThreshold = undefined;
-      this._timeoutSeconds = undefined;
-      this._exec.internalValue = undefined;
-      this._grpc.internalValue = undefined;
-      this._httpGet.internalValue = undefined;
-      this._tcpSocket.internalValue = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._failureThreshold = value.failureThreshold;
-      this._initialDelaySeconds = value.initialDelaySeconds;
-      this._periodSeconds = value.periodSeconds;
-      this._successThreshold = value.successThreshold;
-      this._timeoutSeconds = value.timeoutSeconds;
-      this._exec.internalValue = value.exec;
-      this._grpc.internalValue = value.grpc;
-      this._httpGet.internalValue = value.httpGet;
-      this._tcpSocket.internalValue = value.tcpSocket;
-    }
-  }
-
-  // failure_threshold - computed: false, optional: true, required: false
-  private _failureThreshold?: number; 
-  public get failureThreshold() {
-    return this.getNumberAttribute('failure_threshold');
-  }
-  public set failureThreshold(value: number) {
-    this._failureThreshold = value;
-  }
-  public resetFailureThreshold() {
-    this._failureThreshold = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get failureThresholdInput() {
-    return this._failureThreshold;
-  }
-
-  // initial_delay_seconds - computed: false, optional: true, required: false
-  private _initialDelaySeconds?: number; 
-  public get initialDelaySeconds() {
-    return this.getNumberAttribute('initial_delay_seconds');
-  }
-  public set initialDelaySeconds(value: number) {
-    this._initialDelaySeconds = value;
-  }
-  public resetInitialDelaySeconds() {
-    this._initialDelaySeconds = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get initialDelaySecondsInput() {
-    return this._initialDelaySeconds;
-  }
-
-  // period_seconds - computed: false, optional: true, required: false
-  private _periodSeconds?: number; 
-  public get periodSeconds() {
-    return this.getNumberAttribute('period_seconds');
-  }
-  public set periodSeconds(value: number) {
-    this._periodSeconds = value;
-  }
-  public resetPeriodSeconds() {
-    this._periodSeconds = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get periodSecondsInput() {
-    return this._periodSeconds;
-  }
-
-  // success_threshold - computed: false, optional: true, required: false
-  private _successThreshold?: number; 
-  public get successThreshold() {
-    return this.getNumberAttribute('success_threshold');
-  }
-  public set successThreshold(value: number) {
-    this._successThreshold = value;
-  }
-  public resetSuccessThreshold() {
-    this._successThreshold = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get successThresholdInput() {
-    return this._successThreshold;
-  }
-
-  // timeout_seconds - computed: false, optional: true, required: false
-  private _timeoutSeconds?: number; 
-  public get timeoutSeconds() {
-    return this.getNumberAttribute('timeout_seconds');
-  }
-  public set timeoutSeconds(value: number) {
-    this._timeoutSeconds = value;
-  }
-  public resetTimeoutSeconds() {
-    this._timeoutSeconds = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get timeoutSecondsInput() {
-    return this._timeoutSeconds;
-  }
-
-  // exec - computed: false, optional: true, required: false
-  private _exec = new JobV1SpecTemplateSpecInitContainerReadinessProbeExecOutputReference(this, "exec");
-  public get exec() {
-    return this._exec;
-  }
-  public putExec(value: JobV1SpecTemplateSpecInitContainerReadinessProbeExec) {
-    this._exec.internalValue = value;
-  }
-  public resetExec() {
-    this._exec.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get execInput() {
-    return this._exec.internalValue;
-  }
-
-  // grpc - computed: false, optional: true, required: false
-  private _grpc = new JobV1SpecTemplateSpecInitContainerReadinessProbeGrpcList(this, "grpc", false);
-  public get grpc() {
-    return this._grpc;
-  }
-  public putGrpc(value: JobV1SpecTemplateSpecInitContainerReadinessProbeGrpc[] | cdktf.IResolvable) {
-    this._grpc.internalValue = value;
-  }
-  public resetGrpc() {
-    this._grpc.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get grpcInput() {
-    return this._grpc.internalValue;
-  }
-
-  // http_get - computed: false, optional: true, required: false
-  private _httpGet = new JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGetOutputReference(this, "http_get");
-  public get httpGet() {
-    return this._httpGet;
-  }
-  public putHttpGet(value: JobV1SpecTemplateSpecInitContainerReadinessProbeHttpGet) {
-    this._httpGet.internalValue = value;
-  }
-  public resetHttpGet() {
-    this._httpGet.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get httpGetInput() {
-    return this._httpGet.internalValue;
-  }
-
-  // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket = new JobV1SpecTemplateSpecInitContainerReadinessProbeTcpSocketList(this, "tcp_socket", false);
-  public get tcpSocket() {
-    return this._tcpSocket;
-  }
-  public putTcpSocket(value: JobV1SpecTemplateSpecInitContainerReadinessProbeTcpSocket[] | cdktf.IResolvable) {
-    this._tcpSocket.internalValue = value;
-  }
-  public resetTcpSocket() {
-    this._tcpSocket.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get tcpSocketInput() {
-    return this._tcpSocket.internalValue;
-  }
-}
-export interface JobV1SpecTemplateSpecInitContainerResources {
-  /**
-  * Describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#limits JobV1#limits}
-  */
-  readonly limits?: { [key: string]: string };
-  /**
-  * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/job_v1#requests JobV1#requests}
-  */
-  readonly requests?: { [key: string]: string };
-}
-
-export function jobV1SpecTemplateSpecInitContainerResourcesToTerraform(struct?: JobV1SpecTemplateSpecInitContainerResourcesOutputReference | JobV1SpecTemplateSpecInitContainerResources): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    limits: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.limits),
-    requests: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.requests),
-  }
-}
-
-
-export function jobV1SpecTemplateSpecInitContainerResourcesToHclTerraform(struct?: JobV1SpecTemplateSpecInitContainerResourcesOutputReference | JobV1SpecTemplateSpecInitContainerResources): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  const attrs = {
-    limits: {
-      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.limits),
-      isBlock: false,
-      type: "map",
-      storageClassType: "stringMap",
-    },
-    requests: {
-      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.requests),
-      isBlock: false,
-      type: "map",
-      storageClassType: "stringMap",
-    },
-  };
-
-  // remove undefined attributes
-  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
-}
-
-export class JobV1SpecTemplateSpecInitContainerResourcesOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
-    super(terraformResource, terraformAttribute, false, 0);
-  }
-
-  public get internalValue(): JobV1SpecTemplateSpecInitContainerResources | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._limits !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.limits = this._limits;
-    }
-    if (this._requests !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.requests = this._requests;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: JobV1SpecTemplateSpecInitContainerResources | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._limits = undefined;
-      this._requests = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._limits = value.limits;
-      this._requests = value.requests;
-    }
-  }
-
-  // limits - computed: true, optional: true, required: false
-  private _limits?: { [key: string]: string }; 
-  public get limits() {
-    return this.getStringMapAttribute('limits');
-  }
-  public set limits(value: { [key: string]: string }) {
-    this._limits = value;
-  }
-  public resetLimits() {
-    this._limits = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get limitsInput() {
-    return this._limits;
-  }
-
-  // requests - computed: true, optional: true, required: false
-  private _requests?: { [key: string]: string }; 
-  public get requests() {
-    return this.getStringMapAttribute('requests');
-  }
-  public set requests(value: { [key: string]: string }) {
-    this._requests = value;
-  }
-  public resetRequests() {
-    this._requests = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get requestsInput() {
-    return this._requests;
   }
 }
