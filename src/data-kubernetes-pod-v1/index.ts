@@ -15,7 +15,7 @@ import { Construct } from 'constructs';
 import * as cdktf from 'cdktf';
 export interface DataKubernetesPodV1Config extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/data-sources/pod_v1#id DataKubernetesPodV1#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/data-sources/pod_v1#id DataKubernetesPodV1#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -24,13 +24,13 @@ export interface DataKubernetesPodV1Config extends cdktf.TerraformMetaArguments 
   /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/data-sources/pod_v1#metadata DataKubernetesPodV1#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/data-sources/pod_v1#metadata DataKubernetesPodV1#metadata}
   */
   readonly metadata: DataKubernetesPodV1Metadata;
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/data-sources/pod_v1 kubernetes_pod_v1}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/data-sources/pod_v1 kubernetes_pod_v1}
 */
 export class DataKubernetesPodV1 extends cdktf.TerraformDataSource {
 
@@ -46,7 +46,7 @@ export class DataKubernetesPodV1 extends cdktf.TerraformDataSource {
   * Generates CDKTF code for importing a DataKubernetesPodV1 resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the DataKubernetesPodV1 to import
-  * @param importFromId The id of the existing DataKubernetesPodV1 that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/data-sources/pod_v1#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing DataKubernetesPodV1 that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/data-sources/pod_v1#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the DataKubernetesPodV1 to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -58,7 +58,7 @@ export class DataKubernetesPodV1 extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/data-sources/pod_v1 kubernetes_pod_v1} Data Source
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/data-sources/pod_v1 kubernetes_pod_v1} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -69,7 +69,7 @@ export class DataKubernetesPodV1 extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_pod_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.26.0',
+        providerVersion: '2.27.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

@@ -3017,9 +3017,29 @@ export class DataKubernetesPodV1SpecTopologySpreadConstraintOutputReference exte
     return this._labelSelector;
   }
 
+  // match_label_keys - computed: true, optional: false, required: false
+  public get matchLabelKeys() {
+    return cdktf.Fn.tolist(this.getListAttribute('match_label_keys'));
+  }
+
   // max_skew - computed: true, optional: false, required: false
   public get maxSkew() {
     return this.getNumberAttribute('max_skew');
+  }
+
+  // min_domains - computed: true, optional: false, required: false
+  public get minDomains() {
+    return this.getNumberAttribute('min_domains');
+  }
+
+  // node_affinity_policy - computed: true, optional: false, required: false
+  public get nodeAffinityPolicy() {
+    return this.getStringAttribute('node_affinity_policy');
+  }
+
+  // node_taints_policy - computed: true, optional: false, required: false
+  public get nodeTaintsPolicy() {
+    return this.getStringAttribute('node_taints_policy');
   }
 
   // topology_key - computed: true, optional: false, required: false
@@ -8012,31 +8032,31 @@ export interface DataKubernetesPodV1Metadata {
   /**
   * An unstructured key value map stored with the pod that may be used to store arbitrary metadata. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/data-sources/pod_v1#annotations DataKubernetesPodV1#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/data-sources/pod_v1#annotations DataKubernetesPodV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/data-sources/pod_v1#generate_name DataKubernetesPodV1#generate_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/data-sources/pod_v1#generate_name DataKubernetesPodV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the pod. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/data-sources/pod_v1#labels DataKubernetesPodV1#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/data-sources/pod_v1#labels DataKubernetesPodV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the pod, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/data-sources/pod_v1#name DataKubernetesPodV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/data-sources/pod_v1#name DataKubernetesPodV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the pod must be unique.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.26.0/docs/data-sources/pod_v1#namespace DataKubernetesPodV1#namespace}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/data-sources/pod_v1#namespace DataKubernetesPodV1#namespace}
   */
   readonly namespace?: string;
 }
