@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/pod_security_policy_v1beta1
 // generated from terraform resource schema
 
