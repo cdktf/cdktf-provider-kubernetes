@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -13,7 +13,7 @@ import * as cdktf from 'cdktf';
 
 export interface IngressV1Config extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#id IngressV1#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#id IngressV1#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -22,25 +22,25 @@ export interface IngressV1Config extends cdktf.TerraformMetaArguments {
   /**
   * Terraform will wait for the load balancer to have at least 1 endpoint before considering the resource created.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#wait_for_load_balancer IngressV1#wait_for_load_balancer}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#wait_for_load_balancer IngressV1#wait_for_load_balancer}
   */
   readonly waitForLoadBalancer?: boolean | cdktf.IResolvable;
   /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#metadata IngressV1#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#metadata IngressV1#metadata}
   */
   readonly metadata: IngressV1Metadata;
   /**
   * spec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#spec IngressV1#spec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#spec IngressV1#spec}
   */
   readonly spec: IngressV1Spec;
   /**
   * timeouts block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#timeouts IngressV1#timeouts}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#timeouts IngressV1#timeouts}
   */
   readonly timeouts?: IngressV1Timeouts;
 }
@@ -280,31 +280,31 @@ export interface IngressV1Metadata {
   /**
   * An unstructured key value map stored with the ingress that may be used to store arbitrary metadata. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#annotations IngressV1#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#annotations IngressV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#generate_name IngressV1#generate_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#generate_name IngressV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the ingress. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#labels IngressV1#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#labels IngressV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the ingress, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#name IngressV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#name IngressV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the ingress must be unique.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#namespace IngressV1#namespace}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#namespace IngressV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -521,19 +521,19 @@ export interface IngressV1SpecDefaultBackendResource {
   /**
   * APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#api_group IngressV1#api_group}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#api_group IngressV1#api_group}
   */
   readonly apiGroup: string;
   /**
   * The kind of resource.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#kind IngressV1#kind}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#kind IngressV1#kind}
   */
   readonly kind: string;
   /**
   * The name of the User to bind to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#name IngressV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#name IngressV1#name}
   */
   readonly name: string;
 }
@@ -668,13 +668,13 @@ export interface IngressV1SpecDefaultBackendServicePort {
   /**
   * Specifies the name of the port of the referenced service.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#name IngressV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#name IngressV1#name}
   */
   readonly name?: string;
   /**
   * Specifies the numerical port of the referenced service.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#number IngressV1#number}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#number IngressV1#number}
   */
   readonly number?: number;
 }
@@ -789,13 +789,13 @@ export interface IngressV1SpecDefaultBackendService {
   /**
   * Specifies the name of the referenced service.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#name IngressV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#name IngressV1#name}
   */
   readonly name: string;
   /**
   * port block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#port IngressV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#port IngressV1#port}
   */
   readonly port: IngressV1SpecDefaultBackendServicePort;
 }
@@ -904,13 +904,13 @@ export interface IngressV1SpecDefaultBackend {
   /**
   * resource block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#resource IngressV1#resource}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#resource IngressV1#resource}
   */
   readonly resource?: IngressV1SpecDefaultBackendResource;
   /**
   * service block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#service IngressV1#service}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#service IngressV1#service}
   */
   readonly service?: IngressV1SpecDefaultBackendService;
 }
@@ -1025,19 +1025,19 @@ export interface IngressV1SpecRuleHttpPathBackendResource {
   /**
   * APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#api_group IngressV1#api_group}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#api_group IngressV1#api_group}
   */
   readonly apiGroup: string;
   /**
   * The kind of resource.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#kind IngressV1#kind}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#kind IngressV1#kind}
   */
   readonly kind: string;
   /**
   * The name of the User to bind to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#name IngressV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#name IngressV1#name}
   */
   readonly name: string;
 }
@@ -1172,13 +1172,13 @@ export interface IngressV1SpecRuleHttpPathBackendServicePort {
   /**
   * Specifies the name of the port of the referenced service.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#name IngressV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#name IngressV1#name}
   */
   readonly name?: string;
   /**
   * Specifies the numerical port of the referenced service.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#number IngressV1#number}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#number IngressV1#number}
   */
   readonly number?: number;
 }
@@ -1293,13 +1293,13 @@ export interface IngressV1SpecRuleHttpPathBackendService {
   /**
   * Specifies the name of the referenced service.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#name IngressV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#name IngressV1#name}
   */
   readonly name: string;
   /**
   * port block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#port IngressV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#port IngressV1#port}
   */
   readonly port: IngressV1SpecRuleHttpPathBackendServicePort;
 }
@@ -1408,13 +1408,13 @@ export interface IngressV1SpecRuleHttpPathBackend {
   /**
   * resource block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#resource IngressV1#resource}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#resource IngressV1#resource}
   */
   readonly resource?: IngressV1SpecRuleHttpPathBackendResource;
   /**
   * service block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#service IngressV1#service}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#service IngressV1#service}
   */
   readonly service?: IngressV1SpecRuleHttpPathBackendService;
 }
@@ -1529,7 +1529,7 @@ export interface IngressV1SpecRuleHttpPath {
   /**
   * path is matched against the path of an incoming request. Currently it can contain characters disallowed from the conventional "path" part of a URL as defined by RFC 3986. Paths must begin with a '/' and must be present when using PathType with value "Exact" or "Prefix".
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#path IngressV1#path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#path IngressV1#path}
   */
   readonly path?: string;
   /**
@@ -1545,13 +1545,13 @@ export interface IngressV1SpecRuleHttpPath {
   *   or treat it identically to Prefix or Exact path types.
   * Implementations are required to support all path types.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#path_type IngressV1#path_type}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#path_type IngressV1#path_type}
   */
   readonly pathType?: string;
   /**
   * backend block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#backend IngressV1#backend}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#backend IngressV1#backend}
   */
   readonly backend?: IngressV1SpecRuleHttpPathBackend;
 }
@@ -1727,7 +1727,7 @@ export interface IngressV1SpecRuleHttp {
   /**
   * path block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#path IngressV1#path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#path IngressV1#path}
   */
   readonly path: IngressV1SpecRuleHttpPath[] | cdktf.IResolvable;
 }
@@ -1817,13 +1817,13 @@ export interface IngressV1SpecRule {
   * 
   * host can be "precise" which is a domain name without the terminating dot of a network host (e.g. "foo.bar.com") or "wildcard", which is a domain name prefixed with a single wildcard label (e.g. "*.foo.com"). The wildcard character '*' must appear by itself as the first DNS label and matches only a single label. You cannot have a wildcard label by itself (e.g. Host == "*"). Requests will be matched against the Host field in the following way: 1. If host is precise, the request matches this rule if the http host header is equal to Host. 2. If host is a wildcard, then the request matches this rule if the http host header is to equal to the suffix (removing the first label) of the wildcard rule.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#host IngressV1#host}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#host IngressV1#host}
   */
   readonly host?: string;
   /**
   * http block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#http IngressV1#http}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#http IngressV1#http}
   */
   readonly http?: IngressV1SpecRuleHttp;
 }
@@ -1970,13 +1970,13 @@ export interface IngressV1SpecTls {
   /**
   * hosts is a list of hosts included in the TLS certificate. The values in this list must match the name/s used in the tlsSecret. Defaults to the wildcard host setting for the loadbalancer controller fulfilling this Ingress, if left unspecified.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#hosts IngressV1#hosts}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#hosts IngressV1#hosts}
   */
   readonly hosts?: string[];
   /**
   * secretName is the name of the secret used to terminate TLS traffic on port 443. Field is left optional to allow TLS routing based on SNI hostname alone. If the SNI host in a listener conflicts with the "Host" header field used by an IngressRule, the SNI host is used for termination and value of the "Host" header is used for routing.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#secret_name IngressV1#secret_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#secret_name IngressV1#secret_name}
   */
   readonly secretName?: string;
 }
@@ -2123,25 +2123,25 @@ export interface IngressV1Spec {
   /**
   * ingressClassName is the name of an IngressClass cluster resource. Ingress controller implementations use this field to know whether they should be serving this Ingress resource, by a transitive connection (controller -> IngressClass -> Ingress resource). Although the `kubernetes.io/ingress.class` annotation (simple constant name) was never formally defined, it was widely supported by Ingress controllers to create a direct binding between Ingress controller and Ingress resources. Newly created Ingress resources should prefer using the field. However, even though the annotation is officially deprecated, for backwards compatibility reasons, ingress controllers should still honor that annotation if present.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#ingress_class_name IngressV1#ingress_class_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#ingress_class_name IngressV1#ingress_class_name}
   */
   readonly ingressClassName?: string;
   /**
   * default_backend block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#default_backend IngressV1#default_backend}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#default_backend IngressV1#default_backend}
   */
   readonly defaultBackend?: IngressV1SpecDefaultBackend;
   /**
   * rule block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#rule IngressV1#rule}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#rule IngressV1#rule}
   */
   readonly rule?: IngressV1SpecRule[] | cdktf.IResolvable;
   /**
   * tls block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#tls IngressV1#tls}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#tls IngressV1#tls}
   */
   readonly tls?: IngressV1SpecTls[] | cdktf.IResolvable;
 }
@@ -2312,11 +2312,11 @@ export class IngressV1SpecOutputReference extends cdktf.ComplexObject {
 }
 export interface IngressV1Timeouts {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#create IngressV1#create}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#create IngressV1#create}
   */
   readonly create?: string;
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#delete IngressV1#delete}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#delete IngressV1#delete}
   */
   readonly delete?: string;
 }
@@ -2439,7 +2439,7 @@ export class IngressV1TimeoutsOutputReference extends cdktf.ComplexObject {
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1 kubernetes_ingress_v1}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1 kubernetes_ingress_v1}
 */
 export class IngressV1 extends cdktf.TerraformResource {
 
@@ -2455,7 +2455,7 @@ export class IngressV1 extends cdktf.TerraformResource {
   * Generates CDKTF code for importing a IngressV1 resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the IngressV1 to import
-  * @param importFromId The id of the existing IngressV1 that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing IngressV1 that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the IngressV1 to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -2467,7 +2467,7 @@ export class IngressV1 extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/ingress_v1 kubernetes_ingress_v1} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/ingress_v1 kubernetes_ingress_v1} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -2478,7 +2478,7 @@ export class IngressV1 extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_ingress_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.27.0',
+        providerVersion: '2.28.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

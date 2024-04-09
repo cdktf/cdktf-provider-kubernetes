@@ -1,3 +1,3 @@
 # `kubernetes_api_service`
 
-Refer to the Terraform Registry for docs: [`kubernetes_api_service`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.27.0/docs/resources/api_service).
+Refer to the Terraform Registry for docs: [`kubernetes_api_service`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/api_service).
