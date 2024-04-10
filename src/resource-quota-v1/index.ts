@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/resource_quota_v1
 // generated from terraform resource schema
 
