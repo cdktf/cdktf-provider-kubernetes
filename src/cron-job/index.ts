@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // generated from terraform resource schema
 
 import { CronJobMetadata, 
@@ -22,7 +17,7 @@ import { Construct } from 'constructs';
 import * as cdktf from 'cdktf';
 export interface CronJobConfig extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/cron_job#id CronJob#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/cron_job#id CronJob#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -31,25 +26,25 @@ export interface CronJobConfig extends cdktf.TerraformMetaArguments {
   /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/cron_job#metadata CronJob#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/cron_job#metadata CronJob#metadata}
   */
   readonly metadata: CronJobMetadata;
   /**
   * spec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/cron_job#spec CronJob#spec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/cron_job#spec CronJob#spec}
   */
   readonly spec: CronJobSpec;
   /**
   * timeouts block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/cron_job#timeouts CronJob#timeouts}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/cron_job#timeouts CronJob#timeouts}
   */
   readonly timeouts?: CronJobTimeouts;
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/cron_job kubernetes_cron_job}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/cron_job kubernetes_cron_job}
 */
 export class CronJob extends cdktf.TerraformResource {
 
@@ -65,7 +60,7 @@ export class CronJob extends cdktf.TerraformResource {
   * Generates CDKTF code for importing a CronJob resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the CronJob to import
-  * @param importFromId The id of the existing CronJob that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/cron_job#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing CronJob that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/cron_job#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the CronJob to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -77,7 +72,7 @@ export class CronJob extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.0/docs/resources/cron_job kubernetes_cron_job} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/cron_job kubernetes_cron_job} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -88,7 +83,7 @@ export class CronJob extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_cron_job',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.28.0',
+        providerVersion: '2.28.1',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
