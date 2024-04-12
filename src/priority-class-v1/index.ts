@@ -1,9 +1,4 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/priority_class_v1
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/priority_class_v1
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -15,17 +10,17 @@ export interface PriorityClassV1Config extends cdktf.TerraformMetaArguments {
   /**
   * An arbitrary string that usually provides guidelines on when this priority class should be used.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/priority_class_v1#description PriorityClassV1#description}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/priority_class_v1#description PriorityClassV1#description}
   */
   readonly description?: string;
   /**
   * Specifies whether this PriorityClass should be considered as the default priority for pods that do not have any priority class. Only one PriorityClass can be marked as `globalDefault`. However, if more than one PriorityClasses exists with their `globalDefault` field set to true, the smallest value of such global default PriorityClasses will be used as the default priority.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/priority_class_v1#global_default PriorityClassV1#global_default}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/priority_class_v1#global_default PriorityClassV1#global_default}
   */
   readonly globalDefault?: boolean | cdktf.IResolvable;
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/priority_class_v1#id PriorityClassV1#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/priority_class_v1#id PriorityClassV1#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -34,19 +29,19 @@ export interface PriorityClassV1Config extends cdktf.TerraformMetaArguments {
   /**
   * PreemptionPolicy is the Policy for preempting pods with lower priority. One of Never, PreemptLowerPriority. Defaults to PreemptLowerPriority if unset.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/priority_class_v1#preemption_policy PriorityClassV1#preemption_policy}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/priority_class_v1#preemption_policy PriorityClassV1#preemption_policy}
   */
   readonly preemptionPolicy?: string;
   /**
   * The value of this priority class. This is the actual priority that pods receive when they have the name of this class in their pod spec.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/priority_class_v1#value PriorityClassV1#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/priority_class_v1#value PriorityClassV1#value}
   */
   readonly value: number;
   /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/priority_class_v1#metadata PriorityClassV1#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/priority_class_v1#metadata PriorityClassV1#metadata}
   */
   readonly metadata: PriorityClassV1Metadata;
 }
@@ -54,25 +49,25 @@ export interface PriorityClassV1Metadata {
   /**
   * An unstructured key value map stored with the priority class that may be used to store arbitrary metadata. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/priority_class_v1#annotations PriorityClassV1#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/priority_class_v1#annotations PriorityClassV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/priority_class_v1#generate_name PriorityClassV1#generate_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/priority_class_v1#generate_name PriorityClassV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the priority class. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/priority_class_v1#labels PriorityClassV1#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/priority_class_v1#labels PriorityClassV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the priority class, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/priority_class_v1#name PriorityClassV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/priority_class_v1#name PriorityClassV1#name}
   */
   readonly name?: string;
 }
@@ -258,7 +253,7 @@ export class PriorityClassV1MetadataOutputReference extends cdktf.ComplexObject 
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/priority_class_v1 kubernetes_priority_class_v1}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/priority_class_v1 kubernetes_priority_class_v1}
 */
 export class PriorityClassV1 extends cdktf.TerraformResource {
 
@@ -274,7 +269,7 @@ export class PriorityClassV1 extends cdktf.TerraformResource {
   * Generates CDKTF code for importing a PriorityClassV1 resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the PriorityClassV1 to import
-  * @param importFromId The id of the existing PriorityClassV1 that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/priority_class_v1#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing PriorityClassV1 that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/priority_class_v1#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the PriorityClassV1 to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -286,7 +281,7 @@ export class PriorityClassV1 extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/priority_class_v1 kubernetes_priority_class_v1} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/priority_class_v1 kubernetes_priority_class_v1} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -297,7 +292,7 @@ export class PriorityClassV1 extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_priority_class_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.28.1',
+        providerVersion: '2.29.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

@@ -1,3 +1,3 @@
 # `kubernetes_endpoints`
 
-Refer to the Terraform Registry for docs: [`kubernetes_endpoints`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/endpoints).
+Refer to the Terraform Registry for docs: [`kubernetes_endpoints`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/endpoints).

@@ -4,7 +4,7 @@
 
 ### ConfigMapV1 <a name="ConfigMapV1" id="@cdktf/provider-kubernetes.configMapV1.ConfigMapV1"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/config_map_v1 kubernetes_config_map_v1}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/config_map_v1 kubernetes_config_map_v1}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.configMapV1.ConfigMapV1.Initializer"></a>
 
@@ -46,7 +46,7 @@ ConfigMapV1.Builder.create(Construct scope, java.lang.String id)
 | <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1.Initializer.parameter.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1Metadata">ConfigMapV1Metadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1.Initializer.parameter.binaryData">binaryData</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | BinaryData contains the binary data. |
 | <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1.Initializer.parameter.data">data</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | Data contains the configuration data. |
-| <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/config_map_v1#id ConfigMapV1#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/config_map_v1#id ConfigMapV1#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1.Initializer.parameter.immutable">immutable</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Immutable, if set to true, ensures that data stored in the ConfigMap cannot be updated (only object metadata can be modified). |
 
 ---
@@ -117,7 +117,7 @@ Must be unique amongst siblings in the same scope
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/config_map_v1#metadata ConfigMapV1#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/config_map_v1#metadata ConfigMapV1#metadata}
 
 ---
 
@@ -129,7 +129,7 @@ BinaryData contains the binary data.
 
 Each key must consist of alphanumeric characters, '-', '_' or '.'. BinaryData can contain byte sequences that are not in the UTF-8 range. The keys stored in BinaryData must not overlap with the ones in the Data field, this is enforced during validation process. Using this field will require 1.10+ apiserver and kubelet. This field only accepts base64-encoded payloads that will be decoded/encoded before being sent/received to/from the apiserver.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/config_map_v1#binary_data ConfigMapV1#binary_data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/config_map_v1#binary_data ConfigMapV1#binary_data}
 
 ---
 
@@ -141,7 +141,7 @@ Data contains the configuration data.
 
 Each key must consist of alphanumeric characters, '-', '_' or '.'. Values with non-UTF-8 byte sequences must use the BinaryData field. The keys stored in Data must not overlap with the keys in the BinaryData field, this is enforced during validation process.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/config_map_v1#data ConfigMapV1#data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/config_map_v1#data ConfigMapV1#data}
 
 ---
 
@@ -149,7 +149,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 - *Type:* java.lang.String
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/config_map_v1#id ConfigMapV1#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/config_map_v1#id ConfigMapV1#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -164,7 +164,7 @@ Immutable, if set to true, ensures that data stored in the ConfigMap cannot be u
 
 If not set to true, the field can be modified at any time. Defaulted to nil.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/config_map_v1#immutable ConfigMapV1#immutable}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/config_map_v1#immutable ConfigMapV1#immutable}
 
 ---
 
@@ -632,7 +632,7 @@ The construct id used in the generated config for the ConfigMapV1 to import.
 
 The id of the existing ConfigMapV1 that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/config_map_v1#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/config_map_v1#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -979,7 +979,7 @@ ConfigMapV1Config.builder()
 | <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1Config.property.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1Metadata">ConfigMapV1Metadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1Config.property.binaryData">binaryData</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | BinaryData contains the binary data. |
 | <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1Config.property.data">data</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | Data contains the configuration data. |
-| <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1Config.property.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/config_map_v1#id ConfigMapV1#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1Config.property.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/config_map_v1#id ConfigMapV1#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.configMapV1.ConfigMapV1Config.property.immutable">immutable</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Immutable, if set to true, ensures that data stored in the ConfigMap cannot be updated (only object metadata can be modified). |
 
 ---
@@ -1064,7 +1064,7 @@ public ConfigMapV1Metadata getMetadata();
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/config_map_v1#metadata ConfigMapV1#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/config_map_v1#metadata ConfigMapV1#metadata}
 
 ---
 
@@ -1080,7 +1080,7 @@ BinaryData contains the binary data.
 
 Each key must consist of alphanumeric characters, '-', '_' or '.'. BinaryData can contain byte sequences that are not in the UTF-8 range. The keys stored in BinaryData must not overlap with the ones in the Data field, this is enforced during validation process. Using this field will require 1.10+ apiserver and kubelet. This field only accepts base64-encoded payloads that will be decoded/encoded before being sent/received to/from the apiserver.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/config_map_v1#binary_data ConfigMapV1#binary_data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/config_map_v1#binary_data ConfigMapV1#binary_data}
 
 ---
 
@@ -1096,7 +1096,7 @@ Data contains the configuration data.
 
 Each key must consist of alphanumeric characters, '-', '_' or '.'. Values with non-UTF-8 byte sequences must use the BinaryData field. The keys stored in Data must not overlap with the keys in the BinaryData field, this is enforced during validation process.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/config_map_v1#data ConfigMapV1#data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/config_map_v1#data ConfigMapV1#data}
 
 ---
 
@@ -1108,7 +1108,7 @@ public java.lang.String getId();
 
 - *Type:* java.lang.String
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/config_map_v1#id ConfigMapV1#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/config_map_v1#id ConfigMapV1#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1127,7 +1127,7 @@ Immutable, if set to true, ensures that data stored in the ConfigMap cannot be u
 
 If not set to true, the field can be modified at any time. Defaulted to nil.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/config_map_v1#immutable ConfigMapV1#immutable}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/config_map_v1#immutable ConfigMapV1#immutable}
 
 ---
 
@@ -1171,7 +1171,7 @@ An unstructured key value map stored with the config map that may be used to sto
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/config_map_v1#annotations ConfigMapV1#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/config_map_v1#annotations ConfigMapV1#annotations}
 
 ---
 
@@ -1187,7 +1187,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/config_map_v1#generate_name ConfigMapV1#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/config_map_v1#generate_name ConfigMapV1#generate_name}
 
 ---
 
@@ -1203,7 +1203,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/config_map_v1#labels ConfigMapV1#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/config_map_v1#labels ConfigMapV1#labels}
 
 ---
 
@@ -1217,7 +1217,7 @@ public java.lang.String getName();
 
 Name of the config map, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/config_map_v1#name ConfigMapV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/config_map_v1#name ConfigMapV1#name}
 
 ---
 
@@ -1231,7 +1231,7 @@ public java.lang.String getNamespace();
 
 Namespace defines the space within which name of the config map must be unique.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/resources/config_map_v1#namespace ConfigMapV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/config_map_v1#namespace ConfigMapV1#namespace}
 
 ---
 
