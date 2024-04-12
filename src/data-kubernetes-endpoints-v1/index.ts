@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -13,7 +13,7 @@ import * as cdktf from 'cdktf';
 
 export interface DataKubernetesEndpointsV1Config extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#id DataKubernetesEndpointsV1#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#id DataKubernetesEndpointsV1#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -22,13 +22,13 @@ export interface DataKubernetesEndpointsV1Config extends cdktf.TerraformMetaArgu
   /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#metadata DataKubernetesEndpointsV1#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#metadata DataKubernetesEndpointsV1#metadata}
   */
   readonly metadata: DataKubernetesEndpointsV1Metadata;
   /**
   * subset block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#subset DataKubernetesEndpointsV1#subset}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#subset DataKubernetesEndpointsV1#subset}
   */
   readonly subset?: DataKubernetesEndpointsV1Subset[] | cdktf.IResolvable;
 }
@@ -36,31 +36,31 @@ export interface DataKubernetesEndpointsV1Metadata {
   /**
   * An unstructured key value map stored with the endpoints that may be used to store arbitrary metadata. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#annotations DataKubernetesEndpointsV1#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#annotations DataKubernetesEndpointsV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#generate_name DataKubernetesEndpointsV1#generate_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#generate_name DataKubernetesEndpointsV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the endpoints. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#labels DataKubernetesEndpointsV1#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#labels DataKubernetesEndpointsV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the endpoints, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#name DataKubernetesEndpointsV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#name DataKubernetesEndpointsV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the endpoints must be unique.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#namespace DataKubernetesEndpointsV1#namespace}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#namespace DataKubernetesEndpointsV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -277,19 +277,19 @@ export interface DataKubernetesEndpointsV1SubsetAddress {
   /**
   * The Hostname of this endpoint.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#hostname DataKubernetesEndpointsV1#hostname}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#hostname DataKubernetesEndpointsV1#hostname}
   */
   readonly hostname?: string;
   /**
   * The IP of this endpoint. May not be loopback (127.0.0.0/8), link-local (169.254.0.0/16), or link-local multicast ((224.0.0.0/24).
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#ip DataKubernetesEndpointsV1#ip}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#ip DataKubernetesEndpointsV1#ip}
   */
   readonly ip: string;
   /**
   * Node hosting this endpoint. This can be used to determine endpoints local to a node.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#node_name DataKubernetesEndpointsV1#node_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#node_name DataKubernetesEndpointsV1#node_name}
   */
   readonly nodeName?: string;
 }
@@ -462,19 +462,19 @@ export interface DataKubernetesEndpointsV1SubsetNotReadyAddress {
   /**
   * The Hostname of this endpoint.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#hostname DataKubernetesEndpointsV1#hostname}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#hostname DataKubernetesEndpointsV1#hostname}
   */
   readonly hostname?: string;
   /**
   * The IP of this endpoint. May not be loopback (127.0.0.0/8), link-local (169.254.0.0/16), or link-local multicast ((224.0.0.0/24).
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#ip DataKubernetesEndpointsV1#ip}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#ip DataKubernetesEndpointsV1#ip}
   */
   readonly ip: string;
   /**
   * Node hosting this endpoint. This can be used to determine endpoints local to a node.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#node_name DataKubernetesEndpointsV1#node_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#node_name DataKubernetesEndpointsV1#node_name}
   */
   readonly nodeName?: string;
 }
@@ -647,19 +647,19 @@ export interface DataKubernetesEndpointsV1SubsetPort {
   /**
   * The name of this port within the endpoint. Must be a DNS_LABEL. Optional if only one Port is defined on this endpoint.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#name DataKubernetesEndpointsV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#name DataKubernetesEndpointsV1#name}
   */
   readonly name?: string;
   /**
   * The port that will be exposed by this endpoint.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#port DataKubernetesEndpointsV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#port DataKubernetesEndpointsV1#port}
   */
   readonly port: number;
   /**
   * The IP protocol for this port. Supports `TCP` and `UDP`. Default is `TCP`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#protocol DataKubernetesEndpointsV1#protocol}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#protocol DataKubernetesEndpointsV1#protocol}
   */
   readonly protocol?: string;
 }
@@ -832,19 +832,19 @@ export interface DataKubernetesEndpointsV1Subset {
   /**
   * address block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#address DataKubernetesEndpointsV1#address}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#address DataKubernetesEndpointsV1#address}
   */
   readonly address?: DataKubernetesEndpointsV1SubsetAddress[] | cdktf.IResolvable;
   /**
   * not_ready_address block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#not_ready_address DataKubernetesEndpointsV1#not_ready_address}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#not_ready_address DataKubernetesEndpointsV1#not_ready_address}
   */
   readonly notReadyAddress?: DataKubernetesEndpointsV1SubsetNotReadyAddress[] | cdktf.IResolvable;
   /**
   * port block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#port DataKubernetesEndpointsV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#port DataKubernetesEndpointsV1#port}
   */
   readonly port?: DataKubernetesEndpointsV1SubsetPort[] | cdktf.IResolvable;
 }
@@ -1018,7 +1018,7 @@ export class DataKubernetesEndpointsV1SubsetList extends cdktf.ComplexList {
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1 kubernetes_endpoints_v1}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1 kubernetes_endpoints_v1}
 */
 export class DataKubernetesEndpointsV1 extends cdktf.TerraformDataSource {
 
@@ -1034,7 +1034,7 @@ export class DataKubernetesEndpointsV1 extends cdktf.TerraformDataSource {
   * Generates CDKTF code for importing a DataKubernetesEndpointsV1 resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the DataKubernetesEndpointsV1 to import
-  * @param importFromId The id of the existing DataKubernetesEndpointsV1 that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing DataKubernetesEndpointsV1 that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the DataKubernetesEndpointsV1 to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -1046,7 +1046,7 @@ export class DataKubernetesEndpointsV1 extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.28.1/docs/data-sources/endpoints_v1 kubernetes_endpoints_v1} Data Source
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/data-sources/endpoints_v1 kubernetes_endpoints_v1} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -1057,7 +1057,7 @@ export class DataKubernetesEndpointsV1 extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_endpoints_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.28.1',
+        providerVersion: '2.29.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
