@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1(scope Construct, id *string, config NetworkPolicyV1Config) NetworkPolicyV1
 ```
@@ -411,7 +411,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NetworkPolicyV1_IsConstruct(x interface{}) *bool
 ```
@@ -443,7 +443,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NetworkPolicyV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -457,7 +457,7 @@ networkpolicyv1.NetworkPolicyV1_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NetworkPolicyV1_IsTerraformResource(x interface{}) *bool
 ```
@@ -471,7 +471,7 @@ networkpolicyv1.NetworkPolicyV1_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NetworkPolicyV1_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -766,7 +766,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1Config {
 	Connection: interface{},
@@ -776,8 +776,8 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.networkPolicyV1.NetworkPolicyV1Metadata,
-	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.networkPolicyV1.NetworkPolicyV1Spec,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.networkPolicyV1.NetworkPolicyV1Metadata,
+	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.networkPolicyV1.NetworkPolicyV1Spec,
 	Id: *string,
 }
 ```
@@ -917,7 +917,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1Metadata {
 	Annotations: *map[string]*string,
@@ -1021,10 +1021,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1Spec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1Spec {
-	PodSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.networkPolicyV1.NetworkPolicyV1SpecPodSelector,
+	PodSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.networkPolicyV1.NetworkPolicyV1SpecPodSelector,
 	PolicyTypes: *[]*string,
 	Egress: interface{},
 	Ingress: interface{},
@@ -1105,7 +1105,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgress.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1SpecEgress {
 	Ports: interface{},
@@ -1155,7 +1155,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressPorts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1SpecEgressPorts {
 	Port: *string,
@@ -1209,12 +1209,12 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressTo.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1SpecEgressTo {
-	IpBlock: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressToIpBlock,
-	NamespaceSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressToNamespaceSelector,
-	PodSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressToPodSelector,
+	IpBlock: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.networkPolicyV1.NetworkPolicyV1SpecEgressToIpBlock,
+	NamespaceSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.networkPolicyV1.NetworkPolicyV1SpecEgressToNamespaceSelector,
+	PodSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.networkPolicyV1.NetworkPolicyV1SpecEgressToPodSelector,
 }
 ```
 
@@ -1275,7 +1275,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressToIpBlock.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1SpecEgressToIpBlock {
 	Cidr: *string,
@@ -1325,7 +1325,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressToNamespaceSelector.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1SpecEgressToNamespaceSelector {
 	MatchExpressions: interface{},
@@ -1377,7 +1377,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressions {
 	Key: *string,
@@ -1445,7 +1445,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressToPodSelector.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1SpecEgressToPodSelector {
 	MatchExpressions: interface{},
@@ -1497,7 +1497,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions {
 	Key: *string,
@@ -1565,7 +1565,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngress.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1SpecIngress {
 	From: interface{},
@@ -1615,12 +1615,12 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressFrom.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1SpecIngressFrom {
-	IpBlock: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressFromIpBlock,
-	NamespaceSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressFromNamespaceSelector,
-	PodSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressFromPodSelector,
+	IpBlock: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.networkPolicyV1.NetworkPolicyV1SpecIngressFromIpBlock,
+	NamespaceSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.networkPolicyV1.NetworkPolicyV1SpecIngressFromNamespaceSelector,
+	PodSelector: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.networkPolicyV1.NetworkPolicyV1SpecIngressFromPodSelector,
 }
 ```
 
@@ -1681,7 +1681,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressFromIpBlock.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1SpecIngressFromIpBlock {
 	Cidr: *string,
@@ -1731,7 +1731,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressFromNamespaceSelector.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1SpecIngressFromNamespaceSelector {
 	MatchExpressions: interface{},
@@ -1783,7 +1783,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressions {
 	Key: *string,
@@ -1851,7 +1851,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressFromPodSelector.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1SpecIngressFromPodSelector {
 	MatchExpressions: interface{},
@@ -1903,7 +1903,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions {
 	Key: *string,
@@ -1971,7 +1971,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressPorts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1SpecIngressPorts {
 	Port: *string,
@@ -2025,7 +2025,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecPodSelector.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1SpecPodSelector {
 	MatchExpressions: interface{},
@@ -2077,7 +2077,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecPodSelectorMatchExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 &networkpolicyv1.NetworkPolicyV1SpecPodSelectorMatchExpressions {
 	Key: *string,
@@ -2147,7 +2147,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) NetworkPolicyV1MetadataOutputReference
 ```
@@ -2574,7 +2574,7 @@ func InternalValue() NetworkPolicyV1Metadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecEgressList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) NetworkPolicyV1SpecEgressList
 ```
@@ -2734,7 +2734,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecEgressOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) NetworkPolicyV1SpecEgressOutputReference
 ```
@@ -3085,7 +3085,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressPortsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecEgressPortsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) NetworkPolicyV1SpecEgressPortsList
 ```
@@ -3245,7 +3245,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressPortsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecEgressPortsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) NetworkPolicyV1SpecEgressPortsOutputReference
 ```
@@ -3570,7 +3570,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressToIpBlockOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecEgressToIpBlockOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) NetworkPolicyV1SpecEgressToIpBlockOutputReference
 ```
@@ -3877,7 +3877,7 @@ func InternalValue() NetworkPolicyV1SpecEgressToIpBlock
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressToList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecEgressToList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) NetworkPolicyV1SpecEgressToList
 ```
@@ -4037,7 +4037,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressionsList
 ```
@@ -4197,7 +4197,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressionsOutputReference
 ```
@@ -4551,7 +4551,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressToNamespaceSelectorOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecEgressToNamespaceSelectorOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) NetworkPolicyV1SpecEgressToNamespaceSelectorOutputReference
 ```
@@ -4871,7 +4871,7 @@ func InternalValue() NetworkPolicyV1SpecEgressToNamespaceSelector
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressToOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecEgressToOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) NetworkPolicyV1SpecEgressToOutputReference
 ```
@@ -5264,7 +5264,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressToPodSelectorMatchExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecEgressToPodSelectorMatchExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) NetworkPolicyV1SpecEgressToPodSelectorMatchExpressionsList
 ```
@@ -5424,7 +5424,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressToPodSelectorMatchExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecEgressToPodSelectorMatchExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) NetworkPolicyV1SpecEgressToPodSelectorMatchExpressionsOutputReference
 ```
@@ -5778,7 +5778,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecEgressToPodSelectorOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecEgressToPodSelectorOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) NetworkPolicyV1SpecEgressToPodSelectorOutputReference
 ```
@@ -6098,7 +6098,7 @@ func InternalValue() NetworkPolicyV1SpecEgressToPodSelector
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressFromIpBlockOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecIngressFromIpBlockOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) NetworkPolicyV1SpecIngressFromIpBlockOutputReference
 ```
@@ -6405,7 +6405,7 @@ func InternalValue() NetworkPolicyV1SpecIngressFromIpBlock
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressFromList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecIngressFromList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) NetworkPolicyV1SpecIngressFromList
 ```
@@ -6565,7 +6565,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressionsList
 ```
@@ -6725,7 +6725,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressionsOutputReference
 ```
@@ -7079,7 +7079,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressFromNamespaceSelectorOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecIngressFromNamespaceSelectorOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) NetworkPolicyV1SpecIngressFromNamespaceSelectorOutputReference
 ```
@@ -7399,7 +7399,7 @@ func InternalValue() NetworkPolicyV1SpecIngressFromNamespaceSelector
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressFromOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecIngressFromOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) NetworkPolicyV1SpecIngressFromOutputReference
 ```
@@ -7792,7 +7792,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecIngressFromPodSelectorMatchExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressionsList
 ```
@@ -7952,7 +7952,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecIngressFromPodSelectorMatchExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressionsOutputReference
 ```
@@ -8306,7 +8306,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressFromPodSelectorOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecIngressFromPodSelectorOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) NetworkPolicyV1SpecIngressFromPodSelectorOutputReference
 ```
@@ -8626,7 +8626,7 @@ func InternalValue() NetworkPolicyV1SpecIngressFromPodSelector
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecIngressList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) NetworkPolicyV1SpecIngressList
 ```
@@ -8786,7 +8786,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecIngressOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) NetworkPolicyV1SpecIngressOutputReference
 ```
@@ -9137,7 +9137,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressPortsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecIngressPortsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) NetworkPolicyV1SpecIngressPortsList
 ```
@@ -9297,7 +9297,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecIngressPortsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecIngressPortsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) NetworkPolicyV1SpecIngressPortsOutputReference
 ```
@@ -9622,7 +9622,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) NetworkPolicyV1SpecOutputReference
 ```
@@ -10012,7 +10012,7 @@ func InternalValue() NetworkPolicyV1Spec
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecPodSelectorMatchExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecPodSelectorMatchExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) NetworkPolicyV1SpecPodSelectorMatchExpressionsList
 ```
@@ -10172,7 +10172,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecPodSelectorMatchExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecPodSelectorMatchExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) NetworkPolicyV1SpecPodSelectorMatchExpressionsOutputReference
 ```
@@ -10526,7 +10526,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.networkPolicyV1.NetworkPolicyV1SpecPodSelectorOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/networkpolicyv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/networkpolicyv1"
 
 networkpolicyv1.NewNetworkPolicyV1SpecPodSelectorOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) NetworkPolicyV1SpecPodSelectorOutputReference
 ```
