@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.runtimeClassV1.RuntimeClassV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/runtimeclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/runtimeclassv1"
 
 runtimeclassv1.NewRuntimeClassV1(scope Construct, id *string, config RuntimeClassV1Config) RuntimeClassV1
 ```
@@ -398,7 +398,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.runtimeClassV1.RuntimeClassV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/runtimeclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/runtimeclassv1"
 
 runtimeclassv1.RuntimeClassV1_IsConstruct(x interface{}) *bool
 ```
@@ -430,7 +430,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.runtimeClassV1.RuntimeClassV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/runtimeclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/runtimeclassv1"
 
 runtimeclassv1.RuntimeClassV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -444,7 +444,7 @@ runtimeclassv1.RuntimeClassV1_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.runtimeClassV1.RuntimeClassV1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/runtimeclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/runtimeclassv1"
 
 runtimeclassv1.RuntimeClassV1_IsTerraformResource(x interface{}) *bool
 ```
@@ -458,7 +458,7 @@ runtimeclassv1.RuntimeClassV1_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.runtimeClassV1.RuntimeClassV1.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/runtimeclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/runtimeclassv1"
 
 runtimeclassv1.RuntimeClassV1_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -753,7 +753,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.runtimeClassV1.RuntimeClassV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/runtimeclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/runtimeclassv1"
 
 &runtimeclassv1.RuntimeClassV1Config {
 	Connection: interface{},
@@ -764,7 +764,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/runtimeclas
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
 	Handler: *string,
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.runtimeClassV1.RuntimeClassV1Metadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.runtimeClassV1.RuntimeClassV1Metadata,
 	Id: *string,
 }
 ```
@@ -904,7 +904,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.runtimeClassV1.RuntimeClassV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/runtimeclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/runtimeclassv1"
 
 &runtimeclassv1.RuntimeClassV1Metadata {
 	Annotations: *map[string]*string,
@@ -994,7 +994,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.runtimeClassV1.RuntimeClassV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/runtimeclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/runtimeclassv1"
 
 runtimeclassv1.NewRuntimeClassV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) RuntimeClassV1MetadataOutputReference
 ```
