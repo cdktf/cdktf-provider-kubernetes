@@ -110,5 +110,7 @@ export * as dataKubernetesServiceAccountV1 from './data-kubernetes-service-accou
 export * as dataKubernetesServiceV1 from './data-kubernetes-service-v1';
 export * as dataKubernetesStorageClass from './data-kubernetes-storage-class';
 export * as dataKubernetesStorageClassV1 from './data-kubernetes-storage-class-v1';
+export * as project from './project';
+
 export * as provider from './provider';
 
