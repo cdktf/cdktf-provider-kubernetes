@@ -22,7 +22,7 @@ import { Construct } from 'constructs';
 import * as cdktf from 'cdktf';
 export interface PodConfig extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/pod#id Pod#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/pod#id Pod#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -31,31 +31,31 @@ export interface PodConfig extends cdktf.TerraformMetaArguments {
   /**
   * A list of the pod phases that indicate whether it was successfully created. Options: "Pending", "Running", "Succeeded", "Failed", "Unknown". Default: "Running". More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-phase
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/pod#target_state Pod#target_state}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/pod#target_state Pod#target_state}
   */
   readonly targetState?: string[];
   /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/pod#metadata Pod#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/pod#metadata Pod#metadata}
   */
   readonly metadata: PodMetadata;
   /**
   * spec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/pod#spec Pod#spec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/pod#spec Pod#spec}
   */
   readonly spec: PodSpec;
   /**
   * timeouts block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/pod#timeouts Pod#timeouts}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/pod#timeouts Pod#timeouts}
   */
   readonly timeouts?: PodTimeouts;
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/pod kubernetes_pod}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/pod kubernetes_pod}
 */
 export class Pod extends cdktf.TerraformResource {
 
@@ -71,7 +71,7 @@ export class Pod extends cdktf.TerraformResource {
   * Generates CDKTF code for importing a Pod resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the Pod to import
-  * @param importFromId The id of the existing Pod that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/pod#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing Pod that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/pod#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the Pod to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -83,7 +83,7 @@ export class Pod extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.29.0/docs/resources/pod kubernetes_pod} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/pod kubernetes_pod} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -94,7 +94,7 @@ export class Pod extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_pod',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.29.0',
+        providerVersion: '2.30.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
