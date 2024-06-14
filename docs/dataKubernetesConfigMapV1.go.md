@@ -4,12 +4,12 @@
 
 ### DataKubernetesConfigMapV1 <a name="DataKubernetesConfigMapV1" id="@cdktf/provider-kubernetes.dataKubernetesConfigMapV1.DataKubernetesConfigMapV1"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/config_map_v1 kubernetes_config_map_v1}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/config_map_v1 kubernetes_config_map_v1}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesConfigMapV1.DataKubernetesConfigMapV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/datakubernetesconfigmapv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmapv1"
 
 datakubernetesconfigmapv1.NewDataKubernetesConfigMapV1(scope Construct, id *string, config DataKubernetesConfigMapV1Config) DataKubernetesConfigMapV1
 ```
@@ -303,7 +303,7 @@ func ResetImmutable()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.dataKubernetesConfigMapV1.DataKubernetesConfigMapV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/datakubernetesconfigmapv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmapv1"
 
 datakubernetesconfigmapv1.DataKubernetesConfigMapV1_IsConstruct(x interface{}) *bool
 ```
@@ -335,7 +335,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.dataKubernetesConfigMapV1.DataKubernetesConfigMapV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/datakubernetesconfigmapv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmapv1"
 
 datakubernetesconfigmapv1.DataKubernetesConfigMapV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -349,7 +349,7 @@ datakubernetesconfigmapv1.DataKubernetesConfigMapV1_IsTerraformElement(x interfa
 ##### `IsTerraformDataSource` <a name="IsTerraformDataSource" id="@cdktf/provider-kubernetes.dataKubernetesConfigMapV1.DataKubernetesConfigMapV1.isTerraformDataSource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/datakubernetesconfigmapv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmapv1"
 
 datakubernetesconfigmapv1.DataKubernetesConfigMapV1_IsTerraformDataSource(x interface{}) *bool
 ```
@@ -363,7 +363,7 @@ datakubernetesconfigmapv1.DataKubernetesConfigMapV1_IsTerraformDataSource(x inte
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.dataKubernetesConfigMapV1.DataKubernetesConfigMapV1.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/datakubernetesconfigmapv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmapv1"
 
 datakubernetesconfigmapv1.DataKubernetesConfigMapV1_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -392,7 +392,7 @@ The construct id used in the generated config for the DataKubernetesConfigMapV1 
 
 The id of the existing DataKubernetesConfigMapV1 that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/config_map_v1#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/config_map_v1#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -658,7 +658,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesConfigMapV1.DataKubernetesConfigMapV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/datakubernetesconfigmapv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmapv1"
 
 &datakubernetesconfigmapv1.DataKubernetesConfigMapV1Config {
 	Connection: interface{},
@@ -668,7 +668,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/datakuberne
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.dataKubernetesConfigMapV1.DataKubernetesConfigMapV1Metadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.dataKubernetesConfigMapV1.DataKubernetesConfigMapV1Metadata,
 	Id: *string,
 	Immutable: interface{},
 }
@@ -686,7 +686,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/datakuberne
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesConfigMapV1.DataKubernetesConfigMapV1Config.property.provider">Provider</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesConfigMapV1.DataKubernetesConfigMapV1Config.property.provisioners">Provisioners</a></code> | <code>*[]interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesConfigMapV1.DataKubernetesConfigMapV1Config.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesConfigMapV1.DataKubernetesConfigMapV1Metadata">DataKubernetesConfigMapV1Metadata</a></code> | metadata block. |
-| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesConfigMapV1.DataKubernetesConfigMapV1Config.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/config_map_v1#id DataKubernetesConfigMapV1#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.dataKubernetesConfigMapV1.DataKubernetesConfigMapV1Config.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/config_map_v1#id DataKubernetesConfigMapV1#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.dataKubernetesConfigMapV1.DataKubernetesConfigMapV1Config.property.immutable">Immutable</a></code> | <code>interface{}</code> | Immutable, if set to true, ensures that data stored in the ConfigMap cannot be updated (only object metadata can be modified). |
 
 ---
@@ -771,7 +771,7 @@ Metadata DataKubernetesConfigMapV1Metadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/config_map_v1#metadata DataKubernetesConfigMapV1#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/config_map_v1#metadata DataKubernetesConfigMapV1#metadata}
 
 ---
 
@@ -783,7 +783,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/config_map_v1#id DataKubernetesConfigMapV1#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/config_map_v1#id DataKubernetesConfigMapV1#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -802,7 +802,7 @@ Immutable, if set to true, ensures that data stored in the ConfigMap cannot be u
 
 If not set to true, the field can be modified at any time. Defaulted to nil.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/config_map_v1#immutable DataKubernetesConfigMapV1#immutable}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/config_map_v1#immutable DataKubernetesConfigMapV1#immutable}
 
 ---
 
@@ -811,7 +811,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.dataKubernetesConfigMapV1.DataKubernetesConfigMapV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/datakubernetesconfigmapv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmapv1"
 
 &datakubernetesconfigmapv1.DataKubernetesConfigMapV1Metadata {
 	Annotations: *map[string]*string,
@@ -844,7 +844,7 @@ An unstructured key value map stored with the config_map that may be used to sto
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/config_map_v1#annotations DataKubernetesConfigMapV1#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/config_map_v1#annotations DataKubernetesConfigMapV1#annotations}
 
 ---
 
@@ -860,7 +860,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/config_map_v1#labels DataKubernetesConfigMapV1#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/config_map_v1#labels DataKubernetesConfigMapV1#labels}
 
 ---
 
@@ -874,7 +874,7 @@ Name *string
 
 Name of the config_map, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/config_map_v1#name DataKubernetesConfigMapV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/config_map_v1#name DataKubernetesConfigMapV1#name}
 
 ---
 
@@ -888,7 +888,7 @@ Namespace *string
 
 Namespace defines the space within which name of the config_map must be unique.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/config_map_v1#namespace DataKubernetesConfigMapV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/config_map_v1#namespace DataKubernetesConfigMapV1#namespace}
 
 ---
 
@@ -899,7 +899,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesConfigMapV1.DataKubernetesConfigMapV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/datakubernetesconfigmapv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/datakubernetesconfigmapv1"
 
 datakubernetesconfigmapv1.NewDataKubernetesConfigMapV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) DataKubernetesConfigMapV1MetadataOutputReference
 ```

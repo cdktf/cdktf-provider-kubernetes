@@ -1,9 +1,4 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/service_v1
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/service_v1
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -13,7 +8,7 @@ import * as cdktf from 'cdktf';
 
 export interface DataKubernetesServiceV1Config extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/service_v1#id DataKubernetesServiceV1#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/service_v1#id DataKubernetesServiceV1#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -22,7 +17,7 @@ export interface DataKubernetesServiceV1Config extends cdktf.TerraformMetaArgume
   /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/service_v1#metadata DataKubernetesServiceV1#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/service_v1#metadata DataKubernetesServiceV1#metadata}
   */
   readonly metadata: DataKubernetesServiceV1Metadata;
 }
@@ -681,25 +676,25 @@ export interface DataKubernetesServiceV1Metadata {
   /**
   * An unstructured key value map stored with the service that may be used to store arbitrary metadata. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/service_v1#annotations DataKubernetesServiceV1#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/service_v1#annotations DataKubernetesServiceV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the service. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/service_v1#labels DataKubernetesServiceV1#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/service_v1#labels DataKubernetesServiceV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the service, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/service_v1#name DataKubernetesServiceV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/service_v1#name DataKubernetesServiceV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the service must be unique.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/service_v1#namespace DataKubernetesServiceV1#namespace}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/service_v1#namespace DataKubernetesServiceV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -885,7 +880,7 @@ export class DataKubernetesServiceV1MetadataOutputReference extends cdktf.Comple
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/service_v1 kubernetes_service_v1}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/service_v1 kubernetes_service_v1}
 */
 export class DataKubernetesServiceV1 extends cdktf.TerraformDataSource {
 
@@ -901,7 +896,7 @@ export class DataKubernetesServiceV1 extends cdktf.TerraformDataSource {
   * Generates CDKTF code for importing a DataKubernetesServiceV1 resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the DataKubernetesServiceV1 to import
-  * @param importFromId The id of the existing DataKubernetesServiceV1 that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/service_v1#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing DataKubernetesServiceV1 that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/service_v1#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the DataKubernetesServiceV1 to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -913,7 +908,7 @@ export class DataKubernetesServiceV1 extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/data-sources/service_v1 kubernetes_service_v1} Data Source
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/data-sources/service_v1 kubernetes_service_v1} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -924,7 +919,7 @@ export class DataKubernetesServiceV1 extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_service_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.30.0',
+        providerVersion: '2.31.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

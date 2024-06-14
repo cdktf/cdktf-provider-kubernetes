@@ -1,9 +1,4 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -15,49 +10,49 @@ export interface ManifestConfig extends cdktf.TerraformMetaArguments {
   /**
   * List of manifest fields whose values can be altered by the API server during 'apply'. Defaults to: ["metadata.annotations", "metadata.labels"]
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest#computed_fields Manifest#computed_fields}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#computed_fields Manifest#computed_fields}
   */
   readonly computedFields?: string[];
   /**
   * A Kubernetes manifest describing the desired state of the resource in HCL format.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest#manifest Manifest#manifest}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#manifest Manifest#manifest}
   */
   readonly manifest: { [key: string]: any };
   /**
   * The resulting resource state, as returned by the API server after applying the desired state from `manifest`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest#object Manifest#object}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#object Manifest#object}
   */
   readonly object?: { [key: string]: any };
   /**
   * A map of attribute paths and desired patterns to be matched. After each apply the provider will wait for all attributes listed here to reach a value that matches the desired pattern.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest#wait_for Manifest#wait_for}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#wait_for Manifest#wait_for}
   */
   readonly waitFor?: ManifestWaitFor;
   /**
   * field_manager block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest#field_manager Manifest#field_manager}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#field_manager Manifest#field_manager}
   */
   readonly fieldManager?: ManifestFieldManager;
   /**
   * timeouts block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest#timeouts Manifest#timeouts}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#timeouts Manifest#timeouts}
   */
   readonly timeouts?: ManifestTimeouts;
   /**
   * wait block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest#wait Manifest#wait}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#wait Manifest#wait}
   */
   readonly wait?: ManifestWait;
 }
 export interface ManifestWaitFor {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest#fields Manifest#fields}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#fields Manifest#fields}
   */
   readonly fields?: { [key: string]: string };
 }
@@ -153,13 +148,13 @@ export interface ManifestFieldManager {
   /**
   * Force changes against conflicts.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest#force_conflicts Manifest#force_conflicts}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#force_conflicts Manifest#force_conflicts}
   */
   readonly forceConflicts?: boolean | cdktf.IResolvable;
   /**
   * The name to use for the field manager when creating and updating the resource.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest#name Manifest#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#name Manifest#name}
   */
   readonly name?: string;
 }
@@ -274,19 +269,19 @@ export interface ManifestTimeouts {
   /**
   * Timeout for the create operation.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest#create Manifest#create}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#create Manifest#create}
   */
   readonly create?: string;
   /**
   * Timeout for the delete operation.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest#delete Manifest#delete}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#delete Manifest#delete}
   */
   readonly delete?: string;
   /**
   * Timeout for the update operation.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest#update Manifest#update}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#update Manifest#update}
   */
   readonly update?: string;
 }
@@ -430,13 +425,13 @@ export interface ManifestWaitCondition {
   /**
   * The condition status.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest#status Manifest#status}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#status Manifest#status}
   */
   readonly status?: string;
   /**
   * The type of condition.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest#type Manifest#type}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#type Manifest#type}
   */
   readonly type?: string;
 }
@@ -583,19 +578,19 @@ export interface ManifestWait {
   /**
   * A map of paths to fields to wait for a specific field value.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest#fields Manifest#fields}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#fields Manifest#fields}
   */
   readonly fields?: { [key: string]: string };
   /**
   * Wait for rollout to complete on resources that support `kubectl rollout status`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest#rollout Manifest#rollout}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#rollout Manifest#rollout}
   */
   readonly rollout?: boolean | cdktf.IResolvable;
   /**
   * condition block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest#condition Manifest#condition}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#condition Manifest#condition}
   */
   readonly condition?: ManifestWaitCondition[] | cdktf.IResolvable;
 }
@@ -737,7 +732,7 @@ export class ManifestWaitOutputReference extends cdktf.ComplexObject {
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest kubernetes_manifest}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest kubernetes_manifest}
 */
 export class Manifest extends cdktf.TerraformResource {
 
@@ -753,7 +748,7 @@ export class Manifest extends cdktf.TerraformResource {
   * Generates CDKTF code for importing a Manifest resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the Manifest to import
-  * @param importFromId The id of the existing Manifest that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing Manifest that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the Manifest to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -765,7 +760,7 @@ export class Manifest extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.30.0/docs/resources/manifest kubernetes_manifest} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest kubernetes_manifest} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -776,7 +771,7 @@ export class Manifest extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_manifest',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.30.0',
+        providerVersion: '2.31.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
