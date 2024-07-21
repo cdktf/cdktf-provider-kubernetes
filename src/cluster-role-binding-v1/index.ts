@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/cluster_role_binding_v1
 // generated from terraform resource schema
 
