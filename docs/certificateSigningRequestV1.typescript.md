@@ -4,7 +4,7 @@
 
 ### CertificateSigningRequestV1 <a name="CertificateSigningRequestV1" id="@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/certificate_signing_request_v1 kubernetes_certificate_signing_request_v1}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/certificate_signing_request_v1 kubernetes_certificate_signing_request_v1}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1.Initializer"></a>
 
@@ -527,7 +527,7 @@ The construct id used in the generated config for the CertificateSigningRequestV
 
 The id of the existing CertificateSigningRequestV1 that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/certificate_signing_request_v1#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/certificate_signing_request_v1#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -867,7 +867,7 @@ const certificateSigningRequestV1Config: certificateSigningRequestV1.Certificate
 | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1Config.property.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1Metadata">CertificateSigningRequestV1Metadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1Config.property.spec">spec</a></code> | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1Spec">CertificateSigningRequestV1Spec</a></code> | spec block. |
 | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1Config.property.autoApprove">autoApprove</a></code> | <code>boolean \| cdktf.IResolvable</code> | Automatically approve the CertificateSigningRequest. |
-| <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1Config.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/certificate_signing_request_v1#id CertificateSigningRequestV1#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1Config.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/certificate_signing_request_v1#id CertificateSigningRequestV1#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1Config.property.timeouts">timeouts</a></code> | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1Timeouts">CertificateSigningRequestV1Timeouts</a></code> | timeouts block. |
 
 ---
@@ -952,7 +952,7 @@ public readonly metadata: CertificateSigningRequestV1Metadata;
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/certificate_signing_request_v1#metadata CertificateSigningRequestV1#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/certificate_signing_request_v1#metadata CertificateSigningRequestV1#metadata}
 
 ---
 
@@ -966,7 +966,7 @@ public readonly spec: CertificateSigningRequestV1Spec;
 
 spec block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/certificate_signing_request_v1#spec CertificateSigningRequestV1#spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/certificate_signing_request_v1#spec CertificateSigningRequestV1#spec}
 
 ---
 
@@ -980,7 +980,7 @@ public readonly autoApprove: boolean | IResolvable;
 
 Automatically approve the CertificateSigningRequest.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/certificate_signing_request_v1#auto_approve CertificateSigningRequestV1#auto_approve}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/certificate_signing_request_v1#auto_approve CertificateSigningRequestV1#auto_approve}
 
 ---
 
@@ -992,7 +992,7 @@ public readonly id: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/certificate_signing_request_v1#id CertificateSigningRequestV1#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/certificate_signing_request_v1#id CertificateSigningRequestV1#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1009,7 +1009,7 @@ public readonly timeouts: CertificateSigningRequestV1Timeouts;
 
 timeouts block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/certificate_signing_request_v1#timeouts CertificateSigningRequestV1#timeouts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/certificate_signing_request_v1#timeouts CertificateSigningRequestV1#timeouts}
 
 ---
 
@@ -1046,7 +1046,7 @@ An unstructured key value map stored with the certificate signing request that m
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/certificate_signing_request_v1#annotations CertificateSigningRequestV1#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/certificate_signing_request_v1#annotations CertificateSigningRequestV1#annotations}
 
 ---
 
@@ -1062,7 +1062,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/certificate_signing_request_v1#generate_name CertificateSigningRequestV1#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/certificate_signing_request_v1#generate_name CertificateSigningRequestV1#generate_name}
 
 ---
 
@@ -1078,7 +1078,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/certificate_signing_request_v1#labels CertificateSigningRequestV1#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/certificate_signing_request_v1#labels CertificateSigningRequestV1#labels}
 
 ---
 
@@ -1092,7 +1092,7 @@ public readonly name: string;
 
 Name of the certificate signing request, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/certificate_signing_request_v1#name CertificateSigningRequestV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/certificate_signing_request_v1#name CertificateSigningRequestV1#name}
 
 ---
 
@@ -1112,6 +1112,7 @@ const certificateSigningRequestV1Spec: certificateSigningRequestV1.CertificateSi
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1Spec.property.request">request</a></code> | <code>string</code> | request contains an x509 certificate signing request encoded in a "CERTIFICATE REQUEST" PEM block. |
 | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1Spec.property.signerName">signerName</a></code> | <code>string</code> | signerName indicates the requested signer, and is a qualified name. |
+| <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1Spec.property.expirationSeconds">expirationSeconds</a></code> | <code>number</code> | expirationSeconds is the requested duration of validity of the issued certificate. |
 | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1Spec.property.usages">usages</a></code> | <code>string[]</code> | usages specifies a set of key usages requested in the issued certificate. |
 
 ---
@@ -1128,7 +1129,7 @@ request contains an x509 certificate signing request encoded in a "CERTIFICATE R
 
 When serialized as JSON or YAML, the data is additionally base64-encoded.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/certificate_signing_request_v1#request CertificateSigningRequestV1#request}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/certificate_signing_request_v1#request CertificateSigningRequestV1#request}
 
 ---
 
@@ -1162,7 +1163,34 @@ Custom signerNames can also be specified. The signer defines:
  5. Expiration/certificate lifetime: whether it is fixed by the signer, configurable by the admin.
  6. Whether or not requests for CA certificates are allowed.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/certificate_signing_request_v1#signer_name CertificateSigningRequestV1#signer_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/certificate_signing_request_v1#signer_name CertificateSigningRequestV1#signer_name}
+
+---
+
+##### `expirationSeconds`<sup>Optional</sup> <a name="expirationSeconds" id="@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1Spec.property.expirationSeconds"></a>
+
+```typescript
+public readonly expirationSeconds: number;
+```
+
+- *Type:* number
+
+expirationSeconds is the requested duration of validity of the issued certificate.
+
+The certificate signer may issue a certificate with a different validity duration so a client must check the delta between the notBefore and and notAfter fields in the issued certificate to determine the actual duration.
+
+The v1.22+ in-tree implementations of the well-known Kubernetes signers will honor this field as long as the requested duration is not greater than the maximum duration they will honor per the --cluster-signing-duration CLI flag to the Kubernetes controller manager.
+
+Certificate signers may not honor this field for various reasons:
+
+  1. Old signer that is unaware of the field (such as the in-tree
+     implementations prior to v1.22)
+  2. Signer whose configured maximum is shorter than the requested duration
+  3. Signer whose configured minimum is longer than the requested duration
+
+The minimum valid value for expirationSeconds is 600, i.e. 10 minutes.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/certificate_signing_request_v1#expiration_seconds CertificateSigningRequestV1#expiration_seconds}
 
 ---
 
@@ -1189,7 +1217,7 @@ Valid values are:
  "ipsec end system", "ipsec tunnel", "ipsec user",
  "timestamping", "ocsp signing", "microsoft sgc", "netscape sgc"
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/certificate_signing_request_v1#usages CertificateSigningRequestV1#usages}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/certificate_signing_request_v1#usages CertificateSigningRequestV1#usages}
 
 ---
 
@@ -1207,7 +1235,7 @@ const certificateSigningRequestV1Timeouts: certificateSigningRequestV1.Certifica
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1Timeouts.property.create">create</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/certificate_signing_request_v1#create CertificateSigningRequestV1#create}. |
+| <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1Timeouts.property.create">create</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/certificate_signing_request_v1#create CertificateSigningRequestV1#create}. |
 
 ---
 
@@ -1219,7 +1247,7 @@ public readonly create: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/certificate_signing_request_v1#create CertificateSigningRequestV1#create}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/certificate_signing_request_v1#create CertificateSigningRequestV1#create}.
 
 ---
 
@@ -1673,6 +1701,7 @@ The attribute on the parent resource this class is referencing.
 | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.interpolationForAttribute">interpolationForAttribute</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.resolve">resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.toString">toString</a></code> | Return a string representation of this resolvable object. |
+| <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.resetExpirationSeconds">resetExpirationSeconds</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.resetUsages">resetUsages</a></code> | *No description.* |
 
 ---
@@ -1827,6 +1856,12 @@ Return a string representation of this resolvable object.
 
 Returns a reversible string representation.
 
+##### `resetExpirationSeconds` <a name="resetExpirationSeconds" id="@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.resetExpirationSeconds"></a>
+
+```typescript
+public resetExpirationSeconds(): void
+```
+
 ##### `resetUsages` <a name="resetUsages" id="@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.resetUsages"></a>
 
 ```typescript
@@ -1840,9 +1875,11 @@ public resetUsages(): void
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.property.creationStack">creationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.property.fqn">fqn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.property.expirationSecondsInput">expirationSecondsInput</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.property.requestInput">requestInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.property.signerNameInput">signerNameInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.property.usagesInput">usagesInput</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.property.expirationSeconds">expirationSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.property.request">request</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.property.signerName">signerName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.property.usages">usages</a></code> | <code>string[]</code> | *No description.* |
@@ -1874,6 +1911,16 @@ public readonly fqn: string;
 
 ---
 
+##### `expirationSecondsInput`<sup>Optional</sup> <a name="expirationSecondsInput" id="@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.property.expirationSecondsInput"></a>
+
+```typescript
+public readonly expirationSecondsInput: number;
+```
+
+- *Type:* number
+
+---
+
 ##### `requestInput`<sup>Optional</sup> <a name="requestInput" id="@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.property.requestInput"></a>
 
 ```typescript
@@ -1901,6 +1948,16 @@ public readonly usagesInput: string[];
 ```
 
 - *Type:* string[]
+
+---
+
+##### `expirationSeconds`<sup>Required</sup> <a name="expirationSeconds" id="@cdktf/provider-kubernetes.certificateSigningRequestV1.CertificateSigningRequestV1SpecOutputReference.property.expirationSeconds"></a>
+
+```typescript
+public readonly expirationSeconds: number;
+```
+
+- *Type:* number
 
 ---
 

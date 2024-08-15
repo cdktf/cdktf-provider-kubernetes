@@ -41,6 +41,7 @@ The following submodules are available:
 - [dataKubernetesResources](./dataKubernetesResources.csharp.md)
 - [dataKubernetesSecret](./dataKubernetesSecret.csharp.md)
 - [dataKubernetesSecretV1](./dataKubernetesSecretV1.csharp.md)
+- [dataKubernetesServerVersion](./dataKubernetesServerVersion.csharp.md)
 - [dataKubernetesService](./dataKubernetesService.csharp.md)
 - [dataKubernetesServiceAccount](./dataKubernetesServiceAccount.csharp.md)
 - [dataKubernetesServiceAccountV1](./dataKubernetesServiceAccountV1.csharp.md)

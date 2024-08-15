@@ -4,12 +4,12 @@
 
 ### Manifest <a name="Manifest" id="@cdktf/provider-kubernetes.manifest.Manifest"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest kubernetes_manifest}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest kubernetes_manifest}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.manifest.Manifest.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/manifest"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/manifest"
 
 manifest.NewManifest(scope Construct, id *string, config ManifestConfig) Manifest
 ```
@@ -472,7 +472,7 @@ func ResetWaitFor()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.manifest.Manifest.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/manifest"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/manifest"
 
 manifest.Manifest_IsConstruct(x interface{}) *bool
 ```
@@ -504,7 +504,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.manifest.Manifest.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/manifest"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/manifest"
 
 manifest.Manifest_IsTerraformElement(x interface{}) *bool
 ```
@@ -518,7 +518,7 @@ manifest.Manifest_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.manifest.Manifest.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/manifest"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/manifest"
 
 manifest.Manifest_IsTerraformResource(x interface{}) *bool
 ```
@@ -532,7 +532,7 @@ manifest.Manifest_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.manifest.Manifest.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/manifest"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/manifest"
 
 manifest.Manifest_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -561,7 +561,7 @@ The construct id used in the generated config for the Manifest to import.
 
 The id of the existing Manifest that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -915,7 +915,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.manifest.ManifestConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/manifest"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/manifest"
 
 &manifest.ManifestConfig {
 	Connection: interface{},
@@ -927,11 +927,11 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/manifest"
 	Provisioners: *[]interface{},
 	Manifest: *map[string]interface{},
 	ComputedFields: *[]*string,
-	FieldManager: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.manifest.ManifestFieldManager,
+	FieldManager: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.manifest.ManifestFieldManager,
 	Object: *map[string]interface{},
-	Timeouts: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.manifest.ManifestTimeouts,
-	Wait: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.manifest.ManifestWait,
-	WaitFor: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.manifest.ManifestWaitFor,
+	Timeouts: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.manifest.ManifestTimeouts,
+	Wait: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.manifest.ManifestWait,
+	WaitFor: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.manifest.ManifestWaitFor,
 }
 ```
 
@@ -1036,7 +1036,7 @@ Manifest *map[string]interface{}
 
 A Kubernetes manifest describing the desired state of the resource in HCL format.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#manifest Manifest#manifest}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#manifest Manifest#manifest}
 
 ---
 
@@ -1050,7 +1050,7 @@ ComputedFields *[]*string
 
 List of manifest fields whose values can be altered by the API server during 'apply'. Defaults to: ["metadata.annotations", "metadata.labels"].
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#computed_fields Manifest#computed_fields}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#computed_fields Manifest#computed_fields}
 
 ---
 
@@ -1064,7 +1064,7 @@ FieldManager ManifestFieldManager
 
 field_manager block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#field_manager Manifest#field_manager}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#field_manager Manifest#field_manager}
 
 ---
 
@@ -1078,7 +1078,7 @@ Object *map[string]interface{}
 
 The resulting resource state, as returned by the API server after applying the desired state from `manifest`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#object Manifest#object}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#object Manifest#object}
 
 ---
 
@@ -1092,7 +1092,7 @@ Timeouts ManifestTimeouts
 
 timeouts block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#timeouts Manifest#timeouts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#timeouts Manifest#timeouts}
 
 ---
 
@@ -1106,7 +1106,7 @@ Wait ManifestWait
 
 wait block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#wait Manifest#wait}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#wait Manifest#wait}
 
 ---
 
@@ -1122,7 +1122,7 @@ A map of attribute paths and desired patterns to be matched.
 
 After each apply the provider will wait for all attributes listed here to reach a value that matches the desired pattern.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#wait_for Manifest#wait_for}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#wait_for Manifest#wait_for}
 
 ---
 
@@ -1131,7 +1131,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.manifest.ManifestFieldManager.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/manifest"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/manifest"
 
 &manifest.ManifestFieldManager {
 	ForceConflicts: interface{},
@@ -1158,7 +1158,7 @@ ForceConflicts interface{}
 
 Force changes against conflicts.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#force_conflicts Manifest#force_conflicts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#force_conflicts Manifest#force_conflicts}
 
 ---
 
@@ -1172,7 +1172,7 @@ Name *string
 
 The name to use for the field manager when creating and updating the resource.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#name Manifest#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#name Manifest#name}
 
 ---
 
@@ -1181,7 +1181,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.manifest.ManifestTimeouts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/manifest"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/manifest"
 
 &manifest.ManifestTimeouts {
 	Create: *string,
@@ -1210,7 +1210,7 @@ Create *string
 
 Timeout for the create operation.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#create Manifest#create}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#create Manifest#create}
 
 ---
 
@@ -1224,7 +1224,7 @@ Delete *string
 
 Timeout for the delete operation.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#delete Manifest#delete}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#delete Manifest#delete}
 
 ---
 
@@ -1238,7 +1238,7 @@ Update *string
 
 Timeout for the update operation.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#update Manifest#update}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#update Manifest#update}
 
 ---
 
@@ -1247,7 +1247,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.manifest.ManifestWait.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/manifest"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/manifest"
 
 &manifest.ManifestWait {
 	Condition: interface{},
@@ -1276,7 +1276,7 @@ Condition interface{}
 
 condition block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#condition Manifest#condition}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#condition Manifest#condition}
 
 ---
 
@@ -1290,7 +1290,7 @@ Fields *map[string]*string
 
 A map of paths to fields to wait for a specific field value.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#fields Manifest#fields}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#fields Manifest#fields}
 
 ---
 
@@ -1304,7 +1304,7 @@ Rollout interface{}
 
 Wait for rollout to complete on resources that support `kubectl rollout status`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#rollout Manifest#rollout}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#rollout Manifest#rollout}
 
 ---
 
@@ -1313,7 +1313,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.manifest.ManifestWaitCondition.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/manifest"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/manifest"
 
 &manifest.ManifestWaitCondition {
 	Status: *string,
@@ -1340,7 +1340,7 @@ Status *string
 
 The condition status.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#status Manifest#status}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#status Manifest#status}
 
 ---
 
@@ -1354,7 +1354,7 @@ Type *string
 
 The type of condition.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#type Manifest#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#type Manifest#type}
 
 ---
 
@@ -1363,7 +1363,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.manifest.ManifestWaitFor.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/manifest"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/manifest"
 
 &manifest.ManifestWaitFor {
 	Fields: *map[string]*string,
@@ -1374,7 +1374,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/manifest"
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor.property.fields">Fields</a></code> | <code>*map[string]*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#fields Manifest#fields}. |
+| <code><a href="#@cdktf/provider-kubernetes.manifest.ManifestWaitFor.property.fields">Fields</a></code> | <code>*map[string]*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#fields Manifest#fields}. |
 
 ---
 
@@ -1386,7 +1386,7 @@ Fields *map[string]*string
 
 - *Type:* *map[string]*string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/manifest#fields Manifest#fields}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/manifest#fields Manifest#fields}.
 
 ---
 
@@ -1397,7 +1397,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.manifest.ManifestFieldManagerOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/manifest"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/manifest"
 
 manifest.NewManifestFieldManagerOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ManifestFieldManagerOutputReference
 ```
@@ -1704,7 +1704,7 @@ func InternalValue() ManifestFieldManager
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.manifest.ManifestTimeoutsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/manifest"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/manifest"
 
 manifest.NewManifestTimeoutsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ManifestTimeoutsOutputReference
 ```
@@ -2040,7 +2040,7 @@ func InternalValue() ManifestTimeouts
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.manifest.ManifestWaitConditionList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/manifest"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/manifest"
 
 manifest.NewManifestWaitConditionList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ManifestWaitConditionList
 ```
@@ -2200,7 +2200,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.manifest.ManifestWaitConditionOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/manifest"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/manifest"
 
 manifest.NewManifestWaitConditionOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ManifestWaitConditionOutputReference
 ```
@@ -2525,7 +2525,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.manifest.ManifestWaitForOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/manifest"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/manifest"
 
 manifest.NewManifestWaitForOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ManifestWaitForOutputReference
 ```
@@ -2803,7 +2803,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.manifest.ManifestWaitOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/manifest"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/manifest"
 
 manifest.NewManifestWaitOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ManifestWaitOutputReference
 ```

@@ -41,6 +41,7 @@ The following submodules are available:
 - [dataKubernetesResources](./dataKubernetesResources.python.md)
 - [dataKubernetesSecret](./dataKubernetesSecret.python.md)
 - [dataKubernetesSecretV1](./dataKubernetesSecretV1.python.md)
+- [dataKubernetesServerVersion](./dataKubernetesServerVersion.python.md)
 - [dataKubernetesService](./dataKubernetesService.python.md)
 - [dataKubernetesServiceAccount](./dataKubernetesServiceAccount.python.md)
 - [dataKubernetesServiceAccountV1](./dataKubernetesServiceAccountV1.python.md)

@@ -41,6 +41,7 @@ The following submodules are available:
 - [dataKubernetesResources](./dataKubernetesResources.go.md)
 - [dataKubernetesSecret](./dataKubernetesSecret.go.md)
 - [dataKubernetesSecretV1](./dataKubernetesSecretV1.go.md)
+- [dataKubernetesServerVersion](./dataKubernetesServerVersion.go.md)
 - [dataKubernetesService](./dataKubernetesService.go.md)
 - [dataKubernetesServiceAccount](./dataKubernetesServiceAccount.go.md)
 - [dataKubernetesServiceAccountV1](./dataKubernetesServiceAccountV1.go.md)

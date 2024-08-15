@@ -4,12 +4,12 @@
 
 ### StorageClassV1 <a name="StorageClassV1" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/storage_class_v1 kubernetes_storage_class_v1}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/storage_class_v1 kubernetes_storage_class_v1}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 storageclassv1.NewStorageClassV1(scope Construct, id *string, config StorageClassV1Config) StorageClassV1
 ```
@@ -453,7 +453,7 @@ func ResetVolumeBindingMode()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 storageclassv1.StorageClassV1_IsConstruct(x interface{}) *bool
 ```
@@ -485,7 +485,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 storageclassv1.StorageClassV1_IsTerraformElement(x interface{}) *bool
 ```
@@ -499,7 +499,7 @@ storageclassv1.StorageClassV1_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 storageclassv1.StorageClassV1_IsTerraformResource(x interface{}) *bool
 ```
@@ -513,7 +513,7 @@ storageclassv1.StorageClassV1_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 storageclassv1.StorageClassV1_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -542,7 +542,7 @@ The construct id used in the generated config for the StorageClassV1 to import.
 
 The id of the existing StorageClassV1 that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/storage_class_v1#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/storage_class_v1#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -940,7 +940,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1AllowedTopologies.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 &storageclassv1.StorageClassV1AllowedTopologies {
 	MatchLabelExpressions: interface{},
@@ -965,7 +965,7 @@ MatchLabelExpressions interface{}
 
 match_label_expressions block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/storage_class_v1#match_label_expressions StorageClassV1#match_label_expressions}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/storage_class_v1#match_label_expressions StorageClassV1#match_label_expressions}
 
 ---
 
@@ -974,7 +974,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1AllowedTopologiesMatchLabelExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 &storageclassv1.StorageClassV1AllowedTopologiesMatchLabelExpressions {
 	Key: *string,
@@ -1001,7 +1001,7 @@ Key *string
 
 The label key that the selector applies to.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/storage_class_v1#key StorageClassV1#key}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/storage_class_v1#key StorageClassV1#key}
 
 ---
 
@@ -1015,7 +1015,7 @@ Values *[]*string
 
 An array of string values. One value must match the label to be selected.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/storage_class_v1#values StorageClassV1#values}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/storage_class_v1#values StorageClassV1#values}
 
 ---
 
@@ -1024,7 +1024,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 &storageclassv1.StorageClassV1Config {
 	Connection: interface{},
@@ -1034,9 +1034,9 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/storageclas
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.storageClassV1.StorageClassV1Metadata,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.storageClassV1.StorageClassV1Metadata,
 	StorageProvisioner: *string,
-	AllowedTopologies: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.storageClassV1.StorageClassV1AllowedTopologies,
+	AllowedTopologies: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.storageClassV1.StorageClassV1AllowedTopologies,
 	AllowVolumeExpansion: interface{},
 	Id: *string,
 	MountOptions: *[]*string,
@@ -1061,7 +1061,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/storageclas
 | <code><a href="#@cdktf/provider-kubernetes.storageClassV1.StorageClassV1Config.property.storageProvisioner">StorageProvisioner</a></code> | <code>*string</code> | Indicates the type of the provisioner. |
 | <code><a href="#@cdktf/provider-kubernetes.storageClassV1.StorageClassV1Config.property.allowedTopologies">AllowedTopologies</a></code> | <code><a href="#@cdktf/provider-kubernetes.storageClassV1.StorageClassV1AllowedTopologies">StorageClassV1AllowedTopologies</a></code> | allowed_topologies block. |
 | <code><a href="#@cdktf/provider-kubernetes.storageClassV1.StorageClassV1Config.property.allowVolumeExpansion">AllowVolumeExpansion</a></code> | <code>interface{}</code> | Indicates whether the storage class allow volume expand. |
-| <code><a href="#@cdktf/provider-kubernetes.storageClassV1.StorageClassV1Config.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/storage_class_v1#id StorageClassV1#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.storageClassV1.StorageClassV1Config.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/storage_class_v1#id StorageClassV1#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.storageClassV1.StorageClassV1Config.property.mountOptions">MountOptions</a></code> | <code>*[]*string</code> | Persistent Volumes that are dynamically created by a storage class will have the mount options specified. |
 | <code><a href="#@cdktf/provider-kubernetes.storageClassV1.StorageClassV1Config.property.parameters">Parameters</a></code> | <code>*map[string]*string</code> | The parameters for the provisioner that should create volumes of this storage class. |
 | <code><a href="#@cdktf/provider-kubernetes.storageClassV1.StorageClassV1Config.property.reclaimPolicy">ReclaimPolicy</a></code> | <code>*string</code> | Indicates the type of the reclaim policy. |
@@ -1149,7 +1149,7 @@ Metadata StorageClassV1Metadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/storage_class_v1#metadata StorageClassV1#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/storage_class_v1#metadata StorageClassV1#metadata}
 
 ---
 
@@ -1163,7 +1163,7 @@ StorageProvisioner *string
 
 Indicates the type of the provisioner.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/storage_class_v1#storage_provisioner StorageClassV1#storage_provisioner}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/storage_class_v1#storage_provisioner StorageClassV1#storage_provisioner}
 
 ---
 
@@ -1177,7 +1177,7 @@ AllowedTopologies StorageClassV1AllowedTopologies
 
 allowed_topologies block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/storage_class_v1#allowed_topologies StorageClassV1#allowed_topologies}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/storage_class_v1#allowed_topologies StorageClassV1#allowed_topologies}
 
 ---
 
@@ -1191,7 +1191,7 @@ AllowVolumeExpansion interface{}
 
 Indicates whether the storage class allow volume expand.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/storage_class_v1#allow_volume_expansion StorageClassV1#allow_volume_expansion}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/storage_class_v1#allow_volume_expansion StorageClassV1#allow_volume_expansion}
 
 ---
 
@@ -1203,7 +1203,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/storage_class_v1#id StorageClassV1#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/storage_class_v1#id StorageClassV1#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1220,7 +1220,7 @@ MountOptions *[]*string
 
 Persistent Volumes that are dynamically created by a storage class will have the mount options specified.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/storage_class_v1#mount_options StorageClassV1#mount_options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/storage_class_v1#mount_options StorageClassV1#mount_options}
 
 ---
 
@@ -1234,7 +1234,7 @@ Parameters *map[string]*string
 
 The parameters for the provisioner that should create volumes of this storage class.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/storage_class_v1#parameters StorageClassV1#parameters}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/storage_class_v1#parameters StorageClassV1#parameters}
 
 ---
 
@@ -1248,7 +1248,7 @@ ReclaimPolicy *string
 
 Indicates the type of the reclaim policy.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/storage_class_v1#reclaim_policy StorageClassV1#reclaim_policy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/storage_class_v1#reclaim_policy StorageClassV1#reclaim_policy}
 
 ---
 
@@ -1262,7 +1262,7 @@ VolumeBindingMode *string
 
 Indicates when volume binding and dynamic provisioning should occur.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/storage_class_v1#volume_binding_mode StorageClassV1#volume_binding_mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/storage_class_v1#volume_binding_mode StorageClassV1#volume_binding_mode}
 
 ---
 
@@ -1271,7 +1271,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 &storageclassv1.StorageClassV1Metadata {
 	Annotations: *map[string]*string,
@@ -1304,7 +1304,7 @@ An unstructured key value map stored with the storage class that may be used to 
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/storage_class_v1#annotations StorageClassV1#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/storage_class_v1#annotations StorageClassV1#annotations}
 
 ---
 
@@ -1320,7 +1320,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/storage_class_v1#generate_name StorageClassV1#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/storage_class_v1#generate_name StorageClassV1#generate_name}
 
 ---
 
@@ -1336,7 +1336,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/storage_class_v1#labels StorageClassV1#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/storage_class_v1#labels StorageClassV1#labels}
 
 ---
 
@@ -1350,7 +1350,7 @@ Name *string
 
 Name of the storage class, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/storage_class_v1#name StorageClassV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/storage_class_v1#name StorageClassV1#name}
 
 ---
 
@@ -1361,7 +1361,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1AllowedTopologiesMatchLabelExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 storageclassv1.NewStorageClassV1AllowedTopologiesMatchLabelExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) StorageClassV1AllowedTopologiesMatchLabelExpressionsList
 ```
@@ -1521,7 +1521,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1AllowedTopologiesMatchLabelExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 storageclassv1.NewStorageClassV1AllowedTopologiesMatchLabelExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) StorageClassV1AllowedTopologiesMatchLabelExpressionsOutputReference
 ```
@@ -1846,7 +1846,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1AllowedTopologiesOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 storageclassv1.NewStorageClassV1AllowedTopologiesOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) StorageClassV1AllowedTopologiesOutputReference
 ```
@@ -2137,7 +2137,7 @@ func InternalValue() StorageClassV1AllowedTopologies
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.storageClassV1.StorageClassV1MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/storageclassv1"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/storageclassv1"
 
 storageclassv1.NewStorageClassV1MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) StorageClassV1MetadataOutputReference
 ```
