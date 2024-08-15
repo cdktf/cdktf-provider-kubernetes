@@ -104,6 +104,7 @@ Object.defineProperty(exports, 'dataKubernetesResource', { get: function () { re
 Object.defineProperty(exports, 'dataKubernetesResources', { get: function () { return require('./data-kubernetes-resources'); } });
 Object.defineProperty(exports, 'dataKubernetesSecret', { get: function () { return require('./data-kubernetes-secret'); } });
 Object.defineProperty(exports, 'dataKubernetesSecretV1', { get: function () { return require('./data-kubernetes-secret-v1'); } });
+Object.defineProperty(exports, 'dataKubernetesServerVersion', { get: function () { return require('./data-kubernetes-server-version'); } });
 Object.defineProperty(exports, 'dataKubernetesService', { get: function () { return require('./data-kubernetes-service'); } });
 Object.defineProperty(exports, 'dataKubernetesServiceAccount', { get: function () { return require('./data-kubernetes-service-account'); } });
 Object.defineProperty(exports, 'dataKubernetesServiceAccountV1', { get: function () { return require('./data-kubernetes-service-account-v1'); } });

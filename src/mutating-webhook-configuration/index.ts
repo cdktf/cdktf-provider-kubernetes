@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -13,7 +13,7 @@ import * as cdktf from 'cdktf';
 
 export interface MutatingWebhookConfigurationConfig extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#id MutatingWebhookConfiguration#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#id MutatingWebhookConfiguration#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -22,13 +22,13 @@ export interface MutatingWebhookConfigurationConfig extends cdktf.TerraformMetaA
   /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#metadata MutatingWebhookConfiguration#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#metadata MutatingWebhookConfiguration#metadata}
   */
   readonly metadata: MutatingWebhookConfigurationMetadata;
   /**
   * webhook block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#webhook MutatingWebhookConfiguration#webhook}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#webhook MutatingWebhookConfiguration#webhook}
   */
   readonly webhook: MutatingWebhookConfigurationWebhook[] | cdktf.IResolvable;
 }
@@ -36,25 +36,25 @@ export interface MutatingWebhookConfigurationMetadata {
   /**
   * An unstructured key value map stored with the mutating webhook configuration that may be used to store arbitrary metadata. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#annotations MutatingWebhookConfiguration#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#annotations MutatingWebhookConfiguration#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#generate_name MutatingWebhookConfiguration#generate_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#generate_name MutatingWebhookConfiguration#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the mutating webhook configuration. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#labels MutatingWebhookConfiguration#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#labels MutatingWebhookConfiguration#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the mutating webhook configuration, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#name MutatingWebhookConfiguration#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#name MutatingWebhookConfiguration#name}
   */
   readonly name?: string;
 }
@@ -242,25 +242,25 @@ export interface MutatingWebhookConfigurationWebhookClientConfigService {
   /**
   * `name` is the name of the service. Required
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#name MutatingWebhookConfiguration#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#name MutatingWebhookConfiguration#name}
   */
   readonly name: string;
   /**
   * `namespace` is the namespace of the service. Required
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#namespace MutatingWebhookConfiguration#namespace}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#namespace MutatingWebhookConfiguration#namespace}
   */
   readonly namespace: string;
   /**
   * `path` is an optional URL path which will be sent in any request to this service.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#path MutatingWebhookConfiguration#path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#path MutatingWebhookConfiguration#path}
   */
   readonly path?: string;
   /**
   * If specified, the port on the service that hosting webhook. Default to 443 for backward compatibility. `port` should be a valid port number (1-65535, inclusive).
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#port MutatingWebhookConfiguration#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#port MutatingWebhookConfiguration#port}
   */
   readonly port?: number;
 }
@@ -427,7 +427,7 @@ export interface MutatingWebhookConfigurationWebhookClientConfig {
   /**
   * `caBundle` is a PEM encoded CA bundle which will be used to validate the webhook's server certificate. If unspecified, system trust roots on the apiserver are used.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#ca_bundle MutatingWebhookConfiguration#ca_bundle}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#ca_bundle MutatingWebhookConfiguration#ca_bundle}
   */
   readonly caBundle?: string;
   /**
@@ -443,13 +443,13 @@ export interface MutatingWebhookConfigurationWebhookClientConfig {
   * 
   * Attempting to use a user or basic auth e.g. "user:password@" is not allowed. Fragments ("#...") and query parameters ("?...") are not allowed, either.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#url MutatingWebhookConfiguration#url}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#url MutatingWebhookConfiguration#url}
   */
   readonly url?: string;
   /**
   * service block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#service MutatingWebhookConfiguration#service}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#service MutatingWebhookConfiguration#service}
   */
   readonly service?: MutatingWebhookConfigurationWebhookClientConfigService;
 }
@@ -593,19 +593,19 @@ export interface MutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpres
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#key MutatingWebhookConfiguration#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#key MutatingWebhookConfiguration#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#operator MutatingWebhookConfiguration#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#operator MutatingWebhookConfiguration#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#values MutatingWebhookConfiguration#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#values MutatingWebhookConfiguration#values}
   */
   readonly values?: string[];
 }
@@ -781,13 +781,13 @@ export interface MutatingWebhookConfigurationWebhookNamespaceSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#match_labels MutatingWebhookConfiguration#match_labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#match_labels MutatingWebhookConfiguration#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#match_expressions MutatingWebhookConfiguration#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#match_expressions MutatingWebhookConfiguration#match_expressions}
   */
   readonly matchExpressions?: MutatingWebhookConfigurationWebhookNamespaceSelectorMatchExpressions[] | cdktf.IResolvable;
 }
@@ -902,19 +902,19 @@ export interface MutatingWebhookConfigurationWebhookObjectSelectorMatchExpressio
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#key MutatingWebhookConfiguration#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#key MutatingWebhookConfiguration#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#operator MutatingWebhookConfiguration#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#operator MutatingWebhookConfiguration#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#values MutatingWebhookConfiguration#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#values MutatingWebhookConfiguration#values}
   */
   readonly values?: string[];
 }
@@ -1090,13 +1090,13 @@ export interface MutatingWebhookConfigurationWebhookObjectSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#match_labels MutatingWebhookConfiguration#match_labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#match_labels MutatingWebhookConfiguration#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#match_expressions MutatingWebhookConfiguration#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#match_expressions MutatingWebhookConfiguration#match_expressions}
   */
   readonly matchExpressions?: MutatingWebhookConfigurationWebhookObjectSelectorMatchExpressions[] | cdktf.IResolvable;
 }
@@ -1209,25 +1209,25 @@ export class MutatingWebhookConfigurationWebhookObjectSelectorOutputReference ex
 }
 export interface MutatingWebhookConfigurationWebhookRule {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#api_groups MutatingWebhookConfiguration#api_groups}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#api_groups MutatingWebhookConfiguration#api_groups}
   */
   readonly apiGroups: string[];
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#api_versions MutatingWebhookConfiguration#api_versions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#api_versions MutatingWebhookConfiguration#api_versions}
   */
   readonly apiVersions: string[];
   /**
   * Operations is the operations the admission hook cares about - CREATE, UPDATE, DELETE, CONNECT or * for all of those operations and any future admission operations that are added. If '*' is present, the length of the slice must be one. Required.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#operations MutatingWebhookConfiguration#operations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#operations MutatingWebhookConfiguration#operations}
   */
   readonly operations: string[];
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#resources MutatingWebhookConfiguration#resources}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#resources MutatingWebhookConfiguration#resources}
   */
   readonly resources: string[];
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#scope MutatingWebhookConfiguration#scope}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#scope MutatingWebhookConfiguration#scope}
   */
   readonly scope?: string;
 }
@@ -1449,13 +1449,13 @@ export interface MutatingWebhookConfigurationWebhook {
   /**
   * AdmissionReviewVersions is an ordered list of preferred `AdmissionReview` versions the Webhook expects. API server will try to use first version in the list which it supports. If none of the versions specified in this list supported by API server, validation will fail for this object. If a persisted webhook configuration specifies allowed versions and does not include any versions known to the API Server, calls to the webhook will fail and be subject to the failure policy.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#admission_review_versions MutatingWebhookConfiguration#admission_review_versions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#admission_review_versions MutatingWebhookConfiguration#admission_review_versions}
   */
   readonly admissionReviewVersions?: string[];
   /**
   * FailurePolicy defines how unrecognized errors from the admission endpoint are handled - allowed values are Ignore or Fail. Defaults to Fail.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#failure_policy MutatingWebhookConfiguration#failure_policy}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#failure_policy MutatingWebhookConfiguration#failure_policy}
   */
   readonly failurePolicy?: string;
   /**
@@ -1467,13 +1467,13 @@ export interface MutatingWebhookConfigurationWebhook {
   * 
   * Defaults to "Equivalent"
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#match_policy MutatingWebhookConfiguration#match_policy}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#match_policy MutatingWebhookConfiguration#match_policy}
   */
   readonly matchPolicy?: string;
   /**
   * The name of the admission webhook. Name should be fully qualified, e.g., imagepolicy.kubernetes.io, where "imagepolicy" is the name of the webhook, and kubernetes.io is the name of the organization. Required.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#name MutatingWebhookConfiguration#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#name MutatingWebhookConfiguration#name}
   */
   readonly name: string;
   /**
@@ -1485,43 +1485,43 @@ export interface MutatingWebhookConfigurationWebhook {
   * 
   * Defaults to "Never".
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#reinvocation_policy MutatingWebhookConfiguration#reinvocation_policy}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#reinvocation_policy MutatingWebhookConfiguration#reinvocation_policy}
   */
   readonly reinvocationPolicy?: string;
   /**
   * SideEffects states whether this webhook has side effects. Acceptable values are: None, NoneOnDryRun (webhooks created via v1beta1 may also specify Some or Unknown). Webhooks with side effects MUST implement a reconciliation system, since a request may be rejected by a future step in the admission chain and the side effects therefore need to be undone. Requests with the dryRun attribute will be auto-rejected if they match a webhook with sideEffects == Unknown or Some.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#side_effects MutatingWebhookConfiguration#side_effects}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#side_effects MutatingWebhookConfiguration#side_effects}
   */
   readonly sideEffects?: string;
   /**
   * TimeoutSeconds specifies the timeout for this webhook. After the timeout passes, the webhook call will be ignored or the API call will fail based on the failure policy. The timeout value must be between 1 and 30 seconds. Default to 10 seconds.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#timeout_seconds MutatingWebhookConfiguration#timeout_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#timeout_seconds MutatingWebhookConfiguration#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * client_config block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#client_config MutatingWebhookConfiguration#client_config}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#client_config MutatingWebhookConfiguration#client_config}
   */
   readonly clientConfig: MutatingWebhookConfigurationWebhookClientConfig;
   /**
   * namespace_selector block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#namespace_selector MutatingWebhookConfiguration#namespace_selector}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#namespace_selector MutatingWebhookConfiguration#namespace_selector}
   */
   readonly namespaceSelector?: MutatingWebhookConfigurationWebhookNamespaceSelector;
   /**
   * object_selector block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#object_selector MutatingWebhookConfiguration#object_selector}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#object_selector MutatingWebhookConfiguration#object_selector}
   */
   readonly objectSelector?: MutatingWebhookConfigurationWebhookObjectSelector;
   /**
   * rule block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#rule MutatingWebhookConfiguration#rule}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#rule MutatingWebhookConfiguration#rule}
   */
   readonly rule?: MutatingWebhookConfigurationWebhookRule[] | cdktf.IResolvable;
 }
@@ -1921,7 +1921,7 @@ export class MutatingWebhookConfigurationWebhookList extends cdktf.ComplexList {
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration kubernetes_mutating_webhook_configuration}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration kubernetes_mutating_webhook_configuration}
 */
 export class MutatingWebhookConfiguration extends cdktf.TerraformResource {
 
@@ -1937,7 +1937,7 @@ export class MutatingWebhookConfiguration extends cdktf.TerraformResource {
   * Generates CDKTF code for importing a MutatingWebhookConfiguration resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the MutatingWebhookConfiguration to import
-  * @param importFromId The id of the existing MutatingWebhookConfiguration that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing MutatingWebhookConfiguration that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the MutatingWebhookConfiguration to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -1949,7 +1949,7 @@ export class MutatingWebhookConfiguration extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.31.0/docs/resources/mutating_webhook_configuration kubernetes_mutating_webhook_configuration} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/mutating_webhook_configuration kubernetes_mutating_webhook_configuration} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -1960,7 +1960,7 @@ export class MutatingWebhookConfiguration extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_mutating_webhook_configuration',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.31.0',
+        providerVersion: '2.32.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

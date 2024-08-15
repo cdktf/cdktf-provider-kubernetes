@@ -41,6 +41,7 @@ The following submodules are available:
 - [dataKubernetesResources](./dataKubernetesResources.typescript.md)
 - [dataKubernetesSecret](./dataKubernetesSecret.typescript.md)
 - [dataKubernetesSecretV1](./dataKubernetesSecretV1.typescript.md)
+- [dataKubernetesServerVersion](./dataKubernetesServerVersion.typescript.md)
 - [dataKubernetesService](./dataKubernetesService.typescript.md)
 - [dataKubernetesServiceAccount](./dataKubernetesServiceAccount.typescript.md)
 - [dataKubernetesServiceAccountV1](./dataKubernetesServiceAccountV1.typescript.md)

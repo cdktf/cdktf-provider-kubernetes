@@ -104,6 +104,7 @@ export * as dataKubernetesResource from './data-kubernetes-resource';
 export * as dataKubernetesResources from './data-kubernetes-resources';
 export * as dataKubernetesSecret from './data-kubernetes-secret';
 export * as dataKubernetesSecretV1 from './data-kubernetes-secret-v1';
+export * as dataKubernetesServerVersion from './data-kubernetes-server-version';
 export * as dataKubernetesService from './data-kubernetes-service';
 export * as dataKubernetesServiceAccount from './data-kubernetes-service-account';
 export * as dataKubernetesServiceAccountV1 from './data-kubernetes-service-account-v1';

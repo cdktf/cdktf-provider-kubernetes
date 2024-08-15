@@ -41,6 +41,7 @@ The following submodules are available:
 - [dataKubernetesResources](./dataKubernetesResources.java.md)
 - [dataKubernetesSecret](./dataKubernetesSecret.java.md)
 - [dataKubernetesSecretV1](./dataKubernetesSecretV1.java.md)
+- [dataKubernetesServerVersion](./dataKubernetesServerVersion.java.md)
 - [dataKubernetesService](./dataKubernetesService.java.md)
 - [dataKubernetesServiceAccount](./dataKubernetesServiceAccount.java.md)
 - [dataKubernetesServiceAccountV1](./dataKubernetesServiceAccountV1.java.md)
