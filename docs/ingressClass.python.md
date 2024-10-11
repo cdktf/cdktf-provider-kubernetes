@@ -4,7 +4,7 @@
 
 ### IngressClass <a name="IngressClass" id="@cdktf/provider-kubernetes.ingressClass.IngressClass"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class kubernetes_ingress_class}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class kubernetes_ingress_class}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.ingressClass.IngressClass.Initializer"></a>
 
@@ -40,7 +40,7 @@ ingressClass.IngressClass(
 | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClass.Initializer.parameter.provisioners">provisioners</a></code> | <code>typing.List[typing.Union[cdktf.FileProvisioner, cdktf.LocalExecProvisioner, cdktf.RemoteExecProvisioner]]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClass.Initializer.parameter.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassMetadata">IngressClassMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClass.Initializer.parameter.spec">spec</a></code> | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassSpec">IngressClassSpec</a></code> | spec block. |
-| <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClass.Initializer.parameter.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#id IngressClass#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClass.Initializer.parameter.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#id IngressClass#id}. |
 
 ---
 
@@ -110,7 +110,7 @@ Must be unique amongst siblings in the same scope
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#metadata IngressClass#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#metadata IngressClass#metadata}
 
 ---
 
@@ -120,7 +120,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 spec block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#spec IngressClass#spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#spec IngressClass#spec}
 
 ---
 
@@ -128,7 +128,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 - *Type:* str
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#id IngressClass#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#id IngressClass#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -512,7 +512,7 @@ An unstructured key value map stored with the ingress_class_v1 that may be used 
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#annotations IngressClass#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#annotations IngressClass#annotations}
 
 ---
 
@@ -524,7 +524,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#generate_name IngressClass#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#generate_name IngressClass#generate_name}
 
 ---
 
@@ -536,7 +536,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#labels IngressClass#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#labels IngressClass#labels}
 
 ---
 
@@ -546,7 +546,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 Name of the ingress_class_v1, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#name IngressClass#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#name IngressClass#name}
 
 ---
 
@@ -567,7 +567,7 @@ controller refers to the name of the controller that should handle this class.
 
 This allows for different "flavors" that are controlled by the same controller. For example, you may have different parameters for the same implementing controller. This should be specified as a domain-prefixed path no more than 250 characters in length, e.g. "acme.io/ingress-controller". This field is immutable.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#controller IngressClass#controller}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#controller IngressClass#controller}
 
 ---
 
@@ -577,7 +577,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 parameters block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#parameters IngressClass#parameters}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#parameters IngressClass#parameters}
 
 ---
 
@@ -701,7 +701,7 @@ The construct id used in the generated config for the IngressClass to import.
 
 The id of the existing IngressClass that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -996,7 +996,7 @@ ingressClass.IngressClassConfig(
 | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassConfig.property.provisioners">provisioners</a></code> | <code>typing.List[typing.Union[cdktf.FileProvisioner, cdktf.LocalExecProvisioner, cdktf.RemoteExecProvisioner]]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassConfig.property.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassMetadata">IngressClassMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassConfig.property.spec">spec</a></code> | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassSpec">IngressClassSpec</a></code> | spec block. |
-| <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassConfig.property.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#id IngressClass#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassConfig.property.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#id IngressClass#id}. |
 
 ---
 
@@ -1080,7 +1080,7 @@ metadata: IngressClassMetadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#metadata IngressClass#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#metadata IngressClass#metadata}
 
 ---
 
@@ -1094,7 +1094,7 @@ spec: IngressClassSpec
 
 spec block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#spec IngressClass#spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#spec IngressClass#spec}
 
 ---
 
@@ -1106,7 +1106,7 @@ id: str
 
 - *Type:* str
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#id IngressClass#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#id IngressClass#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1151,7 +1151,7 @@ An unstructured key value map stored with the ingress_class_v1 that may be used 
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#annotations IngressClass#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#annotations IngressClass#annotations}
 
 ---
 
@@ -1167,7 +1167,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#generate_name IngressClass#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#generate_name IngressClass#generate_name}
 
 ---
 
@@ -1183,7 +1183,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#labels IngressClass#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#labels IngressClass#labels}
 
 ---
 
@@ -1197,7 +1197,7 @@ name: str
 
 Name of the ingress_class_v1, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#name IngressClass#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#name IngressClass#name}
 
 ---
 
@@ -1235,7 +1235,7 @@ controller refers to the name of the controller that should handle this class.
 
 This allows for different "flavors" that are controlled by the same controller. For example, you may have different parameters for the same implementing controller. This should be specified as a domain-prefixed path no more than 250 characters in length, e.g. "acme.io/ingress-controller". This field is immutable.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#controller IngressClass#controller}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#controller IngressClass#controller}
 
 ---
 
@@ -1249,7 +1249,7 @@ parameters: typing.Union[IResolvable, typing.List[IngressClassSpecParameters]]
 
 parameters block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#parameters IngressClass#parameters}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#parameters IngressClass#parameters}
 
 ---
 
@@ -1276,8 +1276,8 @@ ingressClass.IngressClassSpecParameters(
 | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassSpecParameters.property.kind">kind</a></code> | <code>str</code> | Kind is the type of resource being referenced. |
 | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassSpecParameters.property.name">name</a></code> | <code>str</code> | Name is the name of resource being referenced. |
 | <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassSpecParameters.property.apiGroup">api_group</a></code> | <code>str</code> | APIGroup is the group for the resource being referenced. |
-| <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassSpecParameters.property.namespace">namespace</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#namespace IngressClass#namespace}. |
-| <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassSpecParameters.property.scope">scope</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#scope IngressClass#scope}. |
+| <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassSpecParameters.property.namespace">namespace</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#namespace IngressClass#namespace}. |
+| <code><a href="#@cdktf/provider-kubernetes.ingressClass.IngressClassSpecParameters.property.scope">scope</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#scope IngressClass#scope}. |
 
 ---
 
@@ -1291,7 +1291,7 @@ kind: str
 
 Kind is the type of resource being referenced.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#kind IngressClass#kind}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#kind IngressClass#kind}
 
 ---
 
@@ -1305,7 +1305,7 @@ name: str
 
 Name is the name of resource being referenced.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#name IngressClass#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#name IngressClass#name}
 
 ---
 
@@ -1321,7 +1321,7 @@ APIGroup is the group for the resource being referenced.
 
 If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#api_group IngressClass#api_group}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#api_group IngressClass#api_group}
 
 ---
 
@@ -1333,7 +1333,7 @@ namespace: str
 
 - *Type:* str
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#namespace IngressClass#namespace}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#namespace IngressClass#namespace}.
 
 ---
 
@@ -1345,7 +1345,7 @@ scope: str
 
 - *Type:* str
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/ingress_class#scope IngressClass#scope}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/ingress_class#scope IngressClass#scope}.
 
 ---
 

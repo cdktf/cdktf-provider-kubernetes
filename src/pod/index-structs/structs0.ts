@@ -1,38 +1,33 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 import * as cdktf from 'cdktf';
 export interface PodMetadata {
   /**
   * An unstructured key value map stored with the pod that may be used to store arbitrary metadata. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#annotations Pod#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#annotations Pod#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#generate_name Pod#generate_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#generate_name Pod#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the pod. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#labels Pod#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#labels Pod#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the pod, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the pod must be unique.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#namespace Pod#namespace}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#namespace Pod#namespace}
   */
   readonly namespace?: string;
 }
@@ -249,19 +244,19 @@ export interface PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuri
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#key Pod#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#operator Pod#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#operator Pod#operator}
   */
   readonly operator?: string;
   /**
   * Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#values Pod#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#values Pod#values}
   */
   readonly values?: string[];
 }
@@ -437,19 +432,19 @@ export interface PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuri
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#key Pod#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#key Pod#key}
   */
   readonly key: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists`, `DoesNotExist`, `Gt`, and `Lt`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#operator Pod#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#operator Pod#operator}
   */
   readonly operator: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#values Pod#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#values Pod#values}
   */
   readonly values?: string[];
 }
@@ -619,13 +614,13 @@ export interface PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuri
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#match_expressions Pod#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_expressions Pod#match_expressions}
   */
   readonly matchExpressions?: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchExpressions[] | cdktf.IResolvable;
   /**
   * match_fields block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#match_fields Pod#match_fields}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_fields Pod#match_fields}
   */
   readonly matchFields?: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreferenceMatchFields[] | cdktf.IResolvable;
 }
@@ -740,13 +735,13 @@ export interface PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuri
   /**
   * weight is in the range 1-100
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#weight Pod#weight}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#weight Pod#weight}
   */
   readonly weight: number;
   /**
   * preference block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#preference Pod#preference}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#preference Pod#preference}
   */
   readonly preference: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionPreference;
 }
@@ -887,19 +882,19 @@ export interface PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDurin
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#key Pod#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * Operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#operator Pod#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#operator Pod#operator}
   */
   readonly operator?: string;
   /**
   * Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#values Pod#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#values Pod#values}
   */
   readonly values?: string[];
 }
@@ -1075,19 +1070,19 @@ export interface PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDurin
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#key Pod#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#key Pod#key}
   */
   readonly key: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists`, `DoesNotExist`, `Gt`, and `Lt`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#operator Pod#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#operator Pod#operator}
   */
   readonly operator: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#values Pod#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#values Pod#values}
   */
   readonly values?: string[];
 }
@@ -1257,13 +1252,13 @@ export interface PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDurin
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#match_expressions Pod#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_expressions Pod#match_expressions}
   */
   readonly matchExpressions?: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchExpressions[] | cdktf.IResolvable;
   /**
   * match_fields block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#match_fields Pod#match_fields}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_fields Pod#match_fields}
   */
   readonly matchFields?: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermMatchFields[] | cdktf.IResolvable;
 }
@@ -1410,7 +1405,7 @@ export interface PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDurin
   /**
   * node_selector_term block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#node_selector_term Pod#node_selector_term}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#node_selector_term Pod#node_selector_term}
   */
   readonly nodeSelectorTerm?: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTerm[] | cdktf.IResolvable;
 }
@@ -1496,13 +1491,13 @@ export interface PodSpecAffinityNodeAffinity {
   /**
   * preferred_during_scheduling_ignored_during_execution block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#preferred_during_scheduling_ignored_during_execution Pod#preferred_during_scheduling_ignored_during_execution}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#preferred_during_scheduling_ignored_during_execution Pod#preferred_during_scheduling_ignored_during_execution}
   */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
   /**
   * required_during_scheduling_ignored_during_execution block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#required_during_scheduling_ignored_during_execution Pod#required_during_scheduling_ignored_during_execution}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#required_during_scheduling_ignored_during_execution Pod#required_during_scheduling_ignored_during_execution}
   */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution;
 }
@@ -1617,19 +1612,19 @@ export interface PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDurin
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#key Pod#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#operator Pod#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#operator Pod#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#values Pod#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#values Pod#values}
   */
   readonly values?: string[];
 }
@@ -1805,13 +1800,13 @@ export interface PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDurin
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#match_labels Pod#match_labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_labels Pod#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#match_expressions Pod#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_expressions Pod#match_expressions}
   */
   readonly matchExpressions?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[] | cdktf.IResolvable;
 }
@@ -1954,25 +1949,372 @@ export class PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExe
     return new PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
+export interface PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressions {
+  /**
+  * The label key that the selector applies to.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#key Pod#key}
+  */
+  readonly key?: string;
+  /**
+  * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#operator Pod#operator}
+  */
+  readonly operator?: string;
+  /**
+  * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#values Pod#values}
+  */
+  readonly values?: string[];
+}
+
+export function podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsToTerraform(struct?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    key: cdktf.stringToTerraform(struct!.key),
+    operator: cdktf.stringToTerraform(struct!.operator),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
+  }
+}
+
+
+export function podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsToHclTerraform(struct?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
+export class PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressions | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._key !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._operator !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operator = this._operator;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressions | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._key = undefined;
+      this._operator = undefined;
+      this._values = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._key = value.key;
+      this._operator = value.operator;
+      this._values = value.values;
+    }
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key;
+  }
+
+  // operator - computed: false, optional: true, required: false
+  private _operator?: string; 
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+  public set operator(value: string) {
+    this._operator = value;
+  }
+  public resetOperator() {
+    this._operator = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operatorInput() {
+    return this._operator;
+  }
+
+  // values - computed: false, optional: true, required: false
+  private _values?: string[]; 
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+  public set values(value: string[]) {
+    this._values = value;
+  }
+  public resetValues() {
+    this._values = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+
+export class PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsList extends cdktf.ComplexList {
+  public internalValue? : PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressions[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsOutputReference {
+    return new PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelector {
+  /**
+  * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_labels Pod#match_labels}
+  */
+  readonly matchLabels?: { [key: string]: string };
+  /**
+  * match_expressions block
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_expressions Pod#match_expressions}
+  */
+  readonly matchExpressions?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressions[] | cdktf.IResolvable;
+}
+
+export function podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorToTerraform(struct?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelector | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
+    match_expressions: cdktf.listMapper(podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
+  }
+}
+
+
+export function podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorToHclTerraform(struct?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelector | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    match_labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.matchLabels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    match_expressions: {
+      value: cdktf.listMapperHcl(podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsToHclTerraform, true)(struct!.matchExpressions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
+export class PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelector | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._matchLabels !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.matchLabels = this._matchLabels;
+    }
+    if (this._matchExpressions?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.matchExpressions = this._matchExpressions?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelector | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._matchLabels = undefined;
+      this._matchExpressions.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._matchLabels = value.matchLabels;
+      this._matchExpressions.internalValue = value.matchExpressions;
+    }
+  }
+
+  // match_labels - computed: false, optional: true, required: false
+  private _matchLabels?: { [key: string]: string }; 
+  public get matchLabels() {
+    return this.getStringMapAttribute('match_labels');
+  }
+  public set matchLabels(value: { [key: string]: string }) {
+    this._matchLabels = value;
+  }
+  public resetMatchLabels() {
+    this._matchLabels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchLabelsInput() {
+    return this._matchLabels;
+  }
+
+  // match_expressions - computed: false, optional: true, required: false
+  private _matchExpressions = new PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsList(this, "match_expressions", false);
+  public get matchExpressions() {
+    return this._matchExpressions;
+  }
+  public putMatchExpressions(value: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressions[] | cdktf.IResolvable) {
+    this._matchExpressions.internalValue = value;
+  }
+  public resetMatchExpressions() {
+    this._matchExpressions.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchExpressionsInput() {
+    return this._matchExpressions.internalValue;
+  }
+}
+
+export class PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorList extends cdktf.ComplexList {
+  public internalValue? : PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelector[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorOutputReference {
+    return new PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm {
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#namespaces Pod#namespaces}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#namespaces Pod#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#topology_key Pod#topology_key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#topology_key Pod#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#label_selector Pod#label_selector}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#label_selector Pod#label_selector}
   */
   readonly labelSelector?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | cdktf.IResolvable;
+  /**
+  * namespace_selector block
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#namespace_selector Pod#namespace_selector}
+  */
+  readonly namespaceSelector?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelector[] | cdktf.IResolvable;
 }
 
 export function podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference | PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
@@ -1984,6 +2326,7 @@ export function podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuring
     namespaces: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
     label_selector: cdktf.listMapper(podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform, true)(struct!.labelSelector),
+    namespace_selector: cdktf.listMapper(podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorToTerraform, true)(struct!.namespaceSelector),
   }
 }
 
@@ -2011,6 +2354,12 @@ export function podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuring
       isBlock: true,
       type: "list",
       storageClassType: "PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorList",
+    },
+    namespace_selector: {
+      value: cdktf.listMapperHcl(podSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorToHclTerraform, true)(struct!.namespaceSelector),
+      isBlock: true,
+      type: "list",
+      storageClassType: "PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorList",
     },
   };
 
@@ -2044,6 +2393,10 @@ export class PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExe
       hasAnyValues = true;
       internalValueResult.labelSelector = this._labelSelector?.internalValue;
     }
+    if (this._namespaceSelector?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.namespaceSelector = this._namespaceSelector?.internalValue;
+    }
     return hasAnyValues ? internalValueResult : undefined;
   }
 
@@ -2053,12 +2406,14 @@ export class PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExe
       this._namespaces = undefined;
       this._topologyKey = undefined;
       this._labelSelector.internalValue = undefined;
+      this._namespaceSelector.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._namespaces = value.namespaces;
       this._topologyKey = value.topologyKey;
       this._labelSelector.internalValue = value.labelSelector;
+      this._namespaceSelector.internalValue = value.namespaceSelector;
     }
   }
 
@@ -2106,18 +2461,34 @@ export class PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExe
   public get labelSelectorInput() {
     return this._labelSelector.internalValue;
   }
+
+  // namespace_selector - computed: false, optional: true, required: false
+  private _namespaceSelector = new PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorList(this, "namespace_selector", false);
+  public get namespaceSelector() {
+    return this._namespaceSelector;
+  }
+  public putNamespaceSelector(value: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelector[] | cdktf.IResolvable) {
+    this._namespaceSelector.internalValue = value;
+  }
+  public resetNamespaceSelector() {
+    this._namespaceSelector.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceSelectorInput() {
+    return this._namespaceSelector.internalValue;
+  }
 }
 export interface PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution {
   /**
   * weight associated with matching the corresponding podAffinityTerm, in the range 1-100
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#weight Pod#weight}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#weight Pod#weight}
   */
   readonly weight: number;
   /**
   * pod_affinity_term block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#pod_affinity_term Pod#pod_affinity_term}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#pod_affinity_term Pod#pod_affinity_term}
   */
   readonly podAffinityTerm: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
 }
@@ -2258,19 +2629,19 @@ export interface PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuring
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#key Pod#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#operator Pod#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#operator Pod#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#values Pod#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#values Pod#values}
   */
   readonly values?: string[];
 }
@@ -2446,13 +2817,13 @@ export interface PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuring
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#match_labels Pod#match_labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_labels Pod#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#match_expressions Pod#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_expressions Pod#match_expressions}
   */
   readonly matchExpressions?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[] | cdktf.IResolvable;
 }
@@ -2595,25 +2966,372 @@ export class PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExec
     return new PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
+export interface PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressions {
+  /**
+  * The label key that the selector applies to.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#key Pod#key}
+  */
+  readonly key?: string;
+  /**
+  * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#operator Pod#operator}
+  */
+  readonly operator?: string;
+  /**
+  * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#values Pod#values}
+  */
+  readonly values?: string[];
+}
+
+export function podSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsToTerraform(struct?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    key: cdktf.stringToTerraform(struct!.key),
+    operator: cdktf.stringToTerraform(struct!.operator),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
+  }
+}
+
+
+export function podSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsToHclTerraform(struct?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
+export class PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressions | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._key !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._operator !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operator = this._operator;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressions | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._key = undefined;
+      this._operator = undefined;
+      this._values = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._key = value.key;
+      this._operator = value.operator;
+      this._values = value.values;
+    }
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key;
+  }
+
+  // operator - computed: false, optional: true, required: false
+  private _operator?: string; 
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+  public set operator(value: string) {
+    this._operator = value;
+  }
+  public resetOperator() {
+    this._operator = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operatorInput() {
+    return this._operator;
+  }
+
+  // values - computed: false, optional: true, required: false
+  private _values?: string[]; 
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+  public set values(value: string[]) {
+    this._values = value;
+  }
+  public resetValues() {
+    this._values = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+
+export class PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsList extends cdktf.ComplexList {
+  public internalValue? : PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressions[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsOutputReference {
+    return new PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelector {
+  /**
+  * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_labels Pod#match_labels}
+  */
+  readonly matchLabels?: { [key: string]: string };
+  /**
+  * match_expressions block
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_expressions Pod#match_expressions}
+  */
+  readonly matchExpressions?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressions[] | cdktf.IResolvable;
+}
+
+export function podSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorToTerraform(struct?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelector | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
+    match_expressions: cdktf.listMapper(podSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
+  }
+}
+
+
+export function podSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorToHclTerraform(struct?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelector | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    match_labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.matchLabels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    match_expressions: {
+      value: cdktf.listMapperHcl(podSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsToHclTerraform, true)(struct!.matchExpressions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
+export class PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelector | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._matchLabels !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.matchLabels = this._matchLabels;
+    }
+    if (this._matchExpressions?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.matchExpressions = this._matchExpressions?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelector | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._matchLabels = undefined;
+      this._matchExpressions.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._matchLabels = value.matchLabels;
+      this._matchExpressions.internalValue = value.matchExpressions;
+    }
+  }
+
+  // match_labels - computed: false, optional: true, required: false
+  private _matchLabels?: { [key: string]: string }; 
+  public get matchLabels() {
+    return this.getStringMapAttribute('match_labels');
+  }
+  public set matchLabels(value: { [key: string]: string }) {
+    this._matchLabels = value;
+  }
+  public resetMatchLabels() {
+    this._matchLabels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchLabelsInput() {
+    return this._matchLabels;
+  }
+
+  // match_expressions - computed: false, optional: true, required: false
+  private _matchExpressions = new PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsList(this, "match_expressions", false);
+  public get matchExpressions() {
+    return this._matchExpressions;
+  }
+  public putMatchExpressions(value: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressions[] | cdktf.IResolvable) {
+    this._matchExpressions.internalValue = value;
+  }
+  public resetMatchExpressions() {
+    this._matchExpressions.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchExpressionsInput() {
+    return this._matchExpressions.internalValue;
+  }
+}
+
+export class PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorList extends cdktf.ComplexList {
+  public internalValue? : PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelector[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorOutputReference {
+    return new PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution {
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#namespaces Pod#namespaces}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#namespaces Pod#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#topology_key Pod#topology_key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#topology_key Pod#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#label_selector Pod#label_selector}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#label_selector Pod#label_selector}
   */
   readonly labelSelector?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[] | cdktf.IResolvable;
+  /**
+  * namespace_selector block
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#namespace_selector Pod#namespace_selector}
+  */
+  readonly namespaceSelector?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelector[] | cdktf.IResolvable;
 }
 
 export function podSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution | cdktf.IResolvable): any {
@@ -2625,6 +3343,7 @@ export function podSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringE
     namespaces: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
     label_selector: cdktf.listMapper(podSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform, true)(struct!.labelSelector),
+    namespace_selector: cdktf.listMapper(podSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorToTerraform, true)(struct!.namespaceSelector),
   }
 }
 
@@ -2652,6 +3371,12 @@ export function podSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringE
       isBlock: true,
       type: "list",
       storageClassType: "PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorList",
+    },
+    namespace_selector: {
+      value: cdktf.listMapperHcl(podSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorToHclTerraform, true)(struct!.namespaceSelector),
+      isBlock: true,
+      type: "list",
+      storageClassType: "PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorList",
     },
   };
 
@@ -2691,6 +3416,10 @@ export class PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExec
       hasAnyValues = true;
       internalValueResult.labelSelector = this._labelSelector?.internalValue;
     }
+    if (this._namespaceSelector?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.namespaceSelector = this._namespaceSelector?.internalValue;
+    }
     return hasAnyValues ? internalValueResult : undefined;
   }
 
@@ -2701,6 +3430,7 @@ export class PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExec
       this._namespaces = undefined;
       this._topologyKey = undefined;
       this._labelSelector.internalValue = undefined;
+      this._namespaceSelector.internalValue = undefined;
     }
     else if (cdktf.Tokenization.isResolvable(value)) {
       this.isEmptyObject = false;
@@ -2712,6 +3442,7 @@ export class PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExec
       this._namespaces = value.namespaces;
       this._topologyKey = value.topologyKey;
       this._labelSelector.internalValue = value.labelSelector;
+      this._namespaceSelector.internalValue = value.namespaceSelector;
     }
   }
 
@@ -2759,6 +3490,22 @@ export class PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExec
   public get labelSelectorInput() {
     return this._labelSelector.internalValue;
   }
+
+  // namespace_selector - computed: false, optional: true, required: false
+  private _namespaceSelector = new PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorList(this, "namespace_selector", false);
+  public get namespaceSelector() {
+    return this._namespaceSelector;
+  }
+  public putNamespaceSelector(value: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelector[] | cdktf.IResolvable) {
+    this._namespaceSelector.internalValue = value;
+  }
+  public resetNamespaceSelector() {
+    this._namespaceSelector.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceSelectorInput() {
+    return this._namespaceSelector.internalValue;
+  }
 }
 
 export class PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionList extends cdktf.ComplexList {
@@ -2784,13 +3531,13 @@ export interface PodSpecAffinityPodAffinity {
   /**
   * preferred_during_scheduling_ignored_during_execution block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#preferred_during_scheduling_ignored_during_execution Pod#preferred_during_scheduling_ignored_during_execution}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#preferred_during_scheduling_ignored_during_execution Pod#preferred_during_scheduling_ignored_during_execution}
   */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
   /**
   * required_during_scheduling_ignored_during_execution block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#required_during_scheduling_ignored_during_execution Pod#required_during_scheduling_ignored_during_execution}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#required_during_scheduling_ignored_during_execution Pod#required_during_scheduling_ignored_during_execution}
   */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
 }
@@ -2905,19 +3652,19 @@ export interface PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredD
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#key Pod#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#operator Pod#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#operator Pod#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#values Pod#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#values Pod#values}
   */
   readonly values?: string[];
 }
@@ -3093,13 +3840,13 @@ export interface PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredD
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#match_labels Pod#match_labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_labels Pod#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#match_expressions Pod#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_expressions Pod#match_expressions}
   */
   readonly matchExpressions?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorMatchExpressions[] | cdktf.IResolvable;
 }
@@ -3242,25 +3989,372 @@ export class PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDurin
     return new PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
+export interface PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressions {
+  /**
+  * The label key that the selector applies to.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#key Pod#key}
+  */
+  readonly key?: string;
+  /**
+  * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#operator Pod#operator}
+  */
+  readonly operator?: string;
+  /**
+  * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#values Pod#values}
+  */
+  readonly values?: string[];
+}
+
+export function podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsToTerraform(struct?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    key: cdktf.stringToTerraform(struct!.key),
+    operator: cdktf.stringToTerraform(struct!.operator),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
+  }
+}
+
+
+export function podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsToHclTerraform(struct?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
+export class PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressions | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._key !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._operator !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operator = this._operator;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressions | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._key = undefined;
+      this._operator = undefined;
+      this._values = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._key = value.key;
+      this._operator = value.operator;
+      this._values = value.values;
+    }
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key;
+  }
+
+  // operator - computed: false, optional: true, required: false
+  private _operator?: string; 
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+  public set operator(value: string) {
+    this._operator = value;
+  }
+  public resetOperator() {
+    this._operator = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operatorInput() {
+    return this._operator;
+  }
+
+  // values - computed: false, optional: true, required: false
+  private _values?: string[]; 
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+  public set values(value: string[]) {
+    this._values = value;
+  }
+  public resetValues() {
+    this._values = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+
+export class PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsList extends cdktf.ComplexList {
+  public internalValue? : PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressions[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsOutputReference {
+    return new PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelector {
+  /**
+  * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_labels Pod#match_labels}
+  */
+  readonly matchLabels?: { [key: string]: string };
+  /**
+  * match_expressions block
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_expressions Pod#match_expressions}
+  */
+  readonly matchExpressions?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressions[] | cdktf.IResolvable;
+}
+
+export function podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorToTerraform(struct?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelector | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
+    match_expressions: cdktf.listMapper(podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
+  }
+}
+
+
+export function podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorToHclTerraform(struct?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelector | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    match_labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.matchLabels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    match_expressions: {
+      value: cdktf.listMapperHcl(podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsToHclTerraform, true)(struct!.matchExpressions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
+export class PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelector | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._matchLabels !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.matchLabels = this._matchLabels;
+    }
+    if (this._matchExpressions?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.matchExpressions = this._matchExpressions?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelector | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._matchLabels = undefined;
+      this._matchExpressions.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._matchLabels = value.matchLabels;
+      this._matchExpressions.internalValue = value.matchExpressions;
+    }
+  }
+
+  // match_labels - computed: false, optional: true, required: false
+  private _matchLabels?: { [key: string]: string }; 
+  public get matchLabels() {
+    return this.getStringMapAttribute('match_labels');
+  }
+  public set matchLabels(value: { [key: string]: string }) {
+    this._matchLabels = value;
+  }
+  public resetMatchLabels() {
+    this._matchLabels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchLabelsInput() {
+    return this._matchLabels;
+  }
+
+  // match_expressions - computed: false, optional: true, required: false
+  private _matchExpressions = new PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressionsList(this, "match_expressions", false);
+  public get matchExpressions() {
+    return this._matchExpressions;
+  }
+  public putMatchExpressions(value: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorMatchExpressions[] | cdktf.IResolvable) {
+    this._matchExpressions.internalValue = value;
+  }
+  public resetMatchExpressions() {
+    this._matchExpressions.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchExpressionsInput() {
+    return this._matchExpressions.internalValue;
+  }
+}
+
+export class PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorList extends cdktf.ComplexList {
+  public internalValue? : PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelector[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorOutputReference {
+    return new PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm {
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#namespaces Pod#namespaces}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#namespaces Pod#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#topology_key Pod#topology_key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#topology_key Pod#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#label_selector Pod#label_selector}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#label_selector Pod#label_selector}
   */
   readonly labelSelector?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelector[] | cdktf.IResolvable;
+  /**
+  * namespace_selector block
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#namespace_selector Pod#namespace_selector}
+  */
+  readonly namespaceSelector?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelector[] | cdktf.IResolvable;
 }
 
 export function podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermToTerraform(struct?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermOutputReference | PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm): any {
@@ -3272,6 +4366,7 @@ export function podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDu
     namespaces: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
     label_selector: cdktf.listMapper(podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorToTerraform, true)(struct!.labelSelector),
+    namespace_selector: cdktf.listMapper(podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorToTerraform, true)(struct!.namespaceSelector),
   }
 }
 
@@ -3299,6 +4394,12 @@ export function podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDu
       isBlock: true,
       type: "list",
       storageClassType: "PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermLabelSelectorList",
+    },
+    namespace_selector: {
+      value: cdktf.listMapperHcl(podSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorToHclTerraform, true)(struct!.namespaceSelector),
+      isBlock: true,
+      type: "list",
+      storageClassType: "PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorList",
     },
   };
 
@@ -3332,6 +4433,10 @@ export class PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDurin
       hasAnyValues = true;
       internalValueResult.labelSelector = this._labelSelector?.internalValue;
     }
+    if (this._namespaceSelector?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.namespaceSelector = this._namespaceSelector?.internalValue;
+    }
     return hasAnyValues ? internalValueResult : undefined;
   }
 
@@ -3341,12 +4446,14 @@ export class PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDurin
       this._namespaces = undefined;
       this._topologyKey = undefined;
       this._labelSelector.internalValue = undefined;
+      this._namespaceSelector.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._namespaces = value.namespaces;
       this._topologyKey = value.topologyKey;
       this._labelSelector.internalValue = value.labelSelector;
+      this._namespaceSelector.internalValue = value.namespaceSelector;
     }
   }
 
@@ -3394,18 +4501,34 @@ export class PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDurin
   public get labelSelectorInput() {
     return this._labelSelector.internalValue;
   }
+
+  // namespace_selector - computed: false, optional: true, required: false
+  private _namespaceSelector = new PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelectorList(this, "namespace_selector", false);
+  public get namespaceSelector() {
+    return this._namespaceSelector;
+  }
+  public putNamespaceSelector(value: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTermNamespaceSelector[] | cdktf.IResolvable) {
+    this._namespaceSelector.internalValue = value;
+  }
+  public resetNamespaceSelector() {
+    this._namespaceSelector.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceSelectorInput() {
+    return this._namespaceSelector.internalValue;
+  }
 }
 export interface PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution {
   /**
   * weight associated with matching the corresponding podAffinityTerm, in the range 1-100
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#weight Pod#weight}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#weight Pod#weight}
   */
   readonly weight: number;
   /**
   * pod_affinity_term block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#pod_affinity_term Pod#pod_affinity_term}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#pod_affinity_term Pod#pod_affinity_term}
   */
   readonly podAffinityTerm: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecutionPodAffinityTerm;
 }
@@ -3546,19 +4669,19 @@ export interface PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDu
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#key Pod#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#operator Pod#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#operator Pod#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#values Pod#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#values Pod#values}
   */
   readonly values?: string[];
 }
@@ -3734,13 +4857,13 @@ export interface PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDu
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#match_labels Pod#match_labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_labels Pod#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#match_expressions Pod#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_expressions Pod#match_expressions}
   */
   readonly matchExpressions?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorMatchExpressions[] | cdktf.IResolvable;
 }
@@ -3883,25 +5006,372 @@ export class PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuring
     return new PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
+export interface PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressions {
+  /**
+  * The label key that the selector applies to.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#key Pod#key}
+  */
+  readonly key?: string;
+  /**
+  * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#operator Pod#operator}
+  */
+  readonly operator?: string;
+  /**
+  * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#values Pod#values}
+  */
+  readonly values?: string[];
+}
+
+export function podSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsToTerraform(struct?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    key: cdktf.stringToTerraform(struct!.key),
+    operator: cdktf.stringToTerraform(struct!.operator),
+    values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
+  }
+}
+
+
+export function podSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsToHclTerraform(struct?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
+export class PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressions | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._key !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.key = this._key;
+    }
+    if (this._operator !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.operator = this._operator;
+    }
+    if (this._values !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.values = this._values;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressions | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._key = undefined;
+      this._operator = undefined;
+      this._values = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._key = value.key;
+      this._operator = value.operator;
+      this._values = value.values;
+    }
+  }
+
+  // key - computed: false, optional: true, required: false
+  private _key?: string; 
+  public get key() {
+    return this.getStringAttribute('key');
+  }
+  public set key(value: string) {
+    this._key = value;
+  }
+  public resetKey() {
+    this._key = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get keyInput() {
+    return this._key;
+  }
+
+  // operator - computed: false, optional: true, required: false
+  private _operator?: string; 
+  public get operator() {
+    return this.getStringAttribute('operator');
+  }
+  public set operator(value: string) {
+    this._operator = value;
+  }
+  public resetOperator() {
+    this._operator = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get operatorInput() {
+    return this._operator;
+  }
+
+  // values - computed: false, optional: true, required: false
+  private _values?: string[]; 
+  public get values() {
+    return cdktf.Fn.tolist(this.getListAttribute('values'));
+  }
+  public set values(value: string[]) {
+    this._values = value;
+  }
+  public resetValues() {
+    this._values = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valuesInput() {
+    return this._values;
+  }
+}
+
+export class PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsList extends cdktf.ComplexList {
+  public internalValue? : PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressions[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsOutputReference {
+    return new PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelector {
+  /**
+  * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_labels Pod#match_labels}
+  */
+  readonly matchLabels?: { [key: string]: string };
+  /**
+  * match_expressions block
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#match_expressions Pod#match_expressions}
+  */
+  readonly matchExpressions?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressions[] | cdktf.IResolvable;
+}
+
+export function podSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorToTerraform(struct?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelector | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    match_labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.matchLabels),
+    match_expressions: cdktf.listMapper(podSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsToTerraform, true)(struct!.matchExpressions),
+  }
+}
+
+
+export function podSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorToHclTerraform(struct?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelector | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    match_labels: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.matchLabels),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    match_expressions: {
+      value: cdktf.listMapperHcl(podSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsToHclTerraform, true)(struct!.matchExpressions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
+export class PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelector | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._matchLabels !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.matchLabels = this._matchLabels;
+    }
+    if (this._matchExpressions?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.matchExpressions = this._matchExpressions?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelector | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._matchLabels = undefined;
+      this._matchExpressions.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._matchLabels = value.matchLabels;
+      this._matchExpressions.internalValue = value.matchExpressions;
+    }
+  }
+
+  // match_labels - computed: false, optional: true, required: false
+  private _matchLabels?: { [key: string]: string }; 
+  public get matchLabels() {
+    return this.getStringMapAttribute('match_labels');
+  }
+  public set matchLabels(value: { [key: string]: string }) {
+    this._matchLabels = value;
+  }
+  public resetMatchLabels() {
+    this._matchLabels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchLabelsInput() {
+    return this._matchLabels;
+  }
+
+  // match_expressions - computed: false, optional: true, required: false
+  private _matchExpressions = new PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressionsList(this, "match_expressions", false);
+  public get matchExpressions() {
+    return this._matchExpressions;
+  }
+  public putMatchExpressions(value: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorMatchExpressions[] | cdktf.IResolvable) {
+    this._matchExpressions.internalValue = value;
+  }
+  public resetMatchExpressions() {
+    this._matchExpressions.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get matchExpressionsInput() {
+    return this._matchExpressions.internalValue;
+  }
+}
+
+export class PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorList extends cdktf.ComplexList {
+  public internalValue? : PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelector[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorOutputReference {
+    return new PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution {
   /**
   * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means 'this pod's namespace'
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#namespaces Pod#namespaces}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#namespaces Pod#namespaces}
   */
   readonly namespaces?: string[];
   /**
   * empty topology key is interpreted by the scheduler as 'all topologies'
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#topology_key Pod#topology_key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#topology_key Pod#topology_key}
   */
   readonly topologyKey: string;
   /**
   * label_selector block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#label_selector Pod#label_selector}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#label_selector Pod#label_selector}
   */
   readonly labelSelector?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelector[] | cdktf.IResolvable;
+  /**
+  * namespace_selector block
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#namespace_selector Pod#namespace_selector}
+  */
+  readonly namespaceSelector?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelector[] | cdktf.IResolvable;
 }
 
 export function podSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionToTerraform(struct?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution | cdktf.IResolvable): any {
@@ -3913,6 +5383,7 @@ export function podSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDur
     namespaces: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.namespaces),
     topology_key: cdktf.stringToTerraform(struct!.topologyKey),
     label_selector: cdktf.listMapper(podSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorToTerraform, true)(struct!.labelSelector),
+    namespace_selector: cdktf.listMapper(podSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorToTerraform, true)(struct!.namespaceSelector),
   }
 }
 
@@ -3940,6 +5411,12 @@ export function podSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDur
       isBlock: true,
       type: "list",
       storageClassType: "PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionLabelSelectorList",
+    },
+    namespace_selector: {
+      value: cdktf.listMapperHcl(podSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorToHclTerraform, true)(struct!.namespaceSelector),
+      isBlock: true,
+      type: "list",
+      storageClassType: "PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorList",
     },
   };
 
@@ -3979,6 +5456,10 @@ export class PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuring
       hasAnyValues = true;
       internalValueResult.labelSelector = this._labelSelector?.internalValue;
     }
+    if (this._namespaceSelector?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.namespaceSelector = this._namespaceSelector?.internalValue;
+    }
     return hasAnyValues ? internalValueResult : undefined;
   }
 
@@ -3989,6 +5470,7 @@ export class PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuring
       this._namespaces = undefined;
       this._topologyKey = undefined;
       this._labelSelector.internalValue = undefined;
+      this._namespaceSelector.internalValue = undefined;
     }
     else if (cdktf.Tokenization.isResolvable(value)) {
       this.isEmptyObject = false;
@@ -4000,6 +5482,7 @@ export class PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuring
       this._namespaces = value.namespaces;
       this._topologyKey = value.topologyKey;
       this._labelSelector.internalValue = value.labelSelector;
+      this._namespaceSelector.internalValue = value.namespaceSelector;
     }
   }
 
@@ -4047,6 +5530,22 @@ export class PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuring
   public get labelSelectorInput() {
     return this._labelSelector.internalValue;
   }
+
+  // namespace_selector - computed: false, optional: true, required: false
+  private _namespaceSelector = new PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelectorList(this, "namespace_selector", false);
+  public get namespaceSelector() {
+    return this._namespaceSelector;
+  }
+  public putNamespaceSelector(value: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionNamespaceSelector[] | cdktf.IResolvable) {
+    this._namespaceSelector.internalValue = value;
+  }
+  public resetNamespaceSelector() {
+    this._namespaceSelector.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get namespaceSelectorInput() {
+    return this._namespaceSelector.internalValue;
+  }
 }
 
 export class PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecutionList extends cdktf.ComplexList {
@@ -4072,13 +5571,13 @@ export interface PodSpecAffinityPodAntiAffinity {
   /**
   * preferred_during_scheduling_ignored_during_execution block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#preferred_during_scheduling_ignored_during_execution Pod#preferred_during_scheduling_ignored_during_execution}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#preferred_during_scheduling_ignored_during_execution Pod#preferred_during_scheduling_ignored_during_execution}
   */
   readonly preferredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAntiAffinityPreferredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
   /**
   * required_during_scheduling_ignored_during_execution block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#required_during_scheduling_ignored_during_execution Pod#required_during_scheduling_ignored_during_execution}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#required_during_scheduling_ignored_during_execution Pod#required_during_scheduling_ignored_during_execution}
   */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: PodSpecAffinityPodAntiAffinityRequiredDuringSchedulingIgnoredDuringExecution[] | cdktf.IResolvable;
 }
@@ -4193,19 +5692,19 @@ export interface PodSpecAffinity {
   /**
   * node_affinity block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#node_affinity Pod#node_affinity}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#node_affinity Pod#node_affinity}
   */
   readonly nodeAffinity?: PodSpecAffinityNodeAffinity;
   /**
   * pod_affinity block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#pod_affinity Pod#pod_affinity}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#pod_affinity Pod#pod_affinity}
   */
   readonly podAffinity?: PodSpecAffinityPodAffinity;
   /**
   * pod_anti_affinity block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#pod_anti_affinity Pod#pod_anti_affinity}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#pod_anti_affinity Pod#pod_anti_affinity}
   */
   readonly podAntiAffinity?: PodSpecAffinityPodAntiAffinity;
 }
@@ -4349,19 +5848,19 @@ export interface PodSpecContainerEnvValueFromConfigMapKeyRef {
   /**
   * The key to select.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#key Pod#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * Specify whether the ConfigMap or its key must be defined.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#optional Pod#optional}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#optional Pod#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -4505,13 +6004,13 @@ export interface PodSpecContainerEnvValueFromFieldRef {
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to "v1".
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#api_version Pod#api_version}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#api_version Pod#api_version}
   */
   readonly apiVersion?: string;
   /**
   * Path of the field to select in the specified API version
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#field_path Pod#field_path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#field_path Pod#field_path}
   */
   readonly fieldPath?: string;
 }
@@ -4624,17 +6123,17 @@ export class PodSpecContainerEnvValueFromFieldRefOutputReference extends cdktf.C
 }
 export interface PodSpecContainerEnvValueFromResourceFieldRef {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#container_name Pod#container_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#container_name Pod#container_name}
   */
   readonly containerName?: string;
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#divisor Pod#divisor}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#divisor Pod#divisor}
   */
   readonly divisor?: string;
   /**
   * Resource to select
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#resource Pod#resource}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#resource Pod#resource}
   */
   readonly resource: string;
 }
@@ -4775,19 +6274,19 @@ export interface PodSpecContainerEnvValueFromSecretKeyRef {
   /**
   * The key of the secret to select from. Must be a valid secret key.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#key Pod#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * Specify whether the Secret or its key must be defined.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#optional Pod#optional}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#optional Pod#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -4931,25 +6430,25 @@ export interface PodSpecContainerEnvValueFrom {
   /**
   * config_map_key_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#config_map_key_ref Pod#config_map_key_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#config_map_key_ref Pod#config_map_key_ref}
   */
   readonly configMapKeyRef?: PodSpecContainerEnvValueFromConfigMapKeyRef;
   /**
   * field_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#field_ref Pod#field_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#field_ref Pod#field_ref}
   */
   readonly fieldRef?: PodSpecContainerEnvValueFromFieldRef;
   /**
   * resource_field_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#resource_field_ref Pod#resource_field_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#resource_field_ref Pod#resource_field_ref}
   */
   readonly resourceFieldRef?: PodSpecContainerEnvValueFromResourceFieldRef;
   /**
   * secret_key_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#secret_key_ref Pod#secret_key_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#secret_key_ref Pod#secret_key_ref}
   */
   readonly secretKeyRef?: PodSpecContainerEnvValueFromSecretKeyRef;
 }
@@ -5122,19 +6621,19 @@ export interface PodSpecContainerEnv {
   /**
   * Name of the environment variable. Must be a C_IDENTIFIER
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
   /**
   * Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#value Pod#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
   /**
   * value_from block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#value_from Pod#value_from}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#value_from Pod#value_from}
   */
   readonly valueFrom?: PodSpecContainerEnvValueFrom;
 }
@@ -5307,13 +6806,13 @@ export interface PodSpecContainerEnvFromConfigMapRef {
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
   /**
   * Specify whether the ConfigMap must be defined
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#optional Pod#optional}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#optional Pod#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -5425,13 +6924,13 @@ export interface PodSpecContainerEnvFromSecretRef {
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
   /**
   * Specify whether the Secret must be defined
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#optional Pod#optional}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#optional Pod#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -5543,19 +7042,19 @@ export interface PodSpecContainerEnvFrom {
   /**
   * An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#prefix Pod#prefix}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#prefix Pod#prefix}
   */
   readonly prefix?: string;
   /**
   * config_map_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#config_map_ref Pod#config_map_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#config_map_ref Pod#config_map_ref}
   */
   readonly configMapRef?: PodSpecContainerEnvFromConfigMapRef;
   /**
   * secret_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#secret_ref Pod#secret_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#secret_ref Pod#secret_ref}
   */
   readonly secretRef?: PodSpecContainerEnvFromSecretRef;
 }
@@ -5731,7 +7230,7 @@ export interface PodSpecContainerLifecyclePostStartExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#command Pod#command}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
 }
@@ -5817,13 +7316,13 @@ export interface PodSpecContainerLifecyclePostStartHttpGetHttpHeader {
   /**
   * The header field name
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * The header field value
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#value Pod#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
 }
@@ -5970,31 +7469,31 @@ export interface PodSpecContainerLifecyclePostStartHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#host Pod#host}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#host Pod#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#path Pod#path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#path Pod#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#scheme Pod#scheme}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#scheme Pod#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#http_header Pod#http_header}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#http_header Pod#http_header}
   */
   readonly httpHeader?: PodSpecContainerLifecyclePostStartHttpGetHttpHeader[] | cdktf.IResolvable;
 }
@@ -6196,7 +7695,7 @@ export interface PodSpecContainerLifecyclePostStartTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port: string;
 }
@@ -6311,19 +7810,19 @@ export interface PodSpecContainerLifecyclePostStart {
   /**
   * exec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#exec Pod#exec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#exec Pod#exec}
   */
   readonly exec?: PodSpecContainerLifecyclePostStartExec;
   /**
   * http_get block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#http_get Pod#http_get}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#http_get Pod#http_get}
   */
   readonly httpGet?: PodSpecContainerLifecyclePostStartHttpGet;
   /**
   * tcp_socket block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
   */
   readonly tcpSocket?: PodSpecContainerLifecyclePostStartTcpSocket[] | cdktf.IResolvable;
 }
@@ -6499,7 +7998,7 @@ export interface PodSpecContainerLifecyclePreStopExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#command Pod#command}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
 }
@@ -6585,13 +8084,13 @@ export interface PodSpecContainerLifecyclePreStopHttpGetHttpHeader {
   /**
   * The header field name
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * The header field value
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#value Pod#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
 }
@@ -6738,31 +8237,31 @@ export interface PodSpecContainerLifecyclePreStopHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#host Pod#host}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#host Pod#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#path Pod#path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#path Pod#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#scheme Pod#scheme}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#scheme Pod#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#http_header Pod#http_header}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#http_header Pod#http_header}
   */
   readonly httpHeader?: PodSpecContainerLifecyclePreStopHttpGetHttpHeader[] | cdktf.IResolvable;
 }
@@ -6964,7 +8463,7 @@ export interface PodSpecContainerLifecyclePreStopTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port: string;
 }
@@ -7079,19 +8578,19 @@ export interface PodSpecContainerLifecyclePreStop {
   /**
   * exec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#exec Pod#exec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#exec Pod#exec}
   */
   readonly exec?: PodSpecContainerLifecyclePreStopExec;
   /**
   * http_get block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#http_get Pod#http_get}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#http_get Pod#http_get}
   */
   readonly httpGet?: PodSpecContainerLifecyclePreStopHttpGet;
   /**
   * tcp_socket block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
   */
   readonly tcpSocket?: PodSpecContainerLifecyclePreStopTcpSocket[] | cdktf.IResolvable;
 }
@@ -7267,13 +8766,13 @@ export interface PodSpecContainerLifecycle {
   /**
   * post_start block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#post_start Pod#post_start}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#post_start Pod#post_start}
   */
   readonly postStart?: PodSpecContainerLifecyclePostStart[] | cdktf.IResolvable;
   /**
   * pre_stop block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#pre_stop Pod#pre_stop}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#pre_stop Pod#pre_stop}
   */
   readonly preStop?: PodSpecContainerLifecyclePreStop[] | cdktf.IResolvable;
 }
@@ -7388,7 +8887,7 @@ export interface PodSpecContainerLivenessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#command Pod#command}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
 }
@@ -7474,13 +8973,13 @@ export interface PodSpecContainerLivenessProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#service Pod#service}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#service Pod#service}
   */
   readonly service?: string;
 }
@@ -7624,13 +9123,13 @@ export interface PodSpecContainerLivenessProbeHttpGetHttpHeader {
   /**
   * The header field name
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * The header field value
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#value Pod#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
 }
@@ -7777,31 +9276,31 @@ export interface PodSpecContainerLivenessProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#host Pod#host}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#host Pod#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#path Pod#path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#path Pod#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#scheme Pod#scheme}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#scheme Pod#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#http_header Pod#http_header}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#http_header Pod#http_header}
   */
   readonly httpHeader?: PodSpecContainerLivenessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
 }
@@ -8003,7 +9502,7 @@ export interface PodSpecContainerLivenessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port: string;
 }
@@ -8118,55 +9617,55 @@ export interface PodSpecContainerLivenessProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#failure_threshold Pod#failure_threshold}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#failure_threshold Pod#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#initial_delay_seconds Pod#initial_delay_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#initial_delay_seconds Pod#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#period_seconds Pod#period_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#period_seconds Pod#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#success_threshold Pod#success_threshold}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#success_threshold Pod#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#timeout_seconds Pod#timeout_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#timeout_seconds Pod#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#exec Pod#exec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#exec Pod#exec}
   */
   readonly exec?: PodSpecContainerLivenessProbeExec;
   /**
   * grpc block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#grpc Pod#grpc}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#grpc Pod#grpc}
   */
   readonly grpc?: PodSpecContainerLivenessProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#http_get Pod#http_get}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#http_get Pod#http_get}
   */
   readonly httpGet?: PodSpecContainerLivenessProbeHttpGet;
   /**
   * tcp_socket block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
   */
   readonly tcpSocket?: PodSpecContainerLivenessProbeTcpSocket[] | cdktf.IResolvable;
 }
@@ -8484,31 +9983,31 @@ export interface PodSpecContainerPort {
   /**
   * Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#container_port Pod#container_port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#container_port Pod#container_port}
   */
   readonly containerPort: number;
   /**
   * What host IP to bind the external port to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#host_ip Pod#host_ip}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#host_ip Pod#host_ip}
   */
   readonly hostIp?: string;
   /**
   * Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#host_port Pod#host_port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#host_port Pod#host_port}
   */
   readonly hostPort?: number;
   /**
   * If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * Protocol for port. Must be UDP or TCP. Defaults to "TCP".
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#protocol Pod#protocol}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#protocol Pod#protocol}
   */
   readonly protocol?: string;
 }
@@ -8739,7 +10238,7 @@ export interface PodSpecContainerReadinessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#command Pod#command}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
 }
@@ -8825,13 +10324,13 @@ export interface PodSpecContainerReadinessProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#service Pod#service}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#service Pod#service}
   */
   readonly service?: string;
 }
@@ -8975,13 +10474,13 @@ export interface PodSpecContainerReadinessProbeHttpGetHttpHeader {
   /**
   * The header field name
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * The header field value
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#value Pod#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
 }
@@ -9128,31 +10627,31 @@ export interface PodSpecContainerReadinessProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#host Pod#host}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#host Pod#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#path Pod#path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#path Pod#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#scheme Pod#scheme}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#scheme Pod#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#http_header Pod#http_header}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#http_header Pod#http_header}
   */
   readonly httpHeader?: PodSpecContainerReadinessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
 }
@@ -9354,7 +10853,7 @@ export interface PodSpecContainerReadinessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port: string;
 }
@@ -9469,55 +10968,55 @@ export interface PodSpecContainerReadinessProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#failure_threshold Pod#failure_threshold}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#failure_threshold Pod#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#initial_delay_seconds Pod#initial_delay_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#initial_delay_seconds Pod#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#period_seconds Pod#period_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#period_seconds Pod#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#success_threshold Pod#success_threshold}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#success_threshold Pod#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#timeout_seconds Pod#timeout_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#timeout_seconds Pod#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#exec Pod#exec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#exec Pod#exec}
   */
   readonly exec?: PodSpecContainerReadinessProbeExec;
   /**
   * grpc block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#grpc Pod#grpc}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#grpc Pod#grpc}
   */
   readonly grpc?: PodSpecContainerReadinessProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#http_get Pod#http_get}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#http_get Pod#http_get}
   */
   readonly httpGet?: PodSpecContainerReadinessProbeHttpGet;
   /**
   * tcp_socket block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
   */
   readonly tcpSocket?: PodSpecContainerReadinessProbeTcpSocket[] | cdktf.IResolvable;
 }
@@ -9835,13 +11334,13 @@ export interface PodSpecContainerResources {
   /**
   * Describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#limits Pod#limits}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#limits Pod#limits}
   */
   readonly limits?: { [key: string]: string };
   /**
   * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#requests Pod#requests}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#requests Pod#requests}
   */
   readonly requests?: { [key: string]: string };
 }
@@ -9956,13 +11455,13 @@ export interface PodSpecContainerSecurityContextCapabilities {
   /**
   * Added capabilities
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#add Pod#add}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#add Pod#add}
   */
   readonly add?: string[];
   /**
   * Removed capabilities
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#drop Pod#drop}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#drop Pod#drop}
   */
   readonly drop?: string[];
 }
@@ -10077,25 +11576,25 @@ export interface PodSpecContainerSecurityContextSeLinuxOptions {
   /**
   * Level is SELinux level label that applies to the container.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#level Pod#level}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#level Pod#level}
   */
   readonly level?: string;
   /**
   * Role is a SELinux role label that applies to the container.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#role Pod#role}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#role Pod#role}
   */
   readonly role?: string;
   /**
   * Type is a SELinux type label that applies to the container.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#type Pod#type}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#type Pod#type}
   */
   readonly type?: string;
   /**
   * User is a SELinux user label that applies to the container.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#user Pod#user}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#user Pod#user}
   */
   readonly user?: string;
 }
@@ -10268,13 +11767,13 @@ export interface PodSpecContainerSecurityContextSeccompProfile {
   /**
   * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#localhost_profile Pod#localhost_profile}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#localhost_profile Pod#localhost_profile}
   */
   readonly localhostProfile?: string;
   /**
   * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#type Pod#type}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#type Pod#type}
   */
   readonly type?: string;
 }
@@ -10389,55 +11888,55 @@ export interface PodSpecContainerSecurityContext {
   /**
   * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#allow_privilege_escalation Pod#allow_privilege_escalation}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#allow_privilege_escalation Pod#allow_privilege_escalation}
   */
   readonly allowPrivilegeEscalation?: boolean | cdktf.IResolvable;
   /**
   * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#privileged Pod#privileged}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#privileged Pod#privileged}
   */
   readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * Whether this container has a read-only root filesystem. Default is false.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#read_only_root_filesystem Pod#read_only_root_filesystem}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#read_only_root_filesystem Pod#read_only_root_filesystem}
   */
   readonly readOnlyRootFilesystem?: boolean | cdktf.IResolvable;
   /**
   * The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#run_as_group Pod#run_as_group}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#run_as_group Pod#run_as_group}
   */
   readonly runAsGroup?: string;
   /**
   * Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#run_as_non_root Pod#run_as_non_root}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#run_as_non_root Pod#run_as_non_root}
   */
   readonly runAsNonRoot?: boolean | cdktf.IResolvable;
   /**
   * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#run_as_user Pod#run_as_user}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#run_as_user Pod#run_as_user}
   */
   readonly runAsUser?: string;
   /**
   * capabilities block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#capabilities Pod#capabilities}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#capabilities Pod#capabilities}
   */
   readonly capabilities?: PodSpecContainerSecurityContextCapabilities;
   /**
   * se_linux_options block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#se_linux_options Pod#se_linux_options}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#se_linux_options Pod#se_linux_options}
   */
   readonly seLinuxOptions?: PodSpecContainerSecurityContextSeLinuxOptions;
   /**
   * seccomp_profile block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#seccomp_profile Pod#seccomp_profile}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#seccomp_profile Pod#seccomp_profile}
   */
   readonly seccompProfile?: PodSpecContainerSecurityContextSeccompProfile;
 }
@@ -10755,7 +12254,7 @@ export interface PodSpecContainerStartupProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#command Pod#command}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
 }
@@ -10841,13 +12340,13 @@ export interface PodSpecContainerStartupProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#service Pod#service}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#service Pod#service}
   */
   readonly service?: string;
 }
@@ -10991,13 +12490,13 @@ export interface PodSpecContainerStartupProbeHttpGetHttpHeader {
   /**
   * The header field name
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * The header field value
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#value Pod#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
 }
@@ -11144,31 +12643,31 @@ export interface PodSpecContainerStartupProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#host Pod#host}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#host Pod#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#path Pod#path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#path Pod#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#scheme Pod#scheme}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#scheme Pod#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#http_header Pod#http_header}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#http_header Pod#http_header}
   */
   readonly httpHeader?: PodSpecContainerStartupProbeHttpGetHttpHeader[] | cdktf.IResolvable;
 }
@@ -11370,7 +12869,7 @@ export interface PodSpecContainerStartupProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port: string;
 }
@@ -11485,55 +12984,55 @@ export interface PodSpecContainerStartupProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#failure_threshold Pod#failure_threshold}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#failure_threshold Pod#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#initial_delay_seconds Pod#initial_delay_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#initial_delay_seconds Pod#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#period_seconds Pod#period_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#period_seconds Pod#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#success_threshold Pod#success_threshold}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#success_threshold Pod#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#timeout_seconds Pod#timeout_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#timeout_seconds Pod#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#exec Pod#exec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#exec Pod#exec}
   */
   readonly exec?: PodSpecContainerStartupProbeExec;
   /**
   * grpc block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#grpc Pod#grpc}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#grpc Pod#grpc}
   */
   readonly grpc?: PodSpecContainerStartupProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#http_get Pod#http_get}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#http_get Pod#http_get}
   */
   readonly httpGet?: PodSpecContainerStartupProbeHttpGet;
   /**
   * tcp_socket block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
   */
   readonly tcpSocket?: PodSpecContainerStartupProbeTcpSocket[] | cdktf.IResolvable;
 }
@@ -11847,35 +13346,182 @@ export class PodSpecContainerStartupProbeOutputReference extends cdktf.ComplexOb
     return this._tcpSocket.internalValue;
   }
 }
+export interface PodSpecContainerVolumeDevice {
+  /**
+  * Path within the container at which the volume device should be attached. For example '/dev/xvda'.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#device_path Pod#device_path}
+  */
+  readonly devicePath: string;
+  /**
+  * This must match the Name of a PersistentVolumeClaim.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
+  */
+  readonly name: string;
+}
+
+export function podSpecContainerVolumeDeviceToTerraform(struct?: PodSpecContainerVolumeDevice | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    device_path: cdktf.stringToTerraform(struct!.devicePath),
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
+
+export function podSpecContainerVolumeDeviceToHclTerraform(struct?: PodSpecContainerVolumeDevice | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    device_path: {
+      value: cdktf.stringToHclTerraform(struct!.devicePath),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
+export class PodSpecContainerVolumeDeviceOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PodSpecContainerVolumeDevice | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._devicePath !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.devicePath = this._devicePath;
+    }
+    if (this._name !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PodSpecContainerVolumeDevice | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._devicePath = undefined;
+      this._name = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._devicePath = value.devicePath;
+      this._name = value.name;
+    }
+  }
+
+  // device_path - computed: false, optional: false, required: true
+  private _devicePath?: string; 
+  public get devicePath() {
+    return this.getStringAttribute('device_path');
+  }
+  public set devicePath(value: string) {
+    this._devicePath = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get devicePathInput() {
+    return this._devicePath;
+  }
+
+  // name - computed: false, optional: false, required: true
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name;
+  }
+}
+
+export class PodSpecContainerVolumeDeviceList extends cdktf.ComplexList {
+  public internalValue? : PodSpecContainerVolumeDevice[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PodSpecContainerVolumeDeviceOutputReference {
+    return new PodSpecContainerVolumeDeviceOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface PodSpecContainerVolumeMount {
   /**
   * Path within the container at which the volume should be mounted. Must not contain ':'.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#mount_path Pod#mount_path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#mount_path Pod#mount_path}
   */
   readonly mountPath: string;
   /**
   * Mount propagation mode. mount_propagation determines how mounts are propagated from the host to container and the other way around. Valid values are None (default), HostToContainer and Bidirectional.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#mount_propagation Pod#mount_propagation}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#mount_propagation Pod#mount_propagation}
   */
   readonly mountPropagation?: string;
   /**
   * This must match the Name of a Volume.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
   /**
   * Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#read_only Pod#read_only}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#read_only Pod#read_only}
   */
   readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#sub_path Pod#sub_path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#sub_path Pod#sub_path}
   */
   readonly subPath?: string;
 }
@@ -12103,127 +13749,133 @@ export interface PodSpecContainer {
   /**
   * Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#args Pod#args}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#args Pod#args}
   */
   readonly args?: string[];
   /**
   * Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#command Pod#command}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
   /**
   * Docker image name. More info: https://kubernetes.io/docs/concepts/containers/images/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#image Pod#image}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#image Pod#image}
   */
   readonly image?: string;
   /**
   * Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. More info: https://kubernetes.io/docs/concepts/containers/images/#updating-images
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#image_pull_policy Pod#image_pull_policy}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#image_pull_policy Pod#image_pull_policy}
   */
   readonly imagePullPolicy?: string;
   /**
   * Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
   /**
   * Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF. 
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#stdin Pod#stdin}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#stdin Pod#stdin}
   */
   readonly stdin?: boolean | cdktf.IResolvable;
   /**
   * Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdinOnce is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#stdin_once Pod#stdin_once}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#stdin_once Pod#stdin_once}
   */
   readonly stdinOnce?: boolean | cdktf.IResolvable;
   /**
   * Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Defaults to /dev/termination-log. Cannot be updated.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#termination_message_path Pod#termination_message_path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#termination_message_path Pod#termination_message_path}
   */
   readonly terminationMessagePath?: string;
   /**
   * Optional: Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#termination_message_policy Pod#termination_message_policy}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#termination_message_policy Pod#termination_message_policy}
   */
   readonly terminationMessagePolicy?: string;
   /**
   * Whether this container should allocate a TTY for itself
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#tty Pod#tty}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#tty Pod#tty}
   */
   readonly tty?: boolean | cdktf.IResolvable;
   /**
   * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#working_dir Pod#working_dir}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#working_dir Pod#working_dir}
   */
   readonly workingDir?: string;
   /**
   * env block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#env Pod#env}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#env Pod#env}
   */
   readonly env?: PodSpecContainerEnv[] | cdktf.IResolvable;
   /**
   * env_from block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#env_from Pod#env_from}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#env_from Pod#env_from}
   */
   readonly envFrom?: PodSpecContainerEnvFrom[] | cdktf.IResolvable;
   /**
   * lifecycle block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#lifecycle Pod#lifecycle}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#lifecycle Pod#lifecycle}
   */
   readonly lifecycle?: PodSpecContainerLifecycle;
   /**
   * liveness_probe block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#liveness_probe Pod#liveness_probe}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#liveness_probe Pod#liveness_probe}
   */
   readonly livenessProbe?: PodSpecContainerLivenessProbe;
   /**
   * port block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port?: PodSpecContainerPort[] | cdktf.IResolvable;
   /**
   * readiness_probe block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#readiness_probe Pod#readiness_probe}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#readiness_probe Pod#readiness_probe}
   */
   readonly readinessProbe?: PodSpecContainerReadinessProbe;
   /**
   * resources block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#resources Pod#resources}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#resources Pod#resources}
   */
   readonly resources?: PodSpecContainerResources;
   /**
   * security_context block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#security_context Pod#security_context}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#security_context Pod#security_context}
   */
   readonly securityContext?: PodSpecContainerSecurityContext;
   /**
   * startup_probe block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#startup_probe Pod#startup_probe}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#startup_probe Pod#startup_probe}
   */
   readonly startupProbe?: PodSpecContainerStartupProbe;
   /**
+  * volume_device block
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#volume_device Pod#volume_device}
+  */
+  readonly volumeDevice?: PodSpecContainerVolumeDevice[] | cdktf.IResolvable;
+  /**
   * volume_mount block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#volume_mount Pod#volume_mount}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#volume_mount Pod#volume_mount}
   */
   readonly volumeMount?: PodSpecContainerVolumeMount[] | cdktf.IResolvable;
 }
@@ -12254,6 +13906,7 @@ export function podSpecContainerToTerraform(struct?: PodSpecContainer | cdktf.IR
     resources: podSpecContainerResourcesToTerraform(struct!.resources),
     security_context: podSpecContainerSecurityContextToTerraform(struct!.securityContext),
     startup_probe: podSpecContainerStartupProbeToTerraform(struct!.startupProbe),
+    volume_device: cdktf.listMapper(podSpecContainerVolumeDeviceToTerraform, true)(struct!.volumeDevice),
     volume_mount: cdktf.listMapper(podSpecContainerVolumeMountToTerraform, true)(struct!.volumeMount),
   }
 }
@@ -12385,6 +14038,12 @@ export function podSpecContainerToHclTerraform(struct?: PodSpecContainer | cdktf
       type: "list",
       storageClassType: "PodSpecContainerStartupProbeList",
     },
+    volume_device: {
+      value: cdktf.listMapperHcl(podSpecContainerVolumeDeviceToHclTerraform, true)(struct!.volumeDevice),
+      isBlock: true,
+      type: "list",
+      storageClassType: "PodSpecContainerVolumeDeviceList",
+    },
     volume_mount: {
       value: cdktf.listMapperHcl(podSpecContainerVolumeMountToHclTerraform, true)(struct!.volumeMount),
       isBlock: true,
@@ -12497,6 +14156,10 @@ export class PodSpecContainerOutputReference extends cdktf.ComplexObject {
       hasAnyValues = true;
       internalValueResult.startupProbe = this._startupProbe?.internalValue;
     }
+    if (this._volumeDevice?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.volumeDevice = this._volumeDevice?.internalValue;
+    }
     if (this._volumeMount?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.volumeMount = this._volumeMount?.internalValue;
@@ -12528,6 +14191,7 @@ export class PodSpecContainerOutputReference extends cdktf.ComplexObject {
       this._resources.internalValue = undefined;
       this._securityContext.internalValue = undefined;
       this._startupProbe.internalValue = undefined;
+      this._volumeDevice.internalValue = undefined;
       this._volumeMount.internalValue = undefined;
     }
     else if (cdktf.Tokenization.isResolvable(value)) {
@@ -12557,6 +14221,7 @@ export class PodSpecContainerOutputReference extends cdktf.ComplexObject {
       this._resources.internalValue = value.resources;
       this._securityContext.internalValue = value.securityContext;
       this._startupProbe.internalValue = value.startupProbe;
+      this._volumeDevice.internalValue = value.volumeDevice;
       this._volumeMount.internalValue = value.volumeMount;
     }
   }
@@ -12878,6 +14543,22 @@ export class PodSpecContainerOutputReference extends cdktf.ComplexObject {
     return this._startupProbe.internalValue;
   }
 
+  // volume_device - computed: false, optional: true, required: false
+  private _volumeDevice = new PodSpecContainerVolumeDeviceList(this, "volume_device", false);
+  public get volumeDevice() {
+    return this._volumeDevice;
+  }
+  public putVolumeDevice(value: PodSpecContainerVolumeDevice[] | cdktf.IResolvable) {
+    this._volumeDevice.internalValue = value;
+  }
+  public resetVolumeDevice() {
+    this._volumeDevice.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get volumeDeviceInput() {
+    return this._volumeDevice.internalValue;
+  }
+
   // volume_mount - computed: false, optional: true, required: false
   private _volumeMount = new PodSpecContainerVolumeMountList(this, "volume_mount", false);
   public get volumeMount() {
@@ -12918,13 +14599,13 @@ export interface PodSpecDnsConfigOption {
   /**
   * Name of the option.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
   /**
   * Value of the option. Optional: Defaults to empty.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#value Pod#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
 }
@@ -13068,19 +14749,19 @@ export interface PodSpecDnsConfig {
   /**
   * A list of DNS name server IP addresses. This will be appended to the base nameservers generated from DNSPolicy. Duplicated nameservers will be removed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#nameservers Pod#nameservers}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#nameservers Pod#nameservers}
   */
   readonly nameservers?: string[];
   /**
   * A list of DNS search domains for host-name lookup. This will be appended to the base search paths generated from DNSPolicy. Duplicated search paths will be removed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#searches Pod#searches}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#searches Pod#searches}
   */
   readonly searches?: string[];
   /**
   * option block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#option Pod#option}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#option Pod#option}
   */
   readonly option?: PodSpecDnsConfigOption[] | cdktf.IResolvable;
 }
@@ -13224,13 +14905,13 @@ export interface PodSpecHostAliases {
   /**
   * Hostnames for the IP address.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#hostnames Pod#hostnames}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#hostnames Pod#hostnames}
   */
   readonly hostnames: string[];
   /**
   * IP address of the host file entry.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#ip Pod#ip}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#ip Pod#ip}
   */
   readonly ip: string;
 }
@@ -13371,7 +15052,7 @@ export interface PodSpecImagePullSecrets {
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
 }
@@ -13486,19 +15167,19 @@ export interface PodSpecInitContainerEnvValueFromConfigMapKeyRef {
   /**
   * The key to select.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#key Pod#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * Specify whether the ConfigMap or its key must be defined.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#optional Pod#optional}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#optional Pod#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -13642,13 +15323,13 @@ export interface PodSpecInitContainerEnvValueFromFieldRef {
   /**
   * Version of the schema the FieldPath is written in terms of, defaults to "v1".
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#api_version Pod#api_version}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#api_version Pod#api_version}
   */
   readonly apiVersion?: string;
   /**
   * Path of the field to select in the specified API version
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#field_path Pod#field_path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#field_path Pod#field_path}
   */
   readonly fieldPath?: string;
 }
@@ -13761,17 +15442,17 @@ export class PodSpecInitContainerEnvValueFromFieldRefOutputReference extends cdk
 }
 export interface PodSpecInitContainerEnvValueFromResourceFieldRef {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#container_name Pod#container_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#container_name Pod#container_name}
   */
   readonly containerName?: string;
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#divisor Pod#divisor}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#divisor Pod#divisor}
   */
   readonly divisor?: string;
   /**
   * Resource to select
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#resource Pod#resource}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#resource Pod#resource}
   */
   readonly resource: string;
 }
@@ -13912,19 +15593,19 @@ export interface PodSpecInitContainerEnvValueFromSecretKeyRef {
   /**
   * The key of the secret to select from. Must be a valid secret key.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#key Pod#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#key Pod#key}
   */
   readonly key?: string;
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * Specify whether the Secret or its key must be defined.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#optional Pod#optional}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#optional Pod#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -14068,25 +15749,25 @@ export interface PodSpecInitContainerEnvValueFrom {
   /**
   * config_map_key_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#config_map_key_ref Pod#config_map_key_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#config_map_key_ref Pod#config_map_key_ref}
   */
   readonly configMapKeyRef?: PodSpecInitContainerEnvValueFromConfigMapKeyRef;
   /**
   * field_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#field_ref Pod#field_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#field_ref Pod#field_ref}
   */
   readonly fieldRef?: PodSpecInitContainerEnvValueFromFieldRef;
   /**
   * resource_field_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#resource_field_ref Pod#resource_field_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#resource_field_ref Pod#resource_field_ref}
   */
   readonly resourceFieldRef?: PodSpecInitContainerEnvValueFromResourceFieldRef;
   /**
   * secret_key_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#secret_key_ref Pod#secret_key_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#secret_key_ref Pod#secret_key_ref}
   */
   readonly secretKeyRef?: PodSpecInitContainerEnvValueFromSecretKeyRef;
 }
@@ -14259,19 +15940,19 @@ export interface PodSpecInitContainerEnv {
   /**
   * Name of the environment variable. Must be a C_IDENTIFIER
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
   /**
   * Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#value Pod#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
   /**
   * value_from block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#value_from Pod#value_from}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#value_from Pod#value_from}
   */
   readonly valueFrom?: PodSpecInitContainerEnvValueFrom;
 }
@@ -14444,13 +16125,13 @@ export interface PodSpecInitContainerEnvFromConfigMapRef {
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
   /**
   * Specify whether the ConfigMap must be defined
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#optional Pod#optional}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#optional Pod#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -14562,13 +16243,13 @@ export interface PodSpecInitContainerEnvFromSecretRef {
   /**
   * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name: string;
   /**
   * Specify whether the Secret must be defined
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#optional Pod#optional}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#optional Pod#optional}
   */
   readonly optional?: boolean | cdktf.IResolvable;
 }
@@ -14680,19 +16361,19 @@ export interface PodSpecInitContainerEnvFrom {
   /**
   * An optional identifer to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#prefix Pod#prefix}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#prefix Pod#prefix}
   */
   readonly prefix?: string;
   /**
   * config_map_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#config_map_ref Pod#config_map_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#config_map_ref Pod#config_map_ref}
   */
   readonly configMapRef?: PodSpecInitContainerEnvFromConfigMapRef;
   /**
   * secret_ref block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#secret_ref Pod#secret_ref}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#secret_ref Pod#secret_ref}
   */
   readonly secretRef?: PodSpecInitContainerEnvFromSecretRef;
 }
@@ -14868,7 +16549,7 @@ export interface PodSpecInitContainerLifecyclePostStartExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#command Pod#command}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
 }
@@ -14954,13 +16635,13 @@ export interface PodSpecInitContainerLifecyclePostStartHttpGetHttpHeader {
   /**
   * The header field name
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * The header field value
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#value Pod#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
 }
@@ -15107,31 +16788,31 @@ export interface PodSpecInitContainerLifecyclePostStartHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#host Pod#host}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#host Pod#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#path Pod#path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#path Pod#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#scheme Pod#scheme}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#scheme Pod#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#http_header Pod#http_header}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#http_header Pod#http_header}
   */
   readonly httpHeader?: PodSpecInitContainerLifecyclePostStartHttpGetHttpHeader[] | cdktf.IResolvable;
 }
@@ -15333,7 +17014,7 @@ export interface PodSpecInitContainerLifecyclePostStartTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port: string;
 }
@@ -15448,19 +17129,19 @@ export interface PodSpecInitContainerLifecyclePostStart {
   /**
   * exec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#exec Pod#exec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#exec Pod#exec}
   */
   readonly exec?: PodSpecInitContainerLifecyclePostStartExec;
   /**
   * http_get block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#http_get Pod#http_get}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#http_get Pod#http_get}
   */
   readonly httpGet?: PodSpecInitContainerLifecyclePostStartHttpGet;
   /**
   * tcp_socket block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
   */
   readonly tcpSocket?: PodSpecInitContainerLifecyclePostStartTcpSocket[] | cdktf.IResolvable;
 }
@@ -15636,7 +17317,7 @@ export interface PodSpecInitContainerLifecyclePreStopExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#command Pod#command}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
 }
@@ -15722,13 +17403,13 @@ export interface PodSpecInitContainerLifecyclePreStopHttpGetHttpHeader {
   /**
   * The header field name
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * The header field value
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#value Pod#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
 }
@@ -15875,31 +17556,31 @@ export interface PodSpecInitContainerLifecyclePreStopHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#host Pod#host}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#host Pod#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#path Pod#path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#path Pod#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#scheme Pod#scheme}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#scheme Pod#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#http_header Pod#http_header}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#http_header Pod#http_header}
   */
   readonly httpHeader?: PodSpecInitContainerLifecyclePreStopHttpGetHttpHeader[] | cdktf.IResolvable;
 }
@@ -16101,7 +17782,7 @@ export interface PodSpecInitContainerLifecyclePreStopTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port: string;
 }
@@ -16216,19 +17897,19 @@ export interface PodSpecInitContainerLifecyclePreStop {
   /**
   * exec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#exec Pod#exec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#exec Pod#exec}
   */
   readonly exec?: PodSpecInitContainerLifecyclePreStopExec;
   /**
   * http_get block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#http_get Pod#http_get}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#http_get Pod#http_get}
   */
   readonly httpGet?: PodSpecInitContainerLifecyclePreStopHttpGet;
   /**
   * tcp_socket block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
   */
   readonly tcpSocket?: PodSpecInitContainerLifecyclePreStopTcpSocket[] | cdktf.IResolvable;
 }
@@ -16404,13 +18085,13 @@ export interface PodSpecInitContainerLifecycle {
   /**
   * post_start block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#post_start Pod#post_start}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#post_start Pod#post_start}
   */
   readonly postStart?: PodSpecInitContainerLifecyclePostStart[] | cdktf.IResolvable;
   /**
   * pre_stop block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#pre_stop Pod#pre_stop}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#pre_stop Pod#pre_stop}
   */
   readonly preStop?: PodSpecInitContainerLifecyclePreStop[] | cdktf.IResolvable;
 }
@@ -16525,7 +18206,7 @@ export interface PodSpecInitContainerLivenessProbeExec {
   /**
   * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#command Pod#command}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#command Pod#command}
   */
   readonly command?: string[];
 }
@@ -16611,13 +18292,13 @@ export interface PodSpecInitContainerLivenessProbeGrpc {
   /**
   * Number of the port to access on the container. Number must be in the range 1 to 65535.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port: number;
   /**
   * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#service Pod#service}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#service Pod#service}
   */
   readonly service?: string;
 }
@@ -16761,13 +18442,13 @@ export interface PodSpecInitContainerLivenessProbeHttpGetHttpHeader {
   /**
   * The header field name
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#name Pod#name}
   */
   readonly name?: string;
   /**
   * The header field value
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#value Pod#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#value Pod#value}
   */
   readonly value?: string;
 }
@@ -16914,31 +18595,31 @@ export interface PodSpecInitContainerLivenessProbeHttpGet {
   /**
   * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#host Pod#host}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#host Pod#host}
   */
   readonly host?: string;
   /**
   * Path to access on the HTTP server.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#path Pod#path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#path Pod#path}
   */
   readonly path?: string;
   /**
   * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port?: string;
   /**
   * Scheme to use for connecting to the host.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#scheme Pod#scheme}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#scheme Pod#scheme}
   */
   readonly scheme?: string;
   /**
   * http_header block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#http_header Pod#http_header}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#http_header Pod#http_header}
   */
   readonly httpHeader?: PodSpecInitContainerLivenessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
 }
@@ -17140,7 +18821,7 @@ export interface PodSpecInitContainerLivenessProbeTcpSocket {
   /**
   * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#port Pod#port}
   */
   readonly port: string;
 }
@@ -17255,55 +18936,55 @@ export interface PodSpecInitContainerLivenessProbe {
   /**
   * Minimum consecutive failures for the probe to be considered failed after having succeeded.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#failure_threshold Pod#failure_threshold}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#failure_threshold Pod#failure_threshold}
   */
   readonly failureThreshold?: number;
   /**
   * Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#initial_delay_seconds Pod#initial_delay_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#initial_delay_seconds Pod#initial_delay_seconds}
   */
   readonly initialDelaySeconds?: number;
   /**
   * How often (in seconds) to perform the probe
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#period_seconds Pod#period_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#period_seconds Pod#period_seconds}
   */
   readonly periodSeconds?: number;
   /**
   * Minimum consecutive successes for the probe to be considered successful after having failed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#success_threshold Pod#success_threshold}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#success_threshold Pod#success_threshold}
   */
   readonly successThreshold?: number;
   /**
   * Number of seconds after which the probe times out. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#timeout_seconds Pod#timeout_seconds}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#timeout_seconds Pod#timeout_seconds}
   */
   readonly timeoutSeconds?: number;
   /**
   * exec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#exec Pod#exec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#exec Pod#exec}
   */
   readonly exec?: PodSpecInitContainerLivenessProbeExec;
   /**
   * grpc block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#grpc Pod#grpc}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#grpc Pod#grpc}
   */
   readonly grpc?: PodSpecInitContainerLivenessProbeGrpc[] | cdktf.IResolvable;
   /**
   * http_get block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#http_get Pod#http_get}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#http_get Pod#http_get}
   */
   readonly httpGet?: PodSpecInitContainerLivenessProbeHttpGet;
   /**
   * tcp_socket block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
   */
   readonly tcpSocket?: PodSpecInitContainerLivenessProbeTcpSocket[] | cdktf.IResolvable;
 }
@@ -17615,1910 +19296,5 @@ export class PodSpecInitContainerLivenessProbeOutputReference extends cdktf.Comp
   // Temporarily expose input value. Use with caution.
   public get tcpSocketInput() {
     return this._tcpSocket.internalValue;
-  }
-}
-export interface PodSpecInitContainerPort {
-  /**
-  * Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#container_port Pod#container_port}
-  */
-  readonly containerPort: number;
-  /**
-  * What host IP to bind the external port to.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#host_ip Pod#host_ip}
-  */
-  readonly hostIp?: string;
-  /**
-  * Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#host_port Pod#host_port}
-  */
-  readonly hostPort?: number;
-  /**
-  * If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
-  */
-  readonly name?: string;
-  /**
-  * Protocol for port. Must be UDP or TCP. Defaults to "TCP".
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#protocol Pod#protocol}
-  */
-  readonly protocol?: string;
-}
-
-export function podSpecInitContainerPortToTerraform(struct?: PodSpecInitContainerPort | cdktf.IResolvable): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    container_port: cdktf.numberToTerraform(struct!.containerPort),
-    host_ip: cdktf.stringToTerraform(struct!.hostIp),
-    host_port: cdktf.numberToTerraform(struct!.hostPort),
-    name: cdktf.stringToTerraform(struct!.name),
-    protocol: cdktf.stringToTerraform(struct!.protocol),
-  }
-}
-
-
-export function podSpecInitContainerPortToHclTerraform(struct?: PodSpecInitContainerPort | cdktf.IResolvable): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  const attrs = {
-    container_port: {
-      value: cdktf.numberToHclTerraform(struct!.containerPort),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "number",
-    },
-    host_ip: {
-      value: cdktf.stringToHclTerraform(struct!.hostIp),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-    host_port: {
-      value: cdktf.numberToHclTerraform(struct!.hostPort),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "number",
-    },
-    name: {
-      value: cdktf.stringToHclTerraform(struct!.name),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-    protocol: {
-      value: cdktf.stringToHclTerraform(struct!.protocol),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-  };
-
-  // remove undefined attributes
-  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
-}
-
-export class PodSpecInitContainerPortOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-  private resolvableValue?: cdktf.IResolvable;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param complexObjectIndex the index of this item in the list
-  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
-    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
-  }
-
-  public get internalValue(): PodSpecInitContainerPort | cdktf.IResolvable | undefined {
-    if (this.resolvableValue) {
-      return this.resolvableValue;
-    }
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._containerPort !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.containerPort = this._containerPort;
-    }
-    if (this._hostIp !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.hostIp = this._hostIp;
-    }
-    if (this._hostPort !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.hostPort = this._hostPort;
-    }
-    if (this._name !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.name = this._name;
-    }
-    if (this._protocol !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.protocol = this._protocol;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: PodSpecInitContainerPort | cdktf.IResolvable | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this.resolvableValue = undefined;
-      this._containerPort = undefined;
-      this._hostIp = undefined;
-      this._hostPort = undefined;
-      this._name = undefined;
-      this._protocol = undefined;
-    }
-    else if (cdktf.Tokenization.isResolvable(value)) {
-      this.isEmptyObject = false;
-      this.resolvableValue = value;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this.resolvableValue = undefined;
-      this._containerPort = value.containerPort;
-      this._hostIp = value.hostIp;
-      this._hostPort = value.hostPort;
-      this._name = value.name;
-      this._protocol = value.protocol;
-    }
-  }
-
-  // container_port - computed: false, optional: false, required: true
-  private _containerPort?: number; 
-  public get containerPort() {
-    return this.getNumberAttribute('container_port');
-  }
-  public set containerPort(value: number) {
-    this._containerPort = value;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get containerPortInput() {
-    return this._containerPort;
-  }
-
-  // host_ip - computed: false, optional: true, required: false
-  private _hostIp?: string; 
-  public get hostIp() {
-    return this.getStringAttribute('host_ip');
-  }
-  public set hostIp(value: string) {
-    this._hostIp = value;
-  }
-  public resetHostIp() {
-    this._hostIp = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get hostIpInput() {
-    return this._hostIp;
-  }
-
-  // host_port - computed: false, optional: true, required: false
-  private _hostPort?: number; 
-  public get hostPort() {
-    return this.getNumberAttribute('host_port');
-  }
-  public set hostPort(value: number) {
-    this._hostPort = value;
-  }
-  public resetHostPort() {
-    this._hostPort = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get hostPortInput() {
-    return this._hostPort;
-  }
-
-  // name - computed: false, optional: true, required: false
-  private _name?: string; 
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-  public set name(value: string) {
-    this._name = value;
-  }
-  public resetName() {
-    this._name = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nameInput() {
-    return this._name;
-  }
-
-  // protocol - computed: false, optional: true, required: false
-  private _protocol?: string; 
-  public get protocol() {
-    return this.getStringAttribute('protocol');
-  }
-  public set protocol(value: string) {
-    this._protocol = value;
-  }
-  public resetProtocol() {
-    this._protocol = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get protocolInput() {
-    return this._protocol;
-  }
-}
-
-export class PodSpecInitContainerPortList extends cdktf.ComplexList {
-  public internalValue? : PodSpecInitContainerPort[] | cdktf.IResolvable
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
-  */
-  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
-    super(terraformResource, terraformAttribute, wrapsSet)
-  }
-
-  /**
-  * @param index the index of the item to return
-  */
-  public get(index: number): PodSpecInitContainerPortOutputReference {
-    return new PodSpecInitContainerPortOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
-  }
-}
-export interface PodSpecInitContainerReadinessProbeExec {
-  /**
-  * Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#command Pod#command}
-  */
-  readonly command?: string[];
-}
-
-export function podSpecInitContainerReadinessProbeExecToTerraform(struct?: PodSpecInitContainerReadinessProbeExecOutputReference | PodSpecInitContainerReadinessProbeExec): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
-  }
-}
-
-
-export function podSpecInitContainerReadinessProbeExecToHclTerraform(struct?: PodSpecInitContainerReadinessProbeExecOutputReference | PodSpecInitContainerReadinessProbeExec): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  const attrs = {
-    command: {
-      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.command),
-      isBlock: false,
-      type: "list",
-      storageClassType: "stringList",
-    },
-  };
-
-  // remove undefined attributes
-  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
-}
-
-export class PodSpecInitContainerReadinessProbeExecOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
-    super(terraformResource, terraformAttribute, false, 0);
-  }
-
-  public get internalValue(): PodSpecInitContainerReadinessProbeExec | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._command !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.command = this._command;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: PodSpecInitContainerReadinessProbeExec | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._command = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._command = value.command;
-    }
-  }
-
-  // command - computed: false, optional: true, required: false
-  private _command?: string[]; 
-  public get command() {
-    return this.getListAttribute('command');
-  }
-  public set command(value: string[]) {
-    this._command = value;
-  }
-  public resetCommand() {
-    this._command = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get commandInput() {
-    return this._command;
-  }
-}
-export interface PodSpecInitContainerReadinessProbeGrpc {
-  /**
-  * Number of the port to access on the container. Number must be in the range 1 to 65535.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
-  */
-  readonly port: number;
-  /**
-  * Name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#service Pod#service}
-  */
-  readonly service?: string;
-}
-
-export function podSpecInitContainerReadinessProbeGrpcToTerraform(struct?: PodSpecInitContainerReadinessProbeGrpc | cdktf.IResolvable): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    port: cdktf.numberToTerraform(struct!.port),
-    service: cdktf.stringToTerraform(struct!.service),
-  }
-}
-
-
-export function podSpecInitContainerReadinessProbeGrpcToHclTerraform(struct?: PodSpecInitContainerReadinessProbeGrpc | cdktf.IResolvable): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  const attrs = {
-    port: {
-      value: cdktf.numberToHclTerraform(struct!.port),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "number",
-    },
-    service: {
-      value: cdktf.stringToHclTerraform(struct!.service),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-  };
-
-  // remove undefined attributes
-  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
-}
-
-export class PodSpecInitContainerReadinessProbeGrpcOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-  private resolvableValue?: cdktf.IResolvable;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param complexObjectIndex the index of this item in the list
-  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
-    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
-  }
-
-  public get internalValue(): PodSpecInitContainerReadinessProbeGrpc | cdktf.IResolvable | undefined {
-    if (this.resolvableValue) {
-      return this.resolvableValue;
-    }
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._port !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.port = this._port;
-    }
-    if (this._service !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.service = this._service;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: PodSpecInitContainerReadinessProbeGrpc | cdktf.IResolvable | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this.resolvableValue = undefined;
-      this._port = undefined;
-      this._service = undefined;
-    }
-    else if (cdktf.Tokenization.isResolvable(value)) {
-      this.isEmptyObject = false;
-      this.resolvableValue = value;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this.resolvableValue = undefined;
-      this._port = value.port;
-      this._service = value.service;
-    }
-  }
-
-  // port - computed: false, optional: false, required: true
-  private _port?: number; 
-  public get port() {
-    return this.getNumberAttribute('port');
-  }
-  public set port(value: number) {
-    this._port = value;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get portInput() {
-    return this._port;
-  }
-
-  // service - computed: false, optional: true, required: false
-  private _service?: string; 
-  public get service() {
-    return this.getStringAttribute('service');
-  }
-  public set service(value: string) {
-    this._service = value;
-  }
-  public resetService() {
-    this._service = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get serviceInput() {
-    return this._service;
-  }
-}
-
-export class PodSpecInitContainerReadinessProbeGrpcList extends cdktf.ComplexList {
-  public internalValue? : PodSpecInitContainerReadinessProbeGrpc[] | cdktf.IResolvable
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
-  */
-  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
-    super(terraformResource, terraformAttribute, wrapsSet)
-  }
-
-  /**
-  * @param index the index of the item to return
-  */
-  public get(index: number): PodSpecInitContainerReadinessProbeGrpcOutputReference {
-    return new PodSpecInitContainerReadinessProbeGrpcOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
-  }
-}
-export interface PodSpecInitContainerReadinessProbeHttpGetHttpHeader {
-  /**
-  * The header field name
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#name Pod#name}
-  */
-  readonly name?: string;
-  /**
-  * The header field value
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#value Pod#value}
-  */
-  readonly value?: string;
-}
-
-export function podSpecInitContainerReadinessProbeHttpGetHttpHeaderToTerraform(struct?: PodSpecInitContainerReadinessProbeHttpGetHttpHeader | cdktf.IResolvable): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    name: cdktf.stringToTerraform(struct!.name),
-    value: cdktf.stringToTerraform(struct!.value),
-  }
-}
-
-
-export function podSpecInitContainerReadinessProbeHttpGetHttpHeaderToHclTerraform(struct?: PodSpecInitContainerReadinessProbeHttpGetHttpHeader | cdktf.IResolvable): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  const attrs = {
-    name: {
-      value: cdktf.stringToHclTerraform(struct!.name),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-    value: {
-      value: cdktf.stringToHclTerraform(struct!.value),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-  };
-
-  // remove undefined attributes
-  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
-}
-
-export class PodSpecInitContainerReadinessProbeHttpGetHttpHeaderOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-  private resolvableValue?: cdktf.IResolvable;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param complexObjectIndex the index of this item in the list
-  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
-    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
-  }
-
-  public get internalValue(): PodSpecInitContainerReadinessProbeHttpGetHttpHeader | cdktf.IResolvable | undefined {
-    if (this.resolvableValue) {
-      return this.resolvableValue;
-    }
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._name !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.name = this._name;
-    }
-    if (this._value !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.value = this._value;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: PodSpecInitContainerReadinessProbeHttpGetHttpHeader | cdktf.IResolvable | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this.resolvableValue = undefined;
-      this._name = undefined;
-      this._value = undefined;
-    }
-    else if (cdktf.Tokenization.isResolvable(value)) {
-      this.isEmptyObject = false;
-      this.resolvableValue = value;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this.resolvableValue = undefined;
-      this._name = value.name;
-      this._value = value.value;
-    }
-  }
-
-  // name - computed: false, optional: true, required: false
-  private _name?: string; 
-  public get name() {
-    return this.getStringAttribute('name');
-  }
-  public set name(value: string) {
-    this._name = value;
-  }
-  public resetName() {
-    this._name = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get nameInput() {
-    return this._name;
-  }
-
-  // value - computed: false, optional: true, required: false
-  private _value?: string; 
-  public get value() {
-    return this.getStringAttribute('value');
-  }
-  public set value(value: string) {
-    this._value = value;
-  }
-  public resetValue() {
-    this._value = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get valueInput() {
-    return this._value;
-  }
-}
-
-export class PodSpecInitContainerReadinessProbeHttpGetHttpHeaderList extends cdktf.ComplexList {
-  public internalValue? : PodSpecInitContainerReadinessProbeHttpGetHttpHeader[] | cdktf.IResolvable
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
-  */
-  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
-    super(terraformResource, terraformAttribute, wrapsSet)
-  }
-
-  /**
-  * @param index the index of the item to return
-  */
-  public get(index: number): PodSpecInitContainerReadinessProbeHttpGetHttpHeaderOutputReference {
-    return new PodSpecInitContainerReadinessProbeHttpGetHttpHeaderOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
-  }
-}
-export interface PodSpecInitContainerReadinessProbeHttpGet {
-  /**
-  * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#host Pod#host}
-  */
-  readonly host?: string;
-  /**
-  * Path to access on the HTTP server.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#path Pod#path}
-  */
-  readonly path?: string;
-  /**
-  * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
-  */
-  readonly port?: string;
-  /**
-  * Scheme to use for connecting to the host.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#scheme Pod#scheme}
-  */
-  readonly scheme?: string;
-  /**
-  * http_header block
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#http_header Pod#http_header}
-  */
-  readonly httpHeader?: PodSpecInitContainerReadinessProbeHttpGetHttpHeader[] | cdktf.IResolvable;
-}
-
-export function podSpecInitContainerReadinessProbeHttpGetToTerraform(struct?: PodSpecInitContainerReadinessProbeHttpGetOutputReference | PodSpecInitContainerReadinessProbeHttpGet): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    host: cdktf.stringToTerraform(struct!.host),
-    path: cdktf.stringToTerraform(struct!.path),
-    port: cdktf.stringToTerraform(struct!.port),
-    scheme: cdktf.stringToTerraform(struct!.scheme),
-    http_header: cdktf.listMapper(podSpecInitContainerReadinessProbeHttpGetHttpHeaderToTerraform, true)(struct!.httpHeader),
-  }
-}
-
-
-export function podSpecInitContainerReadinessProbeHttpGetToHclTerraform(struct?: PodSpecInitContainerReadinessProbeHttpGetOutputReference | PodSpecInitContainerReadinessProbeHttpGet): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  const attrs = {
-    host: {
-      value: cdktf.stringToHclTerraform(struct!.host),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-    path: {
-      value: cdktf.stringToHclTerraform(struct!.path),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-    port: {
-      value: cdktf.stringToHclTerraform(struct!.port),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-    scheme: {
-      value: cdktf.stringToHclTerraform(struct!.scheme),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-    http_header: {
-      value: cdktf.listMapperHcl(podSpecInitContainerReadinessProbeHttpGetHttpHeaderToHclTerraform, true)(struct!.httpHeader),
-      isBlock: true,
-      type: "list",
-      storageClassType: "PodSpecInitContainerReadinessProbeHttpGetHttpHeaderList",
-    },
-  };
-
-  // remove undefined attributes
-  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
-}
-
-export class PodSpecInitContainerReadinessProbeHttpGetOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
-    super(terraformResource, terraformAttribute, false, 0);
-  }
-
-  public get internalValue(): PodSpecInitContainerReadinessProbeHttpGet | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._host !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.host = this._host;
-    }
-    if (this._path !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.path = this._path;
-    }
-    if (this._port !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.port = this._port;
-    }
-    if (this._scheme !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.scheme = this._scheme;
-    }
-    if (this._httpHeader?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.httpHeader = this._httpHeader?.internalValue;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: PodSpecInitContainerReadinessProbeHttpGet | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._host = undefined;
-      this._path = undefined;
-      this._port = undefined;
-      this._scheme = undefined;
-      this._httpHeader.internalValue = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._host = value.host;
-      this._path = value.path;
-      this._port = value.port;
-      this._scheme = value.scheme;
-      this._httpHeader.internalValue = value.httpHeader;
-    }
-  }
-
-  // host - computed: false, optional: true, required: false
-  private _host?: string; 
-  public get host() {
-    return this.getStringAttribute('host');
-  }
-  public set host(value: string) {
-    this._host = value;
-  }
-  public resetHost() {
-    this._host = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get hostInput() {
-    return this._host;
-  }
-
-  // path - computed: false, optional: true, required: false
-  private _path?: string; 
-  public get path() {
-    return this.getStringAttribute('path');
-  }
-  public set path(value: string) {
-    this._path = value;
-  }
-  public resetPath() {
-    this._path = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get pathInput() {
-    return this._path;
-  }
-
-  // port - computed: false, optional: true, required: false
-  private _port?: string; 
-  public get port() {
-    return this.getStringAttribute('port');
-  }
-  public set port(value: string) {
-    this._port = value;
-  }
-  public resetPort() {
-    this._port = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get portInput() {
-    return this._port;
-  }
-
-  // scheme - computed: false, optional: true, required: false
-  private _scheme?: string; 
-  public get scheme() {
-    return this.getStringAttribute('scheme');
-  }
-  public set scheme(value: string) {
-    this._scheme = value;
-  }
-  public resetScheme() {
-    this._scheme = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get schemeInput() {
-    return this._scheme;
-  }
-
-  // http_header - computed: false, optional: true, required: false
-  private _httpHeader = new PodSpecInitContainerReadinessProbeHttpGetHttpHeaderList(this, "http_header", false);
-  public get httpHeader() {
-    return this._httpHeader;
-  }
-  public putHttpHeader(value: PodSpecInitContainerReadinessProbeHttpGetHttpHeader[] | cdktf.IResolvable) {
-    this._httpHeader.internalValue = value;
-  }
-  public resetHttpHeader() {
-    this._httpHeader.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get httpHeaderInput() {
-    return this._httpHeader.internalValue;
-  }
-}
-export interface PodSpecInitContainerReadinessProbeTcpSocket {
-  /**
-  * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#port Pod#port}
-  */
-  readonly port: string;
-}
-
-export function podSpecInitContainerReadinessProbeTcpSocketToTerraform(struct?: PodSpecInitContainerReadinessProbeTcpSocket | cdktf.IResolvable): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    port: cdktf.stringToTerraform(struct!.port),
-  }
-}
-
-
-export function podSpecInitContainerReadinessProbeTcpSocketToHclTerraform(struct?: PodSpecInitContainerReadinessProbeTcpSocket | cdktf.IResolvable): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  const attrs = {
-    port: {
-      value: cdktf.stringToHclTerraform(struct!.port),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-  };
-
-  // remove undefined attributes
-  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
-}
-
-export class PodSpecInitContainerReadinessProbeTcpSocketOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-  private resolvableValue?: cdktf.IResolvable;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param complexObjectIndex the index of this item in the list
-  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
-    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
-  }
-
-  public get internalValue(): PodSpecInitContainerReadinessProbeTcpSocket | cdktf.IResolvable | undefined {
-    if (this.resolvableValue) {
-      return this.resolvableValue;
-    }
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._port !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.port = this._port;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: PodSpecInitContainerReadinessProbeTcpSocket | cdktf.IResolvable | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this.resolvableValue = undefined;
-      this._port = undefined;
-    }
-    else if (cdktf.Tokenization.isResolvable(value)) {
-      this.isEmptyObject = false;
-      this.resolvableValue = value;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this.resolvableValue = undefined;
-      this._port = value.port;
-    }
-  }
-
-  // port - computed: false, optional: false, required: true
-  private _port?: string; 
-  public get port() {
-    return this.getStringAttribute('port');
-  }
-  public set port(value: string) {
-    this._port = value;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get portInput() {
-    return this._port;
-  }
-}
-
-export class PodSpecInitContainerReadinessProbeTcpSocketList extends cdktf.ComplexList {
-  public internalValue? : PodSpecInitContainerReadinessProbeTcpSocket[] | cdktf.IResolvable
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
-  */
-  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
-    super(terraformResource, terraformAttribute, wrapsSet)
-  }
-
-  /**
-  * @param index the index of the item to return
-  */
-  public get(index: number): PodSpecInitContainerReadinessProbeTcpSocketOutputReference {
-    return new PodSpecInitContainerReadinessProbeTcpSocketOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
-  }
-}
-export interface PodSpecInitContainerReadinessProbe {
-  /**
-  * Minimum consecutive failures for the probe to be considered failed after having succeeded.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#failure_threshold Pod#failure_threshold}
-  */
-  readonly failureThreshold?: number;
-  /**
-  * Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#initial_delay_seconds Pod#initial_delay_seconds}
-  */
-  readonly initialDelaySeconds?: number;
-  /**
-  * How often (in seconds) to perform the probe
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#period_seconds Pod#period_seconds}
-  */
-  readonly periodSeconds?: number;
-  /**
-  * Minimum consecutive successes for the probe to be considered successful after having failed.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#success_threshold Pod#success_threshold}
-  */
-  readonly successThreshold?: number;
-  /**
-  * Number of seconds after which the probe times out. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#timeout_seconds Pod#timeout_seconds}
-  */
-  readonly timeoutSeconds?: number;
-  /**
-  * exec block
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#exec Pod#exec}
-  */
-  readonly exec?: PodSpecInitContainerReadinessProbeExec;
-  /**
-  * grpc block
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#grpc Pod#grpc}
-  */
-  readonly grpc?: PodSpecInitContainerReadinessProbeGrpc[] | cdktf.IResolvable;
-  /**
-  * http_get block
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#http_get Pod#http_get}
-  */
-  readonly httpGet?: PodSpecInitContainerReadinessProbeHttpGet;
-  /**
-  * tcp_socket block
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#tcp_socket Pod#tcp_socket}
-  */
-  readonly tcpSocket?: PodSpecInitContainerReadinessProbeTcpSocket[] | cdktf.IResolvable;
-}
-
-export function podSpecInitContainerReadinessProbeToTerraform(struct?: PodSpecInitContainerReadinessProbeOutputReference | PodSpecInitContainerReadinessProbe): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    failure_threshold: cdktf.numberToTerraform(struct!.failureThreshold),
-    initial_delay_seconds: cdktf.numberToTerraform(struct!.initialDelaySeconds),
-    period_seconds: cdktf.numberToTerraform(struct!.periodSeconds),
-    success_threshold: cdktf.numberToTerraform(struct!.successThreshold),
-    timeout_seconds: cdktf.numberToTerraform(struct!.timeoutSeconds),
-    exec: podSpecInitContainerReadinessProbeExecToTerraform(struct!.exec),
-    grpc: cdktf.listMapper(podSpecInitContainerReadinessProbeGrpcToTerraform, true)(struct!.grpc),
-    http_get: podSpecInitContainerReadinessProbeHttpGetToTerraform(struct!.httpGet),
-    tcp_socket: cdktf.listMapper(podSpecInitContainerReadinessProbeTcpSocketToTerraform, true)(struct!.tcpSocket),
-  }
-}
-
-
-export function podSpecInitContainerReadinessProbeToHclTerraform(struct?: PodSpecInitContainerReadinessProbeOutputReference | PodSpecInitContainerReadinessProbe): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  const attrs = {
-    failure_threshold: {
-      value: cdktf.numberToHclTerraform(struct!.failureThreshold),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "number",
-    },
-    initial_delay_seconds: {
-      value: cdktf.numberToHclTerraform(struct!.initialDelaySeconds),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "number",
-    },
-    period_seconds: {
-      value: cdktf.numberToHclTerraform(struct!.periodSeconds),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "number",
-    },
-    success_threshold: {
-      value: cdktf.numberToHclTerraform(struct!.successThreshold),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "number",
-    },
-    timeout_seconds: {
-      value: cdktf.numberToHclTerraform(struct!.timeoutSeconds),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "number",
-    },
-    exec: {
-      value: podSpecInitContainerReadinessProbeExecToHclTerraform(struct!.exec),
-      isBlock: true,
-      type: "list",
-      storageClassType: "PodSpecInitContainerReadinessProbeExecList",
-    },
-    grpc: {
-      value: cdktf.listMapperHcl(podSpecInitContainerReadinessProbeGrpcToHclTerraform, true)(struct!.grpc),
-      isBlock: true,
-      type: "list",
-      storageClassType: "PodSpecInitContainerReadinessProbeGrpcList",
-    },
-    http_get: {
-      value: podSpecInitContainerReadinessProbeHttpGetToHclTerraform(struct!.httpGet),
-      isBlock: true,
-      type: "list",
-      storageClassType: "PodSpecInitContainerReadinessProbeHttpGetList",
-    },
-    tcp_socket: {
-      value: cdktf.listMapperHcl(podSpecInitContainerReadinessProbeTcpSocketToHclTerraform, true)(struct!.tcpSocket),
-      isBlock: true,
-      type: "list",
-      storageClassType: "PodSpecInitContainerReadinessProbeTcpSocketList",
-    },
-  };
-
-  // remove undefined attributes
-  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
-}
-
-export class PodSpecInitContainerReadinessProbeOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
-    super(terraformResource, terraformAttribute, false, 0);
-  }
-
-  public get internalValue(): PodSpecInitContainerReadinessProbe | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._failureThreshold !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.failureThreshold = this._failureThreshold;
-    }
-    if (this._initialDelaySeconds !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.initialDelaySeconds = this._initialDelaySeconds;
-    }
-    if (this._periodSeconds !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.periodSeconds = this._periodSeconds;
-    }
-    if (this._successThreshold !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.successThreshold = this._successThreshold;
-    }
-    if (this._timeoutSeconds !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.timeoutSeconds = this._timeoutSeconds;
-    }
-    if (this._exec?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.exec = this._exec?.internalValue;
-    }
-    if (this._grpc?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.grpc = this._grpc?.internalValue;
-    }
-    if (this._httpGet?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.httpGet = this._httpGet?.internalValue;
-    }
-    if (this._tcpSocket?.internalValue !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.tcpSocket = this._tcpSocket?.internalValue;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: PodSpecInitContainerReadinessProbe | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._failureThreshold = undefined;
-      this._initialDelaySeconds = undefined;
-      this._periodSeconds = undefined;
-      this._successThreshold = undefined;
-      this._timeoutSeconds = undefined;
-      this._exec.internalValue = undefined;
-      this._grpc.internalValue = undefined;
-      this._httpGet.internalValue = undefined;
-      this._tcpSocket.internalValue = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._failureThreshold = value.failureThreshold;
-      this._initialDelaySeconds = value.initialDelaySeconds;
-      this._periodSeconds = value.periodSeconds;
-      this._successThreshold = value.successThreshold;
-      this._timeoutSeconds = value.timeoutSeconds;
-      this._exec.internalValue = value.exec;
-      this._grpc.internalValue = value.grpc;
-      this._httpGet.internalValue = value.httpGet;
-      this._tcpSocket.internalValue = value.tcpSocket;
-    }
-  }
-
-  // failure_threshold - computed: false, optional: true, required: false
-  private _failureThreshold?: number; 
-  public get failureThreshold() {
-    return this.getNumberAttribute('failure_threshold');
-  }
-  public set failureThreshold(value: number) {
-    this._failureThreshold = value;
-  }
-  public resetFailureThreshold() {
-    this._failureThreshold = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get failureThresholdInput() {
-    return this._failureThreshold;
-  }
-
-  // initial_delay_seconds - computed: false, optional: true, required: false
-  private _initialDelaySeconds?: number; 
-  public get initialDelaySeconds() {
-    return this.getNumberAttribute('initial_delay_seconds');
-  }
-  public set initialDelaySeconds(value: number) {
-    this._initialDelaySeconds = value;
-  }
-  public resetInitialDelaySeconds() {
-    this._initialDelaySeconds = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get initialDelaySecondsInput() {
-    return this._initialDelaySeconds;
-  }
-
-  // period_seconds - computed: false, optional: true, required: false
-  private _periodSeconds?: number; 
-  public get periodSeconds() {
-    return this.getNumberAttribute('period_seconds');
-  }
-  public set periodSeconds(value: number) {
-    this._periodSeconds = value;
-  }
-  public resetPeriodSeconds() {
-    this._periodSeconds = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get periodSecondsInput() {
-    return this._periodSeconds;
-  }
-
-  // success_threshold - computed: false, optional: true, required: false
-  private _successThreshold?: number; 
-  public get successThreshold() {
-    return this.getNumberAttribute('success_threshold');
-  }
-  public set successThreshold(value: number) {
-    this._successThreshold = value;
-  }
-  public resetSuccessThreshold() {
-    this._successThreshold = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get successThresholdInput() {
-    return this._successThreshold;
-  }
-
-  // timeout_seconds - computed: false, optional: true, required: false
-  private _timeoutSeconds?: number; 
-  public get timeoutSeconds() {
-    return this.getNumberAttribute('timeout_seconds');
-  }
-  public set timeoutSeconds(value: number) {
-    this._timeoutSeconds = value;
-  }
-  public resetTimeoutSeconds() {
-    this._timeoutSeconds = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get timeoutSecondsInput() {
-    return this._timeoutSeconds;
-  }
-
-  // exec - computed: false, optional: true, required: false
-  private _exec = new PodSpecInitContainerReadinessProbeExecOutputReference(this, "exec");
-  public get exec() {
-    return this._exec;
-  }
-  public putExec(value: PodSpecInitContainerReadinessProbeExec) {
-    this._exec.internalValue = value;
-  }
-  public resetExec() {
-    this._exec.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get execInput() {
-    return this._exec.internalValue;
-  }
-
-  // grpc - computed: false, optional: true, required: false
-  private _grpc = new PodSpecInitContainerReadinessProbeGrpcList(this, "grpc", false);
-  public get grpc() {
-    return this._grpc;
-  }
-  public putGrpc(value: PodSpecInitContainerReadinessProbeGrpc[] | cdktf.IResolvable) {
-    this._grpc.internalValue = value;
-  }
-  public resetGrpc() {
-    this._grpc.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get grpcInput() {
-    return this._grpc.internalValue;
-  }
-
-  // http_get - computed: false, optional: true, required: false
-  private _httpGet = new PodSpecInitContainerReadinessProbeHttpGetOutputReference(this, "http_get");
-  public get httpGet() {
-    return this._httpGet;
-  }
-  public putHttpGet(value: PodSpecInitContainerReadinessProbeHttpGet) {
-    this._httpGet.internalValue = value;
-  }
-  public resetHttpGet() {
-    this._httpGet.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get httpGetInput() {
-    return this._httpGet.internalValue;
-  }
-
-  // tcp_socket - computed: false, optional: true, required: false
-  private _tcpSocket = new PodSpecInitContainerReadinessProbeTcpSocketList(this, "tcp_socket", false);
-  public get tcpSocket() {
-    return this._tcpSocket;
-  }
-  public putTcpSocket(value: PodSpecInitContainerReadinessProbeTcpSocket[] | cdktf.IResolvable) {
-    this._tcpSocket.internalValue = value;
-  }
-  public resetTcpSocket() {
-    this._tcpSocket.internalValue = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get tcpSocketInput() {
-    return this._tcpSocket.internalValue;
-  }
-}
-export interface PodSpecInitContainerResources {
-  /**
-  * Describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#limits Pod#limits}
-  */
-  readonly limits?: { [key: string]: string };
-  /**
-  * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#requests Pod#requests}
-  */
-  readonly requests?: { [key: string]: string };
-}
-
-export function podSpecInitContainerResourcesToTerraform(struct?: PodSpecInitContainerResourcesOutputReference | PodSpecInitContainerResources): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    limits: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.limits),
-    requests: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.requests),
-  }
-}
-
-
-export function podSpecInitContainerResourcesToHclTerraform(struct?: PodSpecInitContainerResourcesOutputReference | PodSpecInitContainerResources): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  const attrs = {
-    limits: {
-      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.limits),
-      isBlock: false,
-      type: "map",
-      storageClassType: "stringMap",
-    },
-    requests: {
-      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.requests),
-      isBlock: false,
-      type: "map",
-      storageClassType: "stringMap",
-    },
-  };
-
-  // remove undefined attributes
-  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
-}
-
-export class PodSpecInitContainerResourcesOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
-    super(terraformResource, terraformAttribute, false, 0);
-  }
-
-  public get internalValue(): PodSpecInitContainerResources | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._limits !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.limits = this._limits;
-    }
-    if (this._requests !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.requests = this._requests;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: PodSpecInitContainerResources | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._limits = undefined;
-      this._requests = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._limits = value.limits;
-      this._requests = value.requests;
-    }
-  }
-
-  // limits - computed: true, optional: true, required: false
-  private _limits?: { [key: string]: string }; 
-  public get limits() {
-    return this.getStringMapAttribute('limits');
-  }
-  public set limits(value: { [key: string]: string }) {
-    this._limits = value;
-  }
-  public resetLimits() {
-    this._limits = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get limitsInput() {
-    return this._limits;
-  }
-
-  // requests - computed: true, optional: true, required: false
-  private _requests?: { [key: string]: string }; 
-  public get requests() {
-    return this.getStringMapAttribute('requests');
-  }
-  public set requests(value: { [key: string]: string }) {
-    this._requests = value;
-  }
-  public resetRequests() {
-    this._requests = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get requestsInput() {
-    return this._requests;
-  }
-}
-export interface PodSpecInitContainerSecurityContextCapabilities {
-  /**
-  * Added capabilities
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#add Pod#add}
-  */
-  readonly add?: string[];
-  /**
-  * Removed capabilities
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#drop Pod#drop}
-  */
-  readonly drop?: string[];
-}
-
-export function podSpecInitContainerSecurityContextCapabilitiesToTerraform(struct?: PodSpecInitContainerSecurityContextCapabilitiesOutputReference | PodSpecInitContainerSecurityContextCapabilities): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    add: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.add),
-    drop: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.drop),
-  }
-}
-
-
-export function podSpecInitContainerSecurityContextCapabilitiesToHclTerraform(struct?: PodSpecInitContainerSecurityContextCapabilitiesOutputReference | PodSpecInitContainerSecurityContextCapabilities): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  const attrs = {
-    add: {
-      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.add),
-      isBlock: false,
-      type: "list",
-      storageClassType: "stringList",
-    },
-    drop: {
-      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.drop),
-      isBlock: false,
-      type: "list",
-      storageClassType: "stringList",
-    },
-  };
-
-  // remove undefined attributes
-  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
-}
-
-export class PodSpecInitContainerSecurityContextCapabilitiesOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
-    super(terraformResource, terraformAttribute, false, 0);
-  }
-
-  public get internalValue(): PodSpecInitContainerSecurityContextCapabilities | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._add !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.add = this._add;
-    }
-    if (this._drop !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.drop = this._drop;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: PodSpecInitContainerSecurityContextCapabilities | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._add = undefined;
-      this._drop = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._add = value.add;
-      this._drop = value.drop;
-    }
-  }
-
-  // add - computed: false, optional: true, required: false
-  private _add?: string[]; 
-  public get add() {
-    return this.getListAttribute('add');
-  }
-  public set add(value: string[]) {
-    this._add = value;
-  }
-  public resetAdd() {
-    this._add = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get addInput() {
-    return this._add;
-  }
-
-  // drop - computed: false, optional: true, required: false
-  private _drop?: string[]; 
-  public get drop() {
-    return this.getListAttribute('drop');
-  }
-  public set drop(value: string[]) {
-    this._drop = value;
-  }
-  public resetDrop() {
-    this._drop = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get dropInput() {
-    return this._drop;
-  }
-}
-export interface PodSpecInitContainerSecurityContextSeLinuxOptions {
-  /**
-  * Level is SELinux level label that applies to the container.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#level Pod#level}
-  */
-  readonly level?: string;
-  /**
-  * Role is a SELinux role label that applies to the container.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#role Pod#role}
-  */
-  readonly role?: string;
-  /**
-  * Type is a SELinux type label that applies to the container.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#type Pod#type}
-  */
-  readonly type?: string;
-  /**
-  * User is a SELinux user label that applies to the container.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#user Pod#user}
-  */
-  readonly user?: string;
-}
-
-export function podSpecInitContainerSecurityContextSeLinuxOptionsToTerraform(struct?: PodSpecInitContainerSecurityContextSeLinuxOptionsOutputReference | PodSpecInitContainerSecurityContextSeLinuxOptions): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    level: cdktf.stringToTerraform(struct!.level),
-    role: cdktf.stringToTerraform(struct!.role),
-    type: cdktf.stringToTerraform(struct!.type),
-    user: cdktf.stringToTerraform(struct!.user),
-  }
-}
-
-
-export function podSpecInitContainerSecurityContextSeLinuxOptionsToHclTerraform(struct?: PodSpecInitContainerSecurityContextSeLinuxOptionsOutputReference | PodSpecInitContainerSecurityContextSeLinuxOptions): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  const attrs = {
-    level: {
-      value: cdktf.stringToHclTerraform(struct!.level),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-    role: {
-      value: cdktf.stringToHclTerraform(struct!.role),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-    type: {
-      value: cdktf.stringToHclTerraform(struct!.type),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-    user: {
-      value: cdktf.stringToHclTerraform(struct!.user),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-  };
-
-  // remove undefined attributes
-  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
-}
-
-export class PodSpecInitContainerSecurityContextSeLinuxOptionsOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
-    super(terraformResource, terraformAttribute, false, 0);
-  }
-
-  public get internalValue(): PodSpecInitContainerSecurityContextSeLinuxOptions | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._level !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.level = this._level;
-    }
-    if (this._role !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.role = this._role;
-    }
-    if (this._type !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.type = this._type;
-    }
-    if (this._user !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.user = this._user;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: PodSpecInitContainerSecurityContextSeLinuxOptions | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._level = undefined;
-      this._role = undefined;
-      this._type = undefined;
-      this._user = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._level = value.level;
-      this._role = value.role;
-      this._type = value.type;
-      this._user = value.user;
-    }
-  }
-
-  // level - computed: false, optional: true, required: false
-  private _level?: string; 
-  public get level() {
-    return this.getStringAttribute('level');
-  }
-  public set level(value: string) {
-    this._level = value;
-  }
-  public resetLevel() {
-    this._level = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get levelInput() {
-    return this._level;
-  }
-
-  // role - computed: false, optional: true, required: false
-  private _role?: string; 
-  public get role() {
-    return this.getStringAttribute('role');
-  }
-  public set role(value: string) {
-    this._role = value;
-  }
-  public resetRole() {
-    this._role = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get roleInput() {
-    return this._role;
-  }
-
-  // type - computed: false, optional: true, required: false
-  private _type?: string; 
-  public get type() {
-    return this.getStringAttribute('type');
-  }
-  public set type(value: string) {
-    this._type = value;
-  }
-  public resetType() {
-    this._type = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get typeInput() {
-    return this._type;
-  }
-
-  // user - computed: false, optional: true, required: false
-  private _user?: string; 
-  public get user() {
-    return this.getStringAttribute('user');
-  }
-  public set user(value: string) {
-    this._user = value;
-  }
-  public resetUser() {
-    this._user = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get userInput() {
-    return this._user;
-  }
-}
-export interface PodSpecInitContainerSecurityContextSeccompProfile {
-  /**
-  * Localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#localhost_profile Pod#localhost_profile}
-  */
-  readonly localhostProfile?: string;
-  /**
-  * Type indicates which kind of seccomp profile will be applied. Valid options are: Localhost, RuntimeDefault, Unconfined.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.32.0/docs/resources/pod#type Pod#type}
-  */
-  readonly type?: string;
-}
-
-export function podSpecInitContainerSecurityContextSeccompProfileToTerraform(struct?: PodSpecInitContainerSecurityContextSeccompProfileOutputReference | PodSpecInitContainerSecurityContextSeccompProfile): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  return {
-    localhost_profile: cdktf.stringToTerraform(struct!.localhostProfile),
-    type: cdktf.stringToTerraform(struct!.type),
-  }
-}
-
-
-export function podSpecInitContainerSecurityContextSeccompProfileToHclTerraform(struct?: PodSpecInitContainerSecurityContextSeccompProfileOutputReference | PodSpecInitContainerSecurityContextSeccompProfile): any {
-  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
-  if (cdktf.isComplexElement(struct)) {
-    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
-  }
-  const attrs = {
-    localhost_profile: {
-      value: cdktf.stringToHclTerraform(struct!.localhostProfile),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-    type: {
-      value: cdktf.stringToHclTerraform(struct!.type),
-      isBlock: false,
-      type: "simple",
-      storageClassType: "string",
-    },
-  };
-
-  // remove undefined attributes
-  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
-}
-
-export class PodSpecInitContainerSecurityContextSeccompProfileOutputReference extends cdktf.ComplexObject {
-  private isEmptyObject = false;
-
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
-    super(terraformResource, terraformAttribute, false, 0);
-  }
-
-  public get internalValue(): PodSpecInitContainerSecurityContextSeccompProfile | undefined {
-    let hasAnyValues = this.isEmptyObject;
-    const internalValueResult: any = {};
-    if (this._localhostProfile !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.localhostProfile = this._localhostProfile;
-    }
-    if (this._type !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.type = this._type;
-    }
-    return hasAnyValues ? internalValueResult : undefined;
-  }
-
-  public set internalValue(value: PodSpecInitContainerSecurityContextSeccompProfile | undefined) {
-    if (value === undefined) {
-      this.isEmptyObject = false;
-      this._localhostProfile = undefined;
-      this._type = undefined;
-    }
-    else {
-      this.isEmptyObject = Object.keys(value).length === 0;
-      this._localhostProfile = value.localhostProfile;
-      this._type = value.type;
-    }
-  }
-
-  // localhost_profile - computed: false, optional: true, required: false
-  private _localhostProfile?: string; 
-  public get localhostProfile() {
-    return this.getStringAttribute('localhost_profile');
-  }
-  public set localhostProfile(value: string) {
-    this._localhostProfile = value;
-  }
-  public resetLocalhostProfile() {
-    this._localhostProfile = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get localhostProfileInput() {
-    return this._localhostProfile;
-  }
-
-  // type - computed: false, optional: true, required: false
-  private _type?: string; 
-  public get type() {
-    return this.getStringAttribute('type');
-  }
-  public set type(value: string) {
-    this._type = value;
-  }
-  public resetType() {
-    this._type = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get typeInput() {
-    return this._type;
   }
 }
