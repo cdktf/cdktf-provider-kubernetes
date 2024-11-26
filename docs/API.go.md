@@ -101,6 +101,7 @@ The following submodules are available:
 - [runtimeClassV1](./runtimeClassV1.go.md)
 - [secret](./secret.go.md)
 - [secretV1](./secretV1.go.md)
+- [secretV1Data](./secretV1Data.go.md)
 - [service](./service.go.md)
 - [serviceAccount](./serviceAccount.go.md)
 - [serviceAccountV1](./serviceAccountV1.go.md)

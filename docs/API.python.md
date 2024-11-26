@@ -101,6 +101,7 @@ The following submodules are available:
 - [runtimeClassV1](./runtimeClassV1.python.md)
 - [secret](./secret.python.md)
 - [secretV1](./secretV1.python.md)
+- [secretV1Data](./secretV1Data.python.md)
 - [service](./service.python.md)
 - [serviceAccount](./serviceAccount.python.md)
 - [serviceAccountV1](./serviceAccountV1.python.md)

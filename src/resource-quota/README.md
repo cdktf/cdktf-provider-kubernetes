@@ -1,3 +1,3 @@
 # `kubernetes_resource_quota`
 
-Refer to the Terraform Registry for docs: [`kubernetes_resource_quota`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/resource_quota).
+Refer to the Terraform Registry for docs: [`kubernetes_resource_quota`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/resource_quota).

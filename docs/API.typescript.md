@@ -101,6 +101,7 @@ The following submodules are available:
 - [runtimeClassV1](./runtimeClassV1.typescript.md)
 - [secret](./secret.typescript.md)
 - [secretV1](./secretV1.typescript.md)
+- [secretV1Data](./secretV1Data.typescript.md)
 - [service](./service.typescript.md)
 - [serviceAccount](./serviceAccount.typescript.md)
 - [serviceAccountV1](./serviceAccountV1.typescript.md)
