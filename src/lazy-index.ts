@@ -74,6 +74,7 @@ Object.defineProperty(exports, 'roleV1', { get: function () { return require('./
 Object.defineProperty(exports, 'runtimeClassV1', { get: function () { return require('./runtime-class-v1'); } });
 Object.defineProperty(exports, 'secret', { get: function () { return require('./secret'); } });
 Object.defineProperty(exports, 'secretV1', { get: function () { return require('./secret-v1'); } });
+Object.defineProperty(exports, 'secretV1Data', { get: function () { return require('./secret-v1-data'); } });
 Object.defineProperty(exports, 'service', { get: function () { return require('./service'); } });
 Object.defineProperty(exports, 'serviceAccount', { get: function () { return require('./service-account'); } });
 Object.defineProperty(exports, 'serviceAccountV1', { get: function () { return require('./service-account-v1'); } });

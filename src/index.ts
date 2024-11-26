@@ -74,6 +74,7 @@ export * as roleV1 from './role-v1';
 export * as runtimeClassV1 from './runtime-class-v1';
 export * as secret from './secret';
 export * as secretV1 from './secret-v1';
+export * as secretV1Data from './secret-v1-data';
 export * as service from './service';
 export * as serviceAccount from './service-account';
 export * as serviceAccountV1 from './service-account-v1';

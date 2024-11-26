@@ -101,6 +101,7 @@ The following submodules are available:
 - [runtimeClassV1](./runtimeClassV1.java.md)
 - [secret](./secret.java.md)
 - [secretV1](./secretV1.java.md)
+- [secretV1Data](./secretV1Data.java.md)
 - [service](./service.java.md)
 - [serviceAccount](./serviceAccount.java.md)
 - [serviceAccountV1](./serviceAccountV1.java.md)

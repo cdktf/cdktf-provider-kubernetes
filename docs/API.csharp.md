@@ -101,6 +101,7 @@ The following submodules are available:
 - [runtimeClassV1](./runtimeClassV1.csharp.md)
 - [secret](./secret.csharp.md)
 - [secretV1](./secretV1.csharp.md)
+- [secretV1Data](./secretV1Data.csharp.md)
 - [service](./service.csharp.md)
 - [serviceAccount](./serviceAccount.csharp.md)
 - [serviceAccountV1](./serviceAccountV1.csharp.md)
