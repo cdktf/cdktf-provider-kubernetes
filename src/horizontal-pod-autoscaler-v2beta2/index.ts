@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
 // https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/horizontal_pod_autoscaler_v2beta2
 // generated from terraform resource schema
 
