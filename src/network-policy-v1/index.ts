@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -13,7 +13,7 @@ import * as cdktf from 'cdktf';
 
 export interface NetworkPolicyV1Config extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#id NetworkPolicyV1#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#id NetworkPolicyV1#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -22,13 +22,13 @@ export interface NetworkPolicyV1Config extends cdktf.TerraformMetaArguments {
   /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#metadata NetworkPolicyV1#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#metadata NetworkPolicyV1#metadata}
   */
   readonly metadata: NetworkPolicyV1Metadata;
   /**
   * spec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#spec NetworkPolicyV1#spec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#spec NetworkPolicyV1#spec}
   */
   readonly spec: NetworkPolicyV1Spec;
 }
@@ -36,31 +36,31 @@ export interface NetworkPolicyV1Metadata {
   /**
   * An unstructured key value map stored with the network policy that may be used to store arbitrary metadata. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#annotations NetworkPolicyV1#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#annotations NetworkPolicyV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#generate_name NetworkPolicyV1#generate_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#generate_name NetworkPolicyV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the network policy. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#labels NetworkPolicyV1#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#labels NetworkPolicyV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the network policy, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#name NetworkPolicyV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#name NetworkPolicyV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the network policy must be unique.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#namespace NetworkPolicyV1#namespace}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#namespace NetworkPolicyV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -277,19 +277,19 @@ export interface NetworkPolicyV1SpecEgressPorts {
   /**
   * endPort indicates that the range of ports from port to endPort if set, inclusive, should be allowed by the policy. This field cannot be defined if the port field is not defined or if the port field is defined as a named (string) port. The endPort must be equal or greater than port.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#end_port NetworkPolicyV1#end_port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#end_port NetworkPolicyV1#end_port}
   */
   readonly endPort?: number;
   /**
   * port represents the port on the given protocol. This can either be a numerical or named port on a pod. If this field is not provided, this matches all port names and numbers. If present, only traffic on the specified protocol AND port will be matched.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#port NetworkPolicyV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#port NetworkPolicyV1#port}
   */
   readonly port?: string;
   /**
   * protocol represents the protocol (TCP, UDP, or SCTP) which traffic must match. If not specified, this field defaults to TCP.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#protocol NetworkPolicyV1#protocol}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#protocol NetworkPolicyV1#protocol}
   */
   readonly protocol?: string;
 }
@@ -465,13 +465,13 @@ export interface NetworkPolicyV1SpecEgressToIpBlock {
   /**
   * cidr is a string representing the IPBlock Valid examples are "192.168.1.0/24" or "2001:db8::/64"
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#cidr NetworkPolicyV1#cidr}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#cidr NetworkPolicyV1#cidr}
   */
   readonly cidr?: string;
   /**
   * except is a slice of CIDRs that should not be included within an IPBlock Valid examples are "192.168.1.0/24" or "2001:db8::/64" Except values will be rejected if they are outside the cidr range
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#except NetworkPolicyV1#except}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#except NetworkPolicyV1#except}
   */
   readonly except?: string[];
 }
@@ -586,19 +586,19 @@ export interface NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#key NetworkPolicyV1#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#key NetworkPolicyV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#operator NetworkPolicyV1#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#operator NetworkPolicyV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#values NetworkPolicyV1#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#values NetworkPolicyV1#values}
   */
   readonly values?: string[];
 }
@@ -774,13 +774,13 @@ export interface NetworkPolicyV1SpecEgressToNamespaceSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#match_labels NetworkPolicyV1#match_labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#match_labels NetworkPolicyV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#match_expressions NetworkPolicyV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#match_expressions NetworkPolicyV1#match_expressions}
   */
   readonly matchExpressions?: NetworkPolicyV1SpecEgressToNamespaceSelectorMatchExpressions[] | cdktf.IResolvable;
 }
@@ -895,19 +895,19 @@ export interface NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#key NetworkPolicyV1#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#key NetworkPolicyV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#operator NetworkPolicyV1#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#operator NetworkPolicyV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#values NetworkPolicyV1#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#values NetworkPolicyV1#values}
   */
   readonly values?: string[];
 }
@@ -1083,13 +1083,13 @@ export interface NetworkPolicyV1SpecEgressToPodSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#match_labels NetworkPolicyV1#match_labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#match_labels NetworkPolicyV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#match_expressions NetworkPolicyV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#match_expressions NetworkPolicyV1#match_expressions}
   */
   readonly matchExpressions?: NetworkPolicyV1SpecEgressToPodSelectorMatchExpressions[] | cdktf.IResolvable;
 }
@@ -1204,19 +1204,19 @@ export interface NetworkPolicyV1SpecEgressTo {
   /**
   * ip_block block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#ip_block NetworkPolicyV1#ip_block}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#ip_block NetworkPolicyV1#ip_block}
   */
   readonly ipBlock?: NetworkPolicyV1SpecEgressToIpBlock;
   /**
   * namespace_selector block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#namespace_selector NetworkPolicyV1#namespace_selector}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#namespace_selector NetworkPolicyV1#namespace_selector}
   */
   readonly namespaceSelector?: NetworkPolicyV1SpecEgressToNamespaceSelector;
   /**
   * pod_selector block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#pod_selector NetworkPolicyV1#pod_selector}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#pod_selector NetworkPolicyV1#pod_selector}
   */
   readonly podSelector?: NetworkPolicyV1SpecEgressToPodSelector;
 }
@@ -1392,13 +1392,13 @@ export interface NetworkPolicyV1SpecEgress {
   /**
   * ports block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#ports NetworkPolicyV1#ports}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#ports NetworkPolicyV1#ports}
   */
   readonly ports?: NetworkPolicyV1SpecEgressPorts[] | cdktf.IResolvable;
   /**
   * to block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#to NetworkPolicyV1#to}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#to NetworkPolicyV1#to}
   */
   readonly to?: NetworkPolicyV1SpecEgressTo[] | cdktf.IResolvable;
 }
@@ -1545,13 +1545,13 @@ export interface NetworkPolicyV1SpecIngressFromIpBlock {
   /**
   * cidr is a string representing the IPBlock Valid examples are "192.168.1.0/24" or "2001:db8::/64"
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#cidr NetworkPolicyV1#cidr}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#cidr NetworkPolicyV1#cidr}
   */
   readonly cidr?: string;
   /**
   * except is a slice of CIDRs that should not be included within an IPBlock Valid examples are "192.168.1.0/24" or "2001:db8::/64" Except values will be rejected if they are outside the cidr range
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#except NetworkPolicyV1#except}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#except NetworkPolicyV1#except}
   */
   readonly except?: string[];
 }
@@ -1666,19 +1666,19 @@ export interface NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressions
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#key NetworkPolicyV1#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#key NetworkPolicyV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#operator NetworkPolicyV1#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#operator NetworkPolicyV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#values NetworkPolicyV1#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#values NetworkPolicyV1#values}
   */
   readonly values?: string[];
 }
@@ -1854,13 +1854,13 @@ export interface NetworkPolicyV1SpecIngressFromNamespaceSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#match_labels NetworkPolicyV1#match_labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#match_labels NetworkPolicyV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#match_expressions NetworkPolicyV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#match_expressions NetworkPolicyV1#match_expressions}
   */
   readonly matchExpressions?: NetworkPolicyV1SpecIngressFromNamespaceSelectorMatchExpressions[] | cdktf.IResolvable;
 }
@@ -1975,19 +1975,19 @@ export interface NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#key NetworkPolicyV1#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#key NetworkPolicyV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#operator NetworkPolicyV1#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#operator NetworkPolicyV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#values NetworkPolicyV1#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#values NetworkPolicyV1#values}
   */
   readonly values?: string[];
 }
@@ -2163,13 +2163,13 @@ export interface NetworkPolicyV1SpecIngressFromPodSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#match_labels NetworkPolicyV1#match_labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#match_labels NetworkPolicyV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#match_expressions NetworkPolicyV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#match_expressions NetworkPolicyV1#match_expressions}
   */
   readonly matchExpressions?: NetworkPolicyV1SpecIngressFromPodSelectorMatchExpressions[] | cdktf.IResolvable;
 }
@@ -2284,19 +2284,19 @@ export interface NetworkPolicyV1SpecIngressFrom {
   /**
   * ip_block block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#ip_block NetworkPolicyV1#ip_block}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#ip_block NetworkPolicyV1#ip_block}
   */
   readonly ipBlock?: NetworkPolicyV1SpecIngressFromIpBlock;
   /**
   * namespace_selector block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#namespace_selector NetworkPolicyV1#namespace_selector}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#namespace_selector NetworkPolicyV1#namespace_selector}
   */
   readonly namespaceSelector?: NetworkPolicyV1SpecIngressFromNamespaceSelector;
   /**
   * pod_selector block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#pod_selector NetworkPolicyV1#pod_selector}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#pod_selector NetworkPolicyV1#pod_selector}
   */
   readonly podSelector?: NetworkPolicyV1SpecIngressFromPodSelector;
 }
@@ -2472,19 +2472,19 @@ export interface NetworkPolicyV1SpecIngressPorts {
   /**
   * endPort indicates that the range of ports from port to endPort if set, inclusive, should be allowed by the policy. This field cannot be defined if the port field is not defined or if the port field is defined as a named (string) port. The endPort must be equal or greater than port.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#end_port NetworkPolicyV1#end_port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#end_port NetworkPolicyV1#end_port}
   */
   readonly endPort?: number;
   /**
   * port represents the port on the given protocol. This can either be a numerical or named port on a pod. If this field is not provided, this matches all port names and numbers. If present, only traffic on the specified protocol AND port will be matched.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#port NetworkPolicyV1#port}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#port NetworkPolicyV1#port}
   */
   readonly port?: string;
   /**
   * protocol represents the protocol (TCP, UDP, or SCTP) which traffic must match. If not specified, this field defaults to TCP.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#protocol NetworkPolicyV1#protocol}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#protocol NetworkPolicyV1#protocol}
   */
   readonly protocol?: string;
 }
@@ -2660,13 +2660,13 @@ export interface NetworkPolicyV1SpecIngress {
   /**
   * from block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#from NetworkPolicyV1#from}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#from NetworkPolicyV1#from}
   */
   readonly from?: NetworkPolicyV1SpecIngressFrom[] | cdktf.IResolvable;
   /**
   * ports block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#ports NetworkPolicyV1#ports}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#ports NetworkPolicyV1#ports}
   */
   readonly ports?: NetworkPolicyV1SpecIngressPorts[] | cdktf.IResolvable;
 }
@@ -2813,19 +2813,19 @@ export interface NetworkPolicyV1SpecPodSelectorMatchExpressions {
   /**
   * The label key that the selector applies to.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#key NetworkPolicyV1#key}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#key NetworkPolicyV1#key}
   */
   readonly key?: string;
   /**
   * A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#operator NetworkPolicyV1#operator}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#operator NetworkPolicyV1#operator}
   */
   readonly operator?: string;
   /**
   * An array of string values. If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#values NetworkPolicyV1#values}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#values NetworkPolicyV1#values}
   */
   readonly values?: string[];
 }
@@ -3001,13 +3001,13 @@ export interface NetworkPolicyV1SpecPodSelector {
   /**
   * A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#match_labels NetworkPolicyV1#match_labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#match_labels NetworkPolicyV1#match_labels}
   */
   readonly matchLabels?: { [key: string]: string };
   /**
   * match_expressions block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#match_expressions NetworkPolicyV1#match_expressions}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#match_expressions NetworkPolicyV1#match_expressions}
   */
   readonly matchExpressions?: NetworkPolicyV1SpecPodSelectorMatchExpressions[] | cdktf.IResolvable;
 }
@@ -3122,25 +3122,25 @@ export interface NetworkPolicyV1Spec {
   /**
   * policyTypes is a list of rule types that the NetworkPolicy relates to. Valid options are ["Ingress"], ["Egress"], or ["Ingress", "Egress"]. If this field is not specified, it will default based on the existence of ingress or egress rules; policies that contain an egress section are assumed to affect egress, and all policies (whether or not they contain an ingress section) are assumed to affect ingress. If you want to write an egress-only policy, you must explicitly specify policyTypes [ "Egress" ]. Likewise, if you want to write a policy that specifies that no egress is allowed, you must specify a policyTypes value that include "Egress" (since such a policy would not include an egress section and would otherwise default to just [ "Ingress" ]). This field is beta-level in 1.8
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#policy_types NetworkPolicyV1#policy_types}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#policy_types NetworkPolicyV1#policy_types}
   */
   readonly policyTypes: string[];
   /**
   * egress block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#egress NetworkPolicyV1#egress}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#egress NetworkPolicyV1#egress}
   */
   readonly egress?: NetworkPolicyV1SpecEgress[] | cdktf.IResolvable;
   /**
   * ingress block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#ingress NetworkPolicyV1#ingress}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#ingress NetworkPolicyV1#ingress}
   */
   readonly ingress?: NetworkPolicyV1SpecIngress[] | cdktf.IResolvable;
   /**
   * pod_selector block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#pod_selector NetworkPolicyV1#pod_selector}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#pod_selector NetworkPolicyV1#pod_selector}
   */
   readonly podSelector: NetworkPolicyV1SpecPodSelector;
 }
@@ -3305,7 +3305,7 @@ export class NetworkPolicyV1SpecOutputReference extends cdktf.ComplexObject {
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1 kubernetes_network_policy_v1}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1 kubernetes_network_policy_v1}
 */
 export class NetworkPolicyV1 extends cdktf.TerraformResource {
 
@@ -3321,7 +3321,7 @@ export class NetworkPolicyV1 extends cdktf.TerraformResource {
   * Generates CDKTF code for importing a NetworkPolicyV1 resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the NetworkPolicyV1 to import
-  * @param importFromId The id of the existing NetworkPolicyV1 that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing NetworkPolicyV1 that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the NetworkPolicyV1 to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -3333,7 +3333,7 @@ export class NetworkPolicyV1 extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/network_policy_v1 kubernetes_network_policy_v1} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/network_policy_v1 kubernetes_network_policy_v1} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -3344,7 +3344,7 @@ export class NetworkPolicyV1 extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_network_policy_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.34.0',
+        providerVersion: '2.35.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

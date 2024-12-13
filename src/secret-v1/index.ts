@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/secret_v1
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/secret_v1
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -15,17 +15,17 @@ export interface SecretV1Config extends cdktf.TerraformMetaArguments {
   /**
   * A map of the secret data in base64 encoding. Use this for binary data.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/secret_v1#binary_data SecretV1#binary_data}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/secret_v1#binary_data SecretV1#binary_data}
   */
   readonly binaryData?: { [key: string]: string };
   /**
   * A map of the secret data.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/secret_v1#data SecretV1#data}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/secret_v1#data SecretV1#data}
   */
   readonly data?: { [key: string]: string };
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/secret_v1#id SecretV1#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/secret_v1#id SecretV1#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -34,31 +34,31 @@ export interface SecretV1Config extends cdktf.TerraformMetaArguments {
   /**
   * Ensures that data stored in the Secret cannot be updated (only object metadata can be modified).
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/secret_v1#immutable SecretV1#immutable}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/secret_v1#immutable SecretV1#immutable}
   */
   readonly immutable?: boolean | cdktf.IResolvable;
   /**
   * Type of secret
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/secret_v1#type SecretV1#type}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/secret_v1#type SecretV1#type}
   */
   readonly type?: string;
   /**
   * Terraform will wait for the service account token to be created.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/secret_v1#wait_for_service_account_token SecretV1#wait_for_service_account_token}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/secret_v1#wait_for_service_account_token SecretV1#wait_for_service_account_token}
   */
   readonly waitForServiceAccountToken?: boolean | cdktf.IResolvable;
   /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/secret_v1#metadata SecretV1#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/secret_v1#metadata SecretV1#metadata}
   */
   readonly metadata: SecretV1Metadata;
   /**
   * timeouts block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/secret_v1#timeouts SecretV1#timeouts}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/secret_v1#timeouts SecretV1#timeouts}
   */
   readonly timeouts?: SecretV1Timeouts;
 }
@@ -66,31 +66,31 @@ export interface SecretV1Metadata {
   /**
   * An unstructured key value map stored with the secret that may be used to store arbitrary metadata. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/secret_v1#annotations SecretV1#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/secret_v1#annotations SecretV1#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/secret_v1#generate_name SecretV1#generate_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/secret_v1#generate_name SecretV1#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the secret. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/secret_v1#labels SecretV1#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/secret_v1#labels SecretV1#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the secret, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/secret_v1#name SecretV1#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/secret_v1#name SecretV1#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the secret must be unique.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/secret_v1#namespace SecretV1#namespace}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/secret_v1#namespace SecretV1#namespace}
   */
   readonly namespace?: string;
 }
@@ -305,7 +305,7 @@ export class SecretV1MetadataOutputReference extends cdktf.ComplexObject {
 }
 export interface SecretV1Timeouts {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/secret_v1#create SecretV1#create}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/secret_v1#create SecretV1#create}
   */
   readonly create?: string;
 }
@@ -399,7 +399,7 @@ export class SecretV1TimeoutsOutputReference extends cdktf.ComplexObject {
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/secret_v1 kubernetes_secret_v1}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/secret_v1 kubernetes_secret_v1}
 */
 export class SecretV1 extends cdktf.TerraformResource {
 
@@ -415,7 +415,7 @@ export class SecretV1 extends cdktf.TerraformResource {
   * Generates CDKTF code for importing a SecretV1 resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the SecretV1 to import
-  * @param importFromId The id of the existing SecretV1 that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/secret_v1#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing SecretV1 that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/secret_v1#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the SecretV1 to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -427,7 +427,7 @@ export class SecretV1 extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/secret_v1 kubernetes_secret_v1} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/secret_v1 kubernetes_secret_v1} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -438,7 +438,7 @@ export class SecretV1 extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_secret_v1',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.34.0',
+        providerVersion: '2.35.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
