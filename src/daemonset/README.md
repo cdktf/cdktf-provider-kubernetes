@@ -1,3 +1,3 @@
 # `kubernetes_daemonset`
 
-Refer to the Terraform Registry for docs: [`kubernetes_daemonset`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/daemonset).
+Refer to the Terraform Registry for docs: [`kubernetes_daemonset`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/daemonset).
