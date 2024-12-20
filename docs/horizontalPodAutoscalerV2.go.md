@@ -4,12 +4,12 @@
 
 ### HorizontalPodAutoscalerV2 <a name="HorizontalPodAutoscalerV2" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2 kubernetes_horizontal_pod_autoscaler_v2}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2 kubernetes_horizontal_pod_autoscaler_v2}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2(scope Construct, id *string, config HorizontalPodAutoscalerV2Config) HorizontalPodAutoscalerV2
 ```
@@ -411,7 +411,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.HorizontalPodAutoscalerV2_IsConstruct(x interface{}) *bool
 ```
@@ -443,7 +443,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.HorizontalPodAutoscalerV2_IsTerraformElement(x interface{}) *bool
 ```
@@ -457,7 +457,7 @@ horizontalpodautoscalerv2.HorizontalPodAutoscalerV2_IsTerraformElement(x interfa
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.HorizontalPodAutoscalerV2_IsTerraformResource(x interface{}) *bool
 ```
@@ -471,7 +471,7 @@ horizontalpodautoscalerv2.HorizontalPodAutoscalerV2_IsTerraformResource(x interf
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.HorizontalPodAutoscalerV2_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -500,7 +500,7 @@ The construct id used in the generated config for the HorizontalPodAutoscalerV2 
 
 The id of the existing HorizontalPodAutoscalerV2 that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -766,7 +766,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2Config {
 	Connection: interface{},
@@ -776,8 +776,8 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalp
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
-	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2Metadata,
-	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2Spec,
+	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2Metadata,
+	Spec: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2Spec,
 	Id: *string,
 }
 ```
@@ -795,7 +795,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalp
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2Config.property.provisioners">Provisioners</a></code> | <code>*[]interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2Config.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2Metadata">HorizontalPodAutoscalerV2Metadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2Config.property.spec">Spec</a></code> | <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2Spec">HorizontalPodAutoscalerV2Spec</a></code> | spec block. |
-| <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2Config.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#id HorizontalPodAutoscalerV2#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2Config.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#id HorizontalPodAutoscalerV2#id}. |
 
 ---
 
@@ -879,7 +879,7 @@ Metadata HorizontalPodAutoscalerV2Metadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#metadata HorizontalPodAutoscalerV2#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#metadata HorizontalPodAutoscalerV2#metadata}
 
 ---
 
@@ -893,7 +893,7 @@ Spec HorizontalPodAutoscalerV2Spec
 
 spec block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#spec HorizontalPodAutoscalerV2#spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#spec HorizontalPodAutoscalerV2#spec}
 
 ---
 
@@ -905,7 +905,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#id HorizontalPodAutoscalerV2#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#id HorizontalPodAutoscalerV2#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -917,7 +917,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2Metadata.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2Metadata {
 	Annotations: *map[string]*string,
@@ -952,7 +952,7 @@ An unstructured key value map stored with the horizontal pod autoscaler that may
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#annotations HorizontalPodAutoscalerV2#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#annotations HorizontalPodAutoscalerV2#annotations}
 
 ---
 
@@ -968,7 +968,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#generate_name HorizontalPodAutoscalerV2#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#generate_name HorizontalPodAutoscalerV2#generate_name}
 
 ---
 
@@ -984,7 +984,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#labels HorizontalPodAutoscalerV2#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#labels HorizontalPodAutoscalerV2#labels}
 
 ---
 
@@ -998,7 +998,7 @@ Name *string
 
 Name of the horizontal pod autoscaler, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#name HorizontalPodAutoscalerV2#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#name HorizontalPodAutoscalerV2#name}
 
 ---
 
@@ -1012,7 +1012,7 @@ Namespace *string
 
 Namespace defines the space within which name of the horizontal pod autoscaler must be unique.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#namespace HorizontalPodAutoscalerV2#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#namespace HorizontalPodAutoscalerV2#namespace}
 
 ---
 
@@ -1021,12 +1021,12 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2Spec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2Spec {
 	MaxReplicas: *f64,
-	ScaleTargetRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecScaleTargetRef,
-	Behavior: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecBehavior,
+	ScaleTargetRef: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecScaleTargetRef,
+	Behavior: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecBehavior,
 	Metric: interface{},
 	MinReplicas: *f64,
 	TargetCpuUtilizationPercentage: *f64,
@@ -1056,7 +1056,7 @@ MaxReplicas *f64
 
 Upper limit for the number of pods that can be set by the autoscaler.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#max_replicas HorizontalPodAutoscalerV2#max_replicas}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#max_replicas HorizontalPodAutoscalerV2#max_replicas}
 
 ---
 
@@ -1070,7 +1070,7 @@ ScaleTargetRef HorizontalPodAutoscalerV2SpecScaleTargetRef
 
 scale_target_ref block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#scale_target_ref HorizontalPodAutoscalerV2#scale_target_ref}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#scale_target_ref HorizontalPodAutoscalerV2#scale_target_ref}
 
 ---
 
@@ -1084,7 +1084,7 @@ Behavior HorizontalPodAutoscalerV2SpecBehavior
 
 behavior block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#behavior HorizontalPodAutoscalerV2#behavior}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#behavior HorizontalPodAutoscalerV2#behavior}
 
 ---
 
@@ -1098,7 +1098,7 @@ Metric interface{}
 
 metric block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#metric HorizontalPodAutoscalerV2#metric}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#metric HorizontalPodAutoscalerV2#metric}
 
 ---
 
@@ -1112,7 +1112,7 @@ MinReplicas *f64
 
 Lower limit for the number of pods that can be set by the autoscaler, defaults to `1`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#min_replicas HorizontalPodAutoscalerV2#min_replicas}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#min_replicas HorizontalPodAutoscalerV2#min_replicas}
 
 ---
 
@@ -1128,7 +1128,7 @@ Target average CPU utilization (represented as a percentage of requested CPU) ov
 
 If not specified the default autoscaling policy will be used.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#target_cpu_utilization_percentage HorizontalPodAutoscalerV2#target_cpu_utilization_percentage}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#target_cpu_utilization_percentage HorizontalPodAutoscalerV2#target_cpu_utilization_percentage}
 
 ---
 
@@ -1137,7 +1137,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecBehavior.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecBehavior {
 	ScaleDown: interface{},
@@ -1164,7 +1164,7 @@ ScaleDown interface{}
 
 scale_down block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#scale_down HorizontalPodAutoscalerV2#scale_down}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#scale_down HorizontalPodAutoscalerV2#scale_down}
 
 ---
 
@@ -1178,7 +1178,7 @@ ScaleUp interface{}
 
 scale_up block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#scale_up HorizontalPodAutoscalerV2#scale_up}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#scale_up HorizontalPodAutoscalerV2#scale_up}
 
 ---
 
@@ -1187,7 +1187,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecBehaviorScaleDown.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecBehaviorScaleDown {
 	Policy: interface{},
@@ -1216,7 +1216,7 @@ Policy interface{}
 
 policy block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#policy HorizontalPodAutoscalerV2#policy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#policy HorizontalPodAutoscalerV2#policy}
 
 ---
 
@@ -1230,7 +1230,7 @@ SelectPolicy *string
 
 Used to specify which policy should be used. If not set, the default value Max is used.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#select_policy HorizontalPodAutoscalerV2#select_policy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#select_policy HorizontalPodAutoscalerV2#select_policy}
 
 ---
 
@@ -1246,7 +1246,7 @@ Number of seconds for which past recommendations should be considered while scal
 
 This value must be greater than or equal to zero and less than or equal to 3600 (one hour). If not set, use the default values: - For scale up: 0 (i.e. no stabilization is done). - For scale down: 300 (i.e. the stabilization window is 300 seconds long).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#stabilization_window_seconds HorizontalPodAutoscalerV2#stabilization_window_seconds}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#stabilization_window_seconds HorizontalPodAutoscalerV2#stabilization_window_seconds}
 
 ---
 
@@ -1255,7 +1255,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecBehaviorScaleDownPolicy.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecBehaviorScaleDownPolicy {
 	PeriodSeconds: *f64,
@@ -1286,7 +1286,7 @@ Period specifies the window of time for which the policy should hold true.
 
 PeriodSeconds must be greater than zero and less than or equal to 1800 (30 min).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#period_seconds HorizontalPodAutoscalerV2#period_seconds}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#period_seconds HorizontalPodAutoscalerV2#period_seconds}
 
 ---
 
@@ -1300,7 +1300,7 @@ Type *string
 
 Type is used to specify the scaling policy: Percent or Pods.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#type HorizontalPodAutoscalerV2#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#type HorizontalPodAutoscalerV2#type}
 
 ---
 
@@ -1314,7 +1314,7 @@ Value *f64
 
 Value contains the amount of change which is permitted by the policy. It must be greater than zero.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#value HorizontalPodAutoscalerV2#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#value HorizontalPodAutoscalerV2#value}
 
 ---
 
@@ -1323,7 +1323,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecBehaviorScaleUp.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecBehaviorScaleUp {
 	Policy: interface{},
@@ -1352,7 +1352,7 @@ Policy interface{}
 
 policy block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#policy HorizontalPodAutoscalerV2#policy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#policy HorizontalPodAutoscalerV2#policy}
 
 ---
 
@@ -1366,7 +1366,7 @@ SelectPolicy *string
 
 Used to specify which policy should be used. If not set, the default value Max is used.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#select_policy HorizontalPodAutoscalerV2#select_policy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#select_policy HorizontalPodAutoscalerV2#select_policy}
 
 ---
 
@@ -1382,7 +1382,7 @@ Number of seconds for which past recommendations should be considered while scal
 
 This value must be greater than or equal to zero and less than or equal to 3600 (one hour). If not set, use the default values: - For scale up: 0 (i.e. no stabilization is done). - For scale down: 300 (i.e. the stabilization window is 300 seconds long).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#stabilization_window_seconds HorizontalPodAutoscalerV2#stabilization_window_seconds}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#stabilization_window_seconds HorizontalPodAutoscalerV2#stabilization_window_seconds}
 
 ---
 
@@ -1391,7 +1391,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecBehaviorScaleUpPolicy.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecBehaviorScaleUpPolicy {
 	PeriodSeconds: *f64,
@@ -1422,7 +1422,7 @@ Period specifies the window of time for which the policy should hold true.
 
 PeriodSeconds must be greater than zero and less than or equal to 1800 (30 min).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#period_seconds HorizontalPodAutoscalerV2#period_seconds}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#period_seconds HorizontalPodAutoscalerV2#period_seconds}
 
 ---
 
@@ -1436,7 +1436,7 @@ Type *string
 
 Type is used to specify the scaling policy: Percent or Pods.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#type HorizontalPodAutoscalerV2#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#type HorizontalPodAutoscalerV2#type}
 
 ---
 
@@ -1450,7 +1450,7 @@ Value *f64
 
 Value contains the amount of change which is permitted by the policy. It must be greater than zero.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#value HorizontalPodAutoscalerV2#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#value HorizontalPodAutoscalerV2#value}
 
 ---
 
@@ -1459,15 +1459,15 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetric.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetric {
 	Type: *string,
-	ContainerResource: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricContainerResource,
-	External: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricExternal,
-	Object: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObject,
-	Pods: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricPods,
-	Resource: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricResource,
+	ContainerResource: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricContainerResource,
+	External: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricExternal,
+	Object: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObject,
+	Pods: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricPods,
+	Resource: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricResource,
 }
 ```
 
@@ -1496,7 +1496,7 @@ type is the type of metric source.
 
 It should be one of "ContainerResource", "External", "Object", "Pods" or "Resource", each mapping to a matching field in the object. Note: "ContainerResource" type is available on when the feature-gate HPAContainerMetrics is enabled
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#type HorizontalPodAutoscalerV2#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#type HorizontalPodAutoscalerV2#type}
 
 ---
 
@@ -1510,7 +1510,7 @@ ContainerResource HorizontalPodAutoscalerV2SpecMetricContainerResource
 
 container_resource block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#container_resource HorizontalPodAutoscalerV2#container_resource}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#container_resource HorizontalPodAutoscalerV2#container_resource}
 
 ---
 
@@ -1524,7 +1524,7 @@ External HorizontalPodAutoscalerV2SpecMetricExternal
 
 external block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#external HorizontalPodAutoscalerV2#external}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#external HorizontalPodAutoscalerV2#external}
 
 ---
 
@@ -1538,7 +1538,7 @@ Object HorizontalPodAutoscalerV2SpecMetricObject
 
 object block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#object HorizontalPodAutoscalerV2#object}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#object HorizontalPodAutoscalerV2#object}
 
 ---
 
@@ -1552,7 +1552,7 @@ Pods HorizontalPodAutoscalerV2SpecMetricPods
 
 pods block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#pods HorizontalPodAutoscalerV2#pods}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#pods HorizontalPodAutoscalerV2#pods}
 
 ---
 
@@ -1566,7 +1566,7 @@ Resource HorizontalPodAutoscalerV2SpecMetricResource
 
 resource block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#resource HorizontalPodAutoscalerV2#resource}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#resource HorizontalPodAutoscalerV2#resource}
 
 ---
 
@@ -1575,12 +1575,12 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricContainerResource.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricContainerResource {
 	Container: *string,
 	Name: *string,
-	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricContainerResourceTarget,
+	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricContainerResourceTarget,
 }
 ```
 
@@ -1604,7 +1604,7 @@ Container *string
 
 name of the container in the pods of the scaling target.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#container HorizontalPodAutoscalerV2#container}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#container HorizontalPodAutoscalerV2#container}
 
 ---
 
@@ -1618,7 +1618,7 @@ Name *string
 
 name of the resource in question.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#name HorizontalPodAutoscalerV2#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#name HorizontalPodAutoscalerV2#name}
 
 ---
 
@@ -1632,7 +1632,7 @@ Target HorizontalPodAutoscalerV2SpecMetricContainerResourceTarget
 
 target block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#target HorizontalPodAutoscalerV2#target}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#target HorizontalPodAutoscalerV2#target}
 
 ---
 
@@ -1641,7 +1641,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricContainerResourceTarget.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricContainerResourceTarget {
 	Type: *string,
@@ -1672,7 +1672,7 @@ Type *string
 
 type represents whether the metric type is Utilization, Value, or AverageValue.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#type HorizontalPodAutoscalerV2#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#type HorizontalPodAutoscalerV2#type}
 
 ---
 
@@ -1688,7 +1688,7 @@ averageUtilization is the target value of the average of the resource metric acr
 
 Currently only valid for Resource metric source type
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#average_utilization HorizontalPodAutoscalerV2#average_utilization}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#average_utilization HorizontalPodAutoscalerV2#average_utilization}
 
 ---
 
@@ -1702,7 +1702,7 @@ AverageValue *string
 
 averageValue is the target value of the average of the metric across all relevant pods (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#average_value HorizontalPodAutoscalerV2#average_value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#average_value HorizontalPodAutoscalerV2#average_value}
 
 ---
 
@@ -1716,7 +1716,7 @@ Value *string
 
 value is the target value of the metric (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#value HorizontalPodAutoscalerV2#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#value HorizontalPodAutoscalerV2#value}
 
 ---
 
@@ -1725,11 +1725,11 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricExternal.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricExternal {
-	Metric: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricExternalMetric,
-	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricExternalTarget,
+	Metric: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricExternalMetric,
+	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricExternalTarget,
 }
 ```
 
@@ -1752,7 +1752,7 @@ Metric HorizontalPodAutoscalerV2SpecMetricExternalMetric
 
 metric block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#metric HorizontalPodAutoscalerV2#metric}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#metric HorizontalPodAutoscalerV2#metric}
 
 ---
 
@@ -1766,7 +1766,7 @@ Target HorizontalPodAutoscalerV2SpecMetricExternalTarget
 
 target block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#target HorizontalPodAutoscalerV2#target}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#target HorizontalPodAutoscalerV2#target}
 
 ---
 
@@ -1775,7 +1775,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricExternalMetric.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricExternalMetric {
 	Name: *string,
@@ -1802,7 +1802,7 @@ Name *string
 
 name is the name of the given metric.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#name HorizontalPodAutoscalerV2#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#name HorizontalPodAutoscalerV2#name}
 
 ---
 
@@ -1816,7 +1816,7 @@ Selector interface{}
 
 selector block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#selector HorizontalPodAutoscalerV2#selector}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#selector HorizontalPodAutoscalerV2#selector}
 
 ---
 
@@ -1825,7 +1825,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricExternalMetricSelector.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricExternalMetricSelector {
 	MatchExpressions: interface{},
@@ -1852,7 +1852,7 @@ MatchExpressions interface{}
 
 match_expressions block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#match_expressions HorizontalPodAutoscalerV2#match_expressions}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#match_expressions HorizontalPodAutoscalerV2#match_expressions}
 
 ---
 
@@ -1868,7 +1868,7 @@ A map of {key,value} pairs.
 
 A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#match_labels HorizontalPodAutoscalerV2#match_labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#match_labels HorizontalPodAutoscalerV2#match_labels}
 
 ---
 
@@ -1877,7 +1877,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricExternalMetricSelectorMatchExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricExternalMetricSelectorMatchExpressions {
 	Key: *string,
@@ -1906,7 +1906,7 @@ Key *string
 
 The label key that the selector applies to.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#key HorizontalPodAutoscalerV2#key}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#key HorizontalPodAutoscalerV2#key}
 
 ---
 
@@ -1920,7 +1920,7 @@ Operator *string
 
 A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#operator HorizontalPodAutoscalerV2#operator}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#operator HorizontalPodAutoscalerV2#operator}
 
 ---
 
@@ -1936,7 +1936,7 @@ An array of string values.
 
 If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#values HorizontalPodAutoscalerV2#values}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#values HorizontalPodAutoscalerV2#values}
 
 ---
 
@@ -1945,7 +1945,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricExternalTarget.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricExternalTarget {
 	Type: *string,
@@ -1976,7 +1976,7 @@ Type *string
 
 type represents whether the metric type is Utilization, Value, or AverageValue.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#type HorizontalPodAutoscalerV2#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#type HorizontalPodAutoscalerV2#type}
 
 ---
 
@@ -1992,7 +1992,7 @@ averageUtilization is the target value of the average of the resource metric acr
 
 Currently only valid for Resource metric source type
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#average_utilization HorizontalPodAutoscalerV2#average_utilization}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#average_utilization HorizontalPodAutoscalerV2#average_utilization}
 
 ---
 
@@ -2006,7 +2006,7 @@ AverageValue *string
 
 averageValue is the target value of the average of the metric across all relevant pods (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#average_value HorizontalPodAutoscalerV2#average_value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#average_value HorizontalPodAutoscalerV2#average_value}
 
 ---
 
@@ -2020,7 +2020,7 @@ Value *string
 
 value is the target value of the metric (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#value HorizontalPodAutoscalerV2#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#value HorizontalPodAutoscalerV2#value}
 
 ---
 
@@ -2029,12 +2029,12 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObject.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricObject {
-	DescribedObject: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObjectDescribedObject,
-	Metric: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObjectMetric,
-	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObjectTarget,
+	DescribedObject: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObjectDescribedObject,
+	Metric: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObjectMetric,
+	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObjectTarget,
 }
 ```
 
@@ -2058,7 +2058,7 @@ DescribedObject HorizontalPodAutoscalerV2SpecMetricObjectDescribedObject
 
 described_object block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#described_object HorizontalPodAutoscalerV2#described_object}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#described_object HorizontalPodAutoscalerV2#described_object}
 
 ---
 
@@ -2072,7 +2072,7 @@ Metric HorizontalPodAutoscalerV2SpecMetricObjectMetric
 
 metric block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#metric HorizontalPodAutoscalerV2#metric}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#metric HorizontalPodAutoscalerV2#metric}
 
 ---
 
@@ -2086,7 +2086,7 @@ Target HorizontalPodAutoscalerV2SpecMetricObjectTarget
 
 target block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#target HorizontalPodAutoscalerV2#target}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#target HorizontalPodAutoscalerV2#target}
 
 ---
 
@@ -2095,7 +2095,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObjectDescribedObject.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricObjectDescribedObject {
 	ApiVersion: *string,
@@ -2124,7 +2124,7 @@ ApiVersion *string
 
 API version of the referent.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#api_version HorizontalPodAutoscalerV2#api_version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#api_version HorizontalPodAutoscalerV2#api_version}
 
 ---
 
@@ -2138,7 +2138,7 @@ Kind *string
 
 Kind of the referent; More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#kind HorizontalPodAutoscalerV2#kind}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#kind HorizontalPodAutoscalerV2#kind}
 
 ---
 
@@ -2152,7 +2152,7 @@ Name *string
 
 Name of the referent; More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#name HorizontalPodAutoscalerV2#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#name HorizontalPodAutoscalerV2#name}
 
 ---
 
@@ -2161,7 +2161,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObjectMetric.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricObjectMetric {
 	Name: *string,
@@ -2188,7 +2188,7 @@ Name *string
 
 name is the name of the given metric.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#name HorizontalPodAutoscalerV2#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#name HorizontalPodAutoscalerV2#name}
 
 ---
 
@@ -2202,7 +2202,7 @@ Selector interface{}
 
 selector block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#selector HorizontalPodAutoscalerV2#selector}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#selector HorizontalPodAutoscalerV2#selector}
 
 ---
 
@@ -2211,7 +2211,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObjectMetricSelector.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricObjectMetricSelector {
 	MatchExpressions: interface{},
@@ -2238,7 +2238,7 @@ MatchExpressions interface{}
 
 match_expressions block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#match_expressions HorizontalPodAutoscalerV2#match_expressions}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#match_expressions HorizontalPodAutoscalerV2#match_expressions}
 
 ---
 
@@ -2254,7 +2254,7 @@ A map of {key,value} pairs.
 
 A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#match_labels HorizontalPodAutoscalerV2#match_labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#match_labels HorizontalPodAutoscalerV2#match_labels}
 
 ---
 
@@ -2263,7 +2263,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObjectMetricSelectorMatchExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricObjectMetricSelectorMatchExpressions {
 	Key: *string,
@@ -2292,7 +2292,7 @@ Key *string
 
 The label key that the selector applies to.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#key HorizontalPodAutoscalerV2#key}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#key HorizontalPodAutoscalerV2#key}
 
 ---
 
@@ -2306,7 +2306,7 @@ Operator *string
 
 A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#operator HorizontalPodAutoscalerV2#operator}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#operator HorizontalPodAutoscalerV2#operator}
 
 ---
 
@@ -2322,7 +2322,7 @@ An array of string values.
 
 If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#values HorizontalPodAutoscalerV2#values}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#values HorizontalPodAutoscalerV2#values}
 
 ---
 
@@ -2331,7 +2331,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObjectTarget.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricObjectTarget {
 	Type: *string,
@@ -2362,7 +2362,7 @@ Type *string
 
 type represents whether the metric type is Utilization, Value, or AverageValue.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#type HorizontalPodAutoscalerV2#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#type HorizontalPodAutoscalerV2#type}
 
 ---
 
@@ -2378,7 +2378,7 @@ averageUtilization is the target value of the average of the resource metric acr
 
 Currently only valid for Resource metric source type
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#average_utilization HorizontalPodAutoscalerV2#average_utilization}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#average_utilization HorizontalPodAutoscalerV2#average_utilization}
 
 ---
 
@@ -2392,7 +2392,7 @@ AverageValue *string
 
 averageValue is the target value of the average of the metric across all relevant pods (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#average_value HorizontalPodAutoscalerV2#average_value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#average_value HorizontalPodAutoscalerV2#average_value}
 
 ---
 
@@ -2406,7 +2406,7 @@ Value *string
 
 value is the target value of the metric (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#value HorizontalPodAutoscalerV2#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#value HorizontalPodAutoscalerV2#value}
 
 ---
 
@@ -2415,11 +2415,11 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricPods.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricPods {
-	Metric: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricPodsMetric,
-	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricPodsTarget,
+	Metric: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricPodsMetric,
+	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricPodsTarget,
 }
 ```
 
@@ -2442,7 +2442,7 @@ Metric HorizontalPodAutoscalerV2SpecMetricPodsMetric
 
 metric block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#metric HorizontalPodAutoscalerV2#metric}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#metric HorizontalPodAutoscalerV2#metric}
 
 ---
 
@@ -2456,7 +2456,7 @@ Target HorizontalPodAutoscalerV2SpecMetricPodsTarget
 
 target block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#target HorizontalPodAutoscalerV2#target}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#target HorizontalPodAutoscalerV2#target}
 
 ---
 
@@ -2465,7 +2465,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricPodsMetric.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricPodsMetric {
 	Name: *string,
@@ -2492,7 +2492,7 @@ Name *string
 
 name is the name of the given metric.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#name HorizontalPodAutoscalerV2#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#name HorizontalPodAutoscalerV2#name}
 
 ---
 
@@ -2506,7 +2506,7 @@ Selector interface{}
 
 selector block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#selector HorizontalPodAutoscalerV2#selector}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#selector HorizontalPodAutoscalerV2#selector}
 
 ---
 
@@ -2515,7 +2515,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricPodsMetricSelector.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricPodsMetricSelector {
 	MatchExpressions: interface{},
@@ -2542,7 +2542,7 @@ MatchExpressions interface{}
 
 match_expressions block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#match_expressions HorizontalPodAutoscalerV2#match_expressions}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#match_expressions HorizontalPodAutoscalerV2#match_expressions}
 
 ---
 
@@ -2558,7 +2558,7 @@ A map of {key,value} pairs.
 
 A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#match_labels HorizontalPodAutoscalerV2#match_labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#match_labels HorizontalPodAutoscalerV2#match_labels}
 
 ---
 
@@ -2567,7 +2567,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricPodsMetricSelectorMatchExpressions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricPodsMetricSelectorMatchExpressions {
 	Key: *string,
@@ -2596,7 +2596,7 @@ Key *string
 
 The label key that the selector applies to.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#key HorizontalPodAutoscalerV2#key}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#key HorizontalPodAutoscalerV2#key}
 
 ---
 
@@ -2610,7 +2610,7 @@ Operator *string
 
 A key's relationship to a set of values. Valid operators ard `In`, `NotIn`, `Exists` and `DoesNotExist`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#operator HorizontalPodAutoscalerV2#operator}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#operator HorizontalPodAutoscalerV2#operator}
 
 ---
 
@@ -2626,7 +2626,7 @@ An array of string values.
 
 If the operator is `In` or `NotIn`, the values array must be non-empty. If the operator is `Exists` or `DoesNotExist`, the values array must be empty. This array is replaced during a strategic merge patch.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#values HorizontalPodAutoscalerV2#values}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#values HorizontalPodAutoscalerV2#values}
 
 ---
 
@@ -2635,7 +2635,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricPodsTarget.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricPodsTarget {
 	Type: *string,
@@ -2666,7 +2666,7 @@ Type *string
 
 type represents whether the metric type is Utilization, Value, or AverageValue.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#type HorizontalPodAutoscalerV2#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#type HorizontalPodAutoscalerV2#type}
 
 ---
 
@@ -2682,7 +2682,7 @@ averageUtilization is the target value of the average of the resource metric acr
 
 Currently only valid for Resource metric source type
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#average_utilization HorizontalPodAutoscalerV2#average_utilization}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#average_utilization HorizontalPodAutoscalerV2#average_utilization}
 
 ---
 
@@ -2696,7 +2696,7 @@ AverageValue *string
 
 averageValue is the target value of the average of the metric across all relevant pods (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#average_value HorizontalPodAutoscalerV2#average_value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#average_value HorizontalPodAutoscalerV2#average_value}
 
 ---
 
@@ -2710,7 +2710,7 @@ Value *string
 
 value is the target value of the metric (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#value HorizontalPodAutoscalerV2#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#value HorizontalPodAutoscalerV2#value}
 
 ---
 
@@ -2719,11 +2719,11 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricResource.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricResource {
 	Name: *string,
-	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricResourceTarget,
+	Target: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricResourceTarget,
 }
 ```
 
@@ -2746,7 +2746,7 @@ Name *string
 
 name is the name of the resource in question.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#name HorizontalPodAutoscalerV2#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#name HorizontalPodAutoscalerV2#name}
 
 ---
 
@@ -2760,7 +2760,7 @@ Target HorizontalPodAutoscalerV2SpecMetricResourceTarget
 
 target block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#target HorizontalPodAutoscalerV2#target}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#target HorizontalPodAutoscalerV2#target}
 
 ---
 
@@ -2769,7 +2769,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricResourceTarget.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecMetricResourceTarget {
 	Type: *string,
@@ -2800,7 +2800,7 @@ Type *string
 
 type represents whether the metric type is Utilization, Value, or AverageValue.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#type HorizontalPodAutoscalerV2#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#type HorizontalPodAutoscalerV2#type}
 
 ---
 
@@ -2816,7 +2816,7 @@ averageUtilization is the target value of the average of the resource metric acr
 
 Currently only valid for Resource metric source type
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#average_utilization HorizontalPodAutoscalerV2#average_utilization}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#average_utilization HorizontalPodAutoscalerV2#average_utilization}
 
 ---
 
@@ -2830,7 +2830,7 @@ AverageValue *string
 
 averageValue is the target value of the average of the metric across all relevant pods (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#average_value HorizontalPodAutoscalerV2#average_value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#average_value HorizontalPodAutoscalerV2#average_value}
 
 ---
 
@@ -2844,7 +2844,7 @@ Value *string
 
 value is the target value of the metric (as a quantity).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#value HorizontalPodAutoscalerV2#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#value HorizontalPodAutoscalerV2#value}
 
 ---
 
@@ -2853,7 +2853,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecScaleTargetRef.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 &horizontalpodautoscalerv2.HorizontalPodAutoscalerV2SpecScaleTargetRef {
 	Kind: *string,
@@ -2882,7 +2882,7 @@ Kind *string
 
 Kind of the referent. e.g. `ReplicationController`. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#kind HorizontalPodAutoscalerV2#kind}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#kind HorizontalPodAutoscalerV2#kind}
 
 ---
 
@@ -2896,7 +2896,7 @@ Name *string
 
 Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#name HorizontalPodAutoscalerV2#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#name HorizontalPodAutoscalerV2#name}
 
 ---
 
@@ -2910,7 +2910,7 @@ ApiVersion *string
 
 API version of the referent.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/horizontal_pod_autoscaler_v2#api_version HorizontalPodAutoscalerV2#api_version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/horizontal_pod_autoscaler_v2#api_version HorizontalPodAutoscalerV2#api_version}
 
 ---
 
@@ -2921,7 +2921,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2MetadataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2MetadataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerV2MetadataOutputReference
 ```
@@ -3348,7 +3348,7 @@ func InternalValue() HorizontalPodAutoscalerV2Metadata
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecBehaviorOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecBehaviorOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerV2SpecBehaviorOutputReference
 ```
@@ -3681,7 +3681,7 @@ func InternalValue() HorizontalPodAutoscalerV2SpecBehavior
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecBehaviorScaleDownList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecBehaviorScaleDownList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerV2SpecBehaviorScaleDownList
 ```
@@ -3841,7 +3841,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecBehaviorScaleDownOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecBehaviorScaleDownOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerV2SpecBehaviorScaleDownOutputReference
 ```
@@ -4201,7 +4201,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecBehaviorScaleDownPolicyList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecBehaviorScaleDownPolicyList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerV2SpecBehaviorScaleDownPolicyList
 ```
@@ -4361,7 +4361,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecBehaviorScaleDownPolicyOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecBehaviorScaleDownPolicyOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerV2SpecBehaviorScaleDownPolicyOutputReference
 ```
@@ -4694,7 +4694,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecBehaviorScaleUpList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecBehaviorScaleUpList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerV2SpecBehaviorScaleUpList
 ```
@@ -4854,7 +4854,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecBehaviorScaleUpOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecBehaviorScaleUpOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerV2SpecBehaviorScaleUpOutputReference
 ```
@@ -5214,7 +5214,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecBehaviorScaleUpPolicyList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecBehaviorScaleUpPolicyList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerV2SpecBehaviorScaleUpPolicyList
 ```
@@ -5374,7 +5374,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecBehaviorScaleUpPolicyOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecBehaviorScaleUpPolicyOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerV2SpecBehaviorScaleUpPolicyOutputReference
 ```
@@ -5707,7 +5707,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricContainerResourceOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricContainerResourceOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerV2SpecMetricContainerResourceOutputReference
 ```
@@ -6042,7 +6042,7 @@ func InternalValue() HorizontalPodAutoscalerV2SpecMetricContainerResource
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricContainerResourceTargetOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricContainerResourceTargetOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerV2SpecMetricContainerResourceTargetOutputReference
 ```
@@ -6400,7 +6400,7 @@ func InternalValue() HorizontalPodAutoscalerV2SpecMetricContainerResourceTarget
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricExternalMetricOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricExternalMetricOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerV2SpecMetricExternalMetricOutputReference
 ```
@@ -6713,7 +6713,7 @@ func InternalValue() HorizontalPodAutoscalerV2SpecMetricExternalMetric
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricExternalMetricSelectorList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricExternalMetricSelectorList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerV2SpecMetricExternalMetricSelectorList
 ```
@@ -6873,7 +6873,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricExternalMetricSelectorMatchExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricExternalMetricSelectorMatchExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerV2SpecMetricExternalMetricSelectorMatchExpressionsList
 ```
@@ -7033,7 +7033,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricExternalMetricSelectorMatchExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricExternalMetricSelectorMatchExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerV2SpecMetricExternalMetricSelectorMatchExpressionsOutputReference
 ```
@@ -7387,7 +7387,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricExternalMetricSelectorOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricExternalMetricSelectorOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerV2SpecMetricExternalMetricSelectorOutputReference
 ```
@@ -7725,7 +7725,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricExternalOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricExternalOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerV2SpecMetricExternalOutputReference
 ```
@@ -8051,7 +8051,7 @@ func InternalValue() HorizontalPodAutoscalerV2SpecMetricExternal
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricExternalTargetOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricExternalTargetOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerV2SpecMetricExternalTargetOutputReference
 ```
@@ -8409,7 +8409,7 @@ func InternalValue() HorizontalPodAutoscalerV2SpecMetricExternalTarget
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerV2SpecMetricList
 ```
@@ -8569,7 +8569,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObjectDescribedObjectOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricObjectDescribedObjectOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerV2SpecMetricObjectDescribedObjectOutputReference
 ```
@@ -8884,7 +8884,7 @@ func InternalValue() HorizontalPodAutoscalerV2SpecMetricObjectDescribedObject
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObjectMetricOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricObjectMetricOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerV2SpecMetricObjectMetricOutputReference
 ```
@@ -9197,7 +9197,7 @@ func InternalValue() HorizontalPodAutoscalerV2SpecMetricObjectMetric
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObjectMetricSelectorList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricObjectMetricSelectorList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerV2SpecMetricObjectMetricSelectorList
 ```
@@ -9357,7 +9357,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObjectMetricSelectorMatchExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricObjectMetricSelectorMatchExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerV2SpecMetricObjectMetricSelectorMatchExpressionsList
 ```
@@ -9517,7 +9517,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObjectMetricSelectorMatchExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricObjectMetricSelectorMatchExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerV2SpecMetricObjectMetricSelectorMatchExpressionsOutputReference
 ```
@@ -9871,7 +9871,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObjectMetricSelectorOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricObjectMetricSelectorOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerV2SpecMetricObjectMetricSelectorOutputReference
 ```
@@ -10209,7 +10209,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObjectOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricObjectOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerV2SpecMetricObjectOutputReference
 ```
@@ -10570,7 +10570,7 @@ func InternalValue() HorizontalPodAutoscalerV2SpecMetricObject
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricObjectTargetOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricObjectTargetOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerV2SpecMetricObjectTargetOutputReference
 ```
@@ -10928,7 +10928,7 @@ func InternalValue() HorizontalPodAutoscalerV2SpecMetricObjectTarget
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerV2SpecMetricOutputReference
 ```
@@ -11427,7 +11427,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricPodsMetricOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricPodsMetricOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerV2SpecMetricPodsMetricOutputReference
 ```
@@ -11740,7 +11740,7 @@ func InternalValue() HorizontalPodAutoscalerV2SpecMetricPodsMetric
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricPodsMetricSelectorList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricPodsMetricSelectorList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerV2SpecMetricPodsMetricSelectorList
 ```
@@ -11900,7 +11900,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricPodsMetricSelectorMatchExpressionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricPodsMetricSelectorMatchExpressionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) HorizontalPodAutoscalerV2SpecMetricPodsMetricSelectorMatchExpressionsList
 ```
@@ -12060,7 +12060,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricPodsMetricSelectorMatchExpressionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricPodsMetricSelectorMatchExpressionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerV2SpecMetricPodsMetricSelectorMatchExpressionsOutputReference
 ```
@@ -12414,7 +12414,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricPodsMetricSelectorOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricPodsMetricSelectorOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) HorizontalPodAutoscalerV2SpecMetricPodsMetricSelectorOutputReference
 ```
@@ -12752,7 +12752,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricPodsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricPodsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerV2SpecMetricPodsOutputReference
 ```
@@ -13078,7 +13078,7 @@ func InternalValue() HorizontalPodAutoscalerV2SpecMetricPods
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricPodsTargetOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricPodsTargetOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerV2SpecMetricPodsTargetOutputReference
 ```
@@ -13436,7 +13436,7 @@ func InternalValue() HorizontalPodAutoscalerV2SpecMetricPodsTarget
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricResourceOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricResourceOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerV2SpecMetricResourceOutputReference
 ```
@@ -13749,7 +13749,7 @@ func InternalValue() HorizontalPodAutoscalerV2SpecMetricResource
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecMetricResourceTargetOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecMetricResourceTargetOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerV2SpecMetricResourceTargetOutputReference
 ```
@@ -14107,7 +14107,7 @@ func InternalValue() HorizontalPodAutoscalerV2SpecMetricResourceTarget
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerV2SpecOutputReference
 ```
@@ -14555,7 +14555,7 @@ func InternalValue() HorizontalPodAutoscalerV2Spec
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.horizontalPodAutoscalerV2.HorizontalPodAutoscalerV2SpecScaleTargetRefOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/horizontalpodautoscalerv2"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/horizontalpodautoscalerv2"
 
 horizontalpodautoscalerv2.NewHorizontalPodAutoscalerV2SpecScaleTargetRefOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) HorizontalPodAutoscalerV2SpecScaleTargetRefOutputReference
 ```
