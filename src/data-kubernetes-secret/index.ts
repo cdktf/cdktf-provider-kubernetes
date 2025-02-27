@@ -1,9 +1,4 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/data-sources/secret
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/secret
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -15,11 +10,11 @@ export interface DataKubernetesSecretConfig extends cdktf.TerraformMetaArguments
   /**
   * A map of the secret data with values encoded in base64 format
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/data-sources/secret#binary_data DataKubernetesSecret#binary_data}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/secret#binary_data DataKubernetesSecret#binary_data}
   */
   readonly binaryData?: { [key: string]: string };
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/data-sources/secret#id DataKubernetesSecret#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/secret#id DataKubernetesSecret#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -28,7 +23,7 @@ export interface DataKubernetesSecretConfig extends cdktf.TerraformMetaArguments
   /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/data-sources/secret#metadata DataKubernetesSecret#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/secret#metadata DataKubernetesSecret#metadata}
   */
   readonly metadata: DataKubernetesSecretMetadata;
 }
@@ -36,31 +31,31 @@ export interface DataKubernetesSecretMetadata {
   /**
   * An unstructured key value map stored with the secret that may be used to store arbitrary metadata. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/data-sources/secret#annotations DataKubernetesSecret#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/secret#annotations DataKubernetesSecret#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/data-sources/secret#generate_name DataKubernetesSecret#generate_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/secret#generate_name DataKubernetesSecret#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the secret. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/data-sources/secret#labels DataKubernetesSecret#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/secret#labels DataKubernetesSecret#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the secret, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/data-sources/secret#name DataKubernetesSecret#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/secret#name DataKubernetesSecret#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the secret must be unique.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/data-sources/secret#namespace DataKubernetesSecret#namespace}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/secret#namespace DataKubernetesSecret#namespace}
   */
   readonly namespace?: string;
 }
@@ -275,7 +270,7 @@ export class DataKubernetesSecretMetadataOutputReference extends cdktf.ComplexOb
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/data-sources/secret kubernetes_secret}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/secret kubernetes_secret}
 */
 export class DataKubernetesSecret extends cdktf.TerraformDataSource {
 
@@ -291,7 +286,7 @@ export class DataKubernetesSecret extends cdktf.TerraformDataSource {
   * Generates CDKTF code for importing a DataKubernetesSecret resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the DataKubernetesSecret to import
-  * @param importFromId The id of the existing DataKubernetesSecret that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/data-sources/secret#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing DataKubernetesSecret that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/secret#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the DataKubernetesSecret to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -303,7 +298,7 @@ export class DataKubernetesSecret extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/data-sources/secret kubernetes_secret} Data Source
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/secret kubernetes_secret} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -314,7 +309,7 @@ export class DataKubernetesSecret extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_secret',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.35.1',
+        providerVersion: '2.36.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

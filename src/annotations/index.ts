@@ -1,9 +1,4 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/annotations
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -15,29 +10,29 @@ export interface AnnotationsConfig extends cdktf.TerraformMetaArguments {
   /**
   * A map of annotations to apply to the resource.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/annotations#annotations Annotations#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#annotations Annotations#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * The apiVersion of the resource to annotate.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/annotations#api_version Annotations#api_version}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#api_version Annotations#api_version}
   */
   readonly apiVersion: string;
   /**
   * Set the name of the field manager for the specified labels.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/annotations#field_manager Annotations#field_manager}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#field_manager Annotations#field_manager}
   */
   readonly fieldManager?: string;
   /**
   * Force overwriting annotations that were created or edited outside of Terraform.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/annotations#force Annotations#force}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#force Annotations#force}
   */
   readonly force?: boolean | cdktf.IResolvable;
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/annotations#id Annotations#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#id Annotations#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -46,19 +41,19 @@ export interface AnnotationsConfig extends cdktf.TerraformMetaArguments {
   /**
   * The kind of the resource to annotate.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/annotations#kind Annotations#kind}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#kind Annotations#kind}
   */
   readonly kind: string;
   /**
   * A map of annotations to apply to the resource template.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/annotations#template_annotations Annotations#template_annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#template_annotations Annotations#template_annotations}
   */
   readonly templateAnnotations?: { [key: string]: string };
   /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/annotations#metadata Annotations#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#metadata Annotations#metadata}
   */
   readonly metadata: AnnotationsMetadata;
 }
@@ -66,13 +61,13 @@ export interface AnnotationsMetadata {
   /**
   * The name of the resource.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/annotations#name Annotations#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#name Annotations#name}
   */
   readonly name: string;
   /**
   * The namespace of the resource.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/annotations#namespace Annotations#namespace}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#namespace Annotations#namespace}
   */
   readonly namespace?: string;
 }
@@ -182,7 +177,7 @@ export class AnnotationsMetadataOutputReference extends cdktf.ComplexObject {
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/annotations kubernetes_annotations}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations kubernetes_annotations}
 */
 export class Annotations extends cdktf.TerraformResource {
 
@@ -198,7 +193,7 @@ export class Annotations extends cdktf.TerraformResource {
   * Generates CDKTF code for importing a Annotations resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the Annotations to import
-  * @param importFromId The id of the existing Annotations that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/annotations#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing Annotations that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the Annotations to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -210,7 +205,7 @@ export class Annotations extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/annotations kubernetes_annotations} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations kubernetes_annotations} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -221,7 +216,7 @@ export class Annotations extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_annotations',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.35.1',
+        providerVersion: '2.36.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,

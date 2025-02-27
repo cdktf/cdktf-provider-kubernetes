@@ -1,9 +1,4 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -15,17 +10,41 @@ export interface SecretConfig extends cdktf.TerraformMetaArguments {
   /**
   * A map of the secret data in base64 encoding. Use this for binary data.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#binary_data Secret#binary_data}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#binary_data Secret#binary_data}
   */
   readonly binaryData?: { [key: string]: string };
   /**
+  * A write-only map of the secret data in base64 encoding. Use this for binary data.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#binary_data_wo Secret#binary_data_wo}
+  */
+  readonly binaryDataWo?: { [key: string]: string };
+  /**
+  * The current revision of the write-only "binary_data_wo" attribute. Incrementing this integer value will cause Terraform to update the write-only value.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#binary_data_wo_revision Secret#binary_data_wo_revision}
+  */
+  readonly binaryDataWoRevision?: number;
+  /**
   * A map of the secret data.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#data Secret#data}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#data Secret#data}
   */
   readonly data?: { [key: string]: string };
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#id Secret#id}
+  * A map write-only of the secret data.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#data_wo Secret#data_wo}
+  */
+  readonly dataWo?: { [key: string]: string };
+  /**
+  * The current revision of the write-only "data_wo" attribute. Incrementing this integer value will cause Terraform to update the write-only value.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#data_wo_revision Secret#data_wo_revision}
+  */
+  readonly dataWoRevision?: number;
+  /**
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#id Secret#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -34,31 +53,31 @@ export interface SecretConfig extends cdktf.TerraformMetaArguments {
   /**
   * Ensures that data stored in the Secret cannot be updated (only object metadata can be modified).
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#immutable Secret#immutable}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#immutable Secret#immutable}
   */
   readonly immutable?: boolean | cdktf.IResolvable;
   /**
   * Type of secret
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#type Secret#type}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#type Secret#type}
   */
   readonly type?: string;
   /**
   * Terraform will wait for the service account token to be created.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#wait_for_service_account_token Secret#wait_for_service_account_token}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#wait_for_service_account_token Secret#wait_for_service_account_token}
   */
   readonly waitForServiceAccountToken?: boolean | cdktf.IResolvable;
   /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#metadata Secret#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#metadata Secret#metadata}
   */
   readonly metadata: SecretMetadata;
   /**
   * timeouts block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#timeouts Secret#timeouts}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#timeouts Secret#timeouts}
   */
   readonly timeouts?: SecretTimeouts;
 }
@@ -66,31 +85,31 @@ export interface SecretMetadata {
   /**
   * An unstructured key value map stored with the secret that may be used to store arbitrary metadata. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#annotations Secret#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#annotations Secret#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#generate_name Secret#generate_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#generate_name Secret#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the secret. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#labels Secret#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#labels Secret#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the secret, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#name Secret#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#name Secret#name}
   */
   readonly name?: string;
   /**
   * Namespace defines the space within which name of the secret must be unique.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#namespace Secret#namespace}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#namespace Secret#namespace}
   */
   readonly namespace?: string;
 }
@@ -305,7 +324,7 @@ export class SecretMetadataOutputReference extends cdktf.ComplexObject {
 }
 export interface SecretTimeouts {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#create Secret#create}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#create Secret#create}
   */
   readonly create?: string;
 }
@@ -399,7 +418,7 @@ export class SecretTimeoutsOutputReference extends cdktf.ComplexObject {
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret kubernetes_secret}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret kubernetes_secret}
 */
 export class Secret extends cdktf.TerraformResource {
 
@@ -415,7 +434,7 @@ export class Secret extends cdktf.TerraformResource {
   * Generates CDKTF code for importing a Secret resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the Secret to import
-  * @param importFromId The id of the existing Secret that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing Secret that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the Secret to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -427,7 +446,7 @@ export class Secret extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret kubernetes_secret} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret kubernetes_secret} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -438,7 +457,7 @@ export class Secret extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_secret',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.35.1',
+        providerVersion: '2.36.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
@@ -450,7 +469,11 @@ export class Secret extends cdktf.TerraformResource {
       forEach: config.forEach
     });
     this._binaryData = config.binaryData;
+    this._binaryDataWo = config.binaryDataWo;
+    this._binaryDataWoRevision = config.binaryDataWoRevision;
     this._data = config.data;
+    this._dataWo = config.dataWo;
+    this._dataWoRevision = config.dataWoRevision;
     this._id = config.id;
     this._immutable = config.immutable;
     this._type = config.type;
@@ -479,6 +502,38 @@ export class Secret extends cdktf.TerraformResource {
     return this._binaryData;
   }
 
+  // binary_data_wo - computed: false, optional: true, required: false
+  private _binaryDataWo?: { [key: string]: string }; 
+  public get binaryDataWo() {
+    return this.getStringMapAttribute('binary_data_wo');
+  }
+  public set binaryDataWo(value: { [key: string]: string }) {
+    this._binaryDataWo = value;
+  }
+  public resetBinaryDataWo() {
+    this._binaryDataWo = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get binaryDataWoInput() {
+    return this._binaryDataWo;
+  }
+
+  // binary_data_wo_revision - computed: false, optional: true, required: false
+  private _binaryDataWoRevision?: number; 
+  public get binaryDataWoRevision() {
+    return this.getNumberAttribute('binary_data_wo_revision');
+  }
+  public set binaryDataWoRevision(value: number) {
+    this._binaryDataWoRevision = value;
+  }
+  public resetBinaryDataWoRevision() {
+    this._binaryDataWoRevision = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get binaryDataWoRevisionInput() {
+    return this._binaryDataWoRevision;
+  }
+
   // data - computed: true, optional: true, required: false
   private _data?: { [key: string]: string }; 
   public get data() {
@@ -493,6 +548,38 @@ export class Secret extends cdktf.TerraformResource {
   // Temporarily expose input value. Use with caution.
   public get dataInput() {
     return this._data;
+  }
+
+  // data_wo - computed: false, optional: true, required: false
+  private _dataWo?: { [key: string]: string }; 
+  public get dataWo() {
+    return this.getStringMapAttribute('data_wo');
+  }
+  public set dataWo(value: { [key: string]: string }) {
+    this._dataWo = value;
+  }
+  public resetDataWo() {
+    this._dataWo = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get dataWoInput() {
+    return this._dataWo;
+  }
+
+  // data_wo_revision - computed: false, optional: true, required: false
+  private _dataWoRevision?: number; 
+  public get dataWoRevision() {
+    return this.getNumberAttribute('data_wo_revision');
+  }
+  public set dataWoRevision(value: number) {
+    this._dataWoRevision = value;
+  }
+  public resetDataWoRevision() {
+    this._dataWoRevision = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get dataWoRevisionInput() {
+    return this._dataWoRevision;
   }
 
   // id - computed: true, optional: true, required: false
@@ -595,7 +682,11 @@ export class Secret extends cdktf.TerraformResource {
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
       binary_data: cdktf.hashMapper(cdktf.stringToTerraform)(this._binaryData),
+      binary_data_wo: cdktf.hashMapper(cdktf.stringToTerraform)(this._binaryDataWo),
+      binary_data_wo_revision: cdktf.numberToTerraform(this._binaryDataWoRevision),
       data: cdktf.hashMapper(cdktf.stringToTerraform)(this._data),
+      data_wo: cdktf.hashMapper(cdktf.stringToTerraform)(this._dataWo),
+      data_wo_revision: cdktf.numberToTerraform(this._dataWoRevision),
       id: cdktf.stringToTerraform(this._id),
       immutable: cdktf.booleanToTerraform(this._immutable),
       type: cdktf.stringToTerraform(this._type),
@@ -613,11 +704,35 @@ export class Secret extends cdktf.TerraformResource {
         type: "map",
         storageClassType: "stringMap",
       },
+      binary_data_wo: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._binaryDataWo),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      binary_data_wo_revision: {
+        value: cdktf.numberToHclTerraform(this._binaryDataWoRevision),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
       data: {
         value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._data),
         isBlock: false,
         type: "map",
         storageClassType: "stringMap",
+      },
+      data_wo: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._dataWo),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      data_wo_revision: {
+        value: cdktf.numberToHclTerraform(this._dataWoRevision),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
       },
       id: {
         value: cdktf.stringToHclTerraform(this._id),
