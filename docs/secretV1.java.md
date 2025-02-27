@@ -4,7 +4,7 @@
 
 ### SecretV1 <a name="SecretV1" id="@cdktf/provider-kubernetes.secretV1.SecretV1"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1 kubernetes_secret_v1}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1 kubernetes_secret_v1}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.secretV1.SecretV1.Initializer"></a>
 
@@ -25,7 +25,11 @@ SecretV1.Builder.create(Construct scope, java.lang.String id)
 //  .provisioners(RemoteExecProvisioner>)
     .metadata(SecretV1Metadata)
 //  .binaryData(java.util.Map<java.lang.String, java.lang.String>)
+//  .binaryDataWo(java.util.Map<java.lang.String, java.lang.String>)
+//  .binaryDataWoRevision(java.lang.Number)
 //  .data(java.util.Map<java.lang.String, java.lang.String>)
+//  .dataWo(java.util.Map<java.lang.String, java.lang.String>)
+//  .dataWoRevision(java.lang.Number)
 //  .id(java.lang.String)
 //  .immutable(java.lang.Boolean)
 //  .immutable(IResolvable)
@@ -49,8 +53,12 @@ SecretV1.Builder.create(Construct scope, java.lang.String id)
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.Initializer.parameter.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.Initializer.parameter.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Metadata">SecretV1Metadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.Initializer.parameter.binaryData">binaryData</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | A map of the secret data in base64 encoding. Use this for binary data. |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.Initializer.parameter.binaryDataWo">binaryDataWo</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | A write-only map of the secret data in base64 encoding. Use this for binary data. |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.Initializer.parameter.binaryDataWoRevision">binaryDataWoRevision</a></code> | <code>java.lang.Number</code> | The current revision of the write-only "binary_data_wo" attribute. |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.Initializer.parameter.data">data</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | A map of the secret data. |
-| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#id SecretV1#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.Initializer.parameter.dataWo">dataWo</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | A map write-only of the secret data. |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.Initializer.parameter.dataWoRevision">dataWoRevision</a></code> | <code>java.lang.Number</code> | The current revision of the write-only "data_wo" attribute. |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#id SecretV1#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.Initializer.parameter.immutable">immutable</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Ensures that data stored in the Secret cannot be updated (only object metadata can be modified). |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.Initializer.parameter.timeouts">timeouts</a></code> | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Timeouts">SecretV1Timeouts</a></code> | timeouts block. |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.Initializer.parameter.type">type</a></code> | <code>java.lang.String</code> | Type of secret. |
@@ -124,7 +132,7 @@ Must be unique amongst siblings in the same scope
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#metadata SecretV1#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#metadata SecretV1#metadata}
 
 ---
 
@@ -134,7 +142,29 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 A map of the secret data in base64 encoding. Use this for binary data.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#binary_data SecretV1#binary_data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#binary_data SecretV1#binary_data}
+
+---
+
+##### `binaryDataWo`<sup>Optional</sup> <a name="binaryDataWo" id="@cdktf/provider-kubernetes.secretV1.SecretV1.Initializer.parameter.binaryDataWo"></a>
+
+- *Type:* java.util.Map<java.lang.String, java.lang.String>
+
+A write-only map of the secret data in base64 encoding. Use this for binary data.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#binary_data_wo SecretV1#binary_data_wo}
+
+---
+
+##### `binaryDataWoRevision`<sup>Optional</sup> <a name="binaryDataWoRevision" id="@cdktf/provider-kubernetes.secretV1.SecretV1.Initializer.parameter.binaryDataWoRevision"></a>
+
+- *Type:* java.lang.Number
+
+The current revision of the write-only "binary_data_wo" attribute.
+
+Incrementing this integer value will cause Terraform to update the write-only value.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#binary_data_wo_revision SecretV1#binary_data_wo_revision}
 
 ---
 
@@ -144,7 +174,29 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 A map of the secret data.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#data SecretV1#data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#data SecretV1#data}
+
+---
+
+##### `dataWo`<sup>Optional</sup> <a name="dataWo" id="@cdktf/provider-kubernetes.secretV1.SecretV1.Initializer.parameter.dataWo"></a>
+
+- *Type:* java.util.Map<java.lang.String, java.lang.String>
+
+A map write-only of the secret data.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#data_wo SecretV1#data_wo}
+
+---
+
+##### `dataWoRevision`<sup>Optional</sup> <a name="dataWoRevision" id="@cdktf/provider-kubernetes.secretV1.SecretV1.Initializer.parameter.dataWoRevision"></a>
+
+- *Type:* java.lang.Number
+
+The current revision of the write-only "data_wo" attribute.
+
+Incrementing this integer value will cause Terraform to update the write-only value.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#data_wo_revision SecretV1#data_wo_revision}
 
 ---
 
@@ -152,7 +204,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 - *Type:* java.lang.String
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#id SecretV1#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#id SecretV1#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -165,7 +217,7 @@ If you experience problems setting this value it might not be settable. Please t
 
 Ensures that data stored in the Secret cannot be updated (only object metadata can be modified).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#immutable SecretV1#immutable}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#immutable SecretV1#immutable}
 
 ---
 
@@ -175,7 +227,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 timeouts block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#timeouts SecretV1#timeouts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#timeouts SecretV1#timeouts}
 
 ---
 
@@ -185,7 +237,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 Type of secret.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#type SecretV1#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#type SecretV1#type}
 
 ---
 
@@ -195,7 +247,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 Terraform will wait for the service account token to be created.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#wait_for_service_account_token SecretV1#wait_for_service_account_token}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#wait_for_service_account_token SecretV1#wait_for_service_account_token}
 
 ---
 
@@ -229,7 +281,11 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.putMetadata">putMetadata</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.putTimeouts">putTimeouts</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.resetBinaryData">resetBinaryData</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.resetBinaryDataWo">resetBinaryDataWo</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.resetBinaryDataWoRevision">resetBinaryDataWoRevision</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.resetData">resetData</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.resetDataWo">resetDataWo</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.resetDataWoRevision">resetDataWoRevision</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.resetId">resetId</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.resetImmutable">resetImmutable</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.resetTimeouts">resetTimeouts</a></code> | *No description.* |
@@ -558,10 +614,34 @@ public void putTimeouts(SecretV1Timeouts value)
 public void resetBinaryData()
 ```
 
+##### `resetBinaryDataWo` <a name="resetBinaryDataWo" id="@cdktf/provider-kubernetes.secretV1.SecretV1.resetBinaryDataWo"></a>
+
+```java
+public void resetBinaryDataWo()
+```
+
+##### `resetBinaryDataWoRevision` <a name="resetBinaryDataWoRevision" id="@cdktf/provider-kubernetes.secretV1.SecretV1.resetBinaryDataWoRevision"></a>
+
+```java
+public void resetBinaryDataWoRevision()
+```
+
 ##### `resetData` <a name="resetData" id="@cdktf/provider-kubernetes.secretV1.SecretV1.resetData"></a>
 
 ```java
 public void resetData()
+```
+
+##### `resetDataWo` <a name="resetDataWo" id="@cdktf/provider-kubernetes.secretV1.SecretV1.resetDataWo"></a>
+
+```java
+public void resetDataWo()
+```
+
+##### `resetDataWoRevision` <a name="resetDataWoRevision" id="@cdktf/provider-kubernetes.secretV1.SecretV1.resetDataWoRevision"></a>
+
+```java
+public void resetDataWoRevision()
 ```
 
 ##### `resetId` <a name="resetId" id="@cdktf/provider-kubernetes.secretV1.SecretV1.resetId"></a>
@@ -697,7 +777,7 @@ The construct id used in the generated config for the SecretV1 to import.
 
 The id of the existing SecretV1 that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -730,7 +810,11 @@ Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1MetadataOutputReference">SecretV1MetadataOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.timeouts">timeouts</a></code> | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1TimeoutsOutputReference">SecretV1TimeoutsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.binaryDataInput">binaryDataInput</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.binaryDataWoInput">binaryDataWoInput</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.binaryDataWoRevisionInput">binaryDataWoRevisionInput</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.dataInput">dataInput</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.dataWoInput">dataWoInput</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.dataWoRevisionInput">dataWoRevisionInput</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.idInput">idInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.immutableInput">immutableInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.metadataInput">metadataInput</a></code> | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Metadata">SecretV1Metadata</a></code> | *No description.* |
@@ -738,7 +822,11 @@ Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.typeInput">typeInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.waitForServiceAccountTokenInput">waitForServiceAccountTokenInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.binaryData">binaryData</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.binaryDataWo">binaryDataWo</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.binaryDataWoRevision">binaryDataWoRevision</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.data">data</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.dataWo">dataWo</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.dataWoRevision">dataWoRevision</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.id">id</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.immutable">immutable</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1.property.type">type</a></code> | <code>java.lang.String</code> | *No description.* |
@@ -918,6 +1006,26 @@ public java.util.Map<java.lang.String, java.lang.String> getBinaryDataInput();
 
 ---
 
+##### `binaryDataWoInput`<sup>Optional</sup> <a name="binaryDataWoInput" id="@cdktf/provider-kubernetes.secretV1.SecretV1.property.binaryDataWoInput"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.String> getBinaryDataWoInput();
+```
+
+- *Type:* java.util.Map<java.lang.String, java.lang.String>
+
+---
+
+##### `binaryDataWoRevisionInput`<sup>Optional</sup> <a name="binaryDataWoRevisionInput" id="@cdktf/provider-kubernetes.secretV1.SecretV1.property.binaryDataWoRevisionInput"></a>
+
+```java
+public java.lang.Number getBinaryDataWoRevisionInput();
+```
+
+- *Type:* java.lang.Number
+
+---
+
 ##### `dataInput`<sup>Optional</sup> <a name="dataInput" id="@cdktf/provider-kubernetes.secretV1.SecretV1.property.dataInput"></a>
 
 ```java
@@ -925,6 +1033,26 @@ public java.util.Map<java.lang.String, java.lang.String> getDataInput();
 ```
 
 - *Type:* java.util.Map<java.lang.String, java.lang.String>
+
+---
+
+##### `dataWoInput`<sup>Optional</sup> <a name="dataWoInput" id="@cdktf/provider-kubernetes.secretV1.SecretV1.property.dataWoInput"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.String> getDataWoInput();
+```
+
+- *Type:* java.util.Map<java.lang.String, java.lang.String>
+
+---
+
+##### `dataWoRevisionInput`<sup>Optional</sup> <a name="dataWoRevisionInput" id="@cdktf/provider-kubernetes.secretV1.SecretV1.property.dataWoRevisionInput"></a>
+
+```java
+public java.lang.Number getDataWoRevisionInput();
+```
+
+- *Type:* java.lang.Number
 
 ---
 
@@ -998,6 +1126,26 @@ public java.util.Map<java.lang.String, java.lang.String> getBinaryData();
 
 ---
 
+##### `binaryDataWo`<sup>Required</sup> <a name="binaryDataWo" id="@cdktf/provider-kubernetes.secretV1.SecretV1.property.binaryDataWo"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.String> getBinaryDataWo();
+```
+
+- *Type:* java.util.Map<java.lang.String, java.lang.String>
+
+---
+
+##### `binaryDataWoRevision`<sup>Required</sup> <a name="binaryDataWoRevision" id="@cdktf/provider-kubernetes.secretV1.SecretV1.property.binaryDataWoRevision"></a>
+
+```java
+public java.lang.Number getBinaryDataWoRevision();
+```
+
+- *Type:* java.lang.Number
+
+---
+
 ##### `data`<sup>Required</sup> <a name="data" id="@cdktf/provider-kubernetes.secretV1.SecretV1.property.data"></a>
 
 ```java
@@ -1005,6 +1153,26 @@ public java.util.Map<java.lang.String, java.lang.String> getData();
 ```
 
 - *Type:* java.util.Map<java.lang.String, java.lang.String>
+
+---
+
+##### `dataWo`<sup>Required</sup> <a name="dataWo" id="@cdktf/provider-kubernetes.secretV1.SecretV1.property.dataWo"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.String> getDataWo();
+```
+
+- *Type:* java.util.Map<java.lang.String, java.lang.String>
+
+---
+
+##### `dataWoRevision`<sup>Required</sup> <a name="dataWoRevision" id="@cdktf/provider-kubernetes.secretV1.SecretV1.property.dataWoRevision"></a>
+
+```java
+public java.lang.Number getDataWoRevision();
+```
+
+- *Type:* java.lang.Number
 
 ---
 
@@ -1089,7 +1257,11 @@ SecretV1Config.builder()
 //  .provisioners(RemoteExecProvisioner>)
     .metadata(SecretV1Metadata)
 //  .binaryData(java.util.Map<java.lang.String, java.lang.String>)
+//  .binaryDataWo(java.util.Map<java.lang.String, java.lang.String>)
+//  .binaryDataWoRevision(java.lang.Number)
 //  .data(java.util.Map<java.lang.String, java.lang.String>)
+//  .dataWo(java.util.Map<java.lang.String, java.lang.String>)
+//  .dataWoRevision(java.lang.Number)
 //  .id(java.lang.String)
 //  .immutable(java.lang.Boolean)
 //  .immutable(IResolvable)
@@ -1113,8 +1285,12 @@ SecretV1Config.builder()
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Config.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Config.property.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Metadata">SecretV1Metadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Config.property.binaryData">binaryData</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | A map of the secret data in base64 encoding. Use this for binary data. |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Config.property.binaryDataWo">binaryDataWo</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | A write-only map of the secret data in base64 encoding. Use this for binary data. |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Config.property.binaryDataWoRevision">binaryDataWoRevision</a></code> | <code>java.lang.Number</code> | The current revision of the write-only "binary_data_wo" attribute. |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Config.property.data">data</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | A map of the secret data. |
-| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Config.property.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#id SecretV1#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Config.property.dataWo">dataWo</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | A map write-only of the secret data. |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Config.property.dataWoRevision">dataWoRevision</a></code> | <code>java.lang.Number</code> | The current revision of the write-only "data_wo" attribute. |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Config.property.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#id SecretV1#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Config.property.immutable">immutable</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Ensures that data stored in the Secret cannot be updated (only object metadata can be modified). |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Config.property.timeouts">timeouts</a></code> | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Timeouts">SecretV1Timeouts</a></code> | timeouts block. |
 | <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Config.property.type">type</a></code> | <code>java.lang.String</code> | Type of secret. |
@@ -1202,7 +1378,7 @@ public SecretV1Metadata getMetadata();
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#metadata SecretV1#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#metadata SecretV1#metadata}
 
 ---
 
@@ -1216,7 +1392,37 @@ public java.util.Map<java.lang.String, java.lang.String> getBinaryData();
 
 A map of the secret data in base64 encoding. Use this for binary data.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#binary_data SecretV1#binary_data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#binary_data SecretV1#binary_data}
+
+---
+
+##### `binaryDataWo`<sup>Optional</sup> <a name="binaryDataWo" id="@cdktf/provider-kubernetes.secretV1.SecretV1Config.property.binaryDataWo"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.String> getBinaryDataWo();
+```
+
+- *Type:* java.util.Map<java.lang.String, java.lang.String>
+
+A write-only map of the secret data in base64 encoding. Use this for binary data.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#binary_data_wo SecretV1#binary_data_wo}
+
+---
+
+##### `binaryDataWoRevision`<sup>Optional</sup> <a name="binaryDataWoRevision" id="@cdktf/provider-kubernetes.secretV1.SecretV1Config.property.binaryDataWoRevision"></a>
+
+```java
+public java.lang.Number getBinaryDataWoRevision();
+```
+
+- *Type:* java.lang.Number
+
+The current revision of the write-only "binary_data_wo" attribute.
+
+Incrementing this integer value will cause Terraform to update the write-only value.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#binary_data_wo_revision SecretV1#binary_data_wo_revision}
 
 ---
 
@@ -1230,7 +1436,37 @@ public java.util.Map<java.lang.String, java.lang.String> getData();
 
 A map of the secret data.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#data SecretV1#data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#data SecretV1#data}
+
+---
+
+##### `dataWo`<sup>Optional</sup> <a name="dataWo" id="@cdktf/provider-kubernetes.secretV1.SecretV1Config.property.dataWo"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.String> getDataWo();
+```
+
+- *Type:* java.util.Map<java.lang.String, java.lang.String>
+
+A map write-only of the secret data.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#data_wo SecretV1#data_wo}
+
+---
+
+##### `dataWoRevision`<sup>Optional</sup> <a name="dataWoRevision" id="@cdktf/provider-kubernetes.secretV1.SecretV1Config.property.dataWoRevision"></a>
+
+```java
+public java.lang.Number getDataWoRevision();
+```
+
+- *Type:* java.lang.Number
+
+The current revision of the write-only "data_wo" attribute.
+
+Incrementing this integer value will cause Terraform to update the write-only value.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#data_wo_revision SecretV1#data_wo_revision}
 
 ---
 
@@ -1242,7 +1478,7 @@ public java.lang.String getId();
 
 - *Type:* java.lang.String
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#id SecretV1#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#id SecretV1#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1259,7 +1495,7 @@ public java.lang.Object getImmutable();
 
 Ensures that data stored in the Secret cannot be updated (only object metadata can be modified).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#immutable SecretV1#immutable}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#immutable SecretV1#immutable}
 
 ---
 
@@ -1273,7 +1509,7 @@ public SecretV1Timeouts getTimeouts();
 
 timeouts block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#timeouts SecretV1#timeouts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#timeouts SecretV1#timeouts}
 
 ---
 
@@ -1287,7 +1523,7 @@ public java.lang.String getType();
 
 Type of secret.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#type SecretV1#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#type SecretV1#type}
 
 ---
 
@@ -1301,7 +1537,7 @@ public java.lang.Object getWaitForServiceAccountToken();
 
 Terraform will wait for the service account token to be created.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#wait_for_service_account_token SecretV1#wait_for_service_account_token}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#wait_for_service_account_token SecretV1#wait_for_service_account_token}
 
 ---
 
@@ -1345,7 +1581,7 @@ An unstructured key value map stored with the secret that may be used to store a
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#annotations SecretV1#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#annotations SecretV1#annotations}
 
 ---
 
@@ -1361,7 +1597,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#generate_name SecretV1#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#generate_name SecretV1#generate_name}
 
 ---
 
@@ -1377,7 +1613,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#labels SecretV1#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#labels SecretV1#labels}
 
 ---
 
@@ -1391,7 +1627,7 @@ public java.lang.String getName();
 
 Name of the secret, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#name SecretV1#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#name SecretV1#name}
 
 ---
 
@@ -1405,7 +1641,7 @@ public java.lang.String getNamespace();
 
 Namespace defines the space within which name of the secret must be unique.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#namespace SecretV1#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#namespace SecretV1#namespace}
 
 ---
 
@@ -1425,7 +1661,7 @@ SecretV1Timeouts.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Timeouts.property.create">create</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#create SecretV1#create}. |
+| <code><a href="#@cdktf/provider-kubernetes.secretV1.SecretV1Timeouts.property.create">create</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#create SecretV1#create}. |
 
 ---
 
@@ -1437,7 +1673,7 @@ public java.lang.String getCreate();
 
 - *Type:* java.lang.String
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret_v1#create SecretV1#create}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret_v1#create SecretV1#create}.
 
 ---
 

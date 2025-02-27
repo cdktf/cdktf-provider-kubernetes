@@ -4,7 +4,7 @@
 
 ### Secret <a name="Secret" id="@cdktf/provider-kubernetes.secret.Secret"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret kubernetes_secret}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret kubernetes_secret}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.secret.Secret.Initializer"></a>
 
@@ -76,7 +76,11 @@ Must be unique amongst siblings in the same scope
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.putMetadata">PutMetadata</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.putTimeouts">PutTimeouts</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.resetBinaryData">ResetBinaryData</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secret.Secret.resetBinaryDataWo">ResetBinaryDataWo</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secret.Secret.resetBinaryDataWoRevision">ResetBinaryDataWoRevision</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.resetData">ResetData</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secret.Secret.resetDataWo">ResetDataWo</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secret.Secret.resetDataWoRevision">ResetDataWoRevision</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.resetId">ResetId</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.resetImmutable">ResetImmutable</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.resetTimeouts">ResetTimeouts</a></code> | *No description.* |
@@ -403,10 +407,34 @@ func PutTimeouts(value SecretTimeouts)
 func ResetBinaryData()
 ```
 
+##### `ResetBinaryDataWo` <a name="ResetBinaryDataWo" id="@cdktf/provider-kubernetes.secret.Secret.resetBinaryDataWo"></a>
+
+```go
+func ResetBinaryDataWo()
+```
+
+##### `ResetBinaryDataWoRevision` <a name="ResetBinaryDataWoRevision" id="@cdktf/provider-kubernetes.secret.Secret.resetBinaryDataWoRevision"></a>
+
+```go
+func ResetBinaryDataWoRevision()
+```
+
 ##### `ResetData` <a name="ResetData" id="@cdktf/provider-kubernetes.secret.Secret.resetData"></a>
 
 ```go
 func ResetData()
+```
+
+##### `ResetDataWo` <a name="ResetDataWo" id="@cdktf/provider-kubernetes.secret.Secret.resetDataWo"></a>
+
+```go
+func ResetDataWo()
+```
+
+##### `ResetDataWoRevision` <a name="ResetDataWoRevision" id="@cdktf/provider-kubernetes.secret.Secret.resetDataWoRevision"></a>
+
+```go
+func ResetDataWoRevision()
 ```
 
 ##### `ResetId` <a name="ResetId" id="@cdktf/provider-kubernetes.secret.Secret.resetId"></a>
@@ -542,7 +570,7 @@ The construct id used in the generated config for the Secret to import.
 
 The id of the existing Secret that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -575,7 +603,11 @@ Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.secret.SecretMetadataOutputReference">SecretMetadataOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.timeouts">Timeouts</a></code> | <code><a href="#@cdktf/provider-kubernetes.secret.SecretTimeoutsOutputReference">SecretTimeoutsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.binaryDataInput">BinaryDataInput</a></code> | <code>*map[string]*string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.binaryDataWoInput">BinaryDataWoInput</a></code> | <code>*map[string]*string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.binaryDataWoRevisionInput">BinaryDataWoRevisionInput</a></code> | <code>*f64</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.dataInput">DataInput</a></code> | <code>*map[string]*string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.dataWoInput">DataWoInput</a></code> | <code>*map[string]*string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.dataWoRevisionInput">DataWoRevisionInput</a></code> | <code>*f64</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.idInput">IdInput</a></code> | <code>*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.immutableInput">ImmutableInput</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.metadataInput">MetadataInput</a></code> | <code><a href="#@cdktf/provider-kubernetes.secret.SecretMetadata">SecretMetadata</a></code> | *No description.* |
@@ -583,7 +615,11 @@ Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.typeInput">TypeInput</a></code> | <code>*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.waitForServiceAccountTokenInput">WaitForServiceAccountTokenInput</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.binaryData">BinaryData</a></code> | <code>*map[string]*string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.binaryDataWo">BinaryDataWo</a></code> | <code>*map[string]*string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.binaryDataWoRevision">BinaryDataWoRevision</a></code> | <code>*f64</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.data">Data</a></code> | <code>*map[string]*string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.dataWo">DataWo</a></code> | <code>*map[string]*string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.dataWoRevision">DataWoRevision</a></code> | <code>*f64</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.id">Id</a></code> | <code>*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.immutable">Immutable</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.property.type">Type</a></code> | <code>*string</code> | *No description.* |
@@ -763,6 +799,26 @@ func BinaryDataInput() *map[string]*string
 
 ---
 
+##### `BinaryDataWoInput`<sup>Optional</sup> <a name="BinaryDataWoInput" id="@cdktf/provider-kubernetes.secret.Secret.property.binaryDataWoInput"></a>
+
+```go
+func BinaryDataWoInput() *map[string]*string
+```
+
+- *Type:* *map[string]*string
+
+---
+
+##### `BinaryDataWoRevisionInput`<sup>Optional</sup> <a name="BinaryDataWoRevisionInput" id="@cdktf/provider-kubernetes.secret.Secret.property.binaryDataWoRevisionInput"></a>
+
+```go
+func BinaryDataWoRevisionInput() *f64
+```
+
+- *Type:* *f64
+
+---
+
 ##### `DataInput`<sup>Optional</sup> <a name="DataInput" id="@cdktf/provider-kubernetes.secret.Secret.property.dataInput"></a>
 
 ```go
@@ -770,6 +826,26 @@ func DataInput() *map[string]*string
 ```
 
 - *Type:* *map[string]*string
+
+---
+
+##### `DataWoInput`<sup>Optional</sup> <a name="DataWoInput" id="@cdktf/provider-kubernetes.secret.Secret.property.dataWoInput"></a>
+
+```go
+func DataWoInput() *map[string]*string
+```
+
+- *Type:* *map[string]*string
+
+---
+
+##### `DataWoRevisionInput`<sup>Optional</sup> <a name="DataWoRevisionInput" id="@cdktf/provider-kubernetes.secret.Secret.property.dataWoRevisionInput"></a>
+
+```go
+func DataWoRevisionInput() *f64
+```
+
+- *Type:* *f64
 
 ---
 
@@ -843,6 +919,26 @@ func BinaryData() *map[string]*string
 
 ---
 
+##### `BinaryDataWo`<sup>Required</sup> <a name="BinaryDataWo" id="@cdktf/provider-kubernetes.secret.Secret.property.binaryDataWo"></a>
+
+```go
+func BinaryDataWo() *map[string]*string
+```
+
+- *Type:* *map[string]*string
+
+---
+
+##### `BinaryDataWoRevision`<sup>Required</sup> <a name="BinaryDataWoRevision" id="@cdktf/provider-kubernetes.secret.Secret.property.binaryDataWoRevision"></a>
+
+```go
+func BinaryDataWoRevision() *f64
+```
+
+- *Type:* *f64
+
+---
+
 ##### `Data`<sup>Required</sup> <a name="Data" id="@cdktf/provider-kubernetes.secret.Secret.property.data"></a>
 
 ```go
@@ -850,6 +946,26 @@ func Data() *map[string]*string
 ```
 
 - *Type:* *map[string]*string
+
+---
+
+##### `DataWo`<sup>Required</sup> <a name="DataWo" id="@cdktf/provider-kubernetes.secret.Secret.property.dataWo"></a>
+
+```go
+func DataWo() *map[string]*string
+```
+
+- *Type:* *map[string]*string
+
+---
+
+##### `DataWoRevision`<sup>Required</sup> <a name="DataWoRevision" id="@cdktf/provider-kubernetes.secret.Secret.property.dataWoRevision"></a>
+
+```go
+func DataWoRevision() *f64
+```
+
+- *Type:* *f64
 
 ---
 
@@ -930,7 +1046,11 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/secret"
 	Provisioners: *[]interface{},
 	Metadata: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.secret.SecretMetadata,
 	BinaryData: *map[string]*string,
+	BinaryDataWo: *map[string]*string,
+	BinaryDataWoRevision: *f64,
 	Data: *map[string]*string,
+	DataWo: *map[string]*string,
+	DataWoRevision: *f64,
 	Id: *string,
 	Immutable: interface{},
 	Timeouts: github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11.secret.SecretTimeouts,
@@ -952,8 +1072,12 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/secret"
 | <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.provisioners">Provisioners</a></code> | <code>*[]interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.metadata">Metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.secret.SecretMetadata">SecretMetadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.binaryData">BinaryData</a></code> | <code>*map[string]*string</code> | A map of the secret data in base64 encoding. Use this for binary data. |
+| <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.binaryDataWo">BinaryDataWo</a></code> | <code>*map[string]*string</code> | A write-only map of the secret data in base64 encoding. Use this for binary data. |
+| <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.binaryDataWoRevision">BinaryDataWoRevision</a></code> | <code>*f64</code> | The current revision of the write-only "binary_data_wo" attribute. |
 | <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.data">Data</a></code> | <code>*map[string]*string</code> | A map of the secret data. |
-| <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#id Secret#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.dataWo">DataWo</a></code> | <code>*map[string]*string</code> | A map write-only of the secret data. |
+| <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.dataWoRevision">DataWoRevision</a></code> | <code>*f64</code> | The current revision of the write-only "data_wo" attribute. |
+| <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#id Secret#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.immutable">Immutable</a></code> | <code>interface{}</code> | Ensures that data stored in the Secret cannot be updated (only object metadata can be modified). |
 | <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.timeouts">Timeouts</a></code> | <code><a href="#@cdktf/provider-kubernetes.secret.SecretTimeouts">SecretTimeouts</a></code> | timeouts block. |
 | <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.type">Type</a></code> | <code>*string</code> | Type of secret. |
@@ -1041,7 +1165,7 @@ Metadata SecretMetadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#metadata Secret#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#metadata Secret#metadata}
 
 ---
 
@@ -1055,7 +1179,37 @@ BinaryData *map[string]*string
 
 A map of the secret data in base64 encoding. Use this for binary data.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#binary_data Secret#binary_data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#binary_data Secret#binary_data}
+
+---
+
+##### `BinaryDataWo`<sup>Optional</sup> <a name="BinaryDataWo" id="@cdktf/provider-kubernetes.secret.SecretConfig.property.binaryDataWo"></a>
+
+```go
+BinaryDataWo *map[string]*string
+```
+
+- *Type:* *map[string]*string
+
+A write-only map of the secret data in base64 encoding. Use this for binary data.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#binary_data_wo Secret#binary_data_wo}
+
+---
+
+##### `BinaryDataWoRevision`<sup>Optional</sup> <a name="BinaryDataWoRevision" id="@cdktf/provider-kubernetes.secret.SecretConfig.property.binaryDataWoRevision"></a>
+
+```go
+BinaryDataWoRevision *f64
+```
+
+- *Type:* *f64
+
+The current revision of the write-only "binary_data_wo" attribute.
+
+Incrementing this integer value will cause Terraform to update the write-only value.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#binary_data_wo_revision Secret#binary_data_wo_revision}
 
 ---
 
@@ -1069,7 +1223,37 @@ Data *map[string]*string
 
 A map of the secret data.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#data Secret#data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#data Secret#data}
+
+---
+
+##### `DataWo`<sup>Optional</sup> <a name="DataWo" id="@cdktf/provider-kubernetes.secret.SecretConfig.property.dataWo"></a>
+
+```go
+DataWo *map[string]*string
+```
+
+- *Type:* *map[string]*string
+
+A map write-only of the secret data.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#data_wo Secret#data_wo}
+
+---
+
+##### `DataWoRevision`<sup>Optional</sup> <a name="DataWoRevision" id="@cdktf/provider-kubernetes.secret.SecretConfig.property.dataWoRevision"></a>
+
+```go
+DataWoRevision *f64
+```
+
+- *Type:* *f64
+
+The current revision of the write-only "data_wo" attribute.
+
+Incrementing this integer value will cause Terraform to update the write-only value.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#data_wo_revision Secret#data_wo_revision}
 
 ---
 
@@ -1081,7 +1265,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#id Secret#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#id Secret#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1098,7 +1282,7 @@ Immutable interface{}
 
 Ensures that data stored in the Secret cannot be updated (only object metadata can be modified).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#immutable Secret#immutable}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#immutable Secret#immutable}
 
 ---
 
@@ -1112,7 +1296,7 @@ Timeouts SecretTimeouts
 
 timeouts block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#timeouts Secret#timeouts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#timeouts Secret#timeouts}
 
 ---
 
@@ -1126,7 +1310,7 @@ Type *string
 
 Type of secret.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#type Secret#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#type Secret#type}
 
 ---
 
@@ -1140,7 +1324,7 @@ WaitForServiceAccountToken interface{}
 
 Terraform will wait for the service account token to be created.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#wait_for_service_account_token Secret#wait_for_service_account_token}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#wait_for_service_account_token Secret#wait_for_service_account_token}
 
 ---
 
@@ -1184,7 +1368,7 @@ An unstructured key value map stored with the secret that may be used to store a
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#annotations Secret#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#annotations Secret#annotations}
 
 ---
 
@@ -1200,7 +1384,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#generate_name Secret#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#generate_name Secret#generate_name}
 
 ---
 
@@ -1216,7 +1400,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#labels Secret#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#labels Secret#labels}
 
 ---
 
@@ -1230,7 +1414,7 @@ Name *string
 
 Name of the secret, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#name Secret#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#name Secret#name}
 
 ---
 
@@ -1244,7 +1428,7 @@ Namespace *string
 
 Namespace defines the space within which name of the secret must be unique.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#namespace Secret#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#namespace Secret#namespace}
 
 ---
 
@@ -1264,7 +1448,7 @@ import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v11/secret"
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-kubernetes.secret.SecretTimeouts.property.create">Create</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#create Secret#create}. |
+| <code><a href="#@cdktf/provider-kubernetes.secret.SecretTimeouts.property.create">Create</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#create Secret#create}. |
 
 ---
 
@@ -1276,7 +1460,7 @@ Create *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret#create Secret#create}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#create Secret#create}.
 
 ---
 

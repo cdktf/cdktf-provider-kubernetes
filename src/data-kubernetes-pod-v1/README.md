@@ -1,3 +1,3 @@
 # `data_kubernetes_pod_v1`
 
-Refer to the Terraform Registry for docs: [`data_kubernetes_pod_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/data-sources/pod_v1).
+Refer to the Terraform Registry for docs: [`data_kubernetes_pod_v1`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/pod_v1).
