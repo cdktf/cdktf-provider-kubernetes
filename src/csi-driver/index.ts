@@ -1,9 +1,4 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/csi_driver
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/csi_driver
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -13,7 +8,7 @@ import * as cdktf from 'cdktf';
 
 export interface CsiDriverConfig extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/csi_driver#id CsiDriver#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/csi_driver#id CsiDriver#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -22,13 +17,13 @@ export interface CsiDriverConfig extends cdktf.TerraformMetaArguments {
   /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/csi_driver#metadata CsiDriver#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/csi_driver#metadata CsiDriver#metadata}
   */
   readonly metadata: CsiDriverMetadata;
   /**
   * spec block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/csi_driver#spec CsiDriver#spec}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/csi_driver#spec CsiDriver#spec}
   */
   readonly spec?: CsiDriverSpec;
 }
@@ -36,25 +31,25 @@ export interface CsiDriverMetadata {
   /**
   * An unstructured key value map stored with the csi driver that may be used to store arbitrary metadata. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/csi_driver#annotations CsiDriver#annotations}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/csi_driver#annotations CsiDriver#annotations}
   */
   readonly annotations?: { [key: string]: string };
   /**
   * Prefix, used by the server, to generate a unique name ONLY IF the `name` field has not been provided. This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/csi_driver#generate_name CsiDriver#generate_name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/csi_driver#generate_name CsiDriver#generate_name}
   */
   readonly generateName?: string;
   /**
   * Map of string keys and values that can be used to organize and categorize (scope and select) the csi driver. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/csi_driver#labels CsiDriver#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/csi_driver#labels CsiDriver#labels}
   */
   readonly labels?: { [key: string]: string };
   /**
   * Name of the csi driver, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/csi_driver#name CsiDriver#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/csi_driver#name CsiDriver#name}
   */
   readonly name?: string;
 }
@@ -242,19 +237,19 @@ export interface CsiDriverSpec {
   /**
   * Indicates if the CSI volume driver requires an attach operation
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/csi_driver#attach_required CsiDriver#attach_required}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/csi_driver#attach_required CsiDriver#attach_required}
   */
   readonly attachRequired: boolean | cdktf.IResolvable;
   /**
   * Indicates that the CSI volume driver requires additional pod information (like podName, podUID, etc.) during mount operations
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/csi_driver#pod_info_on_mount CsiDriver#pod_info_on_mount}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/csi_driver#pod_info_on_mount CsiDriver#pod_info_on_mount}
   */
   readonly podInfoOnMount?: boolean | cdktf.IResolvable;
   /**
   * Defines what kind of volumes this CSI volume driver supports
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/csi_driver#volume_lifecycle_modes CsiDriver#volume_lifecycle_modes}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/csi_driver#volume_lifecycle_modes CsiDriver#volume_lifecycle_modes}
   */
   readonly volumeLifecycleModes?: string[];
 }
@@ -393,7 +388,7 @@ export class CsiDriverSpecOutputReference extends cdktf.ComplexObject {
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/csi_driver kubernetes_csi_driver}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/csi_driver kubernetes_csi_driver}
 */
 export class CsiDriver extends cdktf.TerraformResource {
 
@@ -409,7 +404,7 @@ export class CsiDriver extends cdktf.TerraformResource {
   * Generates CDKTF code for importing a CsiDriver resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the CsiDriver to import
-  * @param importFromId The id of the existing CsiDriver that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/csi_driver#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing CsiDriver that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/csi_driver#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the CsiDriver to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -421,7 +416,7 @@ export class CsiDriver extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/csi_driver kubernetes_csi_driver} Resource
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/csi_driver kubernetes_csi_driver} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -432,7 +427,7 @@ export class CsiDriver extends cdktf.TerraformResource {
       terraformResourceType: 'kubernetes_csi_driver',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.36.0',
+        providerVersion: '2.37.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
