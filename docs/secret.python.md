@@ -4,7 +4,7 @@
 
 ### Secret <a name="Secret" id="@cdktf/provider-kubernetes.secret.Secret"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret kubernetes_secret}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret kubernetes_secret}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.secret.Secret.Initializer"></a>
 
@@ -54,7 +54,7 @@ secret.Secret(
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.Initializer.parameter.data">data</a></code> | <code>typing.Mapping[str]</code> | A map of the secret data. |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.Initializer.parameter.dataWo">data_wo</a></code> | <code>typing.Mapping[str]</code> | A map write-only of the secret data. |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.Initializer.parameter.dataWoRevision">data_wo_revision</a></code> | <code>typing.Union[int, float]</code> | The current revision of the write-only "data_wo" attribute. |
-| <code><a href="#@cdktf/provider-kubernetes.secret.Secret.Initializer.parameter.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#id Secret#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.secret.Secret.Initializer.parameter.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#id Secret#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.Initializer.parameter.immutable">immutable</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Ensures that data stored in the Secret cannot be updated (only object metadata can be modified). |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.Initializer.parameter.timeouts">timeouts</a></code> | <code><a href="#@cdktf/provider-kubernetes.secret.SecretTimeouts">SecretTimeouts</a></code> | timeouts block. |
 | <code><a href="#@cdktf/provider-kubernetes.secret.Secret.Initializer.parameter.type">type</a></code> | <code>str</code> | Type of secret. |
@@ -128,7 +128,7 @@ Must be unique amongst siblings in the same scope
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#metadata Secret#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#metadata Secret#metadata}
 
 ---
 
@@ -138,7 +138,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 A map of the secret data in base64 encoding. Use this for binary data.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#binary_data Secret#binary_data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#binary_data Secret#binary_data}
 
 ---
 
@@ -148,7 +148,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 A write-only map of the secret data in base64 encoding. Use this for binary data.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#binary_data_wo Secret#binary_data_wo}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#binary_data_wo Secret#binary_data_wo}
 
 ---
 
@@ -160,7 +160,7 @@ The current revision of the write-only "binary_data_wo" attribute.
 
 Incrementing this integer value will cause Terraform to update the write-only value.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#binary_data_wo_revision Secret#binary_data_wo_revision}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#binary_data_wo_revision Secret#binary_data_wo_revision}
 
 ---
 
@@ -170,7 +170,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 A map of the secret data.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#data Secret#data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#data Secret#data}
 
 ---
 
@@ -180,7 +180,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 A map write-only of the secret data.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#data_wo Secret#data_wo}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#data_wo Secret#data_wo}
 
 ---
 
@@ -192,7 +192,7 @@ The current revision of the write-only "data_wo" attribute.
 
 Incrementing this integer value will cause Terraform to update the write-only value.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#data_wo_revision Secret#data_wo_revision}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#data_wo_revision Secret#data_wo_revision}
 
 ---
 
@@ -200,7 +200,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 - *Type:* str
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#id Secret#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#id Secret#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -213,7 +213,7 @@ If you experience problems setting this value it might not be settable. Please t
 
 Ensures that data stored in the Secret cannot be updated (only object metadata can be modified).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#immutable Secret#immutable}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#immutable Secret#immutable}
 
 ---
 
@@ -223,7 +223,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 timeouts block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#timeouts Secret#timeouts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#timeouts Secret#timeouts}
 
 ---
 
@@ -233,7 +233,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 Type of secret.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#type Secret#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#type Secret#type}
 
 ---
 
@@ -243,7 +243,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 Terraform will wait for the service account token to be created.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#wait_for_service_account_token Secret#wait_for_service_account_token}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#wait_for_service_account_token Secret#wait_for_service_account_token}
 
 ---
 
@@ -635,7 +635,7 @@ An unstructured key value map stored with the secret that may be used to store a
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#annotations Secret#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#annotations Secret#annotations}
 
 ---
 
@@ -647,7 +647,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#generate_name Secret#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#generate_name Secret#generate_name}
 
 ---
 
@@ -659,7 +659,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#labels Secret#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#labels Secret#labels}
 
 ---
 
@@ -669,7 +669,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 Name of the secret, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#name Secret#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#name Secret#name}
 
 ---
 
@@ -679,7 +679,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 Namespace defines the space within which name of the secret must be unique.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#namespace Secret#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#namespace Secret#namespace}
 
 ---
 
@@ -695,7 +695,7 @@ def put_timeouts(
 
 - *Type:* str
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#create Secret#create}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#create Secret#create}.
 
 ---
 
@@ -879,7 +879,7 @@ The construct id used in the generated config for the Secret to import.
 
 The id of the existing Secret that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -1386,7 +1386,7 @@ secret.SecretConfig(
 | <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.data">data</a></code> | <code>typing.Mapping[str]</code> | A map of the secret data. |
 | <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.dataWo">data_wo</a></code> | <code>typing.Mapping[str]</code> | A map write-only of the secret data. |
 | <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.dataWoRevision">data_wo_revision</a></code> | <code>typing.Union[int, float]</code> | The current revision of the write-only "data_wo" attribute. |
-| <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#id Secret#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#id Secret#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.immutable">immutable</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Ensures that data stored in the Secret cannot be updated (only object metadata can be modified). |
 | <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.timeouts">timeouts</a></code> | <code><a href="#@cdktf/provider-kubernetes.secret.SecretTimeouts">SecretTimeouts</a></code> | timeouts block. |
 | <code><a href="#@cdktf/provider-kubernetes.secret.SecretConfig.property.type">type</a></code> | <code>str</code> | Type of secret. |
@@ -1474,7 +1474,7 @@ metadata: SecretMetadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#metadata Secret#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#metadata Secret#metadata}
 
 ---
 
@@ -1488,7 +1488,7 @@ binary_data: typing.Mapping[str]
 
 A map of the secret data in base64 encoding. Use this for binary data.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#binary_data Secret#binary_data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#binary_data Secret#binary_data}
 
 ---
 
@@ -1502,7 +1502,7 @@ binary_data_wo: typing.Mapping[str]
 
 A write-only map of the secret data in base64 encoding. Use this for binary data.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#binary_data_wo Secret#binary_data_wo}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#binary_data_wo Secret#binary_data_wo}
 
 ---
 
@@ -1518,7 +1518,7 @@ The current revision of the write-only "binary_data_wo" attribute.
 
 Incrementing this integer value will cause Terraform to update the write-only value.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#binary_data_wo_revision Secret#binary_data_wo_revision}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#binary_data_wo_revision Secret#binary_data_wo_revision}
 
 ---
 
@@ -1532,7 +1532,7 @@ data: typing.Mapping[str]
 
 A map of the secret data.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#data Secret#data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#data Secret#data}
 
 ---
 
@@ -1546,7 +1546,7 @@ data_wo: typing.Mapping[str]
 
 A map write-only of the secret data.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#data_wo Secret#data_wo}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#data_wo Secret#data_wo}
 
 ---
 
@@ -1562,7 +1562,7 @@ The current revision of the write-only "data_wo" attribute.
 
 Incrementing this integer value will cause Terraform to update the write-only value.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#data_wo_revision Secret#data_wo_revision}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#data_wo_revision Secret#data_wo_revision}
 
 ---
 
@@ -1574,7 +1574,7 @@ id: str
 
 - *Type:* str
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#id Secret#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#id Secret#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1591,7 +1591,7 @@ immutable: typing.Union[bool, IResolvable]
 
 Ensures that data stored in the Secret cannot be updated (only object metadata can be modified).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#immutable Secret#immutable}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#immutable Secret#immutable}
 
 ---
 
@@ -1605,7 +1605,7 @@ timeouts: SecretTimeouts
 
 timeouts block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#timeouts Secret#timeouts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#timeouts Secret#timeouts}
 
 ---
 
@@ -1619,7 +1619,7 @@ type: str
 
 Type of secret.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#type Secret#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#type Secret#type}
 
 ---
 
@@ -1633,7 +1633,7 @@ wait_for_service_account_token: typing.Union[bool, IResolvable]
 
 Terraform will wait for the service account token to be created.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#wait_for_service_account_token Secret#wait_for_service_account_token}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#wait_for_service_account_token Secret#wait_for_service_account_token}
 
 ---
 
@@ -1677,7 +1677,7 @@ An unstructured key value map stored with the secret that may be used to store a
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#annotations Secret#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#annotations Secret#annotations}
 
 ---
 
@@ -1693,7 +1693,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#generate_name Secret#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#generate_name Secret#generate_name}
 
 ---
 
@@ -1709,7 +1709,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#labels Secret#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#labels Secret#labels}
 
 ---
 
@@ -1723,7 +1723,7 @@ name: str
 
 Name of the secret, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#name Secret#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#name Secret#name}
 
 ---
 
@@ -1737,7 +1737,7 @@ namespace: str
 
 Namespace defines the space within which name of the secret must be unique.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#namespace Secret#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#namespace Secret#namespace}
 
 ---
 
@@ -1757,7 +1757,7 @@ secret.SecretTimeouts(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-kubernetes.secret.SecretTimeouts.property.create">create</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#create Secret#create}. |
+| <code><a href="#@cdktf/provider-kubernetes.secret.SecretTimeouts.property.create">create</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#create Secret#create}. |
 
 ---
 
@@ -1769,7 +1769,7 @@ create: str
 
 - *Type:* str
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/secret#create Secret#create}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/secret#create Secret#create}.
 
 ---
 

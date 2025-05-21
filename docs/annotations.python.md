@@ -4,7 +4,7 @@
 
 ### Annotations <a name="Annotations" id="@cdktf/provider-kubernetes.annotations.Annotations"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations kubernetes_annotations}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations kubernetes_annotations}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.annotations.Annotations.Initializer"></a>
 
@@ -49,7 +49,7 @@ annotations.Annotations(
 | <code><a href="#@cdktf/provider-kubernetes.annotations.Annotations.Initializer.parameter.annotations">annotations</a></code> | <code>typing.Mapping[str]</code> | A map of annotations to apply to the resource. |
 | <code><a href="#@cdktf/provider-kubernetes.annotations.Annotations.Initializer.parameter.fieldManager">field_manager</a></code> | <code>str</code> | Set the name of the field manager for the specified labels. |
 | <code><a href="#@cdktf/provider-kubernetes.annotations.Annotations.Initializer.parameter.force">force</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Force overwriting annotations that were created or edited outside of Terraform. |
-| <code><a href="#@cdktf/provider-kubernetes.annotations.Annotations.Initializer.parameter.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#id Annotations#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.annotations.Annotations.Initializer.parameter.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#id Annotations#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.annotations.Annotations.Initializer.parameter.templateAnnotations">template_annotations</a></code> | <code>typing.Mapping[str]</code> | A map of annotations to apply to the resource template. |
 
 ---
@@ -120,7 +120,7 @@ Must be unique amongst siblings in the same scope
 
 The apiVersion of the resource to annotate.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#api_version Annotations#api_version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#api_version Annotations#api_version}
 
 ---
 
@@ -130,7 +130,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 The kind of the resource to annotate.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#kind Annotations#kind}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#kind Annotations#kind}
 
 ---
 
@@ -140,7 +140,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#metadata Annotations#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#metadata Annotations#metadata}
 
 ---
 
@@ -150,7 +150,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 A map of annotations to apply to the resource.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#annotations Annotations#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#annotations Annotations#annotations}
 
 ---
 
@@ -160,7 +160,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 Set the name of the field manager for the specified labels.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#field_manager Annotations#field_manager}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#field_manager Annotations#field_manager}
 
 ---
 
@@ -170,7 +170,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 Force overwriting annotations that were created or edited outside of Terraform.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#force Annotations#force}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#force Annotations#force}
 
 ---
 
@@ -178,7 +178,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 - *Type:* str
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#id Annotations#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#id Annotations#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -191,7 +191,7 @@ If you experience problems setting this value it might not be settable. Please t
 
 A map of annotations to apply to the resource template.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#template_annotations Annotations#template_annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#template_annotations Annotations#template_annotations}
 
 ---
 
@@ -571,7 +571,7 @@ def put_metadata(
 
 The name of the resource.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#name Annotations#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#name Annotations#name}
 
 ---
 
@@ -581,7 +581,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 The namespace of the resource.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#namespace Annotations#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#namespace Annotations#namespace}
 
 ---
 
@@ -729,7 +729,7 @@ The construct id used in the generated config for the Annotations to import.
 
 The id of the existing Annotations that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -1143,7 +1143,7 @@ annotations.AnnotationsConfig(
 | <code><a href="#@cdktf/provider-kubernetes.annotations.AnnotationsConfig.property.annotations">annotations</a></code> | <code>typing.Mapping[str]</code> | A map of annotations to apply to the resource. |
 | <code><a href="#@cdktf/provider-kubernetes.annotations.AnnotationsConfig.property.fieldManager">field_manager</a></code> | <code>str</code> | Set the name of the field manager for the specified labels. |
 | <code><a href="#@cdktf/provider-kubernetes.annotations.AnnotationsConfig.property.force">force</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Force overwriting annotations that were created or edited outside of Terraform. |
-| <code><a href="#@cdktf/provider-kubernetes.annotations.AnnotationsConfig.property.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#id Annotations#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.annotations.AnnotationsConfig.property.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#id Annotations#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.annotations.AnnotationsConfig.property.templateAnnotations">template_annotations</a></code> | <code>typing.Mapping[str]</code> | A map of annotations to apply to the resource template. |
 
 ---
@@ -1228,7 +1228,7 @@ api_version: str
 
 The apiVersion of the resource to annotate.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#api_version Annotations#api_version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#api_version Annotations#api_version}
 
 ---
 
@@ -1242,7 +1242,7 @@ kind: str
 
 The kind of the resource to annotate.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#kind Annotations#kind}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#kind Annotations#kind}
 
 ---
 
@@ -1256,7 +1256,7 @@ metadata: AnnotationsMetadata
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#metadata Annotations#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#metadata Annotations#metadata}
 
 ---
 
@@ -1270,7 +1270,7 @@ annotations: typing.Mapping[str]
 
 A map of annotations to apply to the resource.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#annotations Annotations#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#annotations Annotations#annotations}
 
 ---
 
@@ -1284,7 +1284,7 @@ field_manager: str
 
 Set the name of the field manager for the specified labels.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#field_manager Annotations#field_manager}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#field_manager Annotations#field_manager}
 
 ---
 
@@ -1298,7 +1298,7 @@ force: typing.Union[bool, IResolvable]
 
 Force overwriting annotations that were created or edited outside of Terraform.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#force Annotations#force}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#force Annotations#force}
 
 ---
 
@@ -1310,7 +1310,7 @@ id: str
 
 - *Type:* str
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#id Annotations#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#id Annotations#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1327,7 +1327,7 @@ template_annotations: typing.Mapping[str]
 
 A map of annotations to apply to the resource template.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#template_annotations Annotations#template_annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#template_annotations Annotations#template_annotations}
 
 ---
 
@@ -1363,7 +1363,7 @@ name: str
 
 The name of the resource.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#name Annotations#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#name Annotations#name}
 
 ---
 
@@ -1377,7 +1377,7 @@ namespace: str
 
 The namespace of the resource.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/annotations#namespace Annotations#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/resources/annotations#namespace Annotations#namespace}
 
 ---
 

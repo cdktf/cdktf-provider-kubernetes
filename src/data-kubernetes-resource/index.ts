@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-// https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/resource
+// https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/data-sources/resource
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -15,25 +15,25 @@ export interface DataKubernetesResourceConfig extends cdktf.TerraformMetaArgumen
   /**
   * The resource apiVersion.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/resource#api_version DataKubernetesResource#api_version}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/data-sources/resource#api_version DataKubernetesResource#api_version}
   */
   readonly apiVersion: string;
   /**
   * The resource kind.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/resource#kind DataKubernetesResource#kind}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/data-sources/resource#kind DataKubernetesResource#kind}
   */
   readonly kind: string;
   /**
   * The response from the API server.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/resource#object DataKubernetesResource#object}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/data-sources/resource#object DataKubernetesResource#object}
   */
   readonly object?: { [key: string]: any };
   /**
   * metadata block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/resource#metadata DataKubernetesResource#metadata}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/data-sources/resource#metadata DataKubernetesResource#metadata}
   */
   readonly metadata: DataKubernetesResourceMetadata;
 }
@@ -41,13 +41,13 @@ export interface DataKubernetesResourceMetadata {
   /**
   * The resource name.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/resource#name DataKubernetesResource#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/data-sources/resource#name DataKubernetesResource#name}
   */
   readonly name: string;
   /**
   * The resource namespace.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/resource#namespace DataKubernetesResource#namespace}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/data-sources/resource#namespace DataKubernetesResource#namespace}
   */
   readonly namespace?: string;
 }
@@ -157,7 +157,7 @@ export class DataKubernetesResourceMetadataOutputReference extends cdktf.Complex
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/resource kubernetes_resource}
+* Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/data-sources/resource kubernetes_resource}
 */
 export class DataKubernetesResource extends cdktf.TerraformDataSource {
 
@@ -173,7 +173,7 @@ export class DataKubernetesResource extends cdktf.TerraformDataSource {
   * Generates CDKTF code for importing a DataKubernetesResource resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the DataKubernetesResource to import
-  * @param importFromId The id of the existing DataKubernetesResource that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/resource#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing DataKubernetesResource that should be imported. Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/data-sources/resource#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the DataKubernetesResource to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -185,7 +185,7 @@ export class DataKubernetesResource extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/data-sources/resource kubernetes_resource} Data Source
+  * Create a new {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/data-sources/resource kubernetes_resource} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -196,7 +196,7 @@ export class DataKubernetesResource extends cdktf.TerraformDataSource {
       terraformResourceType: 'kubernetes_resource',
       terraformGeneratorMetadata: {
         providerName: 'kubernetes',
-        providerVersion: '2.36.0',
+        providerVersion: '2.37.0',
         providerVersionConstraint: '~> 2.0'
       },
       provider: config.provider,
