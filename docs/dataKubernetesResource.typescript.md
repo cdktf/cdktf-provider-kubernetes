@@ -4,7 +4,7 @@
 
 ### DataKubernetesResource <a name="DataKubernetesResource" id="@cdktf/provider-kubernetes.dataKubernetesResource.DataKubernetesResource"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/data-sources/resource kubernetes_resource}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/data-sources/resource kubernetes_resource}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.dataKubernetesResource.DataKubernetesResource.Initializer"></a>
 
@@ -385,7 +385,7 @@ The construct id used in the generated config for the DataKubernetesResource to 
 
 The id of the existing DataKubernetesResource that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/data-sources/resource#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/data-sources/resource#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -754,7 +754,7 @@ public readonly apiVersion: string;
 
 The resource apiVersion.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/data-sources/resource#api_version DataKubernetesResource#api_version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/data-sources/resource#api_version DataKubernetesResource#api_version}
 
 ---
 
@@ -768,7 +768,7 @@ public readonly kind: string;
 
 The resource kind.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/data-sources/resource#kind DataKubernetesResource#kind}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/data-sources/resource#kind DataKubernetesResource#kind}
 
 ---
 
@@ -782,7 +782,7 @@ public readonly metadata: DataKubernetesResourceMetadata;
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/data-sources/resource#metadata DataKubernetesResource#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/data-sources/resource#metadata DataKubernetesResource#metadata}
 
 ---
 
@@ -796,7 +796,7 @@ public readonly object: {[ key: string ]: any};
 
 The response from the API server.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/data-sources/resource#object DataKubernetesResource#object}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/data-sources/resource#object DataKubernetesResource#object}
 
 ---
 
@@ -829,7 +829,7 @@ public readonly name: string;
 
 The resource name.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/data-sources/resource#name DataKubernetesResource#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/data-sources/resource#name DataKubernetesResource#name}
 
 ---
 
@@ -843,7 +843,7 @@ public readonly namespace: string;
 
 The resource namespace.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.0/docs/data-sources/resource#namespace DataKubernetesResource#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/data-sources/resource#namespace DataKubernetesResource#namespace}
 
 ---
 
