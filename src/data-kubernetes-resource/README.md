@@ -1,3 +1,3 @@
 # `data_kubernetes_resource`
 
-Refer to the Terraform Registry for docs: [`data_kubernetes_resource`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/data-sources/resource).
+Refer to the Terraform Registry for docs: [`data_kubernetes_resource`](https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/data-sources/resource).

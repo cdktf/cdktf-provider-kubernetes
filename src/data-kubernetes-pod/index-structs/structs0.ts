@@ -6812,6 +6812,11 @@ export class DataKubernetesPodSpecContainerVolumeMountOutputReference extends cd
   public get subPath() {
     return this.getStringAttribute('sub_path');
   }
+
+  // sub_path_expr - computed: true, optional: false, required: false
+  public get subPathExpr() {
+    return this.getStringAttribute('sub_path_expr');
+  }
 }
 
 export class DataKubernetesPodSpecContainerVolumeMountList extends cdktf.ComplexList {
