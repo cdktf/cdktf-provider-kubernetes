@@ -4,7 +4,7 @@
 
 ### LimitRange <a name="LimitRange" id="@cdktf/provider-kubernetes.limitRange.LimitRange"></a>
 
-Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/limit_range kubernetes_limit_range}.
+Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/limit_range kubernetes_limit_range}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.limitRange.LimitRange.Initializer"></a>
 
@@ -507,7 +507,7 @@ The construct id used in the generated config for the LimitRange to import.
 
 The id of the existing LimitRange that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/limit_range#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/limit_range#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -790,7 +790,7 @@ const limitRangeConfig: limitRange.LimitRangeConfig = { ... }
 | <code><a href="#@cdktf/provider-kubernetes.limitRange.LimitRangeConfig.property.provider">provider</a></code> | <code>cdktf.TerraformProvider</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRange.LimitRangeConfig.property.provisioners">provisioners</a></code> | <code>cdktf.FileProvisioner \| cdktf.LocalExecProvisioner \| cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.limitRange.LimitRangeConfig.property.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.limitRange.LimitRangeMetadata">LimitRangeMetadata</a></code> | metadata block. |
-| <code><a href="#@cdktf/provider-kubernetes.limitRange.LimitRangeConfig.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/limit_range#id LimitRange#id}. |
+| <code><a href="#@cdktf/provider-kubernetes.limitRange.LimitRangeConfig.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/limit_range#id LimitRange#id}. |
 | <code><a href="#@cdktf/provider-kubernetes.limitRange.LimitRangeConfig.property.spec">spec</a></code> | <code><a href="#@cdktf/provider-kubernetes.limitRange.LimitRangeSpec">LimitRangeSpec</a></code> | spec block. |
 
 ---
@@ -875,7 +875,7 @@ public readonly metadata: LimitRangeMetadata;
 
 metadata block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/limit_range#metadata LimitRange#metadata}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/limit_range#metadata LimitRange#metadata}
 
 ---
 
@@ -887,7 +887,7 @@ public readonly id: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/limit_range#id LimitRange#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/limit_range#id LimitRange#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -904,7 +904,7 @@ public readonly spec: LimitRangeSpec;
 
 spec block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/limit_range#spec LimitRange#spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/limit_range#spec LimitRange#spec}
 
 ---
 
@@ -942,7 +942,7 @@ An unstructured key value map stored with the limit range that may be used to st
 
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/limit_range#annotations LimitRange#annotations}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/limit_range#annotations LimitRange#annotations}
 
 ---
 
@@ -958,7 +958,7 @@ Prefix, used by the server, to generate a unique name ONLY IF the `name` field h
 
 This value will also be combined with a unique suffix. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#idempotency
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/limit_range#generate_name LimitRange#generate_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/limit_range#generate_name LimitRange#generate_name}
 
 ---
 
@@ -974,7 +974,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 
 May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/limit_range#labels LimitRange#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/limit_range#labels LimitRange#labels}
 
 ---
 
@@ -988,7 +988,7 @@ public readonly name: string;
 
 Name of the limit range, must be unique. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/limit_range#name LimitRange#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/limit_range#name LimitRange#name}
 
 ---
 
@@ -1002,7 +1002,7 @@ public readonly namespace: string;
 
 Namespace defines the space within which name of the limit range must be unique.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/limit_range#namespace LimitRange#namespace}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/limit_range#namespace LimitRange#namespace}
 
 ---
 
@@ -1034,7 +1034,7 @@ public readonly limit: IResolvable | LimitRangeSpecLimit[];
 
 limit block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/limit_range#limit LimitRange#limit}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/limit_range#limit LimitRange#limit}
 
 ---
 
@@ -1071,7 +1071,7 @@ public readonly default: {[ key: string ]: string};
 
 Default resource requirement limit value by resource name if resource limit is omitted.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/limit_range#default LimitRange#default}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/limit_range#default LimitRange#default}
 
 ---
 
@@ -1085,7 +1085,7 @@ public readonly defaultRequest: {[ key: string ]: string};
 
 The default resource requirement request value by resource name if resource request is omitted.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/limit_range#default_request LimitRange#default_request}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/limit_range#default_request LimitRange#default_request}
 
 ---
 
@@ -1099,7 +1099,7 @@ public readonly max: {[ key: string ]: string};
 
 Max usage constraints on this kind by resource name.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/limit_range#max LimitRange#max}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/limit_range#max LimitRange#max}
 
 ---
 
@@ -1115,7 +1115,7 @@ The named resource must have a request and limit that are both non-zero where li
 
 this represents the max burst for the named resource.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/limit_range#max_limit_request_ratio LimitRange#max_limit_request_ratio}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/limit_range#max_limit_request_ratio LimitRange#max_limit_request_ratio}
 
 ---
 
@@ -1129,7 +1129,7 @@ public readonly min: {[ key: string ]: string};
 
 Min usage constraints on this kind by resource name.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/limit_range#min LimitRange#min}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/limit_range#min LimitRange#min}
 
 ---
 
@@ -1143,7 +1143,7 @@ public readonly type: string;
 
 Type of resource that this limit applies to.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/limit_range#type LimitRange#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/limit_range#type LimitRange#type}
 
 ---
 
