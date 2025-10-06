@@ -21,15 +21,12 @@ KubernetesProvider.Builder.create(Construct scope, java.lang.String id)
 //  .configContextCluster(java.lang.String)
 //  .configPath(java.lang.String)
 //  .configPaths(java.util.List<java.lang.String>)
-//  .exec(IResolvable)
-//  .exec(java.util.List<KubernetesProviderExec>)
-//  .experiments(IResolvable)
-//  .experiments(java.util.List<KubernetesProviderExperiments>)
+//  .exec(IResolvable|java.util.List<KubernetesProviderExec>)
+//  .experiments(IResolvable|java.util.List<KubernetesProviderExperiments>)
 //  .host(java.lang.String)
 //  .ignoreAnnotations(java.util.List<java.lang.String>)
 //  .ignoreLabels(java.util.List<java.lang.String>)
-//  .insecure(java.lang.Boolean)
-//  .insecure(IResolvable)
+//  .insecure(java.lang.Boolean|IResolvable)
 //  .password(java.lang.String)
 //  .proxyUrl(java.lang.String)
 //  .tlsServerName(java.lang.String)
@@ -51,12 +48,12 @@ KubernetesProvider.Builder.create(Construct scope, java.lang.String id)
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer.parameter.configContextCluster">configContextCluster</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs#config_context_cluster KubernetesProvider#config_context_cluster}. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer.parameter.configPath">configPath</a></code> | <code>java.lang.String</code> | Path to the kube config file. Can be set with KUBE_CONFIG_PATH. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer.parameter.configPaths">configPaths</a></code> | <code>java.util.List<java.lang.String></code> | A list of paths to kube config files. Can be set with KUBE_CONFIG_PATHS environment variable. |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer.parameter.exec">exec</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>></code> | exec block. |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer.parameter.experiments">experiments</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>></code> | experiments block. |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer.parameter.exec">exec</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>></code> | exec block. |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer.parameter.experiments">experiments</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>></code> | experiments block. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer.parameter.host">host</a></code> | <code>java.lang.String</code> | The hostname (in form of URI) of Kubernetes master. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer.parameter.ignoreAnnotations">ignoreAnnotations</a></code> | <code>java.util.List<java.lang.String></code> | List of Kubernetes metadata annotations to ignore across all resources handled by this provider for situations where external systems are managing certain resource annotations. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer.parameter.ignoreLabels">ignoreLabels</a></code> | <code>java.util.List<java.lang.String></code> | List of Kubernetes metadata labels to ignore across all resources handled by this provider for situations where external systems are managing certain resource labels. |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer.parameter.insecure">insecure</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Whether server should be accessed without verifying the TLS certificate. |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer.parameter.insecure">insecure</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Whether server should be accessed without verifying the TLS certificate. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer.parameter.password">password</a></code> | <code>java.lang.String</code> | The password to use for HTTP basic authentication when accessing the Kubernetes master endpoint. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer.parameter.proxyUrl">proxyUrl</a></code> | <code>java.lang.String</code> | URL to the proxy to be used for all API requests. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer.parameter.tlsServerName">tlsServerName</a></code> | <code>java.lang.String</code> | Server name passed to the server for SNI and is used in the client to check server certificates against. |
@@ -169,7 +166,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 ##### `exec`<sup>Optional</sup> <a name="exec" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer.parameter.exec"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>>
 
 exec block.
 
@@ -179,7 +176,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 ##### `experiments`<sup>Optional</sup> <a name="experiments" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer.parameter.experiments"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>>
 
 experiments block.
 
@@ -223,7 +220,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 
 ##### `insecure`<sup>Optional</sup> <a name="insecure" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer.parameter.insecure"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Whether server should be accessed without verifying the TLS certificate.
 
@@ -642,12 +639,12 @@ Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.configContextInput">configContextInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.configPathInput">configPathInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.configPathsInput">configPathsInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.execInput">execInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>></code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.experimentsInput">experimentsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.execInput">execInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.experimentsInput">experimentsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.hostInput">hostInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.ignoreAnnotationsInput">ignoreAnnotationsInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.ignoreLabelsInput">ignoreLabelsInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.insecureInput">insecureInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.insecureInput">insecureInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.passwordInput">passwordInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.proxyUrlInput">proxyUrlInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.tlsServerNameInput">tlsServerNameInput</a></code> | <code>java.lang.String</code> | *No description.* |
@@ -661,12 +658,12 @@ Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.configContextCluster">configContextCluster</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.configPath">configPath</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.configPaths">configPaths</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.exec">exec</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>></code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.experiments">experiments</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.exec">exec</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.experiments">experiments</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.host">host</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.ignoreAnnotations">ignoreAnnotations</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.ignoreLabels">ignoreLabels</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.insecure">insecure</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.insecure">insecure</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.password">password</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.proxyUrl">proxyUrl</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.tlsServerName">tlsServerName</a></code> | <code>java.lang.String</code> | *No description.* |
@@ -860,20 +857,20 @@ public java.util.List<java.lang.String> getConfigPathsInput();
 ##### `execInput`<sup>Optional</sup> <a name="execInput" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.property.execInput"></a>
 
 ```java
-public java.lang.Object getExecInput();
+public IResolvable|java.util.List<KubernetesProviderExec> getExecInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>>
 
 ---
 
 ##### `experimentsInput`<sup>Optional</sup> <a name="experimentsInput" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.property.experimentsInput"></a>
 
 ```java
-public java.lang.Object getExperimentsInput();
+public IResolvable|java.util.List<KubernetesProviderExperiments> getExperimentsInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>>
 
 ---
 
@@ -910,10 +907,10 @@ public java.util.List<java.lang.String> getIgnoreLabelsInput();
 ##### `insecureInput`<sup>Optional</sup> <a name="insecureInput" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.property.insecureInput"></a>
 
 ```java
-public java.lang.Object getInsecureInput();
+public java.lang.Boolean|IResolvable getInsecureInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -1050,20 +1047,20 @@ public java.util.List<java.lang.String> getConfigPaths();
 ##### `exec`<sup>Optional</sup> <a name="exec" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.property.exec"></a>
 
 ```java
-public java.lang.Object getExec();
+public IResolvable|java.util.List<KubernetesProviderExec> getExec();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>>
 
 ---
 
 ##### `experiments`<sup>Optional</sup> <a name="experiments" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.property.experiments"></a>
 
 ```java
-public java.lang.Object getExperiments();
+public IResolvable|java.util.List<KubernetesProviderExperiments> getExperiments();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>>
 
 ---
 
@@ -1100,10 +1097,10 @@ public java.util.List<java.lang.String> getIgnoreLabels();
 ##### `insecure`<sup>Optional</sup> <a name="insecure" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.property.insecure"></a>
 
 ```java
-public java.lang.Object getInsecure();
+public java.lang.Boolean|IResolvable getInsecure();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -1194,15 +1191,12 @@ KubernetesProviderConfig.builder()
 //  .configContextCluster(java.lang.String)
 //  .configPath(java.lang.String)
 //  .configPaths(java.util.List<java.lang.String>)
-//  .exec(IResolvable)
-//  .exec(java.util.List<KubernetesProviderExec>)
-//  .experiments(IResolvable)
-//  .experiments(java.util.List<KubernetesProviderExperiments>)
+//  .exec(IResolvable|java.util.List<KubernetesProviderExec>)
+//  .experiments(IResolvable|java.util.List<KubernetesProviderExperiments>)
 //  .host(java.lang.String)
 //  .ignoreAnnotations(java.util.List<java.lang.String>)
 //  .ignoreLabels(java.util.List<java.lang.String>)
-//  .insecure(java.lang.Boolean)
-//  .insecure(IResolvable)
+//  .insecure(java.lang.Boolean|IResolvable)
 //  .password(java.lang.String)
 //  .proxyUrl(java.lang.String)
 //  .tlsServerName(java.lang.String)
@@ -1224,12 +1218,12 @@ KubernetesProviderConfig.builder()
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.configContextCluster">configContextCluster</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs#config_context_cluster KubernetesProvider#config_context_cluster}. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.configPath">configPath</a></code> | <code>java.lang.String</code> | Path to the kube config file. Can be set with KUBE_CONFIG_PATH. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.configPaths">configPaths</a></code> | <code>java.util.List<java.lang.String></code> | A list of paths to kube config files. Can be set with KUBE_CONFIG_PATHS environment variable. |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.exec">exec</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>></code> | exec block. |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.experiments">experiments</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>></code> | experiments block. |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.exec">exec</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>></code> | exec block. |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.experiments">experiments</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>></code> | experiments block. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.host">host</a></code> | <code>java.lang.String</code> | The hostname (in form of URI) of Kubernetes master. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.ignoreAnnotations">ignoreAnnotations</a></code> | <code>java.util.List<java.lang.String></code> | List of Kubernetes metadata annotations to ignore across all resources handled by this provider for situations where external systems are managing certain resource annotations. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.ignoreLabels">ignoreLabels</a></code> | <code>java.util.List<java.lang.String></code> | List of Kubernetes metadata labels to ignore across all resources handled by this provider for situations where external systems are managing certain resource labels. |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.insecure">insecure</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Whether server should be accessed without verifying the TLS certificate. |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.insecure">insecure</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Whether server should be accessed without verifying the TLS certificate. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.password">password</a></code> | <code>java.lang.String</code> | The password to use for HTTP basic authentication when accessing the Kubernetes master endpoint. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.proxyUrl">proxyUrl</a></code> | <code>java.lang.String</code> | URL to the proxy to be used for all API requests. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.tlsServerName">tlsServerName</a></code> | <code>java.lang.String</code> | Server name passed to the server for SNI and is used in the client to check server certificates against. |
@@ -1361,10 +1355,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 ##### `exec`<sup>Optional</sup> <a name="exec" id="@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.exec"></a>
 
 ```java
-public java.lang.Object getExec();
+public IResolvable|java.util.List<KubernetesProviderExec> getExec();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>>
 
 exec block.
 
@@ -1375,10 +1369,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 ##### `experiments`<sup>Optional</sup> <a name="experiments" id="@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.experiments"></a>
 
 ```java
-public java.lang.Object getExperiments();
+public IResolvable|java.util.List<KubernetesProviderExperiments> getExperiments();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>>
 
 experiments block.
 
@@ -1435,10 +1429,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 ##### `insecure`<sup>Optional</sup> <a name="insecure" id="@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.insecure"></a>
 
 ```java
-public java.lang.Object getInsecure();
+public java.lang.Boolean|IResolvable getInsecure();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Whether server should be accessed without verifying the TLS certificate.
 
@@ -1598,8 +1592,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 import com.hashicorp.cdktf.providers.kubernetes.provider.KubernetesProviderExperiments;
 
 KubernetesProviderExperiments.builder()
-//  .manifestResource(java.lang.Boolean)
-//  .manifestResource(IResolvable)
+//  .manifestResource(java.lang.Boolean|IResolvable)
     .build();
 ```
 
@@ -1607,17 +1600,17 @@ KubernetesProviderExperiments.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments.property.manifestResource">manifestResource</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Enable the `kubernetes_manifest` resource. |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments.property.manifestResource">manifestResource</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Enable the `kubernetes_manifest` resource. |
 
 ---
 
 ##### `manifestResource`<sup>Optional</sup> <a name="manifestResource" id="@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments.property.manifestResource"></a>
 
 ```java
-public java.lang.Object getManifestResource();
+public java.lang.Boolean|IResolvable getManifestResource();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Enable the `kubernetes_manifest` resource.
 

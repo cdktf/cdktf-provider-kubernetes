@@ -407,12 +407,12 @@ Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.configContextInput">ConfigContextInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.configPathInput">ConfigPathInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.configPathsInput">ConfigPathsInput</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.execInput">ExecInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.experimentsInput">ExperimentsInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.execInput">ExecInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.experimentsInput">ExperimentsInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.hostInput">HostInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.ignoreAnnotationsInput">IgnoreAnnotationsInput</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.ignoreLabelsInput">IgnoreLabelsInput</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.insecureInput">InsecureInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.insecureInput">InsecureInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.passwordInput">PasswordInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.proxyUrlInput">ProxyUrlInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.tlsServerNameInput">TlsServerNameInput</a></code> | <code>string</code> | *No description.* |
@@ -426,12 +426,12 @@ Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.configContextCluster">ConfigContextCluster</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.configPath">ConfigPath</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.configPaths">ConfigPaths</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.exec">Exec</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.experiments">Experiments</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.exec">Exec</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.experiments">Experiments</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.host">Host</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.ignoreAnnotations">IgnoreAnnotations</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.ignoreLabels">IgnoreLabels</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.insecure">Insecure</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.insecure">Insecure</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.password">Password</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.proxyUrl">ProxyUrl</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProvider.property.tlsServerName">TlsServerName</a></code> | <code>string</code> | *No description.* |
@@ -625,20 +625,20 @@ public string[] ConfigPathsInput { get; }
 ##### `ExecInput`<sup>Optional</sup> <a name="ExecInput" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.property.execInput"></a>
 
 ```csharp
-public object ExecInput { get; }
+public IResolvable|KubernetesProviderExec[] ExecInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>[]
 
 ---
 
 ##### `ExperimentsInput`<sup>Optional</sup> <a name="ExperimentsInput" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.property.experimentsInput"></a>
 
 ```csharp
-public object ExperimentsInput { get; }
+public IResolvable|KubernetesProviderExperiments[] ExperimentsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>[]
 
 ---
 
@@ -675,10 +675,10 @@ public string[] IgnoreLabelsInput { get; }
 ##### `InsecureInput`<sup>Optional</sup> <a name="InsecureInput" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.property.insecureInput"></a>
 
 ```csharp
-public object InsecureInput { get; }
+public bool|IResolvable InsecureInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -815,20 +815,20 @@ public string[] ConfigPaths { get; }
 ##### `Exec`<sup>Optional</sup> <a name="Exec" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.property.exec"></a>
 
 ```csharp
-public object Exec { get; }
+public IResolvable|KubernetesProviderExec[] Exec { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>[]
 
 ---
 
 ##### `Experiments`<sup>Optional</sup> <a name="Experiments" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.property.experiments"></a>
 
 ```csharp
-public object Experiments { get; }
+public IResolvable|KubernetesProviderExperiments[] Experiments { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>[]
 
 ---
 
@@ -865,10 +865,10 @@ public string[] IgnoreLabels { get; }
 ##### `Insecure`<sup>Optional</sup> <a name="Insecure" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.property.insecure"></a>
 
 ```csharp
-public object Insecure { get; }
+public bool|IResolvable Insecure { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -959,12 +959,12 @@ new KubernetesProviderConfig {
     string ConfigContextCluster = null,
     string ConfigPath = null,
     string[] ConfigPaths = null,
-    object Exec = null,
-    object Experiments = null,
+    IResolvable|KubernetesProviderExec[] Exec = null,
+    IResolvable|KubernetesProviderExperiments[] Experiments = null,
     string Host = null,
     string[] IgnoreAnnotations = null,
     string[] IgnoreLabels = null,
-    object Insecure = null,
+    bool|IResolvable Insecure = null,
     string Password = null,
     string ProxyUrl = null,
     string TlsServerName = null,
@@ -986,12 +986,12 @@ new KubernetesProviderConfig {
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.configContextCluster">ConfigContextCluster</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs#config_context_cluster KubernetesProvider#config_context_cluster}. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.configPath">ConfigPath</a></code> | <code>string</code> | Path to the kube config file. Can be set with KUBE_CONFIG_PATH. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.configPaths">ConfigPaths</a></code> | <code>string[]</code> | A list of paths to kube config files. Can be set with KUBE_CONFIG_PATHS environment variable. |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.exec">Exec</a></code> | <code>object</code> | exec block. |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.experiments">Experiments</a></code> | <code>object</code> | experiments block. |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.exec">Exec</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>[]</code> | exec block. |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.experiments">Experiments</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>[]</code> | experiments block. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.host">Host</a></code> | <code>string</code> | The hostname (in form of URI) of Kubernetes master. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.ignoreAnnotations">IgnoreAnnotations</a></code> | <code>string[]</code> | List of Kubernetes metadata annotations to ignore across all resources handled by this provider for situations where external systems are managing certain resource annotations. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.ignoreLabels">IgnoreLabels</a></code> | <code>string[]</code> | List of Kubernetes metadata labels to ignore across all resources handled by this provider for situations where external systems are managing certain resource labels. |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.insecure">Insecure</a></code> | <code>object</code> | Whether server should be accessed without verifying the TLS certificate. |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.insecure">Insecure</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Whether server should be accessed without verifying the TLS certificate. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.password">Password</a></code> | <code>string</code> | The password to use for HTTP basic authentication when accessing the Kubernetes master endpoint. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.proxyUrl">ProxyUrl</a></code> | <code>string</code> | URL to the proxy to be used for all API requests. |
 | <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.tlsServerName">TlsServerName</a></code> | <code>string</code> | Server name passed to the server for SNI and is used in the client to check server certificates against. |
@@ -1123,10 +1123,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 ##### `Exec`<sup>Optional</sup> <a name="Exec" id="@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.exec"></a>
 
 ```csharp
-public object Exec { get; set; }
+public IResolvable|KubernetesProviderExec[] Exec { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExec">KubernetesProviderExec</a>[]
 
 exec block.
 
@@ -1137,10 +1137,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 ##### `Experiments`<sup>Optional</sup> <a name="Experiments" id="@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.experiments"></a>
 
 ```csharp
-public object Experiments { get; set; }
+public IResolvable|KubernetesProviderExperiments[] Experiments { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments">KubernetesProviderExperiments</a>[]
 
 experiments block.
 
@@ -1197,10 +1197,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 ##### `Insecure`<sup>Optional</sup> <a name="Insecure" id="@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.property.insecure"></a>
 
 ```csharp
-public object Insecure { get; set; }
+public bool|IResolvable Insecure { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Whether server should be accessed without verifying the TLS certificate.
 
@@ -1360,7 +1360,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 using HashiCorp.Cdktf.Providers.Kubernetes;
 
 new KubernetesProviderExperiments {
-    object ManifestResource = null
+    bool|IResolvable ManifestResource = null
 };
 ```
 
@@ -1368,17 +1368,17 @@ new KubernetesProviderExperiments {
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments.property.manifestResource">ManifestResource</a></code> | <code>object</code> | Enable the `kubernetes_manifest` resource. |
+| <code><a href="#@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments.property.manifestResource">ManifestResource</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Enable the `kubernetes_manifest` resource. |
 
 ---
 
 ##### `ManifestResource`<sup>Optional</sup> <a name="ManifestResource" id="@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments.property.manifestResource"></a>
 
 ```csharp
-public object ManifestResource { get; set; }
+public bool|IResolvable ManifestResource { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Enable the `kubernetes_manifest` resource.
 
