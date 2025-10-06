@@ -12,21 +12,16 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 import com.hashicorp.cdktf.providers.kubernetes.endpoints_v1.EndpointsV1;
 
 EndpointsV1.Builder.create(Construct scope, java.lang.String id)
-//  .connection(SSHProvisionerConnection)
-//  .connection(WinrmProvisionerConnection)
-//  .count(java.lang.Number)
-//  .count(TerraformCount)
+//  .connection(SSHProvisionerConnection|WinrmProvisionerConnection)
+//  .count(java.lang.Number|TerraformCount)
 //  .dependsOn(java.util.List<ITerraformDependable>)
 //  .forEach(ITerraformIterator)
 //  .lifecycle(TerraformResourceLifecycle)
 //  .provider(TerraformProvider)
-//  .provisioners(java.util.List<FileProvisioner)
-//  .provisioners(LocalExecProvisioner)
-//  .provisioners(RemoteExecProvisioner>)
+//  .provisioners(java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner>)
     .metadata(EndpointsV1Metadata)
 //  .id(java.lang.String)
-//  .subset(IResolvable)
-//  .subset(java.util.List<EndpointsV1Subset>)
+//  .subset(IResolvable|java.util.List<EndpointsV1Subset>)
     .build();
 ```
 
@@ -34,16 +29,16 @@ EndpointsV1.Builder.create(Construct scope, java.lang.String id)
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.scope">scope</a></code> | <code>software.constructs.Construct</code> | The scope in which to define this construct. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | The scoped construct ID. |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection\|com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.count">count</a></code> | <code>java.lang.Number\|com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.dependsOn">dependsOn</a></code> | <code>java.util.List<com.hashicorp.cdktf.ITerraformDependable></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner\|com.hashicorp.cdktf.LocalExecProvisioner\|com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Metadata">EndpointsV1Metadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/endpoints_v1#id EndpointsV1#id}. |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.subset">subset</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>></code> | subset block. |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.subset">subset</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>></code> | subset block. |
 
 ---
 
@@ -67,13 +62,13 @@ Must be unique amongst siblings in the same scope
 
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.connection"></a>
 
-- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection
+- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection|com.hashicorp.cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.count"></a>
 
-- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
+- *Type:* java.lang.Number|com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -103,7 +98,7 @@ Must be unique amongst siblings in the same scope
 
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.provisioners"></a>
 
-- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner>
+- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner|com.hashicorp.cdktf.LocalExecProvisioner|com.hashicorp.cdktf.RemoteExecProvisioner>
 
 ---
 
@@ -130,7 +125,7 @@ If you experience problems setting this value it might not be settable. Please t
 
 ##### `subset`<sup>Optional</sup> <a name="subset" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.Initializer.parameter.subset"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>>
 
 subset block.
 
@@ -369,7 +364,7 @@ public java.util.Map<java.lang.String, java.lang.String> getStringMapAttribute(j
 ##### `hasResourceMove` <a name="hasResourceMove" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.hasResourceMove"></a>
 
 ```java
-public TerraformResourceMoveByTarget OR TerraformResourceMoveById hasResourceMove()
+public TerraformResourceMoveByTarget|TerraformResourceMoveById hasResourceMove()
 ```
 
 ##### `importFrom` <a name="importFrom" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.importFrom"></a>
@@ -425,7 +420,7 @@ Full id of resource being moved from, e.g. "aws_s3_bucket.example".
 
 ```java
 public void moveTo(java.lang.String moveTarget)
-public void moveTo(java.lang.String moveTarget, java.lang.String OR java.lang.Number index)
+public void moveTo(java.lang.String moveTarget, java.lang.String|java.lang.Number index)
 ```
 
 Moves this resource to the target resource given by moveTarget.
@@ -440,7 +435,7 @@ The previously set user defined string set by .addMoveTarget() corresponding to 
 
 ###### `index`<sup>Optional</sup> <a name="index" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.moveTo.parameter.index"></a>
 
-- *Type:* java.lang.String OR java.lang.Number
+- *Type:* java.lang.String|java.lang.Number
 
 Optional The index corresponding to the key the resource is to appear in the foreach of a resource to move to.
 
@@ -477,12 +472,12 @@ public void putMetadata(EndpointsV1Metadata value)
 ##### `putSubset` <a name="putSubset" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.putSubset"></a>
 
 ```java
-public void putSubset(IResolvable OR java.util.List<EndpointsV1Subset> value)
+public void putSubset(IResolvable|java.util.List<EndpointsV1Subset> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.putSubset.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>>
 
 ---
 
@@ -624,18 +619,18 @@ Refer to the {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.terraformMetaArguments">terraformMetaArguments</a></code> | <code>java.util.Map<java.lang.String, java.lang.Object></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.terraformResourceType">terraformResourceType</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.terraformGeneratorMetadata">terraformGeneratorMetadata</a></code> | <code>com.hashicorp.cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection\|com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.count">count</a></code> | <code>java.lang.Number\|com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.dependsOn">dependsOn</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner\|com.hashicorp.cdktf.LocalExecProvisioner\|com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1MetadataOutputReference">EndpointsV1MetadataOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.subset">subset</a></code> | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetList">EndpointsV1SubsetList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.idInput">idInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.metadataInput">metadataInput</a></code> | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Metadata">EndpointsV1Metadata</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.subsetInput">subsetInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.subsetInput">subsetInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.id">id</a></code> | <code>java.lang.String</code> | *No description.* |
 
 ---
@@ -715,20 +710,20 @@ public TerraformProviderGeneratorMetadata getTerraformGeneratorMetadata();
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.connection"></a>
 
 ```java
-public java.lang.Object getConnection();
+public SSHProvisionerConnection|WinrmProvisionerConnection getConnection();
 ```
 
-- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection
+- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection|com.hashicorp.cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.count"></a>
 
 ```java
-public java.lang.Object getCount();
+public java.lang.Number|TerraformCount getCount();
 ```
 
-- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
+- *Type:* java.lang.Number|com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -775,10 +770,10 @@ public TerraformProvider getProvider();
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.provisioners"></a>
 
 ```java
-public java.lang.Object getProvisioners();
+public java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner> getProvisioners();
 ```
 
-- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner>
+- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner|com.hashicorp.cdktf.LocalExecProvisioner|com.hashicorp.cdktf.RemoteExecProvisioner>
 
 ---
 
@@ -825,10 +820,10 @@ public EndpointsV1Metadata getMetadataInput();
 ##### `subsetInput`<sup>Optional</sup> <a name="subsetInput" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1.property.subsetInput"></a>
 
 ```java
-public java.lang.Object getSubsetInput();
+public IResolvable|java.util.List<EndpointsV1Subset> getSubsetInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>>
 
 ---
 
@@ -870,21 +865,16 @@ public java.lang.String getTfResourceType();
 import com.hashicorp.cdktf.providers.kubernetes.endpoints_v1.EndpointsV1Config;
 
 EndpointsV1Config.builder()
-//  .connection(SSHProvisionerConnection)
-//  .connection(WinrmProvisionerConnection)
-//  .count(java.lang.Number)
-//  .count(TerraformCount)
+//  .connection(SSHProvisionerConnection|WinrmProvisionerConnection)
+//  .count(java.lang.Number|TerraformCount)
 //  .dependsOn(java.util.List<ITerraformDependable>)
 //  .forEach(ITerraformIterator)
 //  .lifecycle(TerraformResourceLifecycle)
 //  .provider(TerraformProvider)
-//  .provisioners(java.util.List<FileProvisioner)
-//  .provisioners(LocalExecProvisioner)
-//  .provisioners(RemoteExecProvisioner>)
+//  .provisioners(java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner>)
     .metadata(EndpointsV1Metadata)
 //  .id(java.lang.String)
-//  .subset(IResolvable)
-//  .subset(java.util.List<EndpointsV1Subset>)
+//  .subset(IResolvable|java.util.List<EndpointsV1Subset>)
     .build();
 ```
 
@@ -892,36 +882,36 @@ EndpointsV1Config.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Config.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Config.property.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Config.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection\|com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Config.property.count">count</a></code> | <code>java.lang.Number\|com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Config.property.dependsOn">dependsOn</a></code> | <code>java.util.List<com.hashicorp.cdktf.ITerraformDependable></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Config.property.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Config.property.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Config.property.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Config.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Config.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner\|com.hashicorp.cdktf.LocalExecProvisioner\|com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Config.property.metadata">metadata</a></code> | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Metadata">EndpointsV1Metadata</a></code> | metadata block. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Config.property.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/endpoints_v1#id EndpointsV1#id}. |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Config.property.subset">subset</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>></code> | subset block. |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Config.property.subset">subset</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>></code> | subset block. |
 
 ---
 
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Config.property.connection"></a>
 
 ```java
-public java.lang.Object getConnection();
+public SSHProvisionerConnection|WinrmProvisionerConnection getConnection();
 ```
 
-- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection
+- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection|com.hashicorp.cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Config.property.count"></a>
 
 ```java
-public java.lang.Object getCount();
+public java.lang.Number|TerraformCount getCount();
 ```
 
-- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
+- *Type:* java.lang.Number|com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -968,10 +958,10 @@ public TerraformProvider getProvider();
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Config.property.provisioners"></a>
 
 ```java
-public java.lang.Object getProvisioners();
+public java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner> getProvisioners();
 ```
 
-- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner>
+- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner|com.hashicorp.cdktf.LocalExecProvisioner|com.hashicorp.cdktf.RemoteExecProvisioner>
 
 ---
 
@@ -1007,10 +997,10 @@ If you experience problems setting this value it might not be settable. Please t
 ##### `subset`<sup>Optional</sup> <a name="subset" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Config.property.subset"></a>
 
 ```java
-public java.lang.Object getSubset();
+public IResolvable|java.util.List<EndpointsV1Subset> getSubset();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>>
 
 subset block.
 
@@ -1130,12 +1120,9 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 import com.hashicorp.cdktf.providers.kubernetes.endpoints_v1.EndpointsV1Subset;
 
 EndpointsV1Subset.builder()
-//  .address(IResolvable)
-//  .address(java.util.List<EndpointsV1SubsetAddress>)
-//  .notReadyAddress(IResolvable)
-//  .notReadyAddress(java.util.List<EndpointsV1SubsetNotReadyAddress>)
-//  .port(IResolvable)
-//  .port(java.util.List<EndpointsV1SubsetPort>)
+//  .address(IResolvable|java.util.List<EndpointsV1SubsetAddress>)
+//  .notReadyAddress(IResolvable|java.util.List<EndpointsV1SubsetNotReadyAddress>)
+//  .port(IResolvable|java.util.List<EndpointsV1SubsetPort>)
     .build();
 ```
 
@@ -1143,19 +1130,19 @@ EndpointsV1Subset.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset.property.address">address</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddress">EndpointsV1SubsetAddress</a>></code> | address block. |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset.property.notReadyAddress">notReadyAddress</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddress">EndpointsV1SubsetNotReadyAddress</a>></code> | not_ready_address block. |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset.property.port">port</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPort">EndpointsV1SubsetPort</a>></code> | port block. |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset.property.address">address</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddress">EndpointsV1SubsetAddress</a>></code> | address block. |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset.property.notReadyAddress">notReadyAddress</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddress">EndpointsV1SubsetNotReadyAddress</a>></code> | not_ready_address block. |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset.property.port">port</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPort">EndpointsV1SubsetPort</a>></code> | port block. |
 
 ---
 
 ##### `address`<sup>Optional</sup> <a name="address" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset.property.address"></a>
 
 ```java
-public java.lang.Object getAddress();
+public IResolvable|java.util.List<EndpointsV1SubsetAddress> getAddress();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddress">EndpointsV1SubsetAddress</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddress">EndpointsV1SubsetAddress</a>>
 
 address block.
 
@@ -1166,10 +1153,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 ##### `notReadyAddress`<sup>Optional</sup> <a name="notReadyAddress" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset.property.notReadyAddress"></a>
 
 ```java
-public java.lang.Object getNotReadyAddress();
+public IResolvable|java.util.List<EndpointsV1SubsetNotReadyAddress> getNotReadyAddress();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddress">EndpointsV1SubsetNotReadyAddress</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddress">EndpointsV1SubsetNotReadyAddress</a>>
 
 not_ready_address block.
 
@@ -1180,10 +1167,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 ##### `port`<sup>Optional</sup> <a name="port" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset.property.port"></a>
 
 ```java
-public java.lang.Object getPort();
+public IResolvable|java.util.List<EndpointsV1SubsetPort> getPort();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPort">EndpointsV1SubsetPort</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPort">EndpointsV1SubsetPort</a>>
 
 port block.
 
@@ -1941,7 +1928,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddressList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddressList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddressList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddress">EndpointsV1SubsetAddress</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddressList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddress">EndpointsV1SubsetAddress</a>></code> | *No description.* |
 
 ---
 
@@ -1972,10 +1959,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddressList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<EndpointsV1SubsetAddress> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddress">EndpointsV1SubsetAddress</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddress">EndpointsV1SubsetAddress</a>>
 
 ---
 
@@ -2228,7 +2215,7 @@ public void resetNodeName()
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddressOutputReference.property.hostname">hostname</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddressOutputReference.property.ip">ip</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddressOutputReference.property.nodeName">nodeName</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddressOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddress">EndpointsV1SubsetAddress</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddressOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddress">EndpointsV1SubsetAddress</a></code> | *No description.* |
 
 ---
 
@@ -2319,10 +2306,10 @@ public java.lang.String getNodeName();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddressOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|EndpointsV1SubsetAddress getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddress">EndpointsV1SubsetAddress</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddress">EndpointsV1SubsetAddress</a>
 
 ---
 
@@ -2448,7 +2435,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>></code> | *No description.* |
 
 ---
 
@@ -2479,10 +2466,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<EndpointsV1Subset> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>>
 
 ---
 
@@ -2608,7 +2595,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddressList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddressList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddressList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddress">EndpointsV1SubsetNotReadyAddress</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddressList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddress">EndpointsV1SubsetNotReadyAddress</a>></code> | *No description.* |
 
 ---
 
@@ -2639,10 +2626,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddressList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<EndpointsV1SubsetNotReadyAddress> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddress">EndpointsV1SubsetNotReadyAddress</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddress">EndpointsV1SubsetNotReadyAddress</a>>
 
 ---
 
@@ -2895,7 +2882,7 @@ public void resetNodeName()
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddressOutputReference.property.hostname">hostname</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddressOutputReference.property.ip">ip</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddressOutputReference.property.nodeName">nodeName</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddressOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddress">EndpointsV1SubsetNotReadyAddress</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddressOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddress">EndpointsV1SubsetNotReadyAddress</a></code> | *No description.* |
 
 ---
 
@@ -2986,10 +2973,10 @@ public java.lang.String getNodeName();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddressOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|EndpointsV1SubsetNotReadyAddress getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddress">EndpointsV1SubsetNotReadyAddress</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddress">EndpointsV1SubsetNotReadyAddress</a>
 
 ---
 
@@ -3224,36 +3211,36 @@ Returns a reversible string representation.
 ##### `putAddress` <a name="putAddress" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.putAddress"></a>
 
 ```java
-public void putAddress(IResolvable OR java.util.List<EndpointsV1SubsetAddress> value)
+public void putAddress(IResolvable|java.util.List<EndpointsV1SubsetAddress> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.putAddress.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddress">EndpointsV1SubsetAddress</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddress">EndpointsV1SubsetAddress</a>>
 
 ---
 
 ##### `putNotReadyAddress` <a name="putNotReadyAddress" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.putNotReadyAddress"></a>
 
 ```java
-public void putNotReadyAddress(IResolvable OR java.util.List<EndpointsV1SubsetNotReadyAddress> value)
+public void putNotReadyAddress(IResolvable|java.util.List<EndpointsV1SubsetNotReadyAddress> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.putNotReadyAddress.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddress">EndpointsV1SubsetNotReadyAddress</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddress">EndpointsV1SubsetNotReadyAddress</a>>
 
 ---
 
 ##### `putPort` <a name="putPort" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.putPort"></a>
 
 ```java
-public void putPort(IResolvable OR java.util.List<EndpointsV1SubsetPort> value)
+public void putPort(IResolvable|java.util.List<EndpointsV1SubsetPort> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.putPort.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPort">EndpointsV1SubsetPort</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPort">EndpointsV1SubsetPort</a>>
 
 ---
 
@@ -3285,10 +3272,10 @@ public void resetPort()
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.property.address">address</a></code> | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddressList">EndpointsV1SubsetAddressList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.property.notReadyAddress">notReadyAddress</a></code> | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddressList">EndpointsV1SubsetNotReadyAddressList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.property.port">port</a></code> | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPortList">EndpointsV1SubsetPortList</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.property.addressInput">addressInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddress">EndpointsV1SubsetAddress</a>></code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.property.notReadyAddressInput">notReadyAddressInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddress">EndpointsV1SubsetNotReadyAddress</a>></code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.property.portInput">portInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPort">EndpointsV1SubsetPort</a>></code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.property.addressInput">addressInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddress">EndpointsV1SubsetAddress</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.property.notReadyAddressInput">notReadyAddressInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddress">EndpointsV1SubsetNotReadyAddress</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.property.portInput">portInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPort">EndpointsV1SubsetPort</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a></code> | *No description.* |
 
 ---
 
@@ -3349,40 +3336,40 @@ public EndpointsV1SubsetPortList getPort();
 ##### `addressInput`<sup>Optional</sup> <a name="addressInput" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.property.addressInput"></a>
 
 ```java
-public java.lang.Object getAddressInput();
+public IResolvable|java.util.List<EndpointsV1SubsetAddress> getAddressInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddress">EndpointsV1SubsetAddress</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetAddress">EndpointsV1SubsetAddress</a>>
 
 ---
 
 ##### `notReadyAddressInput`<sup>Optional</sup> <a name="notReadyAddressInput" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.property.notReadyAddressInput"></a>
 
 ```java
-public java.lang.Object getNotReadyAddressInput();
+public IResolvable|java.util.List<EndpointsV1SubsetNotReadyAddress> getNotReadyAddressInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddress">EndpointsV1SubsetNotReadyAddress</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetNotReadyAddress">EndpointsV1SubsetNotReadyAddress</a>>
 
 ---
 
 ##### `portInput`<sup>Optional</sup> <a name="portInput" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.property.portInput"></a>
 
 ```java
-public java.lang.Object getPortInput();
+public IResolvable|java.util.List<EndpointsV1SubsetPort> getPortInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPort">EndpointsV1SubsetPort</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPort">EndpointsV1SubsetPort</a>>
 
 ---
 
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|EndpointsV1Subset getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1Subset">EndpointsV1Subset</a>
 
 ---
 
@@ -3508,7 +3495,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPortList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPortList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPortList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPort">EndpointsV1SubsetPort</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPortList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPort">EndpointsV1SubsetPort</a>></code> | *No description.* |
 
 ---
 
@@ -3539,10 +3526,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPortList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<EndpointsV1SubsetPort> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPort">EndpointsV1SubsetPort</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPort">EndpointsV1SubsetPort</a>>
 
 ---
 
@@ -3795,7 +3782,7 @@ public void resetProtocol()
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPortOutputReference.property.name">name</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPortOutputReference.property.port">port</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPortOutputReference.property.protocol">protocol</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPortOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPort">EndpointsV1SubsetPort</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPortOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPort">EndpointsV1SubsetPort</a></code> | *No description.* |
 
 ---
 
@@ -3886,10 +3873,10 @@ public java.lang.String getProtocol();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPortOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|EndpointsV1SubsetPort getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPort">EndpointsV1SubsetPort</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-kubernetes.endpointsV1.EndpointsV1SubsetPort">EndpointsV1SubsetPort</a>
 
 ---
 
