@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/hashicorp/kubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/provider"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v12/provider"
 
 provider.NewKubernetesProvider(scope Construct, id *string, config KubernetesProviderConfig) KubernetesProvider
 ```
@@ -284,7 +284,7 @@ func ResetUsername()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/provider"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v12/provider"
 
 provider.KubernetesProvider_IsConstruct(x interface{}) *bool
 ```
@@ -316,7 +316,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/provider"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v12/provider"
 
 provider.KubernetesProvider_IsTerraformElement(x interface{}) *bool
 ```
@@ -330,7 +330,7 @@ provider.KubernetesProvider_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformProvider` <a name="IsTerraformProvider" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.isTerraformProvider"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/provider"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v12/provider"
 
 provider.KubernetesProvider_IsTerraformProvider(x interface{}) *bool
 ```
@@ -344,7 +344,7 @@ provider.KubernetesProvider_IsTerraformProvider(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-kubernetes.provider.KubernetesProvider.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/provider"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v12/provider"
 
 provider.KubernetesProvider_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -947,7 +947,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.provider.KubernetesProviderConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/provider"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v12/provider"
 
 &provider.KubernetesProviderConfig {
 	Alias: *string,
@@ -1283,7 +1283,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.provider.KubernetesProviderExec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/provider"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v12/provider"
 
 &provider.KubernetesProviderExec {
 	ApiVersion: *string,
@@ -1357,7 +1357,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/hashi
 #### Initializer <a name="Initializer" id="@cdktf/provider-kubernetes.provider.KubernetesProviderExperiments.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/provider"
+import "github.com/cdktf/cdktf-provider-kubernetes-go/kubernetes/v12/provider"
 
 &provider.KubernetesProviderExperiments {
 	ManifestResource: interface{},
